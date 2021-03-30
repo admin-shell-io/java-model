@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.*;
 /**
 	"Asset"
 
-	"An Asset describes meta data of an asset that is represented by an AAS. The asset may either represent an asset type or an asset instance. The asset has a globally unique identifier plus – if needed – additional domain specific (proprietary) identifiers."@en*/
+	"An Asset describes meta data of an asset that is represented by an AAS. The asset may either represent an asset type or an asset instance. The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers."@en*/
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
 @JsonSubTypes.Type(value = AssetImpl.class),})

@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.*;
 /** 
 	"Asset"
 
-	"An Asset describes meta data of an asset that is represented by an AAS. The asset may either represent an asset type or an asset instance. The asset has a globally unique identifier plus – if needed – additional domain specific (proprietary) identifiers."@en */
+	"An Asset describes meta data of an asset that is represented by an AAS. The asset may either represent an asset type or an asset instance. The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers."@en */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Asset")
 public class AssetImpl implements Serializable, Asset {
@@ -33,7 +33,7 @@ public class AssetImpl implements Serializable, Asset {
 	java.util.List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Asset", ""));
 	//List of all comments of this class
 	@JsonIgnore
-	java.util.List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("An Asset describes meta data of an asset that is represented by an AAS. The asset may either represent an asset type or an asset instance. The asset has a globally unique identifier plus – if needed – additional domain specific (proprietary) identifiers.", "en"));
+	java.util.List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("An Asset describes meta data of an asset that is represented by an AAS. The asset may either represent an asset type or an asset instance. The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers.", "en"));
 
 	// all classes have a generic property array
 	@JsonIgnore

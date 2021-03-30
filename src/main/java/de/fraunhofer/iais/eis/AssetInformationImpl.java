@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.*;
 
 	"The asset may either represent an asset type or an asset instance."@en
 
-	"The asset has a globally unique identifier plus – if needed – additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute “globalAssetId�? is optional."@en */
+	"The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute \'globalAssetId\' is optional."@en */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:AssetInformation")
 public class AssetInformationImpl implements Serializable, AssetInformation {
@@ -39,7 +39,7 @@ public class AssetInformationImpl implements Serializable, AssetInformation {
 	@JsonIgnore
 	java.util.List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("In AssetInformation identifying meta data of the asset that is represented by an AAS is defined.", "en"),
 new TypedLiteral("The asset may either represent an asset type or an asset instance.", "en"),
-new TypedLiteral("The asset has a globally unique identifier plus – if needed – additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute “globalAssetId�? is optional.", "en"));
+new TypedLiteral("The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute 'globalAssetId' is optional.", "en"));
 
 	// all classes have a generic property array
 	@JsonIgnore
@@ -79,7 +79,7 @@ new TypedLiteral("The asset has a globally unique identifier plus – if needed 
 
 	"Reference to either an Asset object or a global reference to the asset the AAS is representing."@en
 
-	"This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the asset. In a first phase of the life cycle the asset might not yet have a global id but already an internal identifier. The internal identifier would be modelled via “externalAssetId�?."@en
+	"This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the asset. In a first phase of the life cycle the asset might not yet have a global id but already an internal identifier. The internal identifier would be modelled via \'externalAssetId\'."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId", "assetInformationGlobalAssetId"})
 	 Reference _assetInformationGlobalAssetId;

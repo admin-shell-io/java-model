@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.*;
 /** 
 	"Administrative Information"
 
-	"Every Identifiable may have administrative information. Administrative information includes for example  Information about the version of the element  Information about who created or who made the last change to the element  Information about the languages available in case the element contains text, for translating purposed also themmaster or default language may be definedIn the first version of the AAS metamodel only version information as defined by IEC 61360 is defined. In later versions additional attributes may be added."@en */
+	"Every Identifiable may have administrative information. Administrative information includes for example 1) Information about the version of the element 2) Information about who created or who made the last change to the element 3) Information about the languages available in case the element contains text, for translating purposed also themmaster or default language may be definedIn the first version of the AAS metamodel only version information as defined by IEC 61360 is defined. In later versions additional attributes may be added."@en */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:AdministrativeInformation")
 public class AdministrativeInformationImpl implements Serializable, AdministrativeInformation {
@@ -33,7 +33,7 @@ public class AdministrativeInformationImpl implements Serializable, Administrati
 	java.util.List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Administrative Information", ""));
 	//List of all comments of this class
 	@JsonIgnore
-	java.util.List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Every Identifiable may have administrative information. Administrative information includes for example  Information about the version of the element  Information about who created or who made the last change to the element  Information about the languages available in case the element contains text, for translating purposed also themmaster or default language may be definedIn the first version of the AAS metamodel only version information as defined by IEC 61360 is defined. In later versions additional attributes may be added.", "en"));
+	java.util.List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Every Identifiable may have administrative information. Administrative information includes for example 1) Information about the version of the element 2) Information about who created or who made the last change to the element 3) Information about the languages available in case the element contains text, for translating purposed also themmaster or default language may be definedIn the first version of the AAS metamodel only version information as defined by IEC 61360 is defined. In later versions additional attributes may be added.", "en"));
 
 	// all classes have a generic property array
 	@JsonIgnore

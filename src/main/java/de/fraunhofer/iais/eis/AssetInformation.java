@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.*;
 
 	"The asset may either represent an asset type or an asset instance."@en
 
-	"The asset has a globally unique identifier plus – if needed – additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute “globalAssetId�? is optional."@en*/
+	"The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute \'globalAssetId\' is optional."@en*/
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
 @JsonSubTypes.Type(value = AssetInformationImpl.class),})
@@ -56,7 +56,7 @@ public interface AssetInformation {
 
 	"Reference to either an Asset object or a global reference to the asset the AAS is representing."@en
 
-	"This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the asset. In a first phase of the life cycle the asset might not yet have a global id but already an internal identifier. The internal identifier would be modelled via “externalAssetId�?."@en
+	"This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the asset. In a first phase of the life cycle the asset might not yet have a global id but already an internal identifier. The internal identifier would be modelled via \'externalAssetId\'."@en
 	*/
 	
 	
