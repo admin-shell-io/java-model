@@ -8,38 +8,50 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 	"Annotated Relationship Element"
 
-	"An annotated relationship element is an relationship element that can be annotated with additional data elements."@en */
+	"An annotated relationship element is an relationship element that can be annotated with additional data elements."@en 
+*/
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:AnnotatedRelationshipElement")
-public class AnnotatedRelationshipElementImpl implements Serializable, AnnotatedRelationshipElement {
+public class AnnotatedRelationshipElementImpl implements Serializable, IAnnotatedRelationshipElement {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
-	@javax.validation.constraints.NotNull URI id;
+	protected URI id;
 
 	//List of all labels of this class
 	@JsonIgnore
-	java.util.List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Annotated Relationship Element", ""));
+	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Annotated Relationship Element", ""));
+
 	//List of all comments of this class
 	@JsonIgnore
-	java.util.List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("An annotated relationship element is an relationship element that can be annotated with additional data elements.", "en"));
+	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("An annotated relationship element is an relationship element that can be annotated with additional data elements.", "en"));
 
-	// all classes have a generic property array
-	@JsonIgnore
-	java.util.Map<String,Object> properties;
-
-	// instance fields as derived from information model
+	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
 	"has annotation"
@@ -47,7 +59,7 @@ public class AnnotatedRelationshipElementImpl implements Serializable, Annotated
 	"Annotations that hold for the relationships between the two elements."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation", "annotatedRelationshipElementAnnotation"})
-	 java.util.ArrayList<? extends DataElement> _annotatedRelationshipElementAnnotation;
+	protected ArrayList<? extends IDataElement> _annotatedRelationshipElementAnnotation;
 
 
 	/**
@@ -56,7 +68,7 @@ public class AnnotatedRelationshipElementImpl implements Serializable, Annotated
 	"Global reference to the data specification template used by the element."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "hasDataSpecificationDataSpecification"})
-	 java.util.ArrayList<? extends Reference> _hasDataSpecificationDataSpecification;
+	protected ArrayList<? extends IReference> _hasDataSpecificationDataSpecification;
 
 
 	/**
@@ -65,7 +77,7 @@ public class AnnotatedRelationshipElementImpl implements Serializable, Annotated
 	"ModelingKind of the element: either type or instance."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasKind/kind", "hasKindKind"})
-	 ModelingKind _hasKindKind;
+	protected ModelingKind _hasKindKind;
 
 
 	/**
@@ -76,7 +88,7 @@ public class AnnotatedRelationshipElementImpl implements Serializable, Annotated
 	"The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "hasSemanticsSemanticId"})
-	 Reference _hasSemanticsSemanticId;
+	protected IReference _hasSemanticsSemanticId;
 
 
 	/**
@@ -85,7 +97,7 @@ public class AnnotatedRelationshipElementImpl implements Serializable, Annotated
 	"Additional qualification of a qualifiable element."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier", "qualifiableQualifier"})
-	 java.util.ArrayList<? extends Constraint> _qualifiableQualifier;
+	protected ArrayList<? extends IConstraint> _qualifiableQualifier;
 
 
 	/**
@@ -94,7 +106,7 @@ public class AnnotatedRelationshipElementImpl implements Serializable, Annotated
 	"Description or comments on the element. The description can be provided in several languages."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "referableDescription"})
-	 java.util.ArrayList<? extends de.fraunhofer.iais.eis.util.TypedLiteral> _referableDescription;
+	protected ArrayList<? extends TypedLiteral> _referableDescription;
 
 
 	/**
@@ -103,25 +115,39 @@ public class AnnotatedRelationshipElementImpl implements Serializable, Annotated
 	"Display name. Can be provided in several languages."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "referableDisplayName"})
-	 de.fraunhofer.iais.eis.util.TypedLiteral _referableDisplayName;
+	protected TypedLiteral _referableDisplayName;
 
 
 	/**
 	"has short id"
 
 	"Identifying string of the element within its name space."@en
+
+	"Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
+
+	"Constraint AASd-003: idShort shall be matched case-insensitive."@en
+
+	"Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
+
+	"Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
+
+	"Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
 	*/
-	@NotNull@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "referableIdShort"})
-	 String _referableIdShort;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "referableIdShort"})
+	protected String _referableIdShort;
 
 
 	/**
 	"has parent"
 
 	"Reference to the next referable parent element of the element."@en
+
+	"Constraint AASd-004: Add parent in case of non-identifiable elements."@en
+
+	"This element is used to ease navigation in the model and thus it enables more performant"@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/parent", "referableParent"})
-	 URI _referableParent;
+	protected URI _referableParent;
 
 
 	/**
@@ -130,7 +156,7 @@ public class AnnotatedRelationshipElementImpl implements Serializable, Annotated
 	"The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableReferableCategory"})
-	 java.util.ArrayList<? extends String> _referableReferableCategory;
+	protected ArrayList<? extends String> _referableReferableCategory;
 
 
 	/**
@@ -138,8 +164,8 @@ public class AnnotatedRelationshipElementImpl implements Serializable, Annotated
 
 	"First element in the relationship taking the role of the subject."@en
 	*/
-	@NotNull@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first", "relationshipElementFirst"})
-	 Referable _relationshipElementFirst;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first", "relationshipElementFirst"})
+	protected IReferable _relationshipElementFirst;
 
 
 	/**
@@ -147,12 +173,12 @@ public class AnnotatedRelationshipElementImpl implements Serializable, Annotated
 
 	"Second element in the relationship taking the role of the object."@en
 	*/
-	@NotNull@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second", "relationshipElementSecond"})
-	 Referable _relationshipElementSecond;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second", "relationshipElementSecond"})
+	protected IReferable _relationshipElementSecond;
 
 
 	// no manual construction
-	AnnotatedRelationshipElementImpl() {
+	protected AnnotatedRelationshipElementImpl() {
 		id = VocabUtil.getInstance().createRandomUrl("annotatedRelationshipElement");
 	}
 
@@ -161,29 +187,12 @@ public class AnnotatedRelationshipElementImpl implements Serializable, Annotated
 		return id;
 	}
 
-	public String toRdf() {
-		return VocabUtil.getInstance().toRdf(this);
-	}
-
-	public java.util.List<TypedLiteral> getLabel() {
+	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
-	public java.util.List<TypedLiteral> getComment() {
+	public List<TypedLiteral> getComment() {
 		return this.comment;
-	}
-
-	// getter and setter for generic property map
-	@JsonAnyGetter
-	public java.util.Map<String,Object> getProperties() {
-		if (this.properties == null) return null;
-		Iterator<String> iter = this.properties.keySet().iterator();
-		java.util.Map<String,Object> resultset = new HashMap<String, Object>();
-		while (iter.hasNext()) {
-			String key = iter.next();
-			resultset.put(key,urifyObjects(this.properties.get(key)));
-		}
-		return resultset ;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -195,100 +204,106 @@ public class AnnotatedRelationshipElementImpl implements Serializable, Annotated
 			ArrayList<Object> result_array = new ArrayList<Object>();
 			((ArrayList) value).forEach(x -> result_array.add(urifyObjects(x)));
 			return result_array;
-		} else if (value instanceof java.util.Map) {
-			java.util.Map<String, Object> result_map = new HashMap<String, Object>();
-			((java.util.Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
+		} else if (value instanceof Map) {
+			Map<String, Object> result_map = new HashMap<String, Object>();
+			((Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
 			return result_map;
 		}
 		return value;
 	}
 
-	@JsonAnySetter
-	public void setProperty(String property, Object value) {
-	if (this.properties == null) this.properties = new java.util.HashMap<String,Object>();
-	if (property.startsWith("@")) {return ;};
-	this.properties.put(property, value) ;
-	}
-	// accessor method implementations as derived from information model
 
-	final public 
-	
-	
+	// accessor method implementations as derived from the Asset Administration Shell ontology
+
+	/**
+	"Annotations that hold for the relationships between the two elements."@en
+	@return the List of annotatedRelationshipElementAnnotation
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation")
-	java.util.ArrayList<? extends DataElement> getAnnotatedRelationshipElementAnnotation() {
+	final public List<? extends IDataElement> getAnnotatedRelationshipElementAnnotation() {
 		return _annotatedRelationshipElementAnnotation;
 	}
 
-	final public void setAnnotatedRelationshipElementAnnotation (java.util.ArrayList<? extends DataElement> _annotatedRelationshipElementAnnotation_) {
+	final public void setAnnotatedRelationshipElementAnnotation (ArrayList<? extends IDataElement> _annotatedRelationshipElementAnnotation_) {
 		this._annotatedRelationshipElementAnnotation = _annotatedRelationshipElementAnnotation_;
 	}
 
-	final public 
-	
-	@NotNull
+	/**
+	"First element in the relationship taking the role of the subject."@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first")
-	Referable getRelationshipElementFirst() {
+	final public IReferable getRelationshipElementFirst() {
 		return _relationshipElementFirst;
 	}
 
-	final public void setRelationshipElementFirst (Referable _relationshipElementFirst_) {
+	final public void setRelationshipElementFirst (IReferable _relationshipElementFirst_) {
 		this._relationshipElementFirst = _relationshipElementFirst_;
 	}
 
-	final public 
-	
-	@NotNull
+	/**
+	"Second element in the relationship taking the role of the object."@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second")
-	Referable getRelationshipElementSecond() {
+	final public IReferable getRelationshipElementSecond() {
 		return _relationshipElementSecond;
 	}
 
-	final public void setRelationshipElementSecond (Referable _relationshipElementSecond_) {
+	final public void setRelationshipElementSecond (IReferable _relationshipElementSecond_) {
 		this._relationshipElementSecond = _relationshipElementSecond_;
 	}
 
 
-	final public 
-	
-	
+	/**
+	"The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	java.util.ArrayList<? extends String> getReferableReferableCategory() {
+	final public List<? extends String> getReferableReferableCategory() {
 		return _referableReferableCategory;
 	}
 
-	final public void setReferableReferableCategory (java.util.ArrayList<? extends String> _referableReferableCategory_) {
+	final public void setReferableReferableCategory (ArrayList<? extends String> _referableReferableCategory_) {
 		this._referableReferableCategory = _referableReferableCategory_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Description or comments on the element. The description can be provided in several languages."@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	java.util.ArrayList<? extends de.fraunhofer.iais.eis.util.TypedLiteral> getReferableDescription() {
+	final public List<? extends TypedLiteral> getReferableDescription() {
 		return _referableDescription;
 	}
 
-	final public void setReferableDescription (java.util.ArrayList<? extends de.fraunhofer.iais.eis.util.TypedLiteral> _referableDescription_) {
+	final public void setReferableDescription (ArrayList<? extends TypedLiteral> _referableDescription_) {
 		this._referableDescription = _referableDescription_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Display name. Can be provided in several languages."@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-	de.fraunhofer.iais.eis.util.TypedLiteral getReferableDisplayName() {
+	final public TypedLiteral getReferableDisplayName() {
 		return _referableDisplayName;
 	}
 
-	final public void setReferableDisplayName (de.fraunhofer.iais.eis.util.TypedLiteral _referableDisplayName_) {
+	final public void setReferableDisplayName (TypedLiteral _referableDisplayName_) {
 		this._referableDisplayName = _referableDisplayName_;
 	}
 
-	final public 
-	
-	@NotNull
+	/**
+	"Identifying string of the element within its name space."@en
+
+	"Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
+
+	"Constraint AASd-003: idShort shall be matched case-insensitive."@en
+
+	"Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
+
+	"Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
+
+	"Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-	String getReferableIdShort() {
+	final public String getReferableIdShort() {
 		return _referableIdShort;
 	}
 
@@ -296,11 +311,15 @@ public class AnnotatedRelationshipElementImpl implements Serializable, Annotated
 		this._referableIdShort = _referableIdShort_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Reference to the next referable parent element of the element."@en
+
+	"Constraint AASd-004: Add parent in case of non-identifiable elements."@en
+
+	"This element is used to ease navigation in the model and thus it enables more performant"@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
-	URI getReferableParent() {
+	final public URI getReferableParent() {
 		return _referableParent;
 	}
 
@@ -308,35 +327,35 @@ public class AnnotatedRelationshipElementImpl implements Serializable, Annotated
 		this._referableParent = _referableParent_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Additional qualification of a qualifiable element."@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
-	java.util.ArrayList<? extends Constraint> getQualifiableQualifier() {
+	final public List<? extends IConstraint> getQualifiableQualifier() {
 		return _qualifiableQualifier;
 	}
 
-	final public void setQualifiableQualifier (java.util.ArrayList<? extends Constraint> _qualifiableQualifier_) {
+	final public void setQualifiableQualifier (ArrayList<? extends IConstraint> _qualifiableQualifier_) {
 		this._qualifiableQualifier = _qualifiableQualifier_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Global reference to the data specification template used by the element."@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
-	java.util.ArrayList<? extends Reference> getHasDataSpecificationDataSpecification() {
+	final public List<? extends IReference> getHasDataSpecificationDataSpecification() {
 		return _hasDataSpecificationDataSpecification;
 	}
 
-	final public void setHasDataSpecificationDataSpecification (java.util.ArrayList<? extends Reference> _hasDataSpecificationDataSpecification_) {
+	final public void setHasDataSpecificationDataSpecification (ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
 		this._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
 	}
 
-	final public 
-	
-	
+	/**
+	"ModelingKind of the element: either type or instance."@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-	ModelingKind getHasKindKind() {
+	final public ModelingKind getHasKindKind() {
 		return _hasKindKind;
 	}
 
@@ -344,15 +363,17 @@ public class AnnotatedRelationshipElementImpl implements Serializable, Annotated
 		this._hasKindKind = _hasKindKind_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Points to the Expression Semantic of the Submodels"@en
+
+	"The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-	Reference getHasSemanticsSemanticId() {
+	final public IReference getHasSemanticsSemanticId() {
 		return _hasSemanticsSemanticId;
 	}
 
-	final public void setHasSemanticsSemanticId (Reference _hasSemanticsSemanticId_) {
+	final public void setHasSemanticsSemanticId (IReference _hasSemanticsSemanticId_) {
 		this._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
 	}
 }

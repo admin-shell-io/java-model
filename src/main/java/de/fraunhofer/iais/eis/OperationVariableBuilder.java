@@ -8,13 +8,27 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class OperationVariableBuilder {
 
@@ -24,17 +38,17 @@ public class OperationVariableBuilder {
 		operationVariableImpl = new OperationVariableImpl();
 	}
 
-	public OperationVariableBuilder(@javax.validation.constraints.NotNull URI id) {
+	public OperationVariableBuilder(URI id) {
 		this();
 		operationVariableImpl.id = id;
 	}
 
-	final public OperationVariableBuilder _operationVariableValue_(SubmodelElement _operationVariableValue_) {
+	final public OperationVariableBuilder _operationVariableValue_(ISubmodelElement _operationVariableValue_) {
 		this.operationVariableImpl._operationVariableValue = _operationVariableValue_;
 		return this;
 	}
 
-	public final OperationVariable build() throws ConstraintViolationException {
+	final public IOperationVariable build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(operationVariableImpl);
 		return operationVariableImpl;
 	}

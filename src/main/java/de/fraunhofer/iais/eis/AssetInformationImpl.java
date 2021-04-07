@@ -8,13 +8,27 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 	"has Asset Identification Model"
@@ -23,29 +37,27 @@ import com.fasterxml.jackson.annotation.*;
 
 	"The asset may either represent an asset type or an asset instance."@en
 
-	"The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute \'globalAssetId\' is optional."@en */
+	"The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute \'globalAssetId\' is optional."@en 
+*/
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:AssetInformation")
-public class AssetInformationImpl implements Serializable, AssetInformation {
+public class AssetInformationImpl implements Serializable, IAssetInformation {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
-	@javax.validation.constraints.NotNull URI id;
+	protected URI id;
 
 	//List of all labels of this class
 	@JsonIgnore
-	java.util.List<TypedLiteral> label = Arrays.asList(new TypedLiteral("has Asset Identification Model", ""));
+	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("has Asset Identification Model", ""));
+
 	//List of all comments of this class
 	@JsonIgnore
-	java.util.List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("In AssetInformation identifying meta data of the asset that is represented by an AAS is defined.", "en"),
+	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("In AssetInformation identifying meta data of the asset that is represented by an AAS is defined.", "en"),
 new TypedLiteral("The asset may either represent an asset type or an asset instance.", "en"),
 new TypedLiteral("The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute 'globalAssetId' is optional.", "en"));
 
-	// all classes have a generic property array
-	@JsonIgnore
-	java.util.Map<String,Object> properties;
-
-	// instance fields as derived from information model
+	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
 	"has assetKind"
@@ -53,7 +65,7 @@ new TypedLiteral("The asset has a globally unique identifier plus - if needed - 
 	"Denotes whether the Asset of of kind \'Type\' or \'Instance\'."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind", "assetInformationAssetKind"})
-	 java.util.ArrayList<? extends AssetKind> _assetInformationAssetKind;
+	protected ArrayList<? extends AssetKind> _assetInformationAssetKind;
 
 
 	/**
@@ -62,7 +74,7 @@ new TypedLiteral("The asset has a globally unique identifier plus - if needed - 
 	"A reference to a Submodel that defines the bill of material of the asset represented by the AAS. This submodel contains a set of entities describing the material used to compose the composite I4.0 Component."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial", "assetInformationBillOfMaterial"})
-	 java.util.ArrayList<? extends Submodel> _assetInformationBillOfMaterial;
+	protected ArrayList<? extends ISubmodel> _assetInformationBillOfMaterial;
 
 
 	/**
@@ -71,7 +83,7 @@ new TypedLiteral("The asset has a globally unique identifier plus - if needed - 
 	"Additional domain specific external, typically proprietary Identifier for the asset like e.g. serial number etc."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/externalAssetId", "assetInformationExternalAssetId"})
-	 java.util.ArrayList<? extends IdentifierKeyValuePair> _assetInformationExternalAssetId;
+	protected ArrayList<? extends IIdentifierKeyValuePair> _assetInformationExternalAssetId;
 
 
 	/**
@@ -80,9 +92,11 @@ new TypedLiteral("The asset has a globally unique identifier plus - if needed - 
 	"Reference to either an Asset object or a global reference to the asset the AAS is representing."@en
 
 	"This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the asset. In a first phase of the life cycle the asset might not yet have a global id but already an internal identifier. The internal identifier would be modelled via \'externalAssetId\'."@en
+
+	"Constraint AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global reference."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId", "assetInformationGlobalAssetId"})
-	 Reference _assetInformationGlobalAssetId;
+	protected IReference _assetInformationGlobalAssetId;
 
 
 	/**
@@ -91,11 +105,11 @@ new TypedLiteral("The asset has a globally unique identifier plus - if needed - 
 	"Thumbnail of the asset represented by the asset administration shell."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/thumbnail", "assetInformationThumbnail"})
-	 File _assetInformationThumbnail;
+	protected IFile _assetInformationThumbnail;
 
 
 	// no manual construction
-	AssetInformationImpl() {
+	protected AssetInformationImpl() {
 		id = VocabUtil.getInstance().createRandomUrl("assetInformation");
 	}
 
@@ -104,29 +118,12 @@ new TypedLiteral("The asset has a globally unique identifier plus - if needed - 
 		return id;
 	}
 
-	public String toRdf() {
-		return VocabUtil.getInstance().toRdf(this);
-	}
-
-	public java.util.List<TypedLiteral> getLabel() {
+	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
-	public java.util.List<TypedLiteral> getComment() {
+	public List<TypedLiteral> getComment() {
 		return this.comment;
-	}
-
-	// getter and setter for generic property map
-	@JsonAnyGetter
-	public java.util.Map<String,Object> getProperties() {
-		if (this.properties == null) return null;
-		Iterator<String> iter = this.properties.keySet().iterator();
-		java.util.Map<String,Object> resultset = new HashMap<String, Object>();
-		while (iter.hasNext()) {
-			String key = iter.next();
-			resultset.put(key,urifyObjects(this.properties.get(key)));
-		}
-		return resultset ;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -138,79 +135,83 @@ new TypedLiteral("The asset has a globally unique identifier plus - if needed - 
 			ArrayList<Object> result_array = new ArrayList<Object>();
 			((ArrayList) value).forEach(x -> result_array.add(urifyObjects(x)));
 			return result_array;
-		} else if (value instanceof java.util.Map) {
-			java.util.Map<String, Object> result_map = new HashMap<String, Object>();
-			((java.util.Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
+		} else if (value instanceof Map) {
+			Map<String, Object> result_map = new HashMap<String, Object>();
+			((Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
 			return result_map;
 		}
 		return value;
 	}
 
-	@JsonAnySetter
-	public void setProperty(String property, Object value) {
-	if (this.properties == null) this.properties = new java.util.HashMap<String,Object>();
-	if (property.startsWith("@")) {return ;};
-	this.properties.put(property, value) ;
-	}
-	// accessor method implementations as derived from information model
 
-	final public 
-	
-	
+	// accessor method implementations as derived from the Asset Administration Shell ontology
+
+	/**
+	"Denotes whether the Asset of of kind \'Type\' or \'Instance\'."@en
+	@return the List of assetInformationAssetKind
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
-	java.util.ArrayList<? extends AssetKind> getAssetInformationAssetKind() {
+	final public List<? extends AssetKind> getAssetInformationAssetKind() {
 		return _assetInformationAssetKind;
 	}
 
-	final public void setAssetInformationAssetKind (java.util.ArrayList<? extends AssetKind> _assetInformationAssetKind_) {
+	final public void setAssetInformationAssetKind (ArrayList<? extends AssetKind> _assetInformationAssetKind_) {
 		this._assetInformationAssetKind = _assetInformationAssetKind_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Reference to either an Asset object or a global reference to the asset the AAS is representing."@en
+
+	"This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the asset. In a first phase of the life cycle the asset might not yet have a global id but already an internal identifier. The internal identifier would be modelled via \'externalAssetId\'."@en
+
+	"Constraint AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global reference."@en
+	@return the IReference of assetInformationGlobalAssetId
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId")
-	Reference getAssetInformationGlobalAssetId() {
+	final public IReference getAssetInformationGlobalAssetId() {
 		return _assetInformationGlobalAssetId;
 	}
 
-	final public void setAssetInformationGlobalAssetId (Reference _assetInformationGlobalAssetId_) {
+	final public void setAssetInformationGlobalAssetId (IReference _assetInformationGlobalAssetId_) {
 		this._assetInformationGlobalAssetId = _assetInformationGlobalAssetId_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Additional domain specific external, typically proprietary Identifier for the asset like e.g. serial number etc."@en
+	@return the List of assetInformationExternalAssetId
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/externalAssetId")
-	java.util.ArrayList<? extends IdentifierKeyValuePair> getAssetInformationExternalAssetId() {
+	final public List<? extends IIdentifierKeyValuePair> getAssetInformationExternalAssetId() {
 		return _assetInformationExternalAssetId;
 	}
 
-	final public void setAssetInformationExternalAssetId (java.util.ArrayList<? extends IdentifierKeyValuePair> _assetInformationExternalAssetId_) {
+	final public void setAssetInformationExternalAssetId (ArrayList<? extends IIdentifierKeyValuePair> _assetInformationExternalAssetId_) {
 		this._assetInformationExternalAssetId = _assetInformationExternalAssetId_;
 	}
 
-	final public 
-	
-	
+	/**
+	"A reference to a Submodel that defines the bill of material of the asset represented by the AAS. This submodel contains a set of entities describing the material used to compose the composite I4.0 Component."@en
+	@return the List of assetInformationBillOfMaterial
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial")
-	java.util.ArrayList<? extends Submodel> getAssetInformationBillOfMaterial() {
+	final public List<? extends ISubmodel> getAssetInformationBillOfMaterial() {
 		return _assetInformationBillOfMaterial;
 	}
 
-	final public void setAssetInformationBillOfMaterial (java.util.ArrayList<? extends Submodel> _assetInformationBillOfMaterial_) {
+	final public void setAssetInformationBillOfMaterial (ArrayList<? extends ISubmodel> _assetInformationBillOfMaterial_) {
 		this._assetInformationBillOfMaterial = _assetInformationBillOfMaterial_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Thumbnail of the asset represented by the asset administration shell."@en
+	@return the IFile of assetInformationThumbnail
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/thumbnail")
-	File getAssetInformationThumbnail() {
+	final public IFile getAssetInformationThumbnail() {
 		return _assetInformationThumbnail;
 	}
 
-	final public void setAssetInformationThumbnail (File _assetInformationThumbnail_) {
+	final public void setAssetInformationThumbnail (IFile _assetInformationThumbnail_) {
 		this._assetInformationThumbnail = _assetInformationThumbnail_;
 	}
 }

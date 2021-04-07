@@ -8,46 +8,62 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 	"Key"
 
-	"A key is a reference to an element by its id."@en */
+	"A key is a reference to an element by its id."@en 
+*/
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Key")
-public class KeyImpl implements Serializable, Key {
+public class KeyImpl implements Serializable, IKey {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
-	@javax.validation.constraints.NotNull URI id;
+	protected URI id;
 
 	//List of all labels of this class
 	@JsonIgnore
-	java.util.List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Key", ""));
+	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Key", ""));
+
 	//List of all comments of this class
 	@JsonIgnore
-	java.util.List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("A key is a reference to an element by its id.", "en"));
+	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("A key is a reference to an element by its id.", "en"));
 
-	// all classes have a generic property array
-	@JsonIgnore
-	java.util.Map<String,Object> properties;
-
-	// instance fields as derived from information model
+	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
 	"has key type"
 
 	"Type of the key value. In case of idType = idShort local shall be true. In case type=GlobalReference idType shall not be IdShort."@en
+
+	"Constraint AASd-080: In case Key/type == GlobalReference idType shall not be any LocalKeyType (IdShort, FragmentId)."@en
+
+	"Constraint AASd-081: In case Key/type==AssetAdministrationShell Key/idType shall not be any  LocalKeyType (IdShort, FragmentId)."@en
 	*/
-	@NotNull@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Key/idType", "keyIdType"})
-	 KeyType _keyIdType;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Key/idType", "keyIdType"})
+	protected KeyType _keyIdType;
 
 
 	/**
@@ -56,7 +72,7 @@ public class KeyImpl implements Serializable, Key {
 	"Denote which kind of entity is referenced. In case type = GlobalReference then the element is a global unique id. In all other cases the key references a model element of the same or of another AAS. The name of the model element is explicitly listed."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Key/type", "keyType"})
-	 KeyElements _keyType;
+	protected KeyElements _keyType;
 
 
 	/**
@@ -64,12 +80,12 @@ public class KeyImpl implements Serializable, Key {
 
 	"The key value, for example an IRDI if the idType=IRDI."@en
 	*/
-	@NotNull@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Key/value", "keyValue"})
-	 String _keyValue;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Key/value", "keyValue"})
+	protected String _keyValue;
 
 
 	// no manual construction
-	KeyImpl() {
+	protected KeyImpl() {
 		id = VocabUtil.getInstance().createRandomUrl("key");
 	}
 
@@ -78,29 +94,12 @@ public class KeyImpl implements Serializable, Key {
 		return id;
 	}
 
-	public String toRdf() {
-		return VocabUtil.getInstance().toRdf(this);
-	}
-
-	public java.util.List<TypedLiteral> getLabel() {
+	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
-	public java.util.List<TypedLiteral> getComment() {
+	public List<TypedLiteral> getComment() {
 		return this.comment;
-	}
-
-	// getter and setter for generic property map
-	@JsonAnyGetter
-	public java.util.Map<String,Object> getProperties() {
-		if (this.properties == null) return null;
-		Iterator<String> iter = this.properties.keySet().iterator();
-		java.util.Map<String,Object> resultset = new HashMap<String, Object>();
-		while (iter.hasNext()) {
-			String key = iter.next();
-			resultset.put(key,urifyObjects(this.properties.get(key)));
-		}
-		return resultset ;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -112,27 +111,27 @@ public class KeyImpl implements Serializable, Key {
 			ArrayList<Object> result_array = new ArrayList<Object>();
 			((ArrayList) value).forEach(x -> result_array.add(urifyObjects(x)));
 			return result_array;
-		} else if (value instanceof java.util.Map) {
-			java.util.Map<String, Object> result_map = new HashMap<String, Object>();
-			((java.util.Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
+		} else if (value instanceof Map) {
+			Map<String, Object> result_map = new HashMap<String, Object>();
+			((Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
 			return result_map;
 		}
 		return value;
 	}
 
-	@JsonAnySetter
-	public void setProperty(String property, Object value) {
-	if (this.properties == null) this.properties = new java.util.HashMap<String,Object>();
-	if (property.startsWith("@")) {return ;};
-	this.properties.put(property, value) ;
-	}
-	// accessor method implementations as derived from information model
 
-	final public 
-	
-	@NotNull
+	// accessor method implementations as derived from the Asset Administration Shell ontology
+
+	/**
+	"Type of the key value. In case of idType = idShort local shall be true. In case type=GlobalReference idType shall not be IdShort."@en
+
+	"Constraint AASd-080: In case Key/type == GlobalReference idType shall not be any LocalKeyType (IdShort, FragmentId)."@en
+
+	"Constraint AASd-081: In case Key/type==AssetAdministrationShell Key/idType shall not be any  LocalKeyType (IdShort, FragmentId)."@en
+	@return the KeyType of keyIdType
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Key/idType")
-	KeyType getKeyIdType() {
+	final public KeyType getKeyIdType() {
 		return _keyIdType;
 	}
 
@@ -140,11 +139,12 @@ public class KeyImpl implements Serializable, Key {
 		this._keyIdType = _keyIdType_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Denote which kind of entity is referenced. In case type = GlobalReference then the element is a global unique id. In all other cases the key references a model element of the same or of another AAS. The name of the model element is explicitly listed."@en
+	@return the KeyElements of keyType
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Key/type")
-	KeyElements getKeyType() {
+	final public KeyElements getKeyType() {
 		return _keyType;
 	}
 
@@ -152,11 +152,12 @@ public class KeyImpl implements Serializable, Key {
 		this._keyType = _keyType_;
 	}
 
-	final public 
-	
-	@NotNull
+	/**
+	"The key value, for example an IRDI if the idType=IRDI."@en
+	@return the String of keyValue
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Key/value")
-	String getKeyValue() {
+	final public String getKeyValue() {
 		return _keyValue;
 	}
 

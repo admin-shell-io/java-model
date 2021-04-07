@@ -8,13 +8,27 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class PolicyDecisionPointBuilder {
 
@@ -24,7 +38,7 @@ public class PolicyDecisionPointBuilder {
 		policyDecisionPointImpl = new PolicyDecisionPointImpl();
 	}
 
-	public PolicyDecisionPointBuilder(@javax.validation.constraints.NotNull URI id) {
+	public PolicyDecisionPointBuilder(URI id) {
 		this();
 		policyDecisionPointImpl.id = id;
 	}
@@ -34,7 +48,7 @@ public class PolicyDecisionPointBuilder {
 		return this;
 	}
 
-	public final PolicyDecisionPoint build() throws ConstraintViolationException {
+	final public IPolicyDecisionPoint build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(policyDecisionPointImpl);
 		return policyDecisionPointImpl;
 	}

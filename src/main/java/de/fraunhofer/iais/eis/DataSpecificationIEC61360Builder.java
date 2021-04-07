@@ -8,13 +8,27 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class DataSpecificationIEC61360Builder {
 
@@ -24,36 +38,36 @@ public class DataSpecificationIEC61360Builder {
 		dataSpecificationIEC61360Impl = new DataSpecificationIEC61360Impl();
 	}
 
-	public DataSpecificationIEC61360Builder(@javax.validation.constraints.NotNull URI id) {
+	public DataSpecificationIEC61360Builder(URI id) {
 		this();
 		dataSpecificationIEC61360Impl.id = id;
 	}
 
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360DataType_(java.util.ArrayList<? extends DataTypeIEC61360> _dataSpecificationIEC61360DataType_) {
+	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360DataType_(ArrayList<? extends DataTypeIEC61360> _dataSpecificationIEC61360DataType_) {
 		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360DataType = _dataSpecificationIEC61360DataType_;
 		return this;
 	}
 
 
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360Definition_(java.util.ArrayList<? extends de.fraunhofer.iais.eis.util.TypedLiteral> _dataSpecificationIEC61360Definition_) {
+	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360Definition_(ArrayList<? extends TypedLiteral> _dataSpecificationIEC61360Definition_) {
 		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360Definition = _dataSpecificationIEC61360Definition_;
 		return this;
 	}
 
 
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360LevelType_(java.util.ArrayList<? extends LevelType> _dataSpecificationIEC61360LevelType_) {
+	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360LevelType_(ArrayList<? extends LevelType> _dataSpecificationIEC61360LevelType_) {
 		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360LevelType = _dataSpecificationIEC61360LevelType_;
 		return this;
 	}
 
 
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360PreferredName_(de.fraunhofer.iais.eis.util.TypedLiteral _dataSpecificationIEC61360PreferredName_) {
+	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360PreferredName_(TypedLiteral _dataSpecificationIEC61360PreferredName_) {
 		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360PreferredName = _dataSpecificationIEC61360PreferredName_;
 		return this;
 	}
 
 
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360ShortName_(de.fraunhofer.iais.eis.util.TypedLiteral _dataSpecificationIEC61360ShortName_) {
+	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360ShortName_(TypedLiteral _dataSpecificationIEC61360ShortName_) {
 		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360ShortName = _dataSpecificationIEC61360ShortName_;
 		return this;
 	}
@@ -77,7 +91,7 @@ public class DataSpecificationIEC61360Builder {
 	}
 
 
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360UnitId_(Reference _dataSpecificationIEC61360UnitId_) {
+	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360UnitId_(IReference _dataSpecificationIEC61360UnitId_) {
 		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360UnitId = _dataSpecificationIEC61360UnitId_;
 		return this;
 	}
@@ -101,13 +115,13 @@ public class DataSpecificationIEC61360Builder {
 	}
 
 
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360ValueId_(Reference _dataSpecificationIEC61360ValueId_) {
+	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360ValueId_(IReference _dataSpecificationIEC61360ValueId_) {
 		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360ValueId = _dataSpecificationIEC61360ValueId_;
 		return this;
 	}
 
 
-	public final DataSpecificationIEC61360 build() throws ConstraintViolationException {
+	final public IDataSpecificationIEC61360 build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(dataSpecificationIEC61360Impl);
 		return dataSpecificationIEC61360Impl;
 	}

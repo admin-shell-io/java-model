@@ -8,36 +8,48 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Formula" */
+	"Formula" 
+*/
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Formula")
-public class FormulaImpl implements Serializable, Formula {
+public class FormulaImpl implements Serializable, IFormula {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
-	@javax.validation.constraints.NotNull URI id;
+	protected URI id;
 
 	//List of all labels of this class
 	@JsonIgnore
-	java.util.List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Formula", ""));
+	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Formula", ""));
+
 	//List of all comments of this class
 	@JsonIgnore
-	java.util.List<TypedLiteral> comment = java.util.Collections.emptyList();
+	protected List<TypedLiteral> comment = Collections.emptyList();
 
-	// all classes have a generic property array
-	@JsonIgnore
-	java.util.Map<String,Object> properties;
-
-	// instance fields as derived from information model
+	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
 	"depends on"
@@ -45,11 +57,11 @@ public class FormulaImpl implements Serializable, Formula {
 	"A formula may depend on referable or even external global elements - assumed that can be referenced and their value may be evaluated - that are used in the logical expression."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn", "formulaDependsOn"})
-	 java.util.ArrayList<? extends Reference> _formulaDependsOn;
+	protected ArrayList<? extends IReference> _formulaDependsOn;
 
 
 	// no manual construction
-	FormulaImpl() {
+	protected FormulaImpl() {
 		id = VocabUtil.getInstance().createRandomUrl("formula");
 	}
 
@@ -58,29 +70,12 @@ public class FormulaImpl implements Serializable, Formula {
 		return id;
 	}
 
-	public String toRdf() {
-		return VocabUtil.getInstance().toRdf(this);
-	}
-
-	public java.util.List<TypedLiteral> getLabel() {
+	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
-	public java.util.List<TypedLiteral> getComment() {
+	public List<TypedLiteral> getComment() {
 		return this.comment;
-	}
-
-	// getter and setter for generic property map
-	@JsonAnyGetter
-	public java.util.Map<String,Object> getProperties() {
-		if (this.properties == null) return null;
-		Iterator<String> iter = this.properties.keySet().iterator();
-		java.util.Map<String,Object> resultset = new HashMap<String, Object>();
-		while (iter.hasNext()) {
-			String key = iter.next();
-			resultset.put(key,urifyObjects(this.properties.get(key)));
-		}
-		return resultset ;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -92,31 +87,27 @@ public class FormulaImpl implements Serializable, Formula {
 			ArrayList<Object> result_array = new ArrayList<Object>();
 			((ArrayList) value).forEach(x -> result_array.add(urifyObjects(x)));
 			return result_array;
-		} else if (value instanceof java.util.Map) {
-			java.util.Map<String, Object> result_map = new HashMap<String, Object>();
-			((java.util.Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
+		} else if (value instanceof Map) {
+			Map<String, Object> result_map = new HashMap<String, Object>();
+			((Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
 			return result_map;
 		}
 		return value;
 	}
 
-	@JsonAnySetter
-	public void setProperty(String property, Object value) {
-	if (this.properties == null) this.properties = new java.util.HashMap<String,Object>();
-	if (property.startsWith("@")) {return ;};
-	this.properties.put(property, value) ;
-	}
-	// accessor method implementations as derived from information model
 
-	final public 
-	
-	
+	// accessor method implementations as derived from the Asset Administration Shell ontology
+
+	/**
+	"A formula may depend on referable or even external global elements - assumed that can be referenced and their value may be evaluated - that are used in the logical expression."@en
+	@return the List of formulaDependsOn
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn")
-	java.util.ArrayList<? extends Reference> getFormulaDependsOn() {
+	final public List<? extends IReference> getFormulaDependsOn() {
 		return _formulaDependsOn;
 	}
 
-	final public void setFormulaDependsOn (java.util.ArrayList<? extends Reference> _formulaDependsOn_) {
+	final public void setFormulaDependsOn (ArrayList<? extends IReference> _formulaDependsOn_) {
 		this._formulaDependsOn = _formulaDependsOn_;
 	}
 

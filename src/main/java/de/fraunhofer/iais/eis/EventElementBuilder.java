@@ -8,13 +8,27 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class EventElementBuilder {
 
@@ -24,26 +38,26 @@ public class EventElementBuilder {
 		eventElementImpl = new EventElementImpl();
 	}
 
-	public EventElementBuilder(@javax.validation.constraints.NotNull URI id) {
+	public EventElementBuilder(URI id) {
 		this();
 		eventElementImpl.id = id;
 	}
 
 
 
-	final public EventElementBuilder _referableReferableCategory_(java.util.ArrayList<? extends String> _referableReferableCategory_) {
+	final public EventElementBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
 		this.eventElementImpl._referableReferableCategory = _referableReferableCategory_;
 		return this;
 	}
 
 
-	final public EventElementBuilder _referableDescription_(java.util.ArrayList<? extends de.fraunhofer.iais.eis.util.TypedLiteral> _referableDescription_) {
+	final public EventElementBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
 		this.eventElementImpl._referableDescription = _referableDescription_;
 		return this;
 	}
 
 
-	final public EventElementBuilder _referableDisplayName_(de.fraunhofer.iais.eis.util.TypedLiteral _referableDisplayName_) {
+	final public EventElementBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
 		this.eventElementImpl._referableDisplayName = _referableDisplayName_;
 		return this;
 	}
@@ -61,13 +75,13 @@ public class EventElementBuilder {
 	}
 
 
-	final public EventElementBuilder _qualifiableQualifier_(java.util.ArrayList<? extends Constraint> _qualifiableQualifier_) {
+	final public EventElementBuilder _qualifiableQualifier_(ArrayList<? extends IConstraint> _qualifiableQualifier_) {
 		this.eventElementImpl._qualifiableQualifier = _qualifiableQualifier_;
 		return this;
 	}
 
 
-	final public EventElementBuilder _hasDataSpecificationDataSpecification_(java.util.ArrayList<? extends Reference> _hasDataSpecificationDataSpecification_) {
+	final public EventElementBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
 		this.eventElementImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
 		return this;
 	}
@@ -79,12 +93,12 @@ public class EventElementBuilder {
 	}
 
 
-	final public EventElementBuilder _hasSemanticsSemanticId_(Reference _hasSemanticsSemanticId_) {
+	final public EventElementBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
 		this.eventElementImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
 		return this;
 	}
 
-	public final EventElement build() throws ConstraintViolationException {
+	final public IEventElement build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(eventElementImpl);
 		return eventElementImpl;
 	}

@@ -8,13 +8,27 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class IdentifiableBuilder {
 
@@ -24,36 +38,36 @@ public class IdentifiableBuilder {
 		identifiableImpl = new IdentifiableImpl();
 	}
 
-	public IdentifiableBuilder(@javax.validation.constraints.NotNull URI id) {
+	public IdentifiableBuilder(URI id) {
 		this();
 		identifiableImpl.id = id;
 	}
 
-	final public IdentifiableBuilder _identifiableAdministration_(AdministrativeInformation _identifiableAdministration_) {
+	final public IdentifiableBuilder _identifiableAdministration_(IAdministrativeInformation _identifiableAdministration_) {
 		this.identifiableImpl._identifiableAdministration = _identifiableAdministration_;
 		return this;
 	}
 
 
-	final public IdentifiableBuilder _identifiableIdentification_(Identifier _identifiableIdentification_) {
+	final public IdentifiableBuilder _identifiableIdentification_(IIdentifier _identifiableIdentification_) {
 		this.identifiableImpl._identifiableIdentification = _identifiableIdentification_;
 		return this;
 	}
 
 
-	final public IdentifiableBuilder _referableReferableCategory_(java.util.ArrayList<? extends String> _referableReferableCategory_) {
+	final public IdentifiableBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
 		this.identifiableImpl._referableReferableCategory = _referableReferableCategory_;
 		return this;
 	}
 
 
-	final public IdentifiableBuilder _referableDescription_(java.util.ArrayList<? extends de.fraunhofer.iais.eis.util.TypedLiteral> _referableDescription_) {
+	final public IdentifiableBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
 		this.identifiableImpl._referableDescription = _referableDescription_;
 		return this;
 	}
 
 
-	final public IdentifiableBuilder _referableDisplayName_(de.fraunhofer.iais.eis.util.TypedLiteral _referableDisplayName_) {
+	final public IdentifiableBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
 		this.identifiableImpl._referableDisplayName = _referableDisplayName_;
 		return this;
 	}
@@ -70,7 +84,7 @@ public class IdentifiableBuilder {
 		return this;
 	}
 
-	public final Identifiable build() throws ConstraintViolationException {
+	final public IIdentifiable build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(identifiableImpl);
 		return identifiableImpl;
 	}

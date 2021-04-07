@@ -8,13 +8,27 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class SubmodelElementCollectionBuilder {
 
@@ -24,7 +38,7 @@ public class SubmodelElementCollectionBuilder {
 		submodelElementCollectionImpl = new SubmodelElementCollectionImpl();
 	}
 
-	public SubmodelElementCollectionBuilder(@javax.validation.constraints.NotNull URI id) {
+	public SubmodelElementCollectionBuilder(URI id) {
 		this();
 		submodelElementCollectionImpl.id = id;
 	}
@@ -41,26 +55,26 @@ public class SubmodelElementCollectionBuilder {
 	}
 
 
-	final public SubmodelElementCollectionBuilder _submodelElementCollectionValue_(java.util.ArrayList<? extends SubmodelElement> _submodelElementCollectionValue_) {
+	final public SubmodelElementCollectionBuilder _submodelElementCollectionValue_(ArrayList<? extends ISubmodelElement> _submodelElementCollectionValue_) {
 		this.submodelElementCollectionImpl._submodelElementCollectionValue = _submodelElementCollectionValue_;
 		return this;
 	}
 
 
 
-	final public SubmodelElementCollectionBuilder _referableReferableCategory_(java.util.ArrayList<? extends String> _referableReferableCategory_) {
+	final public SubmodelElementCollectionBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
 		this.submodelElementCollectionImpl._referableReferableCategory = _referableReferableCategory_;
 		return this;
 	}
 
 
-	final public SubmodelElementCollectionBuilder _referableDescription_(java.util.ArrayList<? extends de.fraunhofer.iais.eis.util.TypedLiteral> _referableDescription_) {
+	final public SubmodelElementCollectionBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
 		this.submodelElementCollectionImpl._referableDescription = _referableDescription_;
 		return this;
 	}
 
 
-	final public SubmodelElementCollectionBuilder _referableDisplayName_(de.fraunhofer.iais.eis.util.TypedLiteral _referableDisplayName_) {
+	final public SubmodelElementCollectionBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
 		this.submodelElementCollectionImpl._referableDisplayName = _referableDisplayName_;
 		return this;
 	}
@@ -78,13 +92,13 @@ public class SubmodelElementCollectionBuilder {
 	}
 
 
-	final public SubmodelElementCollectionBuilder _qualifiableQualifier_(java.util.ArrayList<? extends Constraint> _qualifiableQualifier_) {
+	final public SubmodelElementCollectionBuilder _qualifiableQualifier_(ArrayList<? extends IConstraint> _qualifiableQualifier_) {
 		this.submodelElementCollectionImpl._qualifiableQualifier = _qualifiableQualifier_;
 		return this;
 	}
 
 
-	final public SubmodelElementCollectionBuilder _hasDataSpecificationDataSpecification_(java.util.ArrayList<? extends Reference> _hasDataSpecificationDataSpecification_) {
+	final public SubmodelElementCollectionBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
 		this.submodelElementCollectionImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
 		return this;
 	}
@@ -96,12 +110,12 @@ public class SubmodelElementCollectionBuilder {
 	}
 
 
-	final public SubmodelElementCollectionBuilder _hasSemanticsSemanticId_(Reference _hasSemanticsSemanticId_) {
+	final public SubmodelElementCollectionBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
 		this.submodelElementCollectionImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
 		return this;
 	}
 
-	public final SubmodelElementCollection build() throws ConstraintViolationException {
+	final public ISubmodelElementCollection build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(submodelElementCollectionImpl);
 		return submodelElementCollectionImpl;
 	}

@@ -8,46 +8,58 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 	"Blob Certificate"
 
-	"Certificate provided as BLOB."@en */
+	"Certificate provided as BLOB."@en 
+*/
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:BlobCertificate")
-public class BlobCertificateImpl implements Serializable, BlobCertificate {
+public class BlobCertificateImpl implements Serializable, IBlobCertificate {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
-	@javax.validation.constraints.NotNull URI id;
+	protected URI id;
 
 	//List of all labels of this class
 	@JsonIgnore
-	java.util.List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Blob Certificate", ""));
+	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Blob Certificate", ""));
+
 	//List of all comments of this class
 	@JsonIgnore
-	java.util.List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Certificate provided as BLOB.", "en"));
+	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Certificate provided as BLOB.", "en"));
 
-	// all classes have a generic property array
-	@JsonIgnore
-	java.util.Map<String,Object> properties;
-
-	// instance fields as derived from information model
+	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
 	"Blob Certificate"
 
 	"Certificate as BLOB."@en
 	*/
-	@NotNull@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate", "blobCertificateBlobCertificate"})
-	 byte _blobCertificateBlobCertificate;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate", "blobCertificateBlobCertificate"})
+	protected byte _blobCertificateBlobCertificate;
 
 
 	/**
@@ -56,7 +68,7 @@ public class BlobCertificateImpl implements Serializable, BlobCertificate {
 	"Extensions contained in the certificate."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension", "blobCertificateContainedExtension"})
-	 java.util.ArrayList<? extends Reference> _blobCertificateContainedExtension;
+	protected ArrayList<? extends IReference> _blobCertificateContainedExtension;
 
 
 	/**
@@ -64,8 +76,8 @@ public class BlobCertificateImpl implements Serializable, BlobCertificate {
 
 	"Denotes whether this certificate is the certificated that fast added last."@en
 	*/
-	@NotNull@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate", "blobCertificateLastCertificate"})
-	 boolean _blobCertificateLastCertificate;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate", "blobCertificateLastCertificate"})
+	protected boolean _blobCertificateLastCertificate;
 
 
 	/**
@@ -73,12 +85,12 @@ public class BlobCertificateImpl implements Serializable, BlobCertificate {
 
 	"The access control administration policy point of the AAS."@en
 	*/
-	@NotNull@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint", "certificatePolicyAdministrationPoint"})
-	 PolicyAdministrationPoint _certificatePolicyAdministrationPoint;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint", "certificatePolicyAdministrationPoint"})
+	protected IPolicyAdministrationPoint _certificatePolicyAdministrationPoint;
 
 
 	// no manual construction
-	BlobCertificateImpl() {
+	protected BlobCertificateImpl() {
 		id = VocabUtil.getInstance().createRandomUrl("blobCertificate");
 	}
 
@@ -87,29 +99,12 @@ public class BlobCertificateImpl implements Serializable, BlobCertificate {
 		return id;
 	}
 
-	public String toRdf() {
-		return VocabUtil.getInstance().toRdf(this);
-	}
-
-	public java.util.List<TypedLiteral> getLabel() {
+	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
-	public java.util.List<TypedLiteral> getComment() {
+	public List<TypedLiteral> getComment() {
 		return this.comment;
-	}
-
-	// getter and setter for generic property map
-	@JsonAnyGetter
-	public java.util.Map<String,Object> getProperties() {
-		if (this.properties == null) return null;
-		Iterator<String> iter = this.properties.keySet().iterator();
-		java.util.Map<String,Object> resultset = new HashMap<String, Object>();
-		while (iter.hasNext()) {
-			String key = iter.next();
-			resultset.put(key,urifyObjects(this.properties.get(key)));
-		}
-		return resultset ;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -121,27 +116,23 @@ public class BlobCertificateImpl implements Serializable, BlobCertificate {
 			ArrayList<Object> result_array = new ArrayList<Object>();
 			((ArrayList) value).forEach(x -> result_array.add(urifyObjects(x)));
 			return result_array;
-		} else if (value instanceof java.util.Map) {
-			java.util.Map<String, Object> result_map = new HashMap<String, Object>();
-			((java.util.Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
+		} else if (value instanceof Map) {
+			Map<String, Object> result_map = new HashMap<String, Object>();
+			((Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
 			return result_map;
 		}
 		return value;
 	}
 
-	@JsonAnySetter
-	public void setProperty(String property, Object value) {
-	if (this.properties == null) this.properties = new java.util.HashMap<String,Object>();
-	if (property.startsWith("@")) {return ;};
-	this.properties.put(property, value) ;
-	}
-	// accessor method implementations as derived from information model
 
-	final public 
-	
-	@NotNull
+	// accessor method implementations as derived from the Asset Administration Shell ontology
+
+	/**
+	"Certificate as BLOB."@en
+	@return the byte of blobCertificateBlobCertificate
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate")
-	byte getBlobCertificateBlobCertificate() {
+	final public byte getBlobCertificateBlobCertificate() {
 		return _blobCertificateBlobCertificate;
 	}
 
@@ -149,23 +140,25 @@ public class BlobCertificateImpl implements Serializable, BlobCertificate {
 		this._blobCertificateBlobCertificate = _blobCertificateBlobCertificate_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Extensions contained in the certificate."@en
+	@return the List of blobCertificateContainedExtension
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension")
-	java.util.ArrayList<? extends Reference> getBlobCertificateContainedExtension() {
+	final public List<? extends IReference> getBlobCertificateContainedExtension() {
 		return _blobCertificateContainedExtension;
 	}
 
-	final public void setBlobCertificateContainedExtension (java.util.ArrayList<? extends Reference> _blobCertificateContainedExtension_) {
+	final public void setBlobCertificateContainedExtension (ArrayList<? extends IReference> _blobCertificateContainedExtension_) {
 		this._blobCertificateContainedExtension = _blobCertificateContainedExtension_;
 	}
 
-	final public 
-	
-	@NotNull
+	/**
+	"Denotes whether this certificate is the certificated that fast added last."@en
+	@return the boolean of blobCertificateLastCertificate
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate")
-	boolean getBlobCertificateLastCertificate() {
+	final public boolean getBlobCertificateLastCertificate() {
 		return _blobCertificateLastCertificate;
 	}
 
@@ -173,15 +166,15 @@ public class BlobCertificateImpl implements Serializable, BlobCertificate {
 		this._blobCertificateLastCertificate = _blobCertificateLastCertificate_;
 	}
 
-	final public 
-	
-	@NotNull
+	/**
+	"The access control administration policy point of the AAS."@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint")
-	PolicyAdministrationPoint getCertificatePolicyAdministrationPoint() {
+	final public IPolicyAdministrationPoint getCertificatePolicyAdministrationPoint() {
 		return _certificatePolicyAdministrationPoint;
 	}
 
-	final public void setCertificatePolicyAdministrationPoint (PolicyAdministrationPoint _certificatePolicyAdministrationPoint_) {
+	final public void setCertificatePolicyAdministrationPoint (IPolicyAdministrationPoint _certificatePolicyAdministrationPoint_) {
 		this._certificatePolicyAdministrationPoint = _certificatePolicyAdministrationPoint_;
 	}
 }

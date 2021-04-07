@@ -8,45 +8,66 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.databind.JsonNode;
-import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-	/** 
+/** 
 	"Permission Kind"
 
-	"Enumeration of the kind of permissions that is given to the assignment of a permission to a subject."@en */
-
+	"Enumeration of the kind of permissions that is given to the assignment of a permission to a subject."@en 
+*/
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 @JsonTypeName("aas:PermissionKind")
 public enum PermissionKind {
+
 	/** 
 	"allow"
 
-	"Allow the permission given to the subject."@en */
+	"Allow the permission given to the subject."@en
+	*/
 	ALLOW("https://admin-shell.io/aas/3/0/RC01/PermissionKind/ALLOW", Arrays.asList(new TypedLiteral("allow", "")), Arrays.asList(new TypedLiteral("Allow the permission given to the subject.", "en"))),
+
 	/** 
 	"deny"
 
-	"Explicitly deny the permission given to the subject."@en */
+	"Explicitly deny the permission given to the subject."@en
+	*/
 	DENY("https://admin-shell.io/aas/3/0/RC01/PermissionKind/DENY", Arrays.asList(new TypedLiteral("deny", "")), Arrays.asList(new TypedLiteral("Explicitly deny the permission given to the subject.", "en"))),
+
 	/** 
 	"not applicable"
 
-	"The permission is not applicable to the subject."@en */
+	"The permission is not applicable to the subject."@en
+	*/
 	NOT_APPLICABLE("https://admin-shell.io/aas/3/0/RC01/PermissionKind/NOT_APPLICABLE", Arrays.asList(new TypedLiteral("not applicable", "")), Arrays.asList(new TypedLiteral("The permission is not applicable to the subject.", "en"))),
+
 	/** 
 	"undefined"
 
-	"It is undefined whether the permission is allowed, not applicable or denied to the subject."@en */
+	"It is undefined whether the permission is allowed, not applicable or denied to the subject."@en
+	*/
 	UNDEFINED("https://admin-shell.io/aas/3/0/RC01/PermissionKind/UNDEFINED", Arrays.asList(new TypedLiteral("undefined", "")), Arrays.asList(new TypedLiteral("It is undefined whether the permission is allowed, not applicable or denied to the subject.", "en")));
 
 	private static final Map<String,PermissionKind> uriInstanceMapping;
@@ -57,18 +78,11 @@ public enum PermissionKind {
 	}
 
 	private URI id;
-	private java.util.List<TypedLiteral> label;
-	private java.util.List<TypedLiteral> comment;
+	private List<TypedLiteral> label;
+	private List<TypedLiteral> comment;
 
-	//TODO dummy method for generic properties, should be deleted in future versions
-	public java.util.Map<String,Object> getProperties() {
-		return null ;
-	}
-	public void setProperty(String property, Object value) {
-		//do nothing
-	}
 
-	PermissionKind(String id, java.util.List<TypedLiteral> label, java.util.List<TypedLiteral> comment) {
+	PermissionKind(String id, List<TypedLiteral> label, List<TypedLiteral> comment) {
 		try {
 			this.id = new URI(id);
 			this.label = label;
@@ -85,29 +99,21 @@ public enum PermissionKind {
 	}
 
 	@JsonIgnore
-	final public java.util.List<TypedLiteral> getLabel() {
+	final public List<TypedLiteral> getLabel() {
 		return label;
 	}
 
 	@JsonIgnore
-	final public java.util.List<TypedLiteral> getComment() {
+	final public List<TypedLiteral> getComment() {
 		return comment;
 	}
 
-	public String toRdf() {
-		return VocabUtil.getInstance().toRdf(this);
-	}
 
 	@JsonProperty("@id")
 	final public URI getSerializedId() {
 		return id;
 	}
 	
-
-	@JsonCreator
-	public static PermissionKind deserialize(JsonNode node) {
-		return uriInstanceMapping.get(node.has("@id") ? node.get("@id").textValue() : node.textValue());
-	}
 
 	@Override
 	public String toString() {

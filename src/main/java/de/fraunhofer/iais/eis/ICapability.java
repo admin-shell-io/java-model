@@ -1,0 +1,55 @@
+package de.fraunhofer.iais.eis;
+
+import de.fraunhofer.iais.eis.util.*;
+import de.fraunhofer.iais.eis.*;
+
+import javax.xml.datatype.XMLGregorianCalendar;
+import java.lang.String;
+import java.math.BigInteger;
+import java.net.URL;
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
+/**
+	"Capability"
+
+	"A capability is the implementation-independent description of the potential of an asset to achieve a certain effect in the physical or virtual world."@en
+
+	"Constraint AASd-058: If the semanticId of a Capability submodel element references a ConceptDescription then the ConceptDescription/category shall be CAPABILITY."@en
+*/
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes({
+@JsonSubTypes.Type(value = CapabilityImpl.class),})
+public interface ICapability extends ISubmodelElement {
+
+	// standard methods
+
+	@JsonProperty("@id")
+	public URI getId();
+	public List<TypedLiteral> getLabel();
+	public List<TypedLiteral> getComment();
+
+	// accessor methods as derived from the Asset Administration Shell ontology
+
+
+}

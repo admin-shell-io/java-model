@@ -8,38 +8,52 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 	"Qualifiable"
 
-	"Additional qualification of a qualifiable element."@en */
+	"Additional qualification of a qualifiable element."@en
+
+	"Constraint AASd-021: Every qualifiable can only have one qualifier with the same Qualifier/type."@en 
+*/
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Qualifiable")
-public class QualifiableImpl implements Serializable, Qualifiable {
+public class QualifiableImpl implements Serializable, IQualifiable {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
-	@javax.validation.constraints.NotNull URI id;
+	protected URI id;
 
 	//List of all labels of this class
 	@JsonIgnore
-	java.util.List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Qualifiable", ""));
+	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Qualifiable", ""));
+
 	//List of all comments of this class
 	@JsonIgnore
-	java.util.List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Additional qualification of a qualifiable element.", "en"));
+	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Additional qualification of a qualifiable element.", "en"));
 
-	// all classes have a generic property array
-	@JsonIgnore
-	java.util.Map<String,Object> properties;
-
-	// instance fields as derived from information model
+	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
 	"has qualifier"
@@ -47,11 +61,11 @@ public class QualifiableImpl implements Serializable, Qualifiable {
 	"Additional qualification of a qualifiable element."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier", "qualifiableQualifier"})
-	 java.util.ArrayList<? extends Constraint> _qualifiableQualifier;
+	protected ArrayList<? extends IConstraint> _qualifiableQualifier;
 
 
 	// no manual construction
-	QualifiableImpl() {
+	protected QualifiableImpl() {
 		id = VocabUtil.getInstance().createRandomUrl("qualifiable");
 	}
 
@@ -60,29 +74,12 @@ public class QualifiableImpl implements Serializable, Qualifiable {
 		return id;
 	}
 
-	public String toRdf() {
-		return VocabUtil.getInstance().toRdf(this);
-	}
-
-	public java.util.List<TypedLiteral> getLabel() {
+	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
-	public java.util.List<TypedLiteral> getComment() {
+	public List<TypedLiteral> getComment() {
 		return this.comment;
-	}
-
-	// getter and setter for generic property map
-	@JsonAnyGetter
-	public java.util.Map<String,Object> getProperties() {
-		if (this.properties == null) return null;
-		Iterator<String> iter = this.properties.keySet().iterator();
-		java.util.Map<String,Object> resultset = new HashMap<String, Object>();
-		while (iter.hasNext()) {
-			String key = iter.next();
-			resultset.put(key,urifyObjects(this.properties.get(key)));
-		}
-		return resultset ;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -94,31 +91,27 @@ public class QualifiableImpl implements Serializable, Qualifiable {
 			ArrayList<Object> result_array = new ArrayList<Object>();
 			((ArrayList) value).forEach(x -> result_array.add(urifyObjects(x)));
 			return result_array;
-		} else if (value instanceof java.util.Map) {
-			java.util.Map<String, Object> result_map = new HashMap<String, Object>();
-			((java.util.Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
+		} else if (value instanceof Map) {
+			Map<String, Object> result_map = new HashMap<String, Object>();
+			((Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
 			return result_map;
 		}
 		return value;
 	}
 
-	@JsonAnySetter
-	public void setProperty(String property, Object value) {
-	if (this.properties == null) this.properties = new java.util.HashMap<String,Object>();
-	if (property.startsWith("@")) {return ;};
-	this.properties.put(property, value) ;
-	}
-	// accessor method implementations as derived from information model
 
-	final public 
-	
-	
+	// accessor method implementations as derived from the Asset Administration Shell ontology
+
+	/**
+	"Additional qualification of a qualifiable element."@en
+	@return the List of qualifiableQualifier
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
-	java.util.ArrayList<? extends Constraint> getQualifiableQualifier() {
+	final public List<? extends IConstraint> getQualifiableQualifier() {
 		return _qualifiableQualifier;
 	}
 
-	final public void setQualifiableQualifier (java.util.ArrayList<? extends Constraint> _qualifiableQualifier_) {
+	final public void setQualifiableQualifier (ArrayList<? extends IConstraint> _qualifiableQualifier_) {
 		this._qualifiableQualifier = _qualifiableQualifier_;
 	}
 }

@@ -8,13 +8,27 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class RangeBuilder {
 
@@ -24,18 +38,18 @@ public class RangeBuilder {
 		rangeImpl = new RangeImpl();
 	}
 
-	public RangeBuilder(@javax.validation.constraints.NotNull URI id) {
+	public RangeBuilder(URI id) {
 		this();
 		rangeImpl.id = id;
 	}
 
-	final public RangeBuilder _rangeMax_(java.util.ArrayList<? extends de.fraunhofer.iais.eis.util.TypedLiteral> _rangeMax_) {
+	final public RangeBuilder _rangeMax_(ArrayList<? extends TypedLiteral> _rangeMax_) {
 		this.rangeImpl._rangeMax = _rangeMax_;
 		return this;
 	}
 
 
-	final public RangeBuilder _rangeMin_(java.util.ArrayList<? extends de.fraunhofer.iais.eis.util.TypedLiteral> _rangeMin_) {
+	final public RangeBuilder _rangeMin_(ArrayList<? extends TypedLiteral> _rangeMin_) {
 		this.rangeImpl._rangeMin = _rangeMin_;
 		return this;
 	}
@@ -43,19 +57,19 @@ public class RangeBuilder {
 
 
 
-	final public RangeBuilder _referableReferableCategory_(java.util.ArrayList<? extends String> _referableReferableCategory_) {
+	final public RangeBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
 		this.rangeImpl._referableReferableCategory = _referableReferableCategory_;
 		return this;
 	}
 
 
-	final public RangeBuilder _referableDescription_(java.util.ArrayList<? extends de.fraunhofer.iais.eis.util.TypedLiteral> _referableDescription_) {
+	final public RangeBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
 		this.rangeImpl._referableDescription = _referableDescription_;
 		return this;
 	}
 
 
-	final public RangeBuilder _referableDisplayName_(de.fraunhofer.iais.eis.util.TypedLiteral _referableDisplayName_) {
+	final public RangeBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
 		this.rangeImpl._referableDisplayName = _referableDisplayName_;
 		return this;
 	}
@@ -73,13 +87,13 @@ public class RangeBuilder {
 	}
 
 
-	final public RangeBuilder _qualifiableQualifier_(java.util.ArrayList<? extends Constraint> _qualifiableQualifier_) {
+	final public RangeBuilder _qualifiableQualifier_(ArrayList<? extends IConstraint> _qualifiableQualifier_) {
 		this.rangeImpl._qualifiableQualifier = _qualifiableQualifier_;
 		return this;
 	}
 
 
-	final public RangeBuilder _hasDataSpecificationDataSpecification_(java.util.ArrayList<? extends Reference> _hasDataSpecificationDataSpecification_) {
+	final public RangeBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
 		this.rangeImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
 		return this;
 	}
@@ -91,12 +105,12 @@ public class RangeBuilder {
 	}
 
 
-	final public RangeBuilder _hasSemanticsSemanticId_(Reference _hasSemanticsSemanticId_) {
+	final public RangeBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
 		this.rangeImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
 		return this;
 	}
 
-	public final Range build() throws ConstraintViolationException {
+	final public IRange build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(rangeImpl);
 		return rangeImpl;
 	}

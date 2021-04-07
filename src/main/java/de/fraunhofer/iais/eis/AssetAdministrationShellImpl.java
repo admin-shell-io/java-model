@@ -8,46 +8,58 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 	"Asset Administration Shell"
 
-	"Describes the Administration Shell for Assets, Products, Components, e.g. Machines"@en */
+	"Describes the Administration Shell for Assets, Products, Components, e.g. Machines"@en 
+*/
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:AssetAdministrationShell")
-public class AssetAdministrationShellImpl implements Serializable, AssetAdministrationShell {
+public class AssetAdministrationShellImpl implements Serializable, IAssetAdministrationShell {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
-	@javax.validation.constraints.NotNull URI id;
+	protected URI id;
 
 	//List of all labels of this class
 	@JsonIgnore
-	java.util.List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Asset Administration Shell", ""));
+	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Asset Administration Shell", ""));
+
 	//List of all comments of this class
 	@JsonIgnore
-	java.util.List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Describes the Administration Shell for Assets, Products, Components, e.g. Machines", "en"));
+	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Describes the Administration Shell for Assets, Products, Components, e.g. Machines", "en"));
 
-	// all classes have a generic property array
-	@JsonIgnore
-	java.util.Map<String,Object> properties;
-
-	// instance fields as derived from information model
+	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
 	"has assetInformation"
 
 	"Meta information about the asset the AAS is representing."@en
 	*/
-	@NotNull@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation", "assetAdministrationShellAssetInformation"})
-	 AssetInformation _assetAdministrationShellAssetInformation;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation", "assetAdministrationShellAssetInformation"})
+	protected IAssetInformation _assetAdministrationShellAssetInformation;
 
 
 	/**
@@ -56,7 +68,7 @@ public class AssetAdministrationShellImpl implements Serializable, AssetAdminist
 	"This relation connects instances of AAS with their respective types. Refer to Asset Kind for further information of instance and type kinds."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom", "assetAdministrationShellDerivedFrom"})
-	 Reference _assetAdministrationShellDerivedFrom;
+	protected IReference _assetAdministrationShellDerivedFrom;
 
 
 	/**
@@ -65,7 +77,7 @@ public class AssetAdministrationShellImpl implements Serializable, AssetAdminist
 	"Definition of the security relevant aspects of the AAS."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security", "assetAdministrationShellSecurity"})
-	 Security _assetAdministrationShellSecurity;
+	protected ISecurity _assetAdministrationShellSecurity;
 
 
 	/**
@@ -74,7 +86,7 @@ public class AssetAdministrationShellImpl implements Serializable, AssetAdminist
 	"Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset"@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel", "assetAdministrationShellSubmodel"})
-	 java.util.ArrayList<? extends Submodel> _assetAdministrationShellSubmodel;
+	protected ArrayList<? extends ISubmodel> _assetAdministrationShellSubmodel;
 
 
 	/**
@@ -83,7 +95,7 @@ public class AssetAdministrationShellImpl implements Serializable, AssetAdminist
 	"Points to the differents views associated to the Administration Shell via the Submodels."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view", "assetAdministrationShellView"})
-	 java.util.ArrayList<? extends View> _assetAdministrationShellView;
+	protected ArrayList<? extends IView> _assetAdministrationShellView;
 
 
 	/**
@@ -92,16 +104,18 @@ public class AssetAdministrationShellImpl implements Serializable, AssetAdminist
 	"Global reference to the data specification template used by the element."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "hasDataSpecificationDataSpecification"})
-	 java.util.ArrayList<? extends Reference> _hasDataSpecificationDataSpecification;
+	protected ArrayList<? extends IReference> _hasDataSpecificationDataSpecification;
 
 
 	/**
 	"has administration"
 
 	"Administrative information of an identifiable element."@en
+
+	"Some of the administrative information like the version number might need to be part of the identification."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifiable/administration", "identifiableAdministration"})
-	 AdministrativeInformation _identifiableAdministration;
+	protected IAdministrativeInformation _identifiableAdministration;
 
 
 	/**
@@ -109,8 +123,8 @@ public class AssetAdministrationShellImpl implements Serializable, AssetAdminist
 
 	"The globally unique identification of the element."@en
 	*/
-	@NotNull@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifiable/identification", "identifiableIdentification"})
-	 Identifier _identifiableIdentification;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifiable/identification", "identifiableIdentification"})
+	protected IIdentifier _identifiableIdentification;
 
 
 	/**
@@ -119,7 +133,7 @@ public class AssetAdministrationShellImpl implements Serializable, AssetAdminist
 	"Description or comments on the element. The description can be provided in several languages."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "referableDescription"})
-	 java.util.ArrayList<? extends de.fraunhofer.iais.eis.util.TypedLiteral> _referableDescription;
+	protected ArrayList<? extends TypedLiteral> _referableDescription;
 
 
 	/**
@@ -128,25 +142,39 @@ public class AssetAdministrationShellImpl implements Serializable, AssetAdminist
 	"Display name. Can be provided in several languages."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "referableDisplayName"})
-	 de.fraunhofer.iais.eis.util.TypedLiteral _referableDisplayName;
+	protected TypedLiteral _referableDisplayName;
 
 
 	/**
 	"has short id"
 
 	"Identifying string of the element within its name space."@en
+
+	"Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
+
+	"Constraint AASd-003: idShort shall be matched case-insensitive."@en
+
+	"Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
+
+	"Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
+
+	"Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
 	*/
-	@NotNull@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "referableIdShort"})
-	 String _referableIdShort;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "referableIdShort"})
+	protected String _referableIdShort;
 
 
 	/**
 	"has parent"
 
 	"Reference to the next referable parent element of the element."@en
+
+	"Constraint AASd-004: Add parent in case of non-identifiable elements."@en
+
+	"This element is used to ease navigation in the model and thus it enables more performant"@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/parent", "referableParent"})
-	 URI _referableParent;
+	protected URI _referableParent;
 
 
 	/**
@@ -155,11 +183,11 @@ public class AssetAdministrationShellImpl implements Serializable, AssetAdminist
 	"The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableReferableCategory"})
-	 java.util.ArrayList<? extends String> _referableReferableCategory;
+	protected ArrayList<? extends String> _referableReferableCategory;
 
 
 	// no manual construction
-	AssetAdministrationShellImpl() {
+	protected AssetAdministrationShellImpl() {
 		id = VocabUtil.getInstance().createRandomUrl("assetAdministrationShell");
 	}
 
@@ -168,29 +196,12 @@ public class AssetAdministrationShellImpl implements Serializable, AssetAdminist
 		return id;
 	}
 
-	public String toRdf() {
-		return VocabUtil.getInstance().toRdf(this);
-	}
-
-	public java.util.List<TypedLiteral> getLabel() {
+	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
-	public java.util.List<TypedLiteral> getComment() {
+	public List<TypedLiteral> getComment() {
 		return this.comment;
-	}
-
-	// getter and setter for generic property map
-	@JsonAnyGetter
-	public java.util.Map<String,Object> getProperties() {
-		if (this.properties == null) return null;
-		Iterator<String> iter = this.properties.keySet().iterator();
-		java.util.Map<String,Object> resultset = new HashMap<String, Object>();
-		while (iter.hasNext()) {
-			String key = iter.next();
-			resultset.put(key,urifyObjects(this.properties.get(key)));
-		}
-		return resultset ;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -202,159 +213,171 @@ public class AssetAdministrationShellImpl implements Serializable, AssetAdminist
 			ArrayList<Object> result_array = new ArrayList<Object>();
 			((ArrayList) value).forEach(x -> result_array.add(urifyObjects(x)));
 			return result_array;
-		} else if (value instanceof java.util.Map) {
-			java.util.Map<String, Object> result_map = new HashMap<String, Object>();
-			((java.util.Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
+		} else if (value instanceof Map) {
+			Map<String, Object> result_map = new HashMap<String, Object>();
+			((Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
 			return result_map;
 		}
 		return value;
 	}
 
-	@JsonAnySetter
-	public void setProperty(String property, Object value) {
-	if (this.properties == null) this.properties = new java.util.HashMap<String,Object>();
-	if (property.startsWith("@")) {return ;};
-	this.properties.put(property, value) ;
-	}
-	// accessor method implementations as derived from information model
 
-	final public 
-	
-	@NotNull
+	// accessor method implementations as derived from the Asset Administration Shell ontology
+
+	/**
+	"Meta information about the asset the AAS is representing."@en
+	@return the IAssetInformation of assetAdministrationShellAssetInformation
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation")
-	AssetInformation getAssetAdministrationShellAssetInformation() {
+	final public IAssetInformation getAssetAdministrationShellAssetInformation() {
 		return _assetAdministrationShellAssetInformation;
 	}
 
-	final public void setAssetAdministrationShellAssetInformation (AssetInformation _assetAdministrationShellAssetInformation_) {
+	final public void setAssetAdministrationShellAssetInformation (IAssetInformation _assetAdministrationShellAssetInformation_) {
 		this._assetAdministrationShellAssetInformation = _assetAdministrationShellAssetInformation_;
 	}
 
-	final public 
-	
-	
+	/**
+	"This relation connects instances of AAS with their respective types. Refer to Asset Kind for further information of instance and type kinds."@en
+	@return the IReference of assetAdministrationShellDerivedFrom
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom")
-	Reference getAssetAdministrationShellDerivedFrom() {
+	final public IReference getAssetAdministrationShellDerivedFrom() {
 		return _assetAdministrationShellDerivedFrom;
 	}
 
-	final public void setAssetAdministrationShellDerivedFrom (Reference _assetAdministrationShellDerivedFrom_) {
+	final public void setAssetAdministrationShellDerivedFrom (IReference _assetAdministrationShellDerivedFrom_) {
 		this._assetAdministrationShellDerivedFrom = _assetAdministrationShellDerivedFrom_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Definition of the security relevant aspects of the AAS."@en
+	@return the ISecurity of assetAdministrationShellSecurity
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security")
-	Security getAssetAdministrationShellSecurity() {
+	final public ISecurity getAssetAdministrationShellSecurity() {
 		return _assetAdministrationShellSecurity;
 	}
 
-	final public void setAssetAdministrationShellSecurity (Security _assetAdministrationShellSecurity_) {
+	final public void setAssetAdministrationShellSecurity (ISecurity _assetAdministrationShellSecurity_) {
 		this._assetAdministrationShellSecurity = _assetAdministrationShellSecurity_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset"@en
+	@return the List of assetAdministrationShellSubmodel
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
-	java.util.ArrayList<? extends Submodel> getAssetAdministrationShellSubmodel() {
+	final public List<? extends ISubmodel> getAssetAdministrationShellSubmodel() {
 		return _assetAdministrationShellSubmodel;
 	}
 
-	final public void setAssetAdministrationShellSubmodel (java.util.ArrayList<? extends Submodel> _assetAdministrationShellSubmodel_) {
+	final public void setAssetAdministrationShellSubmodel (ArrayList<? extends ISubmodel> _assetAdministrationShellSubmodel_) {
 		this._assetAdministrationShellSubmodel = _assetAdministrationShellSubmodel_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Points to the differents views associated to the Administration Shell via the Submodels."@en
+	@return the List of assetAdministrationShellView
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view")
-	java.util.ArrayList<? extends View> getAssetAdministrationShellView() {
+	final public List<? extends IView> getAssetAdministrationShellView() {
 		return _assetAdministrationShellView;
 	}
 
-	final public void setAssetAdministrationShellView (java.util.ArrayList<? extends View> _assetAdministrationShellView_) {
+	final public void setAssetAdministrationShellView (ArrayList<? extends IView> _assetAdministrationShellView_) {
 		this._assetAdministrationShellView = _assetAdministrationShellView_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Global reference to the data specification template used by the element."@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
-	java.util.ArrayList<? extends Reference> getHasDataSpecificationDataSpecification() {
+	final public List<? extends IReference> getHasDataSpecificationDataSpecification() {
 		return _hasDataSpecificationDataSpecification;
 	}
 
-	final public void setHasDataSpecificationDataSpecification (java.util.ArrayList<? extends Reference> _hasDataSpecificationDataSpecification_) {
+	final public void setHasDataSpecificationDataSpecification (ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
 		this._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Administrative information of an identifiable element."@en
+
+	"Some of the administrative information like the version number might need to be part of the identification."@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
-	AdministrativeInformation getIdentifiableAdministration() {
+	final public IAdministrativeInformation getIdentifiableAdministration() {
 		return _identifiableAdministration;
 	}
 
-	final public void setIdentifiableAdministration (AdministrativeInformation _identifiableAdministration_) {
+	final public void setIdentifiableAdministration (IAdministrativeInformation _identifiableAdministration_) {
 		this._identifiableAdministration = _identifiableAdministration_;
 	}
 
-	final public 
-	
-	@NotNull
+	/**
+	"The globally unique identification of the element."@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
-	Identifier getIdentifiableIdentification() {
+	final public IIdentifier getIdentifiableIdentification() {
 		return _identifiableIdentification;
 	}
 
-	final public void setIdentifiableIdentification (Identifier _identifiableIdentification_) {
+	final public void setIdentifiableIdentification (IIdentifier _identifiableIdentification_) {
 		this._identifiableIdentification = _identifiableIdentification_;
 	}
 
-	final public 
-	
-	
+	/**
+	"The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	java.util.ArrayList<? extends String> getReferableReferableCategory() {
+	final public List<? extends String> getReferableReferableCategory() {
 		return _referableReferableCategory;
 	}
 
-	final public void setReferableReferableCategory (java.util.ArrayList<? extends String> _referableReferableCategory_) {
+	final public void setReferableReferableCategory (ArrayList<? extends String> _referableReferableCategory_) {
 		this._referableReferableCategory = _referableReferableCategory_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Description or comments on the element. The description can be provided in several languages."@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	java.util.ArrayList<? extends de.fraunhofer.iais.eis.util.TypedLiteral> getReferableDescription() {
+	final public List<? extends TypedLiteral> getReferableDescription() {
 		return _referableDescription;
 	}
 
-	final public void setReferableDescription (java.util.ArrayList<? extends de.fraunhofer.iais.eis.util.TypedLiteral> _referableDescription_) {
+	final public void setReferableDescription (ArrayList<? extends TypedLiteral> _referableDescription_) {
 		this._referableDescription = _referableDescription_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Display name. Can be provided in several languages."@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-	de.fraunhofer.iais.eis.util.TypedLiteral getReferableDisplayName() {
+	final public TypedLiteral getReferableDisplayName() {
 		return _referableDisplayName;
 	}
 
-	final public void setReferableDisplayName (de.fraunhofer.iais.eis.util.TypedLiteral _referableDisplayName_) {
+	final public void setReferableDisplayName (TypedLiteral _referableDisplayName_) {
 		this._referableDisplayName = _referableDisplayName_;
 	}
 
-	final public 
-	
-	@NotNull
+	/**
+	"Identifying string of the element within its name space."@en
+
+	"Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
+
+	"Constraint AASd-003: idShort shall be matched case-insensitive."@en
+
+	"Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
+
+	"Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
+
+	"Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-	String getReferableIdShort() {
+	final public String getReferableIdShort() {
 		return _referableIdShort;
 	}
 
@@ -362,11 +385,15 @@ public class AssetAdministrationShellImpl implements Serializable, AssetAdminist
 		this._referableIdShort = _referableIdShort_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Reference to the next referable parent element of the element."@en
+
+	"Constraint AASd-004: Add parent in case of non-identifiable elements."@en
+
+	"This element is used to ease navigation in the model and thus it enables more performant"@en
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
-	URI getReferableParent() {
+	final public URI getReferableParent() {
 		return _referableParent;
 	}
 

@@ -8,13 +8,27 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class PolicyInformationPointsBuilder {
 
@@ -24,7 +38,7 @@ public class PolicyInformationPointsBuilder {
 		policyInformationPointsImpl = new PolicyInformationPointsImpl();
 	}
 
-	public PolicyInformationPointsBuilder(@javax.validation.constraints.NotNull URI id) {
+	public PolicyInformationPointsBuilder(URI id) {
 		this();
 		policyInformationPointsImpl.id = id;
 	}
@@ -35,12 +49,12 @@ public class PolicyInformationPointsBuilder {
 	}
 
 
-	final public PolicyInformationPointsBuilder _policyInformationPointsInternalInformationPoint_(java.util.ArrayList<? extends Submodel> _policyInformationPointsInternalInformationPoint_) {
+	final public PolicyInformationPointsBuilder _policyInformationPointsInternalInformationPoint_(ArrayList<? extends ISubmodel> _policyInformationPointsInternalInformationPoint_) {
 		this.policyInformationPointsImpl._policyInformationPointsInternalInformationPoint = _policyInformationPointsInternalInformationPoint_;
 		return this;
 	}
 
-	public final PolicyInformationPoints build() throws ConstraintViolationException {
+	final public IPolicyInformationPoints build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(policyInformationPointsImpl);
 		return policyInformationPointsImpl;
 	}

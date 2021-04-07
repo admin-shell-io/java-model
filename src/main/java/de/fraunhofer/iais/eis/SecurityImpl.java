@@ -8,46 +8,58 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 	"Security"
 
-	"Container for security relevant information of the AAS."@en */
+	"Container for security relevant information of the AAS."@en 
+*/
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Security")
-public class SecurityImpl implements Serializable, Security {
+public class SecurityImpl implements Serializable, ISecurity {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
-	@javax.validation.constraints.NotNull URI id;
+	protected URI id;
 
 	//List of all labels of this class
 	@JsonIgnore
-	java.util.List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Security", ""));
+	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Security", ""));
+
 	//List of all comments of this class
 	@JsonIgnore
-	java.util.List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Container for security relevant information of the AAS.", "en"));
+	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Container for security relevant information of the AAS.", "en"));
 
-	// all classes have a generic property array
-	@JsonIgnore
-	java.util.Map<String,Object> properties;
-
-	// instance fields as derived from information model
+	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
 	"has access control policy points"
 
 	"Access control policy points of the AAS."@en
 	*/
-	@NotNull@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints", "securityAccessControlPolicyPoints"})
-	 PolicyAdministrationPoint _securityAccessControlPolicyPoints;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints", "securityAccessControlPolicyPoints"})
+	protected IPolicyAdministrationPoint _securityAccessControlPolicyPoints;
 
 
 	/**
@@ -56,7 +68,7 @@ public class SecurityImpl implements Serializable, Security {
 	"Certificates of the AAS."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Security/certificate", "securityCertificate"})
-	 java.util.ArrayList<? extends Certificate> _securityCertificate;
+	protected ArrayList<? extends ICertificate> _securityCertificate;
 
 
 	/**
@@ -65,11 +77,11 @@ public class SecurityImpl implements Serializable, Security {
 	"Certificate extensions as required by the AAS."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension", "securityRequiredCertificateExtension"})
-	 java.util.ArrayList<? extends Reference> _securityRequiredCertificateExtension;
+	protected ArrayList<? extends IReference> _securityRequiredCertificateExtension;
 
 
 	// no manual construction
-	SecurityImpl() {
+	protected SecurityImpl() {
 		id = VocabUtil.getInstance().createRandomUrl("security");
 	}
 
@@ -78,29 +90,12 @@ public class SecurityImpl implements Serializable, Security {
 		return id;
 	}
 
-	public String toRdf() {
-		return VocabUtil.getInstance().toRdf(this);
-	}
-
-	public java.util.List<TypedLiteral> getLabel() {
+	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
-	public java.util.List<TypedLiteral> getComment() {
+	public List<TypedLiteral> getComment() {
 		return this.comment;
-	}
-
-	// getter and setter for generic property map
-	@JsonAnyGetter
-	public java.util.Map<String,Object> getProperties() {
-		if (this.properties == null) return null;
-		Iterator<String> iter = this.properties.keySet().iterator();
-		java.util.Map<String,Object> resultset = new HashMap<String, Object>();
-		while (iter.hasNext()) {
-			String key = iter.next();
-			resultset.put(key,urifyObjects(this.properties.get(key)));
-		}
-		return resultset ;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -112,55 +107,53 @@ public class SecurityImpl implements Serializable, Security {
 			ArrayList<Object> result_array = new ArrayList<Object>();
 			((ArrayList) value).forEach(x -> result_array.add(urifyObjects(x)));
 			return result_array;
-		} else if (value instanceof java.util.Map) {
-			java.util.Map<String, Object> result_map = new HashMap<String, Object>();
-			((java.util.Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
+		} else if (value instanceof Map) {
+			Map<String, Object> result_map = new HashMap<String, Object>();
+			((Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
 			return result_map;
 		}
 		return value;
 	}
 
-	@JsonAnySetter
-	public void setProperty(String property, Object value) {
-	if (this.properties == null) this.properties = new java.util.HashMap<String,Object>();
-	if (property.startsWith("@")) {return ;};
-	this.properties.put(property, value) ;
-	}
-	// accessor method implementations as derived from information model
 
-	final public 
-	
-	@NotNull
+	// accessor method implementations as derived from the Asset Administration Shell ontology
+
+	/**
+	"Access control policy points of the AAS."@en
+	@return the IPolicyAdministrationPoint of securityAccessControlPolicyPoints
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
-	PolicyAdministrationPoint getSecurityAccessControlPolicyPoints() {
+	final public IPolicyAdministrationPoint getSecurityAccessControlPolicyPoints() {
 		return _securityAccessControlPolicyPoints;
 	}
 
-	final public void setSecurityAccessControlPolicyPoints (PolicyAdministrationPoint _securityAccessControlPolicyPoints_) {
+	final public void setSecurityAccessControlPolicyPoints (IPolicyAdministrationPoint _securityAccessControlPolicyPoints_) {
 		this._securityAccessControlPolicyPoints = _securityAccessControlPolicyPoints_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Certificates of the AAS."@en
+	@return the List of securityCertificate
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/certificate")
-	java.util.ArrayList<? extends Certificate> getSecurityCertificate() {
+	final public List<? extends ICertificate> getSecurityCertificate() {
 		return _securityCertificate;
 	}
 
-	final public void setSecurityCertificate (java.util.ArrayList<? extends Certificate> _securityCertificate_) {
+	final public void setSecurityCertificate (ArrayList<? extends ICertificate> _securityCertificate_) {
 		this._securityCertificate = _securityCertificate_;
 	}
 
-	final public 
-	
-	
+	/**
+	"Certificate extensions as required by the AAS."@en
+	@return the List of securityRequiredCertificateExtension
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension")
-	java.util.ArrayList<? extends Reference> getSecurityRequiredCertificateExtension() {
+	final public List<? extends IReference> getSecurityRequiredCertificateExtension() {
 		return _securityRequiredCertificateExtension;
 	}
 
-	final public void setSecurityRequiredCertificateExtension (java.util.ArrayList<? extends Reference> _securityRequiredCertificateExtension_) {
+	final public void setSecurityRequiredCertificateExtension (ArrayList<? extends IReference> _securityRequiredCertificateExtension_) {
 		this._securityRequiredCertificateExtension = _securityRequiredCertificateExtension_;
 	}
 }

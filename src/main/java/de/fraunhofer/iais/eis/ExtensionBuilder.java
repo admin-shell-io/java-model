@@ -8,13 +8,27 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class ExtensionBuilder {
 
@@ -24,7 +38,7 @@ public class ExtensionBuilder {
 		extensionImpl = new ExtensionImpl();
 	}
 
-	public ExtensionBuilder(@javax.validation.constraints.NotNull URI id) {
+	public ExtensionBuilder(URI id) {
 		this();
 		extensionImpl.id = id;
 	}
@@ -47,18 +61,18 @@ public class ExtensionBuilder {
 	}
 
 
-	final public ExtensionBuilder _extensionRefersTo_(Reference _extensionRefersTo_) {
+	final public ExtensionBuilder _extensionRefersTo_(IReference _extensionRefersTo_) {
 		this.extensionImpl._extensionRefersTo = _extensionRefersTo_;
 		return this;
 	}
 
 
-	final public ExtensionBuilder _hasSemanticsSemanticId_(Reference _hasSemanticsSemanticId_) {
+	final public ExtensionBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
 		this.extensionImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
 		return this;
 	}
 
-	public final Extension build() throws ConstraintViolationException {
+	final public IExtension build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(extensionImpl);
 		return extensionImpl;
 	}

@@ -8,13 +8,27 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.*;
-import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class QualifierBuilder {
 
@@ -24,7 +38,7 @@ public class QualifierBuilder {
 		qualifierImpl = new QualifierImpl();
 	}
 
-	public QualifierBuilder(@javax.validation.constraints.NotNull URI id) {
+	public QualifierBuilder(URI id) {
 		this();
 		qualifierImpl.id = id;
 	}
@@ -35,25 +49,25 @@ public class QualifierBuilder {
 	}
 
 
-	final public QualifierBuilder _qualifierValue_(de.fraunhofer.iais.eis.util.TypedLiteral _qualifierValue_) {
+	final public QualifierBuilder _qualifierValue_(TypedLiteral _qualifierValue_) {
 		this.qualifierImpl._qualifierValue = _qualifierValue_;
 		return this;
 	}
 
 
-	final public QualifierBuilder _qualifierValueId_(Reference _qualifierValueId_) {
+	final public QualifierBuilder _qualifierValueId_(IReference _qualifierValueId_) {
 		this.qualifierImpl._qualifierValueId = _qualifierValueId_;
 		return this;
 	}
 
 
 
-	final public QualifierBuilder _hasSemanticsSemanticId_(Reference _hasSemanticsSemanticId_) {
+	final public QualifierBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
 		this.qualifierImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
 		return this;
 	}
 
-	public final Qualifier build() throws ConstraintViolationException {
+	final public IQualifier build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(qualifierImpl);
 		return qualifierImpl;
 	}
