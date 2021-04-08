@@ -31,9 +31,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Reference"
-
-	"Reference to either a model element of the same or another AAs or to an external entity. A reference is an ordered list of keys, each key referencing an element. The complete list of keys may for example be concatenated to a path that then gives unique access to an element or entity."@en 
+* "Reference"
+* "Reference to either a model element of the same or another AAs or to an external entity. A reference is an ordered list of keys, each key referencing an element. The complete list of keys may for example be concatenated to a path that then gives unique access to an element or entity."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Reference")
@@ -54,9 +53,8 @@ public class ReferenceImpl implements Serializable, IReference {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has key"
-
-	"Unique reference in its name space."@en
+	* "has key"
+	* "Unique reference in its name space."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Reference/key", "referenceKey"})
 	protected ArrayList<? extends IKey> _referenceKey;
@@ -67,15 +65,29 @@ public class ReferenceImpl implements Serializable, IReference {
 		id = VocabUtil.getInstance().createRandomUrl("reference");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -100,9 +112,11 @@ public class ReferenceImpl implements Serializable, IReference {
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
 	/**
-	"Unique reference in its name space."@en
-	@return the List of referenceKey
+	* "Unique reference in its name space."@en
+	* @return Returns the List of IKey for the property referenceKey.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Reference/key
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Reference/key")
 	final public List<? extends IKey> getReferenceKey() {

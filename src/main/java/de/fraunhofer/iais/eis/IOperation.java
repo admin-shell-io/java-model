@@ -31,45 +31,64 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Operation"
-
-	"An operation is a submodel element with input and output variables."@en
-
-	"Constraint AASd-060: The semanticId of a Operation submodel element shall only reference a ConceptDescription with the category FUNCTION."@en
+* "Operation"
+* "An operation is a submodel element with input and output variables."@en
+* "Constraint AASd-060: The semanticId of a Operation submodel element shall only reference a ConceptDescription with the category FUNCTION."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = OperationImpl.class),})
+	@JsonSubTypes.Type(value = OperationImpl.class)
+})
 public interface IOperation extends ISubmodelElement {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"Input parameter of the operation."@en
-	@return the List of operationInputVariable
+	* "Input parameter of the operation."@en
+	* @return Returns the List of IOperationVariable for the property operationInputVariable.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Operation/inputVariable
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Operation/inputVariable")
 	public List<? extends IOperationVariable> getOperationInputVariable();
 
 	/**
-	"Parameter that is input and output of the operation."@en
-	@return the List of operationInoutputVariable
+	* "Parameter that is input and output of the operation."@en
+	* @return Returns the List of IOperationVariable for the property operationInoutputVariable.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable")
 	public List<? extends IOperationVariable> getOperationInoutputVariable();
 
 	/**
-	"Output parameter of the operation."@en
-	@return the List of operationOutputVariable
+	* "Output parameter of the operation."@en
+	* @return Returns the List of IOperationVariable for the property operationOutputVariable.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Operation/outputVariable
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Operation/outputVariable")
 	public List<? extends IOperationVariable> getOperationOutputVariable();
+
 }

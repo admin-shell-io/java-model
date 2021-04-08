@@ -31,29 +31,47 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Object Attributes"
-
-	"A set of data elements that describe object attributes. These attributes need to refer to a data element within an existing submodel."@en
+* "Object Attributes"
+* "A set of data elements that describe object attributes. These attributes need to refer to a data element within an existing submodel."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = ObjectAttributesImpl.class),})
+	@JsonSubTypes.Type(value = ObjectAttributesImpl.class)
+})
 public interface IObjectAttributes {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"A data elements that further classifies an object."@en
-	@return the List of objectAttributesObjectAttribute
+	* "A data elements that further classifies an object."@en
+	* @return Returns the List of IDataElement for the property objectAttributesObjectAttribute.
+	* More information under https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
 	public List<? extends IDataElement> getObjectAttributesObjectAttribute();
+
 }

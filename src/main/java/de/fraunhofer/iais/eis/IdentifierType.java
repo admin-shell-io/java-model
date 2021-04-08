@@ -34,32 +34,28 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /** 
-	"Identifier Type"
-
-	"Enumeration of different types of Identifiers for global identification"@en 
+* "Identifier Type"
+* "Enumeration of different types of Identifiers for global identification"@en 
 */
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 @JsonTypeName("aas:IdentifierType")
 public enum IdentifierType {
 
 	/** 
-	"Custom"
-
-	"Custom identifiers like GUIDs (globally unique Identifiers)"@en
+	* "Custom"
+	* "Custom identifiers like GUIDs (globally unique Identifiers)"@en
 	*/
 	CUSTOM("https://admin-shell.io/aas/3/0/RC01/IdentifierType/CUSTOM", Arrays.asList(new TypedLiteral("Custom", "")), Arrays.asList(new TypedLiteral("Custom identifiers like GUIDs (globally unique Identifiers)", "en"))),
 
 	/** 
-	"IRDI"
-
-	"IRDI according to ISO29002-5 as an Identifier scheme for properties and classifications."@en
+	* "IRDI"
+	* "IRDI according to ISO29002-5 as an Identifier scheme for properties and classifications."@en
 	*/
 	IRDI("https://admin-shell.io/aas/3/0/RC01/IdentifierType/IRDI", Arrays.asList(new TypedLiteral("IRDI", "")), Arrays.asList(new TypedLiteral("IRDI according to ISO29002-5 as an Identifier scheme for properties and classifications.", "en"))),
 
 	/** 
-	"IRI"
-
-	"IRI. Should only be used if unicode symbols are used that are not allowed in URI."@en
+	* "IRI"
+	* "IRI. Should only be used if unicode symbols are used that are not allowed in URI."@en
 	*/
 	IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierType/IRI", Arrays.asList(new TypedLiteral("IRI", "")), Arrays.asList(new TypedLiteral("IRI. Should only be used if unicode symbols are used that are not allowed in URI.", "en")));
 
@@ -85,17 +81,31 @@ public enum IdentifierType {
 			throw new IllegalArgumentException(e);
 		}
 	}
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 
 	@JsonIgnore
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	@JsonIgnore
 	final public List<TypedLiteral> getLabel() {
 		return label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	@JsonIgnore
 	final public List<TypedLiteral> getComment() {
 		return comment;

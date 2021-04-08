@@ -43,28 +43,53 @@ public class IdentifierKeyValuePairBuilder {
 		identifierKeyValuePairImpl.id = id;
 	}
 
+	/**
+	* This function allows setting a value for identifierKeyValuePairKey
+	* @param _identifierKeyValuePairKey_ desired value to be set
+	* @return Builder object with new value for identifierKeyValuePairKey
+	*/
 	final public IdentifierKeyValuePairBuilder _identifierKeyValuePairKey_(String _identifierKeyValuePairKey_) {
 		this.identifierKeyValuePairImpl._identifierKeyValuePairKey = _identifierKeyValuePairKey_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for identifierKeyValuePairValue
+	* @param _identifierKeyValuePairValue_ desired value to be set
+	* @return Builder object with new value for identifierKeyValuePairValue
+	*/
 	final public IdentifierKeyValuePairBuilder _identifierKeyValuePairValue_(String _identifierKeyValuePairValue_) {
 		this.identifierKeyValuePairImpl._identifierKeyValuePairValue = _identifierKeyValuePairValue_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for identifierKeyValuePairExternalSubjectId
+	* @param _identifierKeyValuePairExternalSubjectId_ desired value to be set
+	* @return Builder object with new value for identifierKeyValuePairExternalSubjectId
+	*/
 	final public IdentifierKeyValuePairBuilder _identifierKeyValuePairExternalSubjectId_(IReference _identifierKeyValuePairExternalSubjectId_) {
 		this.identifierKeyValuePairImpl._identifierKeyValuePairExternalSubjectId = _identifierKeyValuePairExternalSubjectId_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for hasSemanticsSemanticId
+	* @param _hasSemanticsSemanticId_ desired value to be set
+	* @return Builder object with new value for hasSemanticsSemanticId
+	*/
 	final public IdentifierKeyValuePairBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
 		this.identifierKeyValuePairImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
 		return this;
 	}
+	/**
+	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
+	* @return Bean with specified values
+	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
+	*/
 
 	final public IIdentifierKeyValuePair build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(identifierKeyValuePairImpl);

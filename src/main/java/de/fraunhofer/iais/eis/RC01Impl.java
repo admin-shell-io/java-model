@@ -31,9 +31,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Data Specification Physical Unit"
-
-	"Data Specification Template for Physical Units."@en 
+* "Data Specification Physical Unit"
+* "Data Specification Template for Physical Units."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/")
@@ -54,84 +53,84 @@ public class RC01Impl implements Serializable, IRC01 {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has conversion factor"
+	* "has conversion factor"
 	*/
 	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor", "rC01ConversionFactor"})
 	protected ArrayList<? extends String> _rC01ConversionFactor;
 
 
 	/**
-	"has definition"
+	* "has definition"
 	*/
 	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/definition", "rC01Definition"})
 	protected ArrayList<? extends TypedLiteral> _rC01Definition;
 
 
 	/**
-	"has DIN notation"
+	* "has DIN notation"
 	*/
 	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation", "rC01DinNotation"})
 	protected ArrayList<? extends String> _rC01DinNotation;
 
 
 	/**
-	"has ECE code"
+	* "has ECE code"
 	*/
 	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode", "rC01EceCode"})
 	protected ArrayList<? extends String> _rC01EceCode;
 
 
 	/**
-	"has ECE name"
+	* "has ECE name"
 	*/
 	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName", "rC01EceName"})
 	protected ArrayList<? extends String> _rC01EceName;
 
 
 	/**
-	"has NIST name"
+	* "has NIST name"
 	*/
 	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName", "rC01NistName"})
 	protected ArrayList<? extends String> _rC01NistName;
 
 
 	/**
-	"has registration authority"
+	* "has registration authority"
 	*/
 	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/registrationAuthorityId", "rC01RegistrationAuthorityId"})
 	protected ArrayList<? extends String> _rC01RegistrationAuthorityId;
 
 
 	/**
-	"has SI name"
+	* "has SI name"
 	*/
 	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siName", "rC01SiName"})
 	protected ArrayList<? extends String> _rC01SiName;
 
 
 	/**
-	"has SI notation"
+	* "has SI notation"
 	*/
 	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation", "rC01SiNotation"})
 	protected ArrayList<? extends String> _rC01SiNotation;
 
 
 	/**
-	"has supplier"
+	* "has supplier"
 	*/
 	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/supplier", "rC01Supplier"})
 	protected ArrayList<? extends String> _rC01Supplier;
 
 
 	/**
-	"unit has name"
+	* "unit has name"
 	*/
 	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName", "rC01UnitName"})
 	protected ArrayList<? extends String> _rC01UnitName;
 
 
 	/**
-	"unit has symbol"
+	* "unit has symbol"
 	*/
 	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol", "rC01UnitSymbol"})
 	protected ArrayList<? extends String> _rC01UnitSymbol;
@@ -142,15 +141,29 @@ public class RC01Impl implements Serializable, IRC01 {
 		id = VocabUtil.getInstance().createRandomUrl("rC01");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -175,8 +188,10 @@ public class RC01Impl implements Serializable, IRC01 {
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
 	/**
-	@return the List of rC01ConversionFactor
+	* @return Returns the List of String for the property rC01ConversionFactor.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor")
 	final public List<? extends String> getRC01ConversionFactor() {
@@ -188,7 +203,8 @@ public class RC01Impl implements Serializable, IRC01 {
 	}
 
 	/**
-	@return the List of rC01Definition
+	* @return Returns the List of TypedLiteral for the property rC01Definition.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/definition
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/definition")
 	final public List<? extends TypedLiteral> getRC01Definition() {
@@ -200,7 +216,8 @@ public class RC01Impl implements Serializable, IRC01 {
 	}
 
 	/**
-	@return the List of rC01DinNotation
+	* @return Returns the List of String for the property rC01DinNotation.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation")
 	final public List<? extends String> getRC01DinNotation() {
@@ -212,7 +229,8 @@ public class RC01Impl implements Serializable, IRC01 {
 	}
 
 	/**
-	@return the List of rC01EceCode
+	* @return Returns the List of String for the property rC01EceCode.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode")
 	final public List<? extends String> getRC01EceCode() {
@@ -224,7 +242,8 @@ public class RC01Impl implements Serializable, IRC01 {
 	}
 
 	/**
-	@return the List of rC01EceName
+	* @return Returns the List of String for the property rC01EceName.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName")
 	final public List<? extends String> getRC01EceName() {
@@ -236,7 +255,8 @@ public class RC01Impl implements Serializable, IRC01 {
 	}
 
 	/**
-	@return the List of rC01NistName
+	* @return Returns the List of String for the property rC01NistName.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName")
 	final public List<? extends String> getRC01NistName() {
@@ -248,7 +268,8 @@ public class RC01Impl implements Serializable, IRC01 {
 	}
 
 	/**
-	@return the List of rC01SiName
+	* @return Returns the List of String for the property rC01SiName.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siName
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siName")
 	final public List<? extends String> getRC01SiName() {
@@ -260,7 +281,8 @@ public class RC01Impl implements Serializable, IRC01 {
 	}
 
 	/**
-	@return the List of rC01SiNotation
+	* @return Returns the List of String for the property rC01SiNotation.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation")
 	final public List<? extends String> getRC01SiNotation() {
@@ -272,7 +294,8 @@ public class RC01Impl implements Serializable, IRC01 {
 	}
 
 	/**
-	@return the List of rC01RegistrationAuthorityId
+	* @return Returns the List of String for the property rC01RegistrationAuthorityId.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/registrationAuthorityId
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/registrationAuthorityId")
 	final public List<? extends String> getRC01RegistrationAuthorityId() {
@@ -284,7 +307,8 @@ public class RC01Impl implements Serializable, IRC01 {
 	}
 
 	/**
-	@return the List of rC01Supplier
+	* @return Returns the List of String for the property rC01Supplier.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/supplier
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/supplier")
 	final public List<? extends String> getRC01Supplier() {
@@ -296,7 +320,8 @@ public class RC01Impl implements Serializable, IRC01 {
 	}
 
 	/**
-	@return the List of rC01UnitName
+	* @return Returns the List of String for the property rC01UnitName.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName")
 	final public List<? extends String> getRC01UnitName() {
@@ -308,7 +333,8 @@ public class RC01Impl implements Serializable, IRC01 {
 	}
 
 	/**
-	@return the List of rC01UnitSymbol
+	* @return Returns the List of String for the property rC01UnitSymbol.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol")
 	final public List<? extends String> getRC01UnitSymbol() {

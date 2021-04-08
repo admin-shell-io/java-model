@@ -31,37 +31,56 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Relationship Element"
-
-	"Constraint AASd-055: The semanticId of a RelationshipElement or a AnnotatedRelationshipElement shall only reference a ConceptDescription with the category RELATIONSHIP."@en
+* "Relationship Element"
+* "Constraint AASd-055: The semanticId of a RelationshipElement or a AnnotatedRelationshipElement shall only reference a ConceptDescription with the category RELATIONSHIP."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = RelationshipElementImpl.class),
-@JsonSubTypes.Type(value = IAnnotatedRelationshipElement.class),})
+	@JsonSubTypes.Type(value = RelationshipElementImpl.class),
+	@JsonSubTypes.Type(value = IAnnotatedRelationshipElement.class)
+})
 public interface IRelationshipElement extends ISubmodelElement {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"First element in the relationship taking the role of the subject."@en
-	@return the IReferable of relationshipElementFirst
+	* "First element in the relationship taking the role of the subject."@en
+	* @return Returns the IReferable for the property relationshipElementFirst.
+	* More information under https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first")
 	public IReferable getRelationshipElementFirst();
 
 	/**
-	"Second element in the relationship taking the role of the object."@en
-	@return the IReferable of relationshipElementSecond
+	* "Second element in the relationship taking the role of the object."@en
+	* @return Returns the IReferable for the property relationshipElementSecond.
+	* More information under https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second")
 	public IReferable getRelationshipElementSecond();
+
 }

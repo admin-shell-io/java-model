@@ -43,18 +43,33 @@ public class QualifierBuilder {
 		qualifierImpl.id = id;
 	}
 
+	/**
+	* This function allows setting a value for qualifierType
+	* @param _qualifierType_ desired value to be set
+	* @return Builder object with new value for qualifierType
+	*/
 	final public QualifierBuilder _qualifierType_(String _qualifierType_) {
 		this.qualifierImpl._qualifierType = _qualifierType_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for qualifierValue
+	* @param _qualifierValue_ desired value to be set
+	* @return Builder object with new value for qualifierValue
+	*/
 	final public QualifierBuilder _qualifierValue_(TypedLiteral _qualifierValue_) {
 		this.qualifierImpl._qualifierValue = _qualifierValue_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for qualifierValueId
+	* @param _qualifierValueId_ desired value to be set
+	* @return Builder object with new value for qualifierValueId
+	*/
 	final public QualifierBuilder _qualifierValueId_(IReference _qualifierValueId_) {
 		this.qualifierImpl._qualifierValueId = _qualifierValueId_;
 		return this;
@@ -62,10 +77,20 @@ public class QualifierBuilder {
 
 
 
+	/**
+	* This function allows setting a value for hasSemanticsSemanticId
+	* @param _hasSemanticsSemanticId_ desired value to be set
+	* @return Builder object with new value for hasSemanticsSemanticId
+	*/
 	final public QualifierBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
 		this.qualifierImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
 		return this;
 	}
+	/**
+	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
+	* @return Bean with specified values
+	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
+	*/
 
 	final public IQualifier build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(qualifierImpl);

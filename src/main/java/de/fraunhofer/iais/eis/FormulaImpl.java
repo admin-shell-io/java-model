@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Formula" 
+* "Formula" 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Formula")
@@ -52,9 +52,8 @@ public class FormulaImpl implements Serializable, IFormula {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"depends on"
-
-	"A formula may depend on referable or even external global elements - assumed that can be referenced and their value may be evaluated - that are used in the logical expression."@en
+	* "depends on"
+	* "A formula may depend on referable or even external global elements - assumed that can be referenced and their value may be evaluated - that are used in the logical expression."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn", "formulaDependsOn"})
 	protected ArrayList<? extends IReference> _formulaDependsOn;
@@ -65,15 +64,29 @@ public class FormulaImpl implements Serializable, IFormula {
 		id = VocabUtil.getInstance().createRandomUrl("formula");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -98,9 +111,11 @@ public class FormulaImpl implements Serializable, IFormula {
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
 	/**
-	"A formula may depend on referable or even external global elements - assumed that can be referenced and their value may be evaluated - that are used in the logical expression."@en
-	@return the List of formulaDependsOn
+	* "A formula may depend on referable or even external global elements - assumed that can be referenced and their value may be evaluated - that are used in the logical expression."@en
+	* @return Returns the List of IReference for the property formulaDependsOn.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn")
 	final public List<? extends IReference> getFormulaDependsOn() {

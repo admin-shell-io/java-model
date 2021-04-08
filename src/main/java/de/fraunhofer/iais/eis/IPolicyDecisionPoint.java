@@ -31,29 +31,47 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Policy Decision Point"
-
-	"Defines a security policy decision point (PDP). "@en
+* "Policy Decision Point"
+* "Defines a security policy decision point (PDP). "@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = PolicyDecisionPointImpl.class),})
+	@JsonSubTypes.Type(value = PolicyDecisionPointImpl.class)
+})
 public interface IPolicyDecisionPoint {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"If externalPolicyDecisionPoints True then Endpoints to external available decision points taking into consideration for access control for the AAS need to be configured."@en
-	@return the boolean of policyDecisionPointExternalPolicyDecisionPoints
+	* "If externalPolicyDecisionPoints True then Endpoints to external available decision points taking into consideration for access control for the AAS need to be configured."@en
+	* @return Returns the boolean for the property policyDecisionPointExternalPolicyDecisionPoints.
+	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
 	public boolean getPolicyDecisionPointExternalPolicyDecisionPoints();
+
 }

@@ -34,84 +34,81 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /** 
-	"Data Type IEC61360"
-
-	"Enumeration of all IEC 61360 defined data types."@en 
+* "Data Type IEC61360"
+* "Enumeration of all IEC 61360 defined data types."@en 
 */
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 @JsonTypeName("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataTypeIEC61360")
 public enum DataTypeIEC61360 {
 
 	/** 
-	"boolean according to IEC61360"
+	* "boolean according to IEC61360"
 	*/
 	BOOLEAN("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/BOOLEAN", Arrays.asList(new TypedLiteral("boolean according to IEC61360", "")), Collections.emptyList()),
 
 	/** 
-	"date according to IEC61360"
+	* "date according to IEC61360"
 	*/
 	DATE("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DATE", Arrays.asList(new TypedLiteral("date according to IEC61360", "")), Collections.emptyList()),
 
 	/** 
-	"integer count according to IEC61360"
+	* "integer count according to IEC61360"
 	*/
 	INTEGER_COUNT("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/INTEGER_COUNT", Arrays.asList(new TypedLiteral("integer count according to IEC61360", "")), Collections.emptyList()),
 
 	/** 
-	"integer currency according to IEC61360"
-
-	"real currency according to IEC61360"
+	* "integer currency according to IEC61360"
+	* "real currency according to IEC61360"
 	*/
-	INTEGER_CURRENCY("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/INTEGER_CURRENCY", Arrays.asList(new TypedLiteral("integer currency according to IEC61360", ""),
-new TypedLiteral("real currency according to IEC61360", "")), Collections.emptyList()),
+	INTEGER_CURRENCY("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/INTEGER_CURRENCY", Arrays.asList(new TypedLiteral("integer currency according to IEC61360", ""), new TypedLiteral("real currency according to IEC61360", "")), Collections.emptyList()),
 
 	/** 
-	"integer measure according to IEC61360"
+	* "integer measure according to IEC61360"
 	*/
 	INTEGER_MEASURE("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/INTEGER_MEASURE", Arrays.asList(new TypedLiteral("integer measure according to IEC61360", "")), Collections.emptyList()),
 
 	/** 
-	"retional according to IEC61360"
+	* "retional according to IEC61360"
 	*/
 	RATIONAL("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/RATIONAL", Arrays.asList(new TypedLiteral("retional according to IEC61360", "")), Collections.emptyList()),
 
 	/** 
-	"retional measure according to IEC61360"
+	* "retional measure according to IEC61360"
 	*/
 	RATIONAL_MEASURE("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/RATIONAL_MEASURE", Arrays.asList(new TypedLiteral("retional measure according to IEC61360", "")), Collections.emptyList()),
 
 	/** 
-	"real count according to IEC61360"
+	* "real count according to IEC61360"
 	*/
 	REAL_COUNT("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/REAL_COUNT", Arrays.asList(new TypedLiteral("real count according to IEC61360", "")), Collections.emptyList()),
 
 	/** 
-	"real measure according to IEC61360"
+	* "real measure according to IEC61360"
 	*/
 	REAL_MEASURE("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/REAL_MEASURE", Arrays.asList(new TypedLiteral("real measure according to IEC61360", "")), Collections.emptyList()),
 
 	/** 
-	"string according to IEC61360"
+	* "string according to IEC61360"
 	*/
 	STRING("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/STRING", Arrays.asList(new TypedLiteral("string according to IEC61360", "")), Collections.emptyList()),
 
 	/** 
-	"translatable string according to IEC61360"
+	* "translatable string according to IEC61360"
 	*/
 	STRING_TRANSLATABLE("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/STRING_TRANSLATABLE", Arrays.asList(new TypedLiteral("translatable string according to IEC61360", "")), Collections.emptyList()),
 
 	/** 
-	"time according to IEC61360"
+	* "time according to IEC61360"
 	*/
 	TIME("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/TIME", Arrays.asList(new TypedLiteral("time according to IEC61360", "")), Collections.emptyList()),
 
 	/** 
-	"time stamp according to IEC61360"
+	* "time stamp according to IEC61360"
 	*/
 	TIMESTAMP("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/TIMESTAMP", Arrays.asList(new TypedLiteral("time stamp according to IEC61360", "")), Collections.emptyList()),
 
 	/** 
-	"url according to IEC61360"
+	* "url according to IEC61360"
 	*/
 	URL("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/URL", Arrays.asList(new TypedLiteral("url according to IEC61360", "")), Collections.emptyList());
 
@@ -137,17 +134,31 @@ new TypedLiteral("real currency according to IEC61360", "")), Collections.emptyL
 			throw new IllegalArgumentException(e);
 		}
 	}
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 
 	@JsonIgnore
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	@JsonIgnore
 	final public List<TypedLiteral> getLabel() {
 		return label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	@JsonIgnore
 	final public List<TypedLiteral> getComment() {
 		return comment;

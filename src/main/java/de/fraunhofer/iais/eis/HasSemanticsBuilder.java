@@ -43,10 +43,20 @@ public class HasSemanticsBuilder {
 		hasSemanticsImpl.id = id;
 	}
 
+	/**
+	* This function allows setting a value for hasSemanticsSemanticId
+	* @param _hasSemanticsSemanticId_ desired value to be set
+	* @return Builder object with new value for hasSemanticsSemanticId
+	*/
 	final public HasSemanticsBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
 		this.hasSemanticsImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
 		return this;
 	}
+	/**
+	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
+	* @return Bean with specified values
+	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
+	*/
 
 	final public IHasSemantics build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(hasSemanticsImpl);

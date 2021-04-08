@@ -31,43 +31,63 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Permission Per Object"
-
-	"Table that defines access permissions for a specified object. The object is any referable element in the AAS. Additionally object attributes can be defined that further specify the kind of object the permissions apply to."@en
+* "Permission Per Object"
+* "Table that defines access permissions for a specified object. The object is any referable element in the AAS. Additionally object attributes can be defined that further specify the kind of object the permissions apply to."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = PermissionsPerObjectImpl.class),})
+	@JsonSubTypes.Type(value = PermissionsPerObjectImpl.class)
+})
 public interface IPermissionsPerObject {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"Element to which permission shall be assigned."@en
-	@return the IReferable of permissionsPerObjectObject
+	* "Element to which permission shall be assigned."@en
+	* @return Returns the IReferable for the property permissionsPerObjectObject.
+	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")
 	public IReferable getPermissionsPerObjectObject();
 
 	/**
-	"Permissions assigned to the object. The permissions hold for all subjects as specified in the access permission rule."@en
-	@return the List of permissionsPerObjectPermission
+	* "Permissions assigned to the object. The permissions hold for all subjects as specified in the access permission rule."@en
+	* @return Returns the List of IPermission for the property permissionsPerObjectPermission.
+	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission")
 	public List<? extends IPermission> getPermissionsPerObjectPermission();
 
 	/**
-	"Target object attributes that need to be fulfilled so that the access permissions apply to the accessing subject."@en
-	@return the IObjectAttributes of permissionsPerObjectTargetObjectAttributes
+	* "Target object attributes that need to be fulfilled so that the access permissions apply to the accessing subject."@en
+	* @return Returns the IObjectAttributes for the property permissionsPerObjectTargetObjectAttributes.
+	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes")
 	public IObjectAttributes getPermissionsPerObjectTargetObjectAttributes();
+
 }

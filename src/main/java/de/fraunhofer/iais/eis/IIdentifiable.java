@@ -31,45 +31,60 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Identifiable"
-
-	"An element that has a globally unique identifier."@en
+* "Identifiable"
+* "An element that has a globally unique identifier."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = IdentifiableImpl.class),
-@JsonSubTypes.Type(value = IAsset.class),
-
-@JsonSubTypes.Type(value = IAssetAdministrationShell.class),
-
-@JsonSubTypes.Type(value = IConceptDescription.class),
-
-@JsonSubTypes.Type(value = ISubmodel.class),})
+	@JsonSubTypes.Type(value = IdentifiableImpl.class),
+	@JsonSubTypes.Type(value = ISubmodel.class),
+	@JsonSubTypes.Type(value = IAsset.class),
+	@JsonSubTypes.Type(value = IAssetAdministrationShell.class),
+	@JsonSubTypes.Type(value = IConceptDescription.class)
+})
 public interface IIdentifiable extends IReferable {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"Administrative information of an identifiable element."@en
-
-	"Some of the administrative information like the version number might need to be part of the identification."@en
-	@return the IAdministrativeInformation of identifiableAdministration
+	* "Administrative information of an identifiable element."@en
+	* "Some of the administrative information like the version number might need to be part of the identification."@en
+	* @return Returns the IAdministrativeInformation for the property identifiableAdministration.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Identifiable/administration
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
 	public IAdministrativeInformation getIdentifiableAdministration();
 
 	/**
-	"The globally unique identification of the element."@en
-	@return the IIdentifier of identifiableIdentification
+	* "The globally unique identification of the element."@en
+	* @return Returns the IIdentifier for the property identifiableIdentification.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Identifiable/identification
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
 	public IIdentifier getIdentifiableIdentification();
+
 }

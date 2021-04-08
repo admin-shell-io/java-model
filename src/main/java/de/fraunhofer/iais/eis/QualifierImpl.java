@@ -31,11 +31,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Qualifier"
-
-	"A qualifier is a type-value pair that makes additional statements w.r.t. the value of the element."@en
-
-	"Constraint AASd-063: The semanticId of a Qualifier shall only reference a ConceptDescription with the category QUALIFIER."@en 
+* "Qualifier"
+* "A qualifier is a type-value pair that makes additional statements w.r.t. the value of the element."@en
+* "Constraint AASd-063: The semanticId of a Qualifier shall only reference a ConceptDescription with the category QUALIFIER."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Qualifier")
@@ -56,38 +54,33 @@ public class QualifierImpl implements Serializable, IQualifier {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has semantic ID"
-
-	"Points to the Expression Semantic of the Submodels"@en
-
-	"The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* "has semantic ID"
+	* "Points to the Expression Semantic of the Submodels"@en
+	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "hasSemanticsSemanticId"})
 	protected IReference _hasSemanticsSemanticId;
 
 
 	/**
-	"has qualifier type"
-
-	"The qualifier type describes the type of the qualifier that is applied to the element."@en
+	* "has qualifier type"
+	* "The qualifier type describes the type of the qualifier that is applied to the element."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifier/type", "qualifierType"})
 	protected String _qualifierType;
 
 
 	/**
-	"The qualifier value is the value of the qualifier."@en
-
-	"Constraint AASd-006: if both, the value and the valueId are present then the value needs to be identical to the short name of the referenced coded value in qualifierValueId."@en
-
-	"Constraint AASd-020: The value of Qualifier/value shall be consistent to the data type as defined in Qualifier/valueType."@en
+	* "The qualifier value is the value of the qualifier."@en
+	* "Constraint AASd-006: if both, the value and the valueId are present then the value needs to be identical to the short name of the referenced coded value in qualifierValueId."@en
+	* "Constraint AASd-020: The value of Qualifier/value shall be consistent to the data type as defined in Qualifier/valueType."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifier/value", "qualifierValue"})
 	protected TypedLiteral _qualifierValue;
 
 
 	/**
-	"Reference to the global unqiue id of a coded value."@en
+	* "Reference to the global unqiue id of a coded value."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId", "qualifierValueId"})
 	protected IReference _qualifierValueId;
@@ -98,15 +91,29 @@ public class QualifierImpl implements Serializable, IQualifier {
 		id = VocabUtil.getInstance().createRandomUrl("qualifier");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -131,9 +138,11 @@ public class QualifierImpl implements Serializable, IQualifier {
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
 	/**
-	"The qualifier type describes the type of the qualifier that is applied to the element."@en
-	@return the String of qualifierType
+	* "The qualifier type describes the type of the qualifier that is applied to the element."@en
+	* @return Returns the String for the property qualifierType.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/type
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/type")
 	final public String getQualifierType() {
@@ -145,12 +154,11 @@ public class QualifierImpl implements Serializable, IQualifier {
 	}
 
 	/**
-	"The qualifier value is the value of the qualifier."@en
-
-	"Constraint AASd-006: if both, the value and the valueId are present then the value needs to be identical to the short name of the referenced coded value in qualifierValueId."@en
-
-	"Constraint AASd-020: The value of Qualifier/value shall be consistent to the data type as defined in Qualifier/valueType."@en
-	@return the TypedLiteral of qualifierValue
+	* "The qualifier value is the value of the qualifier."@en
+	* "Constraint AASd-006: if both, the value and the valueId are present then the value needs to be identical to the short name of the referenced coded value in qualifierValueId."@en
+	* "Constraint AASd-020: The value of Qualifier/value shall be consistent to the data type as defined in Qualifier/valueType."@en
+	* @return Returns the TypedLiteral for the property qualifierValue.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/value
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/value")
 	final public TypedLiteral getQualifierValue() {
@@ -162,8 +170,9 @@ public class QualifierImpl implements Serializable, IQualifier {
 	}
 
 	/**
-	"Reference to the global unqiue id of a coded value."@en
-	@return the IReference of qualifierValueId
+	* "Reference to the global unqiue id of a coded value."@en
+	* @return Returns the IReference for the property qualifierValueId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId")
 	final public IReference getQualifierValueId() {
@@ -176,9 +185,10 @@ public class QualifierImpl implements Serializable, IQualifier {
 
 
 	/**
-	"Points to the Expression Semantic of the Submodels"@en
-
-	"The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* "Points to the Expression Semantic of the Submodels"@en
+	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* @return Returns the IReference for the property hasSemanticsSemanticId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	final public IReference getHasSemanticsSemanticId() {

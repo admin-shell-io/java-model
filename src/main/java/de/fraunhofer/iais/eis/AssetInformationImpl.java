@@ -31,13 +31,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"has Asset Identification Model"
-
-	"In AssetInformation identifying meta data of the asset that is represented by an AAS is defined."@en
-
-	"The asset may either represent an asset type or an asset instance."@en
-
-	"The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute \'globalAssetId\' is optional."@en 
+* "has Asset Identification Model"
+* "In AssetInformation identifying meta data of the asset that is represented by an AAS is defined."@en
+* "The asset may either represent an asset type or an asset instance."@en
+* "The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute \'globalAssetId\' is optional."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:AssetInformation")
@@ -53,56 +50,47 @@ public class AssetInformationImpl implements Serializable, IAssetInformation {
 
 	//List of all comments of this class
 	@JsonIgnore
-	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("In AssetInformation identifying meta data of the asset that is represented by an AAS is defined.", "en"),
-new TypedLiteral("The asset may either represent an asset type or an asset instance.", "en"),
-new TypedLiteral("The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute 'globalAssetId' is optional.", "en"));
+	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("In AssetInformation identifying meta data of the asset that is represented by an AAS is defined.", "en"), new TypedLiteral("The asset may either represent an asset type or an asset instance.", "en"), new TypedLiteral("The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute 'globalAssetId' is optional.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has assetKind"
-
-	"Denotes whether the Asset of of kind \'Type\' or \'Instance\'."@en
+	* "has assetKind"
+	* "Denotes whether the Asset of of kind \'Type\' or \'Instance\'."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind", "assetInformationAssetKind"})
 	protected ArrayList<? extends AssetKind> _assetInformationAssetKind;
 
 
 	/**
-	"has Bill of Material"
-
-	"A reference to a Submodel that defines the bill of material of the asset represented by the AAS. This submodel contains a set of entities describing the material used to compose the composite I4.0 Component."@en
+	* "has Bill of Material"
+	* "A reference to a Submodel that defines the bill of material of the asset represented by the AAS. This submodel contains a set of entities describing the material used to compose the composite I4.0 Component."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial", "assetInformationBillOfMaterial"})
 	protected ArrayList<? extends ISubmodel> _assetInformationBillOfMaterial;
 
 
 	/**
-	"has external asset id"
-
-	"Additional domain specific external, typically proprietary Identifier for the asset like e.g. serial number etc."@en
+	* "has external asset id"
+	* "Additional domain specific external, typically proprietary Identifier for the asset like e.g. serial number etc."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/externalAssetId", "assetInformationExternalAssetId"})
 	protected ArrayList<? extends IIdentifierKeyValuePair> _assetInformationExternalAssetId;
 
 
 	/**
-	"has global asset id"
-
-	"Reference to either an Asset object or a global reference to the asset the AAS is representing."@en
-
-	"This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the asset. In a first phase of the life cycle the asset might not yet have a global id but already an internal identifier. The internal identifier would be modelled via \'externalAssetId\'."@en
-
-	"Constraint AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global reference."@en
+	* "has global asset id"
+	* "Reference to either an Asset object or a global reference to the asset the AAS is representing."@en
+	* "This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the asset. In a first phase of the life cycle the asset might not yet have a global id but already an internal identifier. The internal identifier would be modelled via \'externalAssetId\'."@en
+	* "Constraint AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global reference."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId", "assetInformationGlobalAssetId"})
 	protected IReference _assetInformationGlobalAssetId;
 
 
 	/**
-	"has thumbnail"
-
-	"Thumbnail of the asset represented by the asset administration shell."@en
+	* "has thumbnail"
+	* "Thumbnail of the asset represented by the asset administration shell."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/thumbnail", "assetInformationThumbnail"})
 	protected IFile _assetInformationThumbnail;
@@ -113,15 +101,29 @@ new TypedLiteral("The asset has a globally unique identifier plus - if needed - 
 		id = VocabUtil.getInstance().createRandomUrl("assetInformation");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -146,9 +148,11 @@ new TypedLiteral("The asset has a globally unique identifier plus - if needed - 
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
 	/**
-	"Denotes whether the Asset of of kind \'Type\' or \'Instance\'."@en
-	@return the List of assetInformationAssetKind
+	* "Denotes whether the Asset of of kind \'Type\' or \'Instance\'."@en
+	* @return Returns the List of AssetKind for the property assetInformationAssetKind.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
 	final public List<? extends AssetKind> getAssetInformationAssetKind() {
@@ -160,12 +164,11 @@ new TypedLiteral("The asset has a globally unique identifier plus - if needed - 
 	}
 
 	/**
-	"Reference to either an Asset object or a global reference to the asset the AAS is representing."@en
-
-	"This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the asset. In a first phase of the life cycle the asset might not yet have a global id but already an internal identifier. The internal identifier would be modelled via \'externalAssetId\'."@en
-
-	"Constraint AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global reference."@en
-	@return the IReference of assetInformationGlobalAssetId
+	* "Reference to either an Asset object or a global reference to the asset the AAS is representing."@en
+	* "This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the asset. In a first phase of the life cycle the asset might not yet have a global id but already an internal identifier. The internal identifier would be modelled via \'externalAssetId\'."@en
+	* "Constraint AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global reference."@en
+	* @return Returns the IReference for the property assetInformationGlobalAssetId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId")
 	final public IReference getAssetInformationGlobalAssetId() {
@@ -177,8 +180,9 @@ new TypedLiteral("The asset has a globally unique identifier plus - if needed - 
 	}
 
 	/**
-	"Additional domain specific external, typically proprietary Identifier for the asset like e.g. serial number etc."@en
-	@return the List of assetInformationExternalAssetId
+	* "Additional domain specific external, typically proprietary Identifier for the asset like e.g. serial number etc."@en
+	* @return Returns the List of IIdentifierKeyValuePair for the property assetInformationExternalAssetId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/externalAssetId
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/externalAssetId")
 	final public List<? extends IIdentifierKeyValuePair> getAssetInformationExternalAssetId() {
@@ -190,8 +194,9 @@ new TypedLiteral("The asset has a globally unique identifier plus - if needed - 
 	}
 
 	/**
-	"A reference to a Submodel that defines the bill of material of the asset represented by the AAS. This submodel contains a set of entities describing the material used to compose the composite I4.0 Component."@en
-	@return the List of assetInformationBillOfMaterial
+	* "A reference to a Submodel that defines the bill of material of the asset represented by the AAS. This submodel contains a set of entities describing the material used to compose the composite I4.0 Component."@en
+	* @return Returns the List of ISubmodel for the property assetInformationBillOfMaterial.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial")
 	final public List<? extends ISubmodel> getAssetInformationBillOfMaterial() {
@@ -203,8 +208,9 @@ new TypedLiteral("The asset has a globally unique identifier plus - if needed - 
 	}
 
 	/**
-	"Thumbnail of the asset represented by the asset administration shell."@en
-	@return the IFile of assetInformationThumbnail
+	* "Thumbnail of the asset represented by the asset administration shell."@en
+	* @return Returns the IFile for the property assetInformationThumbnail.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/thumbnail
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/thumbnail")
 	final public IFile getAssetInformationThumbnail() {

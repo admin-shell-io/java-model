@@ -31,9 +31,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Operation Variable"
-
-	"An operation variable is a submodel element that is used as input or output variable of an operation."@en 
+* "Operation Variable"
+* "An operation variable is a submodel element that is used as input or output variable of an operation."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:OperationVariable")
@@ -54,11 +53,9 @@ public class OperationVariableImpl implements Serializable, IOperationVariable {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"value"
-
-	"Describes the needed argument for an operation via a submodel element of kind=Template."@en
-
-	"The submodel element value of an operation variable shall be of kind=Template."@en
+	* "value"
+	* "Describes the needed argument for an operation via a submodel element of kind=Template."@en
+	* "The submodel element value of an operation variable shall be of kind=Template."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/OperationVariable/value", "operationVariableValue"})
 	protected ISubmodelElement _operationVariableValue;
@@ -69,15 +66,29 @@ public class OperationVariableImpl implements Serializable, IOperationVariable {
 		id = VocabUtil.getInstance().createRandomUrl("operationVariable");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -102,11 +113,12 @@ public class OperationVariableImpl implements Serializable, IOperationVariable {
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
-	/**
-	"Describes the needed argument for an operation via a submodel element of kind=Template."@en
 
-	"The submodel element value of an operation variable shall be of kind=Template."@en
-	@return the ISubmodelElement of operationVariableValue
+	/**
+	* "Describes the needed argument for an operation via a submodel element of kind=Template."@en
+	* "The submodel element value of an operation variable shall be of kind=Template."@en
+	* @return Returns the ISubmodelElement for the property operationVariableValue.
+	* More information under https://admin-shell.io/aas/3/0/RC01/OperationVariable/value
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/OperationVariable/value")
 	final public ISubmodelElement getOperationVariableValue() {

@@ -31,11 +31,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Capability"
-
-	"A capability is the implementation-independent description of the potential of an asset to achieve a certain effect in the physical or virtual world."@en
-
-	"Constraint AASd-058: If the semanticId of a Capability submodel element references a ConceptDescription then the ConceptDescription/category shall be CAPABILITY."@en 
+* "Capability"
+* "A capability is the implementation-independent description of the potential of an asset to achieve a certain effect in the physical or virtual world."@en
+* "Constraint AASd-058: If the semanticId of a Capability submodel element references a ConceptDescription then the ConceptDescription/category shall be CAPABILITY."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Capability")
@@ -56,97 +54,80 @@ public class CapabilityImpl implements Serializable, ICapability {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has Data Specification"
-
-	"Global reference to the data specification template used by the element."@en
+	* "has Data Specification"
+	* "Global reference to the data specification template used by the element."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "hasDataSpecificationDataSpecification"})
 	protected ArrayList<? extends IReference> _hasDataSpecificationDataSpecification;
 
 
 	/**
-	"has kind"
-
-	"ModelingKind of the element: either type or instance."@en
+	* "has kind"
+	* "ModelingKind of the element: either type or instance."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasKind/kind", "hasKindKind"})
 	protected ModelingKind _hasKindKind;
 
 
 	/**
-	"has semantic ID"
-
-	"Points to the Expression Semantic of the Submodels"@en
-
-	"The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* "has semantic ID"
+	* "Points to the Expression Semantic of the Submodels"@en
+	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "hasSemanticsSemanticId"})
 	protected IReference _hasSemanticsSemanticId;
 
 
 	/**
-	"has qualifier"
-
-	"Additional qualification of a qualifiable element."@en
+	* "has qualifier"
+	* "Additional qualification of a qualifiable element."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier", "qualifiableQualifier"})
 	protected ArrayList<? extends IConstraint> _qualifiableQualifier;
 
 
 	/**
-	"has description"
-
-	"Description or comments on the element. The description can be provided in several languages."@en
+	* "has description"
+	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "referableDescription"})
 	protected ArrayList<? extends TypedLiteral> _referableDescription;
 
 
 	/**
-	"has display name"
-
-	"Display name. Can be provided in several languages."@en
+	* "has display name"
+	* "Display name. Can be provided in several languages."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "referableDisplayName"})
 	protected TypedLiteral _referableDisplayName;
 
 
 	/**
-	"has short id"
-
-	"Identifying string of the element within its name space."@en
-
-	"Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
-
-	"Constraint AASd-003: idShort shall be matched case-insensitive."@en
-
-	"Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
-
-	"Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
-
-	"Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
+	* "has short id"
+	* "Identifying string of the element within its name space."@en
+	* "Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
+	* "Constraint AASd-003: idShort shall be matched case-insensitive."@en
+	* "Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
+	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
+	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "referableIdShort"})
 	protected String _referableIdShort;
 
 
 	/**
-	"has parent"
-
-	"Reference to the next referable parent element of the element."@en
-
-	"Constraint AASd-004: Add parent in case of non-identifiable elements."@en
-
-	"This element is used to ease navigation in the model and thus it enables more performant"@en
+	* "has parent"
+	* "Reference to the next referable parent element of the element."@en
+	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
+	* "This element is used to ease navigation in the model and thus it enables more performant"@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/parent", "referableParent"})
 	protected URI _referableParent;
 
 
 	/**
-	"has category"
-
-	"The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	* "has category"
+	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableReferableCategory"})
 	protected ArrayList<? extends String> _referableReferableCategory;
@@ -157,15 +138,29 @@ public class CapabilityImpl implements Serializable, ICapability {
 		id = VocabUtil.getInstance().createRandomUrl("capability");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -192,8 +187,11 @@ public class CapabilityImpl implements Serializable, ICapability {
 
 
 
+
 	/**
-	"The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	* @return Returns the List of String for the property referableReferableCategory.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	final public List<? extends String> getReferableReferableCategory() {
@@ -205,7 +203,9 @@ public class CapabilityImpl implements Serializable, ICapability {
 	}
 
 	/**
-	"Description or comments on the element. The description can be provided in several languages."@en
+	* "Description or comments on the element. The description can be provided in several languages."@en
+	* @return Returns the List of TypedLiteral for the property referableDescription.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/description
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	final public List<? extends TypedLiteral> getReferableDescription() {
@@ -217,7 +217,9 @@ public class CapabilityImpl implements Serializable, ICapability {
 	}
 
 	/**
-	"Display name. Can be provided in several languages."@en
+	* "Display name. Can be provided in several languages."@en
+	* @return Returns the TypedLiteral for the property referableDisplayName.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/displayName
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	final public TypedLiteral getReferableDisplayName() {
@@ -229,17 +231,14 @@ public class CapabilityImpl implements Serializable, ICapability {
 	}
 
 	/**
-	"Identifying string of the element within its name space."@en
-
-	"Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
-
-	"Constraint AASd-003: idShort shall be matched case-insensitive."@en
-
-	"Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
-
-	"Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
-
-	"Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
+	* "Identifying string of the element within its name space."@en
+	* "Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
+	* "Constraint AASd-003: idShort shall be matched case-insensitive."@en
+	* "Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
+	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
+	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
+	* @return Returns the String for the property referableIdShort.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/idShort
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	final public String getReferableIdShort() {
@@ -251,11 +250,11 @@ public class CapabilityImpl implements Serializable, ICapability {
 	}
 
 	/**
-	"Reference to the next referable parent element of the element."@en
-
-	"Constraint AASd-004: Add parent in case of non-identifiable elements."@en
-
-	"This element is used to ease navigation in the model and thus it enables more performant"@en
+	* "Reference to the next referable parent element of the element."@en
+	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
+	* "This element is used to ease navigation in the model and thus it enables more performant"@en
+	* @return Returns the URI for the property referableParent.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/parent
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
 	final public URI getReferableParent() {
@@ -267,7 +266,9 @@ public class CapabilityImpl implements Serializable, ICapability {
 	}
 
 	/**
-	"Additional qualification of a qualifiable element."@en
+	* "Additional qualification of a qualifiable element."@en
+	* @return Returns the List of IConstraint for the property qualifiableQualifier.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
 	final public List<? extends IConstraint> getQualifiableQualifier() {
@@ -279,7 +280,9 @@ public class CapabilityImpl implements Serializable, ICapability {
 	}
 
 	/**
-	"Global reference to the data specification template used by the element."@en
+	* "Global reference to the data specification template used by the element."@en
+	* @return Returns the List of IReference for the property hasDataSpecificationDataSpecification.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	final public List<? extends IReference> getHasDataSpecificationDataSpecification() {
@@ -291,7 +294,9 @@ public class CapabilityImpl implements Serializable, ICapability {
 	}
 
 	/**
-	"ModelingKind of the element: either type or instance."@en
+	* "ModelingKind of the element: either type or instance."@en
+	* @return Returns the ModelingKind for the property hasKindKind.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasKind/kind
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
 	final public ModelingKind getHasKindKind() {
@@ -303,9 +308,10 @@ public class CapabilityImpl implements Serializable, ICapability {
 	}
 
 	/**
-	"Points to the Expression Semantic of the Submodels"@en
-
-	"The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* "Points to the Expression Semantic of the Submodels"@en
+	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* @return Returns the IReference for the property hasSemanticsSemanticId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	final public IReference getHasSemanticsSemanticId() {

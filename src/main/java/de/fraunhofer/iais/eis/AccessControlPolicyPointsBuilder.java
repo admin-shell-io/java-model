@@ -43,28 +43,53 @@ public class AccessControlPolicyPointsBuilder {
 		accessControlPolicyPointsImpl.id = id;
 	}
 
+	/**
+	* This function allows setting a value for accessControlPolicyPointsPolicyAdministrationPoint
+	* @param _accessControlPolicyPointsPolicyAdministrationPoint_ desired value to be set
+	* @return Builder object with new value for accessControlPolicyPointsPolicyAdministrationPoint
+	*/
 	final public AccessControlPolicyPointsBuilder _accessControlPolicyPointsPolicyAdministrationPoint_(IPolicyAdministrationPoint _accessControlPolicyPointsPolicyAdministrationPoint_) {
 		this.accessControlPolicyPointsImpl._accessControlPolicyPointsPolicyAdministrationPoint = _accessControlPolicyPointsPolicyAdministrationPoint_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for accessControlPolicyPointsPolicyDecisionPoint
+	* @param _accessControlPolicyPointsPolicyDecisionPoint_ desired value to be set
+	* @return Builder object with new value for accessControlPolicyPointsPolicyDecisionPoint
+	*/
 	final public AccessControlPolicyPointsBuilder _accessControlPolicyPointsPolicyDecisionPoint_(IPolicyDecisionPoint _accessControlPolicyPointsPolicyDecisionPoint_) {
 		this.accessControlPolicyPointsImpl._accessControlPolicyPointsPolicyDecisionPoint = _accessControlPolicyPointsPolicyDecisionPoint_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for accessControlPolicyPointsPolicyEnforcementPoint
+	* @param _accessControlPolicyPointsPolicyEnforcementPoint_ desired value to be set
+	* @return Builder object with new value for accessControlPolicyPointsPolicyEnforcementPoint
+	*/
 	final public AccessControlPolicyPointsBuilder _accessControlPolicyPointsPolicyEnforcementPoint_(IPolicyEnforcementPoints _accessControlPolicyPointsPolicyEnforcementPoint_) {
 		this.accessControlPolicyPointsImpl._accessControlPolicyPointsPolicyEnforcementPoint = _accessControlPolicyPointsPolicyEnforcementPoint_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for accessControlPolicyPointsPolicyInformationPoints
+	* @param _accessControlPolicyPointsPolicyInformationPoints_ desired value to be set
+	* @return Builder object with new value for accessControlPolicyPointsPolicyInformationPoints
+	*/
 	final public AccessControlPolicyPointsBuilder _accessControlPolicyPointsPolicyInformationPoints_(IPolicyInformationPoints _accessControlPolicyPointsPolicyInformationPoints_) {
 		this.accessControlPolicyPointsImpl._accessControlPolicyPointsPolicyInformationPoints = _accessControlPolicyPointsPolicyInformationPoints_;
 		return this;
 	}
+	/**
+	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
+	* @return Bean with specified values
+	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
+	*/
 
 	final public IAccessControlPolicyPoints build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(accessControlPolicyPointsImpl);

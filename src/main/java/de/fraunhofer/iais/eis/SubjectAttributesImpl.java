@@ -31,9 +31,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Subject Attributes"
-
-	"A set of data elements that further classifies a specific subject."@en 
+* "Subject Attributes"
+* "A set of data elements that further classifies a specific subject."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:SubjectAttributes")
@@ -54,11 +53,9 @@ public class SubjectAttributesImpl implements Serializable, ISubjectAttributes {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has subject attribute"
-
-	"A data element that further classifies a specific subject. "@en
-
-	"Constraint AASs-015: The data element SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the \'selectableSubjectAttributes\' attribute of \'AccessControl\'."@en
+	* "has subject attribute"
+	* "A data element that further classifies a specific subject. "@en
+	* "Constraint AASs-015: The data element SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the \'selectableSubjectAttributes\' attribute of \'AccessControl\'."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute", "subjectAttributesSubjectAttribute"})
 	protected ArrayList<? extends IDataElement> _subjectAttributesSubjectAttribute;
@@ -69,15 +66,29 @@ public class SubjectAttributesImpl implements Serializable, ISubjectAttributes {
 		id = VocabUtil.getInstance().createRandomUrl("subjectAttributes");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -102,11 +113,12 @@ public class SubjectAttributesImpl implements Serializable, ISubjectAttributes {
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
-	/**
-	"A data element that further classifies a specific subject. "@en
 
-	"Constraint AASs-015: The data element SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the \'selectableSubjectAttributes\' attribute of \'AccessControl\'."@en
-	@return the List of subjectAttributesSubjectAttribute
+	/**
+	* "A data element that further classifies a specific subject. "@en
+	* "Constraint AASs-015: The data element SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the \'selectableSubjectAttributes\' attribute of \'AccessControl\'."@en
+	* @return Returns the List of IDataElement for the property subjectAttributesSubjectAttribute.
+	* More information under https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute")
 	final public List<? extends IDataElement> getSubjectAttributesSubjectAttribute() {

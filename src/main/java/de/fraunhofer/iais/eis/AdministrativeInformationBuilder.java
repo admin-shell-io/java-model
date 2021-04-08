@@ -43,22 +43,42 @@ public class AdministrativeInformationBuilder {
 		administrativeInformationImpl.id = id;
 	}
 
+	/**
+	* This function allows setting a value for administrativeInformationVersion
+	* @param _administrativeInformationVersion_ desired value to be set
+	* @return Builder object with new value for administrativeInformationVersion
+	*/
 	final public AdministrativeInformationBuilder _administrativeInformationVersion_(String _administrativeInformationVersion_) {
 		this.administrativeInformationImpl._administrativeInformationVersion = _administrativeInformationVersion_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for administrativeInformationRevision
+	* @param _administrativeInformationRevision_ desired value to be set
+	* @return Builder object with new value for administrativeInformationRevision
+	*/
 	final public AdministrativeInformationBuilder _administrativeInformationRevision_(String _administrativeInformationRevision_) {
 		this.administrativeInformationImpl._administrativeInformationRevision = _administrativeInformationRevision_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for hasDataSpecificationDataSpecification
+	* @param _hasDataSpecificationDataSpecification_ desired value to be set
+	* @return Builder object with new value for hasDataSpecificationDataSpecification
+	*/
 	final public AdministrativeInformationBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
 		this.administrativeInformationImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
 		return this;
 	}
+	/**
+	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
+	* @return Bean with specified values
+	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
+	*/
 
 	final public IAdministrativeInformation build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(administrativeInformationImpl);

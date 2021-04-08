@@ -31,43 +31,63 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Blob Certificate"
-
-	"Certificate provided as BLOB."@en
+* "Blob Certificate"
+* "Certificate provided as BLOB."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = BlobCertificateImpl.class),})
+	@JsonSubTypes.Type(value = BlobCertificateImpl.class)
+})
 public interface IBlobCertificate extends ICertificate {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"Certificate as BLOB."@en
-	@return the byte of blobCertificateBlobCertificate
+	* "Certificate as BLOB."@en
+	* @return Returns the byte for the property blobCertificateBlobCertificate.
+	* More information under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate")
 	public byte getBlobCertificateBlobCertificate();
 
 	/**
-	"Extensions contained in the certificate."@en
-	@return the List of blobCertificateContainedExtension
+	* "Extensions contained in the certificate."@en
+	* @return Returns the List of IReference for the property blobCertificateContainedExtension.
+	* More information under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension")
 	public List<? extends IReference> getBlobCertificateContainedExtension();
 
 	/**
-	"Denotes whether this certificate is the certificated that fast added last."@en
-	@return the boolean of blobCertificateLastCertificate
+	* "Denotes whether this certificate is the certificated that fast added last."@en
+	* @return Returns the boolean for the property blobCertificateLastCertificate.
+	* More information under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate")
 	public boolean getBlobCertificateLastCertificate();
+
 }

@@ -31,9 +31,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Policy Administration Point"
-
-	"Definition of a security administration point (PDP)."@en 
+* "Policy Administration Point"
+* "Definition of a security administration point (PDP)."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:PolicyAdministrationPoint")
@@ -54,20 +53,17 @@ public class PolicyAdministrationPointImpl implements Serializable, IPolicyAdmin
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has external access control"
-
-	"Endpoint to an external access control defining a policy administration point to be used by the AAS."@en
+	* "has external access control"
+	* "Endpoint to an external access control defining a policy administration point to be used by the AAS."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl", "policyAdministrationPointExternalAccessControl"})
 	protected boolean _policyAdministrationPointExternalAccessControl;
 
 
 	/**
-	"has local access control"
-
-	"The policy administration point of access control as realized by the AAS itself."@en
-
-	"Constraint AASd-009: Either there is an external policy administration point endpoint defined or the AAS has its own access control."@en
+	* "has local access control"
+	* "The policy administration point of access control as realized by the AAS itself."@en
+	* "Constraint AASd-009: Either there is an external policy administration point endpoint defined or the AAS has its own access control."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl", "policyAdministrationPointLocalAccessControl"})
 	protected IAccessControl _policyAdministrationPointLocalAccessControl;
@@ -78,15 +74,29 @@ public class PolicyAdministrationPointImpl implements Serializable, IPolicyAdmin
 		id = VocabUtil.getInstance().createRandomUrl("policyAdministrationPoint");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -111,11 +121,12 @@ public class PolicyAdministrationPointImpl implements Serializable, IPolicyAdmin
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
-	/**
-	"The policy administration point of access control as realized by the AAS itself."@en
 
-	"Constraint AASd-009: Either there is an external policy administration point endpoint defined or the AAS has its own access control."@en
-	@return the IAccessControl of policyAdministrationPointLocalAccessControl
+	/**
+	* "The policy administration point of access control as realized by the AAS itself."@en
+	* "Constraint AASd-009: Either there is an external policy administration point endpoint defined or the AAS has its own access control."@en
+	* @return Returns the IAccessControl for the property policyAdministrationPointLocalAccessControl.
+	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl")
 	final public IAccessControl getPolicyAdministrationPointLocalAccessControl() {
@@ -127,8 +138,9 @@ public class PolicyAdministrationPointImpl implements Serializable, IPolicyAdmin
 	}
 
 	/**
-	"Endpoint to an external access control defining a policy administration point to be used by the AAS."@en
-	@return the boolean of policyAdministrationPointExternalAccessControl
+	* "Endpoint to an external access control defining a policy administration point to be used by the AAS."@en
+	* @return Returns the boolean for the property policyAdministrationPointExternalAccessControl.
+	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl")
 	final public boolean getPolicyAdministrationPointExternalAccessControl() {

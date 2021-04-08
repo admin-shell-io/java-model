@@ -31,9 +31,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Referable"
-
-	"An element that is referable by its idShort. This id is not globally unique. This id is unique within the name space of the element."@en 
+* "Referable"
+* "An element that is referable by its idShort. This id is not globally unique. This id is unique within the name space of the element."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Referable")
@@ -54,59 +53,47 @@ public class ReferableImpl implements Serializable, IReferable {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has description"
-
-	"Description or comments on the element. The description can be provided in several languages."@en
+	* "has description"
+	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "referableDescription"})
 	protected ArrayList<? extends TypedLiteral> _referableDescription;
 
 
 	/**
-	"has display name"
-
-	"Display name. Can be provided in several languages."@en
+	* "has display name"
+	* "Display name. Can be provided in several languages."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "referableDisplayName"})
 	protected TypedLiteral _referableDisplayName;
 
 
 	/**
-	"has short id"
-
-	"Identifying string of the element within its name space."@en
-
-	"Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
-
-	"Constraint AASd-003: idShort shall be matched case-insensitive."@en
-
-	"Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
-
-	"Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
-
-	"Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
+	* "has short id"
+	* "Identifying string of the element within its name space."@en
+	* "Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
+	* "Constraint AASd-003: idShort shall be matched case-insensitive."@en
+	* "Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
+	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
+	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "referableIdShort"})
 	protected String _referableIdShort;
 
 
 	/**
-	"has parent"
-
-	"Reference to the next referable parent element of the element."@en
-
-	"Constraint AASd-004: Add parent in case of non-identifiable elements."@en
-
-	"This element is used to ease navigation in the model and thus it enables more performant"@en
+	* "has parent"
+	* "Reference to the next referable parent element of the element."@en
+	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
+	* "This element is used to ease navigation in the model and thus it enables more performant"@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/parent", "referableParent"})
 	protected URI _referableParent;
 
 
 	/**
-	"has category"
-
-	"The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	* "has category"
+	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableReferableCategory"})
 	protected ArrayList<? extends String> _referableReferableCategory;
@@ -117,15 +104,29 @@ public class ReferableImpl implements Serializable, IReferable {
 		id = VocabUtil.getInstance().createRandomUrl("referable");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -150,9 +151,11 @@ public class ReferableImpl implements Serializable, IReferable {
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
 	/**
-	"The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
-	@return the List of referableReferableCategory
+	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	* @return Returns the List of String for the property referableReferableCategory.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	final public List<? extends String> getReferableReferableCategory() {
@@ -164,8 +167,9 @@ public class ReferableImpl implements Serializable, IReferable {
 	}
 
 	/**
-	"Description or comments on the element. The description can be provided in several languages."@en
-	@return the List of referableDescription
+	* "Description or comments on the element. The description can be provided in several languages."@en
+	* @return Returns the List of TypedLiteral for the property referableDescription.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/description
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	final public List<? extends TypedLiteral> getReferableDescription() {
@@ -177,8 +181,9 @@ public class ReferableImpl implements Serializable, IReferable {
 	}
 
 	/**
-	"Display name. Can be provided in several languages."@en
-	@return the TypedLiteral of referableDisplayName
+	* "Display name. Can be provided in several languages."@en
+	* @return Returns the TypedLiteral for the property referableDisplayName.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/displayName
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	final public TypedLiteral getReferableDisplayName() {
@@ -190,18 +195,14 @@ public class ReferableImpl implements Serializable, IReferable {
 	}
 
 	/**
-	"Identifying string of the element within its name space."@en
-
-	"Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
-
-	"Constraint AASd-003: idShort shall be matched case-insensitive."@en
-
-	"Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
-
-	"Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
-
-	"Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
-	@return the String of referableIdShort
+	* "Identifying string of the element within its name space."@en
+	* "Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
+	* "Constraint AASd-003: idShort shall be matched case-insensitive."@en
+	* "Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
+	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
+	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
+	* @return Returns the String for the property referableIdShort.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/idShort
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	final public String getReferableIdShort() {
@@ -213,12 +214,11 @@ public class ReferableImpl implements Serializable, IReferable {
 	}
 
 	/**
-	"Reference to the next referable parent element of the element."@en
-
-	"Constraint AASd-004: Add parent in case of non-identifiable elements."@en
-
-	"This element is used to ease navigation in the model and thus it enables more performant"@en
-	@return the URI of referableParent
+	* "Reference to the next referable parent element of the element."@en
+	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
+	* "This element is used to ease navigation in the model and thus it enables more performant"@en
+	* @return Returns the URI for the property referableParent.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/parent
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
 	final public URI getReferableParent() {

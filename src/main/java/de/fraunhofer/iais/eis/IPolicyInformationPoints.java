@@ -31,36 +31,55 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Policy Information Points"
-
-	"Defines the security policy information points (PIP). Serves as the retrieval source of attributes, or the data required for policy evaluation to provide the information needed by the policy decision point to make the decisions."@en
+* "Policy Information Points"
+* "Defines the security policy information points (PIP). Serves as the retrieval source of attributes, or the data required for policy evaluation to provide the information needed by the policy decision point to make the decisions."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = PolicyInformationPointsImpl.class),})
+	@JsonSubTypes.Type(value = PolicyInformationPointsImpl.class)
+})
 public interface IPolicyInformationPoints {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"If externalInformationPoints True then at least one Endpoint to external available information needs to be configured for the AAS."@en
-	@return the boolean of policyInformationPointsExternalInformationPoints
+	* "If externalInformationPoints True then at least one Endpoint to external available information needs to be configured for the AAS."@en
+	* @return Returns the boolean for the property policyInformationPointsExternalInformationPoints.
+	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints")
 	public boolean getPolicyInformationPointsExternalInformationPoints();
 
 	/**
-	"References to submodels defining information used by security access permission rules."@en
-	@return the List of policyInformationPointsInternalInformationPoint
+	* "References to submodels defining information used by security access permission rules."@en
+	* @return Returns the List of ISubmodel for the property policyInformationPointsInternalInformationPoint.
+	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint")
 	public List<? extends ISubmodel> getPolicyInformationPointsInternalInformationPoint();
+
 }

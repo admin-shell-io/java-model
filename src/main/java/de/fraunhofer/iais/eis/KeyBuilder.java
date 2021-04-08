@@ -43,22 +43,42 @@ public class KeyBuilder {
 		keyImpl.id = id;
 	}
 
+	/**
+	* This function allows setting a value for keyIdType
+	* @param _keyIdType_ desired value to be set
+	* @return Builder object with new value for keyIdType
+	*/
 	final public KeyBuilder _keyIdType_(KeyType _keyIdType_) {
 		this.keyImpl._keyIdType = _keyIdType_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for keyType
+	* @param _keyType_ desired value to be set
+	* @return Builder object with new value for keyType
+	*/
 	final public KeyBuilder _keyType_(KeyElements _keyType_) {
 		this.keyImpl._keyType = _keyType_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for keyValue
+	* @param _keyValue_ desired value to be set
+	* @return Builder object with new value for keyValue
+	*/
 	final public KeyBuilder _keyValue_(String _keyValue_) {
 		this.keyImpl._keyValue = _keyValue_;
 		return this;
 	}
+	/**
+	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
+	* @return Bean with specified values
+	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
+	*/
 
 	final public IKey build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(keyImpl);

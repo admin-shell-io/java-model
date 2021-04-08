@@ -34,31 +34,30 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /** 
-	"Identifiable Element"
-
-	"Enumeration of all identifiable elements within an asset administration shell that are not identifiable"@en 
+* "Identifiable Element"
+* "Enumeration of all identifiable elements within an asset administration shell that are not identifiable"@en 
 */
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 @JsonTypeName("aas:IdentifiableElements")
 public enum IdentifiableElements {
 
 	/** 
-	"Asset"
+	* "Asset"
 	*/
 	ASSET("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/ASSET", Arrays.asList(new TypedLiteral("Asset", "")), Collections.emptyList()),
 
 	/** 
-	"Asset Administration Shell"
+	* "Asset Administration Shell"
 	*/
 	ASSET_ADMINISTRATION_SHELL("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/ASSET_ADMINISTRATION_SHELL", Arrays.asList(new TypedLiteral("Asset Administration Shell", "")), Collections.emptyList()),
 
 	/** 
-	"Concept Description"
+	* "Concept Description"
 	*/
 	CONCEPT_DESCRIPTION("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/CONCEPT_DESCRIPTION", Arrays.asList(new TypedLiteral("Concept Description", "")), Collections.emptyList()),
 
 	/** 
-	"Submodel"
+	* "Submodel"
 	*/
 	SUBMODEL("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/SUBMODEL", Arrays.asList(new TypedLiteral("Submodel", "")), Collections.emptyList());
 
@@ -84,17 +83,31 @@ public enum IdentifiableElements {
 			throw new IllegalArgumentException(e);
 		}
 	}
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 
 	@JsonIgnore
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	@JsonIgnore
 	final public List<TypedLiteral> getLabel() {
 		return label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	@JsonIgnore
 	final public List<TypedLiteral> getComment() {
 		return comment;

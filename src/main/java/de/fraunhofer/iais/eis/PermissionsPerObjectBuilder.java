@@ -43,22 +43,42 @@ public class PermissionsPerObjectBuilder {
 		permissionsPerObjectImpl.id = id;
 	}
 
+	/**
+	* This function allows setting a value for permissionsPerObjectObject
+	* @param _permissionsPerObjectObject_ desired value to be set
+	* @return Builder object with new value for permissionsPerObjectObject
+	*/
 	final public PermissionsPerObjectBuilder _permissionsPerObjectObject_(IReferable _permissionsPerObjectObject_) {
 		this.permissionsPerObjectImpl._permissionsPerObjectObject = _permissionsPerObjectObject_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for permissionsPerObjectPermission
+	* @param _permissionsPerObjectPermission_ desired value to be set
+	* @return Builder object with new value for permissionsPerObjectPermission
+	*/
 	final public PermissionsPerObjectBuilder _permissionsPerObjectPermission_(ArrayList<? extends IPermission> _permissionsPerObjectPermission_) {
 		this.permissionsPerObjectImpl._permissionsPerObjectPermission = _permissionsPerObjectPermission_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for permissionsPerObjectTargetObjectAttributes
+	* @param _permissionsPerObjectTargetObjectAttributes_ desired value to be set
+	* @return Builder object with new value for permissionsPerObjectTargetObjectAttributes
+	*/
 	final public PermissionsPerObjectBuilder _permissionsPerObjectTargetObjectAttributes_(IObjectAttributes _permissionsPerObjectTargetObjectAttributes_) {
 		this.permissionsPerObjectImpl._permissionsPerObjectTargetObjectAttributes = _permissionsPerObjectTargetObjectAttributes_;
 		return this;
 	}
+	/**
+	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
+	* @return Bean with specified values
+	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
+	*/
 
 	final public IPermissionsPerObject build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(permissionsPerObjectImpl);

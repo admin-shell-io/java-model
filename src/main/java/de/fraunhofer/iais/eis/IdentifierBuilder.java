@@ -43,16 +43,31 @@ public class IdentifierBuilder {
 		identifierImpl.id = id;
 	}
 
+	/**
+	* This function allows setting a value for identifierIdentifier
+	* @param _identifierIdentifier_ desired value to be set
+	* @return Builder object with new value for identifierIdentifier
+	*/
 	final public IdentifierBuilder _identifierIdentifier_(ArrayList<? extends TypedLiteral> _identifierIdentifier_) {
 		this.identifierImpl._identifierIdentifier = _identifierIdentifier_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for identifierIdType
+	* @param _identifierIdType_ desired value to be set
+	* @return Builder object with new value for identifierIdType
+	*/
 	final public IdentifierBuilder _identifierIdType_(IdentifierType _identifierIdType_) {
 		this.identifierImpl._identifierIdType = _identifierIdType_;
 		return this;
 	}
+	/**
+	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
+	* @return Bean with specified values
+	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
+	*/
 
 	final public IIdentifier build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(identifierImpl);

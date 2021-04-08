@@ -31,9 +31,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Identifier"
-
-	"Used to uniquely identify an entity by using an identifier."@en 
+* "Identifier"
+* "Used to uniquely identify an entity by using an identifier."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Identifier")
@@ -54,18 +53,16 @@ public class IdentifierImpl implements Serializable, IIdentifier {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has idType"
-
-	"Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the enumeration \'IdentifierType\'."@en
+	* "has idType"
+	* "Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the enumeration \'IdentifierType\'."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifier/idType", "identifierIdType"})
 	protected IdentifierType _identifierIdType;
 
 
 	/**
-	"has identification"
-
-	"A globally unique identifier which might not be a URI. Its type is defined in idType."@en
+	* "has identification"
+	* "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifier/identifier", "identifierIdentifier"})
 	protected ArrayList<? extends TypedLiteral> _identifierIdentifier;
@@ -76,15 +73,29 @@ public class IdentifierImpl implements Serializable, IIdentifier {
 		id = VocabUtil.getInstance().createRandomUrl("identifier");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -109,9 +120,11 @@ public class IdentifierImpl implements Serializable, IIdentifier {
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
 	/**
-	"A globally unique identifier which might not be a URI. Its type is defined in idType."@en
-	@return the List of identifierIdentifier
+	* "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
+	* @return Returns the List of TypedLiteral for the property identifierIdentifier.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Identifier/identifier
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
 	final public List<? extends TypedLiteral> getIdentifierIdentifier() {
@@ -123,8 +136,9 @@ public class IdentifierImpl implements Serializable, IIdentifier {
 	}
 
 	/**
-	"Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the enumeration \'IdentifierType\'."@en
-	@return the IdentifierType of identifierIdType
+	* "Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the enumeration \'IdentifierType\'."@en
+	* @return Returns the IdentifierType for the property identifierIdType.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Identifier/idType
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")
 	final public IdentifierType getIdentifierIdType() {

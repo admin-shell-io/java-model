@@ -31,40 +31,57 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Permission"
-
-	"Description of a single permission."@en
+* "Permission"
+* "Description of a single permission."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = PermissionImpl.class),})
+	@JsonSubTypes.Type(value = PermissionImpl.class)
+})
 public interface IPermission {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"Description of the kind of permission. Possible kind of permission also include the denial of the permission."@en
-	@return the PermissionKind of permissionKindOfPermission
+	* "Description of the kind of permission. Possible kind of permission also include the denial of the permission."@en
+	* @return Returns the PermissionKind for the property permissionKindOfPermission.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
 	public PermissionKind getPermissionKindOfPermission();
 
 	/**
-	"Reference to a property that defines the semantics of the permission."@en
-
-	"Constraint AASs-010: The property referenced in Permission/permission shall have the category \'CONSTANT\'."@en
-
-	"Constraint AASs-011: The property referenced in Permission/permission shall be part of the submodel that is referenced within the \'selectablePermissions\' attribute of \'AccessControl\'."@en
-	@return the IProperty of permissionPermission
+	* "Reference to a property that defines the semantics of the permission."@en
+	* "Constraint AASs-010: The property referenced in Permission/permission shall have the category \'CONSTANT\'."@en
+	* "Constraint AASs-011: The property referenced in Permission/permission shall be part of the submodel that is referenced within the \'selectablePermissions\' attribute of \'AccessControl\'."@en
+	* @return Returns the IProperty for the property permissionPermission.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Permission/permission
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Permission/permission")
 	public IProperty getPermissionPermission();
+
 }

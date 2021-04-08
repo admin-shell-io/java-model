@@ -43,22 +43,42 @@ public class SecurityBuilder {
 		securityImpl.id = id;
 	}
 
+	/**
+	* This function allows setting a value for securityAccessControlPolicyPoints
+	* @param _securityAccessControlPolicyPoints_ desired value to be set
+	* @return Builder object with new value for securityAccessControlPolicyPoints
+	*/
 	final public SecurityBuilder _securityAccessControlPolicyPoints_(IPolicyAdministrationPoint _securityAccessControlPolicyPoints_) {
 		this.securityImpl._securityAccessControlPolicyPoints = _securityAccessControlPolicyPoints_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for securityCertificate
+	* @param _securityCertificate_ desired value to be set
+	* @return Builder object with new value for securityCertificate
+	*/
 	final public SecurityBuilder _securityCertificate_(ArrayList<? extends ICertificate> _securityCertificate_) {
 		this.securityImpl._securityCertificate = _securityCertificate_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for securityRequiredCertificateExtension
+	* @param _securityRequiredCertificateExtension_ desired value to be set
+	* @return Builder object with new value for securityRequiredCertificateExtension
+	*/
 	final public SecurityBuilder _securityRequiredCertificateExtension_(ArrayList<? extends IReference> _securityRequiredCertificateExtension_) {
 		this.securityImpl._securityRequiredCertificateExtension = _securityRequiredCertificateExtension_;
 		return this;
 	}
+	/**
+	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
+	* @return Bean with specified values
+	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
+	*/
 
 	final public ISecurity build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(securityImpl);

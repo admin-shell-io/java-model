@@ -31,43 +31,63 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Security"
-
-	"Container for security relevant information of the AAS."@en
+* "Security"
+* "Container for security relevant information of the AAS."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = SecurityImpl.class),})
+	@JsonSubTypes.Type(value = SecurityImpl.class)
+})
 public interface ISecurity {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"Access control policy points of the AAS."@en
-	@return the IPolicyAdministrationPoint of securityAccessControlPolicyPoints
+	* "Access control policy points of the AAS."@en
+	* @return Returns the IPolicyAdministrationPoint for the property securityAccessControlPolicyPoints.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
 	public IPolicyAdministrationPoint getSecurityAccessControlPolicyPoints();
 
 	/**
-	"Certificates of the AAS."@en
-	@return the List of securityCertificate
+	* "Certificates of the AAS."@en
+	* @return Returns the List of ICertificate for the property securityCertificate.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Security/certificate
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/certificate")
 	public List<? extends ICertificate> getSecurityCertificate();
 
 	/**
-	"Certificate extensions as required by the AAS."@en
-	@return the List of securityRequiredCertificateExtension
+	* "Certificate extensions as required by the AAS."@en
+	* @return Returns the List of IReference for the property securityRequiredCertificateExtension.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension")
 	public List<? extends IReference> getSecurityRequiredCertificateExtension();
+
 }

@@ -34,25 +34,22 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /** 
-	"Local Key Type"
-
-	"Enumeration of different key value types within a key."@en 
+* "Local Key Type"
+* "Enumeration of different key value types within a key."@en 
 */
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 @JsonTypeName("aas:LocalKeyType")
 public enum LocalKeyType {
 
 	/** 
-	"FragementId"
-
-	"Identifier of a fragment within a file"@en
+	* "FragementId"
+	* "Identifier of a fragment within a file"@en
 	*/
 	FRAGMENT_ID("https://admin-shell.io/aas/3/0/RC01/LocalKeyType/FRAGMENT_ID", Arrays.asList(new TypedLiteral("FragementId", "")), Arrays.asList(new TypedLiteral("Identifier of a fragment within a file", "en"))),
 
 	/** 
-	"IdShort"
-
-	"idShort of a referable element"@en
+	* "IdShort"
+	* "idShort of a referable element"@en
 	*/
 	IDSHORT("https://admin-shell.io/aas/3/0/RC01/LocalKeyType/IDSHORT", Arrays.asList(new TypedLiteral("IdShort", "")), Arrays.asList(new TypedLiteral("idShort of a referable element", "en")));
 
@@ -78,17 +75,31 @@ public enum LocalKeyType {
 			throw new IllegalArgumentException(e);
 		}
 	}
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 
 	@JsonIgnore
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	@JsonIgnore
 	final public List<TypedLiteral> getLabel() {
 		return label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	@JsonIgnore
 	final public List<TypedLiteral> getComment() {
 		return comment;

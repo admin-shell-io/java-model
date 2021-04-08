@@ -43,10 +43,20 @@ public class ObjectAttributesBuilder {
 		objectAttributesImpl.id = id;
 	}
 
+	/**
+	* This function allows setting a value for objectAttributesObjectAttribute
+	* @param _objectAttributesObjectAttribute_ desired value to be set
+	* @return Builder object with new value for objectAttributesObjectAttribute
+	*/
 	final public ObjectAttributesBuilder _objectAttributesObjectAttribute_(ArrayList<? extends IDataElement> _objectAttributesObjectAttribute_) {
 		this.objectAttributesImpl._objectAttributesObjectAttribute = _objectAttributesObjectAttribute_;
 		return this;
 	}
+	/**
+	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
+	* @return Bean with specified values
+	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
+	*/
 
 	final public IObjectAttributes build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(objectAttributesImpl);

@@ -43,10 +43,20 @@ public class ReferenceBuilder {
 		referenceImpl.id = id;
 	}
 
+	/**
+	* This function allows setting a value for referenceKey
+	* @param _referenceKey_ desired value to be set
+	* @return Builder object with new value for referenceKey
+	*/
 	final public ReferenceBuilder _referenceKey_(ArrayList<? extends IKey> _referenceKey_) {
 		this.referenceImpl._referenceKey = _referenceKey_;
 		return this;
 	}
+	/**
+	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
+	* @return Bean with specified values
+	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
+	*/
 
 	final public IReference build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(referenceImpl);

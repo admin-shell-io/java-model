@@ -34,39 +34,34 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /** 
-	"Permission Kind"
-
-	"Enumeration of the kind of permissions that is given to the assignment of a permission to a subject."@en 
+* "Permission Kind"
+* "Enumeration of the kind of permissions that is given to the assignment of a permission to a subject."@en 
 */
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 @JsonTypeName("aas:PermissionKind")
 public enum PermissionKind {
 
 	/** 
-	"allow"
-
-	"Allow the permission given to the subject."@en
+	* "allow"
+	* "Allow the permission given to the subject."@en
 	*/
 	ALLOW("https://admin-shell.io/aas/3/0/RC01/PermissionKind/ALLOW", Arrays.asList(new TypedLiteral("allow", "")), Arrays.asList(new TypedLiteral("Allow the permission given to the subject.", "en"))),
 
 	/** 
-	"deny"
-
-	"Explicitly deny the permission given to the subject."@en
+	* "deny"
+	* "Explicitly deny the permission given to the subject."@en
 	*/
 	DENY("https://admin-shell.io/aas/3/0/RC01/PermissionKind/DENY", Arrays.asList(new TypedLiteral("deny", "")), Arrays.asList(new TypedLiteral("Explicitly deny the permission given to the subject.", "en"))),
 
 	/** 
-	"not applicable"
-
-	"The permission is not applicable to the subject."@en
+	* "not applicable"
+	* "The permission is not applicable to the subject."@en
 	*/
 	NOT_APPLICABLE("https://admin-shell.io/aas/3/0/RC01/PermissionKind/NOT_APPLICABLE", Arrays.asList(new TypedLiteral("not applicable", "")), Arrays.asList(new TypedLiteral("The permission is not applicable to the subject.", "en"))),
 
 	/** 
-	"undefined"
-
-	"It is undefined whether the permission is allowed, not applicable or denied to the subject."@en
+	* "undefined"
+	* "It is undefined whether the permission is allowed, not applicable or denied to the subject."@en
 	*/
 	UNDEFINED("https://admin-shell.io/aas/3/0/RC01/PermissionKind/UNDEFINED", Arrays.asList(new TypedLiteral("undefined", "")), Arrays.asList(new TypedLiteral("It is undefined whether the permission is allowed, not applicable or denied to the subject.", "en")));
 
@@ -92,17 +87,31 @@ public enum PermissionKind {
 			throw new IllegalArgumentException(e);
 		}
 	}
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 
 	@JsonIgnore
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	@JsonIgnore
 	final public List<TypedLiteral> getLabel() {
 		return label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	@JsonIgnore
 	final public List<TypedLiteral> getComment() {
 		return comment;

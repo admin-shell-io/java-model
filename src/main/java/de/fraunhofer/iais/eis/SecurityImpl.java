@@ -31,9 +31,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Security"
-
-	"Container for security relevant information of the AAS."@en 
+* "Security"
+* "Container for security relevant information of the AAS."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Security")
@@ -54,27 +53,24 @@ public class SecurityImpl implements Serializable, ISecurity {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has access control policy points"
-
-	"Access control policy points of the AAS."@en
+	* "has access control policy points"
+	* "Access control policy points of the AAS."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints", "securityAccessControlPolicyPoints"})
 	protected IPolicyAdministrationPoint _securityAccessControlPolicyPoints;
 
 
 	/**
-	"has certificate"
-
-	"Certificates of the AAS."@en
+	* "has certificate"
+	* "Certificates of the AAS."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Security/certificate", "securityCertificate"})
 	protected ArrayList<? extends ICertificate> _securityCertificate;
 
 
 	/**
-	"has required certificate extension"
-
-	"Certificate extensions as required by the AAS."@en
+	* "has required certificate extension"
+	* "Certificate extensions as required by the AAS."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension", "securityRequiredCertificateExtension"})
 	protected ArrayList<? extends IReference> _securityRequiredCertificateExtension;
@@ -85,15 +81,29 @@ public class SecurityImpl implements Serializable, ISecurity {
 		id = VocabUtil.getInstance().createRandomUrl("security");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -118,9 +128,11 @@ public class SecurityImpl implements Serializable, ISecurity {
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
 	/**
-	"Access control policy points of the AAS."@en
-	@return the IPolicyAdministrationPoint of securityAccessControlPolicyPoints
+	* "Access control policy points of the AAS."@en
+	* @return Returns the IPolicyAdministrationPoint for the property securityAccessControlPolicyPoints.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
 	final public IPolicyAdministrationPoint getSecurityAccessControlPolicyPoints() {
@@ -132,8 +144,9 @@ public class SecurityImpl implements Serializable, ISecurity {
 	}
 
 	/**
-	"Certificates of the AAS."@en
-	@return the List of securityCertificate
+	* "Certificates of the AAS."@en
+	* @return Returns the List of ICertificate for the property securityCertificate.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Security/certificate
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/certificate")
 	final public List<? extends ICertificate> getSecurityCertificate() {
@@ -145,8 +158,9 @@ public class SecurityImpl implements Serializable, ISecurity {
 	}
 
 	/**
-	"Certificate extensions as required by the AAS."@en
-	@return the List of securityRequiredCertificateExtension
+	* "Certificate extensions as required by the AAS."@en
+	* @return Returns the List of IReference for the property securityRequiredCertificateExtension.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension")
 	final public List<? extends IReference> getSecurityRequiredCertificateExtension() {

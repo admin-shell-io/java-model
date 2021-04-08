@@ -31,9 +31,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Object Attributes"
-
-	"A set of data elements that describe object attributes. These attributes need to refer to a data element within an existing submodel."@en 
+* "Object Attributes"
+* "A set of data elements that describe object attributes. These attributes need to refer to a data element within an existing submodel."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:ObjectAttributes")
@@ -54,9 +53,8 @@ public class ObjectAttributesImpl implements Serializable, IObjectAttributes {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has object attribute"
-
-	"A data elements that further classifies an object."@en
+	* "has object attribute"
+	* "A data elements that further classifies an object."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute", "objectAttributesObjectAttribute"})
 	protected ArrayList<? extends IDataElement> _objectAttributesObjectAttribute;
@@ -67,15 +65,29 @@ public class ObjectAttributesImpl implements Serializable, IObjectAttributes {
 		id = VocabUtil.getInstance().createRandomUrl("objectAttributes");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -100,9 +112,11 @@ public class ObjectAttributesImpl implements Serializable, IObjectAttributes {
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
 	/**
-	"A data elements that further classifies an object."@en
-	@return the List of objectAttributesObjectAttribute
+	* "A data elements that further classifies an object."@en
+	* @return Returns the List of IDataElement for the property objectAttributesObjectAttribute.
+	* More information under https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
 	final public List<? extends IDataElement> getObjectAttributesObjectAttribute() {

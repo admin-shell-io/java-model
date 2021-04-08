@@ -42,6 +42,11 @@ public class DataSpecificationContentBuilder {
 		this();
 		dataSpecificationContentImpl.id = id;
 	}
+	/**
+	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
+	* @return Bean with specified values
+	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
+	*/
 
 	final public IDataSpecificationContent build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(dataSpecificationContentImpl);

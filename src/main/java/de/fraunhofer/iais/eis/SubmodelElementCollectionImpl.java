@@ -31,15 +31,11 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Submodel Element Collection"
-
-	"A submodel element collection is a set or list of submodel elements."@en
-
-	"Constraint AASd-059: If the semanticId of a SubmodelElementCollection references a ConceptDescription then the category of the ConceptDescription shall be COLLECTION or ENTITY."@en
-
-	"Constraint AASd-092: If the semanticId of a SubmodelElementCollection with SubmodelElementCollection/allowDuplicates == false references a ConceptDescription then the ConceptDescription/category shall be ENTITY."@en
-
-	"Constraint AASd-093: If the semanticId of a SubmodelElementCollection with SubmodelElementCollection/allowDuplicates == true references a ConceptDescription then the ConceptDescription/category shall be COLLECTION."@en 
+* "Submodel Element Collection"
+* "A submodel element collection is a set or list of submodel elements."@en
+* "Constraint AASd-059: If the semanticId of a SubmodelElementCollection references a ConceptDescription then the category of the ConceptDescription shall be COLLECTION or ENTITY."@en
+* "Constraint AASd-092: If the semanticId of a SubmodelElementCollection with SubmodelElementCollection/allowDuplicates == false references a ConceptDescription then the ConceptDescription/category shall be ENTITY."@en
+* "Constraint AASd-093: If the semanticId of a SubmodelElementCollection with SubmodelElementCollection/allowDuplicates == true references a ConceptDescription then the ConceptDescription/category shall be COLLECTION."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:SubmodelElementCollection")
@@ -60,126 +56,105 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has Data Specification"
-
-	"Global reference to the data specification template used by the element."@en
+	* "has Data Specification"
+	* "Global reference to the data specification template used by the element."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "hasDataSpecificationDataSpecification"})
 	protected ArrayList<? extends IReference> _hasDataSpecificationDataSpecification;
 
 
 	/**
-	"has kind"
-
-	"ModelingKind of the element: either type or instance."@en
+	* "has kind"
+	* "ModelingKind of the element: either type or instance."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasKind/kind", "hasKindKind"})
 	protected ModelingKind _hasKindKind;
 
 
 	/**
-	"has semantic ID"
-
-	"Points to the Expression Semantic of the Submodels"@en
-
-	"The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* "has semantic ID"
+	* "Points to the Expression Semantic of the Submodels"@en
+	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "hasSemanticsSemanticId"})
 	protected IReference _hasSemanticsSemanticId;
 
 
 	/**
-	"has qualifier"
-
-	"Additional qualification of a qualifiable element."@en
+	* "has qualifier"
+	* "Additional qualification of a qualifiable element."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier", "qualifiableQualifier"})
 	protected ArrayList<? extends IConstraint> _qualifiableQualifier;
 
 
 	/**
-	"has description"
-
-	"Description or comments on the element. The description can be provided in several languages."@en
+	* "has description"
+	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "referableDescription"})
 	protected ArrayList<? extends TypedLiteral> _referableDescription;
 
 
 	/**
-	"has display name"
-
-	"Display name. Can be provided in several languages."@en
+	* "has display name"
+	* "Display name. Can be provided in several languages."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "referableDisplayName"})
 	protected TypedLiteral _referableDisplayName;
 
 
 	/**
-	"has short id"
-
-	"Identifying string of the element within its name space."@en
-
-	"Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
-
-	"Constraint AASd-003: idShort shall be matched case-insensitive."@en
-
-	"Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
-
-	"Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
-
-	"Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
+	* "has short id"
+	* "Identifying string of the element within its name space."@en
+	* "Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
+	* "Constraint AASd-003: idShort shall be matched case-insensitive."@en
+	* "Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
+	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
+	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "referableIdShort"})
 	protected String _referableIdShort;
 
 
 	/**
-	"has parent"
-
-	"Reference to the next referable parent element of the element."@en
-
-	"Constraint AASd-004: Add parent in case of non-identifiable elements."@en
-
-	"This element is used to ease navigation in the model and thus it enables more performant"@en
+	* "has parent"
+	* "Reference to the next referable parent element of the element."@en
+	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
+	* "This element is used to ease navigation in the model and thus it enables more performant"@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/parent", "referableParent"})
 	protected URI _referableParent;
 
 
 	/**
-	"has category"
-
-	"The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	* "has category"
+	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableReferableCategory"})
 	protected ArrayList<? extends String> _referableReferableCategory;
 
 
 	/**
-	"allow duplicates"
-
-	"If allowDuplicates=true then it is allowed that the collection contains the same element several times. Default = false"@en
-
-	"Constraint AASd-026: If allowDuplicates==false then it is not allowed that the collection contains several elements with the same semantics (i.e. the same semanticId)."@en
+	* "allow duplicates"
+	* "If allowDuplicates=true then it is allowed that the collection contains the same element several times. Default = false"@en
+	* "Constraint AASd-026: If allowDuplicates==false then it is not allowed that the collection contains several elements with the same semantics (i.e. the same semanticId)."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates", "submodelElementCollectionAllowDuplicates"})
 	protected boolean _submodelElementCollectionAllowDuplicates;
 
 
 	/**
-	"ordered"
-
-	"If ordered=false then the elements in the property collection are not ordered. If ordered=true then the elements in the collection are ordered. Default = false"@en
+	* "ordered"
+	* "If ordered=false then the elements in the property collection are not ordered. If ordered=true then the elements in the collection are ordered. Default = false"@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered", "submodelElementCollectionOrdered"})
 	protected boolean _submodelElementCollectionOrdered;
 
 
 	/**
-	"has value"
-
-	"Submodel element contained in the collection."@en
+	* "has value"
+	* "Submodel element contained in the collection."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value", "submodelElementCollectionValue"})
 	protected ArrayList<? extends ISubmodelElement> _submodelElementCollectionValue;
@@ -190,15 +165,29 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 		id = VocabUtil.getInstance().createRandomUrl("submodelElementCollection");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -223,11 +212,12 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
-	/**
-	"If allowDuplicates=true then it is allowed that the collection contains the same element several times. Default = false"@en
 
-	"Constraint AASd-026: If allowDuplicates==false then it is not allowed that the collection contains several elements with the same semantics (i.e. the same semanticId)."@en
-	@return the boolean of submodelElementCollectionAllowDuplicates
+	/**
+	* "If allowDuplicates=true then it is allowed that the collection contains the same element several times. Default = false"@en
+	* "Constraint AASd-026: If allowDuplicates==false then it is not allowed that the collection contains several elements with the same semantics (i.e. the same semanticId)."@en
+	* @return Returns the boolean for the property submodelElementCollectionAllowDuplicates.
+	* More information under https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates")
 	final public boolean getSubmodelElementCollectionAllowDuplicates() {
@@ -239,8 +229,9 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 	}
 
 	/**
-	"If ordered=false then the elements in the property collection are not ordered. If ordered=true then the elements in the collection are ordered. Default = false"@en
-	@return the boolean of submodelElementCollectionOrdered
+	* "If ordered=false then the elements in the property collection are not ordered. If ordered=true then the elements in the collection are ordered. Default = false"@en
+	* @return Returns the boolean for the property submodelElementCollectionOrdered.
+	* More information under https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered")
 	final public boolean getSubmodelElementCollectionOrdered() {
@@ -252,8 +243,9 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 	}
 
 	/**
-	"Submodel element contained in the collection."@en
-	@return the List of submodelElementCollectionValue
+	* "Submodel element contained in the collection."@en
+	* @return Returns the List of ISubmodelElement for the property submodelElementCollectionValue.
+	* More information under https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value")
 	final public List<? extends ISubmodelElement> getSubmodelElementCollectionValue() {
@@ -266,7 +258,9 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 
 
 	/**
-	"The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	* @return Returns the List of String for the property referableReferableCategory.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	final public List<? extends String> getReferableReferableCategory() {
@@ -278,7 +272,9 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 	}
 
 	/**
-	"Description or comments on the element. The description can be provided in several languages."@en
+	* "Description or comments on the element. The description can be provided in several languages."@en
+	* @return Returns the List of TypedLiteral for the property referableDescription.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/description
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	final public List<? extends TypedLiteral> getReferableDescription() {
@@ -290,7 +286,9 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 	}
 
 	/**
-	"Display name. Can be provided in several languages."@en
+	* "Display name. Can be provided in several languages."@en
+	* @return Returns the TypedLiteral for the property referableDisplayName.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/displayName
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	final public TypedLiteral getReferableDisplayName() {
@@ -302,17 +300,14 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 	}
 
 	/**
-	"Identifying string of the element within its name space."@en
-
-	"Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
-
-	"Constraint AASd-003: idShort shall be matched case-insensitive."@en
-
-	"Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
-
-	"Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
-
-	"Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
+	* "Identifying string of the element within its name space."@en
+	* "Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
+	* "Constraint AASd-003: idShort shall be matched case-insensitive."@en
+	* "Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
+	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
+	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
+	* @return Returns the String for the property referableIdShort.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/idShort
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	final public String getReferableIdShort() {
@@ -324,11 +319,11 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 	}
 
 	/**
-	"Reference to the next referable parent element of the element."@en
-
-	"Constraint AASd-004: Add parent in case of non-identifiable elements."@en
-
-	"This element is used to ease navigation in the model and thus it enables more performant"@en
+	* "Reference to the next referable parent element of the element."@en
+	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
+	* "This element is used to ease navigation in the model and thus it enables more performant"@en
+	* @return Returns the URI for the property referableParent.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/parent
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
 	final public URI getReferableParent() {
@@ -340,7 +335,9 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 	}
 
 	/**
-	"Additional qualification of a qualifiable element."@en
+	* "Additional qualification of a qualifiable element."@en
+	* @return Returns the List of IConstraint for the property qualifiableQualifier.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
 	final public List<? extends IConstraint> getQualifiableQualifier() {
@@ -352,7 +349,9 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 	}
 
 	/**
-	"Global reference to the data specification template used by the element."@en
+	* "Global reference to the data specification template used by the element."@en
+	* @return Returns the List of IReference for the property hasDataSpecificationDataSpecification.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	final public List<? extends IReference> getHasDataSpecificationDataSpecification() {
@@ -364,7 +363,9 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 	}
 
 	/**
-	"ModelingKind of the element: either type or instance."@en
+	* "ModelingKind of the element: either type or instance."@en
+	* @return Returns the ModelingKind for the property hasKindKind.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasKind/kind
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
 	final public ModelingKind getHasKindKind() {
@@ -376,9 +377,10 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 	}
 
 	/**
-	"Points to the Expression Semantic of the Submodels"@en
-
-	"The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* "Points to the Expression Semantic of the Submodels"@en
+	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* @return Returns the IReference for the property hasSemanticsSemanticId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	final public IReference getHasSemanticsSemanticId() {

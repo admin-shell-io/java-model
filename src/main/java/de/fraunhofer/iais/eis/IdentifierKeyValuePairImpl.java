@@ -31,9 +31,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"identifier key value pair"
-
-	"An IdentifierKeyValuePair describes a generic identifier as key-value pair."@en 
+* "identifier key value pair"
+* "An IdentifierKeyValuePair describes a generic identifier as key-value pair."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:IdentifierKeyValuePair")
@@ -54,38 +53,33 @@ public class IdentifierKeyValuePairImpl implements Serializable, IIdentifierKeyV
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has semantic ID"
-
-	"Points to the Expression Semantic of the Submodels"@en
-
-	"The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* "has semantic ID"
+	* "Points to the Expression Semantic of the Submodels"@en
+	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "hasSemanticsSemanticId"})
 	protected IReference _hasSemanticsSemanticId;
 
 
 	/**
-	"has IdentifierKeyValuePair.externalSubjectId"
-
-	"The (external) subject the key belongs to or has meaning to."@en
+	* "has IdentifierKeyValuePair.externalSubjectId"
+	* "The (external) subject the key belongs to or has meaning to."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId", "identifierKeyValuePairExternalSubjectId"})
 	protected IReference _identifierKeyValuePairExternalSubjectId;
 
 
 	/**
-	"has IdentifierKeyValuePair.key"
-
-	"Key of the identifier."@en
+	* "has IdentifierKeyValuePair.key"
+	* "Key of the identifier."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key", "identifierKeyValuePairKey"})
 	protected String _identifierKeyValuePairKey;
 
 
 	/**
-	"has IdentifierKeyValuePair.value"
-
-	"The value of the identifier with the corresponding key."@en
+	* "has IdentifierKeyValuePair.value"
+	* "The value of the identifier with the corresponding key."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value", "identifierKeyValuePairValue"})
 	protected String _identifierKeyValuePairValue;
@@ -96,15 +90,29 @@ public class IdentifierKeyValuePairImpl implements Serializable, IIdentifierKeyV
 		id = VocabUtil.getInstance().createRandomUrl("identifierKeyValuePair");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -129,9 +137,11 @@ public class IdentifierKeyValuePairImpl implements Serializable, IIdentifierKeyV
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
 	/**
-	"Key of the identifier."@en
-	@return the String of identifierKeyValuePairKey
+	* "Key of the identifier."@en
+	* @return Returns the String for the property identifierKeyValuePairKey.
+	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
 	final public String getIdentifierKeyValuePairKey() {
@@ -143,8 +153,9 @@ public class IdentifierKeyValuePairImpl implements Serializable, IIdentifierKeyV
 	}
 
 	/**
-	"The value of the identifier with the corresponding key."@en
-	@return the String of identifierKeyValuePairValue
+	* "The value of the identifier with the corresponding key."@en
+	* @return Returns the String for the property identifierKeyValuePairValue.
+	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
 	final public String getIdentifierKeyValuePairValue() {
@@ -156,8 +167,9 @@ public class IdentifierKeyValuePairImpl implements Serializable, IIdentifierKeyV
 	}
 
 	/**
-	"The (external) subject the key belongs to or has meaning to."@en
-	@return the IReference of identifierKeyValuePairExternalSubjectId
+	* "The (external) subject the key belongs to or has meaning to."@en
+	* @return Returns the IReference for the property identifierKeyValuePairExternalSubjectId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId")
 	final public IReference getIdentifierKeyValuePairExternalSubjectId() {
@@ -169,9 +181,10 @@ public class IdentifierKeyValuePairImpl implements Serializable, IIdentifierKeyV
 	}
 
 	/**
-	"Points to the Expression Semantic of the Submodels"@en
-
-	"The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* "Points to the Expression Semantic of the Submodels"@en
+	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* @return Returns the IReference for the property hasSemanticsSemanticId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	final public IReference getHasSemanticsSemanticId() {

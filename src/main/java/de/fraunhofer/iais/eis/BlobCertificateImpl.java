@@ -31,9 +31,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Blob Certificate"
-
-	"Certificate provided as BLOB."@en 
+* "Blob Certificate"
+* "Certificate provided as BLOB."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:BlobCertificate")
@@ -54,36 +53,32 @@ public class BlobCertificateImpl implements Serializable, IBlobCertificate {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"Blob Certificate"
-
-	"Certificate as BLOB."@en
+	* "Blob Certificate"
+	* "Certificate as BLOB."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate", "blobCertificateBlobCertificate"})
 	protected byte _blobCertificateBlobCertificate;
 
 
 	/**
-	"contains extension"
-
-	"Extensions contained in the certificate."@en
+	* "contains extension"
+	* "Extensions contained in the certificate."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension", "blobCertificateContainedExtension"})
 	protected ArrayList<? extends IReference> _blobCertificateContainedExtension;
 
 
 	/**
-	"is last certificate"
-
-	"Denotes whether this certificate is the certificated that fast added last."@en
+	* "is last certificate"
+	* "Denotes whether this certificate is the certificated that fast added last."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate", "blobCertificateLastCertificate"})
 	protected boolean _blobCertificateLastCertificate;
 
 
 	/**
-	"has policy administration point"
-
-	"The access control administration policy point of the AAS."@en
+	* "has policy administration point"
+	* "The access control administration policy point of the AAS."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint", "certificatePolicyAdministrationPoint"})
 	protected IPolicyAdministrationPoint _certificatePolicyAdministrationPoint;
@@ -94,15 +89,29 @@ public class BlobCertificateImpl implements Serializable, IBlobCertificate {
 		id = VocabUtil.getInstance().createRandomUrl("blobCertificate");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -127,9 +136,11 @@ public class BlobCertificateImpl implements Serializable, IBlobCertificate {
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
 	/**
-	"Certificate as BLOB."@en
-	@return the byte of blobCertificateBlobCertificate
+	* "Certificate as BLOB."@en
+	* @return Returns the byte for the property blobCertificateBlobCertificate.
+	* More information under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate")
 	final public byte getBlobCertificateBlobCertificate() {
@@ -141,8 +152,9 @@ public class BlobCertificateImpl implements Serializable, IBlobCertificate {
 	}
 
 	/**
-	"Extensions contained in the certificate."@en
-	@return the List of blobCertificateContainedExtension
+	* "Extensions contained in the certificate."@en
+	* @return Returns the List of IReference for the property blobCertificateContainedExtension.
+	* More information under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension")
 	final public List<? extends IReference> getBlobCertificateContainedExtension() {
@@ -154,8 +166,9 @@ public class BlobCertificateImpl implements Serializable, IBlobCertificate {
 	}
 
 	/**
-	"Denotes whether this certificate is the certificated that fast added last."@en
-	@return the boolean of blobCertificateLastCertificate
+	* "Denotes whether this certificate is the certificated that fast added last."@en
+	* @return Returns the boolean for the property blobCertificateLastCertificate.
+	* More information under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate")
 	final public boolean getBlobCertificateLastCertificate() {
@@ -167,7 +180,9 @@ public class BlobCertificateImpl implements Serializable, IBlobCertificate {
 	}
 
 	/**
-	"The access control administration policy point of the AAS."@en
+	* "The access control administration policy point of the AAS."@en
+	* @return Returns the IPolicyAdministrationPoint for the property certificatePolicyAdministrationPoint.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint")
 	final public IPolicyAdministrationPoint getCertificatePolicyAdministrationPoint() {

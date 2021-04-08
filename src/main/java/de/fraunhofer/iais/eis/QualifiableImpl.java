@@ -31,11 +31,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Qualifiable"
-
-	"Additional qualification of a qualifiable element."@en
-
-	"Constraint AASd-021: Every qualifiable can only have one qualifier with the same Qualifier/type."@en 
+* "Qualifiable"
+* "Additional qualification of a qualifiable element."@en
+* "Constraint AASd-021: Every qualifiable can only have one qualifier with the same Qualifier/type."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Qualifiable")
@@ -56,9 +54,8 @@ public class QualifiableImpl implements Serializable, IQualifiable {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has qualifier"
-
-	"Additional qualification of a qualifiable element."@en
+	* "has qualifier"
+	* "Additional qualification of a qualifiable element."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier", "qualifiableQualifier"})
 	protected ArrayList<? extends IConstraint> _qualifiableQualifier;
@@ -69,15 +66,29 @@ public class QualifiableImpl implements Serializable, IQualifiable {
 		id = VocabUtil.getInstance().createRandomUrl("qualifiable");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -102,9 +113,11 @@ public class QualifiableImpl implements Serializable, IQualifiable {
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
 	/**
-	"Additional qualification of a qualifiable element."@en
-	@return the List of qualifiableQualifier
+	* "Additional qualification of a qualifiable element."@en
+	* @return Returns the List of IConstraint for the property qualifiableQualifier.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
 	final public List<? extends IConstraint> getQualifiableQualifier() {

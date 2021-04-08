@@ -34,32 +34,28 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /** 
-	"Category"
-
-	"A enumeration for data elements except for files and blobs."@en 
+* "Category"
+* "A enumeration for data elements except for files and blobs."@en 
 */
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 @JsonTypeName("aas:Category")
 public enum Category {
 
 	/** 
-	"Constant"
-
-	"A constant property is a property with a value that does not change over time. In eCl@ss this kind of category has the category \'Coded Value\'."@en
+	* "Constant"
+	* "A constant property is a property with a value that does not change over time. In eCl@ss this kind of category has the category \'Coded Value\'."@en
 	*/
 	CONSTANT("https://admin-shell.io/aas/3/0/RC01/Category/CONSTANT", Arrays.asList(new TypedLiteral("Constant", "")), Arrays.asList(new TypedLiteral("A constant property is a property with a value that does not change over time. In eCl@ss this kind of category has the category 'Coded Value'.", "en"))),
 
 	/** 
-	"Parameter"
-
-	"A parameter property is a property that is once set and then typically does not change over time. This is for example the case for configuration parameters."@en
+	* "Parameter"
+	* "A parameter property is a property that is once set and then typically does not change over time. This is for example the case for configuration parameters."@en
 	*/
 	PARAMETER("https://admin-shell.io/aas/3/0/RC01/Category/PARAMETER", Arrays.asList(new TypedLiteral("Parameter", "")), Arrays.asList(new TypedLiteral("A parameter property is a property that is once set and then typically does not change over time. This is for example the case for configuration parameters.", "en"))),
 
 	/** 
-	"Variable"
-
-	"A variable property is a property that is calculated during runtime, i.e. its value is a runtime value."@en
+	* "Variable"
+	* "A variable property is a property that is calculated during runtime, i.e. its value is a runtime value."@en
 	*/
 	VARIABLE("https://admin-shell.io/aas/3/0/RC01/Category/VARIABLE", Arrays.asList(new TypedLiteral("Variable", "")), Arrays.asList(new TypedLiteral("A variable property is a property that is calculated during runtime, i.e. its value is a runtime value.", "en")));
 
@@ -85,17 +81,31 @@ public enum Category {
 			throw new IllegalArgumentException(e);
 		}
 	}
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 
 	@JsonIgnore
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	@JsonIgnore
 	final public List<TypedLiteral> getLabel() {
 		return label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	@JsonIgnore
 	final public List<TypedLiteral> getComment() {
 		return comment;

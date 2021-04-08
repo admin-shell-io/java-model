@@ -31,38 +31,56 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Administrative Information"
-
-	"Every Identifiable may have administrative information. Administrative information includes for example 1) Information about the version of the element 2) Information about who created or who made the last change to the element 3) Information about the languages available in case the element contains text, for translating purposed also themmaster or default language may be definedIn the first version of the AAS metamodel only version information as defined by IEC 61360 is defined. In later versions additional attributes may be added."@en
+* "Administrative Information"
+* "Every Identifiable may have administrative information. Administrative information includes for example 1) Information about the version of the element 2) Information about who created or who made the last change to the element 3) Information about the languages available in case the element contains text, for translating purposed also themmaster or default language may be definedIn the first version of the AAS metamodel only version information as defined by IEC 61360 is defined. In later versions additional attributes may be added."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = AdministrativeInformationImpl.class),})
+	@JsonSubTypes.Type(value = AdministrativeInformationImpl.class)
+})
 public interface IAdministrativeInformation extends IHasDataSpecification {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"Version of the element."@en
-	@return the String of administrativeInformationVersion
+	* "Version of the element."@en
+	* @return Returns the String for the property administrativeInformationVersion.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
 	public String getAdministrativeInformationVersion();
 
 	/**
-	"Revision of the element."@en
-
-	"Constraint AASd-005: A revision requires a version. This means, if there is no version there is no revision neither."@en
-	@return the String of administrativeInformationRevision
+	* "Revision of the element."@en
+	* "Constraint AASd-005: A revision requires a version. This means, if there is no version there is no revision neither."@en
+	* @return Returns the String for the property administrativeInformationRevision.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
 	public String getAdministrativeInformationRevision();
+
 }

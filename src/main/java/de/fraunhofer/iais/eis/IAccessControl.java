@@ -31,77 +31,98 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Access Control"
-
-	"Access Control defines the local access control policy administration point. Access Control has the major task to define the access permission rules."@en
+* "Access Control"
+* "Access Control defines the local access control policy administration point. Access Control has the major task to define the access permission rules."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = AccessControlImpl.class),})
+	@JsonSubTypes.Type(value = AccessControlImpl.class)
+})
 public interface IAccessControl {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"Access permission rules of the AAS describing the rights assigned to (already authenticated) subjects to access elements of the AAS."@en
-	@return the List of accessControlAccessPermissionRule
+	* "Access permission rules of the AAS describing the rights assigned to (already authenticated) subjects to access elements of the AAS."@en
+	* @return Returns the List of IAccessPermissionRule for the property accessControlAccessPermissionRule.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule")
 	public List<? extends IAccessPermissionRule> getAccessControlAccessPermissionRule();
 
 	/**
-	"Reference to a submodel defining the authenticated subjects that are configured for the AAS. They are selectable by the access permission rules to assign permissions to the subjects."@en
-
-	"Default: reference to the submodel referenced via defaultSubjectAttributes."@en
-	@return the ISubmodel of accessControlSelectableSubjectAttributes
+	* "Reference to a submodel defining the authenticated subjects that are configured for the AAS. They are selectable by the access permission rules to assign permissions to the subjects."@en
+	* "Default: reference to the submodel referenced via defaultSubjectAttributes."@en
+	* @return Returns the ISubmodel for the property accessControlSelectableSubjectAttributes.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableSubjectAttributes
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableSubjectAttributes")
 	public ISubmodel getAccessControlSelectableSubjectAttributes();
 
 	/**
-	"Reference to a submodel defining the default subjects attributes for the AAS that can be used to describe access permission rules."@en
-
-	"The submodel is of kind=Type."@en
-	@return the ISubmodel of accessControlDefaultSubjectAttributes
+	* "Reference to a submodel defining the default subjects attributes for the AAS that can be used to describe access permission rules."@en
+	* "The submodel is of kind=Type."@en
+	* @return Returns the ISubmodel for the property accessControlDefaultSubjectAttributes.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultSubjectAttributes
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultSubjectAttributes")
 	public ISubmodel getAccessControlDefaultSubjectAttributes();
 
 	/**
-	"Reference to a submodel defining which permissions can be assigned to the subjects."@en
-
-	"Default: reference to the submodel referenced via defaultPermissions"@en
-	@return the ISubmodel of accessControlSelectablePermissions
+	* "Reference to a submodel defining which permissions can be assigned to the subjects."@en
+	* "Default: reference to the submodel referenced via defaultPermissions"@en
+	* @return Returns the ISubmodel for the property accessControlSelectablePermissions.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControl/selectablePermissions
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectablePermissions")
 	public ISubmodel getAccessControlSelectablePermissions();
 
 	/**
-	"Reference to a submodel defining the default permissions for the AAS."@en
-	@return the ISubmodel of accessControlDefaultPermissions
+	* "Reference to a submodel defining the default permissions for the AAS."@en
+	* @return Returns the ISubmodel for the property accessControlDefaultPermissions.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultPermissions
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultPermissions")
 	public ISubmodel getAccessControlDefaultPermissions();
 
 	/**
-	"Reference to a submodel defining which environment attributes can be accessed via the permission rules."@en
-	@return the ISubmodel of accessControlSelectableEnvironmentAttributes
+	* "Reference to a submodel defining which environment attributes can be accessed via the permission rules."@en
+	* @return Returns the ISubmodel for the property accessControlSelectableEnvironmentAttributes.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableEnvironmentAttributes
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableEnvironmentAttributes")
 	public ISubmodel getAccessControlSelectableEnvironmentAttributes();
 
 	/**
-	"Reference to a submodel defining default environment attributes, i.e. attributes that are not describing the asset itself. The submodel is of kind=Type. At the same type the values of these environment attributes need to be accessible when evaluating the access permission rules. This is realized as a policy information point."@en
-	@return the ISubmodel of accessControlDefaultEnvironmentAttributes
+	* "Reference to a submodel defining default environment attributes, i.e. attributes that are not describing the asset itself. The submodel is of kind=Type. At the same type the values of these environment attributes need to be accessible when evaluating the access permission rules. This is realized as a policy information point."@en
+	* @return Returns the ISubmodel for the property accessControlDefaultEnvironmentAttributes.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultEnvironmentAttributes
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultEnvironmentAttributes")
 	public ISubmodel getAccessControlDefaultEnvironmentAttributes();
+
 }

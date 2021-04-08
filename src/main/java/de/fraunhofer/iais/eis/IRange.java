@@ -31,42 +31,58 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Range"
-
-	"An element that is referable by its idShort. This id is not globally unique. This id is unique within the name space of the element."@en
-
-	"Constraint AASd-053: The semanticId of a Range submodel element shall only reference a ConceptDescription with the category PROPERTY."@en
-
-	"Constraint AASd-068: If the semanticId of a  Range references a ConceptDescription then DataSpecificationIEC61360/dataType shall be a numerical one, i.e. REAL_* or RATIONAL_*."@en
-
-	"Constraint AASd-069: If the semanticId of a  Range references a ConceptDescription then DataSpecificationIEC61360/levelType shall be identical to the set {Min,Max}."@en
+* "Range"
+* "An element that is referable by its idShort. This id is not globally unique. This id is unique within the name space of the element."@en
+* "Constraint AASd-053: The semanticId of a Range submodel element shall only reference a ConceptDescription with the category PROPERTY."@en
+* "Constraint AASd-068: If the semanticId of a  Range references a ConceptDescription then DataSpecificationIEC61360/dataType shall be a numerical one, i.e. REAL_* or RATIONAL_*."@en
+* "Constraint AASd-069: If the semanticId of a  Range references a ConceptDescription then DataSpecificationIEC61360/levelType shall be identical to the set {Min,Max}."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = RangeImpl.class),})
+	@JsonSubTypes.Type(value = RangeImpl.class)
+})
 public interface IRange extends IDataElement {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"The maximum value of the range."@en
-	@return the List of rangeMax
+	* "The maximum value of the range."@en
+	* @return Returns the List of TypedLiteral for the property rangeMax.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Range/max
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Range/max")
 	public List<? extends TypedLiteral> getRangeMax();
 
 	/**
-	"The minimum value of the range."@en
-	@return the List of rangeMin
+	* "The minimum value of the range."@en
+	* @return Returns the List of TypedLiteral for the property rangeMin.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Range/min
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Range/min")
 	public List<? extends TypedLiteral> getRangeMin();
+
 }

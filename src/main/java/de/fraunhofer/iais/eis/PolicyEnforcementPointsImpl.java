@@ -31,9 +31,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Policy Enforcement Point"
-
-	"Defines the security policy enforcement points (PEP)."@en 
+* "Policy Enforcement Point"
+* "Defines the security policy enforcement points (PEP)."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:PolicyEnforcementPoints")
@@ -59,15 +58,29 @@ public class PolicyEnforcementPointsImpl implements Serializable, IPolicyEnforce
 		id = VocabUtil.getInstance().createRandomUrl("policyEnforcementPoints");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -88,8 +101,5 @@ public class PolicyEnforcementPointsImpl implements Serializable, IPolicyEnforce
 		}
 		return value;
 	}
-
-
-	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 }

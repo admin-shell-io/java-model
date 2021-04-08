@@ -31,26 +31,38 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Asset"
-
-	"An Asset describes meta data of an asset that is represented by an AAS. The asset may either represent an asset type or an asset instance. The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers."@en
-
-	"Objects may be known in the form of a type or of an instance. An object in the planning phase is known as a type"@en
+* "Asset"
+* "An Asset describes meta data of an asset that is represented by an AAS. The asset may either represent an asset type or an asset instance. The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers."@en
+* "Objects may be known in the form of a type or of an instance. An object in the planning phase is known as a type"@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = AssetImpl.class),})
-public interface IAsset extends IHasDataSpecification
-, IIdentifiable {
+	@JsonSubTypes.Type(value = AssetImpl.class)
+})
+public interface IAsset extends IHasDataSpecification, IIdentifiable {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
-	public List<TypedLiteral> getLabel();
-	public List<TypedLiteral> getComment();
 
-	// accessor methods as derived from the Asset Administration Shell ontology
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
+	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
+	public List<TypedLiteral> getComment();
 
 
 }

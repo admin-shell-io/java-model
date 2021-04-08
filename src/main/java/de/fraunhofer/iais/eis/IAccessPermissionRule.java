@@ -31,37 +31,55 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Access Permission Rule"
-
-	"Table that defines access permissions per authenticated subject for a set of objects (referable elements)."@en
+* "Access Permission Rule"
+* "Table that defines access permissions per authenticated subject for a set of objects (referable elements)."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = AccessPermissionRuleImpl.class),})
-public interface IAccessPermissionRule extends IReferable
-, IQualifiable {
+	@JsonSubTypes.Type(value = AccessPermissionRuleImpl.class)
+})
+public interface IAccessPermissionRule extends IReferable, IQualifiable {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"Set of object-permission pairs that define the permissions per object within the access permission rule."@en
-	@return the List of accessPermissionRulePermissionsPerObject
+	* "Set of object-permission pairs that define the permissions per object within the access permission rule."@en
+	* @return Returns the List of IPermissionsPerObject for the property accessPermissionRulePermissionsPerObject.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject")
 	public List<? extends IPermissionsPerObject> getAccessPermissionRulePermissionsPerObject();
 
 	/**
-	"Target subject attributes that need to be fulfilled by the accessing subject to get the permissions defined by this rule."@en
-	@return the ISubjectAttributes of accessPermissionRuleTargetSubjectAttributes
+	* "Target subject attributes that need to be fulfilled by the accessing subject to get the permissions defined by this rule."@en
+	* @return Returns the ISubjectAttributes for the property accessPermissionRuleTargetSubjectAttributes.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes")
 	public ISubjectAttributes getAccessPermissionRuleTargetSubjectAttributes();
+
 }

@@ -43,28 +43,53 @@ public class BlobCertificateBuilder {
 		blobCertificateImpl.id = id;
 	}
 
+	/**
+	* This function allows setting a value for blobCertificateBlobCertificate
+	* @param _blobCertificateBlobCertificate_ desired value to be set
+	* @return Builder object with new value for blobCertificateBlobCertificate
+	*/
 	final public BlobCertificateBuilder _blobCertificateBlobCertificate_(byte _blobCertificateBlobCertificate_) {
 		this.blobCertificateImpl._blobCertificateBlobCertificate = _blobCertificateBlobCertificate_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for blobCertificateContainedExtension
+	* @param _blobCertificateContainedExtension_ desired value to be set
+	* @return Builder object with new value for blobCertificateContainedExtension
+	*/
 	final public BlobCertificateBuilder _blobCertificateContainedExtension_(ArrayList<? extends IReference> _blobCertificateContainedExtension_) {
 		this.blobCertificateImpl._blobCertificateContainedExtension = _blobCertificateContainedExtension_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for blobCertificateLastCertificate
+	* @param _blobCertificateLastCertificate_ desired value to be set
+	* @return Builder object with new value for blobCertificateLastCertificate
+	*/
 	final public BlobCertificateBuilder _blobCertificateLastCertificate_(boolean _blobCertificateLastCertificate_) {
 		this.blobCertificateImpl._blobCertificateLastCertificate = _blobCertificateLastCertificate_;
 		return this;
 	}
 
 
+	/**
+	* This function allows setting a value for certificatePolicyAdministrationPoint
+	* @param _certificatePolicyAdministrationPoint_ desired value to be set
+	* @return Builder object with new value for certificatePolicyAdministrationPoint
+	*/
 	final public BlobCertificateBuilder _certificatePolicyAdministrationPoint_(IPolicyAdministrationPoint _certificatePolicyAdministrationPoint_) {
 		this.blobCertificateImpl._certificatePolicyAdministrationPoint = _certificatePolicyAdministrationPoint_;
 		return this;
 	}
+	/**
+	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
+	* @return Bean with specified values
+	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
+	*/
 
 	final public IBlobCertificate build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(blobCertificateImpl);

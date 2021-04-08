@@ -43,10 +43,20 @@ public class QualifiableBuilder {
 		qualifiableImpl.id = id;
 	}
 
+	/**
+	* This function allows setting a value for qualifiableQualifier
+	* @param _qualifiableQualifier_ desired value to be set
+	* @return Builder object with new value for qualifiableQualifier
+	*/
 	final public QualifiableBuilder _qualifiableQualifier_(ArrayList<? extends IConstraint> _qualifiableQualifier_) {
 		this.qualifiableImpl._qualifiableQualifier = _qualifiableQualifier_;
 		return this;
 	}
+	/**
+	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
+	* @return Bean with specified values
+	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
+	*/
 
 	final public IQualifiable build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(qualifiableImpl);

@@ -43,10 +43,20 @@ public class OperationVariableBuilder {
 		operationVariableImpl.id = id;
 	}
 
+	/**
+	* This function allows setting a value for operationVariableValue
+	* @param _operationVariableValue_ desired value to be set
+	* @return Builder object with new value for operationVariableValue
+	*/
 	final public OperationVariableBuilder _operationVariableValue_(ISubmodelElement _operationVariableValue_) {
 		this.operationVariableImpl._operationVariableValue = _operationVariableValue_;
 		return this;
 	}
+	/**
+	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
+	* @return Bean with specified values
+	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
+	*/
 
 	final public IOperationVariable build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(operationVariableImpl);

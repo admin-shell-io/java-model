@@ -31,48 +31,48 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Submodel Element"
-
-	"A submodel element is an element suitable for the description and differentiation of assets."@en
-
-	"The concept of type and instance applies to submodel elements. Properties are special submodel elements. The property types are defined in dictionaries (like the IEC Common Data Dictionary or eCl@ss), they do not have a value. The property type (kind=Type) is also called data element type in some standards. The property instances (kind=Instance) typically have a value. A property instance is also called property-value pair in certain standards."@en
+* "Submodel Element"
+* "A submodel element is an element suitable for the description and differentiation of assets."@en
+* "The concept of type and instance applies to submodel elements. Properties are special submodel elements. The property types are defined in dictionaries (like the IEC Common Data Dictionary or eCl@ss), they do not have a value. The property type (kind=Type) is also called data element type in some standards. The property instances (kind=Instance) typically have a value. A property instance is also called property-value pair in certain standards."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = SubmodelElementImpl.class),
-@JsonSubTypes.Type(value = ICapability.class),
-
-@JsonSubTypes.Type(value = IDataElement.class),
-
-@JsonSubTypes.Type(value = IEntity.class),
-
-@JsonSubTypes.Type(value = IEvent.class),
-
-@JsonSubTypes.Type(value = IEventElement.class),
-
-@JsonSubTypes.Type(value = IEventMessage.class),
-
-@JsonSubTypes.Type(value = IFile.class),
-
-@JsonSubTypes.Type(value = IOperation.class),
-
-@JsonSubTypes.Type(value = IRelationshipElement.class),
-
-@JsonSubTypes.Type(value = ISubmodelElementCollection.class),})
-public interface ISubmodelElement extends IReferable
-, IQualifiable
-, IHasDataSpecification
-, IHasKind
-, IHasSemantics {
+	@JsonSubTypes.Type(value = SubmodelElementImpl.class),
+	@JsonSubTypes.Type(value = IRelationshipElement.class),
+	@JsonSubTypes.Type(value = IDataElement.class),
+	@JsonSubTypes.Type(value = IFile.class),
+	@JsonSubTypes.Type(value = IEvent.class),
+	@JsonSubTypes.Type(value = ICapability.class),
+	@JsonSubTypes.Type(value = IEntity.class),
+	@JsonSubTypes.Type(value = IEventElement.class),
+	@JsonSubTypes.Type(value = IEventMessage.class),
+	@JsonSubTypes.Type(value = IOperation.class),
+	@JsonSubTypes.Type(value = ISubmodelElementCollection.class)
+})
+public interface ISubmodelElement extends IReferable, IQualifiable, IHasDataSpecification, IHasKind, IHasSemantics {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
-	public List<TypedLiteral> getLabel();
-	public List<TypedLiteral> getComment();
 
-	// accessor methods as derived from the Asset Administration Shell ontology
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
+	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
+	public List<TypedLiteral> getComment();
 
 
 }

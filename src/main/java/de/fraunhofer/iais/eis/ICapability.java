@@ -31,25 +31,38 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Capability"
-
-	"A capability is the implementation-independent description of the potential of an asset to achieve a certain effect in the physical or virtual world."@en
-
-	"Constraint AASd-058: If the semanticId of a Capability submodel element references a ConceptDescription then the ConceptDescription/category shall be CAPABILITY."@en
+* "Capability"
+* "A capability is the implementation-independent description of the potential of an asset to achieve a certain effect in the physical or virtual world."@en
+* "Constraint AASd-058: If the semanticId of a Capability submodel element references a ConceptDescription then the ConceptDescription/category shall be CAPABILITY."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = CapabilityImpl.class),})
+	@JsonSubTypes.Type(value = CapabilityImpl.class)
+})
 public interface ICapability extends ISubmodelElement {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
-	public List<TypedLiteral> getLabel();
-	public List<TypedLiteral> getComment();
 
-	// accessor methods as derived from the Asset Administration Shell ontology
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
+	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
+	public List<TypedLiteral> getComment();
 
 
 }

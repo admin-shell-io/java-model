@@ -31,9 +31,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Access ControlPolicy Points"
-
-	"Container for access control policy points."@en 
+* "Access ControlPolicy Points"
+* "Container for access control policy points."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:AccessControlPolicyPoints")
@@ -54,36 +53,32 @@ public class AccessControlPolicyPointsImpl implements Serializable, IAccessContr
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has policy administration point"
-
-	"The access control administration policy point of the AAS."@en
+	* "has policy administration point"
+	* "The access control administration policy point of the AAS."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint", "accessControlPolicyPointsPolicyAdministrationPoint"})
 	protected IPolicyAdministrationPoint _accessControlPolicyPointsPolicyAdministrationPoint;
 
 
 	/**
-	"has policy decision point"
-
-	"The access control policy decision point of the AAS."@en
+	* "has policy decision point"
+	* "The access control policy decision point of the AAS."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint", "accessControlPolicyPointsPolicyDecisionPoint"})
 	protected IPolicyDecisionPoint _accessControlPolicyPointsPolicyDecisionPoint;
 
 
 	/**
-	"has policy enforcement point"
-
-	"The access control policy enforcement point of the AAS."@en
+	* "has policy enforcement point"
+	* "The access control policy enforcement point of the AAS."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint", "accessControlPolicyPointsPolicyEnforcementPoint"})
 	protected IPolicyEnforcementPoints _accessControlPolicyPointsPolicyEnforcementPoint;
 
 
 	/**
-	"has policy information points"
-
-	"The access control policy information points of the AAS."@en
+	* "has policy information points"
+	* "The access control policy information points of the AAS."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints", "accessControlPolicyPointsPolicyInformationPoints"})
 	protected IPolicyInformationPoints _accessControlPolicyPointsPolicyInformationPoints;
@@ -94,15 +89,29 @@ public class AccessControlPolicyPointsImpl implements Serializable, IAccessContr
 		id = VocabUtil.getInstance().createRandomUrl("accessControlPolicyPoints");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -127,9 +136,11 @@ public class AccessControlPolicyPointsImpl implements Serializable, IAccessContr
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
 	/**
-	"The access control administration policy point of the AAS."@en
-	@return the IPolicyAdministrationPoint of accessControlPolicyPointsPolicyAdministrationPoint
+	* "The access control administration policy point of the AAS."@en
+	* @return Returns the IPolicyAdministrationPoint for the property accessControlPolicyPointsPolicyAdministrationPoint.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint")
 	final public IPolicyAdministrationPoint getAccessControlPolicyPointsPolicyAdministrationPoint() {
@@ -141,8 +152,9 @@ public class AccessControlPolicyPointsImpl implements Serializable, IAccessContr
 	}
 
 	/**
-	"The access control policy decision point of the AAS."@en
-	@return the IPolicyDecisionPoint of accessControlPolicyPointsPolicyDecisionPoint
+	* "The access control policy decision point of the AAS."@en
+	* @return Returns the IPolicyDecisionPoint for the property accessControlPolicyPointsPolicyDecisionPoint.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint")
 	final public IPolicyDecisionPoint getAccessControlPolicyPointsPolicyDecisionPoint() {
@@ -154,8 +166,9 @@ public class AccessControlPolicyPointsImpl implements Serializable, IAccessContr
 	}
 
 	/**
-	"The access control policy enforcement point of the AAS."@en
-	@return the IPolicyEnforcementPoints of accessControlPolicyPointsPolicyEnforcementPoint
+	* "The access control policy enforcement point of the AAS."@en
+	* @return Returns the IPolicyEnforcementPoints for the property accessControlPolicyPointsPolicyEnforcementPoint.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint")
 	final public IPolicyEnforcementPoints getAccessControlPolicyPointsPolicyEnforcementPoint() {
@@ -167,8 +180,9 @@ public class AccessControlPolicyPointsImpl implements Serializable, IAccessContr
 	}
 
 	/**
-	"The access control policy information points of the AAS."@en
-	@return the IPolicyInformationPoints of accessControlPolicyPointsPolicyInformationPoints
+	* "The access control policy information points of the AAS."@en
+	* @return Returns the IPolicyInformationPoints for the property accessControlPolicyPointsPolicyInformationPoints.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints")
 	final public IPolicyInformationPoints getAccessControlPolicyPointsPolicyInformationPoints() {

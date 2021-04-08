@@ -31,44 +31,55 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Has Semantics"
-
-	"Element that can have a semantic definition. Identifier of the semantic definition of the element. It is called semantic id of the element. The semantic id may either reference an external global id or it may reference a referable model element of kind=Type that defines the semantics of the element."@en
-
-	"In many cases the idShort is identical to the English short name within the semantic definition as referenced vi aits semantic id."@en
+* "Has Semantics"
+* "Element that can have a semantic definition. Identifier of the semantic definition of the element. It is called semantic id of the element. The semantic id may either reference an external global id or it may reference a referable model element of kind=Type that defines the semantics of the element."@en
+* "In many cases the idShort is identical to the English short name within the semantic definition as referenced vi aits semantic id."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = HasSemanticsImpl.class),
-@JsonSubTypes.Type(value = IExtension.class),
-
-@JsonSubTypes.Type(value = IIdentifierKeyValuePair.class),
-
-@JsonSubTypes.Type(value = IQualifier.class),
-
-@JsonSubTypes.Type(value = ISubmodel.class),
-
-@JsonSubTypes.Type(value = ISubmodelElement.class),
-
-@JsonSubTypes.Type(value = IView.class),})
+	@JsonSubTypes.Type(value = HasSemanticsImpl.class),
+	@JsonSubTypes.Type(value = ISubmodel.class),
+	@JsonSubTypes.Type(value = IIdentifierKeyValuePair.class),
+	@JsonSubTypes.Type(value = IView.class),
+	@JsonSubTypes.Type(value = ISubmodelElement.class),
+	@JsonSubTypes.Type(value = IQualifier.class),
+	@JsonSubTypes.Type(value = IExtension.class)
+})
 public interface IHasSemantics {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"Points to the Expression Semantic of the Submodels"@en
-
-	"The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
-	@return the IReference of hasSemanticsSemanticId
+	* "Points to the Expression Semantic of the Submodels"@en
+	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* @return Returns the IReference for the property hasSemanticsSemanticId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	public IReference getHasSemanticsSemanticId();
+
 }

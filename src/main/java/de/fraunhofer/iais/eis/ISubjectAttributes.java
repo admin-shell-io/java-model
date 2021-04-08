@@ -31,31 +31,48 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Subject Attributes"
-
-	"A set of data elements that further classifies a specific subject."@en
+* "Subject Attributes"
+* "A set of data elements that further classifies a specific subject."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = SubjectAttributesImpl.class),})
+	@JsonSubTypes.Type(value = SubjectAttributesImpl.class)
+})
 public interface ISubjectAttributes {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"A data element that further classifies a specific subject. "@en
-
-	"Constraint AASs-015: The data element SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the \'selectableSubjectAttributes\' attribute of \'AccessControl\'."@en
-	@return the List of subjectAttributesSubjectAttribute
+	* "A data element that further classifies a specific subject. "@en
+	* "Constraint AASs-015: The data element SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the \'selectableSubjectAttributes\' attribute of \'AccessControl\'."@en
+	* @return Returns the List of IDataElement for the property subjectAttributesSubjectAttribute.
+	* More information under https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute")
 	public List<? extends IDataElement> getSubjectAttributesSubjectAttribute();
+
 }

@@ -43,10 +43,20 @@ public class SubjectAttributesBuilder {
 		subjectAttributesImpl.id = id;
 	}
 
+	/**
+	* This function allows setting a value for subjectAttributesSubjectAttribute
+	* @param _subjectAttributesSubjectAttribute_ desired value to be set
+	* @return Builder object with new value for subjectAttributesSubjectAttribute
+	*/
 	final public SubjectAttributesBuilder _subjectAttributesSubjectAttribute_(ArrayList<? extends IDataElement> _subjectAttributesSubjectAttribute_) {
 		this.subjectAttributesImpl._subjectAttributesSubjectAttribute = _subjectAttributesSubjectAttribute_;
 		return this;
 	}
+	/**
+	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
+	* @return Bean with specified values
+	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
+	*/
 
 	final public ISubjectAttributes build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(subjectAttributesImpl);

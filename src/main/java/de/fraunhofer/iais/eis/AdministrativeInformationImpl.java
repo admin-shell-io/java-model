@@ -31,9 +31,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Administrative Information"
-
-	"Every Identifiable may have administrative information. Administrative information includes for example 1) Information about the version of the element 2) Information about who created or who made the last change to the element 3) Information about the languages available in case the element contains text, for translating purposed also themmaster or default language may be definedIn the first version of the AAS metamodel only version information as defined by IEC 61360 is defined. In later versions additional attributes may be added."@en 
+* "Administrative Information"
+* "Every Identifiable may have administrative information. Administrative information includes for example 1) Information about the version of the element 2) Information about who created or who made the last change to the element 3) Information about the languages available in case the element contains text, for translating purposed also themmaster or default language may be definedIn the first version of the AAS metamodel only version information as defined by IEC 61360 is defined. In later versions additional attributes may be added."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:AdministrativeInformation")
@@ -54,29 +53,25 @@ public class AdministrativeInformationImpl implements Serializable, IAdministrat
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has revision"
-
-	"Revision of the element."@en
-
-	"Constraint AASd-005: A revision requires a version. This means, if there is no version there is no revision neither."@en
+	* "has revision"
+	* "Revision of the element."@en
+	* "Constraint AASd-005: A revision requires a version. This means, if there is no version there is no revision neither."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision", "administrativeInformationRevision"})
 	protected String _administrativeInformationRevision;
 
 
 	/**
-	"has version"
-
-	"Version of the element."@en
+	* "has version"
+	* "Version of the element."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version", "administrativeInformationVersion"})
 	protected String _administrativeInformationVersion;
 
 
 	/**
-	"has Data Specification"
-
-	"Global reference to the data specification template used by the element."@en
+	* "has Data Specification"
+	* "Global reference to the data specification template used by the element."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "hasDataSpecificationDataSpecification"})
 	protected ArrayList<? extends IReference> _hasDataSpecificationDataSpecification;
@@ -87,15 +82,29 @@ public class AdministrativeInformationImpl implements Serializable, IAdministrat
 		id = VocabUtil.getInstance().createRandomUrl("administrativeInformation");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -120,9 +129,11 @@ public class AdministrativeInformationImpl implements Serializable, IAdministrat
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
 	/**
-	"Version of the element."@en
-	@return the String of administrativeInformationVersion
+	* "Version of the element."@en
+	* @return Returns the String for the property administrativeInformationVersion.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
 	final public String getAdministrativeInformationVersion() {
@@ -134,10 +145,10 @@ public class AdministrativeInformationImpl implements Serializable, IAdministrat
 	}
 
 	/**
-	"Revision of the element."@en
-
-	"Constraint AASd-005: A revision requires a version. This means, if there is no version there is no revision neither."@en
-	@return the String of administrativeInformationRevision
+	* "Revision of the element."@en
+	* "Constraint AASd-005: A revision requires a version. This means, if there is no version there is no revision neither."@en
+	* @return Returns the String for the property administrativeInformationRevision.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
 	final public String getAdministrativeInformationRevision() {
@@ -149,7 +160,9 @@ public class AdministrativeInformationImpl implements Serializable, IAdministrat
 	}
 
 	/**
-	"Global reference to the data specification template used by the element."@en
+	* "Global reference to the data specification template used by the element."@en
+	* @return Returns the List of IReference for the property hasDataSpecificationDataSpecification.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	final public List<? extends IReference> getHasDataSpecificationDataSpecification() {

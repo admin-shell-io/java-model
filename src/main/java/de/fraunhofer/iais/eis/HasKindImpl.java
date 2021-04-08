@@ -31,9 +31,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Has Kind"
-
-	"An element with a kind is an element that can either represent a type or an instance. Default for an element is that it is representing an instance."@en 
+* "Has Kind"
+* "An element with a kind is an element that can either represent a type or an instance. Default for an element is that it is representing an instance."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:HasKind")
@@ -54,9 +53,8 @@ public class HasKindImpl implements Serializable, IHasKind {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has kind"
-
-	"ModelingKind of the element: either type or instance."@en
+	* "has kind"
+	* "ModelingKind of the element: either type or instance."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasKind/kind", "hasKindKind"})
 	protected ModelingKind _hasKindKind;
@@ -67,15 +65,29 @@ public class HasKindImpl implements Serializable, IHasKind {
 		id = VocabUtil.getInstance().createRandomUrl("hasKind");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -100,9 +112,11 @@ public class HasKindImpl implements Serializable, IHasKind {
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
 	/**
-	"ModelingKind of the element: either type or instance."@en
-	@return the ModelingKind of hasKindKind
+	* "ModelingKind of the element: either type or instance."@en
+	* @return Returns the ModelingKind for the property hasKindKind.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasKind/kind
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
 	final public ModelingKind getHasKindKind() {

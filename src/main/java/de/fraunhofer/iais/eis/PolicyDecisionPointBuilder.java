@@ -43,10 +43,20 @@ public class PolicyDecisionPointBuilder {
 		policyDecisionPointImpl.id = id;
 	}
 
+	/**
+	* This function allows setting a value for policyDecisionPointExternalPolicyDecisionPoints
+	* @param _policyDecisionPointExternalPolicyDecisionPoints_ desired value to be set
+	* @return Builder object with new value for policyDecisionPointExternalPolicyDecisionPoints
+	*/
 	final public PolicyDecisionPointBuilder _policyDecisionPointExternalPolicyDecisionPoints_(boolean _policyDecisionPointExternalPolicyDecisionPoints_) {
 		this.policyDecisionPointImpl._policyDecisionPointExternalPolicyDecisionPoints = _policyDecisionPointExternalPolicyDecisionPoints_;
 		return this;
 	}
+	/**
+	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
+	* @return Bean with specified values
+	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
+	*/
 
 	final public IPolicyDecisionPoint build() throws ConstraintViolationException {
 		VocabUtil.getInstance().validate(policyDecisionPointImpl);

@@ -31,36 +31,55 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"File Submodel Element"
-
-	"A File is a data element that represents a file via its path description."@en
+* "File Submodel Element"
+* "A File is a data element that represents a file via its path description."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = FileImpl.class),})
+	@JsonSubTypes.Type(value = FileImpl.class)
+})
 public interface IFile extends ISubmodelElement {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"Mime type of the content of the File."@en
-	@return the String of fileMimeType
+	* "Mime type of the content of the File."@en
+	* @return Returns the String for the property fileMimeType.
+	* More information under https://admin-shell.io/aas/3/0/RC01/File/mimeType
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/File/mimeType")
 	public String getFileMimeType();
 
 	/**
-	"Path and name of the referenced file (with file extension). The path can be absolute or relative."@en
-	@return the String of fileValue
+	* "Path and name of the referenced file (with file extension). The path can be absolute or relative."@en
+	* @return Returns the String for the property fileValue.
+	* More information under https://admin-shell.io/aas/3/0/RC01/File/value
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/File/value")
 	public String getFileValue();
+
 }

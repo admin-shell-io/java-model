@@ -34,25 +34,22 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /** 
-	"Asset Kind"
-
-	"Enumeration for denoting whether an element is a type or an instance."@en 
+* "Asset Kind"
+* "Enumeration for denoting whether an element is a type or an instance."@en 
 */
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 @JsonTypeName("aas:AssetKind")
 public enum AssetKind {
 
 	/** 
-	"Asset Instance"
-
-	"Concrete, clearly identifiable component of a certain type."@en
+	* "Asset Instance"
+	* "Concrete, clearly identifiable component of a certain type."@en
 	*/
 	INSTANCE("https://admin-shell.io/aas/3/0/RC01/AssetKind/INSTANCE", Arrays.asList(new TypedLiteral("Asset Instance", "")), Arrays.asList(new TypedLiteral("Concrete, clearly identifiable component of a certain type.", "en"))),
 
 	/** 
-	"Asset Type"
-
-	"hardware or software element which specifies the common attributes shared by all instances of the type."@en
+	* "Asset Type"
+	* "hardware or software element which specifies the common attributes shared by all instances of the type."@en
 	*/
 	TYPE("https://admin-shell.io/aas/3/0/RC01/AssetKind/TYPE", Arrays.asList(new TypedLiteral("Asset Type", "")), Arrays.asList(new TypedLiteral("hardware or software element which specifies the common attributes shared by all instances of the type.", "en")));
 
@@ -78,17 +75,31 @@ public enum AssetKind {
 			throw new IllegalArgumentException(e);
 		}
 	}
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 
 	@JsonIgnore
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	@JsonIgnore
 	final public List<TypedLiteral> getLabel() {
 		return label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	@JsonIgnore
 	final public List<TypedLiteral> getComment() {
 		return comment;

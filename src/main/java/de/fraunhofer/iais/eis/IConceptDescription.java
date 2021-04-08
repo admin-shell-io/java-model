@@ -31,41 +31,57 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"Concept Description"
-
-	"The semantics of a property or other elements that may have a semantic description is defined by a concept description. The description of the concept should follow a standardized schema (realized as data specification template)."@en
-
-	"Constraint AASd-051: A ConceptDescription shall have one of the following categories: VALUE, PROPERTY, REFERENCE, DOCUMENT, CAPABILITY, RELATIONSHIP, COLLECTION, FUNCTION, EVENT, ENTITY, APPLICATION_CLASS, QUALIFIER, VIEW. Default: PROPERTY."@en
+* "Concept Description"
+* "The semantics of a property or other elements that may have a semantic description is defined by a concept description. The description of the concept should follow a standardized schema (realized as data specification template)."@en
+* "Constraint AASd-051: A ConceptDescription shall have one of the following categories: VALUE, PROPERTY, REFERENCE, DOCUMENT, CAPABILITY, RELATIONSHIP, COLLECTION, FUNCTION, EVENT, ENTITY, APPLICATION_CLASS, QUALIFIER, VIEW. Default: PROPERTY."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = ConceptDescriptionImpl.class),})
-public interface IConceptDescription extends IHasDataSpecification
-, IIdentifiable {
+	@JsonSubTypes.Type(value = ConceptDescriptionImpl.class)
+})
+public interface IConceptDescription extends IHasDataSpecification, IIdentifiable {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"Link from a ConceptDescription to its explaining DataSpecificationContent."@en
-	@return the List of conceptDescriptionContent
+	* "Link from a ConceptDescription to its explaining DataSpecificationContent."@en
+	* @return Returns the List of IDataSpecificationContent for the property conceptDescriptionContent.
+	* More information under https://admin-shell.io/aas/3/0/RC01/ConceptDescription/content
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/content")
 	public List<? extends IDataSpecificationContent> getConceptDescriptionContent();
 
 	/**
-	"Reference to an external definition the concept is compatible to or was derived from."@en
-
-	"Compare to is-case-of relationship in ISO 13584-32 and IEC EN 61360."@en
-	@return the List of conceptDescriptionIsCaseOf
+	* "Reference to an external definition the concept is compatible to or was derived from."@en
+	* "Compare to is-case-of relationship in ISO 13584-32 and IEC EN 61360."@en
+	* @return Returns the List of IReference for the property conceptDescriptionIsCaseOf.
+	* More information under https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf")
 	public List<? extends IReference> getConceptDescriptionIsCaseOf();
+
 }

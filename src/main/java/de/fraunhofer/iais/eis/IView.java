@@ -31,33 +31,48 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-	"View"
-
-	"A view is a collection of referable elements w.r.t. to a specific viewpoint of one or more stakeholders."@en
-
-	"Constraint AASd-064: If the semanticId of a View references a ConceptDescription then the category of the ConceptDescription shall be VIEW."@en
+* "View"
+* "A view is a collection of referable elements w.r.t. to a specific viewpoint of one or more stakeholders."@en
+* "Constraint AASd-064: If the semanticId of a View references a ConceptDescription then the category of the ConceptDescription shall be VIEW."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @JsonSubTypes({
-@JsonSubTypes.Type(value = ViewImpl.class),})
-public interface IView extends IReferable
-, IHasDataSpecification
-, IHasSemantics {
+	@JsonSubTypes.Type(value = ViewImpl.class)
+})
+public interface IView extends IReferable, IHasDataSpecification, IHasSemantics {
 
 	// standard methods
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	public URI getId();
+
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel();
+
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
-	"Referable elements that are contained in the view."@en
-	@return the List of viewContainedElement
+	* "Referable elements that are contained in the view."@en
+	* @return Returns the List of IReferable for the property viewContainedElement.
+	* More information under https://admin-shell.io/aas/3/0/RC01/View/containedElement
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
 	public List<? extends IReferable> getViewContainedElement();
+
 }

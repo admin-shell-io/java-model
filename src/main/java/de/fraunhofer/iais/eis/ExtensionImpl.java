@@ -31,11 +31,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"Extensions"
-
-	"Single extension of an element."@en
-
-	"Constraint AASd-077: The name of an extension within HasExtensions needs to be unique."@en 
+* "Extensions"
+* "Single extension of an element."@en
+* "Constraint AASd-077: The name of an extension within HasExtensions needs to be unique."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Extension")
@@ -56,47 +54,41 @@ public class ExtensionImpl implements Serializable, IExtension {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has extension name"
-
-	"An extension of the element."@en
+	* "has extension name"
+	* "An extension of the element."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Extension/name", "extensionName"})
 	protected String _extensionName;
 
 
 	/**
-	"has extension reference to"
-
-	"Reference to an element the extension refers to."@en
+	* "has extension reference to"
+	* "Reference to an element the extension refers to."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Extension/refersTo", "extensionRefersTo"})
 	protected IReference _extensionRefersTo;
 
 
 	/**
-	"has extension value"
-
-	"Value of the extension."@en
+	* "has extension value"
+	* "Value of the extension."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Extension/value", "extensionValue"})
 	protected String _extensionValue;
 
 
 	/**
-	"has extension value type"
-
-	"Type of the value of the extension."@en
+	* "has extension value type"
+	* "Type of the value of the extension."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Extension/valueType", "extensionValueType"})
 	protected String _extensionValueType;
 
 
 	/**
-	"has semantic ID"
-
-	"Points to the Expression Semantic of the Submodels"@en
-
-	"The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* "has semantic ID"
+	* "Points to the Expression Semantic of the Submodels"@en
+	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "hasSemanticsSemanticId"})
 	protected IReference _hasSemanticsSemanticId;
@@ -107,15 +99,29 @@ public class ExtensionImpl implements Serializable, IExtension {
 		id = VocabUtil.getInstance().createRandomUrl("extension");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -140,9 +146,11 @@ public class ExtensionImpl implements Serializable, IExtension {
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
 	/**
-	"An extension of the element."@en
-	@return the String of extensionName
+	* "An extension of the element."@en
+	* @return Returns the String for the property extensionName.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/name
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/name")
 	final public String getExtensionName() {
@@ -154,8 +162,9 @@ public class ExtensionImpl implements Serializable, IExtension {
 	}
 
 	/**
-	"Type of the value of the extension."@en
-	@return the String of extensionValueType
+	* "Type of the value of the extension."@en
+	* @return Returns the String for the property extensionValueType.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/valueType
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/valueType")
 	final public String getExtensionValueType() {
@@ -167,8 +176,9 @@ public class ExtensionImpl implements Serializable, IExtension {
 	}
 
 	/**
-	"Value of the extension."@en
-	@return the String of extensionValue
+	* "Value of the extension."@en
+	* @return Returns the String for the property extensionValue.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/value
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/value")
 	final public String getExtensionValue() {
@@ -180,8 +190,9 @@ public class ExtensionImpl implements Serializable, IExtension {
 	}
 
 	/**
-	"Reference to an element the extension refers to."@en
-	@return the IReference of extensionRefersTo
+	* "Reference to an element the extension refers to."@en
+	* @return Returns the IReference for the property extensionRefersTo.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/refersTo
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/refersTo")
 	final public IReference getExtensionRefersTo() {
@@ -193,9 +204,10 @@ public class ExtensionImpl implements Serializable, IExtension {
 	}
 
 	/**
-	"Points to the Expression Semantic of the Submodels"@en
-
-	"The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* "Points to the Expression Semantic of the Submodels"@en
+	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* @return Returns the IReference for the property hasSemanticsSemanticId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	final public IReference getHasSemanticsSemanticId() {

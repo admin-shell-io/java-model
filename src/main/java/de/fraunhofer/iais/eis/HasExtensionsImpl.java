@@ -31,9 +31,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
-	"HasExtensions"
-
-	"Element that can be extended by proprietary extensions."@en 
+* "HasExtensions"
+* "Element that can be extended by proprietary extensions."@en 
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:HasExtensions")
@@ -54,9 +53,8 @@ public class HasExtensionsImpl implements Serializable, IHasExtensions {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	"has extension"
-
-	"An extension of the element."@en
+	* "has extension"
+	* "An extension of the element."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension", "hasExtensionsExtension"})
 	protected ArrayList<? extends IExtension> _hasExtensionsExtension;
@@ -67,15 +65,29 @@ public class HasExtensionsImpl implements Serializable, IHasExtensions {
 		id = VocabUtil.getInstance().createRandomUrl("hasExtensions");
 	}
 
+	/**
+	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
+	* @return ID of current object as URI
+	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
+	/**
+	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This label could, for example, be used as a field heading in a user interface
+	* @return Human readable label
+	*/
 	public List<TypedLiteral> getLabel() {
 		return this.label;
 	}
 
+	/**
+	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This comment could, for example, be used as a tooltip in a user interface
+	* @return Human readable explanatory comment
+	*/
 	public List<TypedLiteral> getComment() {
 		return this.comment;
 	}
@@ -100,9 +112,11 @@ public class HasExtensionsImpl implements Serializable, IHasExtensions {
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
 	/**
-	"An extension of the element."@en
-	@return the List of hasExtensionsExtension
+	* "An extension of the element."@en
+	* @return Returns the List of IExtension for the property hasExtensionsExtension.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension")
 	final public List<? extends IExtension> getHasExtensionsExtension() {
