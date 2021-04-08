@@ -131,6 +131,12 @@ public class IdentifierImpl implements Serializable, IIdentifier {
 		return _identifierIdentifier;
 	}
 
+	
+	/**
+	* "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
+	* @param _identifierIdentifier_ desired value for the property identifierIdentifier.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Identifier/identifier
+	*/
 	final public void setIdentifierIdentifier (ArrayList<? extends TypedLiteral> _identifierIdentifier_) {
 		this._identifierIdentifier = _identifierIdentifier_;
 	}
@@ -145,6 +151,12 @@ public class IdentifierImpl implements Serializable, IIdentifier {
 		return _identifierIdType;
 	}
 
+	
+	/**
+	* "Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the enumeration \'IdentifierType\'."@en
+	* @param _identifierIdType_ desired value for the property identifierIdType.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Identifier/idType
+	*/
 	final public void setIdentifierIdType (IdentifierType _identifierIdType_) {
 		this._identifierIdType = _identifierIdType_;
 	}

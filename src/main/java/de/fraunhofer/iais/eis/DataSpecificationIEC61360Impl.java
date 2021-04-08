@@ -216,6 +216,15 @@ public class DataSpecificationIEC61360Impl implements Serializable, IDataSpecifi
 		return _dataSpecificationIEC61360DataType;
 	}
 
+	
+	/**
+	* "Constraint AASd-070: For a ConceptDescription with category PROPERTY or VALUE using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/dataType is mandatory and shall be defined."@en
+	* "Constraint AASd-071: For a ConceptDescription with category REFERENCE using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/dataType is STRING by default."@en
+	* "Constraint AASd-072: For a ConceptDescription with category DOCUMENT using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/dataType shall be one of the following values: STRING or URL."@en
+	* "Constraint AASd-073: For a ConceptDescription with category QUALIFIER using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/dataType is mandatory and shall be defined."@en
+	* @param _dataSpecificationIEC61360DataType_ desired value for the property dataSpecificationIEC61360DataType.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType
+	*/
 	final public void setDataSpecificationIEC61360DataType (ArrayList<? extends DataTypeIEC61360> _dataSpecificationIEC61360DataType_) {
 		this._dataSpecificationIEC61360DataType = _dataSpecificationIEC61360DataType_;
 	}
@@ -230,6 +239,12 @@ public class DataSpecificationIEC61360Impl implements Serializable, IDataSpecifi
 		return _dataSpecificationIEC61360Definition;
 	}
 
+	
+	/**
+	* "Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions of category VALUE using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/definition is mandatory and shall be defined at least in English."@en
+	* @param _dataSpecificationIEC61360Definition_ desired value for the property dataSpecificationIEC61360Definition.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition
+	*/
 	final public void setDataSpecificationIEC61360Definition (ArrayList<? extends TypedLiteral> _dataSpecificationIEC61360Definition_) {
 		this._dataSpecificationIEC61360Definition = _dataSpecificationIEC61360Definition_;
 	}
@@ -243,6 +258,11 @@ public class DataSpecificationIEC61360Impl implements Serializable, IDataSpecifi
 		return _dataSpecificationIEC61360LevelType;
 	}
 
+	
+	/**
+	* @param _dataSpecificationIEC61360LevelType_ desired value for the property dataSpecificationIEC61360LevelType.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/levelType
+	*/
 	final public void setDataSpecificationIEC61360LevelType (ArrayList<? extends LevelType> _dataSpecificationIEC61360LevelType_) {
 		this._dataSpecificationIEC61360LevelType = _dataSpecificationIEC61360LevelType_;
 	}
@@ -256,6 +276,11 @@ public class DataSpecificationIEC61360Impl implements Serializable, IDataSpecifi
 		return _dataSpecificationIEC61360PreferredName;
 	}
 
+	
+	/**
+	* @param _dataSpecificationIEC61360PreferredName_ desired value for the property dataSpecificationIEC61360PreferredName.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName
+	*/
 	final public void setDataSpecificationIEC61360PreferredName (TypedLiteral _dataSpecificationIEC61360PreferredName_) {
 		this._dataSpecificationIEC61360PreferredName = _dataSpecificationIEC61360PreferredName_;
 	}
@@ -269,6 +294,11 @@ public class DataSpecificationIEC61360Impl implements Serializable, IDataSpecifi
 		return _dataSpecificationIEC61360ShortName;
 	}
 
+	
+	/**
+	* @param _dataSpecificationIEC61360ShortName_ desired value for the property dataSpecificationIEC61360ShortName.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName
+	*/
 	final public void setDataSpecificationIEC61360ShortName (TypedLiteral _dataSpecificationIEC61360ShortName_) {
 		this._dataSpecificationIEC61360ShortName = _dataSpecificationIEC61360ShortName_;
 	}
@@ -282,6 +312,11 @@ public class DataSpecificationIEC61360Impl implements Serializable, IDataSpecifi
 		return _dataSpecificationIEC61360SourceOfDefinition;
 	}
 
+	
+	/**
+	* @param _dataSpecificationIEC61360SourceOfDefinition_ desired value for the property dataSpecificationIEC61360SourceOfDefinition.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition
+	*/
 	final public void setDataSpecificationIEC61360SourceOfDefinition (String _dataSpecificationIEC61360SourceOfDefinition_) {
 		this._dataSpecificationIEC61360SourceOfDefinition = _dataSpecificationIEC61360SourceOfDefinition_;
 	}
@@ -295,6 +330,11 @@ public class DataSpecificationIEC61360Impl implements Serializable, IDataSpecifi
 		return _dataSpecificationIEC61360Symbol;
 	}
 
+	
+	/**
+	* @param _dataSpecificationIEC61360Symbol_ desired value for the property dataSpecificationIEC61360Symbol.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/symbol
+	*/
 	final public void setDataSpecificationIEC61360Symbol (String _dataSpecificationIEC61360Symbol_) {
 		this._dataSpecificationIEC61360Symbol = _dataSpecificationIEC61360Symbol_;
 	}
@@ -308,6 +348,11 @@ public class DataSpecificationIEC61360Impl implements Serializable, IDataSpecifi
 		return _dataSpecificationIEC61360Unit;
 	}
 
+	
+	/**
+	* @param _dataSpecificationIEC61360Unit_ desired value for the property dataSpecificationIEC61360Unit.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit
+	*/
 	final public void setDataSpecificationIEC61360Unit (String _dataSpecificationIEC61360Unit_) {
 		this._dataSpecificationIEC61360Unit = _dataSpecificationIEC61360Unit_;
 	}
@@ -321,6 +366,11 @@ public class DataSpecificationIEC61360Impl implements Serializable, IDataSpecifi
 		return _dataSpecificationIEC61360UnitId;
 	}
 
+	
+	/**
+	* @param _dataSpecificationIEC61360UnitId_ desired value for the property dataSpecificationIEC61360UnitId.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId
+	*/
 	final public void setDataSpecificationIEC61360UnitId (IReference _dataSpecificationIEC61360UnitId_) {
 		this._dataSpecificationIEC61360UnitId = _dataSpecificationIEC61360UnitId_;
 	}
@@ -334,6 +384,11 @@ public class DataSpecificationIEC61360Impl implements Serializable, IDataSpecifi
 		return _dataSpecificationIEC61360ValueFormat;
 	}
 
+	
+	/**
+	* @param _dataSpecificationIEC61360ValueFormat_ desired value for the property dataSpecificationIEC61360ValueFormat.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueFormat
+	*/
 	final public void setDataSpecificationIEC61360ValueFormat (String _dataSpecificationIEC61360ValueFormat_) {
 		this._dataSpecificationIEC61360ValueFormat = _dataSpecificationIEC61360ValueFormat_;
 	}
@@ -347,6 +402,11 @@ public class DataSpecificationIEC61360Impl implements Serializable, IDataSpecifi
 		return _dataSpecificationIEC61360Value;
 	}
 
+	
+	/**
+	* @param _dataSpecificationIEC61360Value_ desired value for the property dataSpecificationIEC61360Value.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/value
+	*/
 	final public void setDataSpecificationIEC61360Value (String _dataSpecificationIEC61360Value_) {
 		this._dataSpecificationIEC61360Value = _dataSpecificationIEC61360Value_;
 	}
@@ -361,6 +421,12 @@ public class DataSpecificationIEC61360Impl implements Serializable, IDataSpecifi
 		return _dataSpecificationIEC61360ValueList;
 	}
 
+	
+	/**
+	* "The Type \'ValueList\' lists all the allowed values for a concept description for which the allowed values are listed in an enumeration. The value list is a set of value reference pairs."@en
+	* @param _dataSpecificationIEC61360ValueList_ desired value for the property dataSpecificationIEC61360ValueList.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList
+	*/
 	final public void setDataSpecificationIEC61360ValueList (String _dataSpecificationIEC61360ValueList_) {
 		this._dataSpecificationIEC61360ValueList = _dataSpecificationIEC61360ValueList_;
 	}
@@ -374,6 +440,11 @@ public class DataSpecificationIEC61360Impl implements Serializable, IDataSpecifi
 		return _dataSpecificationIEC61360ValueId;
 	}
 
+	
+	/**
+	* @param _dataSpecificationIEC61360ValueId_ desired value for the property dataSpecificationIEC61360ValueId.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueId
+	*/
 	final public void setDataSpecificationIEC61360ValueId (IReference _dataSpecificationIEC61360ValueId_) {
 		this._dataSpecificationIEC61360ValueId = _dataSpecificationIEC61360ValueId_;
 	}

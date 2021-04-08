@@ -139,6 +139,12 @@ public class PermissionsPerObjectImpl implements Serializable, IPermissionsPerOb
 		return _permissionsPerObjectObject;
 	}
 
+	
+	/**
+	* "Element to which permission shall be assigned."@en
+	* @param _permissionsPerObjectObject_ desired value for the property permissionsPerObjectObject.
+	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object
+	*/
 	final public void setPermissionsPerObjectObject (IReferable _permissionsPerObjectObject_) {
 		this._permissionsPerObjectObject = _permissionsPerObjectObject_;
 	}
@@ -153,6 +159,12 @@ public class PermissionsPerObjectImpl implements Serializable, IPermissionsPerOb
 		return _permissionsPerObjectPermission;
 	}
 
+	
+	/**
+	* "Permissions assigned to the object. The permissions hold for all subjects as specified in the access permission rule."@en
+	* @param _permissionsPerObjectPermission_ desired value for the property permissionsPerObjectPermission.
+	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission
+	*/
 	final public void setPermissionsPerObjectPermission (ArrayList<? extends IPermission> _permissionsPerObjectPermission_) {
 		this._permissionsPerObjectPermission = _permissionsPerObjectPermission_;
 	}
@@ -167,6 +179,12 @@ public class PermissionsPerObjectImpl implements Serializable, IPermissionsPerOb
 		return _permissionsPerObjectTargetObjectAttributes;
 	}
 
+	
+	/**
+	* "Target object attributes that need to be fulfilled so that the access permissions apply to the accessing subject."@en
+	* @param _permissionsPerObjectTargetObjectAttributes_ desired value for the property permissionsPerObjectTargetObjectAttributes.
+	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes
+	*/
 	final public void setPermissionsPerObjectTargetObjectAttributes (IObjectAttributes _permissionsPerObjectTargetObjectAttributes_) {
 		this._permissionsPerObjectTargetObjectAttributes = _permissionsPerObjectTargetObjectAttributes_;
 	}

@@ -123,6 +123,12 @@ public class ReferenceImpl implements Serializable, IReference {
 		return _referenceKey;
 	}
 
+	
+	/**
+	* "Unique reference in its name space."@en
+	* @param _referenceKey_ desired value for the property referenceKey.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Reference/key
+	*/
 	final public void setReferenceKey (ArrayList<? extends IKey> _referenceKey_) {
 		this._referenceKey = _referenceKey_;
 	}

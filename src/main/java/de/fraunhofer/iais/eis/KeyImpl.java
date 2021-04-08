@@ -143,6 +143,14 @@ public class KeyImpl implements Serializable, IKey {
 		return _keyIdType;
 	}
 
+	
+	/**
+	* "Type of the key value. In case of idType = idShort local shall be true. In case type=GlobalReference idType shall not be IdShort."@en
+	* "Constraint AASd-080: In case Key/type == GlobalReference idType shall not be any LocalKeyType (IdShort, FragmentId)."@en
+	* "Constraint AASd-081: In case Key/type==AssetAdministrationShell Key/idType shall not be any  LocalKeyType (IdShort, FragmentId)."@en
+	* @param _keyIdType_ desired value for the property keyIdType.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Key/idType
+	*/
 	final public void setKeyIdType (KeyType _keyIdType_) {
 		this._keyIdType = _keyIdType_;
 	}
@@ -157,6 +165,12 @@ public class KeyImpl implements Serializable, IKey {
 		return _keyType;
 	}
 
+	
+	/**
+	* "Denote which kind of entity is referenced. In case type = GlobalReference then the element is a global unique id. In all other cases the key references a model element of the same or of another AAS. The name of the model element is explicitly listed."@en
+	* @param _keyType_ desired value for the property keyType.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Key/type
+	*/
 	final public void setKeyType (KeyElements _keyType_) {
 		this._keyType = _keyType_;
 	}
@@ -171,6 +185,12 @@ public class KeyImpl implements Serializable, IKey {
 		return _keyValue;
 	}
 
+	
+	/**
+	* "The key value, for example an IRDI if the idType=IRDI."@en
+	* @param _keyValue_ desired value for the property keyValue.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Key/value
+	*/
 	final public void setKeyValue (String _keyValue_) {
 		this._keyValue = _keyValue_;
 	}

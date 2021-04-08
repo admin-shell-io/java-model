@@ -124,6 +124,12 @@ public class HasDataSpecificationImpl implements Serializable, IHasDataSpecifica
 		return _hasDataSpecificationDataSpecification;
 	}
 
+	
+	/**
+	* "Global reference to the data specification template used by the element."@en
+	* @param _hasDataSpecificationDataSpecification_ desired value for the property hasDataSpecificationDataSpecification.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
+	*/
 	final public void setHasDataSpecificationDataSpecification (ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
 		this._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
 	}

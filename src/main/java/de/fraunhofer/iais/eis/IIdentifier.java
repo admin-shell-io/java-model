@@ -66,19 +66,9 @@ public interface IIdentifier {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
-	* @return Returns the List of TypedLiteral for the property identifierIdentifier.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Identifier/identifier
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
 	public List<? extends TypedLiteral> getIdentifierIdentifier();
 
-	/**
-	* "Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the enumeration \'IdentifierType\'."@en
-	* @return Returns the IdentifierType for the property identifierIdType.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Identifier/idType
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")
 	public IdentifierType getIdentifierIdType();
 

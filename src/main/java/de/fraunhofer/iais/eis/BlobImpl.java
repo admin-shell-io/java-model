@@ -213,6 +213,12 @@ public class BlobImpl implements Serializable, IBlob {
 		return _blobMimeType;
 	}
 
+	
+	/**
+	* "Mime type of the content of the BLOB. The mime type states which file extension the file has. Valid values are e.g. \'application/json\', \'application/xls\', \'image/jpg\' The allowed values are defined as in RFC2046."@en
+	* @param _blobMimeType_ desired value for the property blobMimeType.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Blob/mimeType
+	*/
 	final public void setBlobMimeType (String _blobMimeType_) {
 		this._blobMimeType = _blobMimeType_;
 	}
@@ -228,6 +234,13 @@ public class BlobImpl implements Serializable, IBlob {
 		return _blobValue;
 	}
 
+	
+	/**
+	* "The value of the BLOB instance of a blob data element."@en
+	* "In contrast to the file property the file content is stored directly as value in the Blob data element."@en
+	* @param _blobValue_ desired value for the property blobValue.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Blob/value
+	*/
 	final public void setBlobValue (byte _blobValue_) {
 		this._blobValue = _blobValue_;
 	}
@@ -244,6 +257,12 @@ public class BlobImpl implements Serializable, IBlob {
 		return _referableReferableCategory;
 	}
 
+	
+	/**
+	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	* @param _referableReferableCategory_ desired value for the property referableReferableCategory.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory
+	*/
 	final public void setReferableReferableCategory (ArrayList<? extends String> _referableReferableCategory_) {
 		this._referableReferableCategory = _referableReferableCategory_;
 	}
@@ -258,6 +277,12 @@ public class BlobImpl implements Serializable, IBlob {
 		return _referableDescription;
 	}
 
+	
+	/**
+	* "Description or comments on the element. The description can be provided in several languages."@en
+	* @param _referableDescription_ desired value for the property referableDescription.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/description
+	*/
 	final public void setReferableDescription (ArrayList<? extends TypedLiteral> _referableDescription_) {
 		this._referableDescription = _referableDescription_;
 	}
@@ -272,6 +297,12 @@ public class BlobImpl implements Serializable, IBlob {
 		return _referableDisplayName;
 	}
 
+	
+	/**
+	* "Display name. Can be provided in several languages."@en
+	* @param _referableDisplayName_ desired value for the property referableDisplayName.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/displayName
+	*/
 	final public void setReferableDisplayName (TypedLiteral _referableDisplayName_) {
 		this._referableDisplayName = _referableDisplayName_;
 	}
@@ -291,6 +322,17 @@ public class BlobImpl implements Serializable, IBlob {
 		return _referableIdShort;
 	}
 
+	
+	/**
+	* "Identifying string of the element within its name space."@en
+	* "Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
+	* "Constraint AASd-003: idShort shall be matched case-insensitive."@en
+	* "Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
+	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
+	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
+	* @param _referableIdShort_ desired value for the property referableIdShort.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/idShort
+	*/
 	final public void setReferableIdShort (String _referableIdShort_) {
 		this._referableIdShort = _referableIdShort_;
 	}
@@ -307,6 +349,14 @@ public class BlobImpl implements Serializable, IBlob {
 		return _referableParent;
 	}
 
+	
+	/**
+	* "Reference to the next referable parent element of the element."@en
+	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
+	* "This element is used to ease navigation in the model and thus it enables more performant"@en
+	* @param _referableParent_ desired value for the property referableParent.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/parent
+	*/
 	final public void setReferableParent (URI _referableParent_) {
 		this._referableParent = _referableParent_;
 	}
@@ -321,6 +371,12 @@ public class BlobImpl implements Serializable, IBlob {
 		return _qualifiableQualifier;
 	}
 
+	
+	/**
+	* "Additional qualification of a qualifiable element."@en
+	* @param _qualifiableQualifier_ desired value for the property qualifiableQualifier.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier
+	*/
 	final public void setQualifiableQualifier (ArrayList<? extends IConstraint> _qualifiableQualifier_) {
 		this._qualifiableQualifier = _qualifiableQualifier_;
 	}
@@ -335,6 +391,12 @@ public class BlobImpl implements Serializable, IBlob {
 		return _hasDataSpecificationDataSpecification;
 	}
 
+	
+	/**
+	* "Global reference to the data specification template used by the element."@en
+	* @param _hasDataSpecificationDataSpecification_ desired value for the property hasDataSpecificationDataSpecification.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
+	*/
 	final public void setHasDataSpecificationDataSpecification (ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
 		this._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
 	}
@@ -349,6 +411,12 @@ public class BlobImpl implements Serializable, IBlob {
 		return _hasKindKind;
 	}
 
+	
+	/**
+	* "ModelingKind of the element: either type or instance."@en
+	* @param _hasKindKind_ desired value for the property hasKindKind.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasKind/kind
+	*/
 	final public void setHasKindKind (ModelingKind _hasKindKind_) {
 		this._hasKindKind = _hasKindKind_;
 	}
@@ -364,6 +432,13 @@ public class BlobImpl implements Serializable, IBlob {
 		return _hasSemanticsSemanticId;
 	}
 
+	
+	/**
+	* "Points to the Expression Semantic of the Submodels"@en
+	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* @param _hasSemanticsSemanticId_ desired value for the property hasSemanticsSemanticId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
+	*/
 	final public void setHasSemanticsSemanticId (IReference _hasSemanticsSemanticId_) {
 		this._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
 	}

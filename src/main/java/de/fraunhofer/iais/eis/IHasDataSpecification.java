@@ -74,11 +74,6 @@ public interface IHasDataSpecification {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "Global reference to the data specification template used by the element."@en
-	* @return Returns the List of IReference for the property hasDataSpecificationDataSpecification.
-	* More information under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	public List<? extends IReference> getHasDataSpecificationDataSpecification();
 

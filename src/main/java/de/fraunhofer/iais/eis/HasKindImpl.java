@@ -123,6 +123,12 @@ public class HasKindImpl implements Serializable, IHasKind {
 		return _hasKindKind;
 	}
 
+	
+	/**
+	* "ModelingKind of the element: either type or instance."@en
+	* @param _hasKindKind_ desired value for the property hasKindKind.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasKind/kind
+	*/
 	final public void setHasKindKind (ModelingKind _hasKindKind_) {
 		this._hasKindKind = _hasKindKind_;
 	}

@@ -66,12 +66,6 @@ public interface IOperationVariable {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "Describes the needed argument for an operation via a submodel element of kind=Template."@en
-	* "The submodel element value of an operation variable shall be of kind=Template."@en
-	* @return Returns the ISubmodelElement for the property operationVariableValue.
-	* More information under https://admin-shell.io/aas/3/0/RC01/OperationVariable/value
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/OperationVariable/value")
 	public ISubmodelElement getOperationVariableValue();
 

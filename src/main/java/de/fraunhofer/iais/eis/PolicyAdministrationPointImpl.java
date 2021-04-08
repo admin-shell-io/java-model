@@ -133,6 +133,13 @@ public class PolicyAdministrationPointImpl implements Serializable, IPolicyAdmin
 		return _policyAdministrationPointLocalAccessControl;
 	}
 
+	
+	/**
+	* "The policy administration point of access control as realized by the AAS itself."@en
+	* "Constraint AASd-009: Either there is an external policy administration point endpoint defined or the AAS has its own access control."@en
+	* @param _policyAdministrationPointLocalAccessControl_ desired value for the property policyAdministrationPointLocalAccessControl.
+	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl
+	*/
 	final public void setPolicyAdministrationPointLocalAccessControl (IAccessControl _policyAdministrationPointLocalAccessControl_) {
 		this._policyAdministrationPointLocalAccessControl = _policyAdministrationPointLocalAccessControl_;
 	}
@@ -147,6 +154,12 @@ public class PolicyAdministrationPointImpl implements Serializable, IPolicyAdmin
 		return _policyAdministrationPointExternalAccessControl;
 	}
 
+	
+	/**
+	* "Endpoint to an external access control defining a policy administration point to be used by the AAS."@en
+	* @param _policyAdministrationPointExternalAccessControl_ desired value for the property policyAdministrationPointExternalAccessControl.
+	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl
+	*/
 	final public void setPolicyAdministrationPointExternalAccessControl (boolean _policyAdministrationPointExternalAccessControl_) {
 		this._policyAdministrationPointExternalAccessControl = _policyAdministrationPointExternalAccessControl_;
 	}

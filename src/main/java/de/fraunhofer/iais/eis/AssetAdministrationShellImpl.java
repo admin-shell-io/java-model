@@ -227,6 +227,12 @@ public class AssetAdministrationShellImpl implements Serializable, IAssetAdminis
 		return _assetAdministrationShellAssetInformation;
 	}
 
+	
+	/**
+	* "Meta information about the asset the AAS is representing."@en
+	* @param _assetAdministrationShellAssetInformation_ desired value for the property assetAdministrationShellAssetInformation.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation
+	*/
 	final public void setAssetAdministrationShellAssetInformation (IAssetInformation _assetAdministrationShellAssetInformation_) {
 		this._assetAdministrationShellAssetInformation = _assetAdministrationShellAssetInformation_;
 	}
@@ -241,6 +247,12 @@ public class AssetAdministrationShellImpl implements Serializable, IAssetAdminis
 		return _assetAdministrationShellDerivedFrom;
 	}
 
+	
+	/**
+	* "This relation connects instances of AAS with their respective types. Refer to Asset Kind for further information of instance and type kinds."@en
+	* @param _assetAdministrationShellDerivedFrom_ desired value for the property assetAdministrationShellDerivedFrom.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom
+	*/
 	final public void setAssetAdministrationShellDerivedFrom (IReference _assetAdministrationShellDerivedFrom_) {
 		this._assetAdministrationShellDerivedFrom = _assetAdministrationShellDerivedFrom_;
 	}
@@ -255,6 +267,12 @@ public class AssetAdministrationShellImpl implements Serializable, IAssetAdminis
 		return _assetAdministrationShellSecurity;
 	}
 
+	
+	/**
+	* "Definition of the security relevant aspects of the AAS."@en
+	* @param _assetAdministrationShellSecurity_ desired value for the property assetAdministrationShellSecurity.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security
+	*/
 	final public void setAssetAdministrationShellSecurity (ISecurity _assetAdministrationShellSecurity_) {
 		this._assetAdministrationShellSecurity = _assetAdministrationShellSecurity_;
 	}
@@ -269,6 +287,12 @@ public class AssetAdministrationShellImpl implements Serializable, IAssetAdminis
 		return _assetAdministrationShellSubmodel;
 	}
 
+	
+	/**
+	* "Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset"@en
+	* @param _assetAdministrationShellSubmodel_ desired value for the property assetAdministrationShellSubmodel.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel
+	*/
 	final public void setAssetAdministrationShellSubmodel (ArrayList<? extends ISubmodel> _assetAdministrationShellSubmodel_) {
 		this._assetAdministrationShellSubmodel = _assetAdministrationShellSubmodel_;
 	}
@@ -283,6 +307,12 @@ public class AssetAdministrationShellImpl implements Serializable, IAssetAdminis
 		return _assetAdministrationShellView;
 	}
 
+	
+	/**
+	* "Points to the differents views associated to the Administration Shell via the Submodels."@en
+	* @param _assetAdministrationShellView_ desired value for the property assetAdministrationShellView.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view
+	*/
 	final public void setAssetAdministrationShellView (ArrayList<? extends IView> _assetAdministrationShellView_) {
 		this._assetAdministrationShellView = _assetAdministrationShellView_;
 	}
@@ -297,6 +327,12 @@ public class AssetAdministrationShellImpl implements Serializable, IAssetAdminis
 		return _hasDataSpecificationDataSpecification;
 	}
 
+	
+	/**
+	* "Global reference to the data specification template used by the element."@en
+	* @param _hasDataSpecificationDataSpecification_ desired value for the property hasDataSpecificationDataSpecification.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
+	*/
 	final public void setHasDataSpecificationDataSpecification (ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
 		this._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
 	}
@@ -312,6 +348,13 @@ public class AssetAdministrationShellImpl implements Serializable, IAssetAdminis
 		return _identifiableAdministration;
 	}
 
+	
+	/**
+	* "Administrative information of an identifiable element."@en
+	* "Some of the administrative information like the version number might need to be part of the identification."@en
+	* @param _identifiableAdministration_ desired value for the property identifiableAdministration.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Identifiable/administration
+	*/
 	final public void setIdentifiableAdministration (IAdministrativeInformation _identifiableAdministration_) {
 		this._identifiableAdministration = _identifiableAdministration_;
 	}
@@ -326,6 +369,12 @@ public class AssetAdministrationShellImpl implements Serializable, IAssetAdminis
 		return _identifiableIdentification;
 	}
 
+	
+	/**
+	* "The globally unique identification of the element."@en
+	* @param _identifiableIdentification_ desired value for the property identifiableIdentification.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Identifiable/identification
+	*/
 	final public void setIdentifiableIdentification (IIdentifier _identifiableIdentification_) {
 		this._identifiableIdentification = _identifiableIdentification_;
 	}
@@ -340,6 +389,12 @@ public class AssetAdministrationShellImpl implements Serializable, IAssetAdminis
 		return _referableReferableCategory;
 	}
 
+	
+	/**
+	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	* @param _referableReferableCategory_ desired value for the property referableReferableCategory.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory
+	*/
 	final public void setReferableReferableCategory (ArrayList<? extends String> _referableReferableCategory_) {
 		this._referableReferableCategory = _referableReferableCategory_;
 	}
@@ -354,6 +409,12 @@ public class AssetAdministrationShellImpl implements Serializable, IAssetAdminis
 		return _referableDescription;
 	}
 
+	
+	/**
+	* "Description or comments on the element. The description can be provided in several languages."@en
+	* @param _referableDescription_ desired value for the property referableDescription.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/description
+	*/
 	final public void setReferableDescription (ArrayList<? extends TypedLiteral> _referableDescription_) {
 		this._referableDescription = _referableDescription_;
 	}
@@ -368,6 +429,12 @@ public class AssetAdministrationShellImpl implements Serializable, IAssetAdminis
 		return _referableDisplayName;
 	}
 
+	
+	/**
+	* "Display name. Can be provided in several languages."@en
+	* @param _referableDisplayName_ desired value for the property referableDisplayName.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/displayName
+	*/
 	final public void setReferableDisplayName (TypedLiteral _referableDisplayName_) {
 		this._referableDisplayName = _referableDisplayName_;
 	}
@@ -387,6 +454,17 @@ public class AssetAdministrationShellImpl implements Serializable, IAssetAdminis
 		return _referableIdShort;
 	}
 
+	
+	/**
+	* "Identifying string of the element within its name space."@en
+	* "Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
+	* "Constraint AASd-003: idShort shall be matched case-insensitive."@en
+	* "Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
+	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
+	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
+	* @param _referableIdShort_ desired value for the property referableIdShort.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/idShort
+	*/
 	final public void setReferableIdShort (String _referableIdShort_) {
 		this._referableIdShort = _referableIdShort_;
 	}
@@ -403,6 +481,14 @@ public class AssetAdministrationShellImpl implements Serializable, IAssetAdminis
 		return _referableParent;
 	}
 
+	
+	/**
+	* "Reference to the next referable parent element of the element."@en
+	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
+	* "This element is used to ease navigation in the model and thus it enables more performant"@en
+	* @param _referableParent_ desired value for the property referableParent.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/parent
+	*/
 	final public void setReferableParent (URI _referableParent_) {
 		this._referableParent = _referableParent_;
 	}

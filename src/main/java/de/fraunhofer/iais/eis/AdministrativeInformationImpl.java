@@ -140,6 +140,12 @@ public class AdministrativeInformationImpl implements Serializable, IAdministrat
 		return _administrativeInformationVersion;
 	}
 
+	
+	/**
+	* "Version of the element."@en
+	* @param _administrativeInformationVersion_ desired value for the property administrativeInformationVersion.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version
+	*/
 	final public void setAdministrativeInformationVersion (String _administrativeInformationVersion_) {
 		this._administrativeInformationVersion = _administrativeInformationVersion_;
 	}
@@ -155,6 +161,13 @@ public class AdministrativeInformationImpl implements Serializable, IAdministrat
 		return _administrativeInformationRevision;
 	}
 
+	
+	/**
+	* "Revision of the element."@en
+	* "Constraint AASd-005: A revision requires a version. This means, if there is no version there is no revision neither."@en
+	* @param _administrativeInformationRevision_ desired value for the property administrativeInformationRevision.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision
+	*/
 	final public void setAdministrativeInformationRevision (String _administrativeInformationRevision_) {
 		this._administrativeInformationRevision = _administrativeInformationRevision_;
 	}
@@ -169,6 +182,12 @@ public class AdministrativeInformationImpl implements Serializable, IAdministrat
 		return _hasDataSpecificationDataSpecification;
 	}
 
+	
+	/**
+	* "Global reference to the data specification template used by the element."@en
+	* @param _hasDataSpecificationDataSpecification_ desired value for the property hasDataSpecificationDataSpecification.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
+	*/
 	final public void setHasDataSpecificationDataSpecification (ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
 		this._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
 	}

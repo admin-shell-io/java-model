@@ -67,35 +67,15 @@ public interface IExtension extends IHasSemantics {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "An extension of the element."@en
-	* @return Returns the String for the property extensionName.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/name
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/name")
 	public String getExtensionName();
 
-	/**
-	* "Type of the value of the extension."@en
-	* @return Returns the String for the property extensionValueType.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/valueType
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/valueType")
 	public String getExtensionValueType();
 
-	/**
-	* "Value of the extension."@en
-	* @return Returns the String for the property extensionValue.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/value
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/value")
 	public String getExtensionValue();
 
-	/**
-	* "Reference to an element the extension refers to."@en
-	* @return Returns the IReference for the property extensionRefersTo.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/refersTo
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/refersTo")
 	public IReference getExtensionRefersTo();
 

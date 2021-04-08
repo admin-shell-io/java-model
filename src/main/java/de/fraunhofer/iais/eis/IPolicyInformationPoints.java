@@ -66,19 +66,9 @@ public interface IPolicyInformationPoints {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "If externalInformationPoints True then at least one Endpoint to external available information needs to be configured for the AAS."@en
-	* @return Returns the boolean for the property policyInformationPointsExternalInformationPoints.
-	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints")
 	public boolean getPolicyInformationPointsExternalInformationPoints();
 
-	/**
-	* "References to submodels defining information used by security access permission rules."@en
-	* @return Returns the List of ISubmodel for the property policyInformationPointsInternalInformationPoint.
-	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint")
 	public List<? extends ISubmodel> getPolicyInformationPointsInternalInformationPoint();
 

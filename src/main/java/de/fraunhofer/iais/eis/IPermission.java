@@ -66,21 +66,9 @@ public interface IPermission {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "Description of the kind of permission. Possible kind of permission also include the denial of the permission."@en
-	* @return Returns the PermissionKind for the property permissionKindOfPermission.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
 	public PermissionKind getPermissionKindOfPermission();
 
-	/**
-	* "Reference to a property that defines the semantics of the permission."@en
-	* "Constraint AASs-010: The property referenced in Permission/permission shall have the category \'CONSTANT\'."@en
-	* "Constraint AASs-011: The property referenced in Permission/permission shall be part of the submodel that is referenced within the \'selectablePermissions\' attribute of \'AccessControl\'."@en
-	* @return Returns the IProperty for the property permissionPermission.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Permission/permission
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Permission/permission")
 	public IProperty getPermissionPermission();
 

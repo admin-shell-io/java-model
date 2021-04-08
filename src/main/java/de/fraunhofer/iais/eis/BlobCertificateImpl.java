@@ -147,6 +147,12 @@ public class BlobCertificateImpl implements Serializable, IBlobCertificate {
 		return _blobCertificateBlobCertificate;
 	}
 
+	
+	/**
+	* "Certificate as BLOB."@en
+	* @param _blobCertificateBlobCertificate_ desired value for the property blobCertificateBlobCertificate.
+	* More information under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate
+	*/
 	final public void setBlobCertificateBlobCertificate (byte _blobCertificateBlobCertificate_) {
 		this._blobCertificateBlobCertificate = _blobCertificateBlobCertificate_;
 	}
@@ -161,6 +167,12 @@ public class BlobCertificateImpl implements Serializable, IBlobCertificate {
 		return _blobCertificateContainedExtension;
 	}
 
+	
+	/**
+	* "Extensions contained in the certificate."@en
+	* @param _blobCertificateContainedExtension_ desired value for the property blobCertificateContainedExtension.
+	* More information under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension
+	*/
 	final public void setBlobCertificateContainedExtension (ArrayList<? extends IReference> _blobCertificateContainedExtension_) {
 		this._blobCertificateContainedExtension = _blobCertificateContainedExtension_;
 	}
@@ -175,6 +187,12 @@ public class BlobCertificateImpl implements Serializable, IBlobCertificate {
 		return _blobCertificateLastCertificate;
 	}
 
+	
+	/**
+	* "Denotes whether this certificate is the certificated that fast added last."@en
+	* @param _blobCertificateLastCertificate_ desired value for the property blobCertificateLastCertificate.
+	* More information under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate
+	*/
 	final public void setBlobCertificateLastCertificate (boolean _blobCertificateLastCertificate_) {
 		this._blobCertificateLastCertificate = _blobCertificateLastCertificate_;
 	}
@@ -189,6 +207,12 @@ public class BlobCertificateImpl implements Serializable, IBlobCertificate {
 		return _certificatePolicyAdministrationPoint;
 	}
 
+	
+	/**
+	* "The access control administration policy point of the AAS."@en
+	* @param _certificatePolicyAdministrationPoint_ desired value for the property certificatePolicyAdministrationPoint.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint
+	*/
 	final public void setCertificatePolicyAdministrationPoint (IPolicyAdministrationPoint _certificatePolicyAdministrationPoint_) {
 		this._certificatePolicyAdministrationPoint = _certificatePolicyAdministrationPoint_;
 	}

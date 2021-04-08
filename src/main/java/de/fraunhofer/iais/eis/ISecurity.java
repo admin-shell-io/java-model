@@ -66,27 +66,12 @@ public interface ISecurity {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "Access control policy points of the AAS."@en
-	* @return Returns the IPolicyAdministrationPoint for the property securityAccessControlPolicyPoints.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
 	public IPolicyAdministrationPoint getSecurityAccessControlPolicyPoints();
 
-	/**
-	* "Certificates of the AAS."@en
-	* @return Returns the List of ICertificate for the property securityCertificate.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Security/certificate
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/certificate")
 	public List<? extends ICertificate> getSecurityCertificate();
 
-	/**
-	* "Certificate extensions as required by the AAS."@en
-	* @return Returns the List of IReference for the property securityRequiredCertificateExtension.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension")
 	public List<? extends IReference> getSecurityRequiredCertificateExtension();
 

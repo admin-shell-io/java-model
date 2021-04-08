@@ -139,6 +139,12 @@ public class SecurityImpl implements Serializable, ISecurity {
 		return _securityAccessControlPolicyPoints;
 	}
 
+	
+	/**
+	* "Access control policy points of the AAS."@en
+	* @param _securityAccessControlPolicyPoints_ desired value for the property securityAccessControlPolicyPoints.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints
+	*/
 	final public void setSecurityAccessControlPolicyPoints (IPolicyAdministrationPoint _securityAccessControlPolicyPoints_) {
 		this._securityAccessControlPolicyPoints = _securityAccessControlPolicyPoints_;
 	}
@@ -153,6 +159,12 @@ public class SecurityImpl implements Serializable, ISecurity {
 		return _securityCertificate;
 	}
 
+	
+	/**
+	* "Certificates of the AAS."@en
+	* @param _securityCertificate_ desired value for the property securityCertificate.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Security/certificate
+	*/
 	final public void setSecurityCertificate (ArrayList<? extends ICertificate> _securityCertificate_) {
 		this._securityCertificate = _securityCertificate_;
 	}
@@ -167,6 +179,12 @@ public class SecurityImpl implements Serializable, ISecurity {
 		return _securityRequiredCertificateExtension;
 	}
 
+	
+	/**
+	* "Certificate extensions as required by the AAS."@en
+	* @param _securityRequiredCertificateExtension_ desired value for the property securityRequiredCertificateExtension.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension
+	*/
 	final public void setSecurityRequiredCertificateExtension (ArrayList<? extends IReference> _securityRequiredCertificateExtension_) {
 		this._securityRequiredCertificateExtension = _securityRequiredCertificateExtension_;
 	}

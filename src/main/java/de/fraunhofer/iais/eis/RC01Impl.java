@@ -198,6 +198,11 @@ public class RC01Impl implements Serializable, IRC01 {
 		return _rC01ConversionFactor;
 	}
 
+	
+	/**
+	* @param _rC01ConversionFactor_ desired value for the property rC01ConversionFactor.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor
+	*/
 	final public void setRC01ConversionFactor (ArrayList<? extends String> _rC01ConversionFactor_) {
 		this._rC01ConversionFactor = _rC01ConversionFactor_;
 	}
@@ -211,6 +216,11 @@ public class RC01Impl implements Serializable, IRC01 {
 		return _rC01Definition;
 	}
 
+	
+	/**
+	* @param _rC01Definition_ desired value for the property rC01Definition.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/definition
+	*/
 	final public void setRC01Definition (ArrayList<? extends TypedLiteral> _rC01Definition_) {
 		this._rC01Definition = _rC01Definition_;
 	}
@@ -224,6 +234,11 @@ public class RC01Impl implements Serializable, IRC01 {
 		return _rC01DinNotation;
 	}
 
+	
+	/**
+	* @param _rC01DinNotation_ desired value for the property rC01DinNotation.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation
+	*/
 	final public void setRC01DinNotation (ArrayList<? extends String> _rC01DinNotation_) {
 		this._rC01DinNotation = _rC01DinNotation_;
 	}
@@ -237,6 +252,11 @@ public class RC01Impl implements Serializable, IRC01 {
 		return _rC01EceCode;
 	}
 
+	
+	/**
+	* @param _rC01EceCode_ desired value for the property rC01EceCode.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode
+	*/
 	final public void setRC01EceCode (ArrayList<? extends String> _rC01EceCode_) {
 		this._rC01EceCode = _rC01EceCode_;
 	}
@@ -250,6 +270,11 @@ public class RC01Impl implements Serializable, IRC01 {
 		return _rC01EceName;
 	}
 
+	
+	/**
+	* @param _rC01EceName_ desired value for the property rC01EceName.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName
+	*/
 	final public void setRC01EceName (ArrayList<? extends String> _rC01EceName_) {
 		this._rC01EceName = _rC01EceName_;
 	}
@@ -263,6 +288,11 @@ public class RC01Impl implements Serializable, IRC01 {
 		return _rC01NistName;
 	}
 
+	
+	/**
+	* @param _rC01NistName_ desired value for the property rC01NistName.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName
+	*/
 	final public void setRC01NistName (ArrayList<? extends String> _rC01NistName_) {
 		this._rC01NistName = _rC01NistName_;
 	}
@@ -276,6 +306,11 @@ public class RC01Impl implements Serializable, IRC01 {
 		return _rC01SiName;
 	}
 
+	
+	/**
+	* @param _rC01SiName_ desired value for the property rC01SiName.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siName
+	*/
 	final public void setRC01SiName (ArrayList<? extends String> _rC01SiName_) {
 		this._rC01SiName = _rC01SiName_;
 	}
@@ -289,6 +324,11 @@ public class RC01Impl implements Serializable, IRC01 {
 		return _rC01SiNotation;
 	}
 
+	
+	/**
+	* @param _rC01SiNotation_ desired value for the property rC01SiNotation.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation
+	*/
 	final public void setRC01SiNotation (ArrayList<? extends String> _rC01SiNotation_) {
 		this._rC01SiNotation = _rC01SiNotation_;
 	}
@@ -302,6 +342,11 @@ public class RC01Impl implements Serializable, IRC01 {
 		return _rC01RegistrationAuthorityId;
 	}
 
+	
+	/**
+	* @param _rC01RegistrationAuthorityId_ desired value for the property rC01RegistrationAuthorityId.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/registrationAuthorityId
+	*/
 	final public void setRC01RegistrationAuthorityId (ArrayList<? extends String> _rC01RegistrationAuthorityId_) {
 		this._rC01RegistrationAuthorityId = _rC01RegistrationAuthorityId_;
 	}
@@ -315,6 +360,11 @@ public class RC01Impl implements Serializable, IRC01 {
 		return _rC01Supplier;
 	}
 
+	
+	/**
+	* @param _rC01Supplier_ desired value for the property rC01Supplier.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/supplier
+	*/
 	final public void setRC01Supplier (ArrayList<? extends String> _rC01Supplier_) {
 		this._rC01Supplier = _rC01Supplier_;
 	}
@@ -328,6 +378,11 @@ public class RC01Impl implements Serializable, IRC01 {
 		return _rC01UnitName;
 	}
 
+	
+	/**
+	* @param _rC01UnitName_ desired value for the property rC01UnitName.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName
+	*/
 	final public void setRC01UnitName (ArrayList<? extends String> _rC01UnitName_) {
 		this._rC01UnitName = _rC01UnitName_;
 	}
@@ -341,6 +396,11 @@ public class RC01Impl implements Serializable, IRC01 {
 		return _rC01UnitSymbol;
 	}
 
+	
+	/**
+	* @param _rC01UnitSymbol_ desired value for the property rC01UnitSymbol.
+	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol
+	*/
 	final public void setRC01UnitSymbol (ArrayList<? extends String> _rC01UnitSymbol_) {
 		this._rC01UnitSymbol = _rC01UnitSymbol_;
 	}

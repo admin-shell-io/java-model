@@ -147,6 +147,12 @@ public class AccessControlPolicyPointsImpl implements Serializable, IAccessContr
 		return _accessControlPolicyPointsPolicyAdministrationPoint;
 	}
 
+	
+	/**
+	* "The access control administration policy point of the AAS."@en
+	* @param _accessControlPolicyPointsPolicyAdministrationPoint_ desired value for the property accessControlPolicyPointsPolicyAdministrationPoint.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint
+	*/
 	final public void setAccessControlPolicyPointsPolicyAdministrationPoint (IPolicyAdministrationPoint _accessControlPolicyPointsPolicyAdministrationPoint_) {
 		this._accessControlPolicyPointsPolicyAdministrationPoint = _accessControlPolicyPointsPolicyAdministrationPoint_;
 	}
@@ -161,6 +167,12 @@ public class AccessControlPolicyPointsImpl implements Serializable, IAccessContr
 		return _accessControlPolicyPointsPolicyDecisionPoint;
 	}
 
+	
+	/**
+	* "The access control policy decision point of the AAS."@en
+	* @param _accessControlPolicyPointsPolicyDecisionPoint_ desired value for the property accessControlPolicyPointsPolicyDecisionPoint.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint
+	*/
 	final public void setAccessControlPolicyPointsPolicyDecisionPoint (IPolicyDecisionPoint _accessControlPolicyPointsPolicyDecisionPoint_) {
 		this._accessControlPolicyPointsPolicyDecisionPoint = _accessControlPolicyPointsPolicyDecisionPoint_;
 	}
@@ -175,6 +187,12 @@ public class AccessControlPolicyPointsImpl implements Serializable, IAccessContr
 		return _accessControlPolicyPointsPolicyEnforcementPoint;
 	}
 
+	
+	/**
+	* "The access control policy enforcement point of the AAS."@en
+	* @param _accessControlPolicyPointsPolicyEnforcementPoint_ desired value for the property accessControlPolicyPointsPolicyEnforcementPoint.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint
+	*/
 	final public void setAccessControlPolicyPointsPolicyEnforcementPoint (IPolicyEnforcementPoints _accessControlPolicyPointsPolicyEnforcementPoint_) {
 		this._accessControlPolicyPointsPolicyEnforcementPoint = _accessControlPolicyPointsPolicyEnforcementPoint_;
 	}
@@ -189,6 +207,12 @@ public class AccessControlPolicyPointsImpl implements Serializable, IAccessContr
 		return _accessControlPolicyPointsPolicyInformationPoints;
 	}
 
+	
+	/**
+	* "The access control policy information points of the AAS."@en
+	* @param _accessControlPolicyPointsPolicyInformationPoints_ desired value for the property accessControlPolicyPointsPolicyInformationPoints.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints
+	*/
 	final public void setAccessControlPolicyPointsPolicyInformationPoints (IPolicyInformationPoints _accessControlPolicyPointsPolicyInformationPoints_) {
 		this._accessControlPolicyPointsPolicyInformationPoints = _accessControlPolicyPointsPolicyInformationPoints_;
 	}

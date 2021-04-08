@@ -122,6 +122,12 @@ public class FormulaImpl implements Serializable, IFormula {
 		return _formulaDependsOn;
 	}
 
+	
+	/**
+	* "A formula may depend on referable or even external global elements - assumed that can be referenced and their value may be evaluated - that are used in the logical expression."@en
+	* @param _formulaDependsOn_ desired value for the property formulaDependsOn.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn
+	*/
 	final public void setFormulaDependsOn (ArrayList<? extends IReference> _formulaDependsOn_) {
 		this._formulaDependsOn = _formulaDependsOn_;
 	}

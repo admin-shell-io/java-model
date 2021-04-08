@@ -67,11 +67,6 @@ public interface ICertificate {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "The access control administration policy point of the AAS."@en
-	* @return Returns the IPolicyAdministrationPoint for the property certificatePolicyAdministrationPoint.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint")
 	public IPolicyAdministrationPoint getCertificatePolicyAdministrationPoint();
 

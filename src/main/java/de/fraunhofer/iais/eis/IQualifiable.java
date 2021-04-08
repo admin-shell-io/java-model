@@ -70,11 +70,6 @@ public interface IQualifiable {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "Additional qualification of a qualifiable element."@en
-	* @return Returns the List of IConstraint for the property qualifiableQualifier.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
 	public List<? extends IConstraint> getQualifiableQualifier();
 

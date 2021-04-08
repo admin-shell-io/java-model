@@ -149,6 +149,12 @@ public class QualifierImpl implements Serializable, IQualifier {
 		return _qualifierType;
 	}
 
+	
+	/**
+	* "The qualifier type describes the type of the qualifier that is applied to the element."@en
+	* @param _qualifierType_ desired value for the property qualifierType.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/type
+	*/
 	final public void setQualifierType (String _qualifierType_) {
 		this._qualifierType = _qualifierType_;
 	}
@@ -165,6 +171,14 @@ public class QualifierImpl implements Serializable, IQualifier {
 		return _qualifierValue;
 	}
 
+	
+	/**
+	* "The qualifier value is the value of the qualifier."@en
+	* "Constraint AASd-006: if both, the value and the valueId are present then the value needs to be identical to the short name of the referenced coded value in qualifierValueId."@en
+	* "Constraint AASd-020: The value of Qualifier/value shall be consistent to the data type as defined in Qualifier/valueType."@en
+	* @param _qualifierValue_ desired value for the property qualifierValue.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/value
+	*/
 	final public void setQualifierValue (TypedLiteral _qualifierValue_) {
 		this._qualifierValue = _qualifierValue_;
 	}
@@ -179,6 +193,12 @@ public class QualifierImpl implements Serializable, IQualifier {
 		return _qualifierValueId;
 	}
 
+	
+	/**
+	* "Reference to the global unqiue id of a coded value."@en
+	* @param _qualifierValueId_ desired value for the property qualifierValueId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId
+	*/
 	final public void setQualifierValueId (IReference _qualifierValueId_) {
 		this._qualifierValueId = _qualifierValueId_;
 	}
@@ -195,6 +215,13 @@ public class QualifierImpl implements Serializable, IQualifier {
 		return _hasSemanticsSemanticId;
 	}
 
+	
+	/**
+	* "Points to the Expression Semantic of the Submodels"@en
+	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* @param _hasSemanticsSemanticId_ desired value for the property hasSemanticsSemanticId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
+	*/
 	final public void setHasSemanticsSemanticId (IReference _hasSemanticsSemanticId_) {
 		this._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
 	}

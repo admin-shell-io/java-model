@@ -123,6 +123,12 @@ public class CertificateImpl implements Serializable, ICertificate {
 		return _certificatePolicyAdministrationPoint;
 	}
 
+	
+	/**
+	* "The access control administration policy point of the AAS."@en
+	* @param _certificatePolicyAdministrationPoint_ desired value for the property certificatePolicyAdministrationPoint.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint
+	*/
 	final public void setCertificatePolicyAdministrationPoint (IPolicyAdministrationPoint _certificatePolicyAdministrationPoint_) {
 		this._certificatePolicyAdministrationPoint = _certificatePolicyAdministrationPoint_;
 	}

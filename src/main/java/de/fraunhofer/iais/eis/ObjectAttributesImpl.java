@@ -123,6 +123,12 @@ public class ObjectAttributesImpl implements Serializable, IObjectAttributes {
 		return _objectAttributesObjectAttribute;
 	}
 
+	
+	/**
+	* "A data elements that further classifies an object."@en
+	* @param _objectAttributesObjectAttribute_ desired value for the property objectAttributesObjectAttribute.
+	* More information under https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute
+	*/
 	final public void setObjectAttributesObjectAttribute (ArrayList<? extends IDataElement> _objectAttributesObjectAttribute_) {
 		this._objectAttributesObjectAttribute = _objectAttributesObjectAttribute_;
 	}

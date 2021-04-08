@@ -174,6 +174,12 @@ public class AccessControlImpl implements Serializable, IAccessControl {
 		return _accessControlAccessPermissionRule;
 	}
 
+	
+	/**
+	* "Access permission rules of the AAS describing the rights assigned to (already authenticated) subjects to access elements of the AAS."@en
+	* @param _accessControlAccessPermissionRule_ desired value for the property accessControlAccessPermissionRule.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule
+	*/
 	final public void setAccessControlAccessPermissionRule (ArrayList<? extends IAccessPermissionRule> _accessControlAccessPermissionRule_) {
 		this._accessControlAccessPermissionRule = _accessControlAccessPermissionRule_;
 	}
@@ -189,6 +195,13 @@ public class AccessControlImpl implements Serializable, IAccessControl {
 		return _accessControlSelectableSubjectAttributes;
 	}
 
+	
+	/**
+	* "Reference to a submodel defining the authenticated subjects that are configured for the AAS. They are selectable by the access permission rules to assign permissions to the subjects."@en
+	* "Default: reference to the submodel referenced via defaultSubjectAttributes."@en
+	* @param _accessControlSelectableSubjectAttributes_ desired value for the property accessControlSelectableSubjectAttributes.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableSubjectAttributes
+	*/
 	final public void setAccessControlSelectableSubjectAttributes (ISubmodel _accessControlSelectableSubjectAttributes_) {
 		this._accessControlSelectableSubjectAttributes = _accessControlSelectableSubjectAttributes_;
 	}
@@ -204,6 +217,13 @@ public class AccessControlImpl implements Serializable, IAccessControl {
 		return _accessControlDefaultSubjectAttributes;
 	}
 
+	
+	/**
+	* "Reference to a submodel defining the default subjects attributes for the AAS that can be used to describe access permission rules."@en
+	* "The submodel is of kind=Type."@en
+	* @param _accessControlDefaultSubjectAttributes_ desired value for the property accessControlDefaultSubjectAttributes.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultSubjectAttributes
+	*/
 	final public void setAccessControlDefaultSubjectAttributes (ISubmodel _accessControlDefaultSubjectAttributes_) {
 		this._accessControlDefaultSubjectAttributes = _accessControlDefaultSubjectAttributes_;
 	}
@@ -219,6 +239,13 @@ public class AccessControlImpl implements Serializable, IAccessControl {
 		return _accessControlSelectablePermissions;
 	}
 
+	
+	/**
+	* "Reference to a submodel defining which permissions can be assigned to the subjects."@en
+	* "Default: reference to the submodel referenced via defaultPermissions"@en
+	* @param _accessControlSelectablePermissions_ desired value for the property accessControlSelectablePermissions.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControl/selectablePermissions
+	*/
 	final public void setAccessControlSelectablePermissions (ISubmodel _accessControlSelectablePermissions_) {
 		this._accessControlSelectablePermissions = _accessControlSelectablePermissions_;
 	}
@@ -233,6 +260,12 @@ public class AccessControlImpl implements Serializable, IAccessControl {
 		return _accessControlDefaultPermissions;
 	}
 
+	
+	/**
+	* "Reference to a submodel defining the default permissions for the AAS."@en
+	* @param _accessControlDefaultPermissions_ desired value for the property accessControlDefaultPermissions.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultPermissions
+	*/
 	final public void setAccessControlDefaultPermissions (ISubmodel _accessControlDefaultPermissions_) {
 		this._accessControlDefaultPermissions = _accessControlDefaultPermissions_;
 	}
@@ -247,6 +280,12 @@ public class AccessControlImpl implements Serializable, IAccessControl {
 		return _accessControlSelectableEnvironmentAttributes;
 	}
 
+	
+	/**
+	* "Reference to a submodel defining which environment attributes can be accessed via the permission rules."@en
+	* @param _accessControlSelectableEnvironmentAttributes_ desired value for the property accessControlSelectableEnvironmentAttributes.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableEnvironmentAttributes
+	*/
 	final public void setAccessControlSelectableEnvironmentAttributes (ISubmodel _accessControlSelectableEnvironmentAttributes_) {
 		this._accessControlSelectableEnvironmentAttributes = _accessControlSelectableEnvironmentAttributes_;
 	}
@@ -261,6 +300,12 @@ public class AccessControlImpl implements Serializable, IAccessControl {
 		return _accessControlDefaultEnvironmentAttributes;
 	}
 
+	
+	/**
+	* "Reference to a submodel defining default environment attributes, i.e. attributes that are not describing the asset itself. The submodel is of kind=Type. At the same type the values of these environment attributes need to be accessible when evaluating the access permission rules. This is realized as a policy information point."@en
+	* @param _accessControlDefaultEnvironmentAttributes_ desired value for the property accessControlDefaultEnvironmentAttributes.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultEnvironmentAttributes
+	*/
 	final public void setAccessControlDefaultEnvironmentAttributes (ISubmodel _accessControlDefaultEnvironmentAttributes_) {
 		this._accessControlDefaultEnvironmentAttributes = _accessControlDefaultEnvironmentAttributes_;
 	}

@@ -131,6 +131,12 @@ public class PolicyInformationPointsImpl implements Serializable, IPolicyInforma
 		return _policyInformationPointsExternalInformationPoints;
 	}
 
+	
+	/**
+	* "If externalInformationPoints True then at least one Endpoint to external available information needs to be configured for the AAS."@en
+	* @param _policyInformationPointsExternalInformationPoints_ desired value for the property policyInformationPointsExternalInformationPoints.
+	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints
+	*/
 	final public void setPolicyInformationPointsExternalInformationPoints (boolean _policyInformationPointsExternalInformationPoints_) {
 		this._policyInformationPointsExternalInformationPoints = _policyInformationPointsExternalInformationPoints_;
 	}
@@ -145,6 +151,12 @@ public class PolicyInformationPointsImpl implements Serializable, IPolicyInforma
 		return _policyInformationPointsInternalInformationPoint;
 	}
 
+	
+	/**
+	* "References to submodels defining information used by security access permission rules."@en
+	* @param _policyInformationPointsInternalInformationPoint_ desired value for the property policyInformationPointsInternalInformationPoint.
+	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint
+	*/
 	final public void setPolicyInformationPointsInternalInformationPoint (ArrayList<? extends ISubmodel> _policyInformationPointsInternalInformationPoint_) {
 		this._policyInformationPointsInternalInformationPoint = _policyInformationPointsInternalInformationPoint_;
 	}

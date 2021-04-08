@@ -123,6 +123,12 @@ public class PolicyDecisionPointImpl implements Serializable, IPolicyDecisionPoi
 		return _policyDecisionPointExternalPolicyDecisionPoints;
 	}
 
+	
+	/**
+	* "If externalPolicyDecisionPoints True then Endpoints to external available decision points taking into consideration for access control for the AAS need to be configured."@en
+	* @param _policyDecisionPointExternalPolicyDecisionPoints_ desired value for the property policyDecisionPointExternalPolicyDecisionPoints.
+	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints
+	*/
 	final public void setPolicyDecisionPointExternalPolicyDecisionPoints (boolean _policyDecisionPointExternalPolicyDecisionPoints_) {
 		this._policyDecisionPointExternalPolicyDecisionPoints = _policyDecisionPointExternalPolicyDecisionPoints_;
 	}

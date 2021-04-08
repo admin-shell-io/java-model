@@ -126,6 +126,13 @@ public class HasSemanticsImpl implements Serializable, IHasSemantics {
 		return _hasSemanticsSemanticId;
 	}
 
+	
+	/**
+	* "Points to the Expression Semantic of the Submodels"@en
+	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* @param _hasSemanticsSemanticId_ desired value for the property hasSemanticsSemanticId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
+	*/
 	final public void setHasSemanticsSemanticId (IReference _hasSemanticsSemanticId_) {
 		this._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
 	}

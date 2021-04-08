@@ -148,6 +148,12 @@ public class IdentifierKeyValuePairImpl implements Serializable, IIdentifierKeyV
 		return _identifierKeyValuePairKey;
 	}
 
+	
+	/**
+	* "Key of the identifier."@en
+	* @param _identifierKeyValuePairKey_ desired value for the property identifierKeyValuePairKey.
+	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key
+	*/
 	final public void setIdentifierKeyValuePairKey (String _identifierKeyValuePairKey_) {
 		this._identifierKeyValuePairKey = _identifierKeyValuePairKey_;
 	}
@@ -162,6 +168,12 @@ public class IdentifierKeyValuePairImpl implements Serializable, IIdentifierKeyV
 		return _identifierKeyValuePairValue;
 	}
 
+	
+	/**
+	* "The value of the identifier with the corresponding key."@en
+	* @param _identifierKeyValuePairValue_ desired value for the property identifierKeyValuePairValue.
+	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value
+	*/
 	final public void setIdentifierKeyValuePairValue (String _identifierKeyValuePairValue_) {
 		this._identifierKeyValuePairValue = _identifierKeyValuePairValue_;
 	}
@@ -176,6 +188,12 @@ public class IdentifierKeyValuePairImpl implements Serializable, IIdentifierKeyV
 		return _identifierKeyValuePairExternalSubjectId;
 	}
 
+	
+	/**
+	* "The (external) subject the key belongs to or has meaning to."@en
+	* @param _identifierKeyValuePairExternalSubjectId_ desired value for the property identifierKeyValuePairExternalSubjectId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId
+	*/
 	final public void setIdentifierKeyValuePairExternalSubjectId (IReference _identifierKeyValuePairExternalSubjectId_) {
 		this._identifierKeyValuePairExternalSubjectId = _identifierKeyValuePairExternalSubjectId_;
 	}
@@ -191,6 +209,13 @@ public class IdentifierKeyValuePairImpl implements Serializable, IIdentifierKeyV
 		return _hasSemanticsSemanticId;
 	}
 
+	
+	/**
+	* "Points to the Expression Semantic of the Submodels"@en
+	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* @param _hasSemanticsSemanticId_ desired value for the property hasSemanticsSemanticId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
+	*/
 	final public void setHasSemanticsSemanticId (IReference _hasSemanticsSemanticId_) {
 		this._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
 	}

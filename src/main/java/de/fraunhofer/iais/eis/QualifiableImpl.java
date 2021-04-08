@@ -124,6 +124,12 @@ public class QualifiableImpl implements Serializable, IQualifiable {
 		return _qualifiableQualifier;
 	}
 
+	
+	/**
+	* "Additional qualification of a qualifiable element."@en
+	* @param _qualifiableQualifier_ desired value for the property qualifiableQualifier.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier
+	*/
 	final public void setQualifiableQualifier (ArrayList<? extends IConstraint> _qualifiableQualifier_) {
 		this._qualifiableQualifier = _qualifiableQualifier_;
 	}

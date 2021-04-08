@@ -69,28 +69,12 @@ public interface ISubmodelElementCollection extends ISubmodelElement {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "If allowDuplicates=true then it is allowed that the collection contains the same element several times. Default = false"@en
-	* "Constraint AASd-026: If allowDuplicates==false then it is not allowed that the collection contains several elements with the same semantics (i.e. the same semanticId)."@en
-	* @return Returns the boolean for the property submodelElementCollectionAllowDuplicates.
-	* More information under https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates")
 	public boolean getSubmodelElementCollectionAllowDuplicates();
 
-	/**
-	* "If ordered=false then the elements in the property collection are not ordered. If ordered=true then the elements in the collection are ordered. Default = false"@en
-	* @return Returns the boolean for the property submodelElementCollectionOrdered.
-	* More information under https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered")
 	public boolean getSubmodelElementCollectionOrdered();
 
-	/**
-	* "Submodel element contained in the collection."@en
-	* @return Returns the List of ISubmodelElement for the property submodelElementCollectionValue.
-	* More information under https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value")
 	public List<? extends ISubmodelElement> getSubmodelElementCollectionValue();
 

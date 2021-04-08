@@ -73,12 +73,6 @@ public interface IHasSemantics {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "Points to the Expression Semantic of the Submodels"@en
-	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
-	* @return Returns the IReference for the property hasSemanticsSemanticId.
-	* More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	public IReference getHasSemanticsSemanticId();
 

@@ -67,39 +67,15 @@ public interface IEntity extends ISubmodelElement {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "Reference to the asset the entity is representing."@en
-	* "The asset attribute must be set if entityType is set to \'SelfManagedEntity\'. It is empty otherwise."@en
-	* "Constraint AASd-014: Either the attribute globalAssetId or externalAssetId of an Entity must be set if Entity/entityType is set to \'SelfManagedEntity\'. They are not existing otherwise."@en
-	* @return Returns the IReference for the property entityGlobalAssetId.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId")
 	public IReference getEntityGlobalAssetId();
 
-	/**
-	* "Reference to an identifier key value pair representing an external identifier of the asset represented by the asset administration shell. "@en
-	* "The asset attribute must be set if entityType is set to \'SelfManagedEntity\'. It is empty otherwise."@en
-	* "Constraint AASd-014: Either the attribute globalAssetId or externalAssetId of an Entity must be set if Entity/entityType is set to \'SelfManagedEntity\'. They are not existing otherwise."@en
-	* @return Returns the IIdentifierKeyValuePair for the property entityExternalAssetId.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId")
 	public IIdentifierKeyValuePair getEntityExternalAssetId();
 
-	/**
-	* "Describes whether the entity is a co-managed entity or a self-managed entity."@en
-	* @return Returns the EntityType for the property entityEntityType.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Entity/entityType
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Entity/entityType")
 	public EntityType getEntityEntityType();
 
-	/**
-	* "Describes statements applicable to the entity by a set of submodel elements, typically with a qualified value."@en
-	* @return Returns the List of ISubmodelElement for the property entityStatement.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Entity/statement
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Entity/statement")
 	public List<? extends ISubmodelElement> getEntityStatement();
 

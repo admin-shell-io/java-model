@@ -66,22 +66,9 @@ public interface IMultiLanguageProperty extends IDataElement {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "The value of the property instance."@en
-	* "Constraint AASd-052b: If the semanticId of a MultiLanguageProperty references a ConceptDescription then the ConceptDescription/category shall be one of  following values: PROPERTY."@en
-	* "Constraint AASd-012: If both, the MultiLanguageProperty/value and the MultiLanguageProperty/valueId are present then for each string in a specific language the meaning must be the same as specified in MultiLanguageProperty/valueId."@en
-	* "Constraint AASd-067: If the semanticId of a MultiLanguageProperty references a ConceptDescription then DataSpecificationIEC61360/dataType shall be STRING_TRANSLATABLE."@en
-	* @return Returns the List of TypedLiteral for the property multiLanguagePropertyValue.
-	* More information under https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value")
 	public List<? extends TypedLiteral> getMultiLanguagePropertyValue();
 
-	/**
-	* "Reference to the global unqiue id of a coded value."@en
-	* @return Returns the List of IReference for the property multiLanguagePropertyValueId.
-	* More information under https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId")
 	public List<? extends IReference> getMultiLanguagePropertyValueId();
 

@@ -157,6 +157,12 @@ public class ExtensionImpl implements Serializable, IExtension {
 		return _extensionName;
 	}
 
+	
+	/**
+	* "An extension of the element."@en
+	* @param _extensionName_ desired value for the property extensionName.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/name
+	*/
 	final public void setExtensionName (String _extensionName_) {
 		this._extensionName = _extensionName_;
 	}
@@ -171,6 +177,12 @@ public class ExtensionImpl implements Serializable, IExtension {
 		return _extensionValueType;
 	}
 
+	
+	/**
+	* "Type of the value of the extension."@en
+	* @param _extensionValueType_ desired value for the property extensionValueType.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/valueType
+	*/
 	final public void setExtensionValueType (String _extensionValueType_) {
 		this._extensionValueType = _extensionValueType_;
 	}
@@ -185,6 +197,12 @@ public class ExtensionImpl implements Serializable, IExtension {
 		return _extensionValue;
 	}
 
+	
+	/**
+	* "Value of the extension."@en
+	* @param _extensionValue_ desired value for the property extensionValue.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/value
+	*/
 	final public void setExtensionValue (String _extensionValue_) {
 		this._extensionValue = _extensionValue_;
 	}
@@ -199,6 +217,12 @@ public class ExtensionImpl implements Serializable, IExtension {
 		return _extensionRefersTo;
 	}
 
+	
+	/**
+	* "Reference to an element the extension refers to."@en
+	* @param _extensionRefersTo_ desired value for the property extensionRefersTo.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/refersTo
+	*/
 	final public void setExtensionRefersTo (IReference _extensionRefersTo_) {
 		this._extensionRefersTo = _extensionRefersTo_;
 	}
@@ -214,6 +238,13 @@ public class ExtensionImpl implements Serializable, IExtension {
 		return _hasSemanticsSemanticId;
 	}
 
+	
+	/**
+	* "Points to the Expression Semantic of the Submodels"@en
+	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* @param _hasSemanticsSemanticId_ desired value for the property hasSemanticsSemanticId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
+	*/
 	final public void setHasSemanticsSemanticId (IReference _hasSemanticsSemanticId_) {
 		this._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
 	}

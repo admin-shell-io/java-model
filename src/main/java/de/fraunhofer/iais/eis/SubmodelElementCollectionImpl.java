@@ -224,6 +224,13 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 		return _submodelElementCollectionAllowDuplicates;
 	}
 
+	
+	/**
+	* "If allowDuplicates=true then it is allowed that the collection contains the same element several times. Default = false"@en
+	* "Constraint AASd-026: If allowDuplicates==false then it is not allowed that the collection contains several elements with the same semantics (i.e. the same semanticId)."@en
+	* @param _submodelElementCollectionAllowDuplicates_ desired value for the property submodelElementCollectionAllowDuplicates.
+	* More information under https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates
+	*/
 	final public void setSubmodelElementCollectionAllowDuplicates (boolean _submodelElementCollectionAllowDuplicates_) {
 		this._submodelElementCollectionAllowDuplicates = _submodelElementCollectionAllowDuplicates_;
 	}
@@ -238,6 +245,12 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 		return _submodelElementCollectionOrdered;
 	}
 
+	
+	/**
+	* "If ordered=false then the elements in the property collection are not ordered. If ordered=true then the elements in the collection are ordered. Default = false"@en
+	* @param _submodelElementCollectionOrdered_ desired value for the property submodelElementCollectionOrdered.
+	* More information under https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered
+	*/
 	final public void setSubmodelElementCollectionOrdered (boolean _submodelElementCollectionOrdered_) {
 		this._submodelElementCollectionOrdered = _submodelElementCollectionOrdered_;
 	}
@@ -252,6 +265,12 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 		return _submodelElementCollectionValue;
 	}
 
+	
+	/**
+	* "Submodel element contained in the collection."@en
+	* @param _submodelElementCollectionValue_ desired value for the property submodelElementCollectionValue.
+	* More information under https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value
+	*/
 	final public void setSubmodelElementCollectionValue (ArrayList<? extends ISubmodelElement> _submodelElementCollectionValue_) {
 		this._submodelElementCollectionValue = _submodelElementCollectionValue_;
 	}
@@ -267,6 +286,12 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 		return _referableReferableCategory;
 	}
 
+	
+	/**
+	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	* @param _referableReferableCategory_ desired value for the property referableReferableCategory.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory
+	*/
 	final public void setReferableReferableCategory (ArrayList<? extends String> _referableReferableCategory_) {
 		this._referableReferableCategory = _referableReferableCategory_;
 	}
@@ -281,6 +306,12 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 		return _referableDescription;
 	}
 
+	
+	/**
+	* "Description or comments on the element. The description can be provided in several languages."@en
+	* @param _referableDescription_ desired value for the property referableDescription.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/description
+	*/
 	final public void setReferableDescription (ArrayList<? extends TypedLiteral> _referableDescription_) {
 		this._referableDescription = _referableDescription_;
 	}
@@ -295,6 +326,12 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 		return _referableDisplayName;
 	}
 
+	
+	/**
+	* "Display name. Can be provided in several languages."@en
+	* @param _referableDisplayName_ desired value for the property referableDisplayName.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/displayName
+	*/
 	final public void setReferableDisplayName (TypedLiteral _referableDisplayName_) {
 		this._referableDisplayName = _referableDisplayName_;
 	}
@@ -314,6 +351,17 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 		return _referableIdShort;
 	}
 
+	
+	/**
+	* "Identifying string of the element within its name space."@en
+	* "Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
+	* "Constraint AASd-003: idShort shall be matched case-insensitive."@en
+	* "Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
+	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
+	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
+	* @param _referableIdShort_ desired value for the property referableIdShort.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/idShort
+	*/
 	final public void setReferableIdShort (String _referableIdShort_) {
 		this._referableIdShort = _referableIdShort_;
 	}
@@ -330,6 +378,14 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 		return _referableParent;
 	}
 
+	
+	/**
+	* "Reference to the next referable parent element of the element."@en
+	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
+	* "This element is used to ease navigation in the model and thus it enables more performant"@en
+	* @param _referableParent_ desired value for the property referableParent.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/parent
+	*/
 	final public void setReferableParent (URI _referableParent_) {
 		this._referableParent = _referableParent_;
 	}
@@ -344,6 +400,12 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 		return _qualifiableQualifier;
 	}
 
+	
+	/**
+	* "Additional qualification of a qualifiable element."@en
+	* @param _qualifiableQualifier_ desired value for the property qualifiableQualifier.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier
+	*/
 	final public void setQualifiableQualifier (ArrayList<? extends IConstraint> _qualifiableQualifier_) {
 		this._qualifiableQualifier = _qualifiableQualifier_;
 	}
@@ -358,6 +420,12 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 		return _hasDataSpecificationDataSpecification;
 	}
 
+	
+	/**
+	* "Global reference to the data specification template used by the element."@en
+	* @param _hasDataSpecificationDataSpecification_ desired value for the property hasDataSpecificationDataSpecification.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
+	*/
 	final public void setHasDataSpecificationDataSpecification (ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
 		this._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
 	}
@@ -372,6 +440,12 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 		return _hasKindKind;
 	}
 
+	
+	/**
+	* "ModelingKind of the element: either type or instance."@en
+	* @param _hasKindKind_ desired value for the property hasKindKind.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasKind/kind
+	*/
 	final public void setHasKindKind (ModelingKind _hasKindKind_) {
 		this._hasKindKind = _hasKindKind_;
 	}
@@ -387,6 +461,13 @@ public class SubmodelElementCollectionImpl implements Serializable, ISubmodelEle
 		return _hasSemanticsSemanticId;
 	}
 
+	
+	/**
+	* "Points to the Expression Semantic of the Submodels"@en
+	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
+	* @param _hasSemanticsSemanticId_ desired value for the property hasSemanticsSemanticId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
+	*/
 	final public void setHasSemanticsSemanticId (IReference _hasSemanticsSemanticId_) {
 		this._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
 	}

@@ -125,6 +125,13 @@ public class SubjectAttributesImpl implements Serializable, ISubjectAttributes {
 		return _subjectAttributesSubjectAttribute;
 	}
 
+	
+	/**
+	* "A data element that further classifies a specific subject. "@en
+	* "Constraint AASs-015: The data element SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the \'selectableSubjectAttributes\' attribute of \'AccessControl\'."@en
+	* @param _subjectAttributesSubjectAttribute_ desired value for the property subjectAttributesSubjectAttribute.
+	* More information under https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute
+	*/
 	final public void setSubjectAttributesSubjectAttribute (ArrayList<? extends IDataElement> _subjectAttributesSubjectAttribute_) {
 		this._subjectAttributesSubjectAttribute = _subjectAttributesSubjectAttribute_;
 	}

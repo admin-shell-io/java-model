@@ -133,6 +133,12 @@ public class PermissionImpl implements Serializable, IPermission {
 		return _permissionKindOfPermission;
 	}
 
+	
+	/**
+	* "Description of the kind of permission. Possible kind of permission also include the denial of the permission."@en
+	* @param _permissionKindOfPermission_ desired value for the property permissionKindOfPermission.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission
+	*/
 	final public void setPermissionKindOfPermission (PermissionKind _permissionKindOfPermission_) {
 		this._permissionKindOfPermission = _permissionKindOfPermission_;
 	}
@@ -149,6 +155,14 @@ public class PermissionImpl implements Serializable, IPermission {
 		return _permissionPermission;
 	}
 
+	
+	/**
+	* "Reference to a property that defines the semantics of the permission."@en
+	* "Constraint AASs-010: The property referenced in Permission/permission shall have the category \'CONSTANT\'."@en
+	* "Constraint AASs-011: The property referenced in Permission/permission shall be part of the submodel that is referenced within the \'selectablePermissions\' attribute of \'AccessControl\'."@en
+	* @param _permissionPermission_ desired value for the property permissionPermission.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Permission/permission
+	*/
 	final public void setPermissionPermission (IProperty _permissionPermission_) {
 		this._permissionPermission = _permissionPermission_;
 	}

@@ -123,6 +123,12 @@ public class HasExtensionsImpl implements Serializable, IHasExtensions {
 		return _hasExtensionsExtension;
 	}
 
+	
+	/**
+	* "An extension of the element."@en
+	* @param _hasExtensionsExtension_ desired value for the property hasExtensionsExtension.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension
+	*/
 	final public void setHasExtensionsExtension (ArrayList<? extends IExtension> _hasExtensionsExtension_) {
 		this._hasExtensionsExtension = _hasExtensionsExtension_;
 	}

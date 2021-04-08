@@ -66,19 +66,9 @@ public interface IAccessPermissionRule extends IReferable, IQualifiable {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "Set of object-permission pairs that define the permissions per object within the access permission rule."@en
-	* @return Returns the List of IPermissionsPerObject for the property accessPermissionRulePermissionsPerObject.
-	* More information under https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject")
 	public List<? extends IPermissionsPerObject> getAccessPermissionRulePermissionsPerObject();
 
-	/**
-	* "Target subject attributes that need to be fulfilled by the accessing subject to get the permissions defined by this rule."@en
-	* @return Returns the ISubjectAttributes for the property accessPermissionRuleTargetSubjectAttributes.
-	* More information under https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes")
 	public ISubjectAttributes getAccessPermissionRuleTargetSubjectAttributes();
 

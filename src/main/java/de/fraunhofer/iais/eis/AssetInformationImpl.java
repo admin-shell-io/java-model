@@ -159,6 +159,12 @@ public class AssetInformationImpl implements Serializable, IAssetInformation {
 		return _assetInformationAssetKind;
 	}
 
+	
+	/**
+	* "Denotes whether the Asset of of kind \'Type\' or \'Instance\'."@en
+	* @param _assetInformationAssetKind_ desired value for the property assetInformationAssetKind.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind
+	*/
 	final public void setAssetInformationAssetKind (ArrayList<? extends AssetKind> _assetInformationAssetKind_) {
 		this._assetInformationAssetKind = _assetInformationAssetKind_;
 	}
@@ -175,6 +181,14 @@ public class AssetInformationImpl implements Serializable, IAssetInformation {
 		return _assetInformationGlobalAssetId;
 	}
 
+	
+	/**
+	* "Reference to either an Asset object or a global reference to the asset the AAS is representing."@en
+	* "This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the asset. In a first phase of the life cycle the asset might not yet have a global id but already an internal identifier. The internal identifier would be modelled via \'externalAssetId\'."@en
+	* "Constraint AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global reference."@en
+	* @param _assetInformationGlobalAssetId_ desired value for the property assetInformationGlobalAssetId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId
+	*/
 	final public void setAssetInformationGlobalAssetId (IReference _assetInformationGlobalAssetId_) {
 		this._assetInformationGlobalAssetId = _assetInformationGlobalAssetId_;
 	}
@@ -189,6 +203,12 @@ public class AssetInformationImpl implements Serializable, IAssetInformation {
 		return _assetInformationExternalAssetId;
 	}
 
+	
+	/**
+	* "Additional domain specific external, typically proprietary Identifier for the asset like e.g. serial number etc."@en
+	* @param _assetInformationExternalAssetId_ desired value for the property assetInformationExternalAssetId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/externalAssetId
+	*/
 	final public void setAssetInformationExternalAssetId (ArrayList<? extends IIdentifierKeyValuePair> _assetInformationExternalAssetId_) {
 		this._assetInformationExternalAssetId = _assetInformationExternalAssetId_;
 	}
@@ -203,6 +223,12 @@ public class AssetInformationImpl implements Serializable, IAssetInformation {
 		return _assetInformationBillOfMaterial;
 	}
 
+	
+	/**
+	* "A reference to a Submodel that defines the bill of material of the asset represented by the AAS. This submodel contains a set of entities describing the material used to compose the composite I4.0 Component."@en
+	* @param _assetInformationBillOfMaterial_ desired value for the property assetInformationBillOfMaterial.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial
+	*/
 	final public void setAssetInformationBillOfMaterial (ArrayList<? extends ISubmodel> _assetInformationBillOfMaterial_) {
 		this._assetInformationBillOfMaterial = _assetInformationBillOfMaterial_;
 	}
@@ -217,6 +243,12 @@ public class AssetInformationImpl implements Serializable, IAssetInformation {
 		return _assetInformationThumbnail;
 	}
 
+	
+	/**
+	* "Thumbnail of the asset represented by the asset administration shell."@en
+	* @param _assetInformationThumbnail_ desired value for the property assetInformationThumbnail.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/thumbnail
+	*/
 	final public void setAssetInformationThumbnail (IFile _assetInformationThumbnail_) {
 		this._assetInformationThumbnail = _assetInformationThumbnail_;
 	}

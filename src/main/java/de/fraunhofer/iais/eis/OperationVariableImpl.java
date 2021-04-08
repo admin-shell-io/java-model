@@ -125,6 +125,13 @@ public class OperationVariableImpl implements Serializable, IOperationVariable {
 		return _operationVariableValue;
 	}
 
+	
+	/**
+	* "Describes the needed argument for an operation via a submodel element of kind=Template."@en
+	* "The submodel element value of an operation variable shall be of kind=Template."@en
+	* @param _operationVariableValue_ desired value for the property operationVariableValue.
+	* More information under https://admin-shell.io/aas/3/0/RC01/OperationVariable/value
+	*/
 	final public void setOperationVariableValue (ISubmodelElement _operationVariableValue_) {
 		this._operationVariableValue = _operationVariableValue_;
 	}

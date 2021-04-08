@@ -66,27 +66,12 @@ public interface IPermissionsPerObject {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "Element to which permission shall be assigned."@en
-	* @return Returns the IReferable for the property permissionsPerObjectObject.
-	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")
 	public IReferable getPermissionsPerObjectObject();
 
-	/**
-	* "Permissions assigned to the object. The permissions hold for all subjects as specified in the access permission rule."@en
-	* @return Returns the List of IPermission for the property permissionsPerObjectPermission.
-	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission")
 	public List<? extends IPermission> getPermissionsPerObjectPermission();
 
-	/**
-	* "Target object attributes that need to be fulfilled so that the access permissions apply to the accessing subject."@en
-	* @return Returns the IObjectAttributes for the property permissionsPerObjectTargetObjectAttributes.
-	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes")
 	public IObjectAttributes getPermissionsPerObjectTargetObjectAttributes();
 

@@ -67,20 +67,9 @@ public interface IConceptDescription extends IHasDataSpecification, IIdentifiabl
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "Link from a ConceptDescription to its explaining DataSpecificationContent."@en
-	* @return Returns the List of IDataSpecificationContent for the property conceptDescriptionContent.
-	* More information under https://admin-shell.io/aas/3/0/RC01/ConceptDescription/content
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/content")
 	public List<? extends IDataSpecificationContent> getConceptDescriptionContent();
 
-	/**
-	* "Reference to an external definition the concept is compatible to or was derived from."@en
-	* "Compare to is-case-of relationship in ISO 13584-32 and IEC EN 61360."@en
-	* @return Returns the List of IReference for the property conceptDescriptionIsCaseOf.
-	* More information under https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf")
 	public List<? extends IReference> getConceptDescriptionIsCaseOf();
 
