@@ -67,6 +67,11 @@ public interface IView extends IReferable, IHasDataSpecification, IHasSemantics 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "Referable elements that are contained in the view."@en
+	* @return Returns the List of IReferable for the property viewContainedElement.
+	* More information under https://admin-shell.io/aas/3/0/RC01/View/containedElement
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
 	public List<? extends IReferable> getViewContainedElement();
 

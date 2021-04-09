@@ -66,6 +66,11 @@ public interface IAnnotatedRelationshipElement extends IRelationshipElement {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "Annotations that hold for the relationships between the two elements."@en
+	* @return Returns the List of IDataElement for the property annotatedRelationshipElementAnnotation.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation")
 	public List<? extends IDataElement> getAnnotatedRelationshipElementAnnotation();
 

@@ -66,6 +66,11 @@ public interface IHasExtensions {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "An extension of the element."@en
+	* @return Returns the List of IExtension for the property hasExtensionsExtension.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension")
 	public List<? extends IExtension> getHasExtensionsExtension();
 

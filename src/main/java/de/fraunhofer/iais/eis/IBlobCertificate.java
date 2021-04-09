@@ -66,12 +66,27 @@ public interface IBlobCertificate extends ICertificate {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "Certificate as BLOB."@en
+	* @return Returns the byte for the property blobCertificateBlobCertificate.
+	* More information under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate")
 	public byte getBlobCertificateBlobCertificate();
 
+	/**
+	* "Extensions contained in the certificate."@en
+	* @return Returns the List of IReference for the property blobCertificateContainedExtension.
+	* More information under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension")
 	public List<? extends IReference> getBlobCertificateContainedExtension();
 
+	/**
+	* "Denotes whether this certificate is the certificated that fast added last."@en
+	* @return Returns the boolean for the property blobCertificateLastCertificate.
+	* More information under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate")
 	public boolean getBlobCertificateLastCertificate();
 

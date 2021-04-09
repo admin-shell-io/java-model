@@ -66,9 +66,19 @@ public interface IFile extends ISubmodelElement {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "Mime type of the content of the File."@en
+	* @return Returns the String for the property fileMimeType.
+	* More information under https://admin-shell.io/aas/3/0/RC01/File/mimeType
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/File/mimeType")
 	public String getFileMimeType();
 
+	/**
+	* "Path and name of the referenced file (with file extension). The path can be absolute or relative."@en
+	* @return Returns the String for the property fileValue.
+	* More information under https://admin-shell.io/aas/3/0/RC01/File/value
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/File/value")
 	public String getFileValue();
 

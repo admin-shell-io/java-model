@@ -66,6 +66,11 @@ public interface IReference {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "Unique reference in its name space."@en
+	* @return Returns the List of IKey for the property referenceKey.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Reference/key
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Reference/key")
 	public List<? extends IKey> getReferenceKey();
 

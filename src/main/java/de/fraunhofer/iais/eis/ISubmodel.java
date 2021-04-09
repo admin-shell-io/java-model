@@ -68,6 +68,11 @@ public interface ISubmodel extends IQualifiable, IHasDataSpecification, IIdentif
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "A submodel consists of zero or more submodel elements."@en
+	* @return Returns the List of ISubmodelElement for the property submodelSubmodelElement.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement")
 	public List<? extends ISubmodelElement> getSubmodelSubmodelElement();
 

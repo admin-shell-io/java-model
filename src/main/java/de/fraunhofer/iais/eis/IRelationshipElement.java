@@ -67,9 +67,19 @@ public interface IRelationshipElement extends ISubmodelElement {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "First element in the relationship taking the role of the subject."@en
+	* @return Returns the IReferable for the property relationshipElementFirst.
+	* More information under https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first")
 	public IReferable getRelationshipElementFirst();
 
+	/**
+	* "Second element in the relationship taking the role of the object."@en
+	* @return Returns the IReferable for the property relationshipElementSecond.
+	* More information under https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second")
 	public IReferable getRelationshipElementSecond();
 

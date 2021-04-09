@@ -66,15 +66,35 @@ public interface IAccessControlPolicyPoints {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "The access control administration policy point of the AAS."@en
+	* @return Returns the IPolicyAdministrationPoint for the property accessControlPolicyPointsPolicyAdministrationPoint.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint")
 	public IPolicyAdministrationPoint getAccessControlPolicyPointsPolicyAdministrationPoint();
 
+	/**
+	* "The access control policy decision point of the AAS."@en
+	* @return Returns the IPolicyDecisionPoint for the property accessControlPolicyPointsPolicyDecisionPoint.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint")
 	public IPolicyDecisionPoint getAccessControlPolicyPointsPolicyDecisionPoint();
 
+	/**
+	* "The access control policy enforcement point of the AAS."@en
+	* @return Returns the IPolicyEnforcementPoints for the property accessControlPolicyPointsPolicyEnforcementPoint.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint")
 	public IPolicyEnforcementPoints getAccessControlPolicyPointsPolicyEnforcementPoint();
 
+	/**
+	* "The access control policy information points of the AAS."@en
+	* @return Returns the IPolicyInformationPoints for the property accessControlPolicyPointsPolicyInformationPoints.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints")
 	public IPolicyInformationPoints getAccessControlPolicyPointsPolicyInformationPoints();
 

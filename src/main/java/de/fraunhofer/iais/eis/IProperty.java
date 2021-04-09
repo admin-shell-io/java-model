@@ -69,12 +69,28 @@ public interface IProperty extends IDataElement {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "The following categories are defined for properties and multi-language properties: CONSTANT, PARAMETER, and VARIABLE."@en
+	* @return Returns the List of Category for the property propertyPropertyCategory.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Property/propertyCategory
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Property/propertyCategory")
 	public List<? extends Category> getPropertyPropertyCategory();
 
+	/**
+	* "The value of the property instance."@en
+	* @return Returns the TypedLiteral for the property propertyValue.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Property/value
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Property/value")
 	public TypedLiteral getPropertyValue();
 
+	/**
+	* "Reference to the global unique id of a coded value."@en
+	* "Constraint AASd-007: if both, the value and the valueId are present then the value needs to be identical to the value of the referenced coded value in valueId."@en
+	* @return Returns the IReference for the property propertyValueId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Property/valueId
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Property/valueId")
 	public IReference getPropertyValueId();
 

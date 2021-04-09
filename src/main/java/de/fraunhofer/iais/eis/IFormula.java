@@ -65,6 +65,11 @@ public interface IFormula extends IConstraint {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "A formula may depend on referable or even external global elements - assumed that can be referenced and their value may be evaluated - that are used in the logical expression."@en
+	* @return Returns the List of IReference for the property formulaDependsOn.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn")
 	public List<? extends IReference> getFormulaDependsOn();
 

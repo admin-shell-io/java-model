@@ -66,6 +66,12 @@ public interface ISubjectAttributes {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "A data element that further classifies a specific subject. "@en
+	* "Constraint AASs-015: The data element SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the \'selectableSubjectAttributes\' attribute of \'AccessControl\'."@en
+	* @return Returns the List of IDataElement for the property subjectAttributesSubjectAttribute.
+	* More information under https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute")
 	public List<? extends IDataElement> getSubjectAttributesSubjectAttribute();
 

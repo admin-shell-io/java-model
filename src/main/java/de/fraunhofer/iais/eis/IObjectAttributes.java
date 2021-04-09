@@ -66,6 +66,11 @@ public interface IObjectAttributes {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "A data elements that further classifies an object."@en
+	* @return Returns the List of IDataElement for the property objectAttributesObjectAttribute.
+	* More information under https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
 	public List<? extends IDataElement> getObjectAttributesObjectAttribute();
 

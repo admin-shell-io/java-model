@@ -67,12 +67,27 @@ public interface IOperation extends ISubmodelElement {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "Input parameter of the operation."@en
+	* @return Returns the List of IOperationVariable for the property operationInputVariable.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Operation/inputVariable
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Operation/inputVariable")
 	public List<? extends IOperationVariable> getOperationInputVariable();
 
+	/**
+	* "Parameter that is input and output of the operation."@en
+	* @return Returns the List of IOperationVariable for the property operationInoutputVariable.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable")
 	public List<? extends IOperationVariable> getOperationInoutputVariable();
 
+	/**
+	* "Output parameter of the operation."@en
+	* @return Returns the List of IOperationVariable for the property operationOutputVariable.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Operation/outputVariable
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Operation/outputVariable")
 	public List<? extends IOperationVariable> getOperationOutputVariable();
 

@@ -66,6 +66,11 @@ public interface IBasicEvent extends IEvent {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "Reference to the data or other elements that are being observed."@en
+	* @return Returns the IReference for the property basicEventObserved.
+	* More information under https://admin-shell.io/aas/3/0/RC01/BasicEvent/observed
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BasicEvent/observed")
 	public IReference getBasicEventObserved();
 

@@ -68,6 +68,11 @@ public interface IHasKind {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "ModelingKind of the element: either type or instance."@en
+	* @return Returns the ModelingKind for the property hasKindKind.
+	* More information under https://admin-shell.io/aas/3/0/RC01/HasKind/kind
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
 	public ModelingKind getHasKindKind();
 

@@ -69,9 +69,19 @@ public interface IRange extends IDataElement {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "The maximum value of the range."@en
+	* @return Returns the List of TypedLiteral for the property rangeMax.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Range/max
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Range/max")
 	public List<? extends TypedLiteral> getRangeMax();
 
+	/**
+	* "The minimum value of the range."@en
+	* @return Returns the List of TypedLiteral for the property rangeMin.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Range/min
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Range/min")
 	public List<? extends TypedLiteral> getRangeMin();
 

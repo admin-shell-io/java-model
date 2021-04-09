@@ -66,6 +66,11 @@ public interface IPolicyDecisionPoint {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "If externalPolicyDecisionPoints True then Endpoints to external available decision points taking into consideration for access control for the AAS need to be configured."@en
+	* @return Returns the boolean for the property policyDecisionPointExternalPolicyDecisionPoints.
+	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
 	public boolean getPolicyDecisionPointExternalPolicyDecisionPoints();
 

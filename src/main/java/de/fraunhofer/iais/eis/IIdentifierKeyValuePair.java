@@ -66,12 +66,27 @@ public interface IIdentifierKeyValuePair extends IHasSemantics {
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
+	/**
+	* "Key of the identifier."@en
+	* @return Returns the String for the property identifierKeyValuePairKey.
+	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
 	public String getIdentifierKeyValuePairKey();
 
+	/**
+	* "The value of the identifier with the corresponding key."@en
+	* @return Returns the String for the property identifierKeyValuePairValue.
+	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
 	public String getIdentifierKeyValuePairValue();
 
+	/**
+	* "The (external) subject the key belongs to or has meaning to."@en
+	* @return Returns the IReference for the property identifierKeyValuePairExternalSubjectId.
+	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId
+	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId")
 	public IReference getIdentifierKeyValuePairExternalSubjectId();
 
