@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,114 +33,114 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class EventElementBuilder {
 
-	private EventElementImpl eventElementImpl;
+	private DefaultEventElement defaultEventElement;
 
 	public EventElementBuilder() {
-		eventElementImpl = new EventElementImpl();
+		defaultEventElement = new DefaultEventElement();
 	}
 
 	public EventElementBuilder(URI id) {
 		this();
-		eventElementImpl.id = id;
+		defaultEventElement.id = id;
 	}
 
 
 
 	/**
-	* This function allows setting a value for referableReferableCategory
-	* @param _referableReferableCategory_ desired value to be set
-	* @return Builder object with new value for referableReferableCategory
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public EventElementBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
-		this.eventElementImpl._referableReferableCategory = _referableReferableCategory_;
+	final public EventElementBuilder referableCategory(List<String> referableCategory) {
+		this.defaultEventElement.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescription
-	* @param _referableDescription_ desired value to be set
-	* @return Builder object with new value for referableDescription
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public EventElementBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
-		this.eventElementImpl._referableDescription = _referableDescription_;
+	final public EventElementBuilder description(List<TypedLiteral> description) {
+		this.defaultEventElement.description = description;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param _referableDisplayName_ desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public EventElementBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
-		this.eventElementImpl._referableDisplayName = _referableDisplayName_;
+	final public EventElementBuilder displayName(TypedLiteral displayName) {
+		this.defaultEventElement.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param _referableIdShort_ desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public EventElementBuilder _referableIdShort_(String _referableIdShort_) {
-		this.eventElementImpl._referableIdShort = _referableIdShort_;
+	final public EventElementBuilder idShort(String idShort) {
+		this.defaultEventElement.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param _referableParent_ desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public EventElementBuilder _referableParent_(URI _referableParent_) {
-		this.eventElementImpl._referableParent = _referableParent_;
+	final public EventElementBuilder parent(URI parent) {
+		this.defaultEventElement.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifier
-	* @param _qualifiableQualifier_ desired value to be set
-	* @return Builder object with new value for qualifiableQualifier
+	* This function allows setting a value for qualifier
+	* @param qualifier desired value to be set
+	* @return Builder object with new value for qualifier
 	*/
-	final public EventElementBuilder _qualifiableQualifier_(ArrayList<? extends IConstraint> _qualifiableQualifier_) {
-		this.eventElementImpl._qualifiableQualifier = _qualifiableQualifier_;
+	final public EventElementBuilder qualifier(List<Constraint> qualifier) {
+		this.defaultEventElement.qualifier = qualifier;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecification
-	* @param _hasDataSpecificationDataSpecification_ desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecification
+	* This function allows setting a value for dataSpecification
+	* @param dataSpecification desired value to be set
+	* @return Builder object with new value for dataSpecification
 	*/
-	final public EventElementBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
-		this.eventElementImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
+	final public EventElementBuilder dataSpecification(List<Reference> dataSpecification) {
+		this.defaultEventElement.dataSpecification = dataSpecification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param _hasKindKind_ desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public EventElementBuilder _hasKindKind_(ModelingKind _hasKindKind_) {
-		this.eventElementImpl._hasKindKind = _hasKindKind_;
+	final public EventElementBuilder kind(ModelingKind kind) {
+		this.defaultEventElement.kind = kind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param _hasSemanticsSemanticId_ desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public EventElementBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
-		this.eventElementImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
+	final public EventElementBuilder semanticId(Reference semanticId) {
+		this.defaultEventElement.semanticId = semanticId;
 		return this;
 	}
 	/**
@@ -148,8 +149,8 @@ public class EventElementBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IEventElement build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(eventElementImpl);
-		return eventElementImpl;
+	final public EventElement build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultEventElement);
+		return defaultEventElement;
 	}
 }

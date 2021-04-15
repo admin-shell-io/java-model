@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,24 +33,24 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class ObjectAttributesBuilder {
 
-	private ObjectAttributesImpl objectAttributesImpl;
+	private DefaultObjectAttributes defaultObjectAttributes;
 
 	public ObjectAttributesBuilder() {
-		objectAttributesImpl = new ObjectAttributesImpl();
+		defaultObjectAttributes = new DefaultObjectAttributes();
 	}
 
 	public ObjectAttributesBuilder(URI id) {
 		this();
-		objectAttributesImpl.id = id;
+		defaultObjectAttributes.id = id;
 	}
 
 	/**
-	* This function allows setting a value for objectAttributesObjectAttribute
-	* @param _objectAttributesObjectAttribute_ desired value to be set
-	* @return Builder object with new value for objectAttributesObjectAttribute
+	* This function allows setting a value for objectAttribute
+	* @param objectAttribute desired value to be set
+	* @return Builder object with new value for objectAttribute
 	*/
-	final public ObjectAttributesBuilder _objectAttributesObjectAttribute_(ArrayList<? extends IDataElement> _objectAttributesObjectAttribute_) {
-		this.objectAttributesImpl._objectAttributesObjectAttribute = _objectAttributesObjectAttribute_;
+	final public ObjectAttributesBuilder objectAttribute(List<DataElement> objectAttribute) {
+		this.defaultObjectAttributes.objectAttribute = objectAttribute;
 		return this;
 	}
 	/**
@@ -58,8 +59,8 @@ public class ObjectAttributesBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IObjectAttributes build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(objectAttributesImpl);
-		return objectAttributesImpl;
+	final public ObjectAttributes build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultObjectAttributes);
+		return defaultObjectAttributes;
 	}
 }

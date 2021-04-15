@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,35 +33,35 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class IdentifierBuilder {
 
-	private IdentifierImpl identifierImpl;
+	private DefaultIdentifier defaultIdentifier;
 
 	public IdentifierBuilder() {
-		identifierImpl = new IdentifierImpl();
+		defaultIdentifier = new DefaultIdentifier();
 	}
 
 	public IdentifierBuilder(URI id) {
 		this();
-		identifierImpl.id = id;
+		defaultIdentifier.id = id;
 	}
 
 	/**
-	* This function allows setting a value for identifierIdentifier
-	* @param _identifierIdentifier_ desired value to be set
-	* @return Builder object with new value for identifierIdentifier
+	* This function allows setting a value for identifier
+	* @param identifier desired value to be set
+	* @return Builder object with new value for identifier
 	*/
-	final public IdentifierBuilder _identifierIdentifier_(ArrayList<? extends TypedLiteral> _identifierIdentifier_) {
-		this.identifierImpl._identifierIdentifier = _identifierIdentifier_;
+	final public IdentifierBuilder identifier(List<TypedLiteral> identifier) {
+		this.defaultIdentifier.identifier = identifier;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for identifierIdType
-	* @param _identifierIdType_ desired value to be set
-	* @return Builder object with new value for identifierIdType
+	* This function allows setting a value for idType
+	* @param idType desired value to be set
+	* @return Builder object with new value for idType
 	*/
-	final public IdentifierBuilder _identifierIdType_(IdentifierType _identifierIdType_) {
-		this.identifierImpl._identifierIdType = _identifierIdType_;
+	final public IdentifierBuilder idType(IdentifierType idType) {
+		this.defaultIdentifier.idType = idType;
 		return this;
 	}
 	/**
@@ -69,8 +70,8 @@ public class IdentifierBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IIdentifier build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(identifierImpl);
-		return identifierImpl;
+	final public Identifier build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultIdentifier);
+		return defaultIdentifier;
 	}
 }

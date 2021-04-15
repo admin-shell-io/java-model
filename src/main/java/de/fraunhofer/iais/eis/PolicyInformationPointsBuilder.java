@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,35 +33,35 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class PolicyInformationPointsBuilder {
 
-	private PolicyInformationPointsImpl policyInformationPointsImpl;
+	private DefaultPolicyInformationPoints defaultPolicyInformationPoints;
 
 	public PolicyInformationPointsBuilder() {
-		policyInformationPointsImpl = new PolicyInformationPointsImpl();
+		defaultPolicyInformationPoints = new DefaultPolicyInformationPoints();
 	}
 
 	public PolicyInformationPointsBuilder(URI id) {
 		this();
-		policyInformationPointsImpl.id = id;
+		defaultPolicyInformationPoints.id = id;
 	}
 
 	/**
-	* This function allows setting a value for policyInformationPointsExternalInformationPoints
-	* @param _policyInformationPointsExternalInformationPoints_ desired value to be set
-	* @return Builder object with new value for policyInformationPointsExternalInformationPoints
+	* This function allows setting a value for externalInformationPoints
+	* @param externalInformationPoints desired value to be set
+	* @return Builder object with new value for externalInformationPoints
 	*/
-	final public PolicyInformationPointsBuilder _policyInformationPointsExternalInformationPoints_(boolean _policyInformationPointsExternalInformationPoints_) {
-		this.policyInformationPointsImpl._policyInformationPointsExternalInformationPoints = _policyInformationPointsExternalInformationPoints_;
+	final public PolicyInformationPointsBuilder externalInformationPoints(boolean externalInformationPoints) {
+		this.defaultPolicyInformationPoints.externalInformationPoints = externalInformationPoints;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for policyInformationPointsInternalInformationPoint
-	* @param _policyInformationPointsInternalInformationPoint_ desired value to be set
-	* @return Builder object with new value for policyInformationPointsInternalInformationPoint
+	* This function allows setting a value for internalInformationPoint
+	* @param internalInformationPoint desired value to be set
+	* @return Builder object with new value for internalInformationPoint
 	*/
-	final public PolicyInformationPointsBuilder _policyInformationPointsInternalInformationPoint_(ArrayList<? extends ISubmodel> _policyInformationPointsInternalInformationPoint_) {
-		this.policyInformationPointsImpl._policyInformationPointsInternalInformationPoint = _policyInformationPointsInternalInformationPoint_;
+	final public PolicyInformationPointsBuilder internalInformationPoint(List<Submodel> internalInformationPoint) {
+		this.defaultPolicyInformationPoints.internalInformationPoint = internalInformationPoint;
 		return this;
 	}
 	/**
@@ -69,8 +70,8 @@ public class PolicyInformationPointsBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IPolicyInformationPoints build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(policyInformationPointsImpl);
-		return policyInformationPointsImpl;
+	final public PolicyInformationPoints build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultPolicyInformationPoints);
+		return defaultPolicyInformationPoints;
 	}
 }

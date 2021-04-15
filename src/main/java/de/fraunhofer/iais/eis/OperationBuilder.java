@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,146 +33,146 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class OperationBuilder {
 
-	private OperationImpl operationImpl;
+	private DefaultOperation defaultOperation;
 
 	public OperationBuilder() {
-		operationImpl = new OperationImpl();
+		defaultOperation = new DefaultOperation();
 	}
 
 	public OperationBuilder(URI id) {
 		this();
-		operationImpl.id = id;
+		defaultOperation.id = id;
 	}
 
 	/**
-	* This function allows setting a value for operationInputVariable
-	* @param _operationInputVariable_ desired value to be set
-	* @return Builder object with new value for operationInputVariable
+	* This function allows setting a value for inputVariable
+	* @param inputVariable desired value to be set
+	* @return Builder object with new value for inputVariable
 	*/
-	final public OperationBuilder _operationInputVariable_(ArrayList<? extends IOperationVariable> _operationInputVariable_) {
-		this.operationImpl._operationInputVariable = _operationInputVariable_;
+	final public OperationBuilder inputVariable(List<OperationVariable> inputVariable) {
+		this.defaultOperation.inputVariable = inputVariable;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for operationInoutputVariable
-	* @param _operationInoutputVariable_ desired value to be set
-	* @return Builder object with new value for operationInoutputVariable
+	* This function allows setting a value for inoutputVariable
+	* @param inoutputVariable desired value to be set
+	* @return Builder object with new value for inoutputVariable
 	*/
-	final public OperationBuilder _operationInoutputVariable_(ArrayList<? extends IOperationVariable> _operationInoutputVariable_) {
-		this.operationImpl._operationInoutputVariable = _operationInoutputVariable_;
+	final public OperationBuilder inoutputVariable(List<OperationVariable> inoutputVariable) {
+		this.defaultOperation.inoutputVariable = inoutputVariable;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for operationOutputVariable
-	* @param _operationOutputVariable_ desired value to be set
-	* @return Builder object with new value for operationOutputVariable
+	* This function allows setting a value for outputVariable
+	* @param outputVariable desired value to be set
+	* @return Builder object with new value for outputVariable
 	*/
-	final public OperationBuilder _operationOutputVariable_(ArrayList<? extends IOperationVariable> _operationOutputVariable_) {
-		this.operationImpl._operationOutputVariable = _operationOutputVariable_;
+	final public OperationBuilder outputVariable(List<OperationVariable> outputVariable) {
+		this.defaultOperation.outputVariable = outputVariable;
 		return this;
 	}
 
 
 
 	/**
-	* This function allows setting a value for referableReferableCategory
-	* @param _referableReferableCategory_ desired value to be set
-	* @return Builder object with new value for referableReferableCategory
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public OperationBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
-		this.operationImpl._referableReferableCategory = _referableReferableCategory_;
+	final public OperationBuilder referableCategory(List<String> referableCategory) {
+		this.defaultOperation.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescription
-	* @param _referableDescription_ desired value to be set
-	* @return Builder object with new value for referableDescription
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public OperationBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
-		this.operationImpl._referableDescription = _referableDescription_;
+	final public OperationBuilder description(List<TypedLiteral> description) {
+		this.defaultOperation.description = description;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param _referableDisplayName_ desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public OperationBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
-		this.operationImpl._referableDisplayName = _referableDisplayName_;
+	final public OperationBuilder displayName(TypedLiteral displayName) {
+		this.defaultOperation.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param _referableIdShort_ desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public OperationBuilder _referableIdShort_(String _referableIdShort_) {
-		this.operationImpl._referableIdShort = _referableIdShort_;
+	final public OperationBuilder idShort(String idShort) {
+		this.defaultOperation.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param _referableParent_ desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public OperationBuilder _referableParent_(URI _referableParent_) {
-		this.operationImpl._referableParent = _referableParent_;
+	final public OperationBuilder parent(URI parent) {
+		this.defaultOperation.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifier
-	* @param _qualifiableQualifier_ desired value to be set
-	* @return Builder object with new value for qualifiableQualifier
+	* This function allows setting a value for qualifier
+	* @param qualifier desired value to be set
+	* @return Builder object with new value for qualifier
 	*/
-	final public OperationBuilder _qualifiableQualifier_(ArrayList<? extends IConstraint> _qualifiableQualifier_) {
-		this.operationImpl._qualifiableQualifier = _qualifiableQualifier_;
+	final public OperationBuilder qualifier(List<Constraint> qualifier) {
+		this.defaultOperation.qualifier = qualifier;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecification
-	* @param _hasDataSpecificationDataSpecification_ desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecification
+	* This function allows setting a value for dataSpecification
+	* @param dataSpecification desired value to be set
+	* @return Builder object with new value for dataSpecification
 	*/
-	final public OperationBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
-		this.operationImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
+	final public OperationBuilder dataSpecification(List<Reference> dataSpecification) {
+		this.defaultOperation.dataSpecification = dataSpecification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param _hasKindKind_ desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public OperationBuilder _hasKindKind_(ModelingKind _hasKindKind_) {
-		this.operationImpl._hasKindKind = _hasKindKind_;
+	final public OperationBuilder kind(ModelingKind kind) {
+		this.defaultOperation.kind = kind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param _hasSemanticsSemanticId_ desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public OperationBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
-		this.operationImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
+	final public OperationBuilder semanticId(Reference semanticId) {
+		this.defaultOperation.semanticId = semanticId;
 		return this;
 	}
 	/**
@@ -180,8 +181,8 @@ public class OperationBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IOperation build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(operationImpl);
-		return operationImpl;
+	final public Operation build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultOperation);
+		return defaultOperation;
 	}
 }

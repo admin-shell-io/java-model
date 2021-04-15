@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,24 +33,24 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class HasExtensionsBuilder {
 
-	private HasExtensionsImpl hasExtensionsImpl;
+	private DefaultHasExtensions defaultHasExtensions;
 
 	public HasExtensionsBuilder() {
-		hasExtensionsImpl = new HasExtensionsImpl();
+		defaultHasExtensions = new DefaultHasExtensions();
 	}
 
 	public HasExtensionsBuilder(URI id) {
 		this();
-		hasExtensionsImpl.id = id;
+		defaultHasExtensions.id = id;
 	}
 
 	/**
-	* This function allows setting a value for hasExtensionsExtension
-	* @param _hasExtensionsExtension_ desired value to be set
-	* @return Builder object with new value for hasExtensionsExtension
+	* This function allows setting a value for extension
+	* @param extension desired value to be set
+	* @return Builder object with new value for extension
 	*/
-	final public HasExtensionsBuilder _hasExtensionsExtension_(ArrayList<? extends IExtension> _hasExtensionsExtension_) {
-		this.hasExtensionsImpl._hasExtensionsExtension = _hasExtensionsExtension_;
+	final public HasExtensionsBuilder extension(List<Extension> extension) {
+		this.defaultHasExtensions.extension = extension;
 		return this;
 	}
 	/**
@@ -58,8 +59,8 @@ public class HasExtensionsBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IHasExtensions build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(hasExtensionsImpl);
-		return hasExtensionsImpl;
+	final public HasExtensions build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultHasExtensions);
+		return defaultHasExtensions;
 	}
 }

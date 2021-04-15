@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,156 +33,156 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class DataSpecificationIEC61360Builder {
 
-	private DataSpecificationIEC61360Impl dataSpecificationIEC61360Impl;
+	private DefaultDataSpecificationIEC61360 defaultDataSpecificationIEC61360;
 
 	public DataSpecificationIEC61360Builder() {
-		dataSpecificationIEC61360Impl = new DataSpecificationIEC61360Impl();
+		defaultDataSpecificationIEC61360 = new DefaultDataSpecificationIEC61360();
 	}
 
 	public DataSpecificationIEC61360Builder(URI id) {
 		this();
-		dataSpecificationIEC61360Impl.id = id;
+		defaultDataSpecificationIEC61360.id = id;
 	}
 
 	/**
-	* This function allows setting a value for dataSpecificationIEC61360DataType
-	* @param _dataSpecificationIEC61360DataType_ desired value to be set
-	* @return Builder object with new value for dataSpecificationIEC61360DataType
+	* This function allows setting a value for dataType
+	* @param dataType desired value to be set
+	* @return Builder object with new value for dataType
 	*/
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360DataType_(ArrayList<? extends DataTypeIEC61360> _dataSpecificationIEC61360DataType_) {
-		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360DataType = _dataSpecificationIEC61360DataType_;
+	final public DataSpecificationIEC61360Builder dataType(List<DataTypeIEC61360> dataType) {
+		this.defaultDataSpecificationIEC61360.dataType = dataType;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecificationIEC61360Definition
-	* @param _dataSpecificationIEC61360Definition_ desired value to be set
-	* @return Builder object with new value for dataSpecificationIEC61360Definition
+	* This function allows setting a value for definition
+	* @param definition desired value to be set
+	* @return Builder object with new value for definition
 	*/
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360Definition_(ArrayList<? extends TypedLiteral> _dataSpecificationIEC61360Definition_) {
-		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360Definition = _dataSpecificationIEC61360Definition_;
+	final public DataSpecificationIEC61360Builder definition(List<TypedLiteral> definition) {
+		this.defaultDataSpecificationIEC61360.definition = definition;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecificationIEC61360LevelType
-	* @param _dataSpecificationIEC61360LevelType_ desired value to be set
-	* @return Builder object with new value for dataSpecificationIEC61360LevelType
+	* This function allows setting a value for levelType
+	* @param levelType desired value to be set
+	* @return Builder object with new value for levelType
 	*/
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360LevelType_(ArrayList<? extends LevelType> _dataSpecificationIEC61360LevelType_) {
-		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360LevelType = _dataSpecificationIEC61360LevelType_;
+	final public DataSpecificationIEC61360Builder levelType(List<LevelType> levelType) {
+		this.defaultDataSpecificationIEC61360.levelType = levelType;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecificationIEC61360PreferredName
-	* @param _dataSpecificationIEC61360PreferredName_ desired value to be set
-	* @return Builder object with new value for dataSpecificationIEC61360PreferredName
+	* This function allows setting a value for preferredName
+	* @param preferredName desired value to be set
+	* @return Builder object with new value for preferredName
 	*/
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360PreferredName_(TypedLiteral _dataSpecificationIEC61360PreferredName_) {
-		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360PreferredName = _dataSpecificationIEC61360PreferredName_;
+	final public DataSpecificationIEC61360Builder preferredName(TypedLiteral preferredName) {
+		this.defaultDataSpecificationIEC61360.preferredName = preferredName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecificationIEC61360ShortName
-	* @param _dataSpecificationIEC61360ShortName_ desired value to be set
-	* @return Builder object with new value for dataSpecificationIEC61360ShortName
+	* This function allows setting a value for shortName
+	* @param shortName desired value to be set
+	* @return Builder object with new value for shortName
 	*/
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360ShortName_(TypedLiteral _dataSpecificationIEC61360ShortName_) {
-		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360ShortName = _dataSpecificationIEC61360ShortName_;
+	final public DataSpecificationIEC61360Builder shortName(TypedLiteral shortName) {
+		this.defaultDataSpecificationIEC61360.shortName = shortName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecificationIEC61360SourceOfDefinition
-	* @param _dataSpecificationIEC61360SourceOfDefinition_ desired value to be set
-	* @return Builder object with new value for dataSpecificationIEC61360SourceOfDefinition
+	* This function allows setting a value for sourceOfDefinition
+	* @param sourceOfDefinition desired value to be set
+	* @return Builder object with new value for sourceOfDefinition
 	*/
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360SourceOfDefinition_(String _dataSpecificationIEC61360SourceOfDefinition_) {
-		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360SourceOfDefinition = _dataSpecificationIEC61360SourceOfDefinition_;
+	final public DataSpecificationIEC61360Builder sourceOfDefinition(String sourceOfDefinition) {
+		this.defaultDataSpecificationIEC61360.sourceOfDefinition = sourceOfDefinition;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecificationIEC61360Symbol
-	* @param _dataSpecificationIEC61360Symbol_ desired value to be set
-	* @return Builder object with new value for dataSpecificationIEC61360Symbol
+	* This function allows setting a value for symbol
+	* @param symbol desired value to be set
+	* @return Builder object with new value for symbol
 	*/
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360Symbol_(String _dataSpecificationIEC61360Symbol_) {
-		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360Symbol = _dataSpecificationIEC61360Symbol_;
+	final public DataSpecificationIEC61360Builder symbol(String symbol) {
+		this.defaultDataSpecificationIEC61360.symbol = symbol;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecificationIEC61360Unit
-	* @param _dataSpecificationIEC61360Unit_ desired value to be set
-	* @return Builder object with new value for dataSpecificationIEC61360Unit
+	* This function allows setting a value for unit
+	* @param unit desired value to be set
+	* @return Builder object with new value for unit
 	*/
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360Unit_(String _dataSpecificationIEC61360Unit_) {
-		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360Unit = _dataSpecificationIEC61360Unit_;
+	final public DataSpecificationIEC61360Builder unit(String unit) {
+		this.defaultDataSpecificationIEC61360.unit = unit;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecificationIEC61360UnitId
-	* @param _dataSpecificationIEC61360UnitId_ desired value to be set
-	* @return Builder object with new value for dataSpecificationIEC61360UnitId
+	* This function allows setting a value for unitId
+	* @param unitId desired value to be set
+	* @return Builder object with new value for unitId
 	*/
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360UnitId_(IReference _dataSpecificationIEC61360UnitId_) {
-		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360UnitId = _dataSpecificationIEC61360UnitId_;
+	final public DataSpecificationIEC61360Builder unitId(Reference unitId) {
+		this.defaultDataSpecificationIEC61360.unitId = unitId;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecificationIEC61360ValueFormat
-	* @param _dataSpecificationIEC61360ValueFormat_ desired value to be set
-	* @return Builder object with new value for dataSpecificationIEC61360ValueFormat
+	* This function allows setting a value for valueFormat
+	* @param valueFormat desired value to be set
+	* @return Builder object with new value for valueFormat
 	*/
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360ValueFormat_(String _dataSpecificationIEC61360ValueFormat_) {
-		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360ValueFormat = _dataSpecificationIEC61360ValueFormat_;
+	final public DataSpecificationIEC61360Builder valueFormat(String valueFormat) {
+		this.defaultDataSpecificationIEC61360.valueFormat = valueFormat;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecificationIEC61360Value
-	* @param _dataSpecificationIEC61360Value_ desired value to be set
-	* @return Builder object with new value for dataSpecificationIEC61360Value
+	* This function allows setting a value for value
+	* @param value desired value to be set
+	* @return Builder object with new value for value
 	*/
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360Value_(String _dataSpecificationIEC61360Value_) {
-		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360Value = _dataSpecificationIEC61360Value_;
+	final public DataSpecificationIEC61360Builder value(String value) {
+		this.defaultDataSpecificationIEC61360.value = value;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecificationIEC61360ValueList
-	* @param _dataSpecificationIEC61360ValueList_ desired value to be set
-	* @return Builder object with new value for dataSpecificationIEC61360ValueList
+	* This function allows setting a value for valueList
+	* @param valueList desired value to be set
+	* @return Builder object with new value for valueList
 	*/
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360ValueList_(String _dataSpecificationIEC61360ValueList_) {
-		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360ValueList = _dataSpecificationIEC61360ValueList_;
+	final public DataSpecificationIEC61360Builder valueList(String valueList) {
+		this.defaultDataSpecificationIEC61360.valueList = valueList;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecificationIEC61360ValueId
-	* @param _dataSpecificationIEC61360ValueId_ desired value to be set
-	* @return Builder object with new value for dataSpecificationIEC61360ValueId
+	* This function allows setting a value for valueId
+	* @param valueId desired value to be set
+	* @return Builder object with new value for valueId
 	*/
-	final public DataSpecificationIEC61360Builder _dataSpecificationIEC61360ValueId_(IReference _dataSpecificationIEC61360ValueId_) {
-		this.dataSpecificationIEC61360Impl._dataSpecificationIEC61360ValueId = _dataSpecificationIEC61360ValueId_;
+	final public DataSpecificationIEC61360Builder valueId(Reference valueId) {
+		this.defaultDataSpecificationIEC61360.valueId = valueId;
 		return this;
 	}
 
@@ -191,8 +192,8 @@ public class DataSpecificationIEC61360Builder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IDataSpecificationIEC61360 build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(dataSpecificationIEC61360Impl);
-		return dataSpecificationIEC61360Impl;
+	final public DataSpecificationIEC61360 build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultDataSpecificationIEC61360);
+		return defaultDataSpecificationIEC61360;
 	}
 }

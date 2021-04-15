@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,123 +33,123 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class ConceptDescriptionBuilder {
 
-	private ConceptDescriptionImpl conceptDescriptionImpl;
+	private DefaultConceptDescription defaultConceptDescription;
 
 	public ConceptDescriptionBuilder() {
-		conceptDescriptionImpl = new ConceptDescriptionImpl();
+		defaultConceptDescription = new DefaultConceptDescription();
 	}
 
 	public ConceptDescriptionBuilder(URI id) {
 		this();
-		conceptDescriptionImpl.id = id;
+		defaultConceptDescription.id = id;
 	}
 
 	/**
-	* This function allows setting a value for conceptDescriptionContent
-	* @param _conceptDescriptionContent_ desired value to be set
-	* @return Builder object with new value for conceptDescriptionContent
+	* This function allows setting a value for content
+	* @param content desired value to be set
+	* @return Builder object with new value for content
 	*/
-	final public ConceptDescriptionBuilder _conceptDescriptionContent_(ArrayList<? extends IDataSpecificationContent> _conceptDescriptionContent_) {
-		this.conceptDescriptionImpl._conceptDescriptionContent = _conceptDescriptionContent_;
+	final public ConceptDescriptionBuilder content(List<DataSpecificationContent> content) {
+		this.defaultConceptDescription.content = content;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for conceptDescriptionIsCaseOf
-	* @param _conceptDescriptionIsCaseOf_ desired value to be set
-	* @return Builder object with new value for conceptDescriptionIsCaseOf
+	* This function allows setting a value for isCaseOf
+	* @param isCaseOf desired value to be set
+	* @return Builder object with new value for isCaseOf
 	*/
-	final public ConceptDescriptionBuilder _conceptDescriptionIsCaseOf_(ArrayList<? extends IReference> _conceptDescriptionIsCaseOf_) {
-		this.conceptDescriptionImpl._conceptDescriptionIsCaseOf = _conceptDescriptionIsCaseOf_;
+	final public ConceptDescriptionBuilder isCaseOf(List<Reference> isCaseOf) {
+		this.defaultConceptDescription.isCaseOf = isCaseOf;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecification
-	* @param _hasDataSpecificationDataSpecification_ desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecification
+	* This function allows setting a value for dataSpecification
+	* @param dataSpecification desired value to be set
+	* @return Builder object with new value for dataSpecification
 	*/
-	final public ConceptDescriptionBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
-		this.conceptDescriptionImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
+	final public ConceptDescriptionBuilder dataSpecification(List<Reference> dataSpecification) {
+		this.defaultConceptDescription.dataSpecification = dataSpecification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for identifiableAdministration
-	* @param _identifiableAdministration_ desired value to be set
-	* @return Builder object with new value for identifiableAdministration
+	* This function allows setting a value for administration
+	* @param administration desired value to be set
+	* @return Builder object with new value for administration
 	*/
-	final public ConceptDescriptionBuilder _identifiableAdministration_(IAdministrativeInformation _identifiableAdministration_) {
-		this.conceptDescriptionImpl._identifiableAdministration = _identifiableAdministration_;
+	final public ConceptDescriptionBuilder administration(AdministrativeInformation administration) {
+		this.defaultConceptDescription.administration = administration;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for identifiableIdentification
-	* @param _identifiableIdentification_ desired value to be set
-	* @return Builder object with new value for identifiableIdentification
+	* This function allows setting a value for identification
+	* @param identification desired value to be set
+	* @return Builder object with new value for identification
 	*/
-	final public ConceptDescriptionBuilder _identifiableIdentification_(IIdentifier _identifiableIdentification_) {
-		this.conceptDescriptionImpl._identifiableIdentification = _identifiableIdentification_;
+	final public ConceptDescriptionBuilder identification(Identifier identification) {
+		this.defaultConceptDescription.identification = identification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableReferableCategory
-	* @param _referableReferableCategory_ desired value to be set
-	* @return Builder object with new value for referableReferableCategory
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public ConceptDescriptionBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
-		this.conceptDescriptionImpl._referableReferableCategory = _referableReferableCategory_;
+	final public ConceptDescriptionBuilder referableCategory(List<String> referableCategory) {
+		this.defaultConceptDescription.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescription
-	* @param _referableDescription_ desired value to be set
-	* @return Builder object with new value for referableDescription
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public ConceptDescriptionBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
-		this.conceptDescriptionImpl._referableDescription = _referableDescription_;
+	final public ConceptDescriptionBuilder description(List<TypedLiteral> description) {
+		this.defaultConceptDescription.description = description;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param _referableDisplayName_ desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public ConceptDescriptionBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
-		this.conceptDescriptionImpl._referableDisplayName = _referableDisplayName_;
+	final public ConceptDescriptionBuilder displayName(TypedLiteral displayName) {
+		this.defaultConceptDescription.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param _referableIdShort_ desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public ConceptDescriptionBuilder _referableIdShort_(String _referableIdShort_) {
-		this.conceptDescriptionImpl._referableIdShort = _referableIdShort_;
+	final public ConceptDescriptionBuilder idShort(String idShort) {
+		this.defaultConceptDescription.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param _referableParent_ desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public ConceptDescriptionBuilder _referableParent_(URI _referableParent_) {
-		this.conceptDescriptionImpl._referableParent = _referableParent_;
+	final public ConceptDescriptionBuilder parent(URI parent) {
+		this.defaultConceptDescription.parent = parent;
 		return this;
 	}
 	/**
@@ -157,8 +158,8 @@ public class ConceptDescriptionBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IConceptDescription build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(conceptDescriptionImpl);
-		return conceptDescriptionImpl;
+	final public ConceptDescription build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultConceptDescription);
+		return defaultConceptDescription;
 	}
 }

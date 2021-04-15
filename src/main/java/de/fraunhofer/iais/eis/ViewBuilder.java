@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,101 +33,101 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class ViewBuilder {
 
-	private ViewImpl viewImpl;
+	private DefaultView defaultView;
 
 	public ViewBuilder() {
-		viewImpl = new ViewImpl();
+		defaultView = new DefaultView();
 	}
 
 	public ViewBuilder(URI id) {
 		this();
-		viewImpl.id = id;
+		defaultView.id = id;
 	}
 
 	/**
-	* This function allows setting a value for viewContainedElement
-	* @param _viewContainedElement_ desired value to be set
-	* @return Builder object with new value for viewContainedElement
+	* This function allows setting a value for containedElement
+	* @param containedElement desired value to be set
+	* @return Builder object with new value for containedElement
 	*/
-	final public ViewBuilder _viewContainedElement_(ArrayList<? extends IReferable> _viewContainedElement_) {
-		this.viewImpl._viewContainedElement = _viewContainedElement_;
+	final public ViewBuilder containedElement(List<Referable> containedElement) {
+		this.defaultView.containedElement = containedElement;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableReferableCategory
-	* @param _referableReferableCategory_ desired value to be set
-	* @return Builder object with new value for referableReferableCategory
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public ViewBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
-		this.viewImpl._referableReferableCategory = _referableReferableCategory_;
+	final public ViewBuilder referableCategory(List<String> referableCategory) {
+		this.defaultView.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescription
-	* @param _referableDescription_ desired value to be set
-	* @return Builder object with new value for referableDescription
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public ViewBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
-		this.viewImpl._referableDescription = _referableDescription_;
+	final public ViewBuilder description(List<TypedLiteral> description) {
+		this.defaultView.description = description;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param _referableDisplayName_ desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public ViewBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
-		this.viewImpl._referableDisplayName = _referableDisplayName_;
+	final public ViewBuilder displayName(TypedLiteral displayName) {
+		this.defaultView.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param _referableIdShort_ desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public ViewBuilder _referableIdShort_(String _referableIdShort_) {
-		this.viewImpl._referableIdShort = _referableIdShort_;
+	final public ViewBuilder idShort(String idShort) {
+		this.defaultView.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param _referableParent_ desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public ViewBuilder _referableParent_(URI _referableParent_) {
-		this.viewImpl._referableParent = _referableParent_;
+	final public ViewBuilder parent(URI parent) {
+		this.defaultView.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecification
-	* @param _hasDataSpecificationDataSpecification_ desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecification
+	* This function allows setting a value for dataSpecification
+	* @param dataSpecification desired value to be set
+	* @return Builder object with new value for dataSpecification
 	*/
-	final public ViewBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
-		this.viewImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
+	final public ViewBuilder dataSpecification(List<Reference> dataSpecification) {
+		this.defaultView.dataSpecification = dataSpecification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param _hasSemanticsSemanticId_ desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public ViewBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
-		this.viewImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
+	final public ViewBuilder semanticId(Reference semanticId) {
+		this.defaultView.semanticId = semanticId;
 		return this;
 	}
 	/**
@@ -135,8 +136,8 @@ public class ViewBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IView build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(viewImpl);
-		return viewImpl;
+	final public View build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultView);
+		return defaultView;
 	}
 }

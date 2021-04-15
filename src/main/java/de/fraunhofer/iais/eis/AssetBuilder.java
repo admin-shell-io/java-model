@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,102 +33,102 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class AssetBuilder {
 
-	private AssetImpl assetImpl;
+	private DefaultAsset defaultAsset;
 
 	public AssetBuilder() {
-		assetImpl = new AssetImpl();
+		defaultAsset = new DefaultAsset();
 	}
 
 	public AssetBuilder(URI id) {
 		this();
-		assetImpl.id = id;
+		defaultAsset.id = id;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecification
-	* @param _hasDataSpecificationDataSpecification_ desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecification
+	* This function allows setting a value for dataSpecification
+	* @param dataSpecification desired value to be set
+	* @return Builder object with new value for dataSpecification
 	*/
-	final public AssetBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
-		this.assetImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
+	final public AssetBuilder dataSpecification(List<Reference> dataSpecification) {
+		this.defaultAsset.dataSpecification = dataSpecification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for identifiableAdministration
-	* @param _identifiableAdministration_ desired value to be set
-	* @return Builder object with new value for identifiableAdministration
+	* This function allows setting a value for administration
+	* @param administration desired value to be set
+	* @return Builder object with new value for administration
 	*/
-	final public AssetBuilder _identifiableAdministration_(IAdministrativeInformation _identifiableAdministration_) {
-		this.assetImpl._identifiableAdministration = _identifiableAdministration_;
+	final public AssetBuilder administration(AdministrativeInformation administration) {
+		this.defaultAsset.administration = administration;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for identifiableIdentification
-	* @param _identifiableIdentification_ desired value to be set
-	* @return Builder object with new value for identifiableIdentification
+	* This function allows setting a value for identification
+	* @param identification desired value to be set
+	* @return Builder object with new value for identification
 	*/
-	final public AssetBuilder _identifiableIdentification_(IIdentifier _identifiableIdentification_) {
-		this.assetImpl._identifiableIdentification = _identifiableIdentification_;
+	final public AssetBuilder identification(Identifier identification) {
+		this.defaultAsset.identification = identification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableReferableCategory
-	* @param _referableReferableCategory_ desired value to be set
-	* @return Builder object with new value for referableReferableCategory
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public AssetBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
-		this.assetImpl._referableReferableCategory = _referableReferableCategory_;
+	final public AssetBuilder referableCategory(List<String> referableCategory) {
+		this.defaultAsset.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescription
-	* @param _referableDescription_ desired value to be set
-	* @return Builder object with new value for referableDescription
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public AssetBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
-		this.assetImpl._referableDescription = _referableDescription_;
+	final public AssetBuilder description(List<TypedLiteral> description) {
+		this.defaultAsset.description = description;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param _referableDisplayName_ desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public AssetBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
-		this.assetImpl._referableDisplayName = _referableDisplayName_;
+	final public AssetBuilder displayName(TypedLiteral displayName) {
+		this.defaultAsset.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param _referableIdShort_ desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public AssetBuilder _referableIdShort_(String _referableIdShort_) {
-		this.assetImpl._referableIdShort = _referableIdShort_;
+	final public AssetBuilder idShort(String idShort) {
+		this.defaultAsset.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param _referableParent_ desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public AssetBuilder _referableParent_(URI _referableParent_) {
-		this.assetImpl._referableParent = _referableParent_;
+	final public AssetBuilder parent(URI parent) {
+		this.defaultAsset.parent = parent;
 		return this;
 	}
 	/**
@@ -136,8 +137,8 @@ public class AssetBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IAsset build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(assetImpl);
-		return assetImpl;
+	final public Asset build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultAsset);
+		return defaultAsset;
 	}
 }

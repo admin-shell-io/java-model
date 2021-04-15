@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,57 +33,57 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class IdentifierKeyValuePairBuilder {
 
-	private IdentifierKeyValuePairImpl identifierKeyValuePairImpl;
+	private DefaultIdentifierKeyValuePair defaultIdentifierKeyValuePair;
 
 	public IdentifierKeyValuePairBuilder() {
-		identifierKeyValuePairImpl = new IdentifierKeyValuePairImpl();
+		defaultIdentifierKeyValuePair = new DefaultIdentifierKeyValuePair();
 	}
 
 	public IdentifierKeyValuePairBuilder(URI id) {
 		this();
-		identifierKeyValuePairImpl.id = id;
+		defaultIdentifierKeyValuePair.id = id;
 	}
 
 	/**
-	* This function allows setting a value for identifierKeyValuePairKey
-	* @param _identifierKeyValuePairKey_ desired value to be set
-	* @return Builder object with new value for identifierKeyValuePairKey
+	* This function allows setting a value for key
+	* @param key desired value to be set
+	* @return Builder object with new value for key
 	*/
-	final public IdentifierKeyValuePairBuilder _identifierKeyValuePairKey_(String _identifierKeyValuePairKey_) {
-		this.identifierKeyValuePairImpl._identifierKeyValuePairKey = _identifierKeyValuePairKey_;
+	final public IdentifierKeyValuePairBuilder key(String key) {
+		this.defaultIdentifierKeyValuePair.key = key;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for identifierKeyValuePairValue
-	* @param _identifierKeyValuePairValue_ desired value to be set
-	* @return Builder object with new value for identifierKeyValuePairValue
+	* This function allows setting a value for value
+	* @param value desired value to be set
+	* @return Builder object with new value for value
 	*/
-	final public IdentifierKeyValuePairBuilder _identifierKeyValuePairValue_(String _identifierKeyValuePairValue_) {
-		this.identifierKeyValuePairImpl._identifierKeyValuePairValue = _identifierKeyValuePairValue_;
+	final public IdentifierKeyValuePairBuilder value(String value) {
+		this.defaultIdentifierKeyValuePair.value = value;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for identifierKeyValuePairExternalSubjectId
-	* @param _identifierKeyValuePairExternalSubjectId_ desired value to be set
-	* @return Builder object with new value for identifierKeyValuePairExternalSubjectId
+	* This function allows setting a value for externalSubjectId
+	* @param externalSubjectId desired value to be set
+	* @return Builder object with new value for externalSubjectId
 	*/
-	final public IdentifierKeyValuePairBuilder _identifierKeyValuePairExternalSubjectId_(IReference _identifierKeyValuePairExternalSubjectId_) {
-		this.identifierKeyValuePairImpl._identifierKeyValuePairExternalSubjectId = _identifierKeyValuePairExternalSubjectId_;
+	final public IdentifierKeyValuePairBuilder externalSubjectId(Reference externalSubjectId) {
+		this.defaultIdentifierKeyValuePair.externalSubjectId = externalSubjectId;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param _hasSemanticsSemanticId_ desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public IdentifierKeyValuePairBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
-		this.identifierKeyValuePairImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
+	final public IdentifierKeyValuePairBuilder semanticId(Reference semanticId) {
+		this.defaultIdentifierKeyValuePair.semanticId = semanticId;
 		return this;
 	}
 	/**
@@ -91,8 +92,8 @@ public class IdentifierKeyValuePairBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IIdentifierKeyValuePair build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(identifierKeyValuePairImpl);
-		return identifierKeyValuePairImpl;
+	final public IdentifierKeyValuePair build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultIdentifierKeyValuePair);
+		return defaultIdentifierKeyValuePair;
 	}
 }

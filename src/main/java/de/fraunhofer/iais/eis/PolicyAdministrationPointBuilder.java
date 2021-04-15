@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,35 +33,35 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class PolicyAdministrationPointBuilder {
 
-	private PolicyAdministrationPointImpl policyAdministrationPointImpl;
+	private DefaultPolicyAdministrationPoint defaultPolicyAdministrationPoint;
 
 	public PolicyAdministrationPointBuilder() {
-		policyAdministrationPointImpl = new PolicyAdministrationPointImpl();
+		defaultPolicyAdministrationPoint = new DefaultPolicyAdministrationPoint();
 	}
 
 	public PolicyAdministrationPointBuilder(URI id) {
 		this();
-		policyAdministrationPointImpl.id = id;
+		defaultPolicyAdministrationPoint.id = id;
 	}
 
 	/**
-	* This function allows setting a value for policyAdministrationPointLocalAccessControl
-	* @param _policyAdministrationPointLocalAccessControl_ desired value to be set
-	* @return Builder object with new value for policyAdministrationPointLocalAccessControl
+	* This function allows setting a value for localAccessControl
+	* @param localAccessControl desired value to be set
+	* @return Builder object with new value for localAccessControl
 	*/
-	final public PolicyAdministrationPointBuilder _policyAdministrationPointLocalAccessControl_(IAccessControl _policyAdministrationPointLocalAccessControl_) {
-		this.policyAdministrationPointImpl._policyAdministrationPointLocalAccessControl = _policyAdministrationPointLocalAccessControl_;
+	final public PolicyAdministrationPointBuilder localAccessControl(AccessControl localAccessControl) {
+		this.defaultPolicyAdministrationPoint.localAccessControl = localAccessControl;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for policyAdministrationPointExternalAccessControl
-	* @param _policyAdministrationPointExternalAccessControl_ desired value to be set
-	* @return Builder object with new value for policyAdministrationPointExternalAccessControl
+	* This function allows setting a value for externalAccessControl
+	* @param externalAccessControl desired value to be set
+	* @return Builder object with new value for externalAccessControl
 	*/
-	final public PolicyAdministrationPointBuilder _policyAdministrationPointExternalAccessControl_(boolean _policyAdministrationPointExternalAccessControl_) {
-		this.policyAdministrationPointImpl._policyAdministrationPointExternalAccessControl = _policyAdministrationPointExternalAccessControl_;
+	final public PolicyAdministrationPointBuilder externalAccessControl(boolean externalAccessControl) {
+		this.defaultPolicyAdministrationPoint.externalAccessControl = externalAccessControl;
 		return this;
 	}
 	/**
@@ -69,8 +70,8 @@ public class PolicyAdministrationPointBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IPolicyAdministrationPoint build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(policyAdministrationPointImpl);
-		return policyAdministrationPointImpl;
+	final public PolicyAdministrationPoint build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultPolicyAdministrationPoint);
+		return defaultPolicyAdministrationPoint;
 	}
 }

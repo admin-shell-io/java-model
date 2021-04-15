@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,145 +33,145 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class SubmodelBuilder {
 
-	private SubmodelImpl submodelImpl;
+	private DefaultSubmodel defaultSubmodel;
 
 	public SubmodelBuilder() {
-		submodelImpl = new SubmodelImpl();
+		defaultSubmodel = new DefaultSubmodel();
 	}
 
 	public SubmodelBuilder(URI id) {
 		this();
-		submodelImpl.id = id;
+		defaultSubmodel.id = id;
 	}
 
 	/**
-	* This function allows setting a value for submodelSubmodelElement
-	* @param _submodelSubmodelElement_ desired value to be set
-	* @return Builder object with new value for submodelSubmodelElement
+	* This function allows setting a value for submodelElement
+	* @param submodelElement desired value to be set
+	* @return Builder object with new value for submodelElement
 	*/
-	final public SubmodelBuilder _submodelSubmodelElement_(ArrayList<? extends ISubmodelElement> _submodelSubmodelElement_) {
-		this.submodelImpl._submodelSubmodelElement = _submodelSubmodelElement_;
+	final public SubmodelBuilder submodelElement(List<SubmodelElement> submodelElement) {
+		this.defaultSubmodel.submodelElement = submodelElement;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifier
-	* @param _qualifiableQualifier_ desired value to be set
-	* @return Builder object with new value for qualifiableQualifier
+	* This function allows setting a value for qualifier
+	* @param qualifier desired value to be set
+	* @return Builder object with new value for qualifier
 	*/
-	final public SubmodelBuilder _qualifiableQualifier_(ArrayList<? extends IConstraint> _qualifiableQualifier_) {
-		this.submodelImpl._qualifiableQualifier = _qualifiableQualifier_;
+	final public SubmodelBuilder qualifier(List<Constraint> qualifier) {
+		this.defaultSubmodel.qualifier = qualifier;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecification
-	* @param _hasDataSpecificationDataSpecification_ desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecification
+	* This function allows setting a value for dataSpecification
+	* @param dataSpecification desired value to be set
+	* @return Builder object with new value for dataSpecification
 	*/
-	final public SubmodelBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
-		this.submodelImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
+	final public SubmodelBuilder dataSpecification(List<Reference> dataSpecification) {
+		this.defaultSubmodel.dataSpecification = dataSpecification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for identifiableAdministration
-	* @param _identifiableAdministration_ desired value to be set
-	* @return Builder object with new value for identifiableAdministration
+	* This function allows setting a value for administration
+	* @param administration desired value to be set
+	* @return Builder object with new value for administration
 	*/
-	final public SubmodelBuilder _identifiableAdministration_(IAdministrativeInformation _identifiableAdministration_) {
-		this.submodelImpl._identifiableAdministration = _identifiableAdministration_;
+	final public SubmodelBuilder administration(AdministrativeInformation administration) {
+		this.defaultSubmodel.administration = administration;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for identifiableIdentification
-	* @param _identifiableIdentification_ desired value to be set
-	* @return Builder object with new value for identifiableIdentification
+	* This function allows setting a value for identification
+	* @param identification desired value to be set
+	* @return Builder object with new value for identification
 	*/
-	final public SubmodelBuilder _identifiableIdentification_(IIdentifier _identifiableIdentification_) {
-		this.submodelImpl._identifiableIdentification = _identifiableIdentification_;
+	final public SubmodelBuilder identification(Identifier identification) {
+		this.defaultSubmodel.identification = identification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableReferableCategory
-	* @param _referableReferableCategory_ desired value to be set
-	* @return Builder object with new value for referableReferableCategory
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public SubmodelBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
-		this.submodelImpl._referableReferableCategory = _referableReferableCategory_;
+	final public SubmodelBuilder referableCategory(List<String> referableCategory) {
+		this.defaultSubmodel.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescription
-	* @param _referableDescription_ desired value to be set
-	* @return Builder object with new value for referableDescription
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public SubmodelBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
-		this.submodelImpl._referableDescription = _referableDescription_;
+	final public SubmodelBuilder description(List<TypedLiteral> description) {
+		this.defaultSubmodel.description = description;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param _referableDisplayName_ desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public SubmodelBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
-		this.submodelImpl._referableDisplayName = _referableDisplayName_;
+	final public SubmodelBuilder displayName(TypedLiteral displayName) {
+		this.defaultSubmodel.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param _referableIdShort_ desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public SubmodelBuilder _referableIdShort_(String _referableIdShort_) {
-		this.submodelImpl._referableIdShort = _referableIdShort_;
+	final public SubmodelBuilder idShort(String idShort) {
+		this.defaultSubmodel.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param _referableParent_ desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public SubmodelBuilder _referableParent_(URI _referableParent_) {
-		this.submodelImpl._referableParent = _referableParent_;
+	final public SubmodelBuilder parent(URI parent) {
+		this.defaultSubmodel.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param _hasKindKind_ desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public SubmodelBuilder _hasKindKind_(ModelingKind _hasKindKind_) {
-		this.submodelImpl._hasKindKind = _hasKindKind_;
+	final public SubmodelBuilder kind(ModelingKind kind) {
+		this.defaultSubmodel.kind = kind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param _hasSemanticsSemanticId_ desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public SubmodelBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
-		this.submodelImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
+	final public SubmodelBuilder semanticId(Reference semanticId) {
+		this.defaultSubmodel.semanticId = semanticId;
 		return this;
 	}
 	/**
@@ -179,8 +180,8 @@ public class SubmodelBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public ISubmodel build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(submodelImpl);
-		return submodelImpl;
+	final public Submodel build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultSubmodel);
+		return defaultSubmodel;
 	}
 }

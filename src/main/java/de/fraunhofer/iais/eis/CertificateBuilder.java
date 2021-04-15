@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,24 +33,24 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class CertificateBuilder {
 
-	private CertificateImpl certificateImpl;
+	private DefaultCertificate defaultCertificate;
 
 	public CertificateBuilder() {
-		certificateImpl = new CertificateImpl();
+		defaultCertificate = new DefaultCertificate();
 	}
 
 	public CertificateBuilder(URI id) {
 		this();
-		certificateImpl.id = id;
+		defaultCertificate.id = id;
 	}
 
 	/**
-	* This function allows setting a value for certificatePolicyAdministrationPoint
-	* @param _certificatePolicyAdministrationPoint_ desired value to be set
-	* @return Builder object with new value for certificatePolicyAdministrationPoint
+	* This function allows setting a value for policyAdministrationPoint
+	* @param policyAdministrationPoint desired value to be set
+	* @return Builder object with new value for policyAdministrationPoint
 	*/
-	final public CertificateBuilder _certificatePolicyAdministrationPoint_(IPolicyAdministrationPoint _certificatePolicyAdministrationPoint_) {
-		this.certificateImpl._certificatePolicyAdministrationPoint = _certificatePolicyAdministrationPoint_;
+	final public CertificateBuilder policyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint) {
+		this.defaultCertificate.policyAdministrationPoint = policyAdministrationPoint;
 		return this;
 	}
 	/**
@@ -58,8 +59,8 @@ public class CertificateBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public ICertificate build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(certificateImpl);
-		return certificateImpl;
+	final public Certificate build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultCertificate);
+		return defaultCertificate;
 	}
 }

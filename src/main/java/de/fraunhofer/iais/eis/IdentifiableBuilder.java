@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,90 +33,90 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class IdentifiableBuilder {
 
-	private IdentifiableImpl identifiableImpl;
+	private DefaultIdentifiable defaultIdentifiable;
 
 	public IdentifiableBuilder() {
-		identifiableImpl = new IdentifiableImpl();
+		defaultIdentifiable = new DefaultIdentifiable();
 	}
 
 	public IdentifiableBuilder(URI id) {
 		this();
-		identifiableImpl.id = id;
+		defaultIdentifiable.id = id;
 	}
 
 	/**
-	* This function allows setting a value for identifiableAdministration
-	* @param _identifiableAdministration_ desired value to be set
-	* @return Builder object with new value for identifiableAdministration
+	* This function allows setting a value for administration
+	* @param administration desired value to be set
+	* @return Builder object with new value for administration
 	*/
-	final public IdentifiableBuilder _identifiableAdministration_(IAdministrativeInformation _identifiableAdministration_) {
-		this.identifiableImpl._identifiableAdministration = _identifiableAdministration_;
+	final public IdentifiableBuilder administration(AdministrativeInformation administration) {
+		this.defaultIdentifiable.administration = administration;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for identifiableIdentification
-	* @param _identifiableIdentification_ desired value to be set
-	* @return Builder object with new value for identifiableIdentification
+	* This function allows setting a value for identification
+	* @param identification desired value to be set
+	* @return Builder object with new value for identification
 	*/
-	final public IdentifiableBuilder _identifiableIdentification_(IIdentifier _identifiableIdentification_) {
-		this.identifiableImpl._identifiableIdentification = _identifiableIdentification_;
+	final public IdentifiableBuilder identification(Identifier identification) {
+		this.defaultIdentifiable.identification = identification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableReferableCategory
-	* @param _referableReferableCategory_ desired value to be set
-	* @return Builder object with new value for referableReferableCategory
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public IdentifiableBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
-		this.identifiableImpl._referableReferableCategory = _referableReferableCategory_;
+	final public IdentifiableBuilder referableCategory(List<String> referableCategory) {
+		this.defaultIdentifiable.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescription
-	* @param _referableDescription_ desired value to be set
-	* @return Builder object with new value for referableDescription
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public IdentifiableBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
-		this.identifiableImpl._referableDescription = _referableDescription_;
+	final public IdentifiableBuilder description(List<TypedLiteral> description) {
+		this.defaultIdentifiable.description = description;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param _referableDisplayName_ desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public IdentifiableBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
-		this.identifiableImpl._referableDisplayName = _referableDisplayName_;
+	final public IdentifiableBuilder displayName(TypedLiteral displayName) {
+		this.defaultIdentifiable.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param _referableIdShort_ desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public IdentifiableBuilder _referableIdShort_(String _referableIdShort_) {
-		this.identifiableImpl._referableIdShort = _referableIdShort_;
+	final public IdentifiableBuilder idShort(String idShort) {
+		this.defaultIdentifiable.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param _referableParent_ desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public IdentifiableBuilder _referableParent_(URI _referableParent_) {
-		this.identifiableImpl._referableParent = _referableParent_;
+	final public IdentifiableBuilder parent(URI parent) {
+		this.defaultIdentifiable.parent = parent;
 		return this;
 	}
 	/**
@@ -124,8 +125,8 @@ public class IdentifiableBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IIdentifiable build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(identifiableImpl);
-		return identifiableImpl;
+	final public Identifiable build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultIdentifiable);
+		return defaultIdentifiable;
 	}
 }

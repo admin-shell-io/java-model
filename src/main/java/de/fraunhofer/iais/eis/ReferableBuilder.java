@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,68 +33,68 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class ReferableBuilder {
 
-	private ReferableImpl referableImpl;
+	private DefaultReferable defaultReferable;
 
 	public ReferableBuilder() {
-		referableImpl = new ReferableImpl();
+		defaultReferable = new DefaultReferable();
 	}
 
 	public ReferableBuilder(URI id) {
 		this();
-		referableImpl.id = id;
+		defaultReferable.id = id;
 	}
 
 	/**
-	* This function allows setting a value for referableReferableCategory
-	* @param _referableReferableCategory_ desired value to be set
-	* @return Builder object with new value for referableReferableCategory
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public ReferableBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
-		this.referableImpl._referableReferableCategory = _referableReferableCategory_;
+	final public ReferableBuilder referableCategory(List<String> referableCategory) {
+		this.defaultReferable.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescription
-	* @param _referableDescription_ desired value to be set
-	* @return Builder object with new value for referableDescription
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public ReferableBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
-		this.referableImpl._referableDescription = _referableDescription_;
+	final public ReferableBuilder description(List<TypedLiteral> description) {
+		this.defaultReferable.description = description;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param _referableDisplayName_ desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public ReferableBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
-		this.referableImpl._referableDisplayName = _referableDisplayName_;
+	final public ReferableBuilder displayName(TypedLiteral displayName) {
+		this.defaultReferable.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param _referableIdShort_ desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public ReferableBuilder _referableIdShort_(String _referableIdShort_) {
-		this.referableImpl._referableIdShort = _referableIdShort_;
+	final public ReferableBuilder idShort(String idShort) {
+		this.defaultReferable.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param _referableParent_ desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public ReferableBuilder _referableParent_(URI _referableParent_) {
-		this.referableImpl._referableParent = _referableParent_;
+	final public ReferableBuilder parent(URI parent) {
+		this.defaultReferable.parent = parent;
 		return this;
 	}
 	/**
@@ -102,8 +103,8 @@ public class ReferableBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IReferable build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(referableImpl);
-		return referableImpl;
+	final public Referable build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultReferable);
+		return defaultReferable;
 	}
 }

@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,114 +33,114 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class CapabilityBuilder {
 
-	private CapabilityImpl capabilityImpl;
+	private DefaultCapability defaultCapability;
 
 	public CapabilityBuilder() {
-		capabilityImpl = new CapabilityImpl();
+		defaultCapability = new DefaultCapability();
 	}
 
 	public CapabilityBuilder(URI id) {
 		this();
-		capabilityImpl.id = id;
+		defaultCapability.id = id;
 	}
 
 
 
 	/**
-	* This function allows setting a value for referableReferableCategory
-	* @param _referableReferableCategory_ desired value to be set
-	* @return Builder object with new value for referableReferableCategory
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public CapabilityBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
-		this.capabilityImpl._referableReferableCategory = _referableReferableCategory_;
+	final public CapabilityBuilder referableCategory(List<String> referableCategory) {
+		this.defaultCapability.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescription
-	* @param _referableDescription_ desired value to be set
-	* @return Builder object with new value for referableDescription
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public CapabilityBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
-		this.capabilityImpl._referableDescription = _referableDescription_;
+	final public CapabilityBuilder description(List<TypedLiteral> description) {
+		this.defaultCapability.description = description;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param _referableDisplayName_ desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public CapabilityBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
-		this.capabilityImpl._referableDisplayName = _referableDisplayName_;
+	final public CapabilityBuilder displayName(TypedLiteral displayName) {
+		this.defaultCapability.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param _referableIdShort_ desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public CapabilityBuilder _referableIdShort_(String _referableIdShort_) {
-		this.capabilityImpl._referableIdShort = _referableIdShort_;
+	final public CapabilityBuilder idShort(String idShort) {
+		this.defaultCapability.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param _referableParent_ desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public CapabilityBuilder _referableParent_(URI _referableParent_) {
-		this.capabilityImpl._referableParent = _referableParent_;
+	final public CapabilityBuilder parent(URI parent) {
+		this.defaultCapability.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifier
-	* @param _qualifiableQualifier_ desired value to be set
-	* @return Builder object with new value for qualifiableQualifier
+	* This function allows setting a value for qualifier
+	* @param qualifier desired value to be set
+	* @return Builder object with new value for qualifier
 	*/
-	final public CapabilityBuilder _qualifiableQualifier_(ArrayList<? extends IConstraint> _qualifiableQualifier_) {
-		this.capabilityImpl._qualifiableQualifier = _qualifiableQualifier_;
+	final public CapabilityBuilder qualifier(List<Constraint> qualifier) {
+		this.defaultCapability.qualifier = qualifier;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecification
-	* @param _hasDataSpecificationDataSpecification_ desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecification
+	* This function allows setting a value for dataSpecification
+	* @param dataSpecification desired value to be set
+	* @return Builder object with new value for dataSpecification
 	*/
-	final public CapabilityBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
-		this.capabilityImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
+	final public CapabilityBuilder dataSpecification(List<Reference> dataSpecification) {
+		this.defaultCapability.dataSpecification = dataSpecification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param _hasKindKind_ desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public CapabilityBuilder _hasKindKind_(ModelingKind _hasKindKind_) {
-		this.capabilityImpl._hasKindKind = _hasKindKind_;
+	final public CapabilityBuilder kind(ModelingKind kind) {
+		this.defaultCapability.kind = kind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param _hasSemanticsSemanticId_ desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public CapabilityBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
-		this.capabilityImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
+	final public CapabilityBuilder semanticId(Reference semanticId) {
+		this.defaultCapability.semanticId = semanticId;
 		return this;
 	}
 	/**
@@ -148,8 +149,8 @@ public class CapabilityBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public ICapability build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(capabilityImpl);
-		return capabilityImpl;
+	final public Capability build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultCapability);
+		return defaultCapability;
 	}
 }

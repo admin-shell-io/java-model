@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,15 +33,15 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class DataSpecificationContentBuilder {
 
-	private DataSpecificationContentImpl dataSpecificationContentImpl;
+	private DefaultDataSpecificationContent defaultDataSpecificationContent;
 
 	public DataSpecificationContentBuilder() {
-		dataSpecificationContentImpl = new DataSpecificationContentImpl();
+		defaultDataSpecificationContent = new DefaultDataSpecificationContent();
 	}
 
 	public DataSpecificationContentBuilder(URI id) {
 		this();
-		dataSpecificationContentImpl.id = id;
+		defaultDataSpecificationContent.id = id;
 	}
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
@@ -48,8 +49,8 @@ public class DataSpecificationContentBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IDataSpecificationContent build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(dataSpecificationContentImpl);
-		return dataSpecificationContentImpl;
+	final public DataSpecificationContent build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultDataSpecificationContent);
+		return defaultDataSpecificationContent;
 	}
 }

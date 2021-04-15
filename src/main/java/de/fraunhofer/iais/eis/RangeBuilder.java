@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,35 +33,35 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class RangeBuilder {
 
-	private RangeImpl rangeImpl;
+	private DefaultRange defaultRange;
 
 	public RangeBuilder() {
-		rangeImpl = new RangeImpl();
+		defaultRange = new DefaultRange();
 	}
 
 	public RangeBuilder(URI id) {
 		this();
-		rangeImpl.id = id;
+		defaultRange.id = id;
 	}
 
 	/**
-	* This function allows setting a value for rangeMax
-	* @param _rangeMax_ desired value to be set
-	* @return Builder object with new value for rangeMax
+	* This function allows setting a value for max
+	* @param max desired value to be set
+	* @return Builder object with new value for max
 	*/
-	final public RangeBuilder _rangeMax_(ArrayList<? extends TypedLiteral> _rangeMax_) {
-		this.rangeImpl._rangeMax = _rangeMax_;
+	final public RangeBuilder max(List<TypedLiteral> max) {
+		this.defaultRange.max = max;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for rangeMin
-	* @param _rangeMin_ desired value to be set
-	* @return Builder object with new value for rangeMin
+	* This function allows setting a value for min
+	* @param min desired value to be set
+	* @return Builder object with new value for min
 	*/
-	final public RangeBuilder _rangeMin_(ArrayList<? extends TypedLiteral> _rangeMin_) {
-		this.rangeImpl._rangeMin = _rangeMin_;
+	final public RangeBuilder min(List<TypedLiteral> min) {
+		this.defaultRange.min = min;
 		return this;
 	}
 
@@ -68,100 +69,100 @@ public class RangeBuilder {
 
 
 	/**
-	* This function allows setting a value for referableReferableCategory
-	* @param _referableReferableCategory_ desired value to be set
-	* @return Builder object with new value for referableReferableCategory
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public RangeBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
-		this.rangeImpl._referableReferableCategory = _referableReferableCategory_;
+	final public RangeBuilder referableCategory(List<String> referableCategory) {
+		this.defaultRange.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescription
-	* @param _referableDescription_ desired value to be set
-	* @return Builder object with new value for referableDescription
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public RangeBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
-		this.rangeImpl._referableDescription = _referableDescription_;
+	final public RangeBuilder description(List<TypedLiteral> description) {
+		this.defaultRange.description = description;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param _referableDisplayName_ desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public RangeBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
-		this.rangeImpl._referableDisplayName = _referableDisplayName_;
+	final public RangeBuilder displayName(TypedLiteral displayName) {
+		this.defaultRange.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param _referableIdShort_ desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public RangeBuilder _referableIdShort_(String _referableIdShort_) {
-		this.rangeImpl._referableIdShort = _referableIdShort_;
+	final public RangeBuilder idShort(String idShort) {
+		this.defaultRange.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param _referableParent_ desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public RangeBuilder _referableParent_(URI _referableParent_) {
-		this.rangeImpl._referableParent = _referableParent_;
+	final public RangeBuilder parent(URI parent) {
+		this.defaultRange.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifier
-	* @param _qualifiableQualifier_ desired value to be set
-	* @return Builder object with new value for qualifiableQualifier
+	* This function allows setting a value for qualifier
+	* @param qualifier desired value to be set
+	* @return Builder object with new value for qualifier
 	*/
-	final public RangeBuilder _qualifiableQualifier_(ArrayList<? extends IConstraint> _qualifiableQualifier_) {
-		this.rangeImpl._qualifiableQualifier = _qualifiableQualifier_;
+	final public RangeBuilder qualifier(List<Constraint> qualifier) {
+		this.defaultRange.qualifier = qualifier;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecification
-	* @param _hasDataSpecificationDataSpecification_ desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecification
+	* This function allows setting a value for dataSpecification
+	* @param dataSpecification desired value to be set
+	* @return Builder object with new value for dataSpecification
 	*/
-	final public RangeBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
-		this.rangeImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
+	final public RangeBuilder dataSpecification(List<Reference> dataSpecification) {
+		this.defaultRange.dataSpecification = dataSpecification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param _hasKindKind_ desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public RangeBuilder _hasKindKind_(ModelingKind _hasKindKind_) {
-		this.rangeImpl._hasKindKind = _hasKindKind_;
+	final public RangeBuilder kind(ModelingKind kind) {
+		this.defaultRange.kind = kind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param _hasSemanticsSemanticId_ desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public RangeBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
-		this.rangeImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
+	final public RangeBuilder semanticId(Reference semanticId) {
+		this.defaultRange.semanticId = semanticId;
 		return this;
 	}
 	/**
@@ -170,8 +171,8 @@ public class RangeBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IRange build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(rangeImpl);
-		return rangeImpl;
+	final public Range build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultRange);
+		return defaultRange;
 	}
 }

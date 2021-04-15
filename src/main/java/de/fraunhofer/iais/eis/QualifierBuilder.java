@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,58 +33,58 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class QualifierBuilder {
 
-	private QualifierImpl qualifierImpl;
+	private DefaultQualifier defaultQualifier;
 
 	public QualifierBuilder() {
-		qualifierImpl = new QualifierImpl();
+		defaultQualifier = new DefaultQualifier();
 	}
 
 	public QualifierBuilder(URI id) {
 		this();
-		qualifierImpl.id = id;
+		defaultQualifier.id = id;
 	}
 
 	/**
-	* This function allows setting a value for qualifierType
-	* @param _qualifierType_ desired value to be set
-	* @return Builder object with new value for qualifierType
+	* This function allows setting a value for type
+	* @param type desired value to be set
+	* @return Builder object with new value for type
 	*/
-	final public QualifierBuilder _qualifierType_(String _qualifierType_) {
-		this.qualifierImpl._qualifierType = _qualifierType_;
+	final public QualifierBuilder type(String type) {
+		this.defaultQualifier.type = type;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifierValue
-	* @param _qualifierValue_ desired value to be set
-	* @return Builder object with new value for qualifierValue
+	* This function allows setting a value for value
+	* @param value desired value to be set
+	* @return Builder object with new value for value
 	*/
-	final public QualifierBuilder _qualifierValue_(TypedLiteral _qualifierValue_) {
-		this.qualifierImpl._qualifierValue = _qualifierValue_;
+	final public QualifierBuilder value(TypedLiteral value) {
+		this.defaultQualifier.value = value;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifierValueId
-	* @param _qualifierValueId_ desired value to be set
-	* @return Builder object with new value for qualifierValueId
+	* This function allows setting a value for valueId
+	* @param valueId desired value to be set
+	* @return Builder object with new value for valueId
 	*/
-	final public QualifierBuilder _qualifierValueId_(IReference _qualifierValueId_) {
-		this.qualifierImpl._qualifierValueId = _qualifierValueId_;
+	final public QualifierBuilder valueId(Reference valueId) {
+		this.defaultQualifier.valueId = valueId;
 		return this;
 	}
 
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param _hasSemanticsSemanticId_ desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public QualifierBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
-		this.qualifierImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
+	final public QualifierBuilder semanticId(Reference semanticId) {
+		this.defaultQualifier.semanticId = semanticId;
 		return this;
 	}
 	/**
@@ -92,8 +93,8 @@ public class QualifierBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IQualifier build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(qualifierImpl);
-		return qualifierImpl;
+	final public Qualifier build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultQualifier);
+		return defaultQualifier;
 	}
 }

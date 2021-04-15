@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,101 +33,101 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class AccessPermissionRuleBuilder {
 
-	private AccessPermissionRuleImpl accessPermissionRuleImpl;
+	private DefaultAccessPermissionRule defaultAccessPermissionRule;
 
 	public AccessPermissionRuleBuilder() {
-		accessPermissionRuleImpl = new AccessPermissionRuleImpl();
+		defaultAccessPermissionRule = new DefaultAccessPermissionRule();
 	}
 
 	public AccessPermissionRuleBuilder(URI id) {
 		this();
-		accessPermissionRuleImpl.id = id;
+		defaultAccessPermissionRule.id = id;
 	}
 
 	/**
-	* This function allows setting a value for accessPermissionRulePermissionsPerObject
-	* @param _accessPermissionRulePermissionsPerObject_ desired value to be set
-	* @return Builder object with new value for accessPermissionRulePermissionsPerObject
+	* This function allows setting a value for permissionsPerObject
+	* @param permissionsPerObject desired value to be set
+	* @return Builder object with new value for permissionsPerObject
 	*/
-	final public AccessPermissionRuleBuilder _accessPermissionRulePermissionsPerObject_(ArrayList<? extends IPermissionsPerObject> _accessPermissionRulePermissionsPerObject_) {
-		this.accessPermissionRuleImpl._accessPermissionRulePermissionsPerObject = _accessPermissionRulePermissionsPerObject_;
+	final public AccessPermissionRuleBuilder permissionsPerObject(List<PermissionsPerObject> permissionsPerObject) {
+		this.defaultAccessPermissionRule.permissionsPerObject = permissionsPerObject;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for accessPermissionRuleTargetSubjectAttributes
-	* @param _accessPermissionRuleTargetSubjectAttributes_ desired value to be set
-	* @return Builder object with new value for accessPermissionRuleTargetSubjectAttributes
+	* This function allows setting a value for targetSubjectAttributes
+	* @param targetSubjectAttributes desired value to be set
+	* @return Builder object with new value for targetSubjectAttributes
 	*/
-	final public AccessPermissionRuleBuilder _accessPermissionRuleTargetSubjectAttributes_(ISubjectAttributes _accessPermissionRuleTargetSubjectAttributes_) {
-		this.accessPermissionRuleImpl._accessPermissionRuleTargetSubjectAttributes = _accessPermissionRuleTargetSubjectAttributes_;
+	final public AccessPermissionRuleBuilder targetSubjectAttributes(SubjectAttributes targetSubjectAttributes) {
+		this.defaultAccessPermissionRule.targetSubjectAttributes = targetSubjectAttributes;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableReferableCategory
-	* @param _referableReferableCategory_ desired value to be set
-	* @return Builder object with new value for referableReferableCategory
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public AccessPermissionRuleBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
-		this.accessPermissionRuleImpl._referableReferableCategory = _referableReferableCategory_;
+	final public AccessPermissionRuleBuilder referableCategory(List<String> referableCategory) {
+		this.defaultAccessPermissionRule.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescription
-	* @param _referableDescription_ desired value to be set
-	* @return Builder object with new value for referableDescription
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public AccessPermissionRuleBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
-		this.accessPermissionRuleImpl._referableDescription = _referableDescription_;
+	final public AccessPermissionRuleBuilder description(List<TypedLiteral> description) {
+		this.defaultAccessPermissionRule.description = description;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param _referableDisplayName_ desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public AccessPermissionRuleBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
-		this.accessPermissionRuleImpl._referableDisplayName = _referableDisplayName_;
+	final public AccessPermissionRuleBuilder displayName(TypedLiteral displayName) {
+		this.defaultAccessPermissionRule.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param _referableIdShort_ desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public AccessPermissionRuleBuilder _referableIdShort_(String _referableIdShort_) {
-		this.accessPermissionRuleImpl._referableIdShort = _referableIdShort_;
+	final public AccessPermissionRuleBuilder idShort(String idShort) {
+		this.defaultAccessPermissionRule.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param _referableParent_ desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public AccessPermissionRuleBuilder _referableParent_(URI _referableParent_) {
-		this.accessPermissionRuleImpl._referableParent = _referableParent_;
+	final public AccessPermissionRuleBuilder parent(URI parent) {
+		this.defaultAccessPermissionRule.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifier
-	* @param _qualifiableQualifier_ desired value to be set
-	* @return Builder object with new value for qualifiableQualifier
+	* This function allows setting a value for qualifier
+	* @param qualifier desired value to be set
+	* @return Builder object with new value for qualifier
 	*/
-	final public AccessPermissionRuleBuilder _qualifiableQualifier_(ArrayList<? extends IConstraint> _qualifiableQualifier_) {
-		this.accessPermissionRuleImpl._qualifiableQualifier = _qualifiableQualifier_;
+	final public AccessPermissionRuleBuilder qualifier(List<Constraint> qualifier) {
+		this.defaultAccessPermissionRule.qualifier = qualifier;
 		return this;
 	}
 	/**
@@ -135,8 +136,8 @@ public class AccessPermissionRuleBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IAccessPermissionRule build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(accessPermissionRuleImpl);
-		return accessPermissionRuleImpl;
+	final public AccessPermissionRule build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultAccessPermissionRule);
+		return defaultAccessPermissionRule;
 	}
 }

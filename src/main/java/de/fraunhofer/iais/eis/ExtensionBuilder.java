@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,68 +33,68 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class ExtensionBuilder {
 
-	private ExtensionImpl extensionImpl;
+	private DefaultExtension defaultExtension;
 
 	public ExtensionBuilder() {
-		extensionImpl = new ExtensionImpl();
+		defaultExtension = new DefaultExtension();
 	}
 
 	public ExtensionBuilder(URI id) {
 		this();
-		extensionImpl.id = id;
+		defaultExtension.id = id;
 	}
 
 	/**
-	* This function allows setting a value for extensionName
-	* @param _extensionName_ desired value to be set
-	* @return Builder object with new value for extensionName
+	* This function allows setting a value for name
+	* @param name desired value to be set
+	* @return Builder object with new value for name
 	*/
-	final public ExtensionBuilder _extensionName_(String _extensionName_) {
-		this.extensionImpl._extensionName = _extensionName_;
+	final public ExtensionBuilder name(String name) {
+		this.defaultExtension.name = name;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for extensionValueType
-	* @param _extensionValueType_ desired value to be set
-	* @return Builder object with new value for extensionValueType
+	* This function allows setting a value for valueType
+	* @param valueType desired value to be set
+	* @return Builder object with new value for valueType
 	*/
-	final public ExtensionBuilder _extensionValueType_(String _extensionValueType_) {
-		this.extensionImpl._extensionValueType = _extensionValueType_;
+	final public ExtensionBuilder valueType(String valueType) {
+		this.defaultExtension.valueType = valueType;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for extensionValue
-	* @param _extensionValue_ desired value to be set
-	* @return Builder object with new value for extensionValue
+	* This function allows setting a value for value
+	* @param value desired value to be set
+	* @return Builder object with new value for value
 	*/
-	final public ExtensionBuilder _extensionValue_(String _extensionValue_) {
-		this.extensionImpl._extensionValue = _extensionValue_;
+	final public ExtensionBuilder value(String value) {
+		this.defaultExtension.value = value;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for extensionRefersTo
-	* @param _extensionRefersTo_ desired value to be set
-	* @return Builder object with new value for extensionRefersTo
+	* This function allows setting a value for refersTo
+	* @param refersTo desired value to be set
+	* @return Builder object with new value for refersTo
 	*/
-	final public ExtensionBuilder _extensionRefersTo_(IReference _extensionRefersTo_) {
-		this.extensionImpl._extensionRefersTo = _extensionRefersTo_;
+	final public ExtensionBuilder refersTo(Reference refersTo) {
+		this.defaultExtension.refersTo = refersTo;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param _hasSemanticsSemanticId_ desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public ExtensionBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
-		this.extensionImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
+	final public ExtensionBuilder semanticId(Reference semanticId) {
+		this.defaultExtension.semanticId = semanticId;
 		return this;
 	}
 	/**
@@ -102,8 +103,8 @@ public class ExtensionBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IExtension build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(extensionImpl);
-		return extensionImpl;
+	final public Extension build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultExtension);
+		return defaultExtension;
 	}
 }

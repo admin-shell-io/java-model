@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,57 +33,57 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class AccessControlPolicyPointsBuilder {
 
-	private AccessControlPolicyPointsImpl accessControlPolicyPointsImpl;
+	private DefaultAccessControlPolicyPoints defaultAccessControlPolicyPoints;
 
 	public AccessControlPolicyPointsBuilder() {
-		accessControlPolicyPointsImpl = new AccessControlPolicyPointsImpl();
+		defaultAccessControlPolicyPoints = new DefaultAccessControlPolicyPoints();
 	}
 
 	public AccessControlPolicyPointsBuilder(URI id) {
 		this();
-		accessControlPolicyPointsImpl.id = id;
+		defaultAccessControlPolicyPoints.id = id;
 	}
 
 	/**
-	* This function allows setting a value for accessControlPolicyPointsPolicyAdministrationPoint
-	* @param _accessControlPolicyPointsPolicyAdministrationPoint_ desired value to be set
-	* @return Builder object with new value for accessControlPolicyPointsPolicyAdministrationPoint
+	* This function allows setting a value for policyAdministrationPoint
+	* @param policyAdministrationPoint desired value to be set
+	* @return Builder object with new value for policyAdministrationPoint
 	*/
-	final public AccessControlPolicyPointsBuilder _accessControlPolicyPointsPolicyAdministrationPoint_(IPolicyAdministrationPoint _accessControlPolicyPointsPolicyAdministrationPoint_) {
-		this.accessControlPolicyPointsImpl._accessControlPolicyPointsPolicyAdministrationPoint = _accessControlPolicyPointsPolicyAdministrationPoint_;
+	final public AccessControlPolicyPointsBuilder policyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint) {
+		this.defaultAccessControlPolicyPoints.policyAdministrationPoint = policyAdministrationPoint;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for accessControlPolicyPointsPolicyDecisionPoint
-	* @param _accessControlPolicyPointsPolicyDecisionPoint_ desired value to be set
-	* @return Builder object with new value for accessControlPolicyPointsPolicyDecisionPoint
+	* This function allows setting a value for policyDecisionPoint
+	* @param policyDecisionPoint desired value to be set
+	* @return Builder object with new value for policyDecisionPoint
 	*/
-	final public AccessControlPolicyPointsBuilder _accessControlPolicyPointsPolicyDecisionPoint_(IPolicyDecisionPoint _accessControlPolicyPointsPolicyDecisionPoint_) {
-		this.accessControlPolicyPointsImpl._accessControlPolicyPointsPolicyDecisionPoint = _accessControlPolicyPointsPolicyDecisionPoint_;
+	final public AccessControlPolicyPointsBuilder policyDecisionPoint(PolicyDecisionPoint policyDecisionPoint) {
+		this.defaultAccessControlPolicyPoints.policyDecisionPoint = policyDecisionPoint;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for accessControlPolicyPointsPolicyEnforcementPoint
-	* @param _accessControlPolicyPointsPolicyEnforcementPoint_ desired value to be set
-	* @return Builder object with new value for accessControlPolicyPointsPolicyEnforcementPoint
+	* This function allows setting a value for policyEnforcementPoint
+	* @param policyEnforcementPoint desired value to be set
+	* @return Builder object with new value for policyEnforcementPoint
 	*/
-	final public AccessControlPolicyPointsBuilder _accessControlPolicyPointsPolicyEnforcementPoint_(IPolicyEnforcementPoints _accessControlPolicyPointsPolicyEnforcementPoint_) {
-		this.accessControlPolicyPointsImpl._accessControlPolicyPointsPolicyEnforcementPoint = _accessControlPolicyPointsPolicyEnforcementPoint_;
+	final public AccessControlPolicyPointsBuilder policyEnforcementPoint(PolicyEnforcementPoints policyEnforcementPoint) {
+		this.defaultAccessControlPolicyPoints.policyEnforcementPoint = policyEnforcementPoint;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for accessControlPolicyPointsPolicyInformationPoints
-	* @param _accessControlPolicyPointsPolicyInformationPoints_ desired value to be set
-	* @return Builder object with new value for accessControlPolicyPointsPolicyInformationPoints
+	* This function allows setting a value for policyInformationPoints
+	* @param policyInformationPoints desired value to be set
+	* @return Builder object with new value for policyInformationPoints
 	*/
-	final public AccessControlPolicyPointsBuilder _accessControlPolicyPointsPolicyInformationPoints_(IPolicyInformationPoints _accessControlPolicyPointsPolicyInformationPoints_) {
-		this.accessControlPolicyPointsImpl._accessControlPolicyPointsPolicyInformationPoints = _accessControlPolicyPointsPolicyInformationPoints_;
+	final public AccessControlPolicyPointsBuilder policyInformationPoints(PolicyInformationPoints policyInformationPoints) {
+		this.defaultAccessControlPolicyPoints.policyInformationPoints = policyInformationPoints;
 		return this;
 	}
 	/**
@@ -91,8 +92,8 @@ public class AccessControlPolicyPointsBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IAccessControlPolicyPoints build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(accessControlPolicyPointsImpl);
-		return accessControlPolicyPointsImpl;
+	final public AccessControlPolicyPoints build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultAccessControlPolicyPoints);
+		return defaultAccessControlPolicyPoints;
 	}
 }

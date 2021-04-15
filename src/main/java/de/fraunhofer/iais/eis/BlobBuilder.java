@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,35 +33,35 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class BlobBuilder {
 
-	private BlobImpl blobImpl;
+	private DefaultBlob defaultBlob;
 
 	public BlobBuilder() {
-		blobImpl = new BlobImpl();
+		defaultBlob = new DefaultBlob();
 	}
 
 	public BlobBuilder(URI id) {
 		this();
-		blobImpl.id = id;
+		defaultBlob.id = id;
 	}
 
 	/**
-	* This function allows setting a value for blobMimeType
-	* @param _blobMimeType_ desired value to be set
-	* @return Builder object with new value for blobMimeType
+	* This function allows setting a value for mimeType
+	* @param mimeType desired value to be set
+	* @return Builder object with new value for mimeType
 	*/
-	final public BlobBuilder _blobMimeType_(String _blobMimeType_) {
-		this.blobImpl._blobMimeType = _blobMimeType_;
+	final public BlobBuilder mimeType(String mimeType) {
+		this.defaultBlob.mimeType = mimeType;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for blobValue
-	* @param _blobValue_ desired value to be set
-	* @return Builder object with new value for blobValue
+	* This function allows setting a value for value
+	* @param value desired value to be set
+	* @return Builder object with new value for value
 	*/
-	final public BlobBuilder _blobValue_(byte _blobValue_) {
-		this.blobImpl._blobValue = _blobValue_;
+	final public BlobBuilder value(byte value) {
+		this.defaultBlob.value = value;
 		return this;
 	}
 
@@ -68,100 +69,100 @@ public class BlobBuilder {
 
 
 	/**
-	* This function allows setting a value for referableReferableCategory
-	* @param _referableReferableCategory_ desired value to be set
-	* @return Builder object with new value for referableReferableCategory
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public BlobBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
-		this.blobImpl._referableReferableCategory = _referableReferableCategory_;
+	final public BlobBuilder referableCategory(List<String> referableCategory) {
+		this.defaultBlob.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescription
-	* @param _referableDescription_ desired value to be set
-	* @return Builder object with new value for referableDescription
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public BlobBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
-		this.blobImpl._referableDescription = _referableDescription_;
+	final public BlobBuilder description(List<TypedLiteral> description) {
+		this.defaultBlob.description = description;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param _referableDisplayName_ desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public BlobBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
-		this.blobImpl._referableDisplayName = _referableDisplayName_;
+	final public BlobBuilder displayName(TypedLiteral displayName) {
+		this.defaultBlob.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param _referableIdShort_ desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public BlobBuilder _referableIdShort_(String _referableIdShort_) {
-		this.blobImpl._referableIdShort = _referableIdShort_;
+	final public BlobBuilder idShort(String idShort) {
+		this.defaultBlob.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param _referableParent_ desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public BlobBuilder _referableParent_(URI _referableParent_) {
-		this.blobImpl._referableParent = _referableParent_;
+	final public BlobBuilder parent(URI parent) {
+		this.defaultBlob.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifier
-	* @param _qualifiableQualifier_ desired value to be set
-	* @return Builder object with new value for qualifiableQualifier
+	* This function allows setting a value for qualifier
+	* @param qualifier desired value to be set
+	* @return Builder object with new value for qualifier
 	*/
-	final public BlobBuilder _qualifiableQualifier_(ArrayList<? extends IConstraint> _qualifiableQualifier_) {
-		this.blobImpl._qualifiableQualifier = _qualifiableQualifier_;
+	final public BlobBuilder qualifier(List<Constraint> qualifier) {
+		this.defaultBlob.qualifier = qualifier;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecification
-	* @param _hasDataSpecificationDataSpecification_ desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecification
+	* This function allows setting a value for dataSpecification
+	* @param dataSpecification desired value to be set
+	* @return Builder object with new value for dataSpecification
 	*/
-	final public BlobBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
-		this.blobImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
+	final public BlobBuilder dataSpecification(List<Reference> dataSpecification) {
+		this.defaultBlob.dataSpecification = dataSpecification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param _hasKindKind_ desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public BlobBuilder _hasKindKind_(ModelingKind _hasKindKind_) {
-		this.blobImpl._hasKindKind = _hasKindKind_;
+	final public BlobBuilder kind(ModelingKind kind) {
+		this.defaultBlob.kind = kind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param _hasSemanticsSemanticId_ desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public BlobBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
-		this.blobImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
+	final public BlobBuilder semanticId(Reference semanticId) {
+		this.defaultBlob.semanticId = semanticId;
 		return this;
 	}
 	/**
@@ -170,8 +171,8 @@ public class BlobBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IBlob build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(blobImpl);
-		return blobImpl;
+	final public Blob build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultBlob);
+		return defaultBlob;
 	}
 }

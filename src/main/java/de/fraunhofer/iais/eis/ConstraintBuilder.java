@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,15 +33,15 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class ConstraintBuilder {
 
-	private ConstraintImpl constraintImpl;
+	private DefaultConstraint defaultConstraint;
 
 	public ConstraintBuilder() {
-		constraintImpl = new ConstraintImpl();
+		defaultConstraint = new DefaultConstraint();
 	}
 
 	public ConstraintBuilder(URI id) {
 		this();
-		constraintImpl.id = id;
+		defaultConstraint.id = id;
 	}
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
@@ -48,8 +49,8 @@ public class ConstraintBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IConstraint build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(constraintImpl);
-		return constraintImpl;
+	final public Constraint build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultConstraint);
+		return defaultConstraint;
 	}
 }

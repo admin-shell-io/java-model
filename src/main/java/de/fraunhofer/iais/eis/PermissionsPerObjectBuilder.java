@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,46 +33,46 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class PermissionsPerObjectBuilder {
 
-	private PermissionsPerObjectImpl permissionsPerObjectImpl;
+	private DefaultPermissionsPerObject defaultPermissionsPerObject;
 
 	public PermissionsPerObjectBuilder() {
-		permissionsPerObjectImpl = new PermissionsPerObjectImpl();
+		defaultPermissionsPerObject = new DefaultPermissionsPerObject();
 	}
 
 	public PermissionsPerObjectBuilder(URI id) {
 		this();
-		permissionsPerObjectImpl.id = id;
+		defaultPermissionsPerObject.id = id;
 	}
 
 	/**
-	* This function allows setting a value for permissionsPerObjectObject
-	* @param _permissionsPerObjectObject_ desired value to be set
-	* @return Builder object with new value for permissionsPerObjectObject
+	* This function allows setting a value for object
+	* @param object desired value to be set
+	* @return Builder object with new value for object
 	*/
-	final public PermissionsPerObjectBuilder _permissionsPerObjectObject_(IReferable _permissionsPerObjectObject_) {
-		this.permissionsPerObjectImpl._permissionsPerObjectObject = _permissionsPerObjectObject_;
+	final public PermissionsPerObjectBuilder object(Referable object) {
+		this.defaultPermissionsPerObject.object = object;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for permissionsPerObjectPermission
-	* @param _permissionsPerObjectPermission_ desired value to be set
-	* @return Builder object with new value for permissionsPerObjectPermission
+	* This function allows setting a value for permission
+	* @param permission desired value to be set
+	* @return Builder object with new value for permission
 	*/
-	final public PermissionsPerObjectBuilder _permissionsPerObjectPermission_(ArrayList<? extends IPermission> _permissionsPerObjectPermission_) {
-		this.permissionsPerObjectImpl._permissionsPerObjectPermission = _permissionsPerObjectPermission_;
+	final public PermissionsPerObjectBuilder permission(List<Permission> permission) {
+		this.defaultPermissionsPerObject.permission = permission;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for permissionsPerObjectTargetObjectAttributes
-	* @param _permissionsPerObjectTargetObjectAttributes_ desired value to be set
-	* @return Builder object with new value for permissionsPerObjectTargetObjectAttributes
+	* This function allows setting a value for targetObjectAttributes
+	* @param targetObjectAttributes desired value to be set
+	* @return Builder object with new value for targetObjectAttributes
 	*/
-	final public PermissionsPerObjectBuilder _permissionsPerObjectTargetObjectAttributes_(IObjectAttributes _permissionsPerObjectTargetObjectAttributes_) {
-		this.permissionsPerObjectImpl._permissionsPerObjectTargetObjectAttributes = _permissionsPerObjectTargetObjectAttributes_;
+	final public PermissionsPerObjectBuilder targetObjectAttributes(ObjectAttributes targetObjectAttributes) {
+		this.defaultPermissionsPerObject.targetObjectAttributes = targetObjectAttributes;
 		return this;
 	}
 	/**
@@ -80,8 +81,8 @@ public class PermissionsPerObjectBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IPermissionsPerObject build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(permissionsPerObjectImpl);
-		return permissionsPerObjectImpl;
+	final public PermissionsPerObject build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultPermissionsPerObject);
+		return defaultPermissionsPerObject;
 	}
 }

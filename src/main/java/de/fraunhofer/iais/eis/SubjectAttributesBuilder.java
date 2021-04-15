@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,24 +33,24 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class SubjectAttributesBuilder {
 
-	private SubjectAttributesImpl subjectAttributesImpl;
+	private DefaultSubjectAttributes defaultSubjectAttributes;
 
 	public SubjectAttributesBuilder() {
-		subjectAttributesImpl = new SubjectAttributesImpl();
+		defaultSubjectAttributes = new DefaultSubjectAttributes();
 	}
 
 	public SubjectAttributesBuilder(URI id) {
 		this();
-		subjectAttributesImpl.id = id;
+		defaultSubjectAttributes.id = id;
 	}
 
 	/**
-	* This function allows setting a value for subjectAttributesSubjectAttribute
-	* @param _subjectAttributesSubjectAttribute_ desired value to be set
-	* @return Builder object with new value for subjectAttributesSubjectAttribute
+	* This function allows setting a value for subjectAttribute
+	* @param subjectAttribute desired value to be set
+	* @return Builder object with new value for subjectAttribute
 	*/
-	final public SubjectAttributesBuilder _subjectAttributesSubjectAttribute_(ArrayList<? extends IDataElement> _subjectAttributesSubjectAttribute_) {
-		this.subjectAttributesImpl._subjectAttributesSubjectAttribute = _subjectAttributesSubjectAttribute_;
+	final public SubjectAttributesBuilder subjectAttribute(List<DataElement> subjectAttribute) {
+		this.defaultSubjectAttributes.subjectAttribute = subjectAttribute;
 		return this;
 	}
 	/**
@@ -58,8 +59,8 @@ public class SubjectAttributesBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public ISubjectAttributes build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(subjectAttributesImpl);
-		return subjectAttributesImpl;
+	final public SubjectAttributes build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultSubjectAttributes);
+		return defaultSubjectAttributes;
 	}
 }

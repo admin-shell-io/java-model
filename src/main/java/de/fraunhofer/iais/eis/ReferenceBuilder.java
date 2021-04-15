@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,24 +33,24 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class ReferenceBuilder {
 
-	private ReferenceImpl referenceImpl;
+	private DefaultReference defaultReference;
 
 	public ReferenceBuilder() {
-		referenceImpl = new ReferenceImpl();
+		defaultReference = new DefaultReference();
 	}
 
 	public ReferenceBuilder(URI id) {
 		this();
-		referenceImpl.id = id;
+		defaultReference.id = id;
 	}
 
 	/**
-	* This function allows setting a value for referenceKey
-	* @param _referenceKey_ desired value to be set
-	* @return Builder object with new value for referenceKey
+	* This function allows setting a value for key
+	* @param key desired value to be set
+	* @return Builder object with new value for key
 	*/
-	final public ReferenceBuilder _referenceKey_(ArrayList<? extends IKey> _referenceKey_) {
-		this.referenceImpl._referenceKey = _referenceKey_;
+	final public ReferenceBuilder key(List<Key> key) {
+		this.defaultReference.key = key;
 		return this;
 	}
 	/**
@@ -58,8 +59,8 @@ public class ReferenceBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IReference build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(referenceImpl);
-		return referenceImpl;
+	final public Reference build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultReference);
+		return defaultReference;
 	}
 }

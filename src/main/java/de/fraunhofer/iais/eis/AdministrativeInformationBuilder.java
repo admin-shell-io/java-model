@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,46 +33,46 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class AdministrativeInformationBuilder {
 
-	private AdministrativeInformationImpl administrativeInformationImpl;
+	private DefaultAdministrativeInformation defaultAdministrativeInformation;
 
 	public AdministrativeInformationBuilder() {
-		administrativeInformationImpl = new AdministrativeInformationImpl();
+		defaultAdministrativeInformation = new DefaultAdministrativeInformation();
 	}
 
 	public AdministrativeInformationBuilder(URI id) {
 		this();
-		administrativeInformationImpl.id = id;
+		defaultAdministrativeInformation.id = id;
 	}
 
 	/**
-	* This function allows setting a value for administrativeInformationVersion
-	* @param _administrativeInformationVersion_ desired value to be set
-	* @return Builder object with new value for administrativeInformationVersion
+	* This function allows setting a value for version
+	* @param version desired value to be set
+	* @return Builder object with new value for version
 	*/
-	final public AdministrativeInformationBuilder _administrativeInformationVersion_(String _administrativeInformationVersion_) {
-		this.administrativeInformationImpl._administrativeInformationVersion = _administrativeInformationVersion_;
+	final public AdministrativeInformationBuilder version(String version) {
+		this.defaultAdministrativeInformation.version = version;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for administrativeInformationRevision
-	* @param _administrativeInformationRevision_ desired value to be set
-	* @return Builder object with new value for administrativeInformationRevision
+	* This function allows setting a value for revision
+	* @param revision desired value to be set
+	* @return Builder object with new value for revision
 	*/
-	final public AdministrativeInformationBuilder _administrativeInformationRevision_(String _administrativeInformationRevision_) {
-		this.administrativeInformationImpl._administrativeInformationRevision = _administrativeInformationRevision_;
+	final public AdministrativeInformationBuilder revision(String revision) {
+		this.defaultAdministrativeInformation.revision = revision;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecification
-	* @param _hasDataSpecificationDataSpecification_ desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecification
+	* This function allows setting a value for dataSpecification
+	* @param dataSpecification desired value to be set
+	* @return Builder object with new value for dataSpecification
 	*/
-	final public AdministrativeInformationBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
-		this.administrativeInformationImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
+	final public AdministrativeInformationBuilder dataSpecification(List<Reference> dataSpecification) {
+		this.defaultAdministrativeInformation.dataSpecification = dataSpecification;
 		return this;
 	}
 	/**
@@ -80,8 +81,8 @@ public class AdministrativeInformationBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IAdministrativeInformation build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(administrativeInformationImpl);
-		return administrativeInformationImpl;
+	final public AdministrativeInformation build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultAdministrativeInformation);
+		return defaultAdministrativeInformation;
 	}
 }

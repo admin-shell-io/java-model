@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,135 +33,135 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class RelationshipElementBuilder {
 
-	private RelationshipElementImpl relationshipElementImpl;
+	private DefaultRelationshipElement defaultRelationshipElement;
 
 	public RelationshipElementBuilder() {
-		relationshipElementImpl = new RelationshipElementImpl();
+		defaultRelationshipElement = new DefaultRelationshipElement();
 	}
 
 	public RelationshipElementBuilder(URI id) {
 		this();
-		relationshipElementImpl.id = id;
+		defaultRelationshipElement.id = id;
 	}
 
 	/**
-	* This function allows setting a value for relationshipElementFirst
-	* @param _relationshipElementFirst_ desired value to be set
-	* @return Builder object with new value for relationshipElementFirst
+	* This function allows setting a value for first
+	* @param first desired value to be set
+	* @return Builder object with new value for first
 	*/
-	final public RelationshipElementBuilder _relationshipElementFirst_(IReferable _relationshipElementFirst_) {
-		this.relationshipElementImpl._relationshipElementFirst = _relationshipElementFirst_;
+	final public RelationshipElementBuilder first(Referable first) {
+		this.defaultRelationshipElement.first = first;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for relationshipElementSecond
-	* @param _relationshipElementSecond_ desired value to be set
-	* @return Builder object with new value for relationshipElementSecond
+	* This function allows setting a value for second
+	* @param second desired value to be set
+	* @return Builder object with new value for second
 	*/
-	final public RelationshipElementBuilder _relationshipElementSecond_(IReferable _relationshipElementSecond_) {
-		this.relationshipElementImpl._relationshipElementSecond = _relationshipElementSecond_;
+	final public RelationshipElementBuilder second(Referable second) {
+		this.defaultRelationshipElement.second = second;
 		return this;
 	}
 
 
 
 	/**
-	* This function allows setting a value for referableReferableCategory
-	* @param _referableReferableCategory_ desired value to be set
-	* @return Builder object with new value for referableReferableCategory
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public RelationshipElementBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
-		this.relationshipElementImpl._referableReferableCategory = _referableReferableCategory_;
+	final public RelationshipElementBuilder referableCategory(List<String> referableCategory) {
+		this.defaultRelationshipElement.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescription
-	* @param _referableDescription_ desired value to be set
-	* @return Builder object with new value for referableDescription
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public RelationshipElementBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
-		this.relationshipElementImpl._referableDescription = _referableDescription_;
+	final public RelationshipElementBuilder description(List<TypedLiteral> description) {
+		this.defaultRelationshipElement.description = description;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param _referableDisplayName_ desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public RelationshipElementBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
-		this.relationshipElementImpl._referableDisplayName = _referableDisplayName_;
+	final public RelationshipElementBuilder displayName(TypedLiteral displayName) {
+		this.defaultRelationshipElement.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param _referableIdShort_ desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public RelationshipElementBuilder _referableIdShort_(String _referableIdShort_) {
-		this.relationshipElementImpl._referableIdShort = _referableIdShort_;
+	final public RelationshipElementBuilder idShort(String idShort) {
+		this.defaultRelationshipElement.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param _referableParent_ desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public RelationshipElementBuilder _referableParent_(URI _referableParent_) {
-		this.relationshipElementImpl._referableParent = _referableParent_;
+	final public RelationshipElementBuilder parent(URI parent) {
+		this.defaultRelationshipElement.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifier
-	* @param _qualifiableQualifier_ desired value to be set
-	* @return Builder object with new value for qualifiableQualifier
+	* This function allows setting a value for qualifier
+	* @param qualifier desired value to be set
+	* @return Builder object with new value for qualifier
 	*/
-	final public RelationshipElementBuilder _qualifiableQualifier_(ArrayList<? extends IConstraint> _qualifiableQualifier_) {
-		this.relationshipElementImpl._qualifiableQualifier = _qualifiableQualifier_;
+	final public RelationshipElementBuilder qualifier(List<Constraint> qualifier) {
+		this.defaultRelationshipElement.qualifier = qualifier;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecification
-	* @param _hasDataSpecificationDataSpecification_ desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecification
+	* This function allows setting a value for dataSpecification
+	* @param dataSpecification desired value to be set
+	* @return Builder object with new value for dataSpecification
 	*/
-	final public RelationshipElementBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
-		this.relationshipElementImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
+	final public RelationshipElementBuilder dataSpecification(List<Reference> dataSpecification) {
+		this.defaultRelationshipElement.dataSpecification = dataSpecification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param _hasKindKind_ desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public RelationshipElementBuilder _hasKindKind_(ModelingKind _hasKindKind_) {
-		this.relationshipElementImpl._hasKindKind = _hasKindKind_;
+	final public RelationshipElementBuilder kind(ModelingKind kind) {
+		this.defaultRelationshipElement.kind = kind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param _hasSemanticsSemanticId_ desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public RelationshipElementBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
-		this.relationshipElementImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
+	final public RelationshipElementBuilder semanticId(Reference semanticId) {
+		this.defaultRelationshipElement.semanticId = semanticId;
 		return this;
 	}
 	/**
@@ -169,8 +170,8 @@ public class RelationshipElementBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IRelationshipElement build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(relationshipElementImpl);
-		return relationshipElementImpl;
+	final public RelationshipElement build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultRelationshipElement);
+		return defaultRelationshipElement;
 	}
 }

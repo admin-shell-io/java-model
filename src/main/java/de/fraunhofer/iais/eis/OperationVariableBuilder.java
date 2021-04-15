@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,24 +33,24 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class OperationVariableBuilder {
 
-	private OperationVariableImpl operationVariableImpl;
+	private DefaultOperationVariable defaultOperationVariable;
 
 	public OperationVariableBuilder() {
-		operationVariableImpl = new OperationVariableImpl();
+		defaultOperationVariable = new DefaultOperationVariable();
 	}
 
 	public OperationVariableBuilder(URI id) {
 		this();
-		operationVariableImpl.id = id;
+		defaultOperationVariable.id = id;
 	}
 
 	/**
-	* This function allows setting a value for operationVariableValue
-	* @param _operationVariableValue_ desired value to be set
-	* @return Builder object with new value for operationVariableValue
+	* This function allows setting a value for value
+	* @param value desired value to be set
+	* @return Builder object with new value for value
 	*/
-	final public OperationVariableBuilder _operationVariableValue_(ISubmodelElement _operationVariableValue_) {
-		this.operationVariableImpl._operationVariableValue = _operationVariableValue_;
+	final public OperationVariableBuilder value(SubmodelElement value) {
+		this.defaultOperationVariable.value = value;
 		return this;
 	}
 	/**
@@ -58,8 +59,8 @@ public class OperationVariableBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IOperationVariable build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(operationVariableImpl);
-		return operationVariableImpl;
+	final public OperationVariable build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultOperationVariable);
+		return defaultOperationVariable;
 	}
 }

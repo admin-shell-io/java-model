@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,46 +33,46 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class SecurityBuilder {
 
-	private SecurityImpl securityImpl;
+	private DefaultSecurity defaultSecurity;
 
 	public SecurityBuilder() {
-		securityImpl = new SecurityImpl();
+		defaultSecurity = new DefaultSecurity();
 	}
 
 	public SecurityBuilder(URI id) {
 		this();
-		securityImpl.id = id;
+		defaultSecurity.id = id;
 	}
 
 	/**
-	* This function allows setting a value for securityAccessControlPolicyPoints
-	* @param _securityAccessControlPolicyPoints_ desired value to be set
-	* @return Builder object with new value for securityAccessControlPolicyPoints
+	* This function allows setting a value for accessControlPolicyPoints
+	* @param accessControlPolicyPoints desired value to be set
+	* @return Builder object with new value for accessControlPolicyPoints
 	*/
-	final public SecurityBuilder _securityAccessControlPolicyPoints_(IPolicyAdministrationPoint _securityAccessControlPolicyPoints_) {
-		this.securityImpl._securityAccessControlPolicyPoints = _securityAccessControlPolicyPoints_;
+	final public SecurityBuilder accessControlPolicyPoints(PolicyAdministrationPoint accessControlPolicyPoints) {
+		this.defaultSecurity.accessControlPolicyPoints = accessControlPolicyPoints;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for securityCertificate
-	* @param _securityCertificate_ desired value to be set
-	* @return Builder object with new value for securityCertificate
+	* This function allows setting a value for certificate
+	* @param certificate desired value to be set
+	* @return Builder object with new value for certificate
 	*/
-	final public SecurityBuilder _securityCertificate_(ArrayList<? extends ICertificate> _securityCertificate_) {
-		this.securityImpl._securityCertificate = _securityCertificate_;
+	final public SecurityBuilder certificate(List<Certificate> certificate) {
+		this.defaultSecurity.certificate = certificate;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for securityRequiredCertificateExtension
-	* @param _securityRequiredCertificateExtension_ desired value to be set
-	* @return Builder object with new value for securityRequiredCertificateExtension
+	* This function allows setting a value for requiredCertificateExtension
+	* @param requiredCertificateExtension desired value to be set
+	* @return Builder object with new value for requiredCertificateExtension
 	*/
-	final public SecurityBuilder _securityRequiredCertificateExtension_(ArrayList<? extends IReference> _securityRequiredCertificateExtension_) {
-		this.securityImpl._securityRequiredCertificateExtension = _securityRequiredCertificateExtension_;
+	final public SecurityBuilder requiredCertificateExtension(List<Reference> requiredCertificateExtension) {
+		this.defaultSecurity.requiredCertificateExtension = requiredCertificateExtension;
 		return this;
 	}
 	/**
@@ -80,8 +81,8 @@ public class SecurityBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public ISecurity build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(securityImpl);
-		return securityImpl;
+	final public Security build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultSecurity);
+		return defaultSecurity;
 	}
 }

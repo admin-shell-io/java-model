@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,24 +33,24 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class PolicyDecisionPointBuilder {
 
-	private PolicyDecisionPointImpl policyDecisionPointImpl;
+	private DefaultPolicyDecisionPoint defaultPolicyDecisionPoint;
 
 	public PolicyDecisionPointBuilder() {
-		policyDecisionPointImpl = new PolicyDecisionPointImpl();
+		defaultPolicyDecisionPoint = new DefaultPolicyDecisionPoint();
 	}
 
 	public PolicyDecisionPointBuilder(URI id) {
 		this();
-		policyDecisionPointImpl.id = id;
+		defaultPolicyDecisionPoint.id = id;
 	}
 
 	/**
-	* This function allows setting a value for policyDecisionPointExternalPolicyDecisionPoints
-	* @param _policyDecisionPointExternalPolicyDecisionPoints_ desired value to be set
-	* @return Builder object with new value for policyDecisionPointExternalPolicyDecisionPoints
+	* This function allows setting a value for externalPolicyDecisionPoints
+	* @param externalPolicyDecisionPoints desired value to be set
+	* @return Builder object with new value for externalPolicyDecisionPoints
 	*/
-	final public PolicyDecisionPointBuilder _policyDecisionPointExternalPolicyDecisionPoints_(boolean _policyDecisionPointExternalPolicyDecisionPoints_) {
-		this.policyDecisionPointImpl._policyDecisionPointExternalPolicyDecisionPoints = _policyDecisionPointExternalPolicyDecisionPoints_;
+	final public PolicyDecisionPointBuilder externalPolicyDecisionPoints(boolean externalPolicyDecisionPoints) {
+		this.defaultPolicyDecisionPoint.externalPolicyDecisionPoints = externalPolicyDecisionPoints;
 		return this;
 	}
 	/**
@@ -58,8 +59,8 @@ public class PolicyDecisionPointBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IPolicyDecisionPoint build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(policyDecisionPointImpl);
-		return policyDecisionPointImpl;
+	final public PolicyDecisionPoint build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultPolicyDecisionPoint);
+		return defaultPolicyDecisionPoint;
 	}
 }

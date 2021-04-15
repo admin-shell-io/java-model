@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,35 +33,35 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class PermissionBuilder {
 
-	private PermissionImpl permissionImpl;
+	private DefaultPermission defaultPermission;
 
 	public PermissionBuilder() {
-		permissionImpl = new PermissionImpl();
+		defaultPermission = new DefaultPermission();
 	}
 
 	public PermissionBuilder(URI id) {
 		this();
-		permissionImpl.id = id;
+		defaultPermission.id = id;
 	}
 
 	/**
-	* This function allows setting a value for permissionKindOfPermission
-	* @param _permissionKindOfPermission_ desired value to be set
-	* @return Builder object with new value for permissionKindOfPermission
+	* This function allows setting a value for kindOfPermission
+	* @param kindOfPermission desired value to be set
+	* @return Builder object with new value for kindOfPermission
 	*/
-	final public PermissionBuilder _permissionKindOfPermission_(PermissionKind _permissionKindOfPermission_) {
-		this.permissionImpl._permissionKindOfPermission = _permissionKindOfPermission_;
+	final public PermissionBuilder kindOfPermission(PermissionKind kindOfPermission) {
+		this.defaultPermission.kindOfPermission = kindOfPermission;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for permissionPermission
-	* @param _permissionPermission_ desired value to be set
-	* @return Builder object with new value for permissionPermission
+	* This function allows setting a value for permission
+	* @param permission desired value to be set
+	* @return Builder object with new value for permission
 	*/
-	final public PermissionBuilder _permissionPermission_(IProperty _permissionPermission_) {
-		this.permissionImpl._permissionPermission = _permissionPermission_;
+	final public PermissionBuilder permission(Property permission) {
+		this.defaultPermission.permission = permission;
 		return this;
 	}
 	/**
@@ -69,8 +70,8 @@ public class PermissionBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IPermission build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(permissionImpl);
-		return permissionImpl;
+	final public Permission build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultPermission);
+		return defaultPermission;
 	}
 }

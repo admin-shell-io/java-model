@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,24 +33,24 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class HasKindBuilder {
 
-	private HasKindImpl hasKindImpl;
+	private DefaultHasKind defaultHasKind;
 
 	public HasKindBuilder() {
-		hasKindImpl = new HasKindImpl();
+		defaultHasKind = new DefaultHasKind();
 	}
 
 	public HasKindBuilder(URI id) {
 		this();
-		hasKindImpl.id = id;
+		defaultHasKind.id = id;
 	}
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param _hasKindKind_ desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public HasKindBuilder _hasKindKind_(ModelingKind _hasKindKind_) {
-		this.hasKindImpl._hasKindKind = _hasKindKind_;
+	final public HasKindBuilder kind(ModelingKind kind) {
+		this.defaultHasKind.kind = kind;
 		return this;
 	}
 	/**
@@ -58,8 +59,8 @@ public class HasKindBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IHasKind build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(hasKindImpl);
-		return hasKindImpl;
+	final public HasKind build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultHasKind);
+		return defaultHasKind;
 	}
 }

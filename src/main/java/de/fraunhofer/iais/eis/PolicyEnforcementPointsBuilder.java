@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,15 +33,15 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class PolicyEnforcementPointsBuilder {
 
-	private PolicyEnforcementPointsImpl policyEnforcementPointsImpl;
+	private DefaultPolicyEnforcementPoints defaultPolicyEnforcementPoints;
 
 	public PolicyEnforcementPointsBuilder() {
-		policyEnforcementPointsImpl = new PolicyEnforcementPointsImpl();
+		defaultPolicyEnforcementPoints = new DefaultPolicyEnforcementPoints();
 	}
 
 	public PolicyEnforcementPointsBuilder(URI id) {
 		this();
-		policyEnforcementPointsImpl.id = id;
+		defaultPolicyEnforcementPoints.id = id;
 	}
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
@@ -48,8 +49,8 @@ public class PolicyEnforcementPointsBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IPolicyEnforcementPoints build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(policyEnforcementPointsImpl);
-		return policyEnforcementPointsImpl;
+	final public PolicyEnforcementPoints build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultPolicyEnforcementPoints);
+		return defaultPolicyEnforcementPoints;
 	}
 }

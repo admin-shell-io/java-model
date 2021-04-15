@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,145 +33,145 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class RC01Builder {
 
-	private RC01Impl rC01Impl;
+	private DefaultRC01 defaultRC01;
 
 	public RC01Builder() {
-		rC01Impl = new RC01Impl();
+		defaultRC01 = new DefaultRC01();
 	}
 
 	public RC01Builder(URI id) {
 		this();
-		rC01Impl.id = id;
+		defaultRC01.id = id;
 	}
 
 	/**
-	* This function allows setting a value for rC01ConversionFactor
-	* @param _rC01ConversionFactor_ desired value to be set
-	* @return Builder object with new value for rC01ConversionFactor
+	* This function allows setting a value for conversionFactor
+	* @param conversionFactor desired value to be set
+	* @return Builder object with new value for conversionFactor
 	*/
-	final public RC01Builder _rC01ConversionFactor_(ArrayList<? extends String> _rC01ConversionFactor_) {
-		this.rC01Impl._rC01ConversionFactor = _rC01ConversionFactor_;
+	final public RC01Builder conversionFactor(List<String> conversionFactor) {
+		this.defaultRC01.conversionFactor = conversionFactor;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for rC01Definition
-	* @param _rC01Definition_ desired value to be set
-	* @return Builder object with new value for rC01Definition
+	* This function allows setting a value for definition
+	* @param definition desired value to be set
+	* @return Builder object with new value for definition
 	*/
-	final public RC01Builder _rC01Definition_(ArrayList<? extends TypedLiteral> _rC01Definition_) {
-		this.rC01Impl._rC01Definition = _rC01Definition_;
+	final public RC01Builder definition(List<TypedLiteral> definition) {
+		this.defaultRC01.definition = definition;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for rC01DinNotation
-	* @param _rC01DinNotation_ desired value to be set
-	* @return Builder object with new value for rC01DinNotation
+	* This function allows setting a value for dinNotation
+	* @param dinNotation desired value to be set
+	* @return Builder object with new value for dinNotation
 	*/
-	final public RC01Builder _rC01DinNotation_(ArrayList<? extends String> _rC01DinNotation_) {
-		this.rC01Impl._rC01DinNotation = _rC01DinNotation_;
+	final public RC01Builder dinNotation(List<String> dinNotation) {
+		this.defaultRC01.dinNotation = dinNotation;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for rC01EceCode
-	* @param _rC01EceCode_ desired value to be set
-	* @return Builder object with new value for rC01EceCode
+	* This function allows setting a value for eceCode
+	* @param eceCode desired value to be set
+	* @return Builder object with new value for eceCode
 	*/
-	final public RC01Builder _rC01EceCode_(ArrayList<? extends String> _rC01EceCode_) {
-		this.rC01Impl._rC01EceCode = _rC01EceCode_;
+	final public RC01Builder eceCode(List<String> eceCode) {
+		this.defaultRC01.eceCode = eceCode;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for rC01EceName
-	* @param _rC01EceName_ desired value to be set
-	* @return Builder object with new value for rC01EceName
+	* This function allows setting a value for eceName
+	* @param eceName desired value to be set
+	* @return Builder object with new value for eceName
 	*/
-	final public RC01Builder _rC01EceName_(ArrayList<? extends String> _rC01EceName_) {
-		this.rC01Impl._rC01EceName = _rC01EceName_;
+	final public RC01Builder eceName(List<String> eceName) {
+		this.defaultRC01.eceName = eceName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for rC01NistName
-	* @param _rC01NistName_ desired value to be set
-	* @return Builder object with new value for rC01NistName
+	* This function allows setting a value for nistName
+	* @param nistName desired value to be set
+	* @return Builder object with new value for nistName
 	*/
-	final public RC01Builder _rC01NistName_(ArrayList<? extends String> _rC01NistName_) {
-		this.rC01Impl._rC01NistName = _rC01NistName_;
+	final public RC01Builder nistName(List<String> nistName) {
+		this.defaultRC01.nistName = nistName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for rC01SiName
-	* @param _rC01SiName_ desired value to be set
-	* @return Builder object with new value for rC01SiName
+	* This function allows setting a value for siName
+	* @param siName desired value to be set
+	* @return Builder object with new value for siName
 	*/
-	final public RC01Builder _rC01SiName_(ArrayList<? extends String> _rC01SiName_) {
-		this.rC01Impl._rC01SiName = _rC01SiName_;
+	final public RC01Builder siName(List<String> siName) {
+		this.defaultRC01.siName = siName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for rC01SiNotation
-	* @param _rC01SiNotation_ desired value to be set
-	* @return Builder object with new value for rC01SiNotation
+	* This function allows setting a value for siNotation
+	* @param siNotation desired value to be set
+	* @return Builder object with new value for siNotation
 	*/
-	final public RC01Builder _rC01SiNotation_(ArrayList<? extends String> _rC01SiNotation_) {
-		this.rC01Impl._rC01SiNotation = _rC01SiNotation_;
+	final public RC01Builder siNotation(List<String> siNotation) {
+		this.defaultRC01.siNotation = siNotation;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for rC01RegistrationAuthorityId
-	* @param _rC01RegistrationAuthorityId_ desired value to be set
-	* @return Builder object with new value for rC01RegistrationAuthorityId
+	* This function allows setting a value for registrationAuthorityId
+	* @param registrationAuthorityId desired value to be set
+	* @return Builder object with new value for registrationAuthorityId
 	*/
-	final public RC01Builder _rC01RegistrationAuthorityId_(ArrayList<? extends String> _rC01RegistrationAuthorityId_) {
-		this.rC01Impl._rC01RegistrationAuthorityId = _rC01RegistrationAuthorityId_;
+	final public RC01Builder registrationAuthorityId(List<String> registrationAuthorityId) {
+		this.defaultRC01.registrationAuthorityId = registrationAuthorityId;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for rC01Supplier
-	* @param _rC01Supplier_ desired value to be set
-	* @return Builder object with new value for rC01Supplier
+	* This function allows setting a value for supplier
+	* @param supplier desired value to be set
+	* @return Builder object with new value for supplier
 	*/
-	final public RC01Builder _rC01Supplier_(ArrayList<? extends String> _rC01Supplier_) {
-		this.rC01Impl._rC01Supplier = _rC01Supplier_;
+	final public RC01Builder supplier(List<String> supplier) {
+		this.defaultRC01.supplier = supplier;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for rC01UnitName
-	* @param _rC01UnitName_ desired value to be set
-	* @return Builder object with new value for rC01UnitName
+	* This function allows setting a value for unitName
+	* @param unitName desired value to be set
+	* @return Builder object with new value for unitName
 	*/
-	final public RC01Builder _rC01UnitName_(ArrayList<? extends String> _rC01UnitName_) {
-		this.rC01Impl._rC01UnitName = _rC01UnitName_;
+	final public RC01Builder unitName(List<String> unitName) {
+		this.defaultRC01.unitName = unitName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for rC01UnitSymbol
-	* @param _rC01UnitSymbol_ desired value to be set
-	* @return Builder object with new value for rC01UnitSymbol
+	* This function allows setting a value for unitSymbol
+	* @param unitSymbol desired value to be set
+	* @return Builder object with new value for unitSymbol
 	*/
-	final public RC01Builder _rC01UnitSymbol_(ArrayList<? extends String> _rC01UnitSymbol_) {
-		this.rC01Impl._rC01UnitSymbol = _rC01UnitSymbol_;
+	final public RC01Builder unitSymbol(List<String> unitSymbol) {
+		this.defaultRC01.unitSymbol = unitSymbol;
 		return this;
 	}
 
@@ -180,8 +181,8 @@ public class RC01Builder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IRC01 build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(rC01Impl);
-		return rC01Impl;
+	final public RC01 build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultRC01);
+		return defaultRC01;
 	}
 }

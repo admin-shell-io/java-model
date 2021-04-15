@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,90 +33,90 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class AccessControlBuilder {
 
-	private AccessControlImpl accessControlImpl;
+	private DefaultAccessControl defaultAccessControl;
 
 	public AccessControlBuilder() {
-		accessControlImpl = new AccessControlImpl();
+		defaultAccessControl = new DefaultAccessControl();
 	}
 
 	public AccessControlBuilder(URI id) {
 		this();
-		accessControlImpl.id = id;
+		defaultAccessControl.id = id;
 	}
 
 	/**
-	* This function allows setting a value for accessControlAccessPermissionRule
-	* @param _accessControlAccessPermissionRule_ desired value to be set
-	* @return Builder object with new value for accessControlAccessPermissionRule
+	* This function allows setting a value for accessPermissionRule
+	* @param accessPermissionRule desired value to be set
+	* @return Builder object with new value for accessPermissionRule
 	*/
-	final public AccessControlBuilder _accessControlAccessPermissionRule_(ArrayList<? extends IAccessPermissionRule> _accessControlAccessPermissionRule_) {
-		this.accessControlImpl._accessControlAccessPermissionRule = _accessControlAccessPermissionRule_;
+	final public AccessControlBuilder accessPermissionRule(List<AccessPermissionRule> accessPermissionRule) {
+		this.defaultAccessControl.accessPermissionRule = accessPermissionRule;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for accessControlSelectableSubjectAttributes
-	* @param _accessControlSelectableSubjectAttributes_ desired value to be set
-	* @return Builder object with new value for accessControlSelectableSubjectAttributes
+	* This function allows setting a value for selectableSubjectAttributes
+	* @param selectableSubjectAttributes desired value to be set
+	* @return Builder object with new value for selectableSubjectAttributes
 	*/
-	final public AccessControlBuilder _accessControlSelectableSubjectAttributes_(ISubmodel _accessControlSelectableSubjectAttributes_) {
-		this.accessControlImpl._accessControlSelectableSubjectAttributes = _accessControlSelectableSubjectAttributes_;
+	final public AccessControlBuilder selectableSubjectAttributes(Submodel selectableSubjectAttributes) {
+		this.defaultAccessControl.selectableSubjectAttributes = selectableSubjectAttributes;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for accessControlDefaultSubjectAttributes
-	* @param _accessControlDefaultSubjectAttributes_ desired value to be set
-	* @return Builder object with new value for accessControlDefaultSubjectAttributes
+	* This function allows setting a value for defaultSubjectAttributes
+	* @param defaultSubjectAttributes desired value to be set
+	* @return Builder object with new value for defaultSubjectAttributes
 	*/
-	final public AccessControlBuilder _accessControlDefaultSubjectAttributes_(ISubmodel _accessControlDefaultSubjectAttributes_) {
-		this.accessControlImpl._accessControlDefaultSubjectAttributes = _accessControlDefaultSubjectAttributes_;
+	final public AccessControlBuilder defaultSubjectAttributes(Submodel defaultSubjectAttributes) {
+		this.defaultAccessControl.defaultSubjectAttributes = defaultSubjectAttributes;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for accessControlSelectablePermissions
-	* @param _accessControlSelectablePermissions_ desired value to be set
-	* @return Builder object with new value for accessControlSelectablePermissions
+	* This function allows setting a value for selectablePermissions
+	* @param selectablePermissions desired value to be set
+	* @return Builder object with new value for selectablePermissions
 	*/
-	final public AccessControlBuilder _accessControlSelectablePermissions_(ISubmodel _accessControlSelectablePermissions_) {
-		this.accessControlImpl._accessControlSelectablePermissions = _accessControlSelectablePermissions_;
+	final public AccessControlBuilder selectablePermissions(Submodel selectablePermissions) {
+		this.defaultAccessControl.selectablePermissions = selectablePermissions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for accessControlDefaultPermissions
-	* @param _accessControlDefaultPermissions_ desired value to be set
-	* @return Builder object with new value for accessControlDefaultPermissions
+	* This function allows setting a value for defaultPermissions
+	* @param defaultPermissions desired value to be set
+	* @return Builder object with new value for defaultPermissions
 	*/
-	final public AccessControlBuilder _accessControlDefaultPermissions_(ISubmodel _accessControlDefaultPermissions_) {
-		this.accessControlImpl._accessControlDefaultPermissions = _accessControlDefaultPermissions_;
+	final public AccessControlBuilder defaultPermissions(Submodel defaultPermissions) {
+		this.defaultAccessControl.defaultPermissions = defaultPermissions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for accessControlSelectableEnvironmentAttributes
-	* @param _accessControlSelectableEnvironmentAttributes_ desired value to be set
-	* @return Builder object with new value for accessControlSelectableEnvironmentAttributes
+	* This function allows setting a value for selectableEnvironmentAttributes
+	* @param selectableEnvironmentAttributes desired value to be set
+	* @return Builder object with new value for selectableEnvironmentAttributes
 	*/
-	final public AccessControlBuilder _accessControlSelectableEnvironmentAttributes_(ISubmodel _accessControlSelectableEnvironmentAttributes_) {
-		this.accessControlImpl._accessControlSelectableEnvironmentAttributes = _accessControlSelectableEnvironmentAttributes_;
+	final public AccessControlBuilder selectableEnvironmentAttributes(Submodel selectableEnvironmentAttributes) {
+		this.defaultAccessControl.selectableEnvironmentAttributes = selectableEnvironmentAttributes;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for accessControlDefaultEnvironmentAttributes
-	* @param _accessControlDefaultEnvironmentAttributes_ desired value to be set
-	* @return Builder object with new value for accessControlDefaultEnvironmentAttributes
+	* This function allows setting a value for defaultEnvironmentAttributes
+	* @param defaultEnvironmentAttributes desired value to be set
+	* @return Builder object with new value for defaultEnvironmentAttributes
 	*/
-	final public AccessControlBuilder _accessControlDefaultEnvironmentAttributes_(ISubmodel _accessControlDefaultEnvironmentAttributes_) {
-		this.accessControlImpl._accessControlDefaultEnvironmentAttributes = _accessControlDefaultEnvironmentAttributes_;
+	final public AccessControlBuilder defaultEnvironmentAttributes(Submodel defaultEnvironmentAttributes) {
+		this.defaultAccessControl.defaultEnvironmentAttributes = defaultEnvironmentAttributes;
 		return this;
 	}
 	/**
@@ -124,8 +125,8 @@ public class AccessControlBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IAccessControl build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(accessControlImpl);
-		return accessControlImpl;
+	final public AccessControl build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultAccessControl);
+		return defaultAccessControl;
 	}
 }

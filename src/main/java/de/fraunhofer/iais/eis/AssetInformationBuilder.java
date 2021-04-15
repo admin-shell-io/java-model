@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,68 +33,68 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class AssetInformationBuilder {
 
-	private AssetInformationImpl assetInformationImpl;
+	private DefaultAssetInformation defaultAssetInformation;
 
 	public AssetInformationBuilder() {
-		assetInformationImpl = new AssetInformationImpl();
+		defaultAssetInformation = new DefaultAssetInformation();
 	}
 
 	public AssetInformationBuilder(URI id) {
 		this();
-		assetInformationImpl.id = id;
+		defaultAssetInformation.id = id;
 	}
 
 	/**
-	* This function allows setting a value for assetInformationAssetKind
-	* @param _assetInformationAssetKind_ desired value to be set
-	* @return Builder object with new value for assetInformationAssetKind
+	* This function allows setting a value for assetKind
+	* @param assetKind desired value to be set
+	* @return Builder object with new value for assetKind
 	*/
-	final public AssetInformationBuilder _assetInformationAssetKind_(ArrayList<? extends AssetKind> _assetInformationAssetKind_) {
-		this.assetInformationImpl._assetInformationAssetKind = _assetInformationAssetKind_;
+	final public AssetInformationBuilder assetKind(List<AssetKind> assetKind) {
+		this.defaultAssetInformation.assetKind = assetKind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for assetInformationGlobalAssetId
-	* @param _assetInformationGlobalAssetId_ desired value to be set
-	* @return Builder object with new value for assetInformationGlobalAssetId
+	* This function allows setting a value for globalAssetId
+	* @param globalAssetId desired value to be set
+	* @return Builder object with new value for globalAssetId
 	*/
-	final public AssetInformationBuilder _assetInformationGlobalAssetId_(IReference _assetInformationGlobalAssetId_) {
-		this.assetInformationImpl._assetInformationGlobalAssetId = _assetInformationGlobalAssetId_;
+	final public AssetInformationBuilder globalAssetId(Reference globalAssetId) {
+		this.defaultAssetInformation.globalAssetId = globalAssetId;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for assetInformationExternalAssetId
-	* @param _assetInformationExternalAssetId_ desired value to be set
-	* @return Builder object with new value for assetInformationExternalAssetId
+	* This function allows setting a value for externalAssetId
+	* @param externalAssetId desired value to be set
+	* @return Builder object with new value for externalAssetId
 	*/
-	final public AssetInformationBuilder _assetInformationExternalAssetId_(ArrayList<? extends IIdentifierKeyValuePair> _assetInformationExternalAssetId_) {
-		this.assetInformationImpl._assetInformationExternalAssetId = _assetInformationExternalAssetId_;
+	final public AssetInformationBuilder externalAssetId(List<IdentifierKeyValuePair> externalAssetId) {
+		this.defaultAssetInformation.externalAssetId = externalAssetId;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for assetInformationBillOfMaterial
-	* @param _assetInformationBillOfMaterial_ desired value to be set
-	* @return Builder object with new value for assetInformationBillOfMaterial
+	* This function allows setting a value for billOfMaterial
+	* @param billOfMaterial desired value to be set
+	* @return Builder object with new value for billOfMaterial
 	*/
-	final public AssetInformationBuilder _assetInformationBillOfMaterial_(ArrayList<? extends ISubmodel> _assetInformationBillOfMaterial_) {
-		this.assetInformationImpl._assetInformationBillOfMaterial = _assetInformationBillOfMaterial_;
+	final public AssetInformationBuilder billOfMaterial(List<Submodel> billOfMaterial) {
+		this.defaultAssetInformation.billOfMaterial = billOfMaterial;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for assetInformationThumbnail
-	* @param _assetInformationThumbnail_ desired value to be set
-	* @return Builder object with new value for assetInformationThumbnail
+	* This function allows setting a value for thumbnail
+	* @param thumbnail desired value to be set
+	* @return Builder object with new value for thumbnail
 	*/
-	final public AssetInformationBuilder _assetInformationThumbnail_(IFile _assetInformationThumbnail_) {
-		this.assetInformationImpl._assetInformationThumbnail = _assetInformationThumbnail_;
+	final public AssetInformationBuilder thumbnail(File thumbnail) {
+		this.defaultAssetInformation.thumbnail = thumbnail;
 		return this;
 	}
 	/**
@@ -102,8 +103,8 @@ public class AssetInformationBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IAssetInformation build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(assetInformationImpl);
-		return assetInformationImpl;
+	final public AssetInformation build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultAssetInformation);
+		return defaultAssetInformation;
 	}
 }

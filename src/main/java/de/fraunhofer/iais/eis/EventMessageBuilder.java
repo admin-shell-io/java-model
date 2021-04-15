@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,114 +33,114 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class EventMessageBuilder {
 
-	private EventMessageImpl eventMessageImpl;
+	private DefaultEventMessage defaultEventMessage;
 
 	public EventMessageBuilder() {
-		eventMessageImpl = new EventMessageImpl();
+		defaultEventMessage = new DefaultEventMessage();
 	}
 
 	public EventMessageBuilder(URI id) {
 		this();
-		eventMessageImpl.id = id;
+		defaultEventMessage.id = id;
 	}
 
 
 
 	/**
-	* This function allows setting a value for referableReferableCategory
-	* @param _referableReferableCategory_ desired value to be set
-	* @return Builder object with new value for referableReferableCategory
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public EventMessageBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
-		this.eventMessageImpl._referableReferableCategory = _referableReferableCategory_;
+	final public EventMessageBuilder referableCategory(List<String> referableCategory) {
+		this.defaultEventMessage.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescription
-	* @param _referableDescription_ desired value to be set
-	* @return Builder object with new value for referableDescription
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public EventMessageBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
-		this.eventMessageImpl._referableDescription = _referableDescription_;
+	final public EventMessageBuilder description(List<TypedLiteral> description) {
+		this.defaultEventMessage.description = description;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param _referableDisplayName_ desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public EventMessageBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
-		this.eventMessageImpl._referableDisplayName = _referableDisplayName_;
+	final public EventMessageBuilder displayName(TypedLiteral displayName) {
+		this.defaultEventMessage.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param _referableIdShort_ desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public EventMessageBuilder _referableIdShort_(String _referableIdShort_) {
-		this.eventMessageImpl._referableIdShort = _referableIdShort_;
+	final public EventMessageBuilder idShort(String idShort) {
+		this.defaultEventMessage.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param _referableParent_ desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public EventMessageBuilder _referableParent_(URI _referableParent_) {
-		this.eventMessageImpl._referableParent = _referableParent_;
+	final public EventMessageBuilder parent(URI parent) {
+		this.defaultEventMessage.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifier
-	* @param _qualifiableQualifier_ desired value to be set
-	* @return Builder object with new value for qualifiableQualifier
+	* This function allows setting a value for qualifier
+	* @param qualifier desired value to be set
+	* @return Builder object with new value for qualifier
 	*/
-	final public EventMessageBuilder _qualifiableQualifier_(ArrayList<? extends IConstraint> _qualifiableQualifier_) {
-		this.eventMessageImpl._qualifiableQualifier = _qualifiableQualifier_;
+	final public EventMessageBuilder qualifier(List<Constraint> qualifier) {
+		this.defaultEventMessage.qualifier = qualifier;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecification
-	* @param _hasDataSpecificationDataSpecification_ desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecification
+	* This function allows setting a value for dataSpecification
+	* @param dataSpecification desired value to be set
+	* @return Builder object with new value for dataSpecification
 	*/
-	final public EventMessageBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
-		this.eventMessageImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
+	final public EventMessageBuilder dataSpecification(List<Reference> dataSpecification) {
+		this.defaultEventMessage.dataSpecification = dataSpecification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param _hasKindKind_ desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public EventMessageBuilder _hasKindKind_(ModelingKind _hasKindKind_) {
-		this.eventMessageImpl._hasKindKind = _hasKindKind_;
+	final public EventMessageBuilder kind(ModelingKind kind) {
+		this.defaultEventMessage.kind = kind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param _hasSemanticsSemanticId_ desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public EventMessageBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
-		this.eventMessageImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
+	final public EventMessageBuilder semanticId(Reference semanticId) {
+		this.defaultEventMessage.semanticId = semanticId;
 		return this;
 	}
 	/**
@@ -148,8 +149,8 @@ public class EventMessageBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IEventMessage build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(eventMessageImpl);
-		return eventMessageImpl;
+	final public EventMessage build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultEventMessage);
+		return defaultEventMessage;
 	}
 }

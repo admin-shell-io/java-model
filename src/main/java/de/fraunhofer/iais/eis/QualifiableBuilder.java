@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,24 +33,24 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class QualifiableBuilder {
 
-	private QualifiableImpl qualifiableImpl;
+	private DefaultQualifiable defaultQualifiable;
 
 	public QualifiableBuilder() {
-		qualifiableImpl = new QualifiableImpl();
+		defaultQualifiable = new DefaultQualifiable();
 	}
 
 	public QualifiableBuilder(URI id) {
 		this();
-		qualifiableImpl.id = id;
+		defaultQualifiable.id = id;
 	}
 
 	/**
-	* This function allows setting a value for qualifiableQualifier
-	* @param _qualifiableQualifier_ desired value to be set
-	* @return Builder object with new value for qualifiableQualifier
+	* This function allows setting a value for qualifier
+	* @param qualifier desired value to be set
+	* @return Builder object with new value for qualifier
 	*/
-	final public QualifiableBuilder _qualifiableQualifier_(ArrayList<? extends IConstraint> _qualifiableQualifier_) {
-		this.qualifiableImpl._qualifiableQualifier = _qualifiableQualifier_;
+	final public QualifiableBuilder qualifier(List<Constraint> qualifier) {
+		this.defaultQualifiable.qualifier = qualifier;
 		return this;
 	}
 	/**
@@ -58,8 +59,8 @@ public class QualifiableBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IQualifiable build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(qualifiableImpl);
-		return qualifiableImpl;
+	final public Qualifiable build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultQualifiable);
+		return defaultQualifiable;
 	}
 }

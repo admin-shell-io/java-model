@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,24 +33,24 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class HasSemanticsBuilder {
 
-	private HasSemanticsImpl hasSemanticsImpl;
+	private DefaultHasSemantics defaultHasSemantics;
 
 	public HasSemanticsBuilder() {
-		hasSemanticsImpl = new HasSemanticsImpl();
+		defaultHasSemantics = new DefaultHasSemantics();
 	}
 
 	public HasSemanticsBuilder(URI id) {
 		this();
-		hasSemanticsImpl.id = id;
+		defaultHasSemantics.id = id;
 	}
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param _hasSemanticsSemanticId_ desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public HasSemanticsBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
-		this.hasSemanticsImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
+	final public HasSemanticsBuilder semanticId(Reference semanticId) {
+		this.defaultHasSemantics.semanticId = semanticId;
 		return this;
 	}
 	/**
@@ -58,8 +59,8 @@ public class HasSemanticsBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IHasSemantics build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(hasSemanticsImpl);
-		return hasSemanticsImpl;
+	final public HasSemantics build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultHasSemantics);
+		return defaultHasSemantics;
 	}
 }

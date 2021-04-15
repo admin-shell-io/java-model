@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,24 +33,24 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class HasDataSpecificationBuilder {
 
-	private HasDataSpecificationImpl hasDataSpecificationImpl;
+	private DefaultHasDataSpecification defaultHasDataSpecification;
 
 	public HasDataSpecificationBuilder() {
-		hasDataSpecificationImpl = new HasDataSpecificationImpl();
+		defaultHasDataSpecification = new DefaultHasDataSpecification();
 	}
 
 	public HasDataSpecificationBuilder(URI id) {
 		this();
-		hasDataSpecificationImpl.id = id;
+		defaultHasDataSpecification.id = id;
 	}
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecification
-	* @param _hasDataSpecificationDataSpecification_ desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecification
+	* This function allows setting a value for dataSpecification
+	* @param dataSpecification desired value to be set
+	* @return Builder object with new value for dataSpecification
 	*/
-	final public HasDataSpecificationBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
-		this.hasDataSpecificationImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
+	final public HasDataSpecificationBuilder dataSpecification(List<Reference> dataSpecification) {
+		this.defaultHasDataSpecification.dataSpecification = dataSpecification;
 		return this;
 	}
 	/**
@@ -58,8 +59,8 @@ public class HasDataSpecificationBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IHasDataSpecification build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(hasDataSpecificationImpl);
-		return hasDataSpecificationImpl;
+	final public HasDataSpecification build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultHasDataSpecification);
+		return defaultHasDataSpecification;
 	}
 }

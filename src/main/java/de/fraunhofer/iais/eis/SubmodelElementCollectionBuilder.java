@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,146 +33,146 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class SubmodelElementCollectionBuilder {
 
-	private SubmodelElementCollectionImpl submodelElementCollectionImpl;
+	private DefaultSubmodelElementCollection defaultSubmodelElementCollection;
 
 	public SubmodelElementCollectionBuilder() {
-		submodelElementCollectionImpl = new SubmodelElementCollectionImpl();
+		defaultSubmodelElementCollection = new DefaultSubmodelElementCollection();
 	}
 
 	public SubmodelElementCollectionBuilder(URI id) {
 		this();
-		submodelElementCollectionImpl.id = id;
+		defaultSubmodelElementCollection.id = id;
 	}
 
 	/**
-	* This function allows setting a value for submodelElementCollectionAllowDuplicates
-	* @param _submodelElementCollectionAllowDuplicates_ desired value to be set
-	* @return Builder object with new value for submodelElementCollectionAllowDuplicates
+	* This function allows setting a value for allowDuplicates
+	* @param allowDuplicates desired value to be set
+	* @return Builder object with new value for allowDuplicates
 	*/
-	final public SubmodelElementCollectionBuilder _submodelElementCollectionAllowDuplicates_(boolean _submodelElementCollectionAllowDuplicates_) {
-		this.submodelElementCollectionImpl._submodelElementCollectionAllowDuplicates = _submodelElementCollectionAllowDuplicates_;
+	final public SubmodelElementCollectionBuilder allowDuplicates(boolean allowDuplicates) {
+		this.defaultSubmodelElementCollection.allowDuplicates = allowDuplicates;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for submodelElementCollectionOrdered
-	* @param _submodelElementCollectionOrdered_ desired value to be set
-	* @return Builder object with new value for submodelElementCollectionOrdered
+	* This function allows setting a value for ordered
+	* @param ordered desired value to be set
+	* @return Builder object with new value for ordered
 	*/
-	final public SubmodelElementCollectionBuilder _submodelElementCollectionOrdered_(boolean _submodelElementCollectionOrdered_) {
-		this.submodelElementCollectionImpl._submodelElementCollectionOrdered = _submodelElementCollectionOrdered_;
+	final public SubmodelElementCollectionBuilder ordered(boolean ordered) {
+		this.defaultSubmodelElementCollection.ordered = ordered;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for submodelElementCollectionValue
-	* @param _submodelElementCollectionValue_ desired value to be set
-	* @return Builder object with new value for submodelElementCollectionValue
+	* This function allows setting a value for value
+	* @param value desired value to be set
+	* @return Builder object with new value for value
 	*/
-	final public SubmodelElementCollectionBuilder _submodelElementCollectionValue_(ArrayList<? extends ISubmodelElement> _submodelElementCollectionValue_) {
-		this.submodelElementCollectionImpl._submodelElementCollectionValue = _submodelElementCollectionValue_;
+	final public SubmodelElementCollectionBuilder value(List<SubmodelElement> value) {
+		this.defaultSubmodelElementCollection.value = value;
 		return this;
 	}
 
 
 
 	/**
-	* This function allows setting a value for referableReferableCategory
-	* @param _referableReferableCategory_ desired value to be set
-	* @return Builder object with new value for referableReferableCategory
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public SubmodelElementCollectionBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
-		this.submodelElementCollectionImpl._referableReferableCategory = _referableReferableCategory_;
+	final public SubmodelElementCollectionBuilder referableCategory(List<String> referableCategory) {
+		this.defaultSubmodelElementCollection.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescription
-	* @param _referableDescription_ desired value to be set
-	* @return Builder object with new value for referableDescription
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public SubmodelElementCollectionBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
-		this.submodelElementCollectionImpl._referableDescription = _referableDescription_;
+	final public SubmodelElementCollectionBuilder description(List<TypedLiteral> description) {
+		this.defaultSubmodelElementCollection.description = description;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param _referableDisplayName_ desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public SubmodelElementCollectionBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
-		this.submodelElementCollectionImpl._referableDisplayName = _referableDisplayName_;
+	final public SubmodelElementCollectionBuilder displayName(TypedLiteral displayName) {
+		this.defaultSubmodelElementCollection.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param _referableIdShort_ desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public SubmodelElementCollectionBuilder _referableIdShort_(String _referableIdShort_) {
-		this.submodelElementCollectionImpl._referableIdShort = _referableIdShort_;
+	final public SubmodelElementCollectionBuilder idShort(String idShort) {
+		this.defaultSubmodelElementCollection.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param _referableParent_ desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public SubmodelElementCollectionBuilder _referableParent_(URI _referableParent_) {
-		this.submodelElementCollectionImpl._referableParent = _referableParent_;
+	final public SubmodelElementCollectionBuilder parent(URI parent) {
+		this.defaultSubmodelElementCollection.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifier
-	* @param _qualifiableQualifier_ desired value to be set
-	* @return Builder object with new value for qualifiableQualifier
+	* This function allows setting a value for qualifier
+	* @param qualifier desired value to be set
+	* @return Builder object with new value for qualifier
 	*/
-	final public SubmodelElementCollectionBuilder _qualifiableQualifier_(ArrayList<? extends IConstraint> _qualifiableQualifier_) {
-		this.submodelElementCollectionImpl._qualifiableQualifier = _qualifiableQualifier_;
+	final public SubmodelElementCollectionBuilder qualifier(List<Constraint> qualifier) {
+		this.defaultSubmodelElementCollection.qualifier = qualifier;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecification
-	* @param _hasDataSpecificationDataSpecification_ desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecification
+	* This function allows setting a value for dataSpecification
+	* @param dataSpecification desired value to be set
+	* @return Builder object with new value for dataSpecification
 	*/
-	final public SubmodelElementCollectionBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
-		this.submodelElementCollectionImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
+	final public SubmodelElementCollectionBuilder dataSpecification(List<Reference> dataSpecification) {
+		this.defaultSubmodelElementCollection.dataSpecification = dataSpecification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param _hasKindKind_ desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public SubmodelElementCollectionBuilder _hasKindKind_(ModelingKind _hasKindKind_) {
-		this.submodelElementCollectionImpl._hasKindKind = _hasKindKind_;
+	final public SubmodelElementCollectionBuilder kind(ModelingKind kind) {
+		this.defaultSubmodelElementCollection.kind = kind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param _hasSemanticsSemanticId_ desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public SubmodelElementCollectionBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
-		this.submodelElementCollectionImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
+	final public SubmodelElementCollectionBuilder semanticId(Reference semanticId) {
+		this.defaultSubmodelElementCollection.semanticId = semanticId;
 		return this;
 	}
 	/**
@@ -180,8 +181,8 @@ public class SubmodelElementCollectionBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public ISubmodelElementCollection build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(submodelElementCollectionImpl);
-		return submodelElementCollectionImpl;
+	final public SubmodelElementCollection build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultSubmodelElementCollection);
+		return defaultSubmodelElementCollection;
 	}
 }

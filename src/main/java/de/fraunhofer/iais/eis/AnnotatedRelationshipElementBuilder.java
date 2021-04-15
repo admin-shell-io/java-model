@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,146 +33,146 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class AnnotatedRelationshipElementBuilder {
 
-	private AnnotatedRelationshipElementImpl annotatedRelationshipElementImpl;
+	private DefaultAnnotatedRelationshipElement defaultAnnotatedRelationshipElement;
 
 	public AnnotatedRelationshipElementBuilder() {
-		annotatedRelationshipElementImpl = new AnnotatedRelationshipElementImpl();
+		defaultAnnotatedRelationshipElement = new DefaultAnnotatedRelationshipElement();
 	}
 
 	public AnnotatedRelationshipElementBuilder(URI id) {
 		this();
-		annotatedRelationshipElementImpl.id = id;
+		defaultAnnotatedRelationshipElement.id = id;
 	}
 
 	/**
-	* This function allows setting a value for annotatedRelationshipElementAnnotation
-	* @param _annotatedRelationshipElementAnnotation_ desired value to be set
-	* @return Builder object with new value for annotatedRelationshipElementAnnotation
+	* This function allows setting a value for annotation
+	* @param annotation desired value to be set
+	* @return Builder object with new value for annotation
 	*/
-	final public AnnotatedRelationshipElementBuilder _annotatedRelationshipElementAnnotation_(ArrayList<? extends IDataElement> _annotatedRelationshipElementAnnotation_) {
-		this.annotatedRelationshipElementImpl._annotatedRelationshipElementAnnotation = _annotatedRelationshipElementAnnotation_;
+	final public AnnotatedRelationshipElementBuilder annotation(List<DataElement> annotation) {
+		this.defaultAnnotatedRelationshipElement.annotation = annotation;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for relationshipElementFirst
-	* @param _relationshipElementFirst_ desired value to be set
-	* @return Builder object with new value for relationshipElementFirst
+	* This function allows setting a value for first
+	* @param first desired value to be set
+	* @return Builder object with new value for first
 	*/
-	final public AnnotatedRelationshipElementBuilder _relationshipElementFirst_(IReferable _relationshipElementFirst_) {
-		this.annotatedRelationshipElementImpl._relationshipElementFirst = _relationshipElementFirst_;
+	final public AnnotatedRelationshipElementBuilder first(Referable first) {
+		this.defaultAnnotatedRelationshipElement.first = first;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for relationshipElementSecond
-	* @param _relationshipElementSecond_ desired value to be set
-	* @return Builder object with new value for relationshipElementSecond
+	* This function allows setting a value for second
+	* @param second desired value to be set
+	* @return Builder object with new value for second
 	*/
-	final public AnnotatedRelationshipElementBuilder _relationshipElementSecond_(IReferable _relationshipElementSecond_) {
-		this.annotatedRelationshipElementImpl._relationshipElementSecond = _relationshipElementSecond_;
+	final public AnnotatedRelationshipElementBuilder second(Referable second) {
+		this.defaultAnnotatedRelationshipElement.second = second;
 		return this;
 	}
 
 
 
 	/**
-	* This function allows setting a value for referableReferableCategory
-	* @param _referableReferableCategory_ desired value to be set
-	* @return Builder object with new value for referableReferableCategory
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public AnnotatedRelationshipElementBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
-		this.annotatedRelationshipElementImpl._referableReferableCategory = _referableReferableCategory_;
+	final public AnnotatedRelationshipElementBuilder referableCategory(List<String> referableCategory) {
+		this.defaultAnnotatedRelationshipElement.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescription
-	* @param _referableDescription_ desired value to be set
-	* @return Builder object with new value for referableDescription
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public AnnotatedRelationshipElementBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
-		this.annotatedRelationshipElementImpl._referableDescription = _referableDescription_;
+	final public AnnotatedRelationshipElementBuilder description(List<TypedLiteral> description) {
+		this.defaultAnnotatedRelationshipElement.description = description;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param _referableDisplayName_ desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public AnnotatedRelationshipElementBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
-		this.annotatedRelationshipElementImpl._referableDisplayName = _referableDisplayName_;
+	final public AnnotatedRelationshipElementBuilder displayName(TypedLiteral displayName) {
+		this.defaultAnnotatedRelationshipElement.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param _referableIdShort_ desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public AnnotatedRelationshipElementBuilder _referableIdShort_(String _referableIdShort_) {
-		this.annotatedRelationshipElementImpl._referableIdShort = _referableIdShort_;
+	final public AnnotatedRelationshipElementBuilder idShort(String idShort) {
+		this.defaultAnnotatedRelationshipElement.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param _referableParent_ desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public AnnotatedRelationshipElementBuilder _referableParent_(URI _referableParent_) {
-		this.annotatedRelationshipElementImpl._referableParent = _referableParent_;
+	final public AnnotatedRelationshipElementBuilder parent(URI parent) {
+		this.defaultAnnotatedRelationshipElement.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifier
-	* @param _qualifiableQualifier_ desired value to be set
-	* @return Builder object with new value for qualifiableQualifier
+	* This function allows setting a value for qualifier
+	* @param qualifier desired value to be set
+	* @return Builder object with new value for qualifier
 	*/
-	final public AnnotatedRelationshipElementBuilder _qualifiableQualifier_(ArrayList<? extends IConstraint> _qualifiableQualifier_) {
-		this.annotatedRelationshipElementImpl._qualifiableQualifier = _qualifiableQualifier_;
+	final public AnnotatedRelationshipElementBuilder qualifier(List<Constraint> qualifier) {
+		this.defaultAnnotatedRelationshipElement.qualifier = qualifier;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecification
-	* @param _hasDataSpecificationDataSpecification_ desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecification
+	* This function allows setting a value for dataSpecification
+	* @param dataSpecification desired value to be set
+	* @return Builder object with new value for dataSpecification
 	*/
-	final public AnnotatedRelationshipElementBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
-		this.annotatedRelationshipElementImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
+	final public AnnotatedRelationshipElementBuilder dataSpecification(List<Reference> dataSpecification) {
+		this.defaultAnnotatedRelationshipElement.dataSpecification = dataSpecification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param _hasKindKind_ desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public AnnotatedRelationshipElementBuilder _hasKindKind_(ModelingKind _hasKindKind_) {
-		this.annotatedRelationshipElementImpl._hasKindKind = _hasKindKind_;
+	final public AnnotatedRelationshipElementBuilder kind(ModelingKind kind) {
+		this.defaultAnnotatedRelationshipElement.kind = kind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param _hasSemanticsSemanticId_ desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public AnnotatedRelationshipElementBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
-		this.annotatedRelationshipElementImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
+	final public AnnotatedRelationshipElementBuilder semanticId(Reference semanticId) {
+		this.defaultAnnotatedRelationshipElement.semanticId = semanticId;
 		return this;
 	}
 	/**
@@ -180,8 +181,8 @@ public class AnnotatedRelationshipElementBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IAnnotatedRelationshipElement build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(annotatedRelationshipElementImpl);
-		return annotatedRelationshipElementImpl;
+	final public AnnotatedRelationshipElement build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultAnnotatedRelationshipElement);
+		return defaultAnnotatedRelationshipElement;
 	}
 }

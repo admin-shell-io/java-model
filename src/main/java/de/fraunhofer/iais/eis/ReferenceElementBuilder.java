@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,24 +33,24 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class ReferenceElementBuilder {
 
-	private ReferenceElementImpl referenceElementImpl;
+	private DefaultReferenceElement defaultReferenceElement;
 
 	public ReferenceElementBuilder() {
-		referenceElementImpl = new ReferenceElementImpl();
+		defaultReferenceElement = new DefaultReferenceElement();
 	}
 
 	public ReferenceElementBuilder(URI id) {
 		this();
-		referenceElementImpl.id = id;
+		defaultReferenceElement.id = id;
 	}
 
 	/**
-	* This function allows setting a value for referenceElementValue
-	* @param _referenceElementValue_ desired value to be set
-	* @return Builder object with new value for referenceElementValue
+	* This function allows setting a value for value
+	* @param value desired value to be set
+	* @return Builder object with new value for value
 	*/
-	final public ReferenceElementBuilder _referenceElementValue_(IReference _referenceElementValue_) {
-		this.referenceElementImpl._referenceElementValue = _referenceElementValue_;
+	final public ReferenceElementBuilder value(Reference value) {
+		this.defaultReferenceElement.value = value;
 		return this;
 	}
 
@@ -57,100 +58,100 @@ public class ReferenceElementBuilder {
 
 
 	/**
-	* This function allows setting a value for referableReferableCategory
-	* @param _referableReferableCategory_ desired value to be set
-	* @return Builder object with new value for referableReferableCategory
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public ReferenceElementBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
-		this.referenceElementImpl._referableReferableCategory = _referableReferableCategory_;
+	final public ReferenceElementBuilder referableCategory(List<String> referableCategory) {
+		this.defaultReferenceElement.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescription
-	* @param _referableDescription_ desired value to be set
-	* @return Builder object with new value for referableDescription
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public ReferenceElementBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
-		this.referenceElementImpl._referableDescription = _referableDescription_;
+	final public ReferenceElementBuilder description(List<TypedLiteral> description) {
+		this.defaultReferenceElement.description = description;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param _referableDisplayName_ desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public ReferenceElementBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
-		this.referenceElementImpl._referableDisplayName = _referableDisplayName_;
+	final public ReferenceElementBuilder displayName(TypedLiteral displayName) {
+		this.defaultReferenceElement.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param _referableIdShort_ desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public ReferenceElementBuilder _referableIdShort_(String _referableIdShort_) {
-		this.referenceElementImpl._referableIdShort = _referableIdShort_;
+	final public ReferenceElementBuilder idShort(String idShort) {
+		this.defaultReferenceElement.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param _referableParent_ desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public ReferenceElementBuilder _referableParent_(URI _referableParent_) {
-		this.referenceElementImpl._referableParent = _referableParent_;
+	final public ReferenceElementBuilder parent(URI parent) {
+		this.defaultReferenceElement.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifier
-	* @param _qualifiableQualifier_ desired value to be set
-	* @return Builder object with new value for qualifiableQualifier
+	* This function allows setting a value for qualifier
+	* @param qualifier desired value to be set
+	* @return Builder object with new value for qualifier
 	*/
-	final public ReferenceElementBuilder _qualifiableQualifier_(ArrayList<? extends IConstraint> _qualifiableQualifier_) {
-		this.referenceElementImpl._qualifiableQualifier = _qualifiableQualifier_;
+	final public ReferenceElementBuilder qualifier(List<Constraint> qualifier) {
+		this.defaultReferenceElement.qualifier = qualifier;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecification
-	* @param _hasDataSpecificationDataSpecification_ desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecification
+	* This function allows setting a value for dataSpecification
+	* @param dataSpecification desired value to be set
+	* @return Builder object with new value for dataSpecification
 	*/
-	final public ReferenceElementBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
-		this.referenceElementImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
+	final public ReferenceElementBuilder dataSpecification(List<Reference> dataSpecification) {
+		this.defaultReferenceElement.dataSpecification = dataSpecification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param _hasKindKind_ desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public ReferenceElementBuilder _hasKindKind_(ModelingKind _hasKindKind_) {
-		this.referenceElementImpl._hasKindKind = _hasKindKind_;
+	final public ReferenceElementBuilder kind(ModelingKind kind) {
+		this.defaultReferenceElement.kind = kind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param _hasSemanticsSemanticId_ desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public ReferenceElementBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
-		this.referenceElementImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
+	final public ReferenceElementBuilder semanticId(Reference semanticId) {
+		this.defaultReferenceElement.semanticId = semanticId;
 		return this;
 	}
 	/**
@@ -159,8 +160,8 @@ public class ReferenceElementBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IReferenceElement build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(referenceElementImpl);
-		return referenceElementImpl;
+	final public ReferenceElement build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultReferenceElement);
+		return defaultReferenceElement;
 	}
 }

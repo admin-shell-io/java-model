@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,114 +33,114 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class DataElementBuilder {
 
-	private DataElementImpl dataElementImpl;
+	private DefaultDataElement defaultDataElement;
 
 	public DataElementBuilder() {
-		dataElementImpl = new DataElementImpl();
+		defaultDataElement = new DefaultDataElement();
 	}
 
 	public DataElementBuilder(URI id) {
 		this();
-		dataElementImpl.id = id;
+		defaultDataElement.id = id;
 	}
 
 
 
 	/**
-	* This function allows setting a value for referableReferableCategory
-	* @param _referableReferableCategory_ desired value to be set
-	* @return Builder object with new value for referableReferableCategory
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public DataElementBuilder _referableReferableCategory_(ArrayList<? extends String> _referableReferableCategory_) {
-		this.dataElementImpl._referableReferableCategory = _referableReferableCategory_;
+	final public DataElementBuilder referableCategory(List<String> referableCategory) {
+		this.defaultDataElement.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescription
-	* @param _referableDescription_ desired value to be set
-	* @return Builder object with new value for referableDescription
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public DataElementBuilder _referableDescription_(ArrayList<? extends TypedLiteral> _referableDescription_) {
-		this.dataElementImpl._referableDescription = _referableDescription_;
+	final public DataElementBuilder description(List<TypedLiteral> description) {
+		this.defaultDataElement.description = description;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param _referableDisplayName_ desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public DataElementBuilder _referableDisplayName_(TypedLiteral _referableDisplayName_) {
-		this.dataElementImpl._referableDisplayName = _referableDisplayName_;
+	final public DataElementBuilder displayName(TypedLiteral displayName) {
+		this.defaultDataElement.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param _referableIdShort_ desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public DataElementBuilder _referableIdShort_(String _referableIdShort_) {
-		this.dataElementImpl._referableIdShort = _referableIdShort_;
+	final public DataElementBuilder idShort(String idShort) {
+		this.defaultDataElement.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param _referableParent_ desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public DataElementBuilder _referableParent_(URI _referableParent_) {
-		this.dataElementImpl._referableParent = _referableParent_;
+	final public DataElementBuilder parent(URI parent) {
+		this.defaultDataElement.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifier
-	* @param _qualifiableQualifier_ desired value to be set
-	* @return Builder object with new value for qualifiableQualifier
+	* This function allows setting a value for qualifier
+	* @param qualifier desired value to be set
+	* @return Builder object with new value for qualifier
 	*/
-	final public DataElementBuilder _qualifiableQualifier_(ArrayList<? extends IConstraint> _qualifiableQualifier_) {
-		this.dataElementImpl._qualifiableQualifier = _qualifiableQualifier_;
+	final public DataElementBuilder qualifier(List<Constraint> qualifier) {
+		this.defaultDataElement.qualifier = qualifier;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecification
-	* @param _hasDataSpecificationDataSpecification_ desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecification
+	* This function allows setting a value for dataSpecification
+	* @param dataSpecification desired value to be set
+	* @return Builder object with new value for dataSpecification
 	*/
-	final public DataElementBuilder _hasDataSpecificationDataSpecification_(ArrayList<? extends IReference> _hasDataSpecificationDataSpecification_) {
-		this.dataElementImpl._hasDataSpecificationDataSpecification = _hasDataSpecificationDataSpecification_;
+	final public DataElementBuilder dataSpecification(List<Reference> dataSpecification) {
+		this.defaultDataElement.dataSpecification = dataSpecification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param _hasKindKind_ desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public DataElementBuilder _hasKindKind_(ModelingKind _hasKindKind_) {
-		this.dataElementImpl._hasKindKind = _hasKindKind_;
+	final public DataElementBuilder kind(ModelingKind kind) {
+		this.defaultDataElement.kind = kind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param _hasSemanticsSemanticId_ desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public DataElementBuilder _hasSemanticsSemanticId_(IReference _hasSemanticsSemanticId_) {
-		this.dataElementImpl._hasSemanticsSemanticId = _hasSemanticsSemanticId_;
+	final public DataElementBuilder semanticId(Reference semanticId) {
+		this.defaultDataElement.semanticId = semanticId;
 		return this;
 	}
 	/**
@@ -148,8 +149,8 @@ public class DataElementBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IDataElement build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(dataElementImpl);
-		return dataElementImpl;
+	final public DataElement build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultDataElement);
+		return defaultDataElement;
 	}
 }

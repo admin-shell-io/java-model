@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,57 +33,57 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class BlobCertificateBuilder {
 
-	private BlobCertificateImpl blobCertificateImpl;
+	private DefaultBlobCertificate defaultBlobCertificate;
 
 	public BlobCertificateBuilder() {
-		blobCertificateImpl = new BlobCertificateImpl();
+		defaultBlobCertificate = new DefaultBlobCertificate();
 	}
 
 	public BlobCertificateBuilder(URI id) {
 		this();
-		blobCertificateImpl.id = id;
+		defaultBlobCertificate.id = id;
 	}
 
 	/**
-	* This function allows setting a value for blobCertificateBlobCertificate
-	* @param _blobCertificateBlobCertificate_ desired value to be set
-	* @return Builder object with new value for blobCertificateBlobCertificate
+	* This function allows setting a value for blobCertificate
+	* @param blobCertificate desired value to be set
+	* @return Builder object with new value for blobCertificate
 	*/
-	final public BlobCertificateBuilder _blobCertificateBlobCertificate_(byte _blobCertificateBlobCertificate_) {
-		this.blobCertificateImpl._blobCertificateBlobCertificate = _blobCertificateBlobCertificate_;
+	final public BlobCertificateBuilder blobCertificate(byte blobCertificate) {
+		this.defaultBlobCertificate.blobCertificate = blobCertificate;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for blobCertificateContainedExtension
-	* @param _blobCertificateContainedExtension_ desired value to be set
-	* @return Builder object with new value for blobCertificateContainedExtension
+	* This function allows setting a value for containedExtension
+	* @param containedExtension desired value to be set
+	* @return Builder object with new value for containedExtension
 	*/
-	final public BlobCertificateBuilder _blobCertificateContainedExtension_(ArrayList<? extends IReference> _blobCertificateContainedExtension_) {
-		this.blobCertificateImpl._blobCertificateContainedExtension = _blobCertificateContainedExtension_;
+	final public BlobCertificateBuilder containedExtension(List<Reference> containedExtension) {
+		this.defaultBlobCertificate.containedExtension = containedExtension;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for blobCertificateLastCertificate
-	* @param _blobCertificateLastCertificate_ desired value to be set
-	* @return Builder object with new value for blobCertificateLastCertificate
+	* This function allows setting a value for lastCertificate
+	* @param lastCertificate desired value to be set
+	* @return Builder object with new value for lastCertificate
 	*/
-	final public BlobCertificateBuilder _blobCertificateLastCertificate_(boolean _blobCertificateLastCertificate_) {
-		this.blobCertificateImpl._blobCertificateLastCertificate = _blobCertificateLastCertificate_;
+	final public BlobCertificateBuilder lastCertificate(boolean lastCertificate) {
+		this.defaultBlobCertificate.lastCertificate = lastCertificate;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for certificatePolicyAdministrationPoint
-	* @param _certificatePolicyAdministrationPoint_ desired value to be set
-	* @return Builder object with new value for certificatePolicyAdministrationPoint
+	* This function allows setting a value for policyAdministrationPoint
+	* @param policyAdministrationPoint desired value to be set
+	* @return Builder object with new value for policyAdministrationPoint
 	*/
-	final public BlobCertificateBuilder _certificatePolicyAdministrationPoint_(IPolicyAdministrationPoint _certificatePolicyAdministrationPoint_) {
-		this.blobCertificateImpl._certificatePolicyAdministrationPoint = _certificatePolicyAdministrationPoint_;
+	final public BlobCertificateBuilder policyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint) {
+		this.defaultBlobCertificate.policyAdministrationPoint = policyAdministrationPoint;
 		return this;
 	}
 	/**
@@ -91,8 +92,8 @@ public class BlobCertificateBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IBlobCertificate build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(blobCertificateImpl);
-		return blobCertificateImpl;
+	final public BlobCertificate build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultBlobCertificate);
+		return defaultBlobCertificate;
 	}
 }

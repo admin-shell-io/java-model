@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,46 +33,46 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class KeyBuilder {
 
-	private KeyImpl keyImpl;
+	private DefaultKey defaultKey;
 
 	public KeyBuilder() {
-		keyImpl = new KeyImpl();
+		defaultKey = new DefaultKey();
 	}
 
 	public KeyBuilder(URI id) {
 		this();
-		keyImpl.id = id;
+		defaultKey.id = id;
 	}
 
 	/**
-	* This function allows setting a value for keyIdType
-	* @param _keyIdType_ desired value to be set
-	* @return Builder object with new value for keyIdType
+	* This function allows setting a value for idType
+	* @param idType desired value to be set
+	* @return Builder object with new value for idType
 	*/
-	final public KeyBuilder _keyIdType_(KeyType _keyIdType_) {
-		this.keyImpl._keyIdType = _keyIdType_;
+	final public KeyBuilder idType(KeyType idType) {
+		this.defaultKey.idType = idType;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for keyType
-	* @param _keyType_ desired value to be set
-	* @return Builder object with new value for keyType
+	* This function allows setting a value for type
+	* @param type desired value to be set
+	* @return Builder object with new value for type
 	*/
-	final public KeyBuilder _keyType_(KeyElements _keyType_) {
-		this.keyImpl._keyType = _keyType_;
+	final public KeyBuilder type(KeyElements type) {
+		this.defaultKey.type = type;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for keyValue
-	* @param _keyValue_ desired value to be set
-	* @return Builder object with new value for keyValue
+	* This function allows setting a value for value
+	* @param value desired value to be set
+	* @return Builder object with new value for value
 	*/
-	final public KeyBuilder _keyValue_(String _keyValue_) {
-		this.keyImpl._keyValue = _keyValue_;
+	final public KeyBuilder value(String value) {
+		this.defaultKey.value = value;
 		return this;
 	}
 	/**
@@ -80,8 +81,8 @@ public class KeyBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IKey build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(keyImpl);
-		return keyImpl;
+	final public Key build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultKey);
+		return defaultKey;
 	}
 }

@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -32,24 +33,24 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class FormulaBuilder {
 
-	private FormulaImpl formulaImpl;
+	private DefaultFormula defaultFormula;
 
 	public FormulaBuilder() {
-		formulaImpl = new FormulaImpl();
+		defaultFormula = new DefaultFormula();
 	}
 
 	public FormulaBuilder(URI id) {
 		this();
-		formulaImpl.id = id;
+		defaultFormula.id = id;
 	}
 
 	/**
-	* This function allows setting a value for formulaDependsOn
-	* @param _formulaDependsOn_ desired value to be set
-	* @return Builder object with new value for formulaDependsOn
+	* This function allows setting a value for dependsOn
+	* @param dependsOn desired value to be set
+	* @return Builder object with new value for dependsOn
 	*/
-	final public FormulaBuilder _formulaDependsOn_(ArrayList<? extends IReference> _formulaDependsOn_) {
-		this.formulaImpl._formulaDependsOn = _formulaDependsOn_;
+	final public FormulaBuilder dependsOn(List<Reference> dependsOn) {
+		this.defaultFormula.dependsOn = dependsOn;
 		return this;
 	}
 
@@ -59,8 +60,8 @@ public class FormulaBuilder {
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
 
-	final public IFormula build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(formulaImpl);
-		return formulaImpl;
+	final public Formula build() throws ConstraintViolationException {
+		VocabUtil.getInstance().validate(defaultFormula);
+		return defaultFormula;
 	}
 }
