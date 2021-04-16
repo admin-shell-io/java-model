@@ -1,0 +1,141 @@
+@prefix aas: <https://admin-shell.io/aas/3/0/RC01/> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <https://admin-shell.io/aas/3/0/RC01/> .
+
+<https://admin-shell.io/aas/3/0/RC01/> rdf:type owl:Ontology ;
+    vann:preferredNamespaceUri "https://admin-shell.io/aas/3/0/RC01/"^^xsd:anyURI ;
+    owl:versionInfo "3.0.RC01" ;
+    rdfs:comment "This ontology represents the data model for the Asset Administration Shell according to the specification 'Details of the Asset Administration Shell - Part 1 - Version 3.0.RC01'."@en ;
+    skos:prefLabel "aas"^^xsd:string ;
+    vann:preferredNamespacePrefix "aas"^^xsd:string ;
+    rdfs:isDefinedBy <https://admin-shell.io/aas/3/0/RC01/> ;
+.
+
+###  https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell
+aas:AssetAdministrationShell rdf:type owl:Class ;
+    #rdfs:subClassOf aas:HasDataSpecification , aas:Identifiable ;
+    rdfs:label "Asset Administration Shell"^^xsd:string ;
+    skos:altLabel "Administration Shell"@en , "Verwaltungsschale"@de ;
+    skos:definition "Describes the Administration Shell for Assets, Products, Components, e.g. Machines"@en ;
+    rdfs:comment "Describes the Administration Shell for Assets, Products, Components, e.g. Machines"@en ;
+    skos:prefLabel "Asset Administration Shell"^^xsd:string ;
+.
+
+###  https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation
+#<https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation> rdf:type owl:ObjectProperty ;
+#    rdfs:domain aas:AssetAdministrationShell ;
+#    rdfs:range aas:AssetInformation ; # AssetInformation was deleted
+#    rdfs:comment "Meta information about the asset the AAS is representing."@en ;
+#    rdfs:label "has assetInformation"^^xsd:string ;
+#.
+
+
+###  https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom
+#<https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom> rdf:type owl:ObjectProperty ;
+#    rdfs:subPropertyOf <http://www.w3.org/TR/2013/REC-prov-o-20130430/#wasDerivedFrom> ;
+#    rdfs:domain aas:AssetAdministrationShell ;
+#    rdfs:range aas:Reference ; #Reference was deleted
+#    rdfs:comment "This relation connects instances of AAS with their respective types. Refer to Asset Kind for further information of instance and type kinds."@en ;
+#    rdfs:label "was derived from"^^xsd:string ;
+#.
+
+###  https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security
+#<https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security> rdf:type owl:ObjectProperty ;
+#    rdfs:comment "Definition of the security relevant aspects of the AAS."@en ;
+#    rdfs:label "has security"^^xsd:string ;
+#    rdfs:domain aas:AssetAdministrationShell ;
+#    rdfs:range aas:Security ; # Security was deleted
+#.
+
+###  https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel
+<https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel> rdf:type owl:ObjectProperty ;
+    rdfs:domain aas:AssetAdministrationShell ;
+    rdfs:range aas:Submodel ;
+    rdfs:comment "Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset"@en ;
+    rdfs:label "has Submodel"^^xsd:string ;
+.
+
+###  https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view
+#<https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view> rdf:type owl:ObjectProperty ;
+#    rdfs:domain aas:AssetAdministrationShell;
+#    rdfs:range aas:View ; # View was deleted
+#    rdfs:comment "Points to the differents views associated to the Administration Shell via the Submodels."@en ;
+#    rdfs:label "has View"^^xsd:string ;
+#    skos:prefLabel "view"^^xsd:string ;
+#.
+
+###  https://admin-shell.io/aas/3/0/RC01/Submodel
+aas:Submodel rdf:type owl:Class ;
+    #rdfs:subClassOf aas:HasDataSpecification ;
+    #rdfs:subClassOf aas:HasKind ;
+    #rdfs:subClassOf aas:HasSemantics ;
+    #rdfs:subClassOf aas:Identifiable ;
+    #rdfs:subClassOf aas:Qualifiable ;
+    rdfs:comment "A Submodel defines a specific aspect of the asset represented by the AAS. A submodel is used to structure the virtual representation and technical functionality of an Administration Shell into distinguishable parts. Each submodel refers to a well-defined domain or subject matter. Submodels can become standardized and thus become submodels types. Submodels can have different life-cycles."@en ,
+    "Describe the different types of Data related to the I4.0 Asset"@en ;
+    rdfs:label "Submodel"^^xsd:string ;
+	skos:note "Constraint AASd-062: The semanticId of a Submodel shall only reference a ConceptDescription with the category APPLICATION_CLASS."@en ;
+.
+
+###  https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement
+<https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement> rdf:type owl:ObjectProperty ;
+    rdfs:domain aas:Submodel ;
+    rdfs:range aas:SubmodelElement ;
+    rdfs:comment "A submodel consists of zero or more submodel elements."@en ;
+    rdfs:label "has Submodel Element"^^xsd:string ;
+.
+
+###  https://admin-shell.io/aas/3/0/RC01/SubmodelElement
+aas:SubmodelElement rdf:type owl:Class ;
+    #rdfs:subClassOf aas:HasDataSpecification ;
+    #rdfs:subClassOf aas:HasKind ;
+    #rdfs:subClassOf aas:HasSemantics ;
+    #rdfs:subClassOf aas:Qualifiable ;
+    #rdfs:subClassOf aas:Referable ;
+    dash:abstract true ;
+    rdfs:comment "A submodel element is an element suitable for the description and differentiation of assets."@en ;
+    rdfs:label "Submodel Element"^^xsd:string ;
+    skos:note "The concept of type and instance applies to submodel elements. Properties are special submodel elements. The property types are defined in dictionaries (like the IEC Common Data Dictionary or eCl@ss), they do not have a value. The property type (kind=Type) is also called data element type in some standards. The property instances (kind=Instance) typically have a value. A property instance is also called property-value pair in certain standards."@en ;
+.
+
+###  https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection
+aas:SubmodelElementCollection rdf:type owl:Class ;
+    rdfs:subClassOf aas:SubmodelElement ;
+    rdfs:comment "A submodel element collection is a set or list of submodel elements."@en ;
+    rdfs:label "Submodel Element Collection"^^xsd:string ;
+	skos:note "Constraint AASd-059: If the semanticId of a SubmodelElementCollection references a ConceptDescription then the category of the ConceptDescription shall be COLLECTION or ENTITY."@en ;
+	skos:note "Constraint AASd-092: If the semanticId of a SubmodelElementCollection with SubmodelElementCollection/allowDuplicates == false references a ConceptDescription then the ConceptDescription/category shall be ENTITY."@en ;
+	skos:note "Constraint AASd-093: If the semanticId of a SubmodelElementCollection with SubmodelElementCollection/allowDuplicates == true references a ConceptDescription then the ConceptDescription/category shall be COLLECTION."@en ;
+.
+
+###  https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates
+<https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates> rdf:type owl:DatatypeProperty ;
+    rdfs:comment "If allowDuplicates=true then it is allowed that the collection contains the same element several times. Default = false"@en ;
+    rdfs:label "allow duplicates"^^xsd:string ;
+    rdfs:domain aas:SubmodelElementCollection ;
+    rdfs:range xsd:boolean ;
+	skos:note "Constraint AASd-026: If allowDuplicates==false then it is not allowed that the collection contains several elements with the same semantics (i.e. the same semanticId)."@en ;
+.
+
+###  https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered
+<https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered> rdf:type owl:DatatypeProperty ;
+    rdfs:comment "If ordered=false then the elements in the property collection are not ordered. If ordered=true then the elements in the collection are ordered. Default = false"@en ;
+    rdfs:label "ordered"^^xsd:string ;
+    rdfs:domain aas:SubmodelElementCollection ;
+    rdfs:range xsd:boolean ;
+.
+
+###  https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value
+<https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value> rdf:type owl:ObjectProperty ;
+    rdfs:comment "Submodel element contained in the collection."@en ;
+    rdfs:label "has value"^^xsd:string ;
+    rdfs:domain aas:SubmodelElementCollection ;
+    rdfs:range aas:SubmodelElement ;
+.
+
