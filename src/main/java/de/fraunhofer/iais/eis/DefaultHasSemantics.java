@@ -121,7 +121,7 @@ public class DefaultHasSemantics implements Serializable, HasSemantics {
 	}
 
 	/**
-	* This function indicates wheather some other object is equal to this one.
+	* This function indicates whether some other object is equal to this one.
 	* @param obj the reference object with which to compare.
 	* @return true if this HasSemantics is the same as the obj argument; false otherwise.
 	*/

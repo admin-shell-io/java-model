@@ -207,7 +207,7 @@ public class DefaultFile implements Serializable, File {
 	}
 
 	/**
-	* This function indicates wheather some other object is equal to this one.
+	* This function indicates whether some other object is equal to this one.
 	* @param obj the reference object with which to compare.
 	* @return true if this File is the same as the obj argument; false otherwise.
 	*/

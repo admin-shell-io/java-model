@@ -45,17 +45,6 @@ public class PropertyBuilder {
 	}
 
 	/**
-	* This function allows setting a value for propertyCategory
-	* @param propertyCategory desired value to be set
-	* @return Builder object with new value for propertyCategory
-	*/
-	final public PropertyBuilder propertyCategory(List<Category> propertyCategory) {
-		this.defaultProperty.propertyCategory = propertyCategory;
-		return this;
-	}
-
-
-	/**
 	* This function allows setting a value for value
 	* @param value desired value to be set
 	* @return Builder object with new value for value

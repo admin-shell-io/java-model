@@ -82,14 +82,6 @@ public class DefaultProperty implements Serializable, Property {
 
 
 	/**
-	* "has property category"
-	* "The following categories are defined for properties and multi-language properties: CONSTANT, PARAMETER, and VARIABLE."@en
-	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Property/propertyCategory", "propertyCategory"})
-	protected List<Category> propertyCategory;
-
-
-	/**
 	* "has property value"
 	* "The value of the property instance."@en
 	*/
@@ -215,11 +207,11 @@ public class DefaultProperty implements Serializable, Property {
 	* @return a hash code value for the Property
 	*/
 	public int hashCode() {
-		return Objects.hash(new Object[]{super.hashCode(), this.propertyCategory, this.value, this.valueId});
+		return Objects.hash(new Object[]{super.hashCode(), this.value, this.valueId});
 	}
 
 	/**
-	* This function indicates wheather some other object is equal to this one.
+	* This function indicates whether some other object is equal to this one.
 	* @param obj the reference object with which to compare.
 	* @return true if this Property is the same as the obj argument; false otherwise.
 	*/
@@ -232,33 +224,13 @@ public class DefaultProperty implements Serializable, Property {
 			return false;
 		} else {
 			DefaultProperty other = (DefaultProperty) obj;
-			return super.equals(other) && Objects.equals(this.propertyCategory, other.propertyCategory) && Objects.equals(this.value, other.value) && Objects.equals(this.valueId, other.valueId);
+			return super.equals(other) && Objects.equals(this.value, other.value) && Objects.equals(this.valueId, other.valueId);
 		}
 	}
 
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
-
-	/**
-	* "The following categories are defined for properties and multi-language properties: CONSTANT, PARAMETER, and VARIABLE."@en
-	* @return Returns the List of Category for the property propertyCategory.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Property/propertyCategory
-	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Property/propertyCategory")
-	final public List<Category> getPropertyCategory() {
-		return propertyCategory;
-	}
-
-	
-	/**
-	* "The following categories are defined for properties and multi-language properties: CONSTANT, PARAMETER, and VARIABLE."@en
-	* @param propertyCategory desired value for the property propertyCategory.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Property/propertyCategory
-	*/
-	final public void setPropertyCategory (List<Category> propertyCategory) {
-		this.propertyCategory = propertyCategory;
-	}
 
 	/**
 	* "The value of the property instance."@en
