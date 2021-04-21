@@ -68,23 +68,23 @@ public class FileBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategory
-	* @param referableCategory desired value to be set
-	* @return Builder object with new value for referableCategory
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public FileBuilder referableCategory(List<String> referableCategory) {
-		this.defaultFile.referableCategory = referableCategory;
+	final public FileBuilder referableCategories(List<String> referableCategories) {
+		this.defaultFile.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public FileBuilder description(List<TypedLiteral> description) {
-		this.defaultFile.description = description;
+	final public FileBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultFile.descriptions = descriptions;
 		return this;
 	}
 
@@ -123,23 +123,23 @@ public class FileBuilder {
 
 
 	/**
-	* This function allows setting a value for qualifier
-	* @param qualifier desired value to be set
-	* @return Builder object with new value for qualifier
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public FileBuilder qualifier(List<Constraint> qualifier) {
-		this.defaultFile.qualifier = qualifier;
+	final public FileBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultFile.qualifiers = qualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecification
-	* @param dataSpecification desired value to be set
-	* @return Builder object with new value for dataSpecification
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public FileBuilder dataSpecification(List<Reference> dataSpecification) {
-		this.defaultFile.dataSpecification = dataSpecification;
+	final public FileBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultFile.dataSpecifications = dataSpecifications;
 		return this;
 	}
 

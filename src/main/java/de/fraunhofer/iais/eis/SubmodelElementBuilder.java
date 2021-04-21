@@ -46,23 +46,23 @@ public class SubmodelElementBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategory
-	* @param referableCategory desired value to be set
-	* @return Builder object with new value for referableCategory
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public SubmodelElementBuilder referableCategory(List<String> referableCategory) {
-		this.defaultSubmodelElement.referableCategory = referableCategory;
+	final public SubmodelElementBuilder referableCategories(List<String> referableCategories) {
+		this.defaultSubmodelElement.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public SubmodelElementBuilder description(List<TypedLiteral> description) {
-		this.defaultSubmodelElement.description = description;
+	final public SubmodelElementBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultSubmodelElement.descriptions = descriptions;
 		return this;
 	}
 
@@ -101,23 +101,23 @@ public class SubmodelElementBuilder {
 
 
 	/**
-	* This function allows setting a value for qualifier
-	* @param qualifier desired value to be set
-	* @return Builder object with new value for qualifier
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public SubmodelElementBuilder qualifier(List<Constraint> qualifier) {
-		this.defaultSubmodelElement.qualifier = qualifier;
+	final public SubmodelElementBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultSubmodelElement.qualifiers = qualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecification
-	* @param dataSpecification desired value to be set
-	* @return Builder object with new value for dataSpecification
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public SubmodelElementBuilder dataSpecification(List<Reference> dataSpecification) {
-		this.defaultSubmodelElement.dataSpecification = dataSpecification;
+	final public SubmodelElementBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultSubmodelElement.dataSpecifications = dataSpecifications;
 		return this;
 	}
 

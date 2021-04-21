@@ -45,11 +45,11 @@ public class DefaultIdentifierKeyValuePair implements Serializable, IdentifierKe
 
 	//List of all labels of this class
 	@JsonIgnore
-	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("identifier key value pair", ""));
+	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("identifier key value pair", ""));
 
 	//List of all comments of this class
 	@JsonIgnore
-	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("An IdentifierKeyValuePair describes a generic identifier as key-value pair.", "en"));
+	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("An IdentifierKeyValuePair describes a generic identifier as key-value pair.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -91,31 +91,17 @@ public class DefaultIdentifierKeyValuePair implements Serializable, IdentifierKe
 		id = VocabUtil.getInstance().createRandomUrl("identifierKeyValuePair");
 	}
 
-	/**
-	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
-	* @return ID of current object as URI
-	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
-	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
-	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
-	*/
-	public List<TypedLiteral> getLabel() {
-		return this.label;
+	public List<TypedLiteral> getLabels() {
+		return this.labels;
 	}
 
-	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
-	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
-	*/
-	public List<TypedLiteral> getComment() {
-		return this.comment;
+	public List<TypedLiteral> getComments() {
+		return this.comments;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -135,19 +121,13 @@ public class DefaultIdentifierKeyValuePair implements Serializable, IdentifierKe
 		return value;
 	}
 
-	/**
-	* This function returns a hash code value for the IdentifierKeyValuePair for the benefit of e.g. hash tables.
-	* @return a hash code value for the IdentifierKeyValuePair
-	*/
 	public int hashCode() {
-		return Objects.hash(new Object[]{super.hashCode(), this.key, this.value, this.externalSubjectId});
+		return Objects.hash(new Object[]{this.key,
+			this.value,
+			this.externalSubjectId,
+			this.semanticId});
 	}
 
-	/**
-	* This function indicates whether some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this IdentifierKeyValuePair is the same as the obj argument; false otherwise.
-	*/
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -157,7 +137,10 @@ public class DefaultIdentifierKeyValuePair implements Serializable, IdentifierKe
 			return false;
 		} else {
 			DefaultIdentifierKeyValuePair other = (DefaultIdentifierKeyValuePair) obj;
-			return super.equals(other) && Objects.equals(this.key, other.key) && Objects.equals(this.value, other.value) && Objects.equals(this.externalSubjectId, other.externalSubjectId);
+			return Objects.equals(this.key, other.key) &&
+				Objects.equals(this.value, other.value) &&
+				Objects.equals(this.externalSubjectId, other.externalSubjectId) &&
+				Objects.equals(this.semanticId, other.semanticId);
 		}
 	}
 
@@ -165,84 +148,38 @@ public class DefaultIdentifierKeyValuePair implements Serializable, IdentifierKe
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "Key of the identifier."@en
-	* @return Returns the String for the property key.
-	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
 	final public String getKey() {
 		return key;
 	}
-
 	
-	/**
-	* "Key of the identifier."@en
-	* @param key desired value for the property key.
-	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key
-	*/
 	final public void setKey (String key) {
 		this.key = key;
 	}
 
-	/**
-	* "The value of the identifier with the corresponding key."@en
-	* @return Returns the String for the property value.
-	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
 	final public String getValue() {
 		return value;
 	}
-
 	
-	/**
-	* "The value of the identifier with the corresponding key."@en
-	* @param value desired value for the property value.
-	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value
-	*/
 	final public void setValue (String value) {
 		this.value = value;
 	}
 
-	/**
-	* "The (external) subject the key belongs to or has meaning to."@en
-	* @return Returns the Reference for the property externalSubjectId.
-	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId")
 	final public Reference getExternalSubjectId() {
 		return externalSubjectId;
 	}
-
 	
-	/**
-	* "The (external) subject the key belongs to or has meaning to."@en
-	* @param externalSubjectId desired value for the property externalSubjectId.
-	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId
-	*/
 	final public void setExternalSubjectId (Reference externalSubjectId) {
 		this.externalSubjectId = externalSubjectId;
 	}
 
-	/**
-	* "Points to the Expression Semantic of the Submodels"@en
-	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
-	* @return Returns the Reference for the property semanticId.
-	* More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	final public Reference getSemanticId() {
 		return semanticId;
 	}
-
 	
-	/**
-	* "Points to the Expression Semantic of the Submodels"@en
-	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
-	* @param semanticId desired value for the property semanticId.
-	* More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
-	*/
 	final public void setSemanticId (Reference semanticId) {
 		this.semanticId = semanticId;
 	}

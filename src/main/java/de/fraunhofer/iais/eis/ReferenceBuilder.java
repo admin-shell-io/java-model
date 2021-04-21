@@ -45,12 +45,12 @@ public class ReferenceBuilder {
 	}
 
 	/**
-	* This function allows setting a value for key
-	* @param key desired value to be set
-	* @return Builder object with new value for key
+	* This function allows setting a value for keys
+	* @param keys desired value to be set
+	* @return Builder object with new value for keys
 	*/
-	final public ReferenceBuilder key(List<Key> key) {
-		this.defaultReference.key = key;
+	final public ReferenceBuilder keys(List<Key> keys) {
+		this.defaultReference.keys = keys;
 		return this;
 	}
 	/**

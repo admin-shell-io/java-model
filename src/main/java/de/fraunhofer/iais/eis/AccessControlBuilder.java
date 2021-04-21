@@ -45,12 +45,12 @@ public class AccessControlBuilder {
 	}
 
 	/**
-	* This function allows setting a value for accessPermissionRule
-	* @param accessPermissionRule desired value to be set
-	* @return Builder object with new value for accessPermissionRule
+	* This function allows setting a value for accessPermissionRules
+	* @param accessPermissionRules desired value to be set
+	* @return Builder object with new value for accessPermissionRules
 	*/
-	final public AccessControlBuilder accessPermissionRule(List<AccessPermissionRule> accessPermissionRule) {
-		this.defaultAccessControl.accessPermissionRule = accessPermissionRule;
+	final public AccessControlBuilder accessPermissionRules(List<AccessPermissionRule> accessPermissionRules) {
+		this.defaultAccessControl.accessPermissionRules = accessPermissionRules;
 		return this;
 	}
 

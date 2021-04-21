@@ -51,18 +51,18 @@ public interface Identifier {
 	public URI getId();
 
 	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This function retrieves a human readable labels about the current class, as defined in the ontology.
 	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
+	* @return Human readable labels
 	*/
-	public List<TypedLiteral> getLabel();
+	public List<TypedLiteral> getLabels();
 
 	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This function retrieves a human readable explanatory comments about the current class, as defined in the ontology.
 	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
+	* @return Human readable explanatory comments
 	*/
-	public List<TypedLiteral> getComment();
+	public List<TypedLiteral> getComments();
 
 	/**
 	* This function returns a hash code value for the Identifier for the benefit of e.g. hash tables.
@@ -82,11 +82,11 @@ public interface Identifier {
 
 	/**
 	* "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
-	* @return Returns the List of TypedLiteral for the property identifier.
+	* @return Returns the List of TypedLiterals for the property identifiers.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Identifier/identifier
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
-	public List<TypedLiteral> getIdentifier();
+	public List<TypedLiteral> getIdentifiers();
 
 	/**
 	* "Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the enumeration \'IdentifierType\'."@en

@@ -45,57 +45,57 @@ public class OperationBuilder {
 	}
 
 	/**
-	* This function allows setting a value for inputVariable
-	* @param inputVariable desired value to be set
-	* @return Builder object with new value for inputVariable
+	* This function allows setting a value for inputVariables
+	* @param inputVariables desired value to be set
+	* @return Builder object with new value for inputVariables
 	*/
-	final public OperationBuilder inputVariable(List<OperationVariable> inputVariable) {
-		this.defaultOperation.inputVariable = inputVariable;
+	final public OperationBuilder inputVariables(List<OperationVariable> inputVariables) {
+		this.defaultOperation.inputVariables = inputVariables;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for inoutputVariable
-	* @param inoutputVariable desired value to be set
-	* @return Builder object with new value for inoutputVariable
+	* This function allows setting a value for inoutputVariables
+	* @param inoutputVariables desired value to be set
+	* @return Builder object with new value for inoutputVariables
 	*/
-	final public OperationBuilder inoutputVariable(List<OperationVariable> inoutputVariable) {
-		this.defaultOperation.inoutputVariable = inoutputVariable;
+	final public OperationBuilder inoutputVariables(List<OperationVariable> inoutputVariables) {
+		this.defaultOperation.inoutputVariables = inoutputVariables;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for outputVariable
-	* @param outputVariable desired value to be set
-	* @return Builder object with new value for outputVariable
+	* This function allows setting a value for outputVariables
+	* @param outputVariables desired value to be set
+	* @return Builder object with new value for outputVariables
 	*/
-	final public OperationBuilder outputVariable(List<OperationVariable> outputVariable) {
-		this.defaultOperation.outputVariable = outputVariable;
+	final public OperationBuilder outputVariables(List<OperationVariable> outputVariables) {
+		this.defaultOperation.outputVariables = outputVariables;
 		return this;
 	}
 
 
 
 	/**
-	* This function allows setting a value for referableCategory
-	* @param referableCategory desired value to be set
-	* @return Builder object with new value for referableCategory
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public OperationBuilder referableCategory(List<String> referableCategory) {
-		this.defaultOperation.referableCategory = referableCategory;
+	final public OperationBuilder referableCategories(List<String> referableCategories) {
+		this.defaultOperation.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public OperationBuilder description(List<TypedLiteral> description) {
-		this.defaultOperation.description = description;
+	final public OperationBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultOperation.descriptions = descriptions;
 		return this;
 	}
 
@@ -134,23 +134,23 @@ public class OperationBuilder {
 
 
 	/**
-	* This function allows setting a value for qualifier
-	* @param qualifier desired value to be set
-	* @return Builder object with new value for qualifier
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public OperationBuilder qualifier(List<Constraint> qualifier) {
-		this.defaultOperation.qualifier = qualifier;
+	final public OperationBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultOperation.qualifiers = qualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecification
-	* @param dataSpecification desired value to be set
-	* @return Builder object with new value for dataSpecification
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public OperationBuilder dataSpecification(List<Reference> dataSpecification) {
-		this.defaultOperation.dataSpecification = dataSpecification;
+	final public OperationBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultOperation.dataSpecifications = dataSpecifications;
 		return this;
 	}
 

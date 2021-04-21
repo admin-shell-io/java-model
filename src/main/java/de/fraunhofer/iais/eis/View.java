@@ -52,18 +52,18 @@ public interface View extends Referable, HasDataSpecification, HasSemantics {
 	public URI getId();
 
 	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This function retrieves a human readable labels about the current class, as defined in the ontology.
 	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
+	* @return Human readable labels
 	*/
-	public List<TypedLiteral> getLabel();
+	public List<TypedLiteral> getLabels();
 
 	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This function retrieves a human readable explanatory comments about the current class, as defined in the ontology.
 	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
+	* @return Human readable explanatory comments
 	*/
-	public List<TypedLiteral> getComment();
+	public List<TypedLiteral> getComments();
 
 	/**
 	* This function returns a hash code value for the View for the benefit of e.g. hash tables.
@@ -83,10 +83,10 @@ public interface View extends Referable, HasDataSpecification, HasSemantics {
 
 	/**
 	* "Referable elements that are contained in the view."@en
-	* @return Returns the List of Referable for the property containedElement.
+	* @return Returns the List of Referables for the property containedElements.
 	* More information under https://admin-shell.io/aas/3/0/RC01/View/containedElement
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
-	public List<Referable> getContainedElement();
+	public List<Referable> getContainedElements();
 
 }

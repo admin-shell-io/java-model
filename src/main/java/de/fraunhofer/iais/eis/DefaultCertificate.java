@@ -45,11 +45,11 @@ public class DefaultCertificate implements Serializable, Certificate {
 
 	//List of all labels of this class
 	@JsonIgnore
-	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Certificate", ""));
+	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Certificate", ""));
 
 	//List of all comments of this class
 	@JsonIgnore
-	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("A technical certificate proofing the identity through cryptographic measures.", "en"));
+	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("A technical certificate proofing the identity through cryptographic measures.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -66,31 +66,17 @@ public class DefaultCertificate implements Serializable, Certificate {
 		id = VocabUtil.getInstance().createRandomUrl("certificate");
 	}
 
-	/**
-	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
-	* @return ID of current object as URI
-	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
-	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
-	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
-	*/
-	public List<TypedLiteral> getLabel() {
-		return this.label;
+	public List<TypedLiteral> getLabels() {
+		return this.labels;
 	}
 
-	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
-	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
-	*/
-	public List<TypedLiteral> getComment() {
-		return this.comment;
+	public List<TypedLiteral> getComments() {
+		return this.comments;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -110,19 +96,10 @@ public class DefaultCertificate implements Serializable, Certificate {
 		return value;
 	}
 
-	/**
-	* This function returns a hash code value for the Certificate for the benefit of e.g. hash tables.
-	* @return a hash code value for the Certificate
-	*/
 	public int hashCode() {
-		return Objects.hash(new Object[]{super.hashCode(), this.policyAdministrationPoint});
+		return Objects.hash(new Object[]{this.policyAdministrationPoint});
 	}
 
-	/**
-	* This function indicates whether some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this Certificate is the same as the obj argument; false otherwise.
-	*/
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -132,7 +109,7 @@ public class DefaultCertificate implements Serializable, Certificate {
 			return false;
 		} else {
 			DefaultCertificate other = (DefaultCertificate) obj;
-			return super.equals(other) && Objects.equals(this.policyAdministrationPoint, other.policyAdministrationPoint);
+			return Objects.equals(this.policyAdministrationPoint, other.policyAdministrationPoint);
 		}
 	}
 
@@ -140,22 +117,11 @@ public class DefaultCertificate implements Serializable, Certificate {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "The access control administration policy point of the AAS."@en
-	* @return Returns the PolicyAdministrationPoint for the property policyAdministrationPoint.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint")
 	final public PolicyAdministrationPoint getPolicyAdministrationPoint() {
 		return policyAdministrationPoint;
 	}
-
 	
-	/**
-	* "The access control administration policy point of the AAS."@en
-	* @param policyAdministrationPoint desired value for the property policyAdministrationPoint.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint
-	*/
 	final public void setPolicyAdministrationPoint (PolicyAdministrationPoint policyAdministrationPoint) {
 		this.policyAdministrationPoint = policyAdministrationPoint;
 	}

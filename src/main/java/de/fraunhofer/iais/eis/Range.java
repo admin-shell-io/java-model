@@ -54,18 +54,18 @@ public interface Range extends DataElement {
 	public URI getId();
 
 	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This function retrieves a human readable labels about the current class, as defined in the ontology.
 	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
+	* @return Human readable labels
 	*/
-	public List<TypedLiteral> getLabel();
+	public List<TypedLiteral> getLabels();
 
 	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This function retrieves a human readable explanatory comments about the current class, as defined in the ontology.
 	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
+	* @return Human readable explanatory comments
 	*/
-	public List<TypedLiteral> getComment();
+	public List<TypedLiteral> getComments();
 
 	/**
 	* This function returns a hash code value for the Range for the benefit of e.g. hash tables.
@@ -85,18 +85,18 @@ public interface Range extends DataElement {
 
 	/**
 	* "The maximum value of the range."@en
-	* @return Returns the List of TypedLiteral for the property max.
+	* @return Returns the List of TypedLiterals for the property maxs.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Range/max
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Range/max")
-	public List<TypedLiteral> getMax();
+	public List<TypedLiteral> getMaxs();
 
 	/**
 	* "The minimum value of the range."@en
-	* @return Returns the List of TypedLiteral for the property min.
+	* @return Returns the List of TypedLiterals for the property mins.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Range/min
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Range/min")
-	public List<TypedLiteral> getMin();
+	public List<TypedLiteral> getMins();
 
 }

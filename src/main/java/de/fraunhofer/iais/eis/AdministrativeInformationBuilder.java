@@ -67,12 +67,12 @@ public class AdministrativeInformationBuilder {
 
 
 	/**
-	* This function allows setting a value for dataSpecification
-	* @param dataSpecification desired value to be set
-	* @return Builder object with new value for dataSpecification
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public AdministrativeInformationBuilder dataSpecification(List<Reference> dataSpecification) {
-		this.defaultAdministrativeInformation.dataSpecification = dataSpecification;
+	final public AdministrativeInformationBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultAdministrativeInformation.dataSpecifications = dataSpecifications;
 		return this;
 	}
 	/**

@@ -45,11 +45,11 @@ public class DefaultObjectAttributes implements Serializable, ObjectAttributes {
 
 	//List of all labels of this class
 	@JsonIgnore
-	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Object Attributes", ""));
+	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Object Attributes", ""));
 
 	//List of all comments of this class
 	@JsonIgnore
-	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("A set of data elements that describe object attributes. These attributes need to refer to a data element within an existing submodel.", "en"));
+	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("A set of data elements that describe object attributes. These attributes need to refer to a data element within an existing submodel.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -58,7 +58,7 @@ public class DefaultObjectAttributes implements Serializable, ObjectAttributes {
 	* "A data elements that further classifies an object."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute", "objectAttribute"})
-	protected List<DataElement> objectAttribute;
+	protected List<DataElement> objectAttributes;
 
 
 	// no manual construction
@@ -66,31 +66,17 @@ public class DefaultObjectAttributes implements Serializable, ObjectAttributes {
 		id = VocabUtil.getInstance().createRandomUrl("objectAttributes");
 	}
 
-	/**
-	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
-	* @return ID of current object as URI
-	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
-	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
-	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
-	*/
-	public List<TypedLiteral> getLabel() {
-		return this.label;
+	public List<TypedLiteral> getLabels() {
+		return this.labels;
 	}
 
-	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
-	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
-	*/
-	public List<TypedLiteral> getComment() {
-		return this.comment;
+	public List<TypedLiteral> getComments() {
+		return this.comments;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -110,19 +96,10 @@ public class DefaultObjectAttributes implements Serializable, ObjectAttributes {
 		return value;
 	}
 
-	/**
-	* This function returns a hash code value for the ObjectAttributes for the benefit of e.g. hash tables.
-	* @return a hash code value for the ObjectAttributes
-	*/
 	public int hashCode() {
-		return Objects.hash(new Object[]{super.hashCode(), this.objectAttribute});
+		return Objects.hash(new Object[]{this.objectAttributes});
 	}
 
-	/**
-	* This function indicates whether some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this ObjectAttributes is the same as the obj argument; false otherwise.
-	*/
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -132,7 +109,7 @@ public class DefaultObjectAttributes implements Serializable, ObjectAttributes {
 			return false;
 		} else {
 			DefaultObjectAttributes other = (DefaultObjectAttributes) obj;
-			return super.equals(other) && Objects.equals(this.objectAttribute, other.objectAttribute);
+			return Objects.equals(this.objectAttributes, other.objectAttributes);
 		}
 	}
 
@@ -140,23 +117,12 @@ public class DefaultObjectAttributes implements Serializable, ObjectAttributes {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "A data elements that further classifies an object."@en
-	* @return Returns the List of DataElement for the property objectAttribute.
-	* More information under https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
-	final public List<DataElement> getObjectAttribute() {
-		return objectAttribute;
+	final public List<DataElement> getObjectAttributes() {
+		return objectAttributes;
 	}
-
 	
-	/**
-	* "A data elements that further classifies an object."@en
-	* @param objectAttribute desired value for the property objectAttribute.
-	* More information under https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute
-	*/
-	final public void setObjectAttribute (List<DataElement> objectAttribute) {
-		this.objectAttribute = objectAttribute;
+	final public void setObjectAttributes (List<DataElement> objectAttributes) {
+		this.objectAttributes = objectAttributes;
 	}
 }

@@ -46,11 +46,11 @@ public class DefaultQualifiable implements Serializable, Qualifiable {
 
 	//List of all labels of this class
 	@JsonIgnore
-	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Qualifiable", ""));
+	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Qualifiable", ""));
 
 	//List of all comments of this class
 	@JsonIgnore
-	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Additional qualification of a qualifiable element.", "en"));
+	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Additional qualification of a qualifiable element.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -59,7 +59,7 @@ public class DefaultQualifiable implements Serializable, Qualifiable {
 	* "Additional qualification of a qualifiable element."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier", "qualifier"})
-	protected List<Constraint> qualifier;
+	protected List<Constraint> qualifiers;
 
 
 	// no manual construction
@@ -67,31 +67,17 @@ public class DefaultQualifiable implements Serializable, Qualifiable {
 		id = VocabUtil.getInstance().createRandomUrl("qualifiable");
 	}
 
-	/**
-	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
-	* @return ID of current object as URI
-	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
-	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
-	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
-	*/
-	public List<TypedLiteral> getLabel() {
-		return this.label;
+	public List<TypedLiteral> getLabels() {
+		return this.labels;
 	}
 
-	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
-	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
-	*/
-	public List<TypedLiteral> getComment() {
-		return this.comment;
+	public List<TypedLiteral> getComments() {
+		return this.comments;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -111,19 +97,10 @@ public class DefaultQualifiable implements Serializable, Qualifiable {
 		return value;
 	}
 
-	/**
-	* This function returns a hash code value for the Qualifiable for the benefit of e.g. hash tables.
-	* @return a hash code value for the Qualifiable
-	*/
 	public int hashCode() {
-		return Objects.hash(new Object[]{super.hashCode(), this.qualifier});
+		return Objects.hash(new Object[]{this.qualifiers});
 	}
 
-	/**
-	* This function indicates whether some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this Qualifiable is the same as the obj argument; false otherwise.
-	*/
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -133,7 +110,7 @@ public class DefaultQualifiable implements Serializable, Qualifiable {
 			return false;
 		} else {
 			DefaultQualifiable other = (DefaultQualifiable) obj;
-			return super.equals(other) && Objects.equals(this.qualifier, other.qualifier);
+			return Objects.equals(this.qualifiers, other.qualifiers);
 		}
 	}
 
@@ -141,23 +118,12 @@ public class DefaultQualifiable implements Serializable, Qualifiable {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "Additional qualification of a qualifiable element."@en
-	* @return Returns the List of Constraint for the property qualifier.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
-	final public List<Constraint> getQualifier() {
-		return qualifier;
+	final public List<Constraint> getQualifiers() {
+		return qualifiers;
 	}
-
 	
-	/**
-	* "Additional qualification of a qualifiable element."@en
-	* @param qualifier desired value for the property qualifier.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier
-	*/
-	final public void setQualifier (List<Constraint> qualifier) {
-		this.qualifier = qualifier;
+	final public void setQualifiers (List<Constraint> qualifiers) {
+		this.qualifiers = qualifiers;
 	}
 }

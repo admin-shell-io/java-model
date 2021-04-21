@@ -52,18 +52,18 @@ public interface Operation extends SubmodelElement {
 	public URI getId();
 
 	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This function retrieves a human readable labels about the current class, as defined in the ontology.
 	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
+	* @return Human readable labels
 	*/
-	public List<TypedLiteral> getLabel();
+	public List<TypedLiteral> getLabels();
 
 	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This function retrieves a human readable explanatory comments about the current class, as defined in the ontology.
 	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
+	* @return Human readable explanatory comments
 	*/
-	public List<TypedLiteral> getComment();
+	public List<TypedLiteral> getComments();
 
 	/**
 	* This function returns a hash code value for the Operation for the benefit of e.g. hash tables.
@@ -83,26 +83,26 @@ public interface Operation extends SubmodelElement {
 
 	/**
 	* "Input parameter of the operation."@en
-	* @return Returns the List of OperationVariable for the property inputVariable.
+	* @return Returns the List of OperationVariables for the property inputVariables.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Operation/inputVariable
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Operation/inputVariable")
-	public List<OperationVariable> getInputVariable();
+	public List<OperationVariable> getInputVariables();
 
 	/**
 	* "Parameter that is input and output of the operation."@en
-	* @return Returns the List of OperationVariable for the property inoutputVariable.
+	* @return Returns the List of OperationVariables for the property inoutputVariables.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable")
-	public List<OperationVariable> getInoutputVariable();
+	public List<OperationVariable> getInoutputVariables();
 
 	/**
 	* "Output parameter of the operation."@en
-	* @return Returns the List of OperationVariable for the property outputVariable.
+	* @return Returns the List of OperationVariables for the property outputVariables.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Operation/outputVariable
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Operation/outputVariable")
-	public List<OperationVariable> getOutputVariable();
+	public List<OperationVariable> getOutputVariables();
 
 }

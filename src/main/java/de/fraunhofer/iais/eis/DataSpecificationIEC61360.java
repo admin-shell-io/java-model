@@ -52,18 +52,18 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
 	public URI getId();
 
 	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This function retrieves a human readable labels about the current class, as defined in the ontology.
 	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
+	* @return Human readable labels
 	*/
-	public List<TypedLiteral> getLabel();
+	public List<TypedLiteral> getLabels();
 
 	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This function retrieves a human readable explanatory comments about the current class, as defined in the ontology.
 	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
+	* @return Human readable explanatory comments
 	*/
-	public List<TypedLiteral> getComment();
+	public List<TypedLiteral> getComments();
 
 	/**
 	* This function returns a hash code value for the DataSpecificationIEC61360 for the benefit of e.g. hash tables.
@@ -86,26 +86,26 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
 	* "Constraint AASd-071: For a ConceptDescription with category REFERENCE using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/dataType is STRING by default."@en
 	* "Constraint AASd-072: For a ConceptDescription with category DOCUMENT using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/dataType shall be one of the following values: STRING or URL."@en
 	* "Constraint AASd-073: For a ConceptDescription with category QUALIFIER using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/dataType is mandatory and shall be defined."@en
-	* @return Returns the List of DataTypeIEC61360 for the property dataType.
+	* @return Returns the List of DataTypeIEC61360s for the property dataTypes.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
-	public List<DataTypeIEC61360> getDataType();
+	public List<DataTypeIEC61360> getDataTypes();
 
 	/**
 	* "Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions of category VALUE using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/definition is mandatory and shall be defined at least in English."@en
-	* @return Returns the List of TypedLiteral for the property definition.
+	* @return Returns the List of TypedLiterals for the property definitions.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
-	public List<TypedLiteral> getDefinition();
+	public List<TypedLiteral> getDefinitions();
 
 	/**
-	* @return Returns the List of LevelType for the property levelType.
+	* @return Returns the List of LevelTypes for the property levelTypes.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/levelType
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/levelType")
-	public List<LevelType> getLevelType();
+	public List<LevelType> getLevelTypes();
 
 	/**
 	* @return Returns the TypedLiteral for the property preferredName.

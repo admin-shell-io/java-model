@@ -55,18 +55,18 @@ public interface Referable {
 	public URI getId();
 
 	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This function retrieves a human readable labels about the current class, as defined in the ontology.
 	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
+	* @return Human readable labels
 	*/
-	public List<TypedLiteral> getLabel();
+	public List<TypedLiteral> getLabels();
 
 	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This function retrieves a human readable explanatory comments about the current class, as defined in the ontology.
 	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
+	* @return Human readable explanatory comments
 	*/
-	public List<TypedLiteral> getComment();
+	public List<TypedLiteral> getComments();
 
 	/**
 	* This function returns a hash code value for the Referable for the benefit of e.g. hash tables.
@@ -86,19 +86,19 @@ public interface Referable {
 
 	/**
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
-	* @return Returns the List of String for the property referableCategory.
+	* @return Returns the List of Strings for the property referableCategories.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	public List<String> getReferableCategory();
+	public List<String> getReferableCategories();
 
 	/**
 	* "Description or comments on the element. The description can be provided in several languages."@en
-	* @return Returns the List of TypedLiteral for the property description.
+	* @return Returns the List of TypedLiterals for the property descriptions.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/description
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	public List<TypedLiteral> getDescription();
+	public List<TypedLiteral> getDescriptions();
 
 	/**
 	* "Display name. Can be provided in several languages."@en

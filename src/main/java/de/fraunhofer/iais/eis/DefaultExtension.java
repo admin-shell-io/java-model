@@ -46,11 +46,11 @@ public class DefaultExtension implements Serializable, Extension {
 
 	//List of all labels of this class
 	@JsonIgnore
-	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Extensions", ""));
+	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Extensions", ""));
 
 	//List of all comments of this class
 	@JsonIgnore
-	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Single extension of an element.", "en"));
+	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Single extension of an element.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -100,31 +100,17 @@ public class DefaultExtension implements Serializable, Extension {
 		id = VocabUtil.getInstance().createRandomUrl("extension");
 	}
 
-	/**
-	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
-	* @return ID of current object as URI
-	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
-	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
-	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
-	*/
-	public List<TypedLiteral> getLabel() {
-		return this.label;
+	public List<TypedLiteral> getLabels() {
+		return this.labels;
 	}
 
-	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
-	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
-	*/
-	public List<TypedLiteral> getComment() {
-		return this.comment;
+	public List<TypedLiteral> getComments() {
+		return this.comments;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -144,19 +130,14 @@ public class DefaultExtension implements Serializable, Extension {
 		return value;
 	}
 
-	/**
-	* This function returns a hash code value for the Extension for the benefit of e.g. hash tables.
-	* @return a hash code value for the Extension
-	*/
 	public int hashCode() {
-		return Objects.hash(new Object[]{super.hashCode(), this.name, this.valueType, this.value, this.refersTo});
+		return Objects.hash(new Object[]{this.name,
+			this.valueType,
+			this.value,
+			this.refersTo,
+			this.semanticId});
 	}
 
-	/**
-	* This function indicates whether some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this Extension is the same as the obj argument; false otherwise.
-	*/
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -166,7 +147,11 @@ public class DefaultExtension implements Serializable, Extension {
 			return false;
 		} else {
 			DefaultExtension other = (DefaultExtension) obj;
-			return super.equals(other) && Objects.equals(this.name, other.name) && Objects.equals(this.valueType, other.valueType) && Objects.equals(this.value, other.value) && Objects.equals(this.refersTo, other.refersTo);
+			return Objects.equals(this.name, other.name) &&
+				Objects.equals(this.valueType, other.valueType) &&
+				Objects.equals(this.value, other.value) &&
+				Objects.equals(this.refersTo, other.refersTo) &&
+				Objects.equals(this.semanticId, other.semanticId);
 		}
 	}
 
@@ -174,104 +159,47 @@ public class DefaultExtension implements Serializable, Extension {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "An extension of the element."@en
-	* @return Returns the String for the property name.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/name
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/name")
 	final public String getName() {
 		return name;
 	}
-
 	
-	/**
-	* "An extension of the element."@en
-	* @param name desired value for the property name.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/name
-	*/
 	final public void setName (String name) {
 		this.name = name;
 	}
 
-	/**
-	* "Type of the value of the extension."@en
-	* @return Returns the String for the property valueType.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/valueType
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/valueType")
 	final public String getValueType() {
 		return valueType;
 	}
-
 	
-	/**
-	* "Type of the value of the extension."@en
-	* @param valueType desired value for the property valueType.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/valueType
-	*/
 	final public void setValueType (String valueType) {
 		this.valueType = valueType;
 	}
 
-	/**
-	* "Value of the extension."@en
-	* @return Returns the String for the property value.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/value
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/value")
 	final public String getValue() {
 		return value;
 	}
-
 	
-	/**
-	* "Value of the extension."@en
-	* @param value desired value for the property value.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/value
-	*/
 	final public void setValue (String value) {
 		this.value = value;
 	}
 
-	/**
-	* "Reference to an element the extension refers to."@en
-	* @return Returns the Reference for the property refersTo.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/refersTo
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/refersTo")
 	final public Reference getRefersTo() {
 		return refersTo;
 	}
-
 	
-	/**
-	* "Reference to an element the extension refers to."@en
-	* @param refersTo desired value for the property refersTo.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/refersTo
-	*/
 	final public void setRefersTo (Reference refersTo) {
 		this.refersTo = refersTo;
 	}
 
-	/**
-	* "Points to the Expression Semantic of the Submodels"@en
-	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
-	* @return Returns the Reference for the property semanticId.
-	* More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	final public Reference getSemanticId() {
 		return semanticId;
 	}
-
 	
-	/**
-	* "Points to the Expression Semantic of the Submodels"@en
-	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
-	* @param semanticId desired value for the property semanticId.
-	* More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
-	*/
 	final public void setSemanticId (Reference semanticId) {
 		this.semanticId = semanticId;
 	}

@@ -45,23 +45,23 @@ public class RangeBuilder {
 	}
 
 	/**
-	* This function allows setting a value for max
-	* @param max desired value to be set
-	* @return Builder object with new value for max
+	* This function allows setting a value for maxs
+	* @param maxs desired value to be set
+	* @return Builder object with new value for maxs
 	*/
-	final public RangeBuilder max(List<TypedLiteral> max) {
-		this.defaultRange.max = max;
+	final public RangeBuilder maxs(List<TypedLiteral> maxs) {
+		this.defaultRange.maxs = maxs;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for min
-	* @param min desired value to be set
-	* @return Builder object with new value for min
+	* This function allows setting a value for mins
+	* @param mins desired value to be set
+	* @return Builder object with new value for mins
 	*/
-	final public RangeBuilder min(List<TypedLiteral> min) {
-		this.defaultRange.min = min;
+	final public RangeBuilder mins(List<TypedLiteral> mins) {
+		this.defaultRange.mins = mins;
 		return this;
 	}
 
@@ -69,23 +69,23 @@ public class RangeBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategory
-	* @param referableCategory desired value to be set
-	* @return Builder object with new value for referableCategory
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public RangeBuilder referableCategory(List<String> referableCategory) {
-		this.defaultRange.referableCategory = referableCategory;
+	final public RangeBuilder referableCategories(List<String> referableCategories) {
+		this.defaultRange.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public RangeBuilder description(List<TypedLiteral> description) {
-		this.defaultRange.description = description;
+	final public RangeBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultRange.descriptions = descriptions;
 		return this;
 	}
 
@@ -124,23 +124,23 @@ public class RangeBuilder {
 
 
 	/**
-	* This function allows setting a value for qualifier
-	* @param qualifier desired value to be set
-	* @return Builder object with new value for qualifier
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public RangeBuilder qualifier(List<Constraint> qualifier) {
-		this.defaultRange.qualifier = qualifier;
+	final public RangeBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultRange.qualifiers = qualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecification
-	* @param dataSpecification desired value to be set
-	* @return Builder object with new value for dataSpecification
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public RangeBuilder dataSpecification(List<Reference> dataSpecification) {
-		this.defaultRange.dataSpecification = dataSpecification;
+	final public RangeBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultRange.dataSpecifications = dataSpecifications;
 		return this;
 	}
 

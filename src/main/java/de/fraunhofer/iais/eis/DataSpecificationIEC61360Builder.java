@@ -45,34 +45,34 @@ public class DataSpecificationIEC61360Builder {
 	}
 
 	/**
-	* This function allows setting a value for dataType
-	* @param dataType desired value to be set
-	* @return Builder object with new value for dataType
+	* This function allows setting a value for dataTypes
+	* @param dataTypes desired value to be set
+	* @return Builder object with new value for dataTypes
 	*/
-	final public DataSpecificationIEC61360Builder dataType(List<DataTypeIEC61360> dataType) {
-		this.defaultDataSpecificationIEC61360.dataType = dataType;
+	final public DataSpecificationIEC61360Builder dataTypes(List<DataTypeIEC61360> dataTypes) {
+		this.defaultDataSpecificationIEC61360.dataTypes = dataTypes;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for definition
-	* @param definition desired value to be set
-	* @return Builder object with new value for definition
+	* This function allows setting a value for definitions
+	* @param definitions desired value to be set
+	* @return Builder object with new value for definitions
 	*/
-	final public DataSpecificationIEC61360Builder definition(List<TypedLiteral> definition) {
-		this.defaultDataSpecificationIEC61360.definition = definition;
+	final public DataSpecificationIEC61360Builder definitions(List<TypedLiteral> definitions) {
+		this.defaultDataSpecificationIEC61360.definitions = definitions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for levelType
-	* @param levelType desired value to be set
-	* @return Builder object with new value for levelType
+	* This function allows setting a value for levelTypes
+	* @param levelTypes desired value to be set
+	* @return Builder object with new value for levelTypes
 	*/
-	final public DataSpecificationIEC61360Builder levelType(List<LevelType> levelType) {
-		this.defaultDataSpecificationIEC61360.levelType = levelType;
+	final public DataSpecificationIEC61360Builder levelTypes(List<LevelType> levelTypes) {
+		this.defaultDataSpecificationIEC61360.levelTypes = levelTypes;
 		return this;
 	}
 

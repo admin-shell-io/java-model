@@ -74,15 +74,15 @@ public enum PermissionKind {
 	}
 
 	private URI id;
-	private List<TypedLiteral> label;
-	private List<TypedLiteral> comment;
+	private List<TypedLiteral> labels;
+	private List<TypedLiteral> comments;
 
 
-	PermissionKind(String id, List<TypedLiteral> label, List<TypedLiteral> comment) {
+	PermissionKind(String id, List<TypedLiteral> labels, List<TypedLiteral> comments) {
 		try {
 			this.id = new URI(id);
-			this.label = label;
-			this.comment = comment;
+			this.labels = labels;
+			this.comments = comments;
 		}
 		catch (java.net.URISyntaxException e) {
 			throw new IllegalArgumentException(e);
@@ -99,23 +99,23 @@ public enum PermissionKind {
 	}
 
 	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This function retrieves a human readable labels about the current class, as defined in the ontology.
 	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
+	* @return Human readable labels
 	*/
 	@JsonIgnore
-	final public List<TypedLiteral> getLabel() {
-		return label;
+	final public List<TypedLiteral> getLabels() {
+		return labels;
 	}
 
 	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This function retrieves a human readable explanatory comments about the current class, as defined in the ontology.
 	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
+	* @return Human readable explanatory comments
 	*/
 	@JsonIgnore
-	final public List<TypedLiteral> getComment() {
-		return comment;
+	final public List<TypedLiteral> getComments() {
+		return comments;
 	}
 
 

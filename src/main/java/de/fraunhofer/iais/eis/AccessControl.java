@@ -51,18 +51,18 @@ public interface AccessControl {
 	public URI getId();
 
 	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This function retrieves a human readable labels about the current class, as defined in the ontology.
 	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
+	* @return Human readable labels
 	*/
-	public List<TypedLiteral> getLabel();
+	public List<TypedLiteral> getLabels();
 
 	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This function retrieves a human readable explanatory comments about the current class, as defined in the ontology.
 	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
+	* @return Human readable explanatory comments
 	*/
-	public List<TypedLiteral> getComment();
+	public List<TypedLiteral> getComments();
 
 	/**
 	* This function returns a hash code value for the AccessControl for the benefit of e.g. hash tables.
@@ -82,11 +82,11 @@ public interface AccessControl {
 
 	/**
 	* "Access permission rules of the AAS describing the rights assigned to (already authenticated) subjects to access elements of the AAS."@en
-	* @return Returns the List of AccessPermissionRule for the property accessPermissionRule.
+	* @return Returns the List of AccessPermissionRules for the property accessPermissionRules.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule")
-	public List<AccessPermissionRule> getAccessPermissionRule();
+	public List<AccessPermissionRule> getAccessPermissionRules();
 
 	/**
 	* "Reference to a submodel defining the authenticated subjects that are configured for the AAS. They are selectable by the access permission rules to assign permissions to the subjects."@en

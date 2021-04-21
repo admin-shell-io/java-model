@@ -51,18 +51,18 @@ public interface SubjectAttributes {
 	public URI getId();
 
 	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This function retrieves a human readable labels about the current class, as defined in the ontology.
 	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
+	* @return Human readable labels
 	*/
-	public List<TypedLiteral> getLabel();
+	public List<TypedLiteral> getLabels();
 
 	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This function retrieves a human readable explanatory comments about the current class, as defined in the ontology.
 	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
+	* @return Human readable explanatory comments
 	*/
-	public List<TypedLiteral> getComment();
+	public List<TypedLiteral> getComments();
 
 	/**
 	* This function returns a hash code value for the SubjectAttributes for the benefit of e.g. hash tables.
@@ -83,10 +83,10 @@ public interface SubjectAttributes {
 	/**
 	* "A data element that further classifies a specific subject. "@en
 	* "Constraint AASs-015: The data element SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the \'selectableSubjectAttributes\' attribute of \'AccessControl\'."@en
-	* @return Returns the List of DataElement for the property subjectAttribute.
+	* @return Returns the List of DataElements for the property subjectAttributes.
 	* More information under https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute")
-	public List<DataElement> getSubjectAttribute();
+	public List<DataElement> getSubjectAttributes();
 
 }

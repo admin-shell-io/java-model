@@ -45,133 +45,133 @@ public class RC01Builder {
 	}
 
 	/**
-	* This function allows setting a value for conversionFactor
-	* @param conversionFactor desired value to be set
-	* @return Builder object with new value for conversionFactor
+	* This function allows setting a value for conversionFactors
+	* @param conversionFactors desired value to be set
+	* @return Builder object with new value for conversionFactors
 	*/
-	final public RC01Builder conversionFactor(List<String> conversionFactor) {
-		this.defaultRC01.conversionFactor = conversionFactor;
+	final public RC01Builder conversionFactors(List<String> conversionFactors) {
+		this.defaultRC01.conversionFactors = conversionFactors;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for definition
-	* @param definition desired value to be set
-	* @return Builder object with new value for definition
+	* This function allows setting a value for definitions
+	* @param definitions desired value to be set
+	* @return Builder object with new value for definitions
 	*/
-	final public RC01Builder definition(List<TypedLiteral> definition) {
-		this.defaultRC01.definition = definition;
+	final public RC01Builder definitions(List<TypedLiteral> definitions) {
+		this.defaultRC01.definitions = definitions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dinNotation
-	* @param dinNotation desired value to be set
-	* @return Builder object with new value for dinNotation
+	* This function allows setting a value for dinNotations
+	* @param dinNotations desired value to be set
+	* @return Builder object with new value for dinNotations
 	*/
-	final public RC01Builder dinNotation(List<String> dinNotation) {
-		this.defaultRC01.dinNotation = dinNotation;
+	final public RC01Builder dinNotations(List<String> dinNotations) {
+		this.defaultRC01.dinNotations = dinNotations;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for eceCode
-	* @param eceCode desired value to be set
-	* @return Builder object with new value for eceCode
+	* This function allows setting a value for eceCodes
+	* @param eceCodes desired value to be set
+	* @return Builder object with new value for eceCodes
 	*/
-	final public RC01Builder eceCode(List<String> eceCode) {
-		this.defaultRC01.eceCode = eceCode;
+	final public RC01Builder eceCodes(List<String> eceCodes) {
+		this.defaultRC01.eceCodes = eceCodes;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for eceName
-	* @param eceName desired value to be set
-	* @return Builder object with new value for eceName
+	* This function allows setting a value for eceNames
+	* @param eceNames desired value to be set
+	* @return Builder object with new value for eceNames
 	*/
-	final public RC01Builder eceName(List<String> eceName) {
-		this.defaultRC01.eceName = eceName;
+	final public RC01Builder eceNames(List<String> eceNames) {
+		this.defaultRC01.eceNames = eceNames;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for nistName
-	* @param nistName desired value to be set
-	* @return Builder object with new value for nistName
+	* This function allows setting a value for nistNames
+	* @param nistNames desired value to be set
+	* @return Builder object with new value for nistNames
 	*/
-	final public RC01Builder nistName(List<String> nistName) {
-		this.defaultRC01.nistName = nistName;
+	final public RC01Builder nistNames(List<String> nistNames) {
+		this.defaultRC01.nistNames = nistNames;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for siName
-	* @param siName desired value to be set
-	* @return Builder object with new value for siName
+	* This function allows setting a value for siNames
+	* @param siNames desired value to be set
+	* @return Builder object with new value for siNames
 	*/
-	final public RC01Builder siName(List<String> siName) {
-		this.defaultRC01.siName = siName;
+	final public RC01Builder siNames(List<String> siNames) {
+		this.defaultRC01.siNames = siNames;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for siNotation
-	* @param siNotation desired value to be set
-	* @return Builder object with new value for siNotation
+	* This function allows setting a value for siNotations
+	* @param siNotations desired value to be set
+	* @return Builder object with new value for siNotations
 	*/
-	final public RC01Builder siNotation(List<String> siNotation) {
-		this.defaultRC01.siNotation = siNotation;
+	final public RC01Builder siNotations(List<String> siNotations) {
+		this.defaultRC01.siNotations = siNotations;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for registrationAuthorityId
-	* @param registrationAuthorityId desired value to be set
-	* @return Builder object with new value for registrationAuthorityId
+	* This function allows setting a value for registrationAuthorityIds
+	* @param registrationAuthorityIds desired value to be set
+	* @return Builder object with new value for registrationAuthorityIds
 	*/
-	final public RC01Builder registrationAuthorityId(List<String> registrationAuthorityId) {
-		this.defaultRC01.registrationAuthorityId = registrationAuthorityId;
+	final public RC01Builder registrationAuthorityIds(List<String> registrationAuthorityIds) {
+		this.defaultRC01.registrationAuthorityIds = registrationAuthorityIds;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for supplier
-	* @param supplier desired value to be set
-	* @return Builder object with new value for supplier
+	* This function allows setting a value for suppliers
+	* @param suppliers desired value to be set
+	* @return Builder object with new value for suppliers
 	*/
-	final public RC01Builder supplier(List<String> supplier) {
-		this.defaultRC01.supplier = supplier;
+	final public RC01Builder suppliers(List<String> suppliers) {
+		this.defaultRC01.suppliers = suppliers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for unitName
-	* @param unitName desired value to be set
-	* @return Builder object with new value for unitName
+	* This function allows setting a value for unitNames
+	* @param unitNames desired value to be set
+	* @return Builder object with new value for unitNames
 	*/
-	final public RC01Builder unitName(List<String> unitName) {
-		this.defaultRC01.unitName = unitName;
+	final public RC01Builder unitNames(List<String> unitNames) {
+		this.defaultRC01.unitNames = unitNames;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for unitSymbol
-	* @param unitSymbol desired value to be set
-	* @return Builder object with new value for unitSymbol
+	* This function allows setting a value for unitSymbols
+	* @param unitSymbols desired value to be set
+	* @return Builder object with new value for unitSymbols
 	*/
-	final public RC01Builder unitSymbol(List<String> unitSymbol) {
-		this.defaultRC01.unitSymbol = unitSymbol;
+	final public RC01Builder unitSymbols(List<String> unitSymbols) {
+		this.defaultRC01.unitSymbols = unitSymbols;
 		return this;
 	}
 

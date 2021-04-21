@@ -51,18 +51,18 @@ public interface AccessPermissionRule extends Referable, Qualifiable {
 	public URI getId();
 
 	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This function retrieves a human readable labels about the current class, as defined in the ontology.
 	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
+	* @return Human readable labels
 	*/
-	public List<TypedLiteral> getLabel();
+	public List<TypedLiteral> getLabels();
 
 	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This function retrieves a human readable explanatory comments about the current class, as defined in the ontology.
 	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
+	* @return Human readable explanatory comments
 	*/
-	public List<TypedLiteral> getComment();
+	public List<TypedLiteral> getComments();
 
 	/**
 	* This function returns a hash code value for the AccessPermissionRule for the benefit of e.g. hash tables.
@@ -82,11 +82,11 @@ public interface AccessPermissionRule extends Referable, Qualifiable {
 
 	/**
 	* "Set of object-permission pairs that define the permissions per object within the access permission rule."@en
-	* @return Returns the List of PermissionsPerObject for the property permissionsPerObject.
+	* @return Returns the List of PermissionsPerObjects for the property permissionsPerObjects.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject")
-	public List<PermissionsPerObject> getPermissionsPerObject();
+	public List<PermissionsPerObject> getPermissionsPerObjects();
 
 	/**
 	* "Target subject attributes that need to be fulfilled by the accessing subject to get the permissions defined by this rule."@en

@@ -45,12 +45,12 @@ public class AccessPermissionRuleBuilder {
 	}
 
 	/**
-	* This function allows setting a value for permissionsPerObject
-	* @param permissionsPerObject desired value to be set
-	* @return Builder object with new value for permissionsPerObject
+	* This function allows setting a value for permissionsPerObjects
+	* @param permissionsPerObjects desired value to be set
+	* @return Builder object with new value for permissionsPerObjects
 	*/
-	final public AccessPermissionRuleBuilder permissionsPerObject(List<PermissionsPerObject> permissionsPerObject) {
-		this.defaultAccessPermissionRule.permissionsPerObject = permissionsPerObject;
+	final public AccessPermissionRuleBuilder permissionsPerObjects(List<PermissionsPerObject> permissionsPerObjects) {
+		this.defaultAccessPermissionRule.permissionsPerObjects = permissionsPerObjects;
 		return this;
 	}
 
@@ -67,23 +67,23 @@ public class AccessPermissionRuleBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategory
-	* @param referableCategory desired value to be set
-	* @return Builder object with new value for referableCategory
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public AccessPermissionRuleBuilder referableCategory(List<String> referableCategory) {
-		this.defaultAccessPermissionRule.referableCategory = referableCategory;
+	final public AccessPermissionRuleBuilder referableCategories(List<String> referableCategories) {
+		this.defaultAccessPermissionRule.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public AccessPermissionRuleBuilder description(List<TypedLiteral> description) {
-		this.defaultAccessPermissionRule.description = description;
+	final public AccessPermissionRuleBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultAccessPermissionRule.descriptions = descriptions;
 		return this;
 	}
 
@@ -122,12 +122,12 @@ public class AccessPermissionRuleBuilder {
 
 
 	/**
-	* This function allows setting a value for qualifier
-	* @param qualifier desired value to be set
-	* @return Builder object with new value for qualifier
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public AccessPermissionRuleBuilder qualifier(List<Constraint> qualifier) {
-		this.defaultAccessPermissionRule.qualifier = qualifier;
+	final public AccessPermissionRuleBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultAccessPermissionRule.qualifiers = qualifiers;
 		return this;
 	}
 	/**

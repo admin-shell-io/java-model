@@ -45,11 +45,11 @@ public class DefaultReference implements Serializable, Reference {
 
 	//List of all labels of this class
 	@JsonIgnore
-	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Reference", ""));
+	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Reference", ""));
 
 	//List of all comments of this class
 	@JsonIgnore
-	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Reference to either a model element of the same or another AAs or to an external entity. A reference is an ordered list of keys, each key referencing an element. The complete list of keys may for example be concatenated to a path that then gives unique access to an element or entity.", "en"));
+	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Reference to either a model element of the same or another AAs or to an external entity. A reference is an ordered list of keys, each key referencing an element. The complete list of keys may for example be concatenated to a path that then gives unique access to an element or entity.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -58,7 +58,7 @@ public class DefaultReference implements Serializable, Reference {
 	* "Unique reference in its name space."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Reference/key", "key"})
-	protected List<Key> key;
+	protected List<Key> keys;
 
 
 	// no manual construction
@@ -66,31 +66,17 @@ public class DefaultReference implements Serializable, Reference {
 		id = VocabUtil.getInstance().createRandomUrl("reference");
 	}
 
-	/**
-	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
-	* @return ID of current object as URI
-	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
-	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
-	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
-	*/
-	public List<TypedLiteral> getLabel() {
-		return this.label;
+	public List<TypedLiteral> getLabels() {
+		return this.labels;
 	}
 
-	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
-	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
-	*/
-	public List<TypedLiteral> getComment() {
-		return this.comment;
+	public List<TypedLiteral> getComments() {
+		return this.comments;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -110,19 +96,10 @@ public class DefaultReference implements Serializable, Reference {
 		return value;
 	}
 
-	/**
-	* This function returns a hash code value for the Reference for the benefit of e.g. hash tables.
-	* @return a hash code value for the Reference
-	*/
 	public int hashCode() {
-		return Objects.hash(new Object[]{super.hashCode(), this.key});
+		return Objects.hash(new Object[]{this.keys});
 	}
 
-	/**
-	* This function indicates whether some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this Reference is the same as the obj argument; false otherwise.
-	*/
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -132,7 +109,7 @@ public class DefaultReference implements Serializable, Reference {
 			return false;
 		} else {
 			DefaultReference other = (DefaultReference) obj;
-			return super.equals(other) && Objects.equals(this.key, other.key);
+			return Objects.equals(this.keys, other.keys);
 		}
 	}
 
@@ -140,23 +117,12 @@ public class DefaultReference implements Serializable, Reference {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "Unique reference in its name space."@en
-	* @return Returns the List of Key for the property key.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Reference/key
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Reference/key")
-	final public List<Key> getKey() {
-		return key;
+	final public List<Key> getKeys() {
+		return keys;
 	}
-
 	
-	/**
-	* "Unique reference in its name space."@en
-	* @param key desired value for the property key.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Reference/key
-	*/
-	final public void setKey (List<Key> key) {
-		this.key = key;
+	final public void setKeys (List<Key> keys) {
+		this.keys = keys;
 	}
 }

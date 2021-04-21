@@ -45,11 +45,11 @@ public class DefaultHasKind implements Serializable, HasKind {
 
 	//List of all labels of this class
 	@JsonIgnore
-	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Has Kind", ""));
+	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Has Kind", ""));
 
 	//List of all comments of this class
 	@JsonIgnore
-	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("An element with a kind is an element that can either represent a type or an instance. Default for an element is that it is representing an instance.", "en"));
+	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("An element with a kind is an element that can either represent a type or an instance. Default for an element is that it is representing an instance.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -66,31 +66,17 @@ public class DefaultHasKind implements Serializable, HasKind {
 		id = VocabUtil.getInstance().createRandomUrl("hasKind");
 	}
 
-	/**
-	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
-	* @return ID of current object as URI
-	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
-	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
-	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
-	*/
-	public List<TypedLiteral> getLabel() {
-		return this.label;
+	public List<TypedLiteral> getLabels() {
+		return this.labels;
 	}
 
-	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
-	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
-	*/
-	public List<TypedLiteral> getComment() {
-		return this.comment;
+	public List<TypedLiteral> getComments() {
+		return this.comments;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -110,19 +96,10 @@ public class DefaultHasKind implements Serializable, HasKind {
 		return value;
 	}
 
-	/**
-	* This function returns a hash code value for the HasKind for the benefit of e.g. hash tables.
-	* @return a hash code value for the HasKind
-	*/
 	public int hashCode() {
-		return Objects.hash(new Object[]{super.hashCode(), this.kind});
+		return Objects.hash(new Object[]{this.kind});
 	}
 
-	/**
-	* This function indicates whether some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this HasKind is the same as the obj argument; false otherwise.
-	*/
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -132,7 +109,7 @@ public class DefaultHasKind implements Serializable, HasKind {
 			return false;
 		} else {
 			DefaultHasKind other = (DefaultHasKind) obj;
-			return super.equals(other) && Objects.equals(this.kind, other.kind);
+			return Objects.equals(this.kind, other.kind);
 		}
 	}
 
@@ -140,22 +117,11 @@ public class DefaultHasKind implements Serializable, HasKind {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "ModelingKind of the element: either type or instance."@en
-	* @return Returns the ModelingKind for the property kind.
-	* More information under https://admin-shell.io/aas/3/0/RC01/HasKind/kind
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
 	final public ModelingKind getKind() {
 		return kind;
 	}
-
 	
-	/**
-	* "ModelingKind of the element: either type or instance."@en
-	* @param kind desired value for the property kind.
-	* More information under https://admin-shell.io/aas/3/0/RC01/HasKind/kind
-	*/
 	final public void setKind (ModelingKind kind) {
 		this.kind = kind;
 	}

@@ -52,18 +52,18 @@ public interface ConceptDescription extends HasDataSpecification, Identifiable {
 	public URI getId();
 
 	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This function retrieves a human readable labels about the current class, as defined in the ontology.
 	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
+	* @return Human readable labels
 	*/
-	public List<TypedLiteral> getLabel();
+	public List<TypedLiteral> getLabels();
 
 	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This function retrieves a human readable explanatory comments about the current class, as defined in the ontology.
 	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
+	* @return Human readable explanatory comments
 	*/
-	public List<TypedLiteral> getComment();
+	public List<TypedLiteral> getComments();
 
 	/**
 	* This function returns a hash code value for the ConceptDescription for the benefit of e.g. hash tables.
@@ -83,19 +83,19 @@ public interface ConceptDescription extends HasDataSpecification, Identifiable {
 
 	/**
 	* "Link from a ConceptDescription to its explaining DataSpecificationContent."@en
-	* @return Returns the List of DataSpecificationContent for the property content.
+	* @return Returns the List of DataSpecificationContents for the property contents.
 	* More information under https://admin-shell.io/aas/3/0/RC01/ConceptDescription/content
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/content")
-	public List<DataSpecificationContent> getContent();
+	public List<DataSpecificationContent> getContents();
 
 	/**
 	* "Reference to an external definition the concept is compatible to or was derived from."@en
 	* "Compare to is-case-of relationship in ISO 13584-32 and IEC EN 61360."@en
-	* @return Returns the List of Reference for the property isCaseOf.
+	* @return Returns the List of References for the property isCaseOfs.
 	* More information under https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf")
-	public List<Reference> getIsCaseOf();
+	public List<Reference> getIsCaseOfs();
 
 }

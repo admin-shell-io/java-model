@@ -56,12 +56,12 @@ public class BlobCertificateBuilder {
 
 
 	/**
-	* This function allows setting a value for containedExtension
-	* @param containedExtension desired value to be set
-	* @return Builder object with new value for containedExtension
+	* This function allows setting a value for containedExtensions
+	* @param containedExtensions desired value to be set
+	* @return Builder object with new value for containedExtensions
 	*/
-	final public BlobCertificateBuilder containedExtension(List<Reference> containedExtension) {
-		this.defaultBlobCertificate.containedExtension = containedExtension;
+	final public BlobCertificateBuilder containedExtensions(List<Reference> containedExtensions) {
+		this.defaultBlobCertificate.containedExtensions = containedExtensions;
 		return this;
 	}
 

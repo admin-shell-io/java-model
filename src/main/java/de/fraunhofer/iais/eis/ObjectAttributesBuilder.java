@@ -45,12 +45,12 @@ public class ObjectAttributesBuilder {
 	}
 
 	/**
-	* This function allows setting a value for objectAttribute
-	* @param objectAttribute desired value to be set
-	* @return Builder object with new value for objectAttribute
+	* This function allows setting a value for objectAttributes
+	* @param objectAttributes desired value to be set
+	* @return Builder object with new value for objectAttributes
 	*/
-	final public ObjectAttributesBuilder objectAttribute(List<DataElement> objectAttribute) {
-		this.defaultObjectAttributes.objectAttribute = objectAttribute;
+	final public ObjectAttributesBuilder objectAttributes(List<DataElement> objectAttributes) {
+		this.defaultObjectAttributes.objectAttributes = objectAttributes;
 		return this;
 	}
 	/**

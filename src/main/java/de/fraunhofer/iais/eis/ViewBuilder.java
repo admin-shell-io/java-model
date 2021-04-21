@@ -45,34 +45,34 @@ public class ViewBuilder {
 	}
 
 	/**
-	* This function allows setting a value for containedElement
-	* @param containedElement desired value to be set
-	* @return Builder object with new value for containedElement
+	* This function allows setting a value for containedElements
+	* @param containedElements desired value to be set
+	* @return Builder object with new value for containedElements
 	*/
-	final public ViewBuilder containedElement(List<Referable> containedElement) {
-		this.defaultView.containedElement = containedElement;
+	final public ViewBuilder containedElements(List<Referable> containedElements) {
+		this.defaultView.containedElements = containedElements;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableCategory
-	* @param referableCategory desired value to be set
-	* @return Builder object with new value for referableCategory
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public ViewBuilder referableCategory(List<String> referableCategory) {
-		this.defaultView.referableCategory = referableCategory;
+	final public ViewBuilder referableCategories(List<String> referableCategories) {
+		this.defaultView.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public ViewBuilder description(List<TypedLiteral> description) {
-		this.defaultView.description = description;
+	final public ViewBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultView.descriptions = descriptions;
 		return this;
 	}
 
@@ -111,12 +111,12 @@ public class ViewBuilder {
 
 
 	/**
-	* This function allows setting a value for dataSpecification
-	* @param dataSpecification desired value to be set
-	* @return Builder object with new value for dataSpecification
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public ViewBuilder dataSpecification(List<Reference> dataSpecification) {
-		this.defaultView.dataSpecification = dataSpecification;
+	final public ViewBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultView.dataSpecifications = dataSpecifications;
 		return this;
 	}
 

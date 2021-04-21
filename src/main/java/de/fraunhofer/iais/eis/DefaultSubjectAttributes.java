@@ -45,11 +45,11 @@ public class DefaultSubjectAttributes implements Serializable, SubjectAttributes
 
 	//List of all labels of this class
 	@JsonIgnore
-	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Subject Attributes", ""));
+	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Subject Attributes", ""));
 
 	//List of all comments of this class
 	@JsonIgnore
-	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("A set of data elements that further classifies a specific subject.", "en"));
+	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("A set of data elements that further classifies a specific subject.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -59,7 +59,7 @@ public class DefaultSubjectAttributes implements Serializable, SubjectAttributes
 	* "Constraint AASs-015: The data element SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the \'selectableSubjectAttributes\' attribute of \'AccessControl\'."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute", "subjectAttribute"})
-	protected List<DataElement> subjectAttribute;
+	protected List<DataElement> subjectAttributes;
 
 
 	// no manual construction
@@ -67,31 +67,17 @@ public class DefaultSubjectAttributes implements Serializable, SubjectAttributes
 		id = VocabUtil.getInstance().createRandomUrl("subjectAttributes");
 	}
 
-	/**
-	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
-	* @return ID of current object as URI
-	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
-	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
-	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
-	*/
-	public List<TypedLiteral> getLabel() {
-		return this.label;
+	public List<TypedLiteral> getLabels() {
+		return this.labels;
 	}
 
-	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
-	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
-	*/
-	public List<TypedLiteral> getComment() {
-		return this.comment;
+	public List<TypedLiteral> getComments() {
+		return this.comments;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -111,19 +97,10 @@ public class DefaultSubjectAttributes implements Serializable, SubjectAttributes
 		return value;
 	}
 
-	/**
-	* This function returns a hash code value for the SubjectAttributes for the benefit of e.g. hash tables.
-	* @return a hash code value for the SubjectAttributes
-	*/
 	public int hashCode() {
-		return Objects.hash(new Object[]{super.hashCode(), this.subjectAttribute});
+		return Objects.hash(new Object[]{this.subjectAttributes});
 	}
 
-	/**
-	* This function indicates whether some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this SubjectAttributes is the same as the obj argument; false otherwise.
-	*/
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -133,7 +110,7 @@ public class DefaultSubjectAttributes implements Serializable, SubjectAttributes
 			return false;
 		} else {
 			DefaultSubjectAttributes other = (DefaultSubjectAttributes) obj;
-			return super.equals(other) && Objects.equals(this.subjectAttribute, other.subjectAttribute);
+			return Objects.equals(this.subjectAttributes, other.subjectAttributes);
 		}
 	}
 
@@ -141,25 +118,12 @@ public class DefaultSubjectAttributes implements Serializable, SubjectAttributes
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "A data element that further classifies a specific subject. "@en
-	* "Constraint AASs-015: The data element SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the \'selectableSubjectAttributes\' attribute of \'AccessControl\'."@en
-	* @return Returns the List of DataElement for the property subjectAttribute.
-	* More information under https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute")
-	final public List<DataElement> getSubjectAttribute() {
-		return subjectAttribute;
+	final public List<DataElement> getSubjectAttributes() {
+		return subjectAttributes;
 	}
-
 	
-	/**
-	* "A data element that further classifies a specific subject. "@en
-	* "Constraint AASs-015: The data element SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the \'selectableSubjectAttributes\' attribute of \'AccessControl\'."@en
-	* @param subjectAttribute desired value for the property subjectAttribute.
-	* More information under https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute
-	*/
-	final public void setSubjectAttribute (List<DataElement> subjectAttribute) {
-		this.subjectAttribute = subjectAttribute;
+	final public void setSubjectAttributes (List<DataElement> subjectAttributes) {
+		this.subjectAttributes = subjectAttributes;
 	}
 }

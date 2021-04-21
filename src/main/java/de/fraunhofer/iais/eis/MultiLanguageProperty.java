@@ -51,18 +51,18 @@ public interface MultiLanguageProperty extends DataElement {
 	public URI getId();
 
 	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This function retrieves a human readable labels about the current class, as defined in the ontology.
 	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
+	* @return Human readable labels
 	*/
-	public List<TypedLiteral> getLabel();
+	public List<TypedLiteral> getLabels();
 
 	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This function retrieves a human readable explanatory comments about the current class, as defined in the ontology.
 	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
+	* @return Human readable explanatory comments
 	*/
-	public List<TypedLiteral> getComment();
+	public List<TypedLiteral> getComments();
 
 	/**
 	* This function returns a hash code value for the MultiLanguageProperty for the benefit of e.g. hash tables.
@@ -85,18 +85,18 @@ public interface MultiLanguageProperty extends DataElement {
 	* "Constraint AASd-052b: If the semanticId of a MultiLanguageProperty references a ConceptDescription then the ConceptDescription/category shall be one of  following values: PROPERTY."@en
 	* "Constraint AASd-012: If both, the MultiLanguageProperty/value and the MultiLanguageProperty/valueId are present then for each string in a specific language the meaning must be the same as specified in MultiLanguageProperty/valueId."@en
 	* "Constraint AASd-067: If the semanticId of a MultiLanguageProperty references a ConceptDescription then DataSpecificationIEC61360/dataType shall be STRING_TRANSLATABLE."@en
-	* @return Returns the List of TypedLiteral for the property value.
+	* @return Returns the List of TypedLiterals for the property values.
 	* More information under https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value")
-	public List<TypedLiteral> getValue();
+	public List<TypedLiteral> getValues();
 
 	/**
 	* "Reference to the global unqiue id of a coded value."@en
-	* @return Returns the List of Reference for the property valueId.
+	* @return Returns the List of References for the property valueIds.
 	* More information under https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId")
-	public List<Reference> getValueId();
+	public List<Reference> getValueIds();
 
 }

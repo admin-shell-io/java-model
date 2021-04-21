@@ -56,23 +56,23 @@ public class SecurityBuilder {
 
 
 	/**
-	* This function allows setting a value for certificate
-	* @param certificate desired value to be set
-	* @return Builder object with new value for certificate
+	* This function allows setting a value for certificates
+	* @param certificates desired value to be set
+	* @return Builder object with new value for certificates
 	*/
-	final public SecurityBuilder certificate(List<Certificate> certificate) {
-		this.defaultSecurity.certificate = certificate;
+	final public SecurityBuilder certificates(List<Certificate> certificates) {
+		this.defaultSecurity.certificates = certificates;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for requiredCertificateExtension
-	* @param requiredCertificateExtension desired value to be set
-	* @return Builder object with new value for requiredCertificateExtension
+	* This function allows setting a value for requiredCertificateExtensions
+	* @param requiredCertificateExtensions desired value to be set
+	* @return Builder object with new value for requiredCertificateExtensions
 	*/
-	final public SecurityBuilder requiredCertificateExtension(List<Reference> requiredCertificateExtension) {
-		this.defaultSecurity.requiredCertificateExtension = requiredCertificateExtension;
+	final public SecurityBuilder requiredCertificateExtensions(List<Reference> requiredCertificateExtensions) {
+		this.defaultSecurity.requiredCertificateExtensions = requiredCertificateExtensions;
 		return this;
 	}
 	/**

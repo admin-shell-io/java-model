@@ -58,23 +58,23 @@ public class BasicEventBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategory
-	* @param referableCategory desired value to be set
-	* @return Builder object with new value for referableCategory
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public BasicEventBuilder referableCategory(List<String> referableCategory) {
-		this.defaultBasicEvent.referableCategory = referableCategory;
+	final public BasicEventBuilder referableCategories(List<String> referableCategories) {
+		this.defaultBasicEvent.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public BasicEventBuilder description(List<TypedLiteral> description) {
-		this.defaultBasicEvent.description = description;
+	final public BasicEventBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultBasicEvent.descriptions = descriptions;
 		return this;
 	}
 
@@ -113,23 +113,23 @@ public class BasicEventBuilder {
 
 
 	/**
-	* This function allows setting a value for qualifier
-	* @param qualifier desired value to be set
-	* @return Builder object with new value for qualifier
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public BasicEventBuilder qualifier(List<Constraint> qualifier) {
-		this.defaultBasicEvent.qualifier = qualifier;
+	final public BasicEventBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultBasicEvent.qualifiers = qualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecification
-	* @param dataSpecification desired value to be set
-	* @return Builder object with new value for dataSpecification
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public BasicEventBuilder dataSpecification(List<Reference> dataSpecification) {
-		this.defaultBasicEvent.dataSpecification = dataSpecification;
+	final public BasicEventBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultBasicEvent.dataSpecifications = dataSpecifications;
 		return this;
 	}
 

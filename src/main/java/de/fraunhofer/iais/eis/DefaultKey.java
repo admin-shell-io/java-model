@@ -45,11 +45,11 @@ public class DefaultKey implements Serializable, Key {
 
 	//List of all labels of this class
 	@JsonIgnore
-	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Key", ""));
+	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Key", ""));
 
 	//List of all comments of this class
 	@JsonIgnore
-	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("A key is a reference to an element by its id.", "en"));
+	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("A key is a reference to an element by its id.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -84,31 +84,17 @@ public class DefaultKey implements Serializable, Key {
 		id = VocabUtil.getInstance().createRandomUrl("key");
 	}
 
-	/**
-	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
-	* @return ID of current object as URI
-	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
-	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
-	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
-	*/
-	public List<TypedLiteral> getLabel() {
-		return this.label;
+	public List<TypedLiteral> getLabels() {
+		return this.labels;
 	}
 
-	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
-	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
-	*/
-	public List<TypedLiteral> getComment() {
-		return this.comment;
+	public List<TypedLiteral> getComments() {
+		return this.comments;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -128,19 +114,12 @@ public class DefaultKey implements Serializable, Key {
 		return value;
 	}
 
-	/**
-	* This function returns a hash code value for the Key for the benefit of e.g. hash tables.
-	* @return a hash code value for the Key
-	*/
 	public int hashCode() {
-		return Objects.hash(new Object[]{super.hashCode(), this.idType, this.type, this.value});
+		return Objects.hash(new Object[]{this.idType,
+			this.type,
+			this.value});
 	}
 
-	/**
-	* This function indicates whether some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this Key is the same as the obj argument; false otherwise.
-	*/
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -150,7 +129,9 @@ public class DefaultKey implements Serializable, Key {
 			return false;
 		} else {
 			DefaultKey other = (DefaultKey) obj;
-			return super.equals(other) && Objects.equals(this.idType, other.idType) && Objects.equals(this.type, other.type) && Objects.equals(this.value, other.value);
+			return Objects.equals(this.idType, other.idType) &&
+				Objects.equals(this.type, other.type) &&
+				Objects.equals(this.value, other.value);
 		}
 	}
 
@@ -158,66 +139,29 @@ public class DefaultKey implements Serializable, Key {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "Type of the key value. In case of idType = idShort local shall be true. In case type=GlobalReference idType shall not be IdShort."@en
-	* "Constraint AASd-080: In case Key/type == GlobalReference idType shall not be any LocalKeyType (IdShort, FragmentId)."@en
-	* "Constraint AASd-081: In case Key/type==AssetAdministrationShell Key/idType shall not be any  LocalKeyType (IdShort, FragmentId)."@en
-	* @return Returns the KeyType for the property idType.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Key/idType
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Key/idType")
 	final public KeyType getIdType() {
 		return idType;
 	}
-
 	
-	/**
-	* "Type of the key value. In case of idType = idShort local shall be true. In case type=GlobalReference idType shall not be IdShort."@en
-	* "Constraint AASd-080: In case Key/type == GlobalReference idType shall not be any LocalKeyType (IdShort, FragmentId)."@en
-	* "Constraint AASd-081: In case Key/type==AssetAdministrationShell Key/idType shall not be any  LocalKeyType (IdShort, FragmentId)."@en
-	* @param idType desired value for the property idType.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Key/idType
-	*/
 	final public void setIdType (KeyType idType) {
 		this.idType = idType;
 	}
 
-	/**
-	* "Denote which kind of entity is referenced. In case type = GlobalReference then the element is a global unique id. In all other cases the key references a model element of the same or of another AAS. The name of the model element is explicitly listed."@en
-	* @return Returns the KeyElements for the property type.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Key/type
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Key/type")
 	final public KeyElements getType() {
 		return type;
 	}
-
 	
-	/**
-	* "Denote which kind of entity is referenced. In case type = GlobalReference then the element is a global unique id. In all other cases the key references a model element of the same or of another AAS. The name of the model element is explicitly listed."@en
-	* @param type desired value for the property type.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Key/type
-	*/
 	final public void setType (KeyElements type) {
 		this.type = type;
 	}
 
-	/**
-	* "The key value, for example an IRDI if the idType=IRDI."@en
-	* @return Returns the String for the property value.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Key/value
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Key/value")
 	final public String getValue() {
 		return value;
 	}
-
 	
-	/**
-	* "The key value, for example an IRDI if the idType=IRDI."@en
-	* @param value desired value for the property value.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Key/value
-	*/
 	final public void setValue (String value) {
 		this.value = value;
 	}

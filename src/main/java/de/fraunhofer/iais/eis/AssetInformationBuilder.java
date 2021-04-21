@@ -45,12 +45,12 @@ public class AssetInformationBuilder {
 	}
 
 	/**
-	* This function allows setting a value for assetKind
-	* @param assetKind desired value to be set
-	* @return Builder object with new value for assetKind
+	* This function allows setting a value for assetKinds
+	* @param assetKinds desired value to be set
+	* @return Builder object with new value for assetKinds
 	*/
-	final public AssetInformationBuilder assetKind(List<AssetKind> assetKind) {
-		this.defaultAssetInformation.assetKind = assetKind;
+	final public AssetInformationBuilder assetKinds(List<AssetKind> assetKinds) {
+		this.defaultAssetInformation.assetKinds = assetKinds;
 		return this;
 	}
 
@@ -67,23 +67,23 @@ public class AssetInformationBuilder {
 
 
 	/**
-	* This function allows setting a value for externalAssetId
-	* @param externalAssetId desired value to be set
-	* @return Builder object with new value for externalAssetId
+	* This function allows setting a value for externalAssetIds
+	* @param externalAssetIds desired value to be set
+	* @return Builder object with new value for externalAssetIds
 	*/
-	final public AssetInformationBuilder externalAssetId(List<IdentifierKeyValuePair> externalAssetId) {
-		this.defaultAssetInformation.externalAssetId = externalAssetId;
+	final public AssetInformationBuilder externalAssetIds(List<IdentifierKeyValuePair> externalAssetIds) {
+		this.defaultAssetInformation.externalAssetIds = externalAssetIds;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for billOfMaterial
-	* @param billOfMaterial desired value to be set
-	* @return Builder object with new value for billOfMaterial
+	* This function allows setting a value for billOfMaterials
+	* @param billOfMaterials desired value to be set
+	* @return Builder object with new value for billOfMaterials
 	*/
-	final public AssetInformationBuilder billOfMaterial(List<Submodel> billOfMaterial) {
-		this.defaultAssetInformation.billOfMaterial = billOfMaterial;
+	final public AssetInformationBuilder billOfMaterials(List<Submodel> billOfMaterials) {
+		this.defaultAssetInformation.billOfMaterials = billOfMaterials;
 		return this;
 	}
 

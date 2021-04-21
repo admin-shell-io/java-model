@@ -47,23 +47,23 @@ public class EventMessageBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategory
-	* @param referableCategory desired value to be set
-	* @return Builder object with new value for referableCategory
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public EventMessageBuilder referableCategory(List<String> referableCategory) {
-		this.defaultEventMessage.referableCategory = referableCategory;
+	final public EventMessageBuilder referableCategories(List<String> referableCategories) {
+		this.defaultEventMessage.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public EventMessageBuilder description(List<TypedLiteral> description) {
-		this.defaultEventMessage.description = description;
+	final public EventMessageBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultEventMessage.descriptions = descriptions;
 		return this;
 	}
 
@@ -102,23 +102,23 @@ public class EventMessageBuilder {
 
 
 	/**
-	* This function allows setting a value for qualifier
-	* @param qualifier desired value to be set
-	* @return Builder object with new value for qualifier
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public EventMessageBuilder qualifier(List<Constraint> qualifier) {
-		this.defaultEventMessage.qualifier = qualifier;
+	final public EventMessageBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultEventMessage.qualifiers = qualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecification
-	* @param dataSpecification desired value to be set
-	* @return Builder object with new value for dataSpecification
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public EventMessageBuilder dataSpecification(List<Reference> dataSpecification) {
-		this.defaultEventMessage.dataSpecification = dataSpecification;
+	final public EventMessageBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultEventMessage.dataSpecifications = dataSpecifications;
 		return this;
 	}
 

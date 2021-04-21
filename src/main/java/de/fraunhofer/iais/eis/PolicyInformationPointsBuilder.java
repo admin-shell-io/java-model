@@ -56,12 +56,12 @@ public class PolicyInformationPointsBuilder {
 
 
 	/**
-	* This function allows setting a value for internalInformationPoint
-	* @param internalInformationPoint desired value to be set
-	* @return Builder object with new value for internalInformationPoint
+	* This function allows setting a value for internalInformationPoints
+	* @param internalInformationPoints desired value to be set
+	* @return Builder object with new value for internalInformationPoints
 	*/
-	final public PolicyInformationPointsBuilder internalInformationPoint(List<Submodel> internalInformationPoint) {
-		this.defaultPolicyInformationPoints.internalInformationPoint = internalInformationPoint;
+	final public PolicyInformationPointsBuilder internalInformationPoints(List<Submodel> internalInformationPoints) {
+		this.defaultPolicyInformationPoints.internalInformationPoints = internalInformationPoints;
 		return this;
 	}
 	/**

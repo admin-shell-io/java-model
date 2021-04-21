@@ -45,11 +45,11 @@ public class DefaultPermissionsPerObject implements Serializable, PermissionsPer
 
 	//List of all labels of this class
 	@JsonIgnore
-	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Permission Per Object", ""));
+	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Permission Per Object", ""));
 
 	//List of all comments of this class
 	@JsonIgnore
-	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Table that defines access permissions for a specified object. The object is any referable element in the AAS. Additionally object attributes can be defined that further specify the kind of object the permissions apply to.", "en"));
+	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Table that defines access permissions for a specified object. The object is any referable element in the AAS. Additionally object attributes can be defined that further specify the kind of object the permissions apply to.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -66,7 +66,7 @@ public class DefaultPermissionsPerObject implements Serializable, PermissionsPer
 	* "Permissions assigned to the object. The permissions hold for all subjects as specified in the access permission rule."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission", "permission"})
-	protected List<Permission> permission;
+	protected List<Permission> permissions;
 
 
 	/**
@@ -82,31 +82,17 @@ public class DefaultPermissionsPerObject implements Serializable, PermissionsPer
 		id = VocabUtil.getInstance().createRandomUrl("permissionsPerObject");
 	}
 
-	/**
-	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
-	* @return ID of current object as URI
-	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
-	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
-	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
-	*/
-	public List<TypedLiteral> getLabel() {
-		return this.label;
+	public List<TypedLiteral> getLabels() {
+		return this.labels;
 	}
 
-	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
-	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
-	*/
-	public List<TypedLiteral> getComment() {
-		return this.comment;
+	public List<TypedLiteral> getComments() {
+		return this.comments;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -126,19 +112,12 @@ public class DefaultPermissionsPerObject implements Serializable, PermissionsPer
 		return value;
 	}
 
-	/**
-	* This function returns a hash code value for the PermissionsPerObject for the benefit of e.g. hash tables.
-	* @return a hash code value for the PermissionsPerObject
-	*/
 	public int hashCode() {
-		return Objects.hash(new Object[]{super.hashCode(), this.object, this.permission, this.targetObjectAttributes});
+		return Objects.hash(new Object[]{this.object,
+			this.permissions,
+			this.targetObjectAttributes});
 	}
 
-	/**
-	* This function indicates whether some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this PermissionsPerObject is the same as the obj argument; false otherwise.
-	*/
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -148,7 +127,9 @@ public class DefaultPermissionsPerObject implements Serializable, PermissionsPer
 			return false;
 		} else {
 			DefaultPermissionsPerObject other = (DefaultPermissionsPerObject) obj;
-			return super.equals(other) && Objects.equals(this.object, other.object) && Objects.equals(this.permission, other.permission) && Objects.equals(this.targetObjectAttributes, other.targetObjectAttributes);
+			return Objects.equals(this.object, other.object) &&
+				Objects.equals(this.permissions, other.permissions) &&
+				Objects.equals(this.targetObjectAttributes, other.targetObjectAttributes);
 		}
 	}
 
@@ -156,62 +137,29 @@ public class DefaultPermissionsPerObject implements Serializable, PermissionsPer
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "Element to which permission shall be assigned."@en
-	* @return Returns the Referable for the property object.
-	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")
 	final public Referable getObject() {
 		return object;
 	}
-
 	
-	/**
-	* "Element to which permission shall be assigned."@en
-	* @param object desired value for the property object.
-	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object
-	*/
 	final public void setObject (Referable object) {
 		this.object = object;
 	}
 
-	/**
-	* "Permissions assigned to the object. The permissions hold for all subjects as specified in the access permission rule."@en
-	* @return Returns the List of Permission for the property permission.
-	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission")
-	final public List<Permission> getPermission() {
-		return permission;
+	final public List<Permission> getPermissions() {
+		return permissions;
 	}
-
 	
-	/**
-	* "Permissions assigned to the object. The permissions hold for all subjects as specified in the access permission rule."@en
-	* @param permission desired value for the property permission.
-	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission
-	*/
-	final public void setPermission (List<Permission> permission) {
-		this.permission = permission;
+	final public void setPermissions (List<Permission> permissions) {
+		this.permissions = permissions;
 	}
 
-	/**
-	* "Target object attributes that need to be fulfilled so that the access permissions apply to the accessing subject."@en
-	* @return Returns the ObjectAttributes for the property targetObjectAttributes.
-	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes")
 	final public ObjectAttributes getTargetObjectAttributes() {
 		return targetObjectAttributes;
 	}
-
 	
-	/**
-	* "Target object attributes that need to be fulfilled so that the access permissions apply to the accessing subject."@en
-	* @param targetObjectAttributes desired value for the property targetObjectAttributes.
-	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes
-	*/
 	final public void setTargetObjectAttributes (ObjectAttributes targetObjectAttributes) {
 		this.targetObjectAttributes = targetObjectAttributes;
 	}

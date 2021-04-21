@@ -45,11 +45,11 @@ public class DefaultDataSpecificationContent implements Serializable, DataSpecif
 
 	//List of all labels of this class
 	@JsonIgnore
-	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Data Specification Content", ""));
+	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Data Specification Content", ""));
 
 	//List of all comments of this class
 	@JsonIgnore
-	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("DataSpecificationContent contains the additional attributes to be added to the element instance that references the data specification template and meta information about the template itself.", "en"));
+	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("DataSpecificationContent contains the additional attributes to be added to the element instance that references the data specification template and meta information about the template itself.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -59,31 +59,17 @@ public class DefaultDataSpecificationContent implements Serializable, DataSpecif
 		id = VocabUtil.getInstance().createRandomUrl("dataSpecificationContent");
 	}
 
-	/**
-	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
-	* @return ID of current object as URI
-	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
-	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
-	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
-	*/
-	public List<TypedLiteral> getLabel() {
-		return this.label;
+	public List<TypedLiteral> getLabels() {
+		return this.labels;
 	}
 
-	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
-	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
-	*/
-	public List<TypedLiteral> getComment() {
-		return this.comment;
+	public List<TypedLiteral> getComments() {
+		return this.comments;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -103,19 +89,10 @@ public class DefaultDataSpecificationContent implements Serializable, DataSpecif
 		return value;
 	}
 
-	/**
-	* This function returns a hash code value for the DataSpecificationContent for the benefit of e.g. hash tables.
-	* @return a hash code value for the DataSpecificationContent
-	*/
 	public int hashCode() {
 		return Objects.hash(new Object[]{super.hashCode()});
 	}
 
-	/**
-	* This function indicates whether some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this DataSpecificationContent is the same as the obj argument; false otherwise.
-	*/
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -123,10 +100,8 @@ public class DefaultDataSpecificationContent implements Serializable, DataSpecif
 			return false;
 		} else if (this.getClass() != obj.getClass()) {
 			return false;
-		} else {
-			DefaultDataSpecificationContent other = (DefaultDataSpecificationContent) obj;
-			return super.equals(other);
 		}
+		return true;
 	}
 
 }

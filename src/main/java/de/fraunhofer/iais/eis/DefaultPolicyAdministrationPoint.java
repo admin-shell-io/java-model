@@ -45,11 +45,11 @@ public class DefaultPolicyAdministrationPoint implements Serializable, PolicyAdm
 
 	//List of all labels of this class
 	@JsonIgnore
-	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Policy Administration Point", ""));
+	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Policy Administration Point", ""));
 
 	//List of all comments of this class
 	@JsonIgnore
-	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Definition of a security administration point (PDP).", "en"));
+	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Definition of a security administration point (PDP).", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -75,31 +75,17 @@ public class DefaultPolicyAdministrationPoint implements Serializable, PolicyAdm
 		id = VocabUtil.getInstance().createRandomUrl("policyAdministrationPoint");
 	}
 
-	/**
-	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
-	* @return ID of current object as URI
-	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
-	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
-	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
-	*/
-	public List<TypedLiteral> getLabel() {
-		return this.label;
+	public List<TypedLiteral> getLabels() {
+		return this.labels;
 	}
 
-	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
-	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
-	*/
-	public List<TypedLiteral> getComment() {
-		return this.comment;
+	public List<TypedLiteral> getComments() {
+		return this.comments;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -119,19 +105,11 @@ public class DefaultPolicyAdministrationPoint implements Serializable, PolicyAdm
 		return value;
 	}
 
-	/**
-	* This function returns a hash code value for the PolicyAdministrationPoint for the benefit of e.g. hash tables.
-	* @return a hash code value for the PolicyAdministrationPoint
-	*/
 	public int hashCode() {
-		return Objects.hash(new Object[]{super.hashCode(), this.localAccessControl, this.externalAccessControl});
+		return Objects.hash(new Object[]{this.localAccessControl,
+			this.externalAccessControl});
 	}
 
-	/**
-	* This function indicates whether some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this PolicyAdministrationPoint is the same as the obj argument; false otherwise.
-	*/
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -141,7 +119,8 @@ public class DefaultPolicyAdministrationPoint implements Serializable, PolicyAdm
 			return false;
 		} else {
 			DefaultPolicyAdministrationPoint other = (DefaultPolicyAdministrationPoint) obj;
-			return super.equals(other) && Objects.equals(this.localAccessControl, other.localAccessControl) && Objects.equals(this.externalAccessControl, other.externalAccessControl);
+			return Objects.equals(this.localAccessControl, other.localAccessControl) &&
+				Objects.equals(this.externalAccessControl, other.externalAccessControl);
 		}
 	}
 
@@ -149,44 +128,20 @@ public class DefaultPolicyAdministrationPoint implements Serializable, PolicyAdm
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "The policy administration point of access control as realized by the AAS itself."@en
-	* "Constraint AASd-009: Either there is an external policy administration point endpoint defined or the AAS has its own access control."@en
-	* @return Returns the AccessControl for the property localAccessControl.
-	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl")
 	final public AccessControl getLocalAccessControl() {
 		return localAccessControl;
 	}
-
 	
-	/**
-	* "The policy administration point of access control as realized by the AAS itself."@en
-	* "Constraint AASd-009: Either there is an external policy administration point endpoint defined or the AAS has its own access control."@en
-	* @param localAccessControl desired value for the property localAccessControl.
-	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl
-	*/
 	final public void setLocalAccessControl (AccessControl localAccessControl) {
 		this.localAccessControl = localAccessControl;
 	}
 
-	/**
-	* "Endpoint to an external access control defining a policy administration point to be used by the AAS."@en
-	* @return Returns the boolean for the property externalAccessControl.
-	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl")
 	final public boolean getExternalAccessControl() {
 		return externalAccessControl;
 	}
-
 	
-	/**
-	* "Endpoint to an external access control defining a policy administration point to be used by the AAS."@en
-	* @param externalAccessControl desired value for the property externalAccessControl.
-	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl
-	*/
 	final public void setExternalAccessControl (boolean externalAccessControl) {
 		this.externalAccessControl = externalAccessControl;
 	}

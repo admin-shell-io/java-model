@@ -45,11 +45,11 @@ public class DefaultIdentifier implements Serializable, Identifier {
 
 	//List of all labels of this class
 	@JsonIgnore
-	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Identifier", ""));
+	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Identifier", ""));
 
 	//List of all comments of this class
 	@JsonIgnore
-	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Used to uniquely identify an entity by using an identifier.", "en"));
+	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Used to uniquely identify an entity by using an identifier.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -66,7 +66,7 @@ public class DefaultIdentifier implements Serializable, Identifier {
 	* "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifier/identifier", "identifier"})
-	protected List<TypedLiteral> identifier;
+	protected List<TypedLiteral> identifiers;
 
 
 	// no manual construction
@@ -74,31 +74,17 @@ public class DefaultIdentifier implements Serializable, Identifier {
 		id = VocabUtil.getInstance().createRandomUrl("identifier");
 	}
 
-	/**
-	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
-	* @return ID of current object as URI
-	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
-	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
-	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
-	*/
-	public List<TypedLiteral> getLabel() {
-		return this.label;
+	public List<TypedLiteral> getLabels() {
+		return this.labels;
 	}
 
-	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
-	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
-	*/
-	public List<TypedLiteral> getComment() {
-		return this.comment;
+	public List<TypedLiteral> getComments() {
+		return this.comments;
 	}
 
 	public Object urifyObjects(Object value) {
@@ -118,19 +104,11 @@ public class DefaultIdentifier implements Serializable, Identifier {
 		return value;
 	}
 
-	/**
-	* This function returns a hash code value for the Identifier for the benefit of e.g. hash tables.
-	* @return a hash code value for the Identifier
-	*/
 	public int hashCode() {
-		return Objects.hash(new Object[]{super.hashCode(), this.identifier, this.idType});
+		return Objects.hash(new Object[]{this.identifiers,
+			this.idType});
 	}
 
-	/**
-	* This function indicates whether some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this Identifier is the same as the obj argument; false otherwise.
-	*/
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -140,7 +118,8 @@ public class DefaultIdentifier implements Serializable, Identifier {
 			return false;
 		} else {
 			DefaultIdentifier other = (DefaultIdentifier) obj;
-			return super.equals(other) && Objects.equals(this.identifier, other.identifier) && Objects.equals(this.idType, other.idType);
+			return Objects.equals(this.identifiers, other.identifiers) &&
+				Objects.equals(this.idType, other.idType);
 		}
 	}
 
@@ -148,42 +127,20 @@ public class DefaultIdentifier implements Serializable, Identifier {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
-	* @return Returns the List of TypedLiteral for the property identifier.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Identifier/identifier
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
-	final public List<TypedLiteral> getIdentifier() {
-		return identifier;
+	final public List<TypedLiteral> getIdentifiers() {
+		return identifiers;
 	}
-
 	
-	/**
-	* "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
-	* @param identifier desired value for the property identifier.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Identifier/identifier
-	*/
-	final public void setIdentifier (List<TypedLiteral> identifier) {
-		this.identifier = identifier;
+	final public void setIdentifiers (List<TypedLiteral> identifiers) {
+		this.identifiers = identifiers;
 	}
 
-	/**
-	* "Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the enumeration \'IdentifierType\'."@en
-	* @return Returns the IdentifierType for the property idType.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Identifier/idType
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")
 	final public IdentifierType getIdType() {
 		return idType;
 	}
-
 	
-	/**
-	* "Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the enumeration \'IdentifierType\'."@en
-	* @param idType desired value for the property idType.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Identifier/idType
-	*/
 	final public void setIdType (IdentifierType idType) {
 		this.idType = idType;
 	}
