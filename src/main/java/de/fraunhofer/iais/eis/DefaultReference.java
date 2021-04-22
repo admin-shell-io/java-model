@@ -57,8 +57,8 @@ public class DefaultReference implements Serializable, Reference {
 	* "has key"
 	* "Unique reference in its name space."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Reference/key", "referenceKey"})
-	protected List<Key> referenceKeys;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Reference/key", "key"})
+	protected List<Key> keys;
 
 
 	// no manual construction
@@ -97,7 +97,7 @@ public class DefaultReference implements Serializable, Reference {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.referenceKeys});
+		return Objects.hash(new Object[]{this.keys});
 	}
 
 	public boolean equals(Object obj) {
@@ -109,7 +109,7 @@ public class DefaultReference implements Serializable, Reference {
 			return false;
 		} else {
 			DefaultReference other = (DefaultReference) obj;
-			return Objects.equals(this.referenceKeys, other.referenceKeys);
+			return Objects.equals(this.keys, other.keys);
 		}
 	}
 
@@ -118,11 +118,11 @@ public class DefaultReference implements Serializable, Reference {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Reference/key")
-	final public List<Key> getReferenceKeys() {
-		return referenceKeys;
+	final public List<Key> getKeys() {
+		return keys;
 	}
 	
-	final public void setReferenceKeys (List<Key> referenceKeys) {
-		this.referenceKeys = referenceKeys;
+	final public void setKeys (List<Key> keys) {
+		this.keys = keys;
 	}
 }

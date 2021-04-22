@@ -83,10 +83,10 @@ public interface View extends Referable, HasDataSpecification, HasSemantics {
 
 	/**
 	* "Referable elements that are contained in the view."@en
-	* @return Returns the List of Referables for the property viewContainedElements.
+	* @return Returns the List of Referables for the property containedElements.
 	* More information under https://admin-shell.io/aas/3/0/RC01/View/containedElement
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
-	public List<Referable> getViewContainedElements();
+	public List<Referable> getContainedElements();
 
 }

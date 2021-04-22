@@ -46,89 +46,89 @@ public class AssetBuilder {
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecifications
-	* @param hasDataSpecificationDataSpecifications desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecifications
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public AssetBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
-		this.defaultAsset.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
+	final public AssetBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultAsset.dataSpecifications = dataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for identifiableAdministration
-	* @param identifiableAdministration desired value to be set
-	* @return Builder object with new value for identifiableAdministration
+	* This function allows setting a value for administration
+	* @param administration desired value to be set
+	* @return Builder object with new value for administration
 	*/
-	final public AssetBuilder identifiableAdministration(AdministrativeInformation identifiableAdministration) {
-		this.defaultAsset.identifiableAdministration = identifiableAdministration;
+	final public AssetBuilder administration(AdministrativeInformation administration) {
+		this.defaultAsset.administration = administration;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for identifiableIdentification
-	* @param identifiableIdentification desired value to be set
-	* @return Builder object with new value for identifiableIdentification
+	* This function allows setting a value for identification
+	* @param identification desired value to be set
+	* @return Builder object with new value for identification
 	*/
-	final public AssetBuilder identifiableIdentification(Identifier identifiableIdentification) {
-		this.defaultAsset.identifiableIdentification = identifiableIdentification;
+	final public AssetBuilder identification(Identifier identification) {
+		this.defaultAsset.identification = identification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableReferableCategories
-	* @param referableReferableCategories desired value to be set
-	* @return Builder object with new value for referableReferableCategories
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public AssetBuilder referableReferableCategories(List<String> referableReferableCategories) {
-		this.defaultAsset.referableReferableCategories = referableReferableCategories;
+	final public AssetBuilder referableCategories(List<String> referableCategories) {
+		this.defaultAsset.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescriptions
-	* @param referableDescriptions desired value to be set
-	* @return Builder object with new value for referableDescriptions
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public AssetBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
-		this.defaultAsset.referableDescriptions = referableDescriptions;
+	final public AssetBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultAsset.descriptions = descriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param referableDisplayName desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public AssetBuilder referableDisplayName(TypedLiteral referableDisplayName) {
-		this.defaultAsset.referableDisplayName = referableDisplayName;
+	final public AssetBuilder displayName(TypedLiteral displayName) {
+		this.defaultAsset.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param referableIdShort desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public AssetBuilder referableIdShort(String referableIdShort) {
-		this.defaultAsset.referableIdShort = referableIdShort;
+	final public AssetBuilder idShort(String idShort) {
+		this.defaultAsset.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param referableParent desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public AssetBuilder referableParent(URI referableParent) {
-		this.defaultAsset.referableParent = referableParent;
+	final public AssetBuilder parent(URI parent) {
+		this.defaultAsset.parent = parent;
 		return this;
 	}
 	/**

@@ -56,85 +56,85 @@ public class DefaultRC01 implements Serializable, RC01 {
 	/**
 	* "has conversion factor"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor", "rC01ConversionFactor"})
-	protected List<String> rC01ConversionFactors;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor", "conversionFactor"})
+	protected List<String> conversionFactors;
 
 
 	/**
 	* "has definition"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/definition", "rC01Definition"})
-	protected List<TypedLiteral> rC01Definitions;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/definition", "definition"})
+	protected List<TypedLiteral> definitions;
 
 
 	/**
 	* "has DIN notation"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation", "rC01DinNotation"})
-	protected List<String> rC01DinNotations;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation", "dinNotation"})
+	protected List<String> dinNotations;
 
 
 	/**
 	* "has ECE code"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode", "rC01EceCode"})
-	protected List<String> rC01EceCodes;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode", "eceCode"})
+	protected List<String> eceCodes;
 
 
 	/**
 	* "has ECE name"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName", "rC01EceName"})
-	protected List<String> rC01EceNames;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName", "eceName"})
+	protected List<String> eceNames;
 
 
 	/**
 	* "has NIST name"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName", "rC01NistName"})
-	protected List<String> rC01NistNames;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName", "nistName"})
+	protected List<String> nistNames;
 
 
 	/**
 	* "has registration authority"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/registrationAuthorityId", "rC01RegistrationAuthorityId"})
-	protected List<String> rC01RegistrationAuthorityIds;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/registrationAuthorityId", "registrationAuthorityId"})
+	protected List<String> registrationAuthorityIds;
 
 
 	/**
 	* "has SI name"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siName", "rC01SiName"})
-	protected List<String> rC01SiNames;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siName", "siName"})
+	protected List<String> siNames;
 
 
 	/**
 	* "has SI notation"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation", "rC01SiNotation"})
-	protected List<String> rC01SiNotations;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation", "siNotation"})
+	protected List<String> siNotations;
 
 
 	/**
 	* "has supplier"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/supplier", "rC01Supplier"})
-	protected List<String> rC01Suppliers;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/supplier", "supplier"})
+	protected List<String> suppliers;
 
 
 	/**
 	* "unit has name"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName", "rC01UnitName"})
-	protected List<String> rC01UnitNames;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName", "unitName"})
+	protected List<String> unitNames;
 
 
 	/**
 	* "unit has symbol"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol", "rC01UnitSymbol"})
-	protected List<String> rC01UnitSymbols;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol", "unitSymbol"})
+	protected List<String> unitSymbols;
 
 
 	// no manual construction
@@ -173,18 +173,18 @@ public class DefaultRC01 implements Serializable, RC01 {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.rC01ConversionFactors,
-			this.rC01Definitions,
-			this.rC01DinNotations,
-			this.rC01EceCodes,
-			this.rC01EceNames,
-			this.rC01NistNames,
-			this.rC01SiNames,
-			this.rC01SiNotations,
-			this.rC01RegistrationAuthorityIds,
-			this.rC01Suppliers,
-			this.rC01UnitNames,
-			this.rC01UnitSymbols});
+		return Objects.hash(new Object[]{this.conversionFactors,
+			this.definitions,
+			this.dinNotations,
+			this.eceCodes,
+			this.eceNames,
+			this.nistNames,
+			this.siNames,
+			this.siNotations,
+			this.registrationAuthorityIds,
+			this.suppliers,
+			this.unitNames,
+			this.unitSymbols});
 	}
 
 	public boolean equals(Object obj) {
@@ -196,18 +196,18 @@ public class DefaultRC01 implements Serializable, RC01 {
 			return false;
 		} else {
 			DefaultRC01 other = (DefaultRC01) obj;
-			return Objects.equals(this.rC01ConversionFactors, other.rC01ConversionFactors) &&
-				Objects.equals(this.rC01Definitions, other.rC01Definitions) &&
-				Objects.equals(this.rC01DinNotations, other.rC01DinNotations) &&
-				Objects.equals(this.rC01EceCodes, other.rC01EceCodes) &&
-				Objects.equals(this.rC01EceNames, other.rC01EceNames) &&
-				Objects.equals(this.rC01NistNames, other.rC01NistNames) &&
-				Objects.equals(this.rC01SiNames, other.rC01SiNames) &&
-				Objects.equals(this.rC01SiNotations, other.rC01SiNotations) &&
-				Objects.equals(this.rC01RegistrationAuthorityIds, other.rC01RegistrationAuthorityIds) &&
-				Objects.equals(this.rC01Suppliers, other.rC01Suppliers) &&
-				Objects.equals(this.rC01UnitNames, other.rC01UnitNames) &&
-				Objects.equals(this.rC01UnitSymbols, other.rC01UnitSymbols);
+			return Objects.equals(this.conversionFactors, other.conversionFactors) &&
+				Objects.equals(this.definitions, other.definitions) &&
+				Objects.equals(this.dinNotations, other.dinNotations) &&
+				Objects.equals(this.eceCodes, other.eceCodes) &&
+				Objects.equals(this.eceNames, other.eceNames) &&
+				Objects.equals(this.nistNames, other.nistNames) &&
+				Objects.equals(this.siNames, other.siNames) &&
+				Objects.equals(this.siNotations, other.siNotations) &&
+				Objects.equals(this.registrationAuthorityIds, other.registrationAuthorityIds) &&
+				Objects.equals(this.suppliers, other.suppliers) &&
+				Objects.equals(this.unitNames, other.unitNames) &&
+				Objects.equals(this.unitSymbols, other.unitSymbols);
 		}
 	}
 
@@ -216,111 +216,111 @@ public class DefaultRC01 implements Serializable, RC01 {
 
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor")
-	final public List<String> getRC01ConversionFactors() {
-		return rC01ConversionFactors;
+	final public List<String> getConversionFactors() {
+		return conversionFactors;
 	}
 	
-	final public void setRC01ConversionFactors (List<String> rC01ConversionFactors) {
-		this.rC01ConversionFactors = rC01ConversionFactors;
+	final public void setConversionFactors (List<String> conversionFactors) {
+		this.conversionFactors = conversionFactors;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/definition")
-	final public List<TypedLiteral> getRC01Definitions() {
-		return rC01Definitions;
+	final public List<TypedLiteral> getDefinitions() {
+		return definitions;
 	}
 	
-	final public void setRC01Definitions (List<TypedLiteral> rC01Definitions) {
-		this.rC01Definitions = rC01Definitions;
+	final public void setDefinitions (List<TypedLiteral> definitions) {
+		this.definitions = definitions;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation")
-	final public List<String> getRC01DinNotations() {
-		return rC01DinNotations;
+	final public List<String> getDinNotations() {
+		return dinNotations;
 	}
 	
-	final public void setRC01DinNotations (List<String> rC01DinNotations) {
-		this.rC01DinNotations = rC01DinNotations;
+	final public void setDinNotations (List<String> dinNotations) {
+		this.dinNotations = dinNotations;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode")
-	final public List<String> getRC01EceCodes() {
-		return rC01EceCodes;
+	final public List<String> getEceCodes() {
+		return eceCodes;
 	}
 	
-	final public void setRC01EceCodes (List<String> rC01EceCodes) {
-		this.rC01EceCodes = rC01EceCodes;
+	final public void setEceCodes (List<String> eceCodes) {
+		this.eceCodes = eceCodes;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName")
-	final public List<String> getRC01EceNames() {
-		return rC01EceNames;
+	final public List<String> getEceNames() {
+		return eceNames;
 	}
 	
-	final public void setRC01EceNames (List<String> rC01EceNames) {
-		this.rC01EceNames = rC01EceNames;
+	final public void setEceNames (List<String> eceNames) {
+		this.eceNames = eceNames;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName")
-	final public List<String> getRC01NistNames() {
-		return rC01NistNames;
+	final public List<String> getNistNames() {
+		return nistNames;
 	}
 	
-	final public void setRC01NistNames (List<String> rC01NistNames) {
-		this.rC01NistNames = rC01NistNames;
+	final public void setNistNames (List<String> nistNames) {
+		this.nistNames = nistNames;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siName")
-	final public List<String> getRC01SiNames() {
-		return rC01SiNames;
+	final public List<String> getSiNames() {
+		return siNames;
 	}
 	
-	final public void setRC01SiNames (List<String> rC01SiNames) {
-		this.rC01SiNames = rC01SiNames;
+	final public void setSiNames (List<String> siNames) {
+		this.siNames = siNames;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation")
-	final public List<String> getRC01SiNotations() {
-		return rC01SiNotations;
+	final public List<String> getSiNotations() {
+		return siNotations;
 	}
 	
-	final public void setRC01SiNotations (List<String> rC01SiNotations) {
-		this.rC01SiNotations = rC01SiNotations;
+	final public void setSiNotations (List<String> siNotations) {
+		this.siNotations = siNotations;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/registrationAuthorityId")
-	final public List<String> getRC01RegistrationAuthorityIds() {
-		return rC01RegistrationAuthorityIds;
+	final public List<String> getRegistrationAuthorityIds() {
+		return registrationAuthorityIds;
 	}
 	
-	final public void setRC01RegistrationAuthorityIds (List<String> rC01RegistrationAuthorityIds) {
-		this.rC01RegistrationAuthorityIds = rC01RegistrationAuthorityIds;
+	final public void setRegistrationAuthorityIds (List<String> registrationAuthorityIds) {
+		this.registrationAuthorityIds = registrationAuthorityIds;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/supplier")
-	final public List<String> getRC01Suppliers() {
-		return rC01Suppliers;
+	final public List<String> getSuppliers() {
+		return suppliers;
 	}
 	
-	final public void setRC01Suppliers (List<String> rC01Suppliers) {
-		this.rC01Suppliers = rC01Suppliers;
+	final public void setSuppliers (List<String> suppliers) {
+		this.suppliers = suppliers;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName")
-	final public List<String> getRC01UnitNames() {
-		return rC01UnitNames;
+	final public List<String> getUnitNames() {
+		return unitNames;
 	}
 	
-	final public void setRC01UnitNames (List<String> rC01UnitNames) {
-		this.rC01UnitNames = rC01UnitNames;
+	final public void setUnitNames (List<String> unitNames) {
+		this.unitNames = unitNames;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol")
-	final public List<String> getRC01UnitSymbols() {
-		return rC01UnitSymbols;
+	final public List<String> getUnitSymbols() {
+		return unitSymbols;
 	}
 	
-	final public void setRC01UnitSymbols (List<String> rC01UnitSymbols) {
-		this.rC01UnitSymbols = rC01UnitSymbols;
+	final public void setUnitSymbols (List<String> unitSymbols) {
+		this.unitSymbols = unitSymbols;
 	}
 
 }

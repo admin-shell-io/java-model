@@ -58,24 +58,24 @@ public class DefaultAdministrativeInformation implements Serializable, Administr
 	* "Revision of the element."@en
 	* "Constraint AASd-005: A revision requires a version. This means, if there is no version there is no revision neither."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision", "administrativeInformationRevision"})
-	protected String administrativeInformationRevision;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision", "revision"})
+	protected String revision;
 
 
 	/**
 	* "has version"
 	* "Version of the element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version", "administrativeInformationVersion"})
-	protected String administrativeInformationVersion;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version", "version"})
+	protected String version;
 
 
 	/**
 	* "has Data Specification"
 	* "Global reference to the data specification template used by the element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "hasDataSpecificationDataSpecification"})
-	protected List<Reference> hasDataSpecificationDataSpecifications;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "dataSpecification"})
+	protected List<Reference> dataSpecifications;
 
 
 	// no manual construction
@@ -114,9 +114,9 @@ public class DefaultAdministrativeInformation implements Serializable, Administr
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.administrativeInformationVersion,
-			this.administrativeInformationRevision,
-			this.hasDataSpecificationDataSpecifications});
+		return Objects.hash(new Object[]{this.version,
+			this.revision,
+			this.dataSpecifications});
 	}
 
 	public boolean equals(Object obj) {
@@ -128,9 +128,9 @@ public class DefaultAdministrativeInformation implements Serializable, Administr
 			return false;
 		} else {
 			DefaultAdministrativeInformation other = (DefaultAdministrativeInformation) obj;
-			return Objects.equals(this.administrativeInformationVersion, other.administrativeInformationVersion) &&
-				Objects.equals(this.administrativeInformationRevision, other.administrativeInformationRevision) &&
-				Objects.equals(this.hasDataSpecificationDataSpecifications, other.hasDataSpecificationDataSpecifications);
+			return Objects.equals(this.version, other.version) &&
+				Objects.equals(this.revision, other.revision) &&
+				Objects.equals(this.dataSpecifications, other.dataSpecifications);
 		}
 	}
 
@@ -139,29 +139,29 @@ public class DefaultAdministrativeInformation implements Serializable, Administr
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
-	final public String getAdministrativeInformationVersion() {
-		return administrativeInformationVersion;
+	final public String getVersion() {
+		return version;
 	}
 	
-	final public void setAdministrativeInformationVersion (String administrativeInformationVersion) {
-		this.administrativeInformationVersion = administrativeInformationVersion;
+	final public void setVersion (String version) {
+		this.version = version;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
-	final public String getAdministrativeInformationRevision() {
-		return administrativeInformationRevision;
+	final public String getRevision() {
+		return revision;
 	}
 	
-	final public void setAdministrativeInformationRevision (String administrativeInformationRevision) {
-		this.administrativeInformationRevision = administrativeInformationRevision;
+	final public void setRevision (String revision) {
+		this.revision = revision;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
-	final public List<Reference> getHasDataSpecificationDataSpecifications() {
-		return hasDataSpecificationDataSpecifications;
+	final public List<Reference> getDataSpecifications() {
+		return dataSpecifications;
 	}
 	
-	final public void setHasDataSpecificationDataSpecifications (List<Reference> hasDataSpecificationDataSpecifications) {
-		this.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
+	final public void setDataSpecifications (List<Reference> dataSpecifications) {
+		this.dataSpecifications = dataSpecifications;
 	}
 }

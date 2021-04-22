@@ -45,45 +45,45 @@ public class AccessControlPolicyPointsBuilder {
 	}
 
 	/**
-	* This function allows setting a value for accessControlPolicyPointsPolicyAdministrationPoint
-	* @param accessControlPolicyPointsPolicyAdministrationPoint desired value to be set
-	* @return Builder object with new value for accessControlPolicyPointsPolicyAdministrationPoint
+	* This function allows setting a value for policyAdministrationPoint
+	* @param policyAdministrationPoint desired value to be set
+	* @return Builder object with new value for policyAdministrationPoint
 	*/
-	final public AccessControlPolicyPointsBuilder accessControlPolicyPointsPolicyAdministrationPoint(PolicyAdministrationPoint accessControlPolicyPointsPolicyAdministrationPoint) {
-		this.defaultAccessControlPolicyPoints.accessControlPolicyPointsPolicyAdministrationPoint = accessControlPolicyPointsPolicyAdministrationPoint;
+	final public AccessControlPolicyPointsBuilder policyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint) {
+		this.defaultAccessControlPolicyPoints.policyAdministrationPoint = policyAdministrationPoint;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for accessControlPolicyPointsPolicyDecisionPoint
-	* @param accessControlPolicyPointsPolicyDecisionPoint desired value to be set
-	* @return Builder object with new value for accessControlPolicyPointsPolicyDecisionPoint
+	* This function allows setting a value for policyDecisionPoint
+	* @param policyDecisionPoint desired value to be set
+	* @return Builder object with new value for policyDecisionPoint
 	*/
-	final public AccessControlPolicyPointsBuilder accessControlPolicyPointsPolicyDecisionPoint(PolicyDecisionPoint accessControlPolicyPointsPolicyDecisionPoint) {
-		this.defaultAccessControlPolicyPoints.accessControlPolicyPointsPolicyDecisionPoint = accessControlPolicyPointsPolicyDecisionPoint;
+	final public AccessControlPolicyPointsBuilder policyDecisionPoint(PolicyDecisionPoint policyDecisionPoint) {
+		this.defaultAccessControlPolicyPoints.policyDecisionPoint = policyDecisionPoint;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for accessControlPolicyPointsPolicyEnforcementPoint
-	* @param accessControlPolicyPointsPolicyEnforcementPoint desired value to be set
-	* @return Builder object with new value for accessControlPolicyPointsPolicyEnforcementPoint
+	* This function allows setting a value for policyEnforcementPoint
+	* @param policyEnforcementPoint desired value to be set
+	* @return Builder object with new value for policyEnforcementPoint
 	*/
-	final public AccessControlPolicyPointsBuilder accessControlPolicyPointsPolicyEnforcementPoint(PolicyEnforcementPoints accessControlPolicyPointsPolicyEnforcementPoint) {
-		this.defaultAccessControlPolicyPoints.accessControlPolicyPointsPolicyEnforcementPoint = accessControlPolicyPointsPolicyEnforcementPoint;
+	final public AccessControlPolicyPointsBuilder policyEnforcementPoint(PolicyEnforcementPoints policyEnforcementPoint) {
+		this.defaultAccessControlPolicyPoints.policyEnforcementPoint = policyEnforcementPoint;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for accessControlPolicyPointsPolicyInformationPoints
-	* @param accessControlPolicyPointsPolicyInformationPoints desired value to be set
-	* @return Builder object with new value for accessControlPolicyPointsPolicyInformationPoints
+	* This function allows setting a value for policyInformationPoints
+	* @param policyInformationPoints desired value to be set
+	* @return Builder object with new value for policyInformationPoints
 	*/
-	final public AccessControlPolicyPointsBuilder accessControlPolicyPointsPolicyInformationPoints(PolicyInformationPoints accessControlPolicyPointsPolicyInformationPoints) {
-		this.defaultAccessControlPolicyPoints.accessControlPolicyPointsPolicyInformationPoints = accessControlPolicyPointsPolicyInformationPoints;
+	final public AccessControlPolicyPointsBuilder policyInformationPoints(PolicyInformationPoints policyInformationPoints) {
+		this.defaultAccessControlPolicyPoints.policyInformationPoints = policyInformationPoints;
 		return this;
 	}
 	/**

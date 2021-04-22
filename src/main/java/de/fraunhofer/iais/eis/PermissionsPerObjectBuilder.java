@@ -45,34 +45,34 @@ public class PermissionsPerObjectBuilder {
 	}
 
 	/**
-	* This function allows setting a value for permissionsPerObjectObject
-	* @param permissionsPerObjectObject desired value to be set
-	* @return Builder object with new value for permissionsPerObjectObject
+	* This function allows setting a value for object
+	* @param object desired value to be set
+	* @return Builder object with new value for object
 	*/
-	final public PermissionsPerObjectBuilder permissionsPerObjectObject(Referable permissionsPerObjectObject) {
-		this.defaultPermissionsPerObject.permissionsPerObjectObject = permissionsPerObjectObject;
+	final public PermissionsPerObjectBuilder object(Referable object) {
+		this.defaultPermissionsPerObject.object = object;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for permissionsPerObjectPermissions
-	* @param permissionsPerObjectPermissions desired value to be set
-	* @return Builder object with new value for permissionsPerObjectPermissions
+	* This function allows setting a value for permissions
+	* @param permissions desired value to be set
+	* @return Builder object with new value for permissions
 	*/
-	final public PermissionsPerObjectBuilder permissionsPerObjectPermissions(List<Permission> permissionsPerObjectPermissions) {
-		this.defaultPermissionsPerObject.permissionsPerObjectPermissions = permissionsPerObjectPermissions;
+	final public PermissionsPerObjectBuilder permissions(List<Permission> permissions) {
+		this.defaultPermissionsPerObject.permissions = permissions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for permissionsPerObjectTargetObjectAttributes
-	* @param permissionsPerObjectTargetObjectAttributes desired value to be set
-	* @return Builder object with new value for permissionsPerObjectTargetObjectAttributes
+	* This function allows setting a value for targetObjectAttributes
+	* @param targetObjectAttributes desired value to be set
+	* @return Builder object with new value for targetObjectAttributes
 	*/
-	final public PermissionsPerObjectBuilder permissionsPerObjectTargetObjectAttributes(ObjectAttributes permissionsPerObjectTargetObjectAttributes) {
-		this.defaultPermissionsPerObject.permissionsPerObjectTargetObjectAttributes = permissionsPerObjectTargetObjectAttributes;
+	final public PermissionsPerObjectBuilder targetObjectAttributes(ObjectAttributes targetObjectAttributes) {
+		this.defaultPermissionsPerObject.targetObjectAttributes = targetObjectAttributes;
 		return this;
 	}
 	/**

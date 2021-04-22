@@ -57,8 +57,8 @@ public class DefaultPolicyDecisionPoint implements Serializable, PolicyDecisionP
 	* "is external policy decision point defined"
 	* "If externalPolicyDecisionPoints True then Endpoints to external available decision points taking into consideration for access control for the AAS need to be configured."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints", "policyDecisionPointExternalPolicyDecisionPoints"})
-	protected boolean policyDecisionPointExternalPolicyDecisionPoints;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints", "externalPolicyDecisionPoints"})
+	protected boolean externalPolicyDecisionPoints;
 
 
 	// no manual construction
@@ -97,7 +97,7 @@ public class DefaultPolicyDecisionPoint implements Serializable, PolicyDecisionP
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.policyDecisionPointExternalPolicyDecisionPoints});
+		return Objects.hash(new Object[]{this.externalPolicyDecisionPoints});
 	}
 
 	public boolean equals(Object obj) {
@@ -109,7 +109,7 @@ public class DefaultPolicyDecisionPoint implements Serializable, PolicyDecisionP
 			return false;
 		} else {
 			DefaultPolicyDecisionPoint other = (DefaultPolicyDecisionPoint) obj;
-			return Objects.equals(this.policyDecisionPointExternalPolicyDecisionPoints, other.policyDecisionPointExternalPolicyDecisionPoints);
+			return Objects.equals(this.externalPolicyDecisionPoints, other.externalPolicyDecisionPoints);
 		}
 	}
 
@@ -118,11 +118,11 @@ public class DefaultPolicyDecisionPoint implements Serializable, PolicyDecisionP
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
-	final public boolean getPolicyDecisionPointExternalPolicyDecisionPoints() {
-		return policyDecisionPointExternalPolicyDecisionPoints;
+	final public boolean getExternalPolicyDecisionPoints() {
+		return externalPolicyDecisionPoints;
 	}
 	
-	final public void setPolicyDecisionPointExternalPolicyDecisionPoints (boolean policyDecisionPointExternalPolicyDecisionPoints) {
-		this.policyDecisionPointExternalPolicyDecisionPoints = policyDecisionPointExternalPolicyDecisionPoints;
+	final public void setExternalPolicyDecisionPoints (boolean externalPolicyDecisionPoints) {
+		this.externalPolicyDecisionPoints = externalPolicyDecisionPoints;
 	}
 }

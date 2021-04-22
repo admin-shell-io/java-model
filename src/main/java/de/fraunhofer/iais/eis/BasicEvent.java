@@ -82,10 +82,10 @@ public interface BasicEvent extends Event {
 
 	/**
 	* "Reference to the data or other elements that are being observed."@en
-	* @return Returns the Reference for the property basicEventObserved.
+	* @return Returns the Reference for the property observed.
 	* More information under https://admin-shell.io/aas/3/0/RC01/BasicEvent/observed
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BasicEvent/observed")
-	public Reference getBasicEventObserved();
+	public Reference getObserved();
 
 }

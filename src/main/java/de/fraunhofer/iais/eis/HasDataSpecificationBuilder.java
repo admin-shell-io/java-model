@@ -45,12 +45,12 @@ public class HasDataSpecificationBuilder {
 	}
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecifications
-	* @param hasDataSpecificationDataSpecifications desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecifications
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public HasDataSpecificationBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
-		this.defaultHasDataSpecification.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
+	final public HasDataSpecificationBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultHasDataSpecification.dataSpecifications = dataSpecifications;
 		return this;
 	}
 	/**

@@ -45,134 +45,134 @@ public class AnnotatedRelationshipElementBuilder {
 	}
 
 	/**
-	* This function allows setting a value for annotatedRelationshipElementAnnotations
-	* @param annotatedRelationshipElementAnnotations desired value to be set
-	* @return Builder object with new value for annotatedRelationshipElementAnnotations
+	* This function allows setting a value for annotations
+	* @param annotations desired value to be set
+	* @return Builder object with new value for annotations
 	*/
-	final public AnnotatedRelationshipElementBuilder annotatedRelationshipElementAnnotations(List<DataElement> annotatedRelationshipElementAnnotations) {
-		this.defaultAnnotatedRelationshipElement.annotatedRelationshipElementAnnotations = annotatedRelationshipElementAnnotations;
+	final public AnnotatedRelationshipElementBuilder annotations(List<DataElement> annotations) {
+		this.defaultAnnotatedRelationshipElement.annotations = annotations;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for relationshipElementFirst
-	* @param relationshipElementFirst desired value to be set
-	* @return Builder object with new value for relationshipElementFirst
+	* This function allows setting a value for first
+	* @param first desired value to be set
+	* @return Builder object with new value for first
 	*/
-	final public AnnotatedRelationshipElementBuilder relationshipElementFirst(Referable relationshipElementFirst) {
-		this.defaultAnnotatedRelationshipElement.relationshipElementFirst = relationshipElementFirst;
+	final public AnnotatedRelationshipElementBuilder first(Referable first) {
+		this.defaultAnnotatedRelationshipElement.first = first;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for relationshipElementSecond
-	* @param relationshipElementSecond desired value to be set
-	* @return Builder object with new value for relationshipElementSecond
+	* This function allows setting a value for second
+	* @param second desired value to be set
+	* @return Builder object with new value for second
 	*/
-	final public AnnotatedRelationshipElementBuilder relationshipElementSecond(Referable relationshipElementSecond) {
-		this.defaultAnnotatedRelationshipElement.relationshipElementSecond = relationshipElementSecond;
+	final public AnnotatedRelationshipElementBuilder second(Referable second) {
+		this.defaultAnnotatedRelationshipElement.second = second;
 		return this;
 	}
 
 
 
 	/**
-	* This function allows setting a value for referableReferableCategories
-	* @param referableReferableCategories desired value to be set
-	* @return Builder object with new value for referableReferableCategories
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public AnnotatedRelationshipElementBuilder referableReferableCategories(List<String> referableReferableCategories) {
-		this.defaultAnnotatedRelationshipElement.referableReferableCategories = referableReferableCategories;
+	final public AnnotatedRelationshipElementBuilder referableCategories(List<String> referableCategories) {
+		this.defaultAnnotatedRelationshipElement.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescriptions
-	* @param referableDescriptions desired value to be set
-	* @return Builder object with new value for referableDescriptions
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public AnnotatedRelationshipElementBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
-		this.defaultAnnotatedRelationshipElement.referableDescriptions = referableDescriptions;
+	final public AnnotatedRelationshipElementBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultAnnotatedRelationshipElement.descriptions = descriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param referableDisplayName desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public AnnotatedRelationshipElementBuilder referableDisplayName(TypedLiteral referableDisplayName) {
-		this.defaultAnnotatedRelationshipElement.referableDisplayName = referableDisplayName;
+	final public AnnotatedRelationshipElementBuilder displayName(TypedLiteral displayName) {
+		this.defaultAnnotatedRelationshipElement.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param referableIdShort desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public AnnotatedRelationshipElementBuilder referableIdShort(String referableIdShort) {
-		this.defaultAnnotatedRelationshipElement.referableIdShort = referableIdShort;
+	final public AnnotatedRelationshipElementBuilder idShort(String idShort) {
+		this.defaultAnnotatedRelationshipElement.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param referableParent desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public AnnotatedRelationshipElementBuilder referableParent(URI referableParent) {
-		this.defaultAnnotatedRelationshipElement.referableParent = referableParent;
+	final public AnnotatedRelationshipElementBuilder parent(URI parent) {
+		this.defaultAnnotatedRelationshipElement.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifiers
-	* @param qualifiableQualifiers desired value to be set
-	* @return Builder object with new value for qualifiableQualifiers
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public AnnotatedRelationshipElementBuilder qualifiableQualifiers(List<Constraint> qualifiableQualifiers) {
-		this.defaultAnnotatedRelationshipElement.qualifiableQualifiers = qualifiableQualifiers;
+	final public AnnotatedRelationshipElementBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultAnnotatedRelationshipElement.qualifiers = qualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecifications
-	* @param hasDataSpecificationDataSpecifications desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecifications
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public AnnotatedRelationshipElementBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
-		this.defaultAnnotatedRelationshipElement.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
+	final public AnnotatedRelationshipElementBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultAnnotatedRelationshipElement.dataSpecifications = dataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param hasKindKind desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public AnnotatedRelationshipElementBuilder hasKindKind(ModelingKind hasKindKind) {
-		this.defaultAnnotatedRelationshipElement.hasKindKind = hasKindKind;
+	final public AnnotatedRelationshipElementBuilder kind(ModelingKind kind) {
+		this.defaultAnnotatedRelationshipElement.kind = kind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param hasSemanticsSemanticId desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public AnnotatedRelationshipElementBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
-		this.defaultAnnotatedRelationshipElement.hasSemanticsSemanticId = hasSemanticsSemanticId;
+	final public AnnotatedRelationshipElementBuilder semanticId(Reference semanticId) {
+		this.defaultAnnotatedRelationshipElement.semanticId = semanticId;
 		return this;
 	}
 	/**

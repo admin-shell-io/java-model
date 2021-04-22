@@ -82,10 +82,10 @@ public interface ObjectAttributes {
 
 	/**
 	* "A data elements that further classifies an object."@en
-	* @return Returns the List of DataElements for the property objectAttributesObjectAttributes.
+	* @return Returns the List of DataElements for the property objectAttributes.
 	* More information under https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
-	public List<DataElement> getObjectAttributesObjectAttributes();
+	public List<DataElement> getObjectAttributes();
 
 }

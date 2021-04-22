@@ -45,23 +45,23 @@ public class PropertyBuilder {
 	}
 
 	/**
-	* This function allows setting a value for propertyValue
-	* @param propertyValue desired value to be set
-	* @return Builder object with new value for propertyValue
+	* This function allows setting a value for value
+	* @param value desired value to be set
+	* @return Builder object with new value for value
 	*/
-	final public PropertyBuilder propertyValue(TypedLiteral propertyValue) {
-		this.defaultProperty.propertyValue = propertyValue;
+	final public PropertyBuilder value(TypedLiteral value) {
+		this.defaultProperty.value = value;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for propertyValueId
-	* @param propertyValueId desired value to be set
-	* @return Builder object with new value for propertyValueId
+	* This function allows setting a value for valueId
+	* @param valueId desired value to be set
+	* @return Builder object with new value for valueId
 	*/
-	final public PropertyBuilder propertyValueId(Reference propertyValueId) {
-		this.defaultProperty.propertyValueId = propertyValueId;
+	final public PropertyBuilder valueId(Reference valueId) {
+		this.defaultProperty.valueId = valueId;
 		return this;
 	}
 
@@ -69,100 +69,100 @@ public class PropertyBuilder {
 
 
 	/**
-	* This function allows setting a value for referableReferableCategories
-	* @param referableReferableCategories desired value to be set
-	* @return Builder object with new value for referableReferableCategories
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public PropertyBuilder referableReferableCategories(List<String> referableReferableCategories) {
-		this.defaultProperty.referableReferableCategories = referableReferableCategories;
+	final public PropertyBuilder referableCategories(List<String> referableCategories) {
+		this.defaultProperty.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescriptions
-	* @param referableDescriptions desired value to be set
-	* @return Builder object with new value for referableDescriptions
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public PropertyBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
-		this.defaultProperty.referableDescriptions = referableDescriptions;
+	final public PropertyBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultProperty.descriptions = descriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param referableDisplayName desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public PropertyBuilder referableDisplayName(TypedLiteral referableDisplayName) {
-		this.defaultProperty.referableDisplayName = referableDisplayName;
+	final public PropertyBuilder displayName(TypedLiteral displayName) {
+		this.defaultProperty.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param referableIdShort desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public PropertyBuilder referableIdShort(String referableIdShort) {
-		this.defaultProperty.referableIdShort = referableIdShort;
+	final public PropertyBuilder idShort(String idShort) {
+		this.defaultProperty.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param referableParent desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public PropertyBuilder referableParent(URI referableParent) {
-		this.defaultProperty.referableParent = referableParent;
+	final public PropertyBuilder parent(URI parent) {
+		this.defaultProperty.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifiers
-	* @param qualifiableQualifiers desired value to be set
-	* @return Builder object with new value for qualifiableQualifiers
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public PropertyBuilder qualifiableQualifiers(List<Constraint> qualifiableQualifiers) {
-		this.defaultProperty.qualifiableQualifiers = qualifiableQualifiers;
+	final public PropertyBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultProperty.qualifiers = qualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecifications
-	* @param hasDataSpecificationDataSpecifications desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecifications
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public PropertyBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
-		this.defaultProperty.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
+	final public PropertyBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultProperty.dataSpecifications = dataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param hasKindKind desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public PropertyBuilder hasKindKind(ModelingKind hasKindKind) {
-		this.defaultProperty.hasKindKind = hasKindKind;
+	final public PropertyBuilder kind(ModelingKind kind) {
+		this.defaultProperty.kind = kind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param hasSemanticsSemanticId desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public PropertyBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
-		this.defaultProperty.hasSemanticsSemanticId = hasSemanticsSemanticId;
+	final public PropertyBuilder semanticId(Reference semanticId) {
+		this.defaultProperty.semanticId = semanticId;
 		return this;
 	}
 	/**

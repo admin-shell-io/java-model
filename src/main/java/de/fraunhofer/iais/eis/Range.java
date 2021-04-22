@@ -85,18 +85,18 @@ public interface Range extends DataElement {
 
 	/**
 	* "The maximum value of the range."@en
-	* @return Returns the List of TypedLiterals for the property rangeMaxs.
+	* @return Returns the List of TypedLiterals for the property maxs.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Range/max
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Range/max")
-	public List<TypedLiteral> getRangeMaxs();
+	public List<TypedLiteral> getMaxs();
 
 	/**
 	* "The minimum value of the range."@en
-	* @return Returns the List of TypedLiterals for the property rangeMins.
+	* @return Returns the List of TypedLiterals for the property mins.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Range/min
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Range/min")
-	public List<TypedLiteral> getRangeMins();
+	public List<TypedLiteral> getMins();
 
 }

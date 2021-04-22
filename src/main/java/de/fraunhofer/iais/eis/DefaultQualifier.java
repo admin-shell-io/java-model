@@ -59,16 +59,16 @@ public class DefaultQualifier implements Serializable, Qualifier {
 	* "Points to the Expression Semantic of the Submodels"@en
 	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "hasSemanticsSemanticId"})
-	protected Reference hasSemanticsSemanticId;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "semanticId"})
+	protected Reference semanticId;
 
 
 	/**
 	* "has qualifier type"
 	* "The qualifier type describes the type of the qualifier that is applied to the element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifier/type", "qualifierType"})
-	protected String qualifierType;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifier/type", "type"})
+	protected String type;
 
 
 	/**
@@ -76,15 +76,15 @@ public class DefaultQualifier implements Serializable, Qualifier {
 	* "Constraint AASd-006: if both, the value and the valueId are present then the value needs to be identical to the short name of the referenced coded value in qualifierValueId."@en
 	* "Constraint AASd-020: The value of Qualifier/value shall be consistent to the data type as defined in Qualifier/valueType."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifier/value", "qualifierValue"})
-	protected TypedLiteral qualifierValue;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifier/value", "value"})
+	protected TypedLiteral value;
 
 
 	/**
 	* "Reference to the global unqiue id of a coded value."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId", "qualifierValueId"})
-	protected Reference qualifierValueId;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId", "valueId"})
+	protected Reference valueId;
 
 
 	// no manual construction
@@ -123,10 +123,10 @@ public class DefaultQualifier implements Serializable, Qualifier {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.qualifierType,
-			this.qualifierValue,
-			this.qualifierValueId,
-			this.hasSemanticsSemanticId});
+		return Objects.hash(new Object[]{this.type,
+			this.value,
+			this.valueId,
+			this.semanticId});
 	}
 
 	public boolean equals(Object obj) {
@@ -138,10 +138,10 @@ public class DefaultQualifier implements Serializable, Qualifier {
 			return false;
 		} else {
 			DefaultQualifier other = (DefaultQualifier) obj;
-			return Objects.equals(this.qualifierType, other.qualifierType) &&
-				Objects.equals(this.qualifierValue, other.qualifierValue) &&
-				Objects.equals(this.qualifierValueId, other.qualifierValueId) &&
-				Objects.equals(this.hasSemanticsSemanticId, other.hasSemanticsSemanticId);
+			return Objects.equals(this.type, other.type) &&
+				Objects.equals(this.value, other.value) &&
+				Objects.equals(this.valueId, other.valueId) &&
+				Objects.equals(this.semanticId, other.semanticId);
 		}
 	}
 
@@ -150,39 +150,39 @@ public class DefaultQualifier implements Serializable, Qualifier {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/type")
-	final public String getQualifierType() {
-		return qualifierType;
+	final public String getType() {
+		return type;
 	}
 	
-	final public void setQualifierType (String qualifierType) {
-		this.qualifierType = qualifierType;
+	final public void setType (String type) {
+		this.type = type;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/value")
-	final public TypedLiteral getQualifierValue() {
-		return qualifierValue;
+	final public TypedLiteral getValue() {
+		return value;
 	}
 	
-	final public void setQualifierValue (TypedLiteral qualifierValue) {
-		this.qualifierValue = qualifierValue;
+	final public void setValue (TypedLiteral value) {
+		this.value = value;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId")
-	final public Reference getQualifierValueId() {
-		return qualifierValueId;
+	final public Reference getValueId() {
+		return valueId;
 	}
 	
-	final public void setQualifierValueId (Reference qualifierValueId) {
-		this.qualifierValueId = qualifierValueId;
+	final public void setValueId (Reference valueId) {
+		this.valueId = valueId;
 	}
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-	final public Reference getHasSemanticsSemanticId() {
-		return hasSemanticsSemanticId;
+	final public Reference getSemanticId() {
+		return semanticId;
 	}
 	
-	final public void setHasSemanticsSemanticId (Reference hasSemanticsSemanticId) {
-		this.hasSemanticsSemanticId = hasSemanticsSemanticId;
+	final public void setSemanticId (Reference semanticId) {
+		this.semanticId = semanticId;
 	}
 }

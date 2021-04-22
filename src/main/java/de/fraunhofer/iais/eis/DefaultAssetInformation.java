@@ -59,24 +59,24 @@ public class DefaultAssetInformation implements Serializable, AssetInformation {
 	* "has assetKind"
 	* "Denotes whether the Asset of of kind \'Type\' or \'Instance\'."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind", "assetInformationAssetKind"})
-	protected List<AssetKind> assetInformationAssetKinds;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind", "assetKind"})
+	protected List<AssetKind> assetKinds;
 
 
 	/**
 	* "has Bill of Material"
 	* "A reference to a Submodel that defines the bill of material of the asset represented by the AAS. This submodel contains a set of entities describing the material used to compose the composite I4.0 Component."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial", "assetInformationBillOfMaterial"})
-	protected List<Submodel> assetInformationBillOfMaterials;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial", "billOfMaterial"})
+	protected List<Submodel> billOfMaterials;
 
 
 	/**
 	* "has external asset id"
 	* "Additional domain specific external, typically proprietary Identifier for the asset like e.g. serial number etc."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/externalAssetId", "assetInformationExternalAssetId"})
-	protected List<IdentifierKeyValuePair> assetInformationExternalAssetIds;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/externalAssetId", "externalAssetId"})
+	protected List<IdentifierKeyValuePair> externalAssetIds;
 
 
 	/**
@@ -85,16 +85,16 @@ public class DefaultAssetInformation implements Serializable, AssetInformation {
 	* "This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the asset. In a first phase of the life cycle the asset might not yet have a global id but already an internal identifier. The internal identifier would be modelled via \'externalAssetId\'."@en
 	* "Constraint AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global reference."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId", "assetInformationGlobalAssetId"})
-	protected Reference assetInformationGlobalAssetId;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId", "globalAssetId"})
+	protected Reference globalAssetId;
 
 
 	/**
 	* "has thumbnail"
 	* "Thumbnail of the asset represented by the asset administration shell."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/thumbnail", "assetInformationThumbnail"})
-	protected File assetInformationThumbnail;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/thumbnail", "thumbnail"})
+	protected File thumbnail;
 
 
 	// no manual construction
@@ -133,11 +133,11 @@ public class DefaultAssetInformation implements Serializable, AssetInformation {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.assetInformationAssetKinds,
-			this.assetInformationGlobalAssetId,
-			this.assetInformationExternalAssetIds,
-			this.assetInformationBillOfMaterials,
-			this.assetInformationThumbnail});
+		return Objects.hash(new Object[]{this.assetKinds,
+			this.globalAssetId,
+			this.externalAssetIds,
+			this.billOfMaterials,
+			this.thumbnail});
 	}
 
 	public boolean equals(Object obj) {
@@ -149,11 +149,11 @@ public class DefaultAssetInformation implements Serializable, AssetInformation {
 			return false;
 		} else {
 			DefaultAssetInformation other = (DefaultAssetInformation) obj;
-			return Objects.equals(this.assetInformationAssetKinds, other.assetInformationAssetKinds) &&
-				Objects.equals(this.assetInformationGlobalAssetId, other.assetInformationGlobalAssetId) &&
-				Objects.equals(this.assetInformationExternalAssetIds, other.assetInformationExternalAssetIds) &&
-				Objects.equals(this.assetInformationBillOfMaterials, other.assetInformationBillOfMaterials) &&
-				Objects.equals(this.assetInformationThumbnail, other.assetInformationThumbnail);
+			return Objects.equals(this.assetKinds, other.assetKinds) &&
+				Objects.equals(this.globalAssetId, other.globalAssetId) &&
+				Objects.equals(this.externalAssetIds, other.externalAssetIds) &&
+				Objects.equals(this.billOfMaterials, other.billOfMaterials) &&
+				Objects.equals(this.thumbnail, other.thumbnail);
 		}
 	}
 
@@ -162,47 +162,47 @@ public class DefaultAssetInformation implements Serializable, AssetInformation {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
-	final public List<AssetKind> getAssetInformationAssetKinds() {
-		return assetInformationAssetKinds;
+	final public List<AssetKind> getAssetKinds() {
+		return assetKinds;
 	}
 	
-	final public void setAssetInformationAssetKinds (List<AssetKind> assetInformationAssetKinds) {
-		this.assetInformationAssetKinds = assetInformationAssetKinds;
+	final public void setAssetKinds (List<AssetKind> assetKinds) {
+		this.assetKinds = assetKinds;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId")
-	final public Reference getAssetInformationGlobalAssetId() {
-		return assetInformationGlobalAssetId;
+	final public Reference getGlobalAssetId() {
+		return globalAssetId;
 	}
 	
-	final public void setAssetInformationGlobalAssetId (Reference assetInformationGlobalAssetId) {
-		this.assetInformationGlobalAssetId = assetInformationGlobalAssetId;
+	final public void setGlobalAssetId (Reference globalAssetId) {
+		this.globalAssetId = globalAssetId;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/externalAssetId")
-	final public List<IdentifierKeyValuePair> getAssetInformationExternalAssetIds() {
-		return assetInformationExternalAssetIds;
+	final public List<IdentifierKeyValuePair> getExternalAssetIds() {
+		return externalAssetIds;
 	}
 	
-	final public void setAssetInformationExternalAssetIds (List<IdentifierKeyValuePair> assetInformationExternalAssetIds) {
-		this.assetInformationExternalAssetIds = assetInformationExternalAssetIds;
+	final public void setExternalAssetIds (List<IdentifierKeyValuePair> externalAssetIds) {
+		this.externalAssetIds = externalAssetIds;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial")
-	final public List<Submodel> getAssetInformationBillOfMaterials() {
-		return assetInformationBillOfMaterials;
+	final public List<Submodel> getBillOfMaterials() {
+		return billOfMaterials;
 	}
 	
-	final public void setAssetInformationBillOfMaterials (List<Submodel> assetInformationBillOfMaterials) {
-		this.assetInformationBillOfMaterials = assetInformationBillOfMaterials;
+	final public void setBillOfMaterials (List<Submodel> billOfMaterials) {
+		this.billOfMaterials = billOfMaterials;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/thumbnail")
-	final public File getAssetInformationThumbnail() {
-		return assetInformationThumbnail;
+	final public File getThumbnail() {
+		return thumbnail;
 	}
 	
-	final public void setAssetInformationThumbnail (File assetInformationThumbnail) {
-		this.assetInformationThumbnail = assetInformationThumbnail;
+	final public void setThumbnail (File thumbnail) {
+		this.thumbnail = thumbnail;
 	}
 }

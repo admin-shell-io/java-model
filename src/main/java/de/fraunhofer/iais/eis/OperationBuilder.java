@@ -45,134 +45,134 @@ public class OperationBuilder {
 	}
 
 	/**
-	* This function allows setting a value for operationInputVariables
-	* @param operationInputVariables desired value to be set
-	* @return Builder object with new value for operationInputVariables
+	* This function allows setting a value for inputVariables
+	* @param inputVariables desired value to be set
+	* @return Builder object with new value for inputVariables
 	*/
-	final public OperationBuilder operationInputVariables(List<OperationVariable> operationInputVariables) {
-		this.defaultOperation.operationInputVariables = operationInputVariables;
+	final public OperationBuilder inputVariables(List<OperationVariable> inputVariables) {
+		this.defaultOperation.inputVariables = inputVariables;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for operationInoutputVariables
-	* @param operationInoutputVariables desired value to be set
-	* @return Builder object with new value for operationInoutputVariables
+	* This function allows setting a value for inoutputVariables
+	* @param inoutputVariables desired value to be set
+	* @return Builder object with new value for inoutputVariables
 	*/
-	final public OperationBuilder operationInoutputVariables(List<OperationVariable> operationInoutputVariables) {
-		this.defaultOperation.operationInoutputVariables = operationInoutputVariables;
+	final public OperationBuilder inoutputVariables(List<OperationVariable> inoutputVariables) {
+		this.defaultOperation.inoutputVariables = inoutputVariables;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for operationOutputVariables
-	* @param operationOutputVariables desired value to be set
-	* @return Builder object with new value for operationOutputVariables
+	* This function allows setting a value for outputVariables
+	* @param outputVariables desired value to be set
+	* @return Builder object with new value for outputVariables
 	*/
-	final public OperationBuilder operationOutputVariables(List<OperationVariable> operationOutputVariables) {
-		this.defaultOperation.operationOutputVariables = operationOutputVariables;
+	final public OperationBuilder outputVariables(List<OperationVariable> outputVariables) {
+		this.defaultOperation.outputVariables = outputVariables;
 		return this;
 	}
 
 
 
 	/**
-	* This function allows setting a value for referableReferableCategories
-	* @param referableReferableCategories desired value to be set
-	* @return Builder object with new value for referableReferableCategories
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public OperationBuilder referableReferableCategories(List<String> referableReferableCategories) {
-		this.defaultOperation.referableReferableCategories = referableReferableCategories;
+	final public OperationBuilder referableCategories(List<String> referableCategories) {
+		this.defaultOperation.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescriptions
-	* @param referableDescriptions desired value to be set
-	* @return Builder object with new value for referableDescriptions
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public OperationBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
-		this.defaultOperation.referableDescriptions = referableDescriptions;
+	final public OperationBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultOperation.descriptions = descriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param referableDisplayName desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public OperationBuilder referableDisplayName(TypedLiteral referableDisplayName) {
-		this.defaultOperation.referableDisplayName = referableDisplayName;
+	final public OperationBuilder displayName(TypedLiteral displayName) {
+		this.defaultOperation.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param referableIdShort desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public OperationBuilder referableIdShort(String referableIdShort) {
-		this.defaultOperation.referableIdShort = referableIdShort;
+	final public OperationBuilder idShort(String idShort) {
+		this.defaultOperation.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param referableParent desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public OperationBuilder referableParent(URI referableParent) {
-		this.defaultOperation.referableParent = referableParent;
+	final public OperationBuilder parent(URI parent) {
+		this.defaultOperation.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifiers
-	* @param qualifiableQualifiers desired value to be set
-	* @return Builder object with new value for qualifiableQualifiers
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public OperationBuilder qualifiableQualifiers(List<Constraint> qualifiableQualifiers) {
-		this.defaultOperation.qualifiableQualifiers = qualifiableQualifiers;
+	final public OperationBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultOperation.qualifiers = qualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecifications
-	* @param hasDataSpecificationDataSpecifications desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecifications
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public OperationBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
-		this.defaultOperation.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
+	final public OperationBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultOperation.dataSpecifications = dataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param hasKindKind desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public OperationBuilder hasKindKind(ModelingKind hasKindKind) {
-		this.defaultOperation.hasKindKind = hasKindKind;
+	final public OperationBuilder kind(ModelingKind kind) {
+		this.defaultOperation.kind = kind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param hasSemanticsSemanticId desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public OperationBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
-		this.defaultOperation.hasSemanticsSemanticId = hasSemanticsSemanticId;
+	final public OperationBuilder semanticId(Reference semanticId) {
+		this.defaultOperation.semanticId = semanticId;
 		return this;
 	}
 	/**

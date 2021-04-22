@@ -45,12 +45,12 @@ public class ReferenceElementBuilder {
 	}
 
 	/**
-	* This function allows setting a value for referenceElementValue
-	* @param referenceElementValue desired value to be set
-	* @return Builder object with new value for referenceElementValue
+	* This function allows setting a value for value
+	* @param value desired value to be set
+	* @return Builder object with new value for value
 	*/
-	final public ReferenceElementBuilder referenceElementValue(Reference referenceElementValue) {
-		this.defaultReferenceElement.referenceElementValue = referenceElementValue;
+	final public ReferenceElementBuilder value(Reference value) {
+		this.defaultReferenceElement.value = value;
 		return this;
 	}
 
@@ -58,100 +58,100 @@ public class ReferenceElementBuilder {
 
 
 	/**
-	* This function allows setting a value for referableReferableCategories
-	* @param referableReferableCategories desired value to be set
-	* @return Builder object with new value for referableReferableCategories
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public ReferenceElementBuilder referableReferableCategories(List<String> referableReferableCategories) {
-		this.defaultReferenceElement.referableReferableCategories = referableReferableCategories;
+	final public ReferenceElementBuilder referableCategories(List<String> referableCategories) {
+		this.defaultReferenceElement.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescriptions
-	* @param referableDescriptions desired value to be set
-	* @return Builder object with new value for referableDescriptions
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public ReferenceElementBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
-		this.defaultReferenceElement.referableDescriptions = referableDescriptions;
+	final public ReferenceElementBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultReferenceElement.descriptions = descriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param referableDisplayName desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public ReferenceElementBuilder referableDisplayName(TypedLiteral referableDisplayName) {
-		this.defaultReferenceElement.referableDisplayName = referableDisplayName;
+	final public ReferenceElementBuilder displayName(TypedLiteral displayName) {
+		this.defaultReferenceElement.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param referableIdShort desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public ReferenceElementBuilder referableIdShort(String referableIdShort) {
-		this.defaultReferenceElement.referableIdShort = referableIdShort;
+	final public ReferenceElementBuilder idShort(String idShort) {
+		this.defaultReferenceElement.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param referableParent desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public ReferenceElementBuilder referableParent(URI referableParent) {
-		this.defaultReferenceElement.referableParent = referableParent;
+	final public ReferenceElementBuilder parent(URI parent) {
+		this.defaultReferenceElement.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifiers
-	* @param qualifiableQualifiers desired value to be set
-	* @return Builder object with new value for qualifiableQualifiers
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public ReferenceElementBuilder qualifiableQualifiers(List<Constraint> qualifiableQualifiers) {
-		this.defaultReferenceElement.qualifiableQualifiers = qualifiableQualifiers;
+	final public ReferenceElementBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultReferenceElement.qualifiers = qualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecifications
-	* @param hasDataSpecificationDataSpecifications desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecifications
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public ReferenceElementBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
-		this.defaultReferenceElement.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
+	final public ReferenceElementBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultReferenceElement.dataSpecifications = dataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param hasKindKind desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public ReferenceElementBuilder hasKindKind(ModelingKind hasKindKind) {
-		this.defaultReferenceElement.hasKindKind = hasKindKind;
+	final public ReferenceElementBuilder kind(ModelingKind kind) {
+		this.defaultReferenceElement.kind = kind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param hasSemanticsSemanticId desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public ReferenceElementBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
-		this.defaultReferenceElement.hasSemanticsSemanticId = hasSemanticsSemanticId;
+	final public ReferenceElementBuilder semanticId(Reference semanticId) {
+		this.defaultReferenceElement.semanticId = semanticId;
 		return this;
 	}
 	/**

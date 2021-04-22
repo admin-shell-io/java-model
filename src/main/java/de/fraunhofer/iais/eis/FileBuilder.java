@@ -45,123 +45,123 @@ public class FileBuilder {
 	}
 
 	/**
-	* This function allows setting a value for fileMimeType
-	* @param fileMimeType desired value to be set
-	* @return Builder object with new value for fileMimeType
+	* This function allows setting a value for mimeType
+	* @param mimeType desired value to be set
+	* @return Builder object with new value for mimeType
 	*/
-	final public FileBuilder fileMimeType(String fileMimeType) {
-		this.defaultFile.fileMimeType = fileMimeType;
+	final public FileBuilder mimeType(String mimeType) {
+		this.defaultFile.mimeType = mimeType;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for fileValue
-	* @param fileValue desired value to be set
-	* @return Builder object with new value for fileValue
+	* This function allows setting a value for value
+	* @param value desired value to be set
+	* @return Builder object with new value for value
 	*/
-	final public FileBuilder fileValue(String fileValue) {
-		this.defaultFile.fileValue = fileValue;
+	final public FileBuilder value(String value) {
+		this.defaultFile.value = value;
 		return this;
 	}
 
 
 
 	/**
-	* This function allows setting a value for referableReferableCategories
-	* @param referableReferableCategories desired value to be set
-	* @return Builder object with new value for referableReferableCategories
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public FileBuilder referableReferableCategories(List<String> referableReferableCategories) {
-		this.defaultFile.referableReferableCategories = referableReferableCategories;
+	final public FileBuilder referableCategories(List<String> referableCategories) {
+		this.defaultFile.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescriptions
-	* @param referableDescriptions desired value to be set
-	* @return Builder object with new value for referableDescriptions
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public FileBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
-		this.defaultFile.referableDescriptions = referableDescriptions;
+	final public FileBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultFile.descriptions = descriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param referableDisplayName desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public FileBuilder referableDisplayName(TypedLiteral referableDisplayName) {
-		this.defaultFile.referableDisplayName = referableDisplayName;
+	final public FileBuilder displayName(TypedLiteral displayName) {
+		this.defaultFile.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param referableIdShort desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public FileBuilder referableIdShort(String referableIdShort) {
-		this.defaultFile.referableIdShort = referableIdShort;
+	final public FileBuilder idShort(String idShort) {
+		this.defaultFile.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param referableParent desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public FileBuilder referableParent(URI referableParent) {
-		this.defaultFile.referableParent = referableParent;
+	final public FileBuilder parent(URI parent) {
+		this.defaultFile.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifiers
-	* @param qualifiableQualifiers desired value to be set
-	* @return Builder object with new value for qualifiableQualifiers
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public FileBuilder qualifiableQualifiers(List<Constraint> qualifiableQualifiers) {
-		this.defaultFile.qualifiableQualifiers = qualifiableQualifiers;
+	final public FileBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultFile.qualifiers = qualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecifications
-	* @param hasDataSpecificationDataSpecifications desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecifications
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public FileBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
-		this.defaultFile.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
+	final public FileBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultFile.dataSpecifications = dataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param hasKindKind desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public FileBuilder hasKindKind(ModelingKind hasKindKind) {
-		this.defaultFile.hasKindKind = hasKindKind;
+	final public FileBuilder kind(ModelingKind kind) {
+		this.defaultFile.kind = kind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param hasSemanticsSemanticId desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public FileBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
-		this.defaultFile.hasSemanticsSemanticId = hasSemanticsSemanticId;
+	final public FileBuilder semanticId(Reference semanticId) {
+		this.defaultFile.semanticId = semanticId;
 		return this;
 	}
 	/**

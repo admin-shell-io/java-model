@@ -56,8 +56,8 @@ public class DefaultFormula implements Serializable, Formula {
 	* "depends on"
 	* "A formula may depend on referable or even external global elements - assumed that can be referenced and their value may be evaluated - that are used in the logical expression."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn", "formulaDependsOn"})
-	protected List<Reference> formulaDependsOns;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn", "dependsOn"})
+	protected List<Reference> dependsOns;
 
 
 	// no manual construction
@@ -96,7 +96,7 @@ public class DefaultFormula implements Serializable, Formula {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.formulaDependsOns});
+		return Objects.hash(new Object[]{this.dependsOns});
 	}
 
 	public boolean equals(Object obj) {
@@ -108,7 +108,7 @@ public class DefaultFormula implements Serializable, Formula {
 			return false;
 		} else {
 			DefaultFormula other = (DefaultFormula) obj;
-			return Objects.equals(this.formulaDependsOns, other.formulaDependsOns);
+			return Objects.equals(this.dependsOns, other.dependsOns);
 		}
 	}
 
@@ -117,12 +117,12 @@ public class DefaultFormula implements Serializable, Formula {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn")
-	final public List<Reference> getFormulaDependsOns() {
-		return formulaDependsOns;
+	final public List<Reference> getDependsOns() {
+		return dependsOns;
 	}
 	
-	final public void setFormulaDependsOns (List<Reference> formulaDependsOns) {
-		this.formulaDependsOns = formulaDependsOns;
+	final public void setDependsOns (List<Reference> dependsOns) {
+		this.dependsOns = dependsOns;
 	}
 
 }

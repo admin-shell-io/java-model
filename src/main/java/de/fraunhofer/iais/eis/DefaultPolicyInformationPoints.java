@@ -57,16 +57,16 @@ public class DefaultPolicyInformationPoints implements Serializable, PolicyInfor
 	* "has external information point"
 	* "If externalInformationPoints True then at least one Endpoint to external available information needs to be configured for the AAS."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints", "policyInformationPointsExternalInformationPoints"})
-	protected boolean policyInformationPointsExternalInformationPoints;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints", "externalInformationPoints"})
+	protected boolean externalInformationPoints;
 
 
 	/**
 	* "has internal information point"
 	* "References to submodels defining information used by security access permission rules."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint", "policyInformationPointsInternalInformationPoint"})
-	protected List<Submodel> policyInformationPointsInternalInformationPoints;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint", "internalInformationPoint"})
+	protected List<Submodel> internalInformationPoints;
 
 
 	// no manual construction
@@ -105,8 +105,8 @@ public class DefaultPolicyInformationPoints implements Serializable, PolicyInfor
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.policyInformationPointsExternalInformationPoints,
-			this.policyInformationPointsInternalInformationPoints});
+		return Objects.hash(new Object[]{this.externalInformationPoints,
+			this.internalInformationPoints});
 	}
 
 	public boolean equals(Object obj) {
@@ -118,8 +118,8 @@ public class DefaultPolicyInformationPoints implements Serializable, PolicyInfor
 			return false;
 		} else {
 			DefaultPolicyInformationPoints other = (DefaultPolicyInformationPoints) obj;
-			return Objects.equals(this.policyInformationPointsExternalInformationPoints, other.policyInformationPointsExternalInformationPoints) &&
-				Objects.equals(this.policyInformationPointsInternalInformationPoints, other.policyInformationPointsInternalInformationPoints);
+			return Objects.equals(this.externalInformationPoints, other.externalInformationPoints) &&
+				Objects.equals(this.internalInformationPoints, other.internalInformationPoints);
 		}
 	}
 
@@ -128,20 +128,20 @@ public class DefaultPolicyInformationPoints implements Serializable, PolicyInfor
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints")
-	final public boolean getPolicyInformationPointsExternalInformationPoints() {
-		return policyInformationPointsExternalInformationPoints;
+	final public boolean getExternalInformationPoints() {
+		return externalInformationPoints;
 	}
 	
-	final public void setPolicyInformationPointsExternalInformationPoints (boolean policyInformationPointsExternalInformationPoints) {
-		this.policyInformationPointsExternalInformationPoints = policyInformationPointsExternalInformationPoints;
+	final public void setExternalInformationPoints (boolean externalInformationPoints) {
+		this.externalInformationPoints = externalInformationPoints;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint")
-	final public List<Submodel> getPolicyInformationPointsInternalInformationPoints() {
-		return policyInformationPointsInternalInformationPoints;
+	final public List<Submodel> getInternalInformationPoints() {
+		return internalInformationPoints;
 	}
 	
-	final public void setPolicyInformationPointsInternalInformationPoints (List<Submodel> policyInformationPointsInternalInformationPoints) {
-		this.policyInformationPointsInternalInformationPoints = policyInformationPointsInternalInformationPoints;
+	final public void setInternalInformationPoints (List<Submodel> internalInformationPoints) {
+		this.internalInformationPoints = internalInformationPoints;
 	}
 }

@@ -58,8 +58,8 @@ public class DefaultOperationVariable implements Serializable, OperationVariable
 	* "Describes the needed argument for an operation via a submodel element of kind=Template."@en
 	* "The submodel element value of an operation variable shall be of kind=Template."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/OperationVariable/value", "operationVariableValue"})
-	protected SubmodelElement operationVariableValue;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/OperationVariable/value", "value"})
+	protected SubmodelElement value;
 
 
 	// no manual construction
@@ -98,7 +98,7 @@ public class DefaultOperationVariable implements Serializable, OperationVariable
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.operationVariableValue});
+		return Objects.hash(new Object[]{this.value});
 	}
 
 	public boolean equals(Object obj) {
@@ -110,7 +110,7 @@ public class DefaultOperationVariable implements Serializable, OperationVariable
 			return false;
 		} else {
 			DefaultOperationVariable other = (DefaultOperationVariable) obj;
-			return Objects.equals(this.operationVariableValue, other.operationVariableValue);
+			return Objects.equals(this.value, other.value);
 		}
 	}
 
@@ -119,11 +119,11 @@ public class DefaultOperationVariable implements Serializable, OperationVariable
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/OperationVariable/value")
-	final public SubmodelElement getOperationVariableValue() {
-		return operationVariableValue;
+	final public SubmodelElement getValue() {
+		return value;
 	}
 	
-	final public void setOperationVariableValue (SubmodelElement operationVariableValue) {
-		this.operationVariableValue = operationVariableValue;
+	final public void setValue (SubmodelElement value) {
+		this.value = value;
 	}
 }

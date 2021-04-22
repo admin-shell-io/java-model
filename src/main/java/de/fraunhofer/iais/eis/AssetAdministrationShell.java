@@ -82,42 +82,42 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
 
 	/**
 	* "Meta information about the asset the AAS is representing."@en
-	* @return Returns the AssetInformation for the property assetAdministrationShellAssetInformation.
+	* @return Returns the AssetInformation for the property assetInformation.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation")
-	public AssetInformation getAssetAdministrationShellAssetInformation();
+	public AssetInformation getAssetInformation();
 
 	/**
 	* "This relation connects instances of AAS with their respective types. Refer to Asset Kind for further information of instance and type kinds."@en
-	* @return Returns the Reference for the property assetAdministrationShellDerivedFrom.
+	* @return Returns the Reference for the property derivedFrom.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom")
-	public Reference getAssetAdministrationShellDerivedFrom();
+	public Reference getDerivedFrom();
 
 	/**
 	* "Definition of the security relevant aspects of the AAS."@en
-	* @return Returns the Security for the property assetAdministrationShellSecurity.
+	* @return Returns the Security for the property security.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security")
-	public Security getAssetAdministrationShellSecurity();
+	public Security getSecurity();
 
 	/**
 	* "Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset"@en
-	* @return Returns the List of Submodels for the property assetAdministrationShellSubmodels.
+	* @return Returns the List of Submodels for the property submodels.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
-	public List<Submodel> getAssetAdministrationShellSubmodels();
+	public List<Submodel> getSubmodels();
 
 	/**
 	* "Points to the differents views associated to the Administration Shell via the Submodels."@en
-	* @return Returns the List of Views for the property assetAdministrationShellViews.
+	* @return Returns the List of Views for the property views.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view")
-	public List<View> getAssetAdministrationShellViews();
+	public List<View> getViews();
 
 }

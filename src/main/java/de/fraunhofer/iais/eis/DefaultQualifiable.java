@@ -58,8 +58,8 @@ public class DefaultQualifiable implements Serializable, Qualifiable {
 	* "has qualifier"
 	* "Additional qualification of a qualifiable element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier", "qualifiableQualifier"})
-	protected List<Constraint> qualifiableQualifiers;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier", "qualifier"})
+	protected List<Constraint> qualifiers;
 
 
 	// no manual construction
@@ -98,7 +98,7 @@ public class DefaultQualifiable implements Serializable, Qualifiable {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.qualifiableQualifiers});
+		return Objects.hash(new Object[]{this.qualifiers});
 	}
 
 	public boolean equals(Object obj) {
@@ -110,7 +110,7 @@ public class DefaultQualifiable implements Serializable, Qualifiable {
 			return false;
 		} else {
 			DefaultQualifiable other = (DefaultQualifiable) obj;
-			return Objects.equals(this.qualifiableQualifiers, other.qualifiableQualifiers);
+			return Objects.equals(this.qualifiers, other.qualifiers);
 		}
 	}
 
@@ -119,11 +119,11 @@ public class DefaultQualifiable implements Serializable, Qualifiable {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
-	final public List<Constraint> getQualifiableQualifiers() {
-		return qualifiableQualifiers;
+	final public List<Constraint> getQualifiers() {
+		return qualifiers;
 	}
 	
-	final public void setQualifiableQualifiers (List<Constraint> qualifiableQualifiers) {
-		this.qualifiableQualifiers = qualifiableQualifiers;
+	final public void setQualifiers (List<Constraint> qualifiers) {
+		this.qualifiers = qualifiers;
 	}
 }

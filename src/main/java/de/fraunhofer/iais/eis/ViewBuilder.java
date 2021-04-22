@@ -45,89 +45,89 @@ public class ViewBuilder {
 	}
 
 	/**
-	* This function allows setting a value for viewContainedElements
-	* @param viewContainedElements desired value to be set
-	* @return Builder object with new value for viewContainedElements
+	* This function allows setting a value for containedElements
+	* @param containedElements desired value to be set
+	* @return Builder object with new value for containedElements
 	*/
-	final public ViewBuilder viewContainedElements(List<Referable> viewContainedElements) {
-		this.defaultView.viewContainedElements = viewContainedElements;
+	final public ViewBuilder containedElements(List<Referable> containedElements) {
+		this.defaultView.containedElements = containedElements;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableReferableCategories
-	* @param referableReferableCategories desired value to be set
-	* @return Builder object with new value for referableReferableCategories
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public ViewBuilder referableReferableCategories(List<String> referableReferableCategories) {
-		this.defaultView.referableReferableCategories = referableReferableCategories;
+	final public ViewBuilder referableCategories(List<String> referableCategories) {
+		this.defaultView.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescriptions
-	* @param referableDescriptions desired value to be set
-	* @return Builder object with new value for referableDescriptions
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public ViewBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
-		this.defaultView.referableDescriptions = referableDescriptions;
+	final public ViewBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultView.descriptions = descriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param referableDisplayName desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public ViewBuilder referableDisplayName(TypedLiteral referableDisplayName) {
-		this.defaultView.referableDisplayName = referableDisplayName;
+	final public ViewBuilder displayName(TypedLiteral displayName) {
+		this.defaultView.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param referableIdShort desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public ViewBuilder referableIdShort(String referableIdShort) {
-		this.defaultView.referableIdShort = referableIdShort;
+	final public ViewBuilder idShort(String idShort) {
+		this.defaultView.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param referableParent desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public ViewBuilder referableParent(URI referableParent) {
-		this.defaultView.referableParent = referableParent;
+	final public ViewBuilder parent(URI parent) {
+		this.defaultView.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecifications
-	* @param hasDataSpecificationDataSpecifications desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecifications
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public ViewBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
-		this.defaultView.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
+	final public ViewBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultView.dataSpecifications = dataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param hasSemanticsSemanticId desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public ViewBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
-		this.defaultView.hasSemanticsSemanticId = hasSemanticsSemanticId;
+	final public ViewBuilder semanticId(Reference semanticId) {
+		this.defaultView.semanticId = semanticId;
 		return this;
 	}
 	/**

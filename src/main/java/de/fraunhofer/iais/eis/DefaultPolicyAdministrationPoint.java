@@ -57,8 +57,8 @@ public class DefaultPolicyAdministrationPoint implements Serializable, PolicyAdm
 	* "has external access control"
 	* "Endpoint to an external access control defining a policy administration point to be used by the AAS."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl", "policyAdministrationPointExternalAccessControl"})
-	protected boolean policyAdministrationPointExternalAccessControl;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl", "externalAccessControl"})
+	protected boolean externalAccessControl;
 
 
 	/**
@@ -66,8 +66,8 @@ public class DefaultPolicyAdministrationPoint implements Serializable, PolicyAdm
 	* "The policy administration point of access control as realized by the AAS itself."@en
 	* "Constraint AASd-009: Either there is an external policy administration point endpoint defined or the AAS has its own access control."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl", "policyAdministrationPointLocalAccessControl"})
-	protected AccessControl policyAdministrationPointLocalAccessControl;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl", "localAccessControl"})
+	protected AccessControl localAccessControl;
 
 
 	// no manual construction
@@ -106,8 +106,8 @@ public class DefaultPolicyAdministrationPoint implements Serializable, PolicyAdm
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.policyAdministrationPointLocalAccessControl,
-			this.policyAdministrationPointExternalAccessControl});
+		return Objects.hash(new Object[]{this.localAccessControl,
+			this.externalAccessControl});
 	}
 
 	public boolean equals(Object obj) {
@@ -119,8 +119,8 @@ public class DefaultPolicyAdministrationPoint implements Serializable, PolicyAdm
 			return false;
 		} else {
 			DefaultPolicyAdministrationPoint other = (DefaultPolicyAdministrationPoint) obj;
-			return Objects.equals(this.policyAdministrationPointLocalAccessControl, other.policyAdministrationPointLocalAccessControl) &&
-				Objects.equals(this.policyAdministrationPointExternalAccessControl, other.policyAdministrationPointExternalAccessControl);
+			return Objects.equals(this.localAccessControl, other.localAccessControl) &&
+				Objects.equals(this.externalAccessControl, other.externalAccessControl);
 		}
 	}
 
@@ -129,20 +129,20 @@ public class DefaultPolicyAdministrationPoint implements Serializable, PolicyAdm
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl")
-	final public AccessControl getPolicyAdministrationPointLocalAccessControl() {
-		return policyAdministrationPointLocalAccessControl;
+	final public AccessControl getLocalAccessControl() {
+		return localAccessControl;
 	}
 	
-	final public void setPolicyAdministrationPointLocalAccessControl (AccessControl policyAdministrationPointLocalAccessControl) {
-		this.policyAdministrationPointLocalAccessControl = policyAdministrationPointLocalAccessControl;
+	final public void setLocalAccessControl (AccessControl localAccessControl) {
+		this.localAccessControl = localAccessControl;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl")
-	final public boolean getPolicyAdministrationPointExternalAccessControl() {
-		return policyAdministrationPointExternalAccessControl;
+	final public boolean getExternalAccessControl() {
+		return externalAccessControl;
 	}
 	
-	final public void setPolicyAdministrationPointExternalAccessControl (boolean policyAdministrationPointExternalAccessControl) {
-		this.policyAdministrationPointExternalAccessControl = policyAdministrationPointExternalAccessControl;
+	final public void setExternalAccessControl (boolean externalAccessControl) {
+		this.externalAccessControl = externalAccessControl;
 	}
 }

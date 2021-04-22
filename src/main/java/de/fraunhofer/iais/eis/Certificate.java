@@ -83,10 +83,10 @@ public interface Certificate {
 
 	/**
 	* "The access control administration policy point of the AAS."@en
-	* @return Returns the PolicyAdministrationPoint for the property certificatePolicyAdministrationPoint.
+	* @return Returns the PolicyAdministrationPoint for the property policyAdministrationPoint.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint")
-	public PolicyAdministrationPoint getCertificatePolicyAdministrationPoint();
+	public PolicyAdministrationPoint getPolicyAdministrationPoint();
 
 }

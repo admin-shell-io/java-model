@@ -45,45 +45,45 @@ public class IdentifierKeyValuePairBuilder {
 	}
 
 	/**
-	* This function allows setting a value for identifierKeyValuePairKey
-	* @param identifierKeyValuePairKey desired value to be set
-	* @return Builder object with new value for identifierKeyValuePairKey
+	* This function allows setting a value for key
+	* @param key desired value to be set
+	* @return Builder object with new value for key
 	*/
-	final public IdentifierKeyValuePairBuilder identifierKeyValuePairKey(String identifierKeyValuePairKey) {
-		this.defaultIdentifierKeyValuePair.identifierKeyValuePairKey = identifierKeyValuePairKey;
+	final public IdentifierKeyValuePairBuilder key(String key) {
+		this.defaultIdentifierKeyValuePair.key = key;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for identifierKeyValuePairValue
-	* @param identifierKeyValuePairValue desired value to be set
-	* @return Builder object with new value for identifierKeyValuePairValue
+	* This function allows setting a value for value
+	* @param value desired value to be set
+	* @return Builder object with new value for value
 	*/
-	final public IdentifierKeyValuePairBuilder identifierKeyValuePairValue(String identifierKeyValuePairValue) {
-		this.defaultIdentifierKeyValuePair.identifierKeyValuePairValue = identifierKeyValuePairValue;
+	final public IdentifierKeyValuePairBuilder value(String value) {
+		this.defaultIdentifierKeyValuePair.value = value;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for identifierKeyValuePairExternalSubjectId
-	* @param identifierKeyValuePairExternalSubjectId desired value to be set
-	* @return Builder object with new value for identifierKeyValuePairExternalSubjectId
+	* This function allows setting a value for externalSubjectId
+	* @param externalSubjectId desired value to be set
+	* @return Builder object with new value for externalSubjectId
 	*/
-	final public IdentifierKeyValuePairBuilder identifierKeyValuePairExternalSubjectId(Reference identifierKeyValuePairExternalSubjectId) {
-		this.defaultIdentifierKeyValuePair.identifierKeyValuePairExternalSubjectId = identifierKeyValuePairExternalSubjectId;
+	final public IdentifierKeyValuePairBuilder externalSubjectId(Reference externalSubjectId) {
+		this.defaultIdentifierKeyValuePair.externalSubjectId = externalSubjectId;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param hasSemanticsSemanticId desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public IdentifierKeyValuePairBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
-		this.defaultIdentifierKeyValuePair.hasSemanticsSemanticId = hasSemanticsSemanticId;
+	final public IdentifierKeyValuePairBuilder semanticId(Reference semanticId) {
+		this.defaultIdentifierKeyValuePair.semanticId = semanticId;
 		return this;
 	}
 	/**

@@ -45,23 +45,23 @@ public class RangeBuilder {
 	}
 
 	/**
-	* This function allows setting a value for rangeMaxs
-	* @param rangeMaxs desired value to be set
-	* @return Builder object with new value for rangeMaxs
+	* This function allows setting a value for maxs
+	* @param maxs desired value to be set
+	* @return Builder object with new value for maxs
 	*/
-	final public RangeBuilder rangeMaxs(List<TypedLiteral> rangeMaxs) {
-		this.defaultRange.rangeMaxs = rangeMaxs;
+	final public RangeBuilder maxs(List<TypedLiteral> maxs) {
+		this.defaultRange.maxs = maxs;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for rangeMins
-	* @param rangeMins desired value to be set
-	* @return Builder object with new value for rangeMins
+	* This function allows setting a value for mins
+	* @param mins desired value to be set
+	* @return Builder object with new value for mins
 	*/
-	final public RangeBuilder rangeMins(List<TypedLiteral> rangeMins) {
-		this.defaultRange.rangeMins = rangeMins;
+	final public RangeBuilder mins(List<TypedLiteral> mins) {
+		this.defaultRange.mins = mins;
 		return this;
 	}
 
@@ -69,100 +69,100 @@ public class RangeBuilder {
 
 
 	/**
-	* This function allows setting a value for referableReferableCategories
-	* @param referableReferableCategories desired value to be set
-	* @return Builder object with new value for referableReferableCategories
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public RangeBuilder referableReferableCategories(List<String> referableReferableCategories) {
-		this.defaultRange.referableReferableCategories = referableReferableCategories;
+	final public RangeBuilder referableCategories(List<String> referableCategories) {
+		this.defaultRange.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescriptions
-	* @param referableDescriptions desired value to be set
-	* @return Builder object with new value for referableDescriptions
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public RangeBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
-		this.defaultRange.referableDescriptions = referableDescriptions;
+	final public RangeBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultRange.descriptions = descriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param referableDisplayName desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public RangeBuilder referableDisplayName(TypedLiteral referableDisplayName) {
-		this.defaultRange.referableDisplayName = referableDisplayName;
+	final public RangeBuilder displayName(TypedLiteral displayName) {
+		this.defaultRange.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param referableIdShort desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public RangeBuilder referableIdShort(String referableIdShort) {
-		this.defaultRange.referableIdShort = referableIdShort;
+	final public RangeBuilder idShort(String idShort) {
+		this.defaultRange.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param referableParent desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public RangeBuilder referableParent(URI referableParent) {
-		this.defaultRange.referableParent = referableParent;
+	final public RangeBuilder parent(URI parent) {
+		this.defaultRange.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifiers
-	* @param qualifiableQualifiers desired value to be set
-	* @return Builder object with new value for qualifiableQualifiers
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public RangeBuilder qualifiableQualifiers(List<Constraint> qualifiableQualifiers) {
-		this.defaultRange.qualifiableQualifiers = qualifiableQualifiers;
+	final public RangeBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultRange.qualifiers = qualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecifications
-	* @param hasDataSpecificationDataSpecifications desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecifications
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public RangeBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
-		this.defaultRange.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
+	final public RangeBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultRange.dataSpecifications = dataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasKindKind
-	* @param hasKindKind desired value to be set
-	* @return Builder object with new value for hasKindKind
+	* This function allows setting a value for kind
+	* @param kind desired value to be set
+	* @return Builder object with new value for kind
 	*/
-	final public RangeBuilder hasKindKind(ModelingKind hasKindKind) {
-		this.defaultRange.hasKindKind = hasKindKind;
+	final public RangeBuilder kind(ModelingKind kind) {
+		this.defaultRange.kind = kind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param hasSemanticsSemanticId desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public RangeBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
-		this.defaultRange.hasSemanticsSemanticId = hasSemanticsSemanticId;
+	final public RangeBuilder semanticId(Reference semanticId) {
+		this.defaultRange.semanticId = semanticId;
 		return this;
 	}
 	/**

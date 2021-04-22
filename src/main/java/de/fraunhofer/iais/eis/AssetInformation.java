@@ -84,44 +84,44 @@ public interface AssetInformation {
 
 	/**
 	* "Denotes whether the Asset of of kind \'Type\' or \'Instance\'."@en
-	* @return Returns the List of AssetKinds for the property assetInformationAssetKinds.
+	* @return Returns the List of AssetKinds for the property assetKinds.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
-	public List<AssetKind> getAssetInformationAssetKinds();
+	public List<AssetKind> getAssetKinds();
 
 	/**
 	* "Reference to either an Asset object or a global reference to the asset the AAS is representing."@en
 	* "This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the asset. In a first phase of the life cycle the asset might not yet have a global id but already an internal identifier. The internal identifier would be modelled via \'externalAssetId\'."@en
 	* "Constraint AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global reference."@en
-	* @return Returns the Reference for the property assetInformationGlobalAssetId.
+	* @return Returns the Reference for the property globalAssetId.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId")
-	public Reference getAssetInformationGlobalAssetId();
+	public Reference getGlobalAssetId();
 
 	/**
 	* "Additional domain specific external, typically proprietary Identifier for the asset like e.g. serial number etc."@en
-	* @return Returns the List of IdentifierKeyValuePairs for the property assetInformationExternalAssetIds.
+	* @return Returns the List of IdentifierKeyValuePairs for the property externalAssetIds.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/externalAssetId
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/externalAssetId")
-	public List<IdentifierKeyValuePair> getAssetInformationExternalAssetIds();
+	public List<IdentifierKeyValuePair> getExternalAssetIds();
 
 	/**
 	* "A reference to a Submodel that defines the bill of material of the asset represented by the AAS. This submodel contains a set of entities describing the material used to compose the composite I4.0 Component."@en
-	* @return Returns the List of Submodels for the property assetInformationBillOfMaterials.
+	* @return Returns the List of Submodels for the property billOfMaterials.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial")
-	public List<Submodel> getAssetInformationBillOfMaterials();
+	public List<Submodel> getBillOfMaterials();
 
 	/**
 	* "Thumbnail of the asset represented by the asset administration shell."@en
-	* @return Returns the File for the property assetInformationThumbnail.
+	* @return Returns the File for the property thumbnail.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/thumbnail
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/thumbnail")
-	public File getAssetInformationThumbnail();
+	public File getThumbnail();
 
 }

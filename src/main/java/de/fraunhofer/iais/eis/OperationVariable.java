@@ -83,10 +83,10 @@ public interface OperationVariable {
 	/**
 	* "Describes the needed argument for an operation via a submodel element of kind=Template."@en
 	* "The submodel element value of an operation variable shall be of kind=Template."@en
-	* @return Returns the SubmodelElement for the property operationVariableValue.
+	* @return Returns the SubmodelElement for the property value.
 	* More information under https://admin-shell.io/aas/3/0/RC01/OperationVariable/value
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/OperationVariable/value")
-	public SubmodelElement getOperationVariableValue();
+	public SubmodelElement getValue();
 
 }
