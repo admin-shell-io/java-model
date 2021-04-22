@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.fraunhofer.iais.eis</groupId>
+    <artifactId>MinimalExample</artifactId>
+    <version>0.1-SNAPSHOT</version>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>de.fraunhofer.iais.eis.infomodel</groupId>
+            <artifactId>util</artifactId>
+            <version>4.0.6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>de.fraunhofer.iais.eis.ids</groupId>
+            <artifactId>infomodel-serializer</artifactId>
+            <version>4.0.6-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+
+
+    <repositories>
+        <repository>
+            <id>eis-public-repo</id>
+            <name>maven-public</name>
+            <url>http://maven.iais.fraunhofer.de/artifactory/eis-ids-public</url>
+        </repository>
+    </repositories>
+    
+</project>
