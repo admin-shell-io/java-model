@@ -57,24 +57,24 @@ public class DefaultAccessControl implements Serializable, AccessControl {
 	* "has access permission rule"
 	* "Access permission rules of the AAS describing the rights assigned to (already authenticated) subjects to access elements of the AAS."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule", "accessPermissionRule"})
-	protected List<AccessPermissionRule> accessPermissionRules;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule", "accessControlAccessPermissionRule"})
+	protected List<AccessPermissionRule> accessControlAccessPermissionRules;
 
 
 	/**
 	* "has default environment attributes"
 	* "Reference to a submodel defining default environment attributes, i.e. attributes that are not describing the asset itself. The submodel is of kind=Type. At the same type the values of these environment attributes need to be accessible when evaluating the access permission rules. This is realized as a policy information point."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultEnvironmentAttributes", "defaultEnvironmentAttributes"})
-	protected Submodel defaultEnvironmentAttributes;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultEnvironmentAttributes", "accessControlDefaultEnvironmentAttributes"})
+	protected Submodel accessControlDefaultEnvironmentAttributes;
 
 
 	/**
 	* "has default permissions"
 	* "Reference to a submodel defining the default permissions for the AAS."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultPermissions", "defaultPermissions"})
-	protected Submodel defaultPermissions;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultPermissions", "accessControlDefaultPermissions"})
+	protected Submodel accessControlDefaultPermissions;
 
 
 	/**
@@ -82,16 +82,16 @@ public class DefaultAccessControl implements Serializable, AccessControl {
 	* "Reference to a submodel defining the default subjects attributes for the AAS that can be used to describe access permission rules."@en
 	* "The submodel is of kind=Type."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultSubjectAttributes", "defaultSubjectAttributes"})
-	protected Submodel defaultSubjectAttributes;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultSubjectAttributes", "accessControlDefaultSubjectAttributes"})
+	protected Submodel accessControlDefaultSubjectAttributes;
 
 
 	/**
 	* "has selectable environment attributes"
 	* "Reference to a submodel defining which environment attributes can be accessed via the permission rules."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableEnvironmentAttributes", "selectableEnvironmentAttributes"})
-	protected Submodel selectableEnvironmentAttributes;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableEnvironmentAttributes", "accessControlSelectableEnvironmentAttributes"})
+	protected Submodel accessControlSelectableEnvironmentAttributes;
 
 
 	/**
@@ -99,8 +99,8 @@ public class DefaultAccessControl implements Serializable, AccessControl {
 	* "Reference to a submodel defining which permissions can be assigned to the subjects."@en
 	* "Default: reference to the submodel referenced via defaultPermissions"@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/selectablePermissions", "selectablePermissions"})
-	protected Submodel selectablePermissions;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/selectablePermissions", "accessControlSelectablePermissions"})
+	protected Submodel accessControlSelectablePermissions;
 
 
 	/**
@@ -108,8 +108,8 @@ public class DefaultAccessControl implements Serializable, AccessControl {
 	* "Reference to a submodel defining the authenticated subjects that are configured for the AAS. They are selectable by the access permission rules to assign permissions to the subjects."@en
 	* "Default: reference to the submodel referenced via defaultSubjectAttributes."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableSubjectAttributes", "selectableSubjectAttributes"})
-	protected Submodel selectableSubjectAttributes;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableSubjectAttributes", "accessControlSelectableSubjectAttributes"})
+	protected Submodel accessControlSelectableSubjectAttributes;
 
 
 	// no manual construction
@@ -148,13 +148,13 @@ public class DefaultAccessControl implements Serializable, AccessControl {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.accessPermissionRules,
-			this.selectableSubjectAttributes,
-			this.defaultSubjectAttributes,
-			this.selectablePermissions,
-			this.defaultPermissions,
-			this.selectableEnvironmentAttributes,
-			this.defaultEnvironmentAttributes});
+		return Objects.hash(new Object[]{this.accessControlAccessPermissionRules,
+			this.accessControlSelectableSubjectAttributes,
+			this.accessControlDefaultSubjectAttributes,
+			this.accessControlSelectablePermissions,
+			this.accessControlDefaultPermissions,
+			this.accessControlSelectableEnvironmentAttributes,
+			this.accessControlDefaultEnvironmentAttributes});
 	}
 
 	public boolean equals(Object obj) {
@@ -166,13 +166,13 @@ public class DefaultAccessControl implements Serializable, AccessControl {
 			return false;
 		} else {
 			DefaultAccessControl other = (DefaultAccessControl) obj;
-			return Objects.equals(this.accessPermissionRules, other.accessPermissionRules) &&
-				Objects.equals(this.selectableSubjectAttributes, other.selectableSubjectAttributes) &&
-				Objects.equals(this.defaultSubjectAttributes, other.defaultSubjectAttributes) &&
-				Objects.equals(this.selectablePermissions, other.selectablePermissions) &&
-				Objects.equals(this.defaultPermissions, other.defaultPermissions) &&
-				Objects.equals(this.selectableEnvironmentAttributes, other.selectableEnvironmentAttributes) &&
-				Objects.equals(this.defaultEnvironmentAttributes, other.defaultEnvironmentAttributes);
+			return Objects.equals(this.accessControlAccessPermissionRules, other.accessControlAccessPermissionRules) &&
+				Objects.equals(this.accessControlSelectableSubjectAttributes, other.accessControlSelectableSubjectAttributes) &&
+				Objects.equals(this.accessControlDefaultSubjectAttributes, other.accessControlDefaultSubjectAttributes) &&
+				Objects.equals(this.accessControlSelectablePermissions, other.accessControlSelectablePermissions) &&
+				Objects.equals(this.accessControlDefaultPermissions, other.accessControlDefaultPermissions) &&
+				Objects.equals(this.accessControlSelectableEnvironmentAttributes, other.accessControlSelectableEnvironmentAttributes) &&
+				Objects.equals(this.accessControlDefaultEnvironmentAttributes, other.accessControlDefaultEnvironmentAttributes);
 		}
 	}
 
@@ -181,65 +181,65 @@ public class DefaultAccessControl implements Serializable, AccessControl {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule")
-	final public List<AccessPermissionRule> getAccessPermissionRules() {
-		return accessPermissionRules;
+	final public List<AccessPermissionRule> getAccessControlAccessPermissionRules() {
+		return accessControlAccessPermissionRules;
 	}
 	
-	final public void setAccessPermissionRules (List<AccessPermissionRule> accessPermissionRules) {
-		this.accessPermissionRules = accessPermissionRules;
+	final public void setAccessControlAccessPermissionRules (List<AccessPermissionRule> accessControlAccessPermissionRules) {
+		this.accessControlAccessPermissionRules = accessControlAccessPermissionRules;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableSubjectAttributes")
-	final public Submodel getSelectableSubjectAttributes() {
-		return selectableSubjectAttributes;
+	final public Submodel getAccessControlSelectableSubjectAttributes() {
+		return accessControlSelectableSubjectAttributes;
 	}
 	
-	final public void setSelectableSubjectAttributes (Submodel selectableSubjectAttributes) {
-		this.selectableSubjectAttributes = selectableSubjectAttributes;
+	final public void setAccessControlSelectableSubjectAttributes (Submodel accessControlSelectableSubjectAttributes) {
+		this.accessControlSelectableSubjectAttributes = accessControlSelectableSubjectAttributes;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultSubjectAttributes")
-	final public Submodel getDefaultSubjectAttributes() {
-		return defaultSubjectAttributes;
+	final public Submodel getAccessControlDefaultSubjectAttributes() {
+		return accessControlDefaultSubjectAttributes;
 	}
 	
-	final public void setDefaultSubjectAttributes (Submodel defaultSubjectAttributes) {
-		this.defaultSubjectAttributes = defaultSubjectAttributes;
+	final public void setAccessControlDefaultSubjectAttributes (Submodel accessControlDefaultSubjectAttributes) {
+		this.accessControlDefaultSubjectAttributes = accessControlDefaultSubjectAttributes;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectablePermissions")
-	final public Submodel getSelectablePermissions() {
-		return selectablePermissions;
+	final public Submodel getAccessControlSelectablePermissions() {
+		return accessControlSelectablePermissions;
 	}
 	
-	final public void setSelectablePermissions (Submodel selectablePermissions) {
-		this.selectablePermissions = selectablePermissions;
+	final public void setAccessControlSelectablePermissions (Submodel accessControlSelectablePermissions) {
+		this.accessControlSelectablePermissions = accessControlSelectablePermissions;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultPermissions")
-	final public Submodel getDefaultPermissions() {
-		return defaultPermissions;
+	final public Submodel getAccessControlDefaultPermissions() {
+		return accessControlDefaultPermissions;
 	}
 	
-	final public void setDefaultPermissions (Submodel defaultPermissions) {
-		this.defaultPermissions = defaultPermissions;
+	final public void setAccessControlDefaultPermissions (Submodel accessControlDefaultPermissions) {
+		this.accessControlDefaultPermissions = accessControlDefaultPermissions;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableEnvironmentAttributes")
-	final public Submodel getSelectableEnvironmentAttributes() {
-		return selectableEnvironmentAttributes;
+	final public Submodel getAccessControlSelectableEnvironmentAttributes() {
+		return accessControlSelectableEnvironmentAttributes;
 	}
 	
-	final public void setSelectableEnvironmentAttributes (Submodel selectableEnvironmentAttributes) {
-		this.selectableEnvironmentAttributes = selectableEnvironmentAttributes;
+	final public void setAccessControlSelectableEnvironmentAttributes (Submodel accessControlSelectableEnvironmentAttributes) {
+		this.accessControlSelectableEnvironmentAttributes = accessControlSelectableEnvironmentAttributes;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultEnvironmentAttributes")
-	final public Submodel getDefaultEnvironmentAttributes() {
-		return defaultEnvironmentAttributes;
+	final public Submodel getAccessControlDefaultEnvironmentAttributes() {
+		return accessControlDefaultEnvironmentAttributes;
 	}
 	
-	final public void setDefaultEnvironmentAttributes (Submodel defaultEnvironmentAttributes) {
-		this.defaultEnvironmentAttributes = defaultEnvironmentAttributes;
+	final public void setAccessControlDefaultEnvironmentAttributes (Submodel accessControlDefaultEnvironmentAttributes) {
+		this.accessControlDefaultEnvironmentAttributes = accessControlDefaultEnvironmentAttributes;
 	}
 }

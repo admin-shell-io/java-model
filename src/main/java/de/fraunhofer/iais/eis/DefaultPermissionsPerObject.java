@@ -57,24 +57,24 @@ public class DefaultPermissionsPerObject implements Serializable, PermissionsPer
 	* "has object"
 	* "Element to which permission shall be assigned."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object", "object"})
-	protected Referable object;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object", "permissionsPerObjectObject"})
+	protected Referable permissionsPerObjectObject;
 
 
 	/**
 	* "has object permission"
 	* "Permissions assigned to the object. The permissions hold for all subjects as specified in the access permission rule."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission", "permission"})
-	protected List<Permission> permissions;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission", "permissionsPerObjectPermission"})
+	protected List<Permission> permissionsPerObjectPermissions;
 
 
 	/**
 	* "has target object attributes"
 	* "Target object attributes that need to be fulfilled so that the access permissions apply to the accessing subject."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes", "targetObjectAttributes"})
-	protected ObjectAttributes targetObjectAttributes;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes", "permissionsPerObjectTargetObjectAttributes"})
+	protected ObjectAttributes permissionsPerObjectTargetObjectAttributes;
 
 
 	// no manual construction
@@ -113,9 +113,9 @@ public class DefaultPermissionsPerObject implements Serializable, PermissionsPer
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.object,
-			this.permissions,
-			this.targetObjectAttributes});
+		return Objects.hash(new Object[]{this.permissionsPerObjectObject,
+			this.permissionsPerObjectPermissions,
+			this.permissionsPerObjectTargetObjectAttributes});
 	}
 
 	public boolean equals(Object obj) {
@@ -127,9 +127,9 @@ public class DefaultPermissionsPerObject implements Serializable, PermissionsPer
 			return false;
 		} else {
 			DefaultPermissionsPerObject other = (DefaultPermissionsPerObject) obj;
-			return Objects.equals(this.object, other.object) &&
-				Objects.equals(this.permissions, other.permissions) &&
-				Objects.equals(this.targetObjectAttributes, other.targetObjectAttributes);
+			return Objects.equals(this.permissionsPerObjectObject, other.permissionsPerObjectObject) &&
+				Objects.equals(this.permissionsPerObjectPermissions, other.permissionsPerObjectPermissions) &&
+				Objects.equals(this.permissionsPerObjectTargetObjectAttributes, other.permissionsPerObjectTargetObjectAttributes);
 		}
 	}
 
@@ -138,29 +138,29 @@ public class DefaultPermissionsPerObject implements Serializable, PermissionsPer
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")
-	final public Referable getObject() {
-		return object;
+	final public Referable getPermissionsPerObjectObject() {
+		return permissionsPerObjectObject;
 	}
 	
-	final public void setObject (Referable object) {
-		this.object = object;
+	final public void setPermissionsPerObjectObject (Referable permissionsPerObjectObject) {
+		this.permissionsPerObjectObject = permissionsPerObjectObject;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission")
-	final public List<Permission> getPermissions() {
-		return permissions;
+	final public List<Permission> getPermissionsPerObjectPermissions() {
+		return permissionsPerObjectPermissions;
 	}
 	
-	final public void setPermissions (List<Permission> permissions) {
-		this.permissions = permissions;
+	final public void setPermissionsPerObjectPermissions (List<Permission> permissionsPerObjectPermissions) {
+		this.permissionsPerObjectPermissions = permissionsPerObjectPermissions;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes")
-	final public ObjectAttributes getTargetObjectAttributes() {
-		return targetObjectAttributes;
+	final public ObjectAttributes getPermissionsPerObjectTargetObjectAttributes() {
+		return permissionsPerObjectTargetObjectAttributes;
 	}
 	
-	final public void setTargetObjectAttributes (ObjectAttributes targetObjectAttributes) {
-		this.targetObjectAttributes = targetObjectAttributes;
+	final public void setPermissionsPerObjectTargetObjectAttributes (ObjectAttributes permissionsPerObjectTargetObjectAttributes) {
+		this.permissionsPerObjectTargetObjectAttributes = permissionsPerObjectTargetObjectAttributes;
 	}
 }

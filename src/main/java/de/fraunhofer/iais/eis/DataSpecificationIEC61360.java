@@ -86,96 +86,96 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
 	* "Constraint AASd-071: For a ConceptDescription with category REFERENCE using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/dataType is STRING by default."@en
 	* "Constraint AASd-072: For a ConceptDescription with category DOCUMENT using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/dataType shall be one of the following values: STRING or URL."@en
 	* "Constraint AASd-073: For a ConceptDescription with category QUALIFIER using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/dataType is mandatory and shall be defined."@en
-	* @return Returns the List of DataTypeIEC61360s for the property dataTypes.
+	* @return Returns the List of DataTypeIEC61360s for the property dataSpecificationIEC61360DataTypes.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
-	public List<DataTypeIEC61360> getDataTypes();
+	public List<DataTypeIEC61360> getDataSpecificationIEC61360DataTypes();
 
 	/**
 	* "Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions of category VALUE using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/definition is mandatory and shall be defined at least in English."@en
-	* @return Returns the List of TypedLiterals for the property definitions.
+	* @return Returns the List of TypedLiterals for the property dataSpecificationIEC61360Definitions.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
-	public List<TypedLiteral> getDefinitions();
+	public List<TypedLiteral> getDataSpecificationIEC61360Definitions();
 
 	/**
-	* @return Returns the List of LevelTypes for the property levelTypes.
+	* @return Returns the List of LevelTypes for the property dataSpecificationIEC61360LevelTypes.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/levelType
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/levelType")
-	public List<LevelType> getLevelTypes();
+	public List<LevelType> getDataSpecificationIEC61360LevelTypes();
 
 	/**
-	* @return Returns the TypedLiteral for the property preferredName.
+	* @return Returns the TypedLiteral for the property dataSpecificationIEC61360PreferredName.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
-	public TypedLiteral getPreferredName();
+	public TypedLiteral getDataSpecificationIEC61360PreferredName();
 
 	/**
-	* @return Returns the TypedLiteral for the property shortName.
+	* @return Returns the TypedLiteral for the property dataSpecificationIEC61360ShortName.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
-	public TypedLiteral getShortName();
+	public TypedLiteral getDataSpecificationIEC61360ShortName();
 
 	/**
-	* @return Returns the String for the property sourceOfDefinition.
+	* @return Returns the String for the property dataSpecificationIEC61360SourceOfDefinition.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition")
-	public String getSourceOfDefinition();
+	public String getDataSpecificationIEC61360SourceOfDefinition();
 
 	/**
-	* @return Returns the String for the property symbol.
+	* @return Returns the String for the property dataSpecificationIEC61360Symbol.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/symbol
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/symbol")
-	public String getSymbol();
+	public String getDataSpecificationIEC61360Symbol();
 
 	/**
-	* @return Returns the String for the property unit.
+	* @return Returns the String for the property dataSpecificationIEC61360Unit.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit")
-	public String getUnit();
+	public String getDataSpecificationIEC61360Unit();
 
 	/**
-	* @return Returns the Reference for the property unitId.
+	* @return Returns the Reference for the property dataSpecificationIEC61360UnitId.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId")
-	public Reference getUnitId();
+	public Reference getDataSpecificationIEC61360UnitId();
 
 	/**
-	* @return Returns the String for the property valueFormat.
+	* @return Returns the String for the property dataSpecificationIEC61360ValueFormat.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueFormat
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueFormat")
-	public String getValueFormat();
+	public String getDataSpecificationIEC61360ValueFormat();
 
 	/**
-	* @return Returns the String for the property value.
+	* @return Returns the String for the property dataSpecificationIEC61360Value.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/value
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/value")
-	public String getValue();
+	public String getDataSpecificationIEC61360Value();
 
 	/**
 	* "The Type \'ValueList\' lists all the allowed values for a concept description for which the allowed values are listed in an enumeration. The value list is a set of value reference pairs."@en
-	* @return Returns the String for the property valueList.
+	* @return Returns the String for the property dataSpecificationIEC61360ValueList.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList")
-	public String getValueList();
+	public String getDataSpecificationIEC61360ValueList();
 
 	/**
-	* @return Returns the Reference for the property valueId.
+	* @return Returns the Reference for the property dataSpecificationIEC61360ValueId.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueId
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueId")
-	public Reference getValueId();
+	public Reference getDataSpecificationIEC61360ValueId();
 
 }

@@ -82,19 +82,19 @@ public interface AdministrativeInformation extends HasDataSpecification {
 
 	/**
 	* "Version of the element."@en
-	* @return Returns the String for the property version.
+	* @return Returns the String for the property administrativeInformationVersion.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
-	public String getVersion();
+	public String getAdministrativeInformationVersion();
 
 	/**
 	* "Revision of the element."@en
 	* "Constraint AASd-005: A revision requires a version. This means, if there is no version there is no revision neither."@en
-	* @return Returns the String for the property revision.
+	* @return Returns the String for the property administrativeInformationRevision.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
-	public String getRevision();
+	public String getAdministrativeInformationRevision();
 
 }

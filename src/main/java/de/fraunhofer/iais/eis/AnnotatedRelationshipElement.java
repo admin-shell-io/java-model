@@ -82,10 +82,10 @@ public interface AnnotatedRelationshipElement extends RelationshipElement {
 
 	/**
 	* "Annotations that hold for the relationships between the two elements."@en
-	* @return Returns the List of DataElements for the property annotations.
+	* @return Returns the List of DataElements for the property annotatedRelationshipElementAnnotations.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation")
-	public List<DataElement> getAnnotations();
+	public List<DataElement> getAnnotatedRelationshipElementAnnotations();
 
 }

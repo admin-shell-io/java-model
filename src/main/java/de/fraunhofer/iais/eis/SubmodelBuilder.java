@@ -45,133 +45,133 @@ public class SubmodelBuilder {
 	}
 
 	/**
-	* This function allows setting a value for submodelElements
-	* @param submodelElements desired value to be set
-	* @return Builder object with new value for submodelElements
+	* This function allows setting a value for submodelSubmodelElements
+	* @param submodelSubmodelElements desired value to be set
+	* @return Builder object with new value for submodelSubmodelElements
 	*/
-	final public SubmodelBuilder submodelElements(List<SubmodelElement> submodelElements) {
-		this.defaultSubmodel.submodelElements = submodelElements;
+	final public SubmodelBuilder submodelSubmodelElements(List<SubmodelElement> submodelSubmodelElements) {
+		this.defaultSubmodel.submodelSubmodelElements = submodelSubmodelElements;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiers
-	* @param qualifiers desired value to be set
-	* @return Builder object with new value for qualifiers
+	* This function allows setting a value for qualifiableQualifiers
+	* @param qualifiableQualifiers desired value to be set
+	* @return Builder object with new value for qualifiableQualifiers
 	*/
-	final public SubmodelBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultSubmodel.qualifiers = qualifiers;
+	final public SubmodelBuilder qualifiableQualifiers(List<Constraint> qualifiableQualifiers) {
+		this.defaultSubmodel.qualifiableQualifiers = qualifiableQualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecifications
-	* @param dataSpecifications desired value to be set
-	* @return Builder object with new value for dataSpecifications
+	* This function allows setting a value for hasDataSpecificationDataSpecifications
+	* @param hasDataSpecificationDataSpecifications desired value to be set
+	* @return Builder object with new value for hasDataSpecificationDataSpecifications
 	*/
-	final public SubmodelBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultSubmodel.dataSpecifications = dataSpecifications;
+	final public SubmodelBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
+		this.defaultSubmodel.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for administration
-	* @param administration desired value to be set
-	* @return Builder object with new value for administration
+	* This function allows setting a value for identifiableAdministration
+	* @param identifiableAdministration desired value to be set
+	* @return Builder object with new value for identifiableAdministration
 	*/
-	final public SubmodelBuilder administration(AdministrativeInformation administration) {
-		this.defaultSubmodel.administration = administration;
+	final public SubmodelBuilder identifiableAdministration(AdministrativeInformation identifiableAdministration) {
+		this.defaultSubmodel.identifiableAdministration = identifiableAdministration;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for identification
-	* @param identification desired value to be set
-	* @return Builder object with new value for identification
+	* This function allows setting a value for identifiableIdentification
+	* @param identifiableIdentification desired value to be set
+	* @return Builder object with new value for identifiableIdentification
 	*/
-	final public SubmodelBuilder identification(Identifier identification) {
-		this.defaultSubmodel.identification = identification;
+	final public SubmodelBuilder identifiableIdentification(Identifier identifiableIdentification) {
+		this.defaultSubmodel.identifiableIdentification = identifiableIdentification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableReferableCategories
+	* @param referableReferableCategories desired value to be set
+	* @return Builder object with new value for referableReferableCategories
 	*/
-	final public SubmodelBuilder referableCategories(List<String> referableCategories) {
-		this.defaultSubmodel.referableCategories = referableCategories;
+	final public SubmodelBuilder referableReferableCategories(List<String> referableReferableCategories) {
+		this.defaultSubmodel.referableReferableCategories = referableReferableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for referableDescriptions
+	* @param referableDescriptions desired value to be set
+	* @return Builder object with new value for referableDescriptions
 	*/
-	final public SubmodelBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultSubmodel.descriptions = descriptions;
+	final public SubmodelBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
+		this.defaultSubmodel.referableDescriptions = referableDescriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for displayName
-	* @param displayName desired value to be set
-	* @return Builder object with new value for displayName
+	* This function allows setting a value for referableDisplayName
+	* @param referableDisplayName desired value to be set
+	* @return Builder object with new value for referableDisplayName
 	*/
-	final public SubmodelBuilder displayName(TypedLiteral displayName) {
-		this.defaultSubmodel.displayName = displayName;
+	final public SubmodelBuilder referableDisplayName(TypedLiteral referableDisplayName) {
+		this.defaultSubmodel.referableDisplayName = referableDisplayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for idShort
-	* @param idShort desired value to be set
-	* @return Builder object with new value for idShort
+	* This function allows setting a value for referableIdShort
+	* @param referableIdShort desired value to be set
+	* @return Builder object with new value for referableIdShort
 	*/
-	final public SubmodelBuilder idShort(String idShort) {
-		this.defaultSubmodel.idShort = idShort;
+	final public SubmodelBuilder referableIdShort(String referableIdShort) {
+		this.defaultSubmodel.referableIdShort = referableIdShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
+	* This function allows setting a value for referableParent
+	* @param referableParent desired value to be set
+	* @return Builder object with new value for referableParent
 	*/
-	final public SubmodelBuilder parent(URI parent) {
-		this.defaultSubmodel.parent = parent;
+	final public SubmodelBuilder referableParent(URI referableParent) {
+		this.defaultSubmodel.referableParent = referableParent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for kind
-	* @param kind desired value to be set
-	* @return Builder object with new value for kind
+	* This function allows setting a value for hasKindKind
+	* @param hasKindKind desired value to be set
+	* @return Builder object with new value for hasKindKind
 	*/
-	final public SubmodelBuilder kind(ModelingKind kind) {
-		this.defaultSubmodel.kind = kind;
+	final public SubmodelBuilder hasKindKind(ModelingKind hasKindKind) {
+		this.defaultSubmodel.hasKindKind = hasKindKind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for semanticId
-	* @param semanticId desired value to be set
-	* @return Builder object with new value for semanticId
+	* This function allows setting a value for hasSemanticsSemanticId
+	* @param hasSemanticsSemanticId desired value to be set
+	* @return Builder object with new value for hasSemanticsSemanticId
 	*/
-	final public SubmodelBuilder semanticId(Reference semanticId) {
-		this.defaultSubmodel.semanticId = semanticId;
+	final public SubmodelBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
+		this.defaultSubmodel.hasSemanticsSemanticId = hasSemanticsSemanticId;
 		return this;
 	}
 	/**

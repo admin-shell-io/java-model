@@ -47,100 +47,100 @@ public class EventMessageBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableReferableCategories
+	* @param referableReferableCategories desired value to be set
+	* @return Builder object with new value for referableReferableCategories
 	*/
-	final public EventMessageBuilder referableCategories(List<String> referableCategories) {
-		this.defaultEventMessage.referableCategories = referableCategories;
+	final public EventMessageBuilder referableReferableCategories(List<String> referableReferableCategories) {
+		this.defaultEventMessage.referableReferableCategories = referableReferableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for referableDescriptions
+	* @param referableDescriptions desired value to be set
+	* @return Builder object with new value for referableDescriptions
 	*/
-	final public EventMessageBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultEventMessage.descriptions = descriptions;
+	final public EventMessageBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
+		this.defaultEventMessage.referableDescriptions = referableDescriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for displayName
-	* @param displayName desired value to be set
-	* @return Builder object with new value for displayName
+	* This function allows setting a value for referableDisplayName
+	* @param referableDisplayName desired value to be set
+	* @return Builder object with new value for referableDisplayName
 	*/
-	final public EventMessageBuilder displayName(TypedLiteral displayName) {
-		this.defaultEventMessage.displayName = displayName;
+	final public EventMessageBuilder referableDisplayName(TypedLiteral referableDisplayName) {
+		this.defaultEventMessage.referableDisplayName = referableDisplayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for idShort
-	* @param idShort desired value to be set
-	* @return Builder object with new value for idShort
+	* This function allows setting a value for referableIdShort
+	* @param referableIdShort desired value to be set
+	* @return Builder object with new value for referableIdShort
 	*/
-	final public EventMessageBuilder idShort(String idShort) {
-		this.defaultEventMessage.idShort = idShort;
+	final public EventMessageBuilder referableIdShort(String referableIdShort) {
+		this.defaultEventMessage.referableIdShort = referableIdShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
+	* This function allows setting a value for referableParent
+	* @param referableParent desired value to be set
+	* @return Builder object with new value for referableParent
 	*/
-	final public EventMessageBuilder parent(URI parent) {
-		this.defaultEventMessage.parent = parent;
+	final public EventMessageBuilder referableParent(URI referableParent) {
+		this.defaultEventMessage.referableParent = referableParent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiers
-	* @param qualifiers desired value to be set
-	* @return Builder object with new value for qualifiers
+	* This function allows setting a value for qualifiableQualifiers
+	* @param qualifiableQualifiers desired value to be set
+	* @return Builder object with new value for qualifiableQualifiers
 	*/
-	final public EventMessageBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultEventMessage.qualifiers = qualifiers;
+	final public EventMessageBuilder qualifiableQualifiers(List<Constraint> qualifiableQualifiers) {
+		this.defaultEventMessage.qualifiableQualifiers = qualifiableQualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecifications
-	* @param dataSpecifications desired value to be set
-	* @return Builder object with new value for dataSpecifications
+	* This function allows setting a value for hasDataSpecificationDataSpecifications
+	* @param hasDataSpecificationDataSpecifications desired value to be set
+	* @return Builder object with new value for hasDataSpecificationDataSpecifications
 	*/
-	final public EventMessageBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultEventMessage.dataSpecifications = dataSpecifications;
+	final public EventMessageBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
+		this.defaultEventMessage.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for kind
-	* @param kind desired value to be set
-	* @return Builder object with new value for kind
+	* This function allows setting a value for hasKindKind
+	* @param hasKindKind desired value to be set
+	* @return Builder object with new value for hasKindKind
 	*/
-	final public EventMessageBuilder kind(ModelingKind kind) {
-		this.defaultEventMessage.kind = kind;
+	final public EventMessageBuilder hasKindKind(ModelingKind hasKindKind) {
+		this.defaultEventMessage.hasKindKind = hasKindKind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for semanticId
-	* @param semanticId desired value to be set
-	* @return Builder object with new value for semanticId
+	* This function allows setting a value for hasSemanticsSemanticId
+	* @param hasSemanticsSemanticId desired value to be set
+	* @return Builder object with new value for hasSemanticsSemanticId
 	*/
-	final public EventMessageBuilder semanticId(Reference semanticId) {
-		this.defaultEventMessage.semanticId = semanticId;
+	final public EventMessageBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
+		this.defaultEventMessage.hasSemanticsSemanticId = hasSemanticsSemanticId;
 		return this;
 	}
 	/**

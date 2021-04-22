@@ -45,111 +45,111 @@ public class ConceptDescriptionBuilder {
 	}
 
 	/**
-	* This function allows setting a value for contents
-	* @param contents desired value to be set
-	* @return Builder object with new value for contents
+	* This function allows setting a value for conceptDescriptionContents
+	* @param conceptDescriptionContents desired value to be set
+	* @return Builder object with new value for conceptDescriptionContents
 	*/
-	final public ConceptDescriptionBuilder contents(List<DataSpecificationContent> contents) {
-		this.defaultConceptDescription.contents = contents;
+	final public ConceptDescriptionBuilder conceptDescriptionContents(List<DataSpecificationContent> conceptDescriptionContents) {
+		this.defaultConceptDescription.conceptDescriptionContents = conceptDescriptionContents;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for isCaseOfs
-	* @param isCaseOfs desired value to be set
-	* @return Builder object with new value for isCaseOfs
+	* This function allows setting a value for conceptDescriptionIsCaseOfs
+	* @param conceptDescriptionIsCaseOfs desired value to be set
+	* @return Builder object with new value for conceptDescriptionIsCaseOfs
 	*/
-	final public ConceptDescriptionBuilder isCaseOfs(List<Reference> isCaseOfs) {
-		this.defaultConceptDescription.isCaseOfs = isCaseOfs;
+	final public ConceptDescriptionBuilder conceptDescriptionIsCaseOfs(List<Reference> conceptDescriptionIsCaseOfs) {
+		this.defaultConceptDescription.conceptDescriptionIsCaseOfs = conceptDescriptionIsCaseOfs;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecifications
-	* @param dataSpecifications desired value to be set
-	* @return Builder object with new value for dataSpecifications
+	* This function allows setting a value for hasDataSpecificationDataSpecifications
+	* @param hasDataSpecificationDataSpecifications desired value to be set
+	* @return Builder object with new value for hasDataSpecificationDataSpecifications
 	*/
-	final public ConceptDescriptionBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultConceptDescription.dataSpecifications = dataSpecifications;
+	final public ConceptDescriptionBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
+		this.defaultConceptDescription.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for administration
-	* @param administration desired value to be set
-	* @return Builder object with new value for administration
+	* This function allows setting a value for identifiableAdministration
+	* @param identifiableAdministration desired value to be set
+	* @return Builder object with new value for identifiableAdministration
 	*/
-	final public ConceptDescriptionBuilder administration(AdministrativeInformation administration) {
-		this.defaultConceptDescription.administration = administration;
+	final public ConceptDescriptionBuilder identifiableAdministration(AdministrativeInformation identifiableAdministration) {
+		this.defaultConceptDescription.identifiableAdministration = identifiableAdministration;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for identification
-	* @param identification desired value to be set
-	* @return Builder object with new value for identification
+	* This function allows setting a value for identifiableIdentification
+	* @param identifiableIdentification desired value to be set
+	* @return Builder object with new value for identifiableIdentification
 	*/
-	final public ConceptDescriptionBuilder identification(Identifier identification) {
-		this.defaultConceptDescription.identification = identification;
+	final public ConceptDescriptionBuilder identifiableIdentification(Identifier identifiableIdentification) {
+		this.defaultConceptDescription.identifiableIdentification = identifiableIdentification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableReferableCategories
+	* @param referableReferableCategories desired value to be set
+	* @return Builder object with new value for referableReferableCategories
 	*/
-	final public ConceptDescriptionBuilder referableCategories(List<String> referableCategories) {
-		this.defaultConceptDescription.referableCategories = referableCategories;
+	final public ConceptDescriptionBuilder referableReferableCategories(List<String> referableReferableCategories) {
+		this.defaultConceptDescription.referableReferableCategories = referableReferableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for referableDescriptions
+	* @param referableDescriptions desired value to be set
+	* @return Builder object with new value for referableDescriptions
 	*/
-	final public ConceptDescriptionBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultConceptDescription.descriptions = descriptions;
+	final public ConceptDescriptionBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
+		this.defaultConceptDescription.referableDescriptions = referableDescriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for displayName
-	* @param displayName desired value to be set
-	* @return Builder object with new value for displayName
+	* This function allows setting a value for referableDisplayName
+	* @param referableDisplayName desired value to be set
+	* @return Builder object with new value for referableDisplayName
 	*/
-	final public ConceptDescriptionBuilder displayName(TypedLiteral displayName) {
-		this.defaultConceptDescription.displayName = displayName;
+	final public ConceptDescriptionBuilder referableDisplayName(TypedLiteral referableDisplayName) {
+		this.defaultConceptDescription.referableDisplayName = referableDisplayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for idShort
-	* @param idShort desired value to be set
-	* @return Builder object with new value for idShort
+	* This function allows setting a value for referableIdShort
+	* @param referableIdShort desired value to be set
+	* @return Builder object with new value for referableIdShort
 	*/
-	final public ConceptDescriptionBuilder idShort(String idShort) {
-		this.defaultConceptDescription.idShort = idShort;
+	final public ConceptDescriptionBuilder referableIdShort(String referableIdShort) {
+		this.defaultConceptDescription.referableIdShort = referableIdShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
+	* This function allows setting a value for referableParent
+	* @param referableParent desired value to be set
+	* @return Builder object with new value for referableParent
 	*/
-	final public ConceptDescriptionBuilder parent(URI parent) {
-		this.defaultConceptDescription.parent = parent;
+	final public ConceptDescriptionBuilder referableParent(URI referableParent) {
+		this.defaultConceptDescription.referableParent = referableParent;
 		return this;
 	}
 	/**

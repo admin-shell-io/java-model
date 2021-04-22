@@ -45,12 +45,12 @@ public class FormulaBuilder {
 	}
 
 	/**
-	* This function allows setting a value for dependsOns
-	* @param dependsOns desired value to be set
-	* @return Builder object with new value for dependsOns
+	* This function allows setting a value for formulaDependsOns
+	* @param formulaDependsOns desired value to be set
+	* @return Builder object with new value for formulaDependsOns
 	*/
-	final public FormulaBuilder dependsOns(List<Reference> dependsOns) {
-		this.defaultFormula.dependsOns = dependsOns;
+	final public FormulaBuilder formulaDependsOns(List<Reference> formulaDependsOns) {
+		this.defaultFormula.formulaDependsOns = formulaDependsOns;
 		return this;
 	}
 

@@ -45,12 +45,12 @@ public class BasicEventBuilder {
 	}
 
 	/**
-	* This function allows setting a value for observed
-	* @param observed desired value to be set
-	* @return Builder object with new value for observed
+	* This function allows setting a value for basicEventObserved
+	* @param basicEventObserved desired value to be set
+	* @return Builder object with new value for basicEventObserved
 	*/
-	final public BasicEventBuilder observed(Reference observed) {
-		this.defaultBasicEvent.observed = observed;
+	final public BasicEventBuilder basicEventObserved(Reference basicEventObserved) {
+		this.defaultBasicEvent.basicEventObserved = basicEventObserved;
 		return this;
 	}
 
@@ -58,100 +58,100 @@ public class BasicEventBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableReferableCategories
+	* @param referableReferableCategories desired value to be set
+	* @return Builder object with new value for referableReferableCategories
 	*/
-	final public BasicEventBuilder referableCategories(List<String> referableCategories) {
-		this.defaultBasicEvent.referableCategories = referableCategories;
+	final public BasicEventBuilder referableReferableCategories(List<String> referableReferableCategories) {
+		this.defaultBasicEvent.referableReferableCategories = referableReferableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for referableDescriptions
+	* @param referableDescriptions desired value to be set
+	* @return Builder object with new value for referableDescriptions
 	*/
-	final public BasicEventBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultBasicEvent.descriptions = descriptions;
+	final public BasicEventBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
+		this.defaultBasicEvent.referableDescriptions = referableDescriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for displayName
-	* @param displayName desired value to be set
-	* @return Builder object with new value for displayName
+	* This function allows setting a value for referableDisplayName
+	* @param referableDisplayName desired value to be set
+	* @return Builder object with new value for referableDisplayName
 	*/
-	final public BasicEventBuilder displayName(TypedLiteral displayName) {
-		this.defaultBasicEvent.displayName = displayName;
+	final public BasicEventBuilder referableDisplayName(TypedLiteral referableDisplayName) {
+		this.defaultBasicEvent.referableDisplayName = referableDisplayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for idShort
-	* @param idShort desired value to be set
-	* @return Builder object with new value for idShort
+	* This function allows setting a value for referableIdShort
+	* @param referableIdShort desired value to be set
+	* @return Builder object with new value for referableIdShort
 	*/
-	final public BasicEventBuilder idShort(String idShort) {
-		this.defaultBasicEvent.idShort = idShort;
+	final public BasicEventBuilder referableIdShort(String referableIdShort) {
+		this.defaultBasicEvent.referableIdShort = referableIdShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
+	* This function allows setting a value for referableParent
+	* @param referableParent desired value to be set
+	* @return Builder object with new value for referableParent
 	*/
-	final public BasicEventBuilder parent(URI parent) {
-		this.defaultBasicEvent.parent = parent;
+	final public BasicEventBuilder referableParent(URI referableParent) {
+		this.defaultBasicEvent.referableParent = referableParent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiers
-	* @param qualifiers desired value to be set
-	* @return Builder object with new value for qualifiers
+	* This function allows setting a value for qualifiableQualifiers
+	* @param qualifiableQualifiers desired value to be set
+	* @return Builder object with new value for qualifiableQualifiers
 	*/
-	final public BasicEventBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultBasicEvent.qualifiers = qualifiers;
+	final public BasicEventBuilder qualifiableQualifiers(List<Constraint> qualifiableQualifiers) {
+		this.defaultBasicEvent.qualifiableQualifiers = qualifiableQualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecifications
-	* @param dataSpecifications desired value to be set
-	* @return Builder object with new value for dataSpecifications
+	* This function allows setting a value for hasDataSpecificationDataSpecifications
+	* @param hasDataSpecificationDataSpecifications desired value to be set
+	* @return Builder object with new value for hasDataSpecificationDataSpecifications
 	*/
-	final public BasicEventBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultBasicEvent.dataSpecifications = dataSpecifications;
+	final public BasicEventBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
+		this.defaultBasicEvent.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for kind
-	* @param kind desired value to be set
-	* @return Builder object with new value for kind
+	* This function allows setting a value for hasKindKind
+	* @param hasKindKind desired value to be set
+	* @return Builder object with new value for hasKindKind
 	*/
-	final public BasicEventBuilder kind(ModelingKind kind) {
-		this.defaultBasicEvent.kind = kind;
+	final public BasicEventBuilder hasKindKind(ModelingKind hasKindKind) {
+		this.defaultBasicEvent.hasKindKind = hasKindKind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for semanticId
-	* @param semanticId desired value to be set
-	* @return Builder object with new value for semanticId
+	* This function allows setting a value for hasSemanticsSemanticId
+	* @param hasSemanticsSemanticId desired value to be set
+	* @return Builder object with new value for hasSemanticsSemanticId
 	*/
-	final public BasicEventBuilder semanticId(Reference semanticId) {
-		this.defaultBasicEvent.semanticId = semanticId;
+	final public BasicEventBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
+		this.defaultBasicEvent.hasSemanticsSemanticId = hasSemanticsSemanticId;
 		return this;
 	}
 	/**

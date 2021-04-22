@@ -82,10 +82,10 @@ public interface Reference {
 
 	/**
 	* "Unique reference in its name space."@en
-	* @return Returns the List of Keys for the property keys.
+	* @return Returns the List of Keys for the property referenceKeys.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Reference/key
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Reference/key")
-	public List<Key> getKeys();
+	public List<Key> getReferenceKeys();
 
 }

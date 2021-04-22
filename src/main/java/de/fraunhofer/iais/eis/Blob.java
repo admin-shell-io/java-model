@@ -83,19 +83,19 @@ public interface Blob extends DataElement {
 
 	/**
 	* "Mime type of the content of the BLOB. The mime type states which file extension the file has. Valid values are e.g. \'application/json\', \'application/xls\', \'image/jpg\' The allowed values are defined as in RFC2046."@en
-	* @return Returns the String for the property mimeType.
+	* @return Returns the String for the property blobMimeType.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Blob/mimeType
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Blob/mimeType")
-	public String getMimeType();
+	public String getBlobMimeType();
 
 	/**
 	* "The value of the BLOB instance of a blob data element."@en
 	* "In contrast to the file property the file content is stored directly as value in the Blob data element."@en
-	* @return Returns the byte for the property value.
+	* @return Returns the byte for the property blobValue.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Blob/value
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Blob/value")
-	public byte getValue();
+	public byte getBlobValue();
 
 }

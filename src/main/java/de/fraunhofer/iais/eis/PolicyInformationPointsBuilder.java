@@ -45,23 +45,23 @@ public class PolicyInformationPointsBuilder {
 	}
 
 	/**
-	* This function allows setting a value for externalInformationPoints
-	* @param externalInformationPoints desired value to be set
-	* @return Builder object with new value for externalInformationPoints
+	* This function allows setting a value for policyInformationPointsExternalInformationPoints
+	* @param policyInformationPointsExternalInformationPoints desired value to be set
+	* @return Builder object with new value for policyInformationPointsExternalInformationPoints
 	*/
-	final public PolicyInformationPointsBuilder externalInformationPoints(boolean externalInformationPoints) {
-		this.defaultPolicyInformationPoints.externalInformationPoints = externalInformationPoints;
+	final public PolicyInformationPointsBuilder policyInformationPointsExternalInformationPoints(boolean policyInformationPointsExternalInformationPoints) {
+		this.defaultPolicyInformationPoints.policyInformationPointsExternalInformationPoints = policyInformationPointsExternalInformationPoints;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for internalInformationPoints
-	* @param internalInformationPoints desired value to be set
-	* @return Builder object with new value for internalInformationPoints
+	* This function allows setting a value for policyInformationPointsInternalInformationPoints
+	* @param policyInformationPointsInternalInformationPoints desired value to be set
+	* @return Builder object with new value for policyInformationPointsInternalInformationPoints
 	*/
-	final public PolicyInformationPointsBuilder internalInformationPoints(List<Submodel> internalInformationPoints) {
-		this.defaultPolicyInformationPoints.internalInformationPoints = internalInformationPoints;
+	final public PolicyInformationPointsBuilder policyInformationPointsInternalInformationPoints(List<Submodel> policyInformationPointsInternalInformationPoints) {
+		this.defaultPolicyInformationPoints.policyInformationPointsInternalInformationPoints = policyInformationPointsInternalInformationPoints;
 		return this;
 	}
 	/**

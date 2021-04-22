@@ -45,56 +45,56 @@ public class AssetInformationBuilder {
 	}
 
 	/**
-	* This function allows setting a value for assetKinds
-	* @param assetKinds desired value to be set
-	* @return Builder object with new value for assetKinds
+	* This function allows setting a value for assetInformationAssetKinds
+	* @param assetInformationAssetKinds desired value to be set
+	* @return Builder object with new value for assetInformationAssetKinds
 	*/
-	final public AssetInformationBuilder assetKinds(List<AssetKind> assetKinds) {
-		this.defaultAssetInformation.assetKinds = assetKinds;
+	final public AssetInformationBuilder assetInformationAssetKinds(List<AssetKind> assetInformationAssetKinds) {
+		this.defaultAssetInformation.assetInformationAssetKinds = assetInformationAssetKinds;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for globalAssetId
-	* @param globalAssetId desired value to be set
-	* @return Builder object with new value for globalAssetId
+	* This function allows setting a value for assetInformationGlobalAssetId
+	* @param assetInformationGlobalAssetId desired value to be set
+	* @return Builder object with new value for assetInformationGlobalAssetId
 	*/
-	final public AssetInformationBuilder globalAssetId(Reference globalAssetId) {
-		this.defaultAssetInformation.globalAssetId = globalAssetId;
+	final public AssetInformationBuilder assetInformationGlobalAssetId(Reference assetInformationGlobalAssetId) {
+		this.defaultAssetInformation.assetInformationGlobalAssetId = assetInformationGlobalAssetId;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for externalAssetIds
-	* @param externalAssetIds desired value to be set
-	* @return Builder object with new value for externalAssetIds
+	* This function allows setting a value for assetInformationExternalAssetIds
+	* @param assetInformationExternalAssetIds desired value to be set
+	* @return Builder object with new value for assetInformationExternalAssetIds
 	*/
-	final public AssetInformationBuilder externalAssetIds(List<IdentifierKeyValuePair> externalAssetIds) {
-		this.defaultAssetInformation.externalAssetIds = externalAssetIds;
+	final public AssetInformationBuilder assetInformationExternalAssetIds(List<IdentifierKeyValuePair> assetInformationExternalAssetIds) {
+		this.defaultAssetInformation.assetInformationExternalAssetIds = assetInformationExternalAssetIds;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for billOfMaterials
-	* @param billOfMaterials desired value to be set
-	* @return Builder object with new value for billOfMaterials
+	* This function allows setting a value for assetInformationBillOfMaterials
+	* @param assetInformationBillOfMaterials desired value to be set
+	* @return Builder object with new value for assetInformationBillOfMaterials
 	*/
-	final public AssetInformationBuilder billOfMaterials(List<Submodel> billOfMaterials) {
-		this.defaultAssetInformation.billOfMaterials = billOfMaterials;
+	final public AssetInformationBuilder assetInformationBillOfMaterials(List<Submodel> assetInformationBillOfMaterials) {
+		this.defaultAssetInformation.assetInformationBillOfMaterials = assetInformationBillOfMaterials;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for thumbnail
-	* @param thumbnail desired value to be set
-	* @return Builder object with new value for thumbnail
+	* This function allows setting a value for assetInformationThumbnail
+	* @param assetInformationThumbnail desired value to be set
+	* @return Builder object with new value for assetInformationThumbnail
 	*/
-	final public AssetInformationBuilder thumbnail(File thumbnail) {
-		this.defaultAssetInformation.thumbnail = thumbnail;
+	final public AssetInformationBuilder assetInformationThumbnail(File assetInformationThumbnail) {
+		this.defaultAssetInformation.assetInformationThumbnail = assetInformationThumbnail;
 		return this;
 	}
 	/**

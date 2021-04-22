@@ -83,19 +83,19 @@ public interface ConceptDescription extends HasDataSpecification, Identifiable {
 
 	/**
 	* "Link from a ConceptDescription to its explaining DataSpecificationContent."@en
-	* @return Returns the List of DataSpecificationContents for the property contents.
+	* @return Returns the List of DataSpecificationContents for the property conceptDescriptionContents.
 	* More information under https://admin-shell.io/aas/3/0/RC01/ConceptDescription/content
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/content")
-	public List<DataSpecificationContent> getContents();
+	public List<DataSpecificationContent> getConceptDescriptionContents();
 
 	/**
 	* "Reference to an external definition the concept is compatible to or was derived from."@en
 	* "Compare to is-case-of relationship in ISO 13584-32 and IEC EN 61360."@en
-	* @return Returns the List of References for the property isCaseOfs.
+	* @return Returns the List of References for the property conceptDescriptionIsCaseOfs.
 	* More information under https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf")
-	public List<Reference> getIsCaseOfs();
+	public List<Reference> getConceptDescriptionIsCaseOfs();
 
 }

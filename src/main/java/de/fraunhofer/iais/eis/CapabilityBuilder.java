@@ -47,100 +47,100 @@ public class CapabilityBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableReferableCategories
+	* @param referableReferableCategories desired value to be set
+	* @return Builder object with new value for referableReferableCategories
 	*/
-	final public CapabilityBuilder referableCategories(List<String> referableCategories) {
-		this.defaultCapability.referableCategories = referableCategories;
+	final public CapabilityBuilder referableReferableCategories(List<String> referableReferableCategories) {
+		this.defaultCapability.referableReferableCategories = referableReferableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for referableDescriptions
+	* @param referableDescriptions desired value to be set
+	* @return Builder object with new value for referableDescriptions
 	*/
-	final public CapabilityBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultCapability.descriptions = descriptions;
+	final public CapabilityBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
+		this.defaultCapability.referableDescriptions = referableDescriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for displayName
-	* @param displayName desired value to be set
-	* @return Builder object with new value for displayName
+	* This function allows setting a value for referableDisplayName
+	* @param referableDisplayName desired value to be set
+	* @return Builder object with new value for referableDisplayName
 	*/
-	final public CapabilityBuilder displayName(TypedLiteral displayName) {
-		this.defaultCapability.displayName = displayName;
+	final public CapabilityBuilder referableDisplayName(TypedLiteral referableDisplayName) {
+		this.defaultCapability.referableDisplayName = referableDisplayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for idShort
-	* @param idShort desired value to be set
-	* @return Builder object with new value for idShort
+	* This function allows setting a value for referableIdShort
+	* @param referableIdShort desired value to be set
+	* @return Builder object with new value for referableIdShort
 	*/
-	final public CapabilityBuilder idShort(String idShort) {
-		this.defaultCapability.idShort = idShort;
+	final public CapabilityBuilder referableIdShort(String referableIdShort) {
+		this.defaultCapability.referableIdShort = referableIdShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
+	* This function allows setting a value for referableParent
+	* @param referableParent desired value to be set
+	* @return Builder object with new value for referableParent
 	*/
-	final public CapabilityBuilder parent(URI parent) {
-		this.defaultCapability.parent = parent;
+	final public CapabilityBuilder referableParent(URI referableParent) {
+		this.defaultCapability.referableParent = referableParent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiers
-	* @param qualifiers desired value to be set
-	* @return Builder object with new value for qualifiers
+	* This function allows setting a value for qualifiableQualifiers
+	* @param qualifiableQualifiers desired value to be set
+	* @return Builder object with new value for qualifiableQualifiers
 	*/
-	final public CapabilityBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultCapability.qualifiers = qualifiers;
+	final public CapabilityBuilder qualifiableQualifiers(List<Constraint> qualifiableQualifiers) {
+		this.defaultCapability.qualifiableQualifiers = qualifiableQualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecifications
-	* @param dataSpecifications desired value to be set
-	* @return Builder object with new value for dataSpecifications
+	* This function allows setting a value for hasDataSpecificationDataSpecifications
+	* @param hasDataSpecificationDataSpecifications desired value to be set
+	* @return Builder object with new value for hasDataSpecificationDataSpecifications
 	*/
-	final public CapabilityBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultCapability.dataSpecifications = dataSpecifications;
+	final public CapabilityBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
+		this.defaultCapability.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for kind
-	* @param kind desired value to be set
-	* @return Builder object with new value for kind
+	* This function allows setting a value for hasKindKind
+	* @param hasKindKind desired value to be set
+	* @return Builder object with new value for hasKindKind
 	*/
-	final public CapabilityBuilder kind(ModelingKind kind) {
-		this.defaultCapability.kind = kind;
+	final public CapabilityBuilder hasKindKind(ModelingKind hasKindKind) {
+		this.defaultCapability.hasKindKind = hasKindKind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for semanticId
-	* @param semanticId desired value to be set
-	* @return Builder object with new value for semanticId
+	* This function allows setting a value for hasSemanticsSemanticId
+	* @param hasSemanticsSemanticId desired value to be set
+	* @return Builder object with new value for hasSemanticsSemanticId
 	*/
-	final public CapabilityBuilder semanticId(Reference semanticId) {
-		this.defaultCapability.semanticId = semanticId;
+	final public CapabilityBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
+		this.defaultCapability.hasSemanticsSemanticId = hasSemanticsSemanticId;
 		return this;
 	}
 	/**

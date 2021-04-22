@@ -82,26 +82,26 @@ public interface BlobCertificate extends Certificate {
 
 	/**
 	* "Certificate as BLOB."@en
-	* @return Returns the byte for the property blobCertificate.
+	* @return Returns the byte for the property blobCertificateBlobCertificate.
 	* More information under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate")
-	public byte getBlobCertificate();
+	public byte getBlobCertificateBlobCertificate();
 
 	/**
 	* "Extensions contained in the certificate."@en
-	* @return Returns the List of References for the property containedExtensions.
+	* @return Returns the List of References for the property blobCertificateContainedExtensions.
 	* More information under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension")
-	public List<Reference> getContainedExtensions();
+	public List<Reference> getBlobCertificateContainedExtensions();
 
 	/**
 	* "Denotes whether this certificate is the certificated that fast added last."@en
-	* @return Returns the boolean for the property lastCertificate.
+	* @return Returns the boolean for the property blobCertificateLastCertificate.
 	* More information under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate")
-	public boolean getLastCertificate();
+	public boolean getBlobCertificateLastCertificate();
 
 }

@@ -82,26 +82,26 @@ public interface PermissionsPerObject {
 
 	/**
 	* "Element to which permission shall be assigned."@en
-	* @return Returns the Referable for the property object.
+	* @return Returns the Referable for the property permissionsPerObjectObject.
 	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")
-	public Referable getObject();
+	public Referable getPermissionsPerObjectObject();
 
 	/**
 	* "Permissions assigned to the object. The permissions hold for all subjects as specified in the access permission rule."@en
-	* @return Returns the List of Permissions for the property permissions.
+	* @return Returns the List of Permissions for the property permissionsPerObjectPermissions.
 	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission")
-	public List<Permission> getPermissions();
+	public List<Permission> getPermissionsPerObjectPermissions();
 
 	/**
 	* "Target object attributes that need to be fulfilled so that the access permissions apply to the accessing subject."@en
-	* @return Returns the ObjectAttributes for the property targetObjectAttributes.
+	* @return Returns the ObjectAttributes for the property permissionsPerObjectTargetObjectAttributes.
 	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes")
-	public ObjectAttributes getTargetObjectAttributes();
+	public ObjectAttributes getPermissionsPerObjectTargetObjectAttributes();
 
 }

@@ -57,8 +57,8 @@ public class DefaultObjectAttributes implements Serializable, ObjectAttributes {
 	* "has object attribute"
 	* "A data elements that further classifies an object."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute", "objectAttribute"})
-	protected List<DataElement> objectAttributes;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute", "objectAttributesObjectAttribute"})
+	protected List<DataElement> objectAttributesObjectAttributes;
 
 
 	// no manual construction
@@ -97,7 +97,7 @@ public class DefaultObjectAttributes implements Serializable, ObjectAttributes {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.objectAttributes});
+		return Objects.hash(new Object[]{this.objectAttributesObjectAttributes});
 	}
 
 	public boolean equals(Object obj) {
@@ -109,7 +109,7 @@ public class DefaultObjectAttributes implements Serializable, ObjectAttributes {
 			return false;
 		} else {
 			DefaultObjectAttributes other = (DefaultObjectAttributes) obj;
-			return Objects.equals(this.objectAttributes, other.objectAttributes);
+			return Objects.equals(this.objectAttributesObjectAttributes, other.objectAttributesObjectAttributes);
 		}
 	}
 
@@ -118,11 +118,11 @@ public class DefaultObjectAttributes implements Serializable, ObjectAttributes {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
-	final public List<DataElement> getObjectAttributes() {
-		return objectAttributes;
+	final public List<DataElement> getObjectAttributesObjectAttributes() {
+		return objectAttributesObjectAttributes;
 	}
 	
-	final public void setObjectAttributes (List<DataElement> objectAttributes) {
-		this.objectAttributes = objectAttributes;
+	final public void setObjectAttributesObjectAttributes (List<DataElement> objectAttributesObjectAttributes) {
+		this.objectAttributesObjectAttributes = objectAttributesObjectAttributes;
 	}
 }

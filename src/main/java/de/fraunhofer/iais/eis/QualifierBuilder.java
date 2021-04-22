@@ -45,46 +45,46 @@ public class QualifierBuilder {
 	}
 
 	/**
-	* This function allows setting a value for type
-	* @param type desired value to be set
-	* @return Builder object with new value for type
+	* This function allows setting a value for qualifierType
+	* @param qualifierType desired value to be set
+	* @return Builder object with new value for qualifierType
 	*/
-	final public QualifierBuilder type(String type) {
-		this.defaultQualifier.type = type;
+	final public QualifierBuilder qualifierType(String qualifierType) {
+		this.defaultQualifier.qualifierType = qualifierType;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for value
-	* @param value desired value to be set
-	* @return Builder object with new value for value
+	* This function allows setting a value for qualifierValue
+	* @param qualifierValue desired value to be set
+	* @return Builder object with new value for qualifierValue
 	*/
-	final public QualifierBuilder value(TypedLiteral value) {
-		this.defaultQualifier.value = value;
+	final public QualifierBuilder qualifierValue(TypedLiteral qualifierValue) {
+		this.defaultQualifier.qualifierValue = qualifierValue;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for valueId
-	* @param valueId desired value to be set
-	* @return Builder object with new value for valueId
+	* This function allows setting a value for qualifierValueId
+	* @param qualifierValueId desired value to be set
+	* @return Builder object with new value for qualifierValueId
 	*/
-	final public QualifierBuilder valueId(Reference valueId) {
-		this.defaultQualifier.valueId = valueId;
+	final public QualifierBuilder qualifierValueId(Reference qualifierValueId) {
+		this.defaultQualifier.qualifierValueId = qualifierValueId;
 		return this;
 	}
 
 
 
 	/**
-	* This function allows setting a value for semanticId
-	* @param semanticId desired value to be set
-	* @return Builder object with new value for semanticId
+	* This function allows setting a value for hasSemanticsSemanticId
+	* @param hasSemanticsSemanticId desired value to be set
+	* @return Builder object with new value for hasSemanticsSemanticId
 	*/
-	final public QualifierBuilder semanticId(Reference semanticId) {
-		this.defaultQualifier.semanticId = semanticId;
+	final public QualifierBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
+		this.defaultQualifier.hasSemanticsSemanticId = hasSemanticsSemanticId;
 		return this;
 	}
 	/**

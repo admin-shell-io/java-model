@@ -45,12 +45,12 @@ public class HasKindBuilder {
 	}
 
 	/**
-	* This function allows setting a value for kind
-	* @param kind desired value to be set
-	* @return Builder object with new value for kind
+	* This function allows setting a value for hasKindKind
+	* @param hasKindKind desired value to be set
+	* @return Builder object with new value for hasKindKind
 	*/
-	final public HasKindBuilder kind(ModelingKind kind) {
-		this.defaultHasKind.kind = kind;
+	final public HasKindBuilder hasKindKind(ModelingKind hasKindKind) {
+		this.defaultHasKind.hasKindKind = hasKindKind;
 		return this;
 	}
 	/**

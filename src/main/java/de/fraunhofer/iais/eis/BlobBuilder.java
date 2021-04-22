@@ -45,23 +45,23 @@ public class BlobBuilder {
 	}
 
 	/**
-	* This function allows setting a value for mimeType
-	* @param mimeType desired value to be set
-	* @return Builder object with new value for mimeType
+	* This function allows setting a value for blobMimeType
+	* @param blobMimeType desired value to be set
+	* @return Builder object with new value for blobMimeType
 	*/
-	final public BlobBuilder mimeType(String mimeType) {
-		this.defaultBlob.mimeType = mimeType;
+	final public BlobBuilder blobMimeType(String blobMimeType) {
+		this.defaultBlob.blobMimeType = blobMimeType;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for value
-	* @param value desired value to be set
-	* @return Builder object with new value for value
+	* This function allows setting a value for blobValue
+	* @param blobValue desired value to be set
+	* @return Builder object with new value for blobValue
 	*/
-	final public BlobBuilder value(byte value) {
-		this.defaultBlob.value = value;
+	final public BlobBuilder blobValue(byte blobValue) {
+		this.defaultBlob.blobValue = blobValue;
 		return this;
 	}
 
@@ -69,100 +69,100 @@ public class BlobBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableReferableCategories
+	* @param referableReferableCategories desired value to be set
+	* @return Builder object with new value for referableReferableCategories
 	*/
-	final public BlobBuilder referableCategories(List<String> referableCategories) {
-		this.defaultBlob.referableCategories = referableCategories;
+	final public BlobBuilder referableReferableCategories(List<String> referableReferableCategories) {
+		this.defaultBlob.referableReferableCategories = referableReferableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for referableDescriptions
+	* @param referableDescriptions desired value to be set
+	* @return Builder object with new value for referableDescriptions
 	*/
-	final public BlobBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultBlob.descriptions = descriptions;
+	final public BlobBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
+		this.defaultBlob.referableDescriptions = referableDescriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for displayName
-	* @param displayName desired value to be set
-	* @return Builder object with new value for displayName
+	* This function allows setting a value for referableDisplayName
+	* @param referableDisplayName desired value to be set
+	* @return Builder object with new value for referableDisplayName
 	*/
-	final public BlobBuilder displayName(TypedLiteral displayName) {
-		this.defaultBlob.displayName = displayName;
+	final public BlobBuilder referableDisplayName(TypedLiteral referableDisplayName) {
+		this.defaultBlob.referableDisplayName = referableDisplayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for idShort
-	* @param idShort desired value to be set
-	* @return Builder object with new value for idShort
+	* This function allows setting a value for referableIdShort
+	* @param referableIdShort desired value to be set
+	* @return Builder object with new value for referableIdShort
 	*/
-	final public BlobBuilder idShort(String idShort) {
-		this.defaultBlob.idShort = idShort;
+	final public BlobBuilder referableIdShort(String referableIdShort) {
+		this.defaultBlob.referableIdShort = referableIdShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
+	* This function allows setting a value for referableParent
+	* @param referableParent desired value to be set
+	* @return Builder object with new value for referableParent
 	*/
-	final public BlobBuilder parent(URI parent) {
-		this.defaultBlob.parent = parent;
+	final public BlobBuilder referableParent(URI referableParent) {
+		this.defaultBlob.referableParent = referableParent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiers
-	* @param qualifiers desired value to be set
-	* @return Builder object with new value for qualifiers
+	* This function allows setting a value for qualifiableQualifiers
+	* @param qualifiableQualifiers desired value to be set
+	* @return Builder object with new value for qualifiableQualifiers
 	*/
-	final public BlobBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultBlob.qualifiers = qualifiers;
+	final public BlobBuilder qualifiableQualifiers(List<Constraint> qualifiableQualifiers) {
+		this.defaultBlob.qualifiableQualifiers = qualifiableQualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecifications
-	* @param dataSpecifications desired value to be set
-	* @return Builder object with new value for dataSpecifications
+	* This function allows setting a value for hasDataSpecificationDataSpecifications
+	* @param hasDataSpecificationDataSpecifications desired value to be set
+	* @return Builder object with new value for hasDataSpecificationDataSpecifications
 	*/
-	final public BlobBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultBlob.dataSpecifications = dataSpecifications;
+	final public BlobBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
+		this.defaultBlob.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for kind
-	* @param kind desired value to be set
-	* @return Builder object with new value for kind
+	* This function allows setting a value for hasKindKind
+	* @param hasKindKind desired value to be set
+	* @return Builder object with new value for hasKindKind
 	*/
-	final public BlobBuilder kind(ModelingKind kind) {
-		this.defaultBlob.kind = kind;
+	final public BlobBuilder hasKindKind(ModelingKind hasKindKind) {
+		this.defaultBlob.hasKindKind = hasKindKind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for semanticId
-	* @param semanticId desired value to be set
-	* @return Builder object with new value for semanticId
+	* This function allows setting a value for hasSemanticsSemanticId
+	* @param hasSemanticsSemanticId desired value to be set
+	* @return Builder object with new value for hasSemanticsSemanticId
 	*/
-	final public BlobBuilder semanticId(Reference semanticId) {
-		this.defaultBlob.semanticId = semanticId;
+	final public BlobBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
+		this.defaultBlob.hasSemanticsSemanticId = hasSemanticsSemanticId;
 		return this;
 	}
 	/**

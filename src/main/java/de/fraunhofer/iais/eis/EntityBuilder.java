@@ -45,145 +45,145 @@ public class EntityBuilder {
 	}
 
 	/**
-	* This function allows setting a value for globalAssetId
-	* @param globalAssetId desired value to be set
-	* @return Builder object with new value for globalAssetId
+	* This function allows setting a value for entityGlobalAssetId
+	* @param entityGlobalAssetId desired value to be set
+	* @return Builder object with new value for entityGlobalAssetId
 	*/
-	final public EntityBuilder globalAssetId(Reference globalAssetId) {
-		this.defaultEntity.globalAssetId = globalAssetId;
+	final public EntityBuilder entityGlobalAssetId(Reference entityGlobalAssetId) {
+		this.defaultEntity.entityGlobalAssetId = entityGlobalAssetId;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for externalAssetId
-	* @param externalAssetId desired value to be set
-	* @return Builder object with new value for externalAssetId
+	* This function allows setting a value for entityExternalAssetId
+	* @param entityExternalAssetId desired value to be set
+	* @return Builder object with new value for entityExternalAssetId
 	*/
-	final public EntityBuilder externalAssetId(IdentifierKeyValuePair externalAssetId) {
-		this.defaultEntity.externalAssetId = externalAssetId;
+	final public EntityBuilder entityExternalAssetId(IdentifierKeyValuePair entityExternalAssetId) {
+		this.defaultEntity.entityExternalAssetId = entityExternalAssetId;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for entityType
-	* @param entityType desired value to be set
-	* @return Builder object with new value for entityType
+	* This function allows setting a value for entityEntityType
+	* @param entityEntityType desired value to be set
+	* @return Builder object with new value for entityEntityType
 	*/
-	final public EntityBuilder entityType(EntityType entityType) {
-		this.defaultEntity.entityType = entityType;
+	final public EntityBuilder entityEntityType(EntityType entityEntityType) {
+		this.defaultEntity.entityEntityType = entityEntityType;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for statements
-	* @param statements desired value to be set
-	* @return Builder object with new value for statements
+	* This function allows setting a value for entityStatements
+	* @param entityStatements desired value to be set
+	* @return Builder object with new value for entityStatements
 	*/
-	final public EntityBuilder statements(List<SubmodelElement> statements) {
-		this.defaultEntity.statements = statements;
+	final public EntityBuilder entityStatements(List<SubmodelElement> entityStatements) {
+		this.defaultEntity.entityStatements = entityStatements;
 		return this;
 	}
 
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableReferableCategories
+	* @param referableReferableCategories desired value to be set
+	* @return Builder object with new value for referableReferableCategories
 	*/
-	final public EntityBuilder referableCategories(List<String> referableCategories) {
-		this.defaultEntity.referableCategories = referableCategories;
+	final public EntityBuilder referableReferableCategories(List<String> referableReferableCategories) {
+		this.defaultEntity.referableReferableCategories = referableReferableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for referableDescriptions
+	* @param referableDescriptions desired value to be set
+	* @return Builder object with new value for referableDescriptions
 	*/
-	final public EntityBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultEntity.descriptions = descriptions;
+	final public EntityBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
+		this.defaultEntity.referableDescriptions = referableDescriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for displayName
-	* @param displayName desired value to be set
-	* @return Builder object with new value for displayName
+	* This function allows setting a value for referableDisplayName
+	* @param referableDisplayName desired value to be set
+	* @return Builder object with new value for referableDisplayName
 	*/
-	final public EntityBuilder displayName(TypedLiteral displayName) {
-		this.defaultEntity.displayName = displayName;
+	final public EntityBuilder referableDisplayName(TypedLiteral referableDisplayName) {
+		this.defaultEntity.referableDisplayName = referableDisplayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for idShort
-	* @param idShort desired value to be set
-	* @return Builder object with new value for idShort
+	* This function allows setting a value for referableIdShort
+	* @param referableIdShort desired value to be set
+	* @return Builder object with new value for referableIdShort
 	*/
-	final public EntityBuilder idShort(String idShort) {
-		this.defaultEntity.idShort = idShort;
+	final public EntityBuilder referableIdShort(String referableIdShort) {
+		this.defaultEntity.referableIdShort = referableIdShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
+	* This function allows setting a value for referableParent
+	* @param referableParent desired value to be set
+	* @return Builder object with new value for referableParent
 	*/
-	final public EntityBuilder parent(URI parent) {
-		this.defaultEntity.parent = parent;
+	final public EntityBuilder referableParent(URI referableParent) {
+		this.defaultEntity.referableParent = referableParent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiers
-	* @param qualifiers desired value to be set
-	* @return Builder object with new value for qualifiers
+	* This function allows setting a value for qualifiableQualifiers
+	* @param qualifiableQualifiers desired value to be set
+	* @return Builder object with new value for qualifiableQualifiers
 	*/
-	final public EntityBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultEntity.qualifiers = qualifiers;
+	final public EntityBuilder qualifiableQualifiers(List<Constraint> qualifiableQualifiers) {
+		this.defaultEntity.qualifiableQualifiers = qualifiableQualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecifications
-	* @param dataSpecifications desired value to be set
-	* @return Builder object with new value for dataSpecifications
+	* This function allows setting a value for hasDataSpecificationDataSpecifications
+	* @param hasDataSpecificationDataSpecifications desired value to be set
+	* @return Builder object with new value for hasDataSpecificationDataSpecifications
 	*/
-	final public EntityBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultEntity.dataSpecifications = dataSpecifications;
+	final public EntityBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
+		this.defaultEntity.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for kind
-	* @param kind desired value to be set
-	* @return Builder object with new value for kind
+	* This function allows setting a value for hasKindKind
+	* @param hasKindKind desired value to be set
+	* @return Builder object with new value for hasKindKind
 	*/
-	final public EntityBuilder kind(ModelingKind kind) {
-		this.defaultEntity.kind = kind;
+	final public EntityBuilder hasKindKind(ModelingKind hasKindKind) {
+		this.defaultEntity.hasKindKind = hasKindKind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for semanticId
-	* @param semanticId desired value to be set
-	* @return Builder object with new value for semanticId
+	* This function allows setting a value for hasSemanticsSemanticId
+	* @param hasSemanticsSemanticId desired value to be set
+	* @return Builder object with new value for hasSemanticsSemanticId
 	*/
-	final public EntityBuilder semanticId(Reference semanticId) {
-		this.defaultEntity.semanticId = semanticId;
+	final public EntityBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
+		this.defaultEntity.hasSemanticsSemanticId = hasSemanticsSemanticId;
 		return this;
 	}
 	/**

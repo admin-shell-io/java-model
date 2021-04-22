@@ -57,16 +57,16 @@ public class DefaultReferable implements Serializable, Referable {
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "description"})
-	protected List<TypedLiteral> descriptions;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "referableDescription"})
+	protected List<TypedLiteral> referableDescriptions;
 
 
 	/**
 	* "has display name"
 	* "Display name. Can be provided in several languages."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "displayName"})
-	protected TypedLiteral displayName;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "referableDisplayName"})
+	protected TypedLiteral referableDisplayName;
 
 
 	/**
@@ -78,8 +78,8 @@ public class DefaultReferable implements Serializable, Referable {
 	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
 	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "idShort"})
-	protected String idShort;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "referableIdShort"})
+	protected String referableIdShort;
 
 
 	/**
@@ -88,16 +88,16 @@ public class DefaultReferable implements Serializable, Referable {
 	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
 	* "This element is used to ease navigation in the model and thus it enables more performant"@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/parent", "parent"})
-	protected URI parent;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/parent", "referableParent"})
+	protected URI referableParent;
 
 
 	/**
 	* "has category"
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableCategory"})
-	protected List<String> referableCategories;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableReferableCategory"})
+	protected List<String> referableReferableCategories;
 
 
 	// no manual construction
@@ -136,11 +136,11 @@ public class DefaultReferable implements Serializable, Referable {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.referableCategories,
-			this.descriptions,
-			this.displayName,
-			this.idShort,
-			this.parent});
+		return Objects.hash(new Object[]{this.referableReferableCategories,
+			this.referableDescriptions,
+			this.referableDisplayName,
+			this.referableIdShort,
+			this.referableParent});
 	}
 
 	public boolean equals(Object obj) {
@@ -152,11 +152,11 @@ public class DefaultReferable implements Serializable, Referable {
 			return false;
 		} else {
 			DefaultReferable other = (DefaultReferable) obj;
-			return Objects.equals(this.referableCategories, other.referableCategories) &&
-				Objects.equals(this.descriptions, other.descriptions) &&
-				Objects.equals(this.displayName, other.displayName) &&
-				Objects.equals(this.idShort, other.idShort) &&
-				Objects.equals(this.parent, other.parent);
+			return Objects.equals(this.referableReferableCategories, other.referableReferableCategories) &&
+				Objects.equals(this.referableDescriptions, other.referableDescriptions) &&
+				Objects.equals(this.referableDisplayName, other.referableDisplayName) &&
+				Objects.equals(this.referableIdShort, other.referableIdShort) &&
+				Objects.equals(this.referableParent, other.referableParent);
 		}
 	}
 
@@ -165,47 +165,47 @@ public class DefaultReferable implements Serializable, Referable {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	final public List<String> getReferableCategories() {
-		return referableCategories;
+	final public List<String> getReferableReferableCategories() {
+		return referableReferableCategories;
 	}
 	
-	final public void setReferableCategories (List<String> referableCategories) {
-		this.referableCategories = referableCategories;
+	final public void setReferableReferableCategories (List<String> referableReferableCategories) {
+		this.referableReferableCategories = referableReferableCategories;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	final public List<TypedLiteral> getDescriptions() {
-		return descriptions;
+	final public List<TypedLiteral> getReferableDescriptions() {
+		return referableDescriptions;
 	}
 	
-	final public void setDescriptions (List<TypedLiteral> descriptions) {
-		this.descriptions = descriptions;
+	final public void setReferableDescriptions (List<TypedLiteral> referableDescriptions) {
+		this.referableDescriptions = referableDescriptions;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-	final public TypedLiteral getDisplayName() {
-		return displayName;
+	final public TypedLiteral getReferableDisplayName() {
+		return referableDisplayName;
 	}
 	
-	final public void setDisplayName (TypedLiteral displayName) {
-		this.displayName = displayName;
+	final public void setReferableDisplayName (TypedLiteral referableDisplayName) {
+		this.referableDisplayName = referableDisplayName;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-	final public String getIdShort() {
-		return idShort;
+	final public String getReferableIdShort() {
+		return referableIdShort;
 	}
 	
-	final public void setIdShort (String idShort) {
-		this.idShort = idShort;
+	final public void setReferableIdShort (String referableIdShort) {
+		this.referableIdShort = referableIdShort;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
-	final public URI getParent() {
-		return parent;
+	final public URI getReferableParent() {
+		return referableParent;
 	}
 	
-	final public void setParent (URI parent) {
-		this.parent = parent;
+	final public void setReferableParent (URI referableParent) {
+		this.referableParent = referableParent;
 	}
 }

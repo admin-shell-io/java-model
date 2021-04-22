@@ -59,24 +59,24 @@ public class DefaultKey implements Serializable, Key {
 	* "Constraint AASd-080: In case Key/type == GlobalReference idType shall not be any LocalKeyType (IdShort, FragmentId)."@en
 	* "Constraint AASd-081: In case Key/type==AssetAdministrationShell Key/idType shall not be any  LocalKeyType (IdShort, FragmentId)."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Key/idType", "idType"})
-	protected KeyType idType;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Key/idType", "keyIdType"})
+	protected KeyType keyIdType;
 
 
 	/**
 	* "has type"
 	* "Denote which kind of entity is referenced. In case type = GlobalReference then the element is a global unique id. In all other cases the key references a model element of the same or of another AAS. The name of the model element is explicitly listed."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Key/type", "type"})
-	protected KeyElements type;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Key/type", "keyType"})
+	protected KeyElements keyType;
 
 
 	/**
 	* "has value"
 	* "The key value, for example an IRDI if the idType=IRDI."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Key/value", "value"})
-	protected String value;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Key/value", "keyValue"})
+	protected String keyValue;
 
 
 	// no manual construction
@@ -115,9 +115,9 @@ public class DefaultKey implements Serializable, Key {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.idType,
-			this.type,
-			this.value});
+		return Objects.hash(new Object[]{this.keyIdType,
+			this.keyType,
+			this.keyValue});
 	}
 
 	public boolean equals(Object obj) {
@@ -129,9 +129,9 @@ public class DefaultKey implements Serializable, Key {
 			return false;
 		} else {
 			DefaultKey other = (DefaultKey) obj;
-			return Objects.equals(this.idType, other.idType) &&
-				Objects.equals(this.type, other.type) &&
-				Objects.equals(this.value, other.value);
+			return Objects.equals(this.keyIdType, other.keyIdType) &&
+				Objects.equals(this.keyType, other.keyType) &&
+				Objects.equals(this.keyValue, other.keyValue);
 		}
 	}
 
@@ -140,29 +140,29 @@ public class DefaultKey implements Serializable, Key {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Key/idType")
-	final public KeyType getIdType() {
-		return idType;
+	final public KeyType getKeyIdType() {
+		return keyIdType;
 	}
 	
-	final public void setIdType (KeyType idType) {
-		this.idType = idType;
+	final public void setKeyIdType (KeyType keyIdType) {
+		this.keyIdType = keyIdType;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Key/type")
-	final public KeyElements getType() {
-		return type;
+	final public KeyElements getKeyType() {
+		return keyType;
 	}
 	
-	final public void setType (KeyElements type) {
-		this.type = type;
+	final public void setKeyType (KeyElements keyType) {
+		this.keyType = keyType;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Key/value")
-	final public String getValue() {
-		return value;
+	final public String getKeyValue() {
+		return keyValue;
 	}
 	
-	final public void setValue (String value) {
-		this.value = value;
+	final public void setKeyValue (String keyValue) {
+		this.keyValue = keyValue;
 	}
 }

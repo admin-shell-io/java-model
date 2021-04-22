@@ -45,23 +45,23 @@ public class IdentifierBuilder {
 	}
 
 	/**
-	* This function allows setting a value for identifiers
-	* @param identifiers desired value to be set
-	* @return Builder object with new value for identifiers
+	* This function allows setting a value for identifierIdentifiers
+	* @param identifierIdentifiers desired value to be set
+	* @return Builder object with new value for identifierIdentifiers
 	*/
-	final public IdentifierBuilder identifiers(List<TypedLiteral> identifiers) {
-		this.defaultIdentifier.identifiers = identifiers;
+	final public IdentifierBuilder identifierIdentifiers(List<TypedLiteral> identifierIdentifiers) {
+		this.defaultIdentifier.identifierIdentifiers = identifierIdentifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for idType
-	* @param idType desired value to be set
-	* @return Builder object with new value for idType
+	* This function allows setting a value for identifierIdType
+	* @param identifierIdType desired value to be set
+	* @return Builder object with new value for identifierIdType
 	*/
-	final public IdentifierBuilder idType(IdentifierType idType) {
-		this.defaultIdentifier.idType = idType;
+	final public IdentifierBuilder identifierIdType(IdentifierType identifierIdType) {
+		this.defaultIdentifier.identifierIdType = identifierIdType;
 		return this;
 	}
 	/**

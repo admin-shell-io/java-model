@@ -45,12 +45,12 @@ public class HasExtensionsBuilder {
 	}
 
 	/**
-	* This function allows setting a value for extensions
-	* @param extensions desired value to be set
-	* @return Builder object with new value for extensions
+	* This function allows setting a value for hasExtensionsExtensions
+	* @param hasExtensionsExtensions desired value to be set
+	* @return Builder object with new value for hasExtensionsExtensions
 	*/
-	final public HasExtensionsBuilder extensions(List<Extension> extensions) {
-		this.defaultHasExtensions.extensions = extensions;
+	final public HasExtensionsBuilder hasExtensionsExtensions(List<Extension> hasExtensionsExtensions) {
+		this.defaultHasExtensions.hasExtensionsExtensions = hasExtensionsExtensions;
 		return this;
 	}
 	/**

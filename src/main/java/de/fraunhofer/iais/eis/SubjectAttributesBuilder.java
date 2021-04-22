@@ -45,12 +45,12 @@ public class SubjectAttributesBuilder {
 	}
 
 	/**
-	* This function allows setting a value for subjectAttributes
-	* @param subjectAttributes desired value to be set
-	* @return Builder object with new value for subjectAttributes
+	* This function allows setting a value for subjectAttributesSubjectAttributes
+	* @param subjectAttributesSubjectAttributes desired value to be set
+	* @return Builder object with new value for subjectAttributesSubjectAttributes
 	*/
-	final public SubjectAttributesBuilder subjectAttributes(List<DataElement> subjectAttributes) {
-		this.defaultSubjectAttributes.subjectAttributes = subjectAttributes;
+	final public SubjectAttributesBuilder subjectAttributesSubjectAttributes(List<DataElement> subjectAttributesSubjectAttributes) {
+		this.defaultSubjectAttributes.subjectAttributesSubjectAttributes = subjectAttributesSubjectAttributes;
 		return this;
 	}
 	/**

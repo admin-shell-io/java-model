@@ -45,123 +45,123 @@ public class RelationshipElementBuilder {
 	}
 
 	/**
-	* This function allows setting a value for first
-	* @param first desired value to be set
-	* @return Builder object with new value for first
+	* This function allows setting a value for relationshipElementFirst
+	* @param relationshipElementFirst desired value to be set
+	* @return Builder object with new value for relationshipElementFirst
 	*/
-	final public RelationshipElementBuilder first(Referable first) {
-		this.defaultRelationshipElement.first = first;
+	final public RelationshipElementBuilder relationshipElementFirst(Referable relationshipElementFirst) {
+		this.defaultRelationshipElement.relationshipElementFirst = relationshipElementFirst;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for second
-	* @param second desired value to be set
-	* @return Builder object with new value for second
+	* This function allows setting a value for relationshipElementSecond
+	* @param relationshipElementSecond desired value to be set
+	* @return Builder object with new value for relationshipElementSecond
 	*/
-	final public RelationshipElementBuilder second(Referable second) {
-		this.defaultRelationshipElement.second = second;
+	final public RelationshipElementBuilder relationshipElementSecond(Referable relationshipElementSecond) {
+		this.defaultRelationshipElement.relationshipElementSecond = relationshipElementSecond;
 		return this;
 	}
 
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableReferableCategories
+	* @param referableReferableCategories desired value to be set
+	* @return Builder object with new value for referableReferableCategories
 	*/
-	final public RelationshipElementBuilder referableCategories(List<String> referableCategories) {
-		this.defaultRelationshipElement.referableCategories = referableCategories;
+	final public RelationshipElementBuilder referableReferableCategories(List<String> referableReferableCategories) {
+		this.defaultRelationshipElement.referableReferableCategories = referableReferableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for referableDescriptions
+	* @param referableDescriptions desired value to be set
+	* @return Builder object with new value for referableDescriptions
 	*/
-	final public RelationshipElementBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultRelationshipElement.descriptions = descriptions;
+	final public RelationshipElementBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
+		this.defaultRelationshipElement.referableDescriptions = referableDescriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for displayName
-	* @param displayName desired value to be set
-	* @return Builder object with new value for displayName
+	* This function allows setting a value for referableDisplayName
+	* @param referableDisplayName desired value to be set
+	* @return Builder object with new value for referableDisplayName
 	*/
-	final public RelationshipElementBuilder displayName(TypedLiteral displayName) {
-		this.defaultRelationshipElement.displayName = displayName;
+	final public RelationshipElementBuilder referableDisplayName(TypedLiteral referableDisplayName) {
+		this.defaultRelationshipElement.referableDisplayName = referableDisplayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for idShort
-	* @param idShort desired value to be set
-	* @return Builder object with new value for idShort
+	* This function allows setting a value for referableIdShort
+	* @param referableIdShort desired value to be set
+	* @return Builder object with new value for referableIdShort
 	*/
-	final public RelationshipElementBuilder idShort(String idShort) {
-		this.defaultRelationshipElement.idShort = idShort;
+	final public RelationshipElementBuilder referableIdShort(String referableIdShort) {
+		this.defaultRelationshipElement.referableIdShort = referableIdShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
+	* This function allows setting a value for referableParent
+	* @param referableParent desired value to be set
+	* @return Builder object with new value for referableParent
 	*/
-	final public RelationshipElementBuilder parent(URI parent) {
-		this.defaultRelationshipElement.parent = parent;
+	final public RelationshipElementBuilder referableParent(URI referableParent) {
+		this.defaultRelationshipElement.referableParent = referableParent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiers
-	* @param qualifiers desired value to be set
-	* @return Builder object with new value for qualifiers
+	* This function allows setting a value for qualifiableQualifiers
+	* @param qualifiableQualifiers desired value to be set
+	* @return Builder object with new value for qualifiableQualifiers
 	*/
-	final public RelationshipElementBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultRelationshipElement.qualifiers = qualifiers;
+	final public RelationshipElementBuilder qualifiableQualifiers(List<Constraint> qualifiableQualifiers) {
+		this.defaultRelationshipElement.qualifiableQualifiers = qualifiableQualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecifications
-	* @param dataSpecifications desired value to be set
-	* @return Builder object with new value for dataSpecifications
+	* This function allows setting a value for hasDataSpecificationDataSpecifications
+	* @param hasDataSpecificationDataSpecifications desired value to be set
+	* @return Builder object with new value for hasDataSpecificationDataSpecifications
 	*/
-	final public RelationshipElementBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultRelationshipElement.dataSpecifications = dataSpecifications;
+	final public RelationshipElementBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
+		this.defaultRelationshipElement.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for kind
-	* @param kind desired value to be set
-	* @return Builder object with new value for kind
+	* This function allows setting a value for hasKindKind
+	* @param hasKindKind desired value to be set
+	* @return Builder object with new value for hasKindKind
 	*/
-	final public RelationshipElementBuilder kind(ModelingKind kind) {
-		this.defaultRelationshipElement.kind = kind;
+	final public RelationshipElementBuilder hasKindKind(ModelingKind hasKindKind) {
+		this.defaultRelationshipElement.hasKindKind = hasKindKind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for semanticId
-	* @param semanticId desired value to be set
-	* @return Builder object with new value for semanticId
+	* This function allows setting a value for hasSemanticsSemanticId
+	* @param hasSemanticsSemanticId desired value to be set
+	* @return Builder object with new value for hasSemanticsSemanticId
 	*/
-	final public RelationshipElementBuilder semanticId(Reference semanticId) {
-		this.defaultRelationshipElement.semanticId = semanticId;
+	final public RelationshipElementBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
+		this.defaultRelationshipElement.hasSemanticsSemanticId = hasSemanticsSemanticId;
 		return this;
 	}
 	/**

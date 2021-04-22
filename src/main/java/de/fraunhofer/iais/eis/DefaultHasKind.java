@@ -57,8 +57,8 @@ public class DefaultHasKind implements Serializable, HasKind {
 	* "has kind"
 	* "ModelingKind of the element: either type or instance."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasKind/kind", "kind"})
-	protected ModelingKind kind;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasKind/kind", "hasKindKind"})
+	protected ModelingKind hasKindKind;
 
 
 	// no manual construction
@@ -97,7 +97,7 @@ public class DefaultHasKind implements Serializable, HasKind {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.kind});
+		return Objects.hash(new Object[]{this.hasKindKind});
 	}
 
 	public boolean equals(Object obj) {
@@ -109,7 +109,7 @@ public class DefaultHasKind implements Serializable, HasKind {
 			return false;
 		} else {
 			DefaultHasKind other = (DefaultHasKind) obj;
-			return Objects.equals(this.kind, other.kind);
+			return Objects.equals(this.hasKindKind, other.hasKindKind);
 		}
 	}
 
@@ -118,11 +118,11 @@ public class DefaultHasKind implements Serializable, HasKind {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-	final public ModelingKind getKind() {
-		return kind;
+	final public ModelingKind getHasKindKind() {
+		return hasKindKind;
 	}
 	
-	final public void setKind (ModelingKind kind) {
-		this.kind = kind;
+	final public void setHasKindKind (ModelingKind hasKindKind) {
+		this.hasKindKind = hasKindKind;
 	}
 }
