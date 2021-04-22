@@ -45,78 +45,78 @@ public class IdentifiableBuilder {
 	}
 
 	/**
-	* This function allows setting a value for administration
-	* @param administration desired value to be set
-	* @return Builder object with new value for administration
+	* This function allows setting a value for identifiableAdministration
+	* @param identifiableAdministration desired value to be set
+	* @return Builder object with new value for identifiableAdministration
 	*/
-	final public IdentifiableBuilder administration(AdministrativeInformation administration) {
-		this.defaultIdentifiable.administration = administration;
+	final public IdentifiableBuilder identifiableAdministration(AdministrativeInformation identifiableAdministration) {
+		this.defaultIdentifiable.identifiableAdministration = identifiableAdministration;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for identification
-	* @param identification desired value to be set
-	* @return Builder object with new value for identification
+	* This function allows setting a value for identifiableIdentification
+	* @param identifiableIdentification desired value to be set
+	* @return Builder object with new value for identifiableIdentification
 	*/
-	final public IdentifiableBuilder identification(Identifier identification) {
-		this.defaultIdentifiable.identification = identification;
+	final public IdentifiableBuilder identifiableIdentification(Identifier identifiableIdentification) {
+		this.defaultIdentifiable.identifiableIdentification = identifiableIdentification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableReferableCategories
+	* @param referableReferableCategories desired value to be set
+	* @return Builder object with new value for referableReferableCategories
 	*/
-	final public IdentifiableBuilder referableCategories(List<String> referableCategories) {
-		this.defaultIdentifiable.referableCategories = referableCategories;
+	final public IdentifiableBuilder referableReferableCategories(List<String> referableReferableCategories) {
+		this.defaultIdentifiable.referableReferableCategories = referableReferableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for referableDescriptions
+	* @param referableDescriptions desired value to be set
+	* @return Builder object with new value for referableDescriptions
 	*/
-	final public IdentifiableBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultIdentifiable.descriptions = descriptions;
+	final public IdentifiableBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
+		this.defaultIdentifiable.referableDescriptions = referableDescriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for displayName
-	* @param displayName desired value to be set
-	* @return Builder object with new value for displayName
+	* This function allows setting a value for referableDisplayName
+	* @param referableDisplayName desired value to be set
+	* @return Builder object with new value for referableDisplayName
 	*/
-	final public IdentifiableBuilder displayName(TypedLiteral displayName) {
-		this.defaultIdentifiable.displayName = displayName;
+	final public IdentifiableBuilder referableDisplayName(TypedLiteral referableDisplayName) {
+		this.defaultIdentifiable.referableDisplayName = referableDisplayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for idShort
-	* @param idShort desired value to be set
-	* @return Builder object with new value for idShort
+	* This function allows setting a value for referableIdShort
+	* @param referableIdShort desired value to be set
+	* @return Builder object with new value for referableIdShort
 	*/
-	final public IdentifiableBuilder idShort(String idShort) {
-		this.defaultIdentifiable.idShort = idShort;
+	final public IdentifiableBuilder referableIdShort(String referableIdShort) {
+		this.defaultIdentifiable.referableIdShort = referableIdShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
+	* This function allows setting a value for referableParent
+	* @param referableParent desired value to be set
+	* @return Builder object with new value for referableParent
 	*/
-	final public IdentifiableBuilder parent(URI parent) {
-		this.defaultIdentifiable.parent = parent;
+	final public IdentifiableBuilder referableParent(URI referableParent) {
+		this.defaultIdentifiable.referableParent = referableParent;
 		return this;
 	}
 	/**

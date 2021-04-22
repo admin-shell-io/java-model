@@ -57,32 +57,32 @@ public class DefaultAccessControlPolicyPoints implements Serializable, AccessCon
 	* "has policy administration point"
 	* "The access control administration policy point of the AAS."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint", "policyAdministrationPoint"})
-	protected PolicyAdministrationPoint policyAdministrationPoint;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint", "accessControlPolicyPointsPolicyAdministrationPoint"})
+	protected PolicyAdministrationPoint accessControlPolicyPointsPolicyAdministrationPoint;
 
 
 	/**
 	* "has policy decision point"
 	* "The access control policy decision point of the AAS."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint", "policyDecisionPoint"})
-	protected PolicyDecisionPoint policyDecisionPoint;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint", "accessControlPolicyPointsPolicyDecisionPoint"})
+	protected PolicyDecisionPoint accessControlPolicyPointsPolicyDecisionPoint;
 
 
 	/**
 	* "has policy enforcement point"
 	* "The access control policy enforcement point of the AAS."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint", "policyEnforcementPoint"})
-	protected PolicyEnforcementPoints policyEnforcementPoint;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint", "accessControlPolicyPointsPolicyEnforcementPoint"})
+	protected PolicyEnforcementPoints accessControlPolicyPointsPolicyEnforcementPoint;
 
 
 	/**
 	* "has policy information points"
 	* "The access control policy information points of the AAS."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints", "policyInformationPoints"})
-	protected PolicyInformationPoints policyInformationPoints;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints", "accessControlPolicyPointsPolicyInformationPoints"})
+	protected PolicyInformationPoints accessControlPolicyPointsPolicyInformationPoints;
 
 
 	// no manual construction
@@ -121,10 +121,10 @@ public class DefaultAccessControlPolicyPoints implements Serializable, AccessCon
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.policyAdministrationPoint,
-			this.policyDecisionPoint,
-			this.policyEnforcementPoint,
-			this.policyInformationPoints});
+		return Objects.hash(new Object[]{this.accessControlPolicyPointsPolicyAdministrationPoint,
+			this.accessControlPolicyPointsPolicyDecisionPoint,
+			this.accessControlPolicyPointsPolicyEnforcementPoint,
+			this.accessControlPolicyPointsPolicyInformationPoints});
 	}
 
 	public boolean equals(Object obj) {
@@ -136,10 +136,10 @@ public class DefaultAccessControlPolicyPoints implements Serializable, AccessCon
 			return false;
 		} else {
 			DefaultAccessControlPolicyPoints other = (DefaultAccessControlPolicyPoints) obj;
-			return Objects.equals(this.policyAdministrationPoint, other.policyAdministrationPoint) &&
-				Objects.equals(this.policyDecisionPoint, other.policyDecisionPoint) &&
-				Objects.equals(this.policyEnforcementPoint, other.policyEnforcementPoint) &&
-				Objects.equals(this.policyInformationPoints, other.policyInformationPoints);
+			return Objects.equals(this.accessControlPolicyPointsPolicyAdministrationPoint, other.accessControlPolicyPointsPolicyAdministrationPoint) &&
+				Objects.equals(this.accessControlPolicyPointsPolicyDecisionPoint, other.accessControlPolicyPointsPolicyDecisionPoint) &&
+				Objects.equals(this.accessControlPolicyPointsPolicyEnforcementPoint, other.accessControlPolicyPointsPolicyEnforcementPoint) &&
+				Objects.equals(this.accessControlPolicyPointsPolicyInformationPoints, other.accessControlPolicyPointsPolicyInformationPoints);
 		}
 	}
 
@@ -148,38 +148,38 @@ public class DefaultAccessControlPolicyPoints implements Serializable, AccessCon
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint")
-	final public PolicyAdministrationPoint getPolicyAdministrationPoint() {
-		return policyAdministrationPoint;
+	final public PolicyAdministrationPoint getAccessControlPolicyPointsPolicyAdministrationPoint() {
+		return accessControlPolicyPointsPolicyAdministrationPoint;
 	}
 	
-	final public void setPolicyAdministrationPoint (PolicyAdministrationPoint policyAdministrationPoint) {
-		this.policyAdministrationPoint = policyAdministrationPoint;
+	final public void setAccessControlPolicyPointsPolicyAdministrationPoint (PolicyAdministrationPoint accessControlPolicyPointsPolicyAdministrationPoint) {
+		this.accessControlPolicyPointsPolicyAdministrationPoint = accessControlPolicyPointsPolicyAdministrationPoint;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint")
-	final public PolicyDecisionPoint getPolicyDecisionPoint() {
-		return policyDecisionPoint;
+	final public PolicyDecisionPoint getAccessControlPolicyPointsPolicyDecisionPoint() {
+		return accessControlPolicyPointsPolicyDecisionPoint;
 	}
 	
-	final public void setPolicyDecisionPoint (PolicyDecisionPoint policyDecisionPoint) {
-		this.policyDecisionPoint = policyDecisionPoint;
+	final public void setAccessControlPolicyPointsPolicyDecisionPoint (PolicyDecisionPoint accessControlPolicyPointsPolicyDecisionPoint) {
+		this.accessControlPolicyPointsPolicyDecisionPoint = accessControlPolicyPointsPolicyDecisionPoint;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint")
-	final public PolicyEnforcementPoints getPolicyEnforcementPoint() {
-		return policyEnforcementPoint;
+	final public PolicyEnforcementPoints getAccessControlPolicyPointsPolicyEnforcementPoint() {
+		return accessControlPolicyPointsPolicyEnforcementPoint;
 	}
 	
-	final public void setPolicyEnforcementPoint (PolicyEnforcementPoints policyEnforcementPoint) {
-		this.policyEnforcementPoint = policyEnforcementPoint;
+	final public void setAccessControlPolicyPointsPolicyEnforcementPoint (PolicyEnforcementPoints accessControlPolicyPointsPolicyEnforcementPoint) {
+		this.accessControlPolicyPointsPolicyEnforcementPoint = accessControlPolicyPointsPolicyEnforcementPoint;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints")
-	final public PolicyInformationPoints getPolicyInformationPoints() {
-		return policyInformationPoints;
+	final public PolicyInformationPoints getAccessControlPolicyPointsPolicyInformationPoints() {
+		return accessControlPolicyPointsPolicyInformationPoints;
 	}
 	
-	final public void setPolicyInformationPoints (PolicyInformationPoints policyInformationPoints) {
-		this.policyInformationPoints = policyInformationPoints;
+	final public void setAccessControlPolicyPointsPolicyInformationPoints (PolicyInformationPoints accessControlPolicyPointsPolicyInformationPoints) {
+		this.accessControlPolicyPointsPolicyInformationPoints = accessControlPolicyPointsPolicyInformationPoints;
 	}
 }

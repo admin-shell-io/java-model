@@ -45,12 +45,12 @@ public class QualifiableBuilder {
 	}
 
 	/**
-	* This function allows setting a value for qualifiers
-	* @param qualifiers desired value to be set
-	* @return Builder object with new value for qualifiers
+	* This function allows setting a value for qualifiableQualifiers
+	* @param qualifiableQualifiers desired value to be set
+	* @return Builder object with new value for qualifiableQualifiers
 	*/
-	final public QualifiableBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultQualifiable.qualifiers = qualifiers;
+	final public QualifiableBuilder qualifiableQualifiers(List<Constraint> qualifiableQualifiers) {
+		this.defaultQualifiable.qualifiableQualifiers = qualifiableQualifiers;
 		return this;
 	}
 	/**

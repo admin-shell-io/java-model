@@ -83,28 +83,28 @@ public interface Qualifier extends Constraint, HasSemantics {
 
 	/**
 	* "The qualifier type describes the type of the qualifier that is applied to the element."@en
-	* @return Returns the String for the property type.
+	* @return Returns the String for the property qualifierType.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/type
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/type")
-	public String getType();
+	public String getQualifierType();
 
 	/**
 	* "The qualifier value is the value of the qualifier."@en
 	* "Constraint AASd-006: if both, the value and the valueId are present then the value needs to be identical to the short name of the referenced coded value in qualifierValueId."@en
 	* "Constraint AASd-020: The value of Qualifier/value shall be consistent to the data type as defined in Qualifier/valueType."@en
-	* @return Returns the TypedLiteral for the property value.
+	* @return Returns the TypedLiteral for the property qualifierValue.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/value
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/value")
-	public TypedLiteral getValue();
+	public TypedLiteral getQualifierValue();
 
 	/**
 	* "Reference to the global unqiue id of a coded value."@en
-	* @return Returns the Reference for the property valueId.
+	* @return Returns the Reference for the property qualifierValueId.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId")
-	public Reference getValueId();
+	public Reference getQualifierValueId();
 
 }

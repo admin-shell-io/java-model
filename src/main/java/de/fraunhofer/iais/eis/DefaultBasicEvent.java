@@ -57,24 +57,24 @@ public class DefaultBasicEvent implements Serializable, BasicEvent {
 	* "observed by"
 	* "Reference to the data or other elements that are being observed."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BasicEvent/observed", "observed"})
-	protected Reference observed;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BasicEvent/observed", "basicEventObserved"})
+	protected Reference basicEventObserved;
 
 
 	/**
 	* "has Data Specification"
 	* "Global reference to the data specification template used by the element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "dataSpecification"})
-	protected List<Reference> dataSpecifications;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "hasDataSpecificationDataSpecification"})
+	protected List<Reference> hasDataSpecificationDataSpecifications;
 
 
 	/**
 	* "has kind"
 	* "ModelingKind of the element: either type or instance."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasKind/kind", "kind"})
-	protected ModelingKind kind;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasKind/kind", "hasKindKind"})
+	protected ModelingKind hasKindKind;
 
 
 	/**
@@ -82,32 +82,32 @@ public class DefaultBasicEvent implements Serializable, BasicEvent {
 	* "Points to the Expression Semantic of the Submodels"@en
 	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "semanticId"})
-	protected Reference semanticId;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "hasSemanticsSemanticId"})
+	protected Reference hasSemanticsSemanticId;
 
 
 	/**
 	* "has qualifier"
 	* "Additional qualification of a qualifiable element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier", "qualifier"})
-	protected List<Constraint> qualifiers;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier", "qualifiableQualifier"})
+	protected List<Constraint> qualifiableQualifiers;
 
 
 	/**
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "description"})
-	protected List<TypedLiteral> descriptions;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "referableDescription"})
+	protected List<TypedLiteral> referableDescriptions;
 
 
 	/**
 	* "has display name"
 	* "Display name. Can be provided in several languages."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "displayName"})
-	protected TypedLiteral displayName;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "referableDisplayName"})
+	protected TypedLiteral referableDisplayName;
 
 
 	/**
@@ -119,8 +119,8 @@ public class DefaultBasicEvent implements Serializable, BasicEvent {
 	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
 	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "idShort"})
-	protected String idShort;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "referableIdShort"})
+	protected String referableIdShort;
 
 
 	/**
@@ -129,16 +129,16 @@ public class DefaultBasicEvent implements Serializable, BasicEvent {
 	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
 	* "This element is used to ease navigation in the model and thus it enables more performant"@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/parent", "parent"})
-	protected URI parent;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/parent", "referableParent"})
+	protected URI referableParent;
 
 
 	/**
 	* "has category"
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableCategory"})
-	protected List<String> referableCategories;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableReferableCategory"})
+	protected List<String> referableReferableCategories;
 
 
 	// no manual construction
@@ -177,16 +177,16 @@ public class DefaultBasicEvent implements Serializable, BasicEvent {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.observed,
-			this.referableCategories,
-			this.descriptions,
-			this.displayName,
-			this.idShort,
-			this.parent,
-			this.qualifiers,
-			this.dataSpecifications,
-			this.kind,
-			this.semanticId});
+		return Objects.hash(new Object[]{this.basicEventObserved,
+			this.referableReferableCategories,
+			this.referableDescriptions,
+			this.referableDisplayName,
+			this.referableIdShort,
+			this.referableParent,
+			this.qualifiableQualifiers,
+			this.hasDataSpecificationDataSpecifications,
+			this.hasKindKind,
+			this.hasSemanticsSemanticId});
 	}
 
 	public boolean equals(Object obj) {
@@ -198,16 +198,16 @@ public class DefaultBasicEvent implements Serializable, BasicEvent {
 			return false;
 		} else {
 			DefaultBasicEvent other = (DefaultBasicEvent) obj;
-			return Objects.equals(this.observed, other.observed) &&
-				Objects.equals(this.referableCategories, other.referableCategories) &&
-				Objects.equals(this.descriptions, other.descriptions) &&
-				Objects.equals(this.displayName, other.displayName) &&
-				Objects.equals(this.idShort, other.idShort) &&
-				Objects.equals(this.parent, other.parent) &&
-				Objects.equals(this.qualifiers, other.qualifiers) &&
-				Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-				Objects.equals(this.kind, other.kind) &&
-				Objects.equals(this.semanticId, other.semanticId);
+			return Objects.equals(this.basicEventObserved, other.basicEventObserved) &&
+				Objects.equals(this.referableReferableCategories, other.referableReferableCategories) &&
+				Objects.equals(this.referableDescriptions, other.referableDescriptions) &&
+				Objects.equals(this.referableDisplayName, other.referableDisplayName) &&
+				Objects.equals(this.referableIdShort, other.referableIdShort) &&
+				Objects.equals(this.referableParent, other.referableParent) &&
+				Objects.equals(this.qualifiableQualifiers, other.qualifiableQualifiers) &&
+				Objects.equals(this.hasDataSpecificationDataSpecifications, other.hasDataSpecificationDataSpecifications) &&
+				Objects.equals(this.hasKindKind, other.hasKindKind) &&
+				Objects.equals(this.hasSemanticsSemanticId, other.hasSemanticsSemanticId);
 		}
 	}
 
@@ -216,94 +216,94 @@ public class DefaultBasicEvent implements Serializable, BasicEvent {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BasicEvent/observed")
-	final public Reference getObserved() {
-		return observed;
+	final public Reference getBasicEventObserved() {
+		return basicEventObserved;
 	}
 	
-	final public void setObserved (Reference observed) {
-		this.observed = observed;
+	final public void setBasicEventObserved (Reference basicEventObserved) {
+		this.basicEventObserved = basicEventObserved;
 	}
 
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	final public List<String> getReferableCategories() {
-		return referableCategories;
+	final public List<String> getReferableReferableCategories() {
+		return referableReferableCategories;
 	}
 	
-	final public void setReferableCategories (List<String> referableCategories) {
-		this.referableCategories = referableCategories;
+	final public void setReferableReferableCategories (List<String> referableReferableCategories) {
+		this.referableReferableCategories = referableReferableCategories;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	final public List<TypedLiteral> getDescriptions() {
-		return descriptions;
+	final public List<TypedLiteral> getReferableDescriptions() {
+		return referableDescriptions;
 	}
 	
-	final public void setDescriptions (List<TypedLiteral> descriptions) {
-		this.descriptions = descriptions;
+	final public void setReferableDescriptions (List<TypedLiteral> referableDescriptions) {
+		this.referableDescriptions = referableDescriptions;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-	final public TypedLiteral getDisplayName() {
-		return displayName;
+	final public TypedLiteral getReferableDisplayName() {
+		return referableDisplayName;
 	}
 	
-	final public void setDisplayName (TypedLiteral displayName) {
-		this.displayName = displayName;
+	final public void setReferableDisplayName (TypedLiteral referableDisplayName) {
+		this.referableDisplayName = referableDisplayName;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-	final public String getIdShort() {
-		return idShort;
+	final public String getReferableIdShort() {
+		return referableIdShort;
 	}
 	
-	final public void setIdShort (String idShort) {
-		this.idShort = idShort;
+	final public void setReferableIdShort (String referableIdShort) {
+		this.referableIdShort = referableIdShort;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
-	final public URI getParent() {
-		return parent;
+	final public URI getReferableParent() {
+		return referableParent;
 	}
 	
-	final public void setParent (URI parent) {
-		this.parent = parent;
+	final public void setReferableParent (URI referableParent) {
+		this.referableParent = referableParent;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
-	final public List<Constraint> getQualifiers() {
-		return qualifiers;
+	final public List<Constraint> getQualifiableQualifiers() {
+		return qualifiableQualifiers;
 	}
 	
-	final public void setQualifiers (List<Constraint> qualifiers) {
-		this.qualifiers = qualifiers;
+	final public void setQualifiableQualifiers (List<Constraint> qualifiableQualifiers) {
+		this.qualifiableQualifiers = qualifiableQualifiers;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
-	final public List<Reference> getDataSpecifications() {
-		return dataSpecifications;
+	final public List<Reference> getHasDataSpecificationDataSpecifications() {
+		return hasDataSpecificationDataSpecifications;
 	}
 	
-	final public void setDataSpecifications (List<Reference> dataSpecifications) {
-		this.dataSpecifications = dataSpecifications;
+	final public void setHasDataSpecificationDataSpecifications (List<Reference> hasDataSpecificationDataSpecifications) {
+		this.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-	final public ModelingKind getKind() {
-		return kind;
+	final public ModelingKind getHasKindKind() {
+		return hasKindKind;
 	}
 	
-	final public void setKind (ModelingKind kind) {
-		this.kind = kind;
+	final public void setHasKindKind (ModelingKind hasKindKind) {
+		this.hasKindKind = hasKindKind;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-	final public Reference getSemanticId() {
-		return semanticId;
+	final public Reference getHasSemanticsSemanticId() {
+		return hasSemanticsSemanticId;
 	}
 	
-	final public void setSemanticId (Reference semanticId) {
-		this.semanticId = semanticId;
+	final public void setHasSemanticsSemanticId (Reference hasSemanticsSemanticId) {
+		this.hasSemanticsSemanticId = hasSemanticsSemanticId;
 	}
 }

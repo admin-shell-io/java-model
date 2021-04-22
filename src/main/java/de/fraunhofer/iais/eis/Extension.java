@@ -83,34 +83,34 @@ public interface Extension extends HasSemantics {
 
 	/**
 	* "An extension of the element."@en
-	* @return Returns the String for the property name.
+	* @return Returns the String for the property extensionName.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/name
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/name")
-	public String getName();
+	public String getExtensionName();
 
 	/**
 	* "Type of the value of the extension."@en
-	* @return Returns the String for the property valueType.
+	* @return Returns the String for the property extensionValueType.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/valueType
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/valueType")
-	public String getValueType();
+	public String getExtensionValueType();
 
 	/**
 	* "Value of the extension."@en
-	* @return Returns the String for the property value.
+	* @return Returns the String for the property extensionValue.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/value
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/value")
-	public String getValue();
+	public String getExtensionValue();
 
 	/**
 	* "Reference to an element the extension refers to."@en
-	* @return Returns the Reference for the property refersTo.
+	* @return Returns the Reference for the property extensionRefersTo.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/refersTo
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/refersTo")
-	public Reference getRefersTo();
+	public Reference getExtensionRefersTo();
 
 }

@@ -58,32 +58,32 @@ public class DefaultIdentifierKeyValuePair implements Serializable, IdentifierKe
 	* "Points to the Expression Semantic of the Submodels"@en
 	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "semanticId"})
-	protected Reference semanticId;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "hasSemanticsSemanticId"})
+	protected Reference hasSemanticsSemanticId;
 
 
 	/**
 	* "has IdentifierKeyValuePair.externalSubjectId"
 	* "The (external) subject the key belongs to or has meaning to."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId", "externalSubjectId"})
-	protected Reference externalSubjectId;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId", "identifierKeyValuePairExternalSubjectId"})
+	protected Reference identifierKeyValuePairExternalSubjectId;
 
 
 	/**
 	* "has IdentifierKeyValuePair.key"
 	* "Key of the identifier."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key", "key"})
-	protected String key;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key", "identifierKeyValuePairKey"})
+	protected String identifierKeyValuePairKey;
 
 
 	/**
 	* "has IdentifierKeyValuePair.value"
 	* "The value of the identifier with the corresponding key."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value", "value"})
-	protected String value;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value", "identifierKeyValuePairValue"})
+	protected String identifierKeyValuePairValue;
 
 
 	// no manual construction
@@ -122,10 +122,10 @@ public class DefaultIdentifierKeyValuePair implements Serializable, IdentifierKe
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.key,
-			this.value,
-			this.externalSubjectId,
-			this.semanticId});
+		return Objects.hash(new Object[]{this.identifierKeyValuePairKey,
+			this.identifierKeyValuePairValue,
+			this.identifierKeyValuePairExternalSubjectId,
+			this.hasSemanticsSemanticId});
 	}
 
 	public boolean equals(Object obj) {
@@ -137,10 +137,10 @@ public class DefaultIdentifierKeyValuePair implements Serializable, IdentifierKe
 			return false;
 		} else {
 			DefaultIdentifierKeyValuePair other = (DefaultIdentifierKeyValuePair) obj;
-			return Objects.equals(this.key, other.key) &&
-				Objects.equals(this.value, other.value) &&
-				Objects.equals(this.externalSubjectId, other.externalSubjectId) &&
-				Objects.equals(this.semanticId, other.semanticId);
+			return Objects.equals(this.identifierKeyValuePairKey, other.identifierKeyValuePairKey) &&
+				Objects.equals(this.identifierKeyValuePairValue, other.identifierKeyValuePairValue) &&
+				Objects.equals(this.identifierKeyValuePairExternalSubjectId, other.identifierKeyValuePairExternalSubjectId) &&
+				Objects.equals(this.hasSemanticsSemanticId, other.hasSemanticsSemanticId);
 		}
 	}
 
@@ -149,38 +149,38 @@ public class DefaultIdentifierKeyValuePair implements Serializable, IdentifierKe
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
-	final public String getKey() {
-		return key;
+	final public String getIdentifierKeyValuePairKey() {
+		return identifierKeyValuePairKey;
 	}
 	
-	final public void setKey (String key) {
-		this.key = key;
+	final public void setIdentifierKeyValuePairKey (String identifierKeyValuePairKey) {
+		this.identifierKeyValuePairKey = identifierKeyValuePairKey;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
-	final public String getValue() {
-		return value;
+	final public String getIdentifierKeyValuePairValue() {
+		return identifierKeyValuePairValue;
 	}
 	
-	final public void setValue (String value) {
-		this.value = value;
+	final public void setIdentifierKeyValuePairValue (String identifierKeyValuePairValue) {
+		this.identifierKeyValuePairValue = identifierKeyValuePairValue;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId")
-	final public Reference getExternalSubjectId() {
-		return externalSubjectId;
+	final public Reference getIdentifierKeyValuePairExternalSubjectId() {
+		return identifierKeyValuePairExternalSubjectId;
 	}
 	
-	final public void setExternalSubjectId (Reference externalSubjectId) {
-		this.externalSubjectId = externalSubjectId;
+	final public void setIdentifierKeyValuePairExternalSubjectId (Reference identifierKeyValuePairExternalSubjectId) {
+		this.identifierKeyValuePairExternalSubjectId = identifierKeyValuePairExternalSubjectId;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-	final public Reference getSemanticId() {
-		return semanticId;
+	final public Reference getHasSemanticsSemanticId() {
+		return hasSemanticsSemanticId;
 	}
 	
-	final public void setSemanticId (Reference semanticId) {
-		this.semanticId = semanticId;
+	final public void setHasSemanticsSemanticId (Reference hasSemanticsSemanticId) {
+		this.hasSemanticsSemanticId = hasSemanticsSemanticId;
 	}
 }

@@ -57,32 +57,32 @@ public class DefaultBlobCertificate implements Serializable, BlobCertificate {
 	* "Blob Certificate"
 	* "Certificate as BLOB."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate", "blobCertificate"})
-	protected byte blobCertificate;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate", "blobCertificateBlobCertificate"})
+	protected byte blobCertificateBlobCertificate;
 
 
 	/**
 	* "contains extension"
 	* "Extensions contained in the certificate."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension", "containedExtension"})
-	protected List<Reference> containedExtensions;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension", "blobCertificateContainedExtension"})
+	protected List<Reference> blobCertificateContainedExtensions;
 
 
 	/**
 	* "is last certificate"
 	* "Denotes whether this certificate is the certificated that fast added last."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate", "lastCertificate"})
-	protected boolean lastCertificate;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate", "blobCertificateLastCertificate"})
+	protected boolean blobCertificateLastCertificate;
 
 
 	/**
 	* "has policy administration point"
 	* "The access control administration policy point of the AAS."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint", "policyAdministrationPoint"})
-	protected PolicyAdministrationPoint policyAdministrationPoint;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint", "certificatePolicyAdministrationPoint"})
+	protected PolicyAdministrationPoint certificatePolicyAdministrationPoint;
 
 
 	// no manual construction
@@ -121,10 +121,10 @@ public class DefaultBlobCertificate implements Serializable, BlobCertificate {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.blobCertificate,
-			this.containedExtensions,
-			this.lastCertificate,
-			this.policyAdministrationPoint});
+		return Objects.hash(new Object[]{this.blobCertificateBlobCertificate,
+			this.blobCertificateContainedExtensions,
+			this.blobCertificateLastCertificate,
+			this.certificatePolicyAdministrationPoint});
 	}
 
 	public boolean equals(Object obj) {
@@ -136,10 +136,10 @@ public class DefaultBlobCertificate implements Serializable, BlobCertificate {
 			return false;
 		} else {
 			DefaultBlobCertificate other = (DefaultBlobCertificate) obj;
-			return Objects.equals(this.blobCertificate, other.blobCertificate) &&
-				Objects.equals(this.containedExtensions, other.containedExtensions) &&
-				Objects.equals(this.lastCertificate, other.lastCertificate) &&
-				Objects.equals(this.policyAdministrationPoint, other.policyAdministrationPoint);
+			return Objects.equals(this.blobCertificateBlobCertificate, other.blobCertificateBlobCertificate) &&
+				Objects.equals(this.blobCertificateContainedExtensions, other.blobCertificateContainedExtensions) &&
+				Objects.equals(this.blobCertificateLastCertificate, other.blobCertificateLastCertificate) &&
+				Objects.equals(this.certificatePolicyAdministrationPoint, other.certificatePolicyAdministrationPoint);
 		}
 	}
 
@@ -148,38 +148,38 @@ public class DefaultBlobCertificate implements Serializable, BlobCertificate {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate")
-	final public byte getBlobCertificate() {
-		return blobCertificate;
+	final public byte getBlobCertificateBlobCertificate() {
+		return blobCertificateBlobCertificate;
 	}
 	
-	final public void setBlobCertificate (byte blobCertificate) {
-		this.blobCertificate = blobCertificate;
+	final public void setBlobCertificateBlobCertificate (byte blobCertificateBlobCertificate) {
+		this.blobCertificateBlobCertificate = blobCertificateBlobCertificate;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension")
-	final public List<Reference> getContainedExtensions() {
-		return containedExtensions;
+	final public List<Reference> getBlobCertificateContainedExtensions() {
+		return blobCertificateContainedExtensions;
 	}
 	
-	final public void setContainedExtensions (List<Reference> containedExtensions) {
-		this.containedExtensions = containedExtensions;
+	final public void setBlobCertificateContainedExtensions (List<Reference> blobCertificateContainedExtensions) {
+		this.blobCertificateContainedExtensions = blobCertificateContainedExtensions;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate")
-	final public boolean getLastCertificate() {
-		return lastCertificate;
+	final public boolean getBlobCertificateLastCertificate() {
+		return blobCertificateLastCertificate;
 	}
 	
-	final public void setLastCertificate (boolean lastCertificate) {
-		this.lastCertificate = lastCertificate;
+	final public void setBlobCertificateLastCertificate (boolean blobCertificateLastCertificate) {
+		this.blobCertificateLastCertificate = blobCertificateLastCertificate;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint")
-	final public PolicyAdministrationPoint getPolicyAdministrationPoint() {
-		return policyAdministrationPoint;
+	final public PolicyAdministrationPoint getCertificatePolicyAdministrationPoint() {
+		return certificatePolicyAdministrationPoint;
 	}
 	
-	final public void setPolicyAdministrationPoint (PolicyAdministrationPoint policyAdministrationPoint) {
-		this.policyAdministrationPoint = policyAdministrationPoint;
+	final public void setCertificatePolicyAdministrationPoint (PolicyAdministrationPoint certificatePolicyAdministrationPoint) {
+		this.certificatePolicyAdministrationPoint = certificatePolicyAdministrationPoint;
 	}
 }

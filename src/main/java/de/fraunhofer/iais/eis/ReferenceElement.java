@@ -83,10 +83,10 @@ public interface ReferenceElement extends DataElement {
 
 	/**
 	* "Reference to any other referable element of the same of any other AAS or a reference to an external object or entity."@en
-	* @return Returns the Reference for the property value.
+	* @return Returns the Reference for the property referenceElementValue.
 	* More information under https://admin-shell.io/aas/3/0/RC01/ReferenceElement/value
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ReferenceElement/value")
-	public Reference getValue();
+	public Reference getReferenceElementValue();
 
 }

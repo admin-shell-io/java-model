@@ -45,12 +45,12 @@ public class OperationVariableBuilder {
 	}
 
 	/**
-	* This function allows setting a value for value
-	* @param value desired value to be set
-	* @return Builder object with new value for value
+	* This function allows setting a value for operationVariableValue
+	* @param operationVariableValue desired value to be set
+	* @return Builder object with new value for operationVariableValue
 	*/
-	final public OperationVariableBuilder value(SubmodelElement value) {
-		this.defaultOperationVariable.value = value;
+	final public OperationVariableBuilder operationVariableValue(SubmodelElement operationVariableValue) {
+		this.defaultOperationVariable.operationVariableValue = operationVariableValue;
 		return this;
 	}
 	/**

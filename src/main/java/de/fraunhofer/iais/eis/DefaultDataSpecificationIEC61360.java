@@ -61,94 +61,94 @@ public class DefaultDataSpecificationIEC61360 implements Serializable, DataSpeci
 	* "Constraint AASd-072: For a ConceptDescription with category DOCUMENT using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/dataType shall be one of the following values: STRING or URL."@en
 	* "Constraint AASd-073: For a ConceptDescription with category QUALIFIER using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/dataType is mandatory and shall be defined."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType", "dataType"})
-	protected List<DataTypeIEC61360> dataTypes;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType", "dataSpecificationIEC61360DataType"})
+	protected List<DataTypeIEC61360> dataSpecificationIEC61360DataTypes;
 
 
 	/**
 	* "has definition"
 	* "Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions of category VALUE using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/definition is mandatory and shall be defined at least in English."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition", "definition"})
-	protected List<TypedLiteral> definitions;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition", "dataSpecificationIEC61360Definition"})
+	protected List<TypedLiteral> dataSpecificationIEC61360Definitions;
 
 
 	/**
 	* "has level type"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/levelType", "levelType"})
-	protected List<LevelType> levelTypes;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/levelType", "dataSpecificationIEC61360LevelType"})
+	protected List<LevelType> dataSpecificationIEC61360LevelTypes;
 
 
 	/**
 	* "has preferred name"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName", "preferredName"})
-	protected TypedLiteral preferredName;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName", "dataSpecificationIEC61360PreferredName"})
+	protected TypedLiteral dataSpecificationIEC61360PreferredName;
 
 
 	/**
 	* "has short name"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName", "shortName"})
-	protected TypedLiteral shortName;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName", "dataSpecificationIEC61360ShortName"})
+	protected TypedLiteral dataSpecificationIEC61360ShortName;
 
 
 	/**
 	* "has source of definition"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition", "sourceOfDefinition"})
-	protected String sourceOfDefinition;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition", "dataSpecificationIEC61360SourceOfDefinition"})
+	protected String dataSpecificationIEC61360SourceOfDefinition;
 
 
 	/**
 	* "has symbol"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/symbol", "symbol"})
-	protected String symbol;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/symbol", "dataSpecificationIEC61360Symbol"})
+	protected String dataSpecificationIEC61360Symbol;
 
 
 	/**
 	* "has unit"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit", "unit"})
-	protected String unit;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit", "dataSpecificationIEC61360Unit"})
+	protected String dataSpecificationIEC61360Unit;
 
 
 	/**
 	* "has unit id"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId", "unitId"})
-	protected Reference unitId;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId", "dataSpecificationIEC61360UnitId"})
+	protected Reference dataSpecificationIEC61360UnitId;
 
 
 	/**
 	* "has value"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/value", "value"})
-	protected String value;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/value", "dataSpecificationIEC61360Value"})
+	protected String dataSpecificationIEC61360Value;
 
 
 	/**
 	* "has value format"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueFormat", "valueFormat"})
-	protected String valueFormat;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueFormat", "dataSpecificationIEC61360ValueFormat"})
+	protected String dataSpecificationIEC61360ValueFormat;
 
 
 	/**
 	* "has value id"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueId", "valueId"})
-	protected Reference valueId;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueId", "dataSpecificationIEC61360ValueId"})
+	protected Reference dataSpecificationIEC61360ValueId;
 
 
 	/**
 	* "has value list"
 	* "The Type \'ValueList\' lists all the allowed values for a concept description for which the allowed values are listed in an enumeration. The value list is a set of value reference pairs."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList", "valueList"})
-	protected String valueList;
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList", "dataSpecificationIEC61360ValueList"})
+	protected String dataSpecificationIEC61360ValueList;
 
 
 	// no manual construction
@@ -187,19 +187,19 @@ public class DefaultDataSpecificationIEC61360 implements Serializable, DataSpeci
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.dataTypes,
-			this.definitions,
-			this.levelTypes,
-			this.preferredName,
-			this.shortName,
-			this.sourceOfDefinition,
-			this.symbol,
-			this.unit,
-			this.unitId,
-			this.valueFormat,
-			this.value,
-			this.valueList,
-			this.valueId});
+		return Objects.hash(new Object[]{this.dataSpecificationIEC61360DataTypes,
+			this.dataSpecificationIEC61360Definitions,
+			this.dataSpecificationIEC61360LevelTypes,
+			this.dataSpecificationIEC61360PreferredName,
+			this.dataSpecificationIEC61360ShortName,
+			this.dataSpecificationIEC61360SourceOfDefinition,
+			this.dataSpecificationIEC61360Symbol,
+			this.dataSpecificationIEC61360Unit,
+			this.dataSpecificationIEC61360UnitId,
+			this.dataSpecificationIEC61360ValueFormat,
+			this.dataSpecificationIEC61360Value,
+			this.dataSpecificationIEC61360ValueList,
+			this.dataSpecificationIEC61360ValueId});
 	}
 
 	public boolean equals(Object obj) {
@@ -211,19 +211,19 @@ public class DefaultDataSpecificationIEC61360 implements Serializable, DataSpeci
 			return false;
 		} else {
 			DefaultDataSpecificationIEC61360 other = (DefaultDataSpecificationIEC61360) obj;
-			return Objects.equals(this.dataTypes, other.dataTypes) &&
-				Objects.equals(this.definitions, other.definitions) &&
-				Objects.equals(this.levelTypes, other.levelTypes) &&
-				Objects.equals(this.preferredName, other.preferredName) &&
-				Objects.equals(this.shortName, other.shortName) &&
-				Objects.equals(this.sourceOfDefinition, other.sourceOfDefinition) &&
-				Objects.equals(this.symbol, other.symbol) &&
-				Objects.equals(this.unit, other.unit) &&
-				Objects.equals(this.unitId, other.unitId) &&
-				Objects.equals(this.valueFormat, other.valueFormat) &&
-				Objects.equals(this.value, other.value) &&
-				Objects.equals(this.valueList, other.valueList) &&
-				Objects.equals(this.valueId, other.valueId);
+			return Objects.equals(this.dataSpecificationIEC61360DataTypes, other.dataSpecificationIEC61360DataTypes) &&
+				Objects.equals(this.dataSpecificationIEC61360Definitions, other.dataSpecificationIEC61360Definitions) &&
+				Objects.equals(this.dataSpecificationIEC61360LevelTypes, other.dataSpecificationIEC61360LevelTypes) &&
+				Objects.equals(this.dataSpecificationIEC61360PreferredName, other.dataSpecificationIEC61360PreferredName) &&
+				Objects.equals(this.dataSpecificationIEC61360ShortName, other.dataSpecificationIEC61360ShortName) &&
+				Objects.equals(this.dataSpecificationIEC61360SourceOfDefinition, other.dataSpecificationIEC61360SourceOfDefinition) &&
+				Objects.equals(this.dataSpecificationIEC61360Symbol, other.dataSpecificationIEC61360Symbol) &&
+				Objects.equals(this.dataSpecificationIEC61360Unit, other.dataSpecificationIEC61360Unit) &&
+				Objects.equals(this.dataSpecificationIEC61360UnitId, other.dataSpecificationIEC61360UnitId) &&
+				Objects.equals(this.dataSpecificationIEC61360ValueFormat, other.dataSpecificationIEC61360ValueFormat) &&
+				Objects.equals(this.dataSpecificationIEC61360Value, other.dataSpecificationIEC61360Value) &&
+				Objects.equals(this.dataSpecificationIEC61360ValueList, other.dataSpecificationIEC61360ValueList) &&
+				Objects.equals(this.dataSpecificationIEC61360ValueId, other.dataSpecificationIEC61360ValueId);
 		}
 	}
 
@@ -232,120 +232,120 @@ public class DefaultDataSpecificationIEC61360 implements Serializable, DataSpeci
 
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
-	final public List<DataTypeIEC61360> getDataTypes() {
-		return dataTypes;
+	final public List<DataTypeIEC61360> getDataSpecificationIEC61360DataTypes() {
+		return dataSpecificationIEC61360DataTypes;
 	}
 	
-	final public void setDataTypes (List<DataTypeIEC61360> dataTypes) {
-		this.dataTypes = dataTypes;
+	final public void setDataSpecificationIEC61360DataTypes (List<DataTypeIEC61360> dataSpecificationIEC61360DataTypes) {
+		this.dataSpecificationIEC61360DataTypes = dataSpecificationIEC61360DataTypes;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
-	final public List<TypedLiteral> getDefinitions() {
-		return definitions;
+	final public List<TypedLiteral> getDataSpecificationIEC61360Definitions() {
+		return dataSpecificationIEC61360Definitions;
 	}
 	
-	final public void setDefinitions (List<TypedLiteral> definitions) {
-		this.definitions = definitions;
+	final public void setDataSpecificationIEC61360Definitions (List<TypedLiteral> dataSpecificationIEC61360Definitions) {
+		this.dataSpecificationIEC61360Definitions = dataSpecificationIEC61360Definitions;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/levelType")
-	final public List<LevelType> getLevelTypes() {
-		return levelTypes;
+	final public List<LevelType> getDataSpecificationIEC61360LevelTypes() {
+		return dataSpecificationIEC61360LevelTypes;
 	}
 	
-	final public void setLevelTypes (List<LevelType> levelTypes) {
-		this.levelTypes = levelTypes;
+	final public void setDataSpecificationIEC61360LevelTypes (List<LevelType> dataSpecificationIEC61360LevelTypes) {
+		this.dataSpecificationIEC61360LevelTypes = dataSpecificationIEC61360LevelTypes;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
-	final public TypedLiteral getPreferredName() {
-		return preferredName;
+	final public TypedLiteral getDataSpecificationIEC61360PreferredName() {
+		return dataSpecificationIEC61360PreferredName;
 	}
 	
-	final public void setPreferredName (TypedLiteral preferredName) {
-		this.preferredName = preferredName;
+	final public void setDataSpecificationIEC61360PreferredName (TypedLiteral dataSpecificationIEC61360PreferredName) {
+		this.dataSpecificationIEC61360PreferredName = dataSpecificationIEC61360PreferredName;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
-	final public TypedLiteral getShortName() {
-		return shortName;
+	final public TypedLiteral getDataSpecificationIEC61360ShortName() {
+		return dataSpecificationIEC61360ShortName;
 	}
 	
-	final public void setShortName (TypedLiteral shortName) {
-		this.shortName = shortName;
+	final public void setDataSpecificationIEC61360ShortName (TypedLiteral dataSpecificationIEC61360ShortName) {
+		this.dataSpecificationIEC61360ShortName = dataSpecificationIEC61360ShortName;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition")
-	final public String getSourceOfDefinition() {
-		return sourceOfDefinition;
+	final public String getDataSpecificationIEC61360SourceOfDefinition() {
+		return dataSpecificationIEC61360SourceOfDefinition;
 	}
 	
-	final public void setSourceOfDefinition (String sourceOfDefinition) {
-		this.sourceOfDefinition = sourceOfDefinition;
+	final public void setDataSpecificationIEC61360SourceOfDefinition (String dataSpecificationIEC61360SourceOfDefinition) {
+		this.dataSpecificationIEC61360SourceOfDefinition = dataSpecificationIEC61360SourceOfDefinition;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/symbol")
-	final public String getSymbol() {
-		return symbol;
+	final public String getDataSpecificationIEC61360Symbol() {
+		return dataSpecificationIEC61360Symbol;
 	}
 	
-	final public void setSymbol (String symbol) {
-		this.symbol = symbol;
+	final public void setDataSpecificationIEC61360Symbol (String dataSpecificationIEC61360Symbol) {
+		this.dataSpecificationIEC61360Symbol = dataSpecificationIEC61360Symbol;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit")
-	final public String getUnit() {
-		return unit;
+	final public String getDataSpecificationIEC61360Unit() {
+		return dataSpecificationIEC61360Unit;
 	}
 	
-	final public void setUnit (String unit) {
-		this.unit = unit;
+	final public void setDataSpecificationIEC61360Unit (String dataSpecificationIEC61360Unit) {
+		this.dataSpecificationIEC61360Unit = dataSpecificationIEC61360Unit;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId")
-	final public Reference getUnitId() {
-		return unitId;
+	final public Reference getDataSpecificationIEC61360UnitId() {
+		return dataSpecificationIEC61360UnitId;
 	}
 	
-	final public void setUnitId (Reference unitId) {
-		this.unitId = unitId;
+	final public void setDataSpecificationIEC61360UnitId (Reference dataSpecificationIEC61360UnitId) {
+		this.dataSpecificationIEC61360UnitId = dataSpecificationIEC61360UnitId;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueFormat")
-	final public String getValueFormat() {
-		return valueFormat;
+	final public String getDataSpecificationIEC61360ValueFormat() {
+		return dataSpecificationIEC61360ValueFormat;
 	}
 	
-	final public void setValueFormat (String valueFormat) {
-		this.valueFormat = valueFormat;
+	final public void setDataSpecificationIEC61360ValueFormat (String dataSpecificationIEC61360ValueFormat) {
+		this.dataSpecificationIEC61360ValueFormat = dataSpecificationIEC61360ValueFormat;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/value")
-	final public String getValue() {
-		return value;
+	final public String getDataSpecificationIEC61360Value() {
+		return dataSpecificationIEC61360Value;
 	}
 	
-	final public void setValue (String value) {
-		this.value = value;
+	final public void setDataSpecificationIEC61360Value (String dataSpecificationIEC61360Value) {
+		this.dataSpecificationIEC61360Value = dataSpecificationIEC61360Value;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList")
-	final public String getValueList() {
-		return valueList;
+	final public String getDataSpecificationIEC61360ValueList() {
+		return dataSpecificationIEC61360ValueList;
 	}
 	
-	final public void setValueList (String valueList) {
-		this.valueList = valueList;
+	final public void setDataSpecificationIEC61360ValueList (String dataSpecificationIEC61360ValueList) {
+		this.dataSpecificationIEC61360ValueList = dataSpecificationIEC61360ValueList;
 	}
 
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueId")
-	final public Reference getValueId() {
-		return valueId;
+	final public Reference getDataSpecificationIEC61360ValueId() {
+		return dataSpecificationIEC61360ValueId;
 	}
 	
-	final public void setValueId (Reference valueId) {
-		this.valueId = valueId;
+	final public void setDataSpecificationIEC61360ValueId (Reference dataSpecificationIEC61360ValueId) {
+		this.dataSpecificationIEC61360ValueId = dataSpecificationIEC61360ValueId;
 	}
 
 }

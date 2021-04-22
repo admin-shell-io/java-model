@@ -86,27 +86,27 @@ public interface Referable {
 
 	/**
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
-	* @return Returns the List of Strings for the property referableCategories.
+	* @return Returns the List of Strings for the property referableReferableCategories.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	public List<String> getReferableCategories();
+	public List<String> getReferableReferableCategories();
 
 	/**
 	* "Description or comments on the element. The description can be provided in several languages."@en
-	* @return Returns the List of TypedLiterals for the property descriptions.
+	* @return Returns the List of TypedLiterals for the property referableDescriptions.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/description
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	public List<TypedLiteral> getDescriptions();
+	public List<TypedLiteral> getReferableDescriptions();
 
 	/**
 	* "Display name. Can be provided in several languages."@en
-	* @return Returns the TypedLiteral for the property displayName.
+	* @return Returns the TypedLiteral for the property referableDisplayName.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/displayName
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-	public TypedLiteral getDisplayName();
+	public TypedLiteral getReferableDisplayName();
 
 	/**
 	* "Identifying string of the element within its name space."@en
@@ -115,20 +115,20 @@ public interface Referable {
 	* "Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
 	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
 	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
-	* @return Returns the String for the property idShort.
+	* @return Returns the String for the property referableIdShort.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/idShort
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-	public String getIdShort();
+	public String getReferableIdShort();
 
 	/**
 	* "Reference to the next referable parent element of the element."@en
 	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
 	* "This element is used to ease navigation in the model and thus it enables more performant"@en
-	* @return Returns the URI for the property parent.
+	* @return Returns the URI for the property referableParent.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/parent
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
-	public URI getParent();
+	public URI getReferableParent();
 
 }

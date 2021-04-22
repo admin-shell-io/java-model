@@ -45,45 +45,45 @@ public class BlobCertificateBuilder {
 	}
 
 	/**
-	* This function allows setting a value for blobCertificate
-	* @param blobCertificate desired value to be set
-	* @return Builder object with new value for blobCertificate
+	* This function allows setting a value for blobCertificateBlobCertificate
+	* @param blobCertificateBlobCertificate desired value to be set
+	* @return Builder object with new value for blobCertificateBlobCertificate
 	*/
-	final public BlobCertificateBuilder blobCertificate(byte blobCertificate) {
-		this.defaultBlobCertificate.blobCertificate = blobCertificate;
+	final public BlobCertificateBuilder blobCertificateBlobCertificate(byte blobCertificateBlobCertificate) {
+		this.defaultBlobCertificate.blobCertificateBlobCertificate = blobCertificateBlobCertificate;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for containedExtensions
-	* @param containedExtensions desired value to be set
-	* @return Builder object with new value for containedExtensions
+	* This function allows setting a value for blobCertificateContainedExtensions
+	* @param blobCertificateContainedExtensions desired value to be set
+	* @return Builder object with new value for blobCertificateContainedExtensions
 	*/
-	final public BlobCertificateBuilder containedExtensions(List<Reference> containedExtensions) {
-		this.defaultBlobCertificate.containedExtensions = containedExtensions;
+	final public BlobCertificateBuilder blobCertificateContainedExtensions(List<Reference> blobCertificateContainedExtensions) {
+		this.defaultBlobCertificate.blobCertificateContainedExtensions = blobCertificateContainedExtensions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for lastCertificate
-	* @param lastCertificate desired value to be set
-	* @return Builder object with new value for lastCertificate
+	* This function allows setting a value for blobCertificateLastCertificate
+	* @param blobCertificateLastCertificate desired value to be set
+	* @return Builder object with new value for blobCertificateLastCertificate
 	*/
-	final public BlobCertificateBuilder lastCertificate(boolean lastCertificate) {
-		this.defaultBlobCertificate.lastCertificate = lastCertificate;
+	final public BlobCertificateBuilder blobCertificateLastCertificate(boolean blobCertificateLastCertificate) {
+		this.defaultBlobCertificate.blobCertificateLastCertificate = blobCertificateLastCertificate;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for policyAdministrationPoint
-	* @param policyAdministrationPoint desired value to be set
-	* @return Builder object with new value for policyAdministrationPoint
+	* This function allows setting a value for certificatePolicyAdministrationPoint
+	* @param certificatePolicyAdministrationPoint desired value to be set
+	* @return Builder object with new value for certificatePolicyAdministrationPoint
 	*/
-	final public BlobCertificateBuilder policyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint) {
-		this.defaultBlobCertificate.policyAdministrationPoint = policyAdministrationPoint;
+	final public BlobCertificateBuilder certificatePolicyAdministrationPoint(PolicyAdministrationPoint certificatePolicyAdministrationPoint) {
+		this.defaultBlobCertificate.certificatePolicyAdministrationPoint = certificatePolicyAdministrationPoint;
 		return this;
 	}
 	/**

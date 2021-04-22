@@ -45,34 +45,34 @@ public class KeyBuilder {
 	}
 
 	/**
-	* This function allows setting a value for idType
-	* @param idType desired value to be set
-	* @return Builder object with new value for idType
+	* This function allows setting a value for keyIdType
+	* @param keyIdType desired value to be set
+	* @return Builder object with new value for keyIdType
 	*/
-	final public KeyBuilder idType(KeyType idType) {
-		this.defaultKey.idType = idType;
+	final public KeyBuilder keyIdType(KeyType keyIdType) {
+		this.defaultKey.keyIdType = keyIdType;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for type
-	* @param type desired value to be set
-	* @return Builder object with new value for type
+	* This function allows setting a value for keyType
+	* @param keyType desired value to be set
+	* @return Builder object with new value for keyType
 	*/
-	final public KeyBuilder type(KeyElements type) {
-		this.defaultKey.type = type;
+	final public KeyBuilder keyType(KeyElements keyType) {
+		this.defaultKey.keyType = keyType;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for value
-	* @param value desired value to be set
-	* @return Builder object with new value for value
+	* This function allows setting a value for keyValue
+	* @param keyValue desired value to be set
+	* @return Builder object with new value for keyValue
 	*/
-	final public KeyBuilder value(String value) {
-		this.defaultKey.value = value;
+	final public KeyBuilder keyValue(String keyValue) {
+		this.defaultKey.keyValue = keyValue;
 		return this;
 	}
 	/**

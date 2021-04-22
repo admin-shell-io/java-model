@@ -45,134 +45,134 @@ public class SubmodelElementCollectionBuilder {
 	}
 
 	/**
-	* This function allows setting a value for allowDuplicates
-	* @param allowDuplicates desired value to be set
-	* @return Builder object with new value for allowDuplicates
+	* This function allows setting a value for submodelElementCollectionAllowDuplicates
+	* @param submodelElementCollectionAllowDuplicates desired value to be set
+	* @return Builder object with new value for submodelElementCollectionAllowDuplicates
 	*/
-	final public SubmodelElementCollectionBuilder allowDuplicates(boolean allowDuplicates) {
-		this.defaultSubmodelElementCollection.allowDuplicates = allowDuplicates;
+	final public SubmodelElementCollectionBuilder submodelElementCollectionAllowDuplicates(boolean submodelElementCollectionAllowDuplicates) {
+		this.defaultSubmodelElementCollection.submodelElementCollectionAllowDuplicates = submodelElementCollectionAllowDuplicates;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for ordered
-	* @param ordered desired value to be set
-	* @return Builder object with new value for ordered
+	* This function allows setting a value for submodelElementCollectionOrdered
+	* @param submodelElementCollectionOrdered desired value to be set
+	* @return Builder object with new value for submodelElementCollectionOrdered
 	*/
-	final public SubmodelElementCollectionBuilder ordered(boolean ordered) {
-		this.defaultSubmodelElementCollection.ordered = ordered;
+	final public SubmodelElementCollectionBuilder submodelElementCollectionOrdered(boolean submodelElementCollectionOrdered) {
+		this.defaultSubmodelElementCollection.submodelElementCollectionOrdered = submodelElementCollectionOrdered;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for values
-	* @param values desired value to be set
-	* @return Builder object with new value for values
+	* This function allows setting a value for submodelElementCollectionValues
+	* @param submodelElementCollectionValues desired value to be set
+	* @return Builder object with new value for submodelElementCollectionValues
 	*/
-	final public SubmodelElementCollectionBuilder values(List<SubmodelElement> values) {
-		this.defaultSubmodelElementCollection.values = values;
+	final public SubmodelElementCollectionBuilder submodelElementCollectionValues(List<SubmodelElement> submodelElementCollectionValues) {
+		this.defaultSubmodelElementCollection.submodelElementCollectionValues = submodelElementCollectionValues;
 		return this;
 	}
 
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableReferableCategories
+	* @param referableReferableCategories desired value to be set
+	* @return Builder object with new value for referableReferableCategories
 	*/
-	final public SubmodelElementCollectionBuilder referableCategories(List<String> referableCategories) {
-		this.defaultSubmodelElementCollection.referableCategories = referableCategories;
+	final public SubmodelElementCollectionBuilder referableReferableCategories(List<String> referableReferableCategories) {
+		this.defaultSubmodelElementCollection.referableReferableCategories = referableReferableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for referableDescriptions
+	* @param referableDescriptions desired value to be set
+	* @return Builder object with new value for referableDescriptions
 	*/
-	final public SubmodelElementCollectionBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultSubmodelElementCollection.descriptions = descriptions;
+	final public SubmodelElementCollectionBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
+		this.defaultSubmodelElementCollection.referableDescriptions = referableDescriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for displayName
-	* @param displayName desired value to be set
-	* @return Builder object with new value for displayName
+	* This function allows setting a value for referableDisplayName
+	* @param referableDisplayName desired value to be set
+	* @return Builder object with new value for referableDisplayName
 	*/
-	final public SubmodelElementCollectionBuilder displayName(TypedLiteral displayName) {
-		this.defaultSubmodelElementCollection.displayName = displayName;
+	final public SubmodelElementCollectionBuilder referableDisplayName(TypedLiteral referableDisplayName) {
+		this.defaultSubmodelElementCollection.referableDisplayName = referableDisplayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for idShort
-	* @param idShort desired value to be set
-	* @return Builder object with new value for idShort
+	* This function allows setting a value for referableIdShort
+	* @param referableIdShort desired value to be set
+	* @return Builder object with new value for referableIdShort
 	*/
-	final public SubmodelElementCollectionBuilder idShort(String idShort) {
-		this.defaultSubmodelElementCollection.idShort = idShort;
+	final public SubmodelElementCollectionBuilder referableIdShort(String referableIdShort) {
+		this.defaultSubmodelElementCollection.referableIdShort = referableIdShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
+	* This function allows setting a value for referableParent
+	* @param referableParent desired value to be set
+	* @return Builder object with new value for referableParent
 	*/
-	final public SubmodelElementCollectionBuilder parent(URI parent) {
-		this.defaultSubmodelElementCollection.parent = parent;
+	final public SubmodelElementCollectionBuilder referableParent(URI referableParent) {
+		this.defaultSubmodelElementCollection.referableParent = referableParent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiers
-	* @param qualifiers desired value to be set
-	* @return Builder object with new value for qualifiers
+	* This function allows setting a value for qualifiableQualifiers
+	* @param qualifiableQualifiers desired value to be set
+	* @return Builder object with new value for qualifiableQualifiers
 	*/
-	final public SubmodelElementCollectionBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultSubmodelElementCollection.qualifiers = qualifiers;
+	final public SubmodelElementCollectionBuilder qualifiableQualifiers(List<Constraint> qualifiableQualifiers) {
+		this.defaultSubmodelElementCollection.qualifiableQualifiers = qualifiableQualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecifications
-	* @param dataSpecifications desired value to be set
-	* @return Builder object with new value for dataSpecifications
+	* This function allows setting a value for hasDataSpecificationDataSpecifications
+	* @param hasDataSpecificationDataSpecifications desired value to be set
+	* @return Builder object with new value for hasDataSpecificationDataSpecifications
 	*/
-	final public SubmodelElementCollectionBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultSubmodelElementCollection.dataSpecifications = dataSpecifications;
+	final public SubmodelElementCollectionBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
+		this.defaultSubmodelElementCollection.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for kind
-	* @param kind desired value to be set
-	* @return Builder object with new value for kind
+	* This function allows setting a value for hasKindKind
+	* @param hasKindKind desired value to be set
+	* @return Builder object with new value for hasKindKind
 	*/
-	final public SubmodelElementCollectionBuilder kind(ModelingKind kind) {
-		this.defaultSubmodelElementCollection.kind = kind;
+	final public SubmodelElementCollectionBuilder hasKindKind(ModelingKind hasKindKind) {
+		this.defaultSubmodelElementCollection.hasKindKind = hasKindKind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for semanticId
-	* @param semanticId desired value to be set
-	* @return Builder object with new value for semanticId
+	* This function allows setting a value for hasSemanticsSemanticId
+	* @param hasSemanticsSemanticId desired value to be set
+	* @return Builder object with new value for hasSemanticsSemanticId
 	*/
-	final public SubmodelElementCollectionBuilder semanticId(Reference semanticId) {
-		this.defaultSubmodelElementCollection.semanticId = semanticId;
+	final public SubmodelElementCollectionBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
+		this.defaultSubmodelElementCollection.hasSemanticsSemanticId = hasSemanticsSemanticId;
 		return this;
 	}
 	/**

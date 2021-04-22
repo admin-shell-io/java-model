@@ -83,26 +83,26 @@ public interface Operation extends SubmodelElement {
 
 	/**
 	* "Input parameter of the operation."@en
-	* @return Returns the List of OperationVariables for the property inputVariables.
+	* @return Returns the List of OperationVariables for the property operationInputVariables.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Operation/inputVariable
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Operation/inputVariable")
-	public List<OperationVariable> getInputVariables();
+	public List<OperationVariable> getOperationInputVariables();
 
 	/**
 	* "Parameter that is input and output of the operation."@en
-	* @return Returns the List of OperationVariables for the property inoutputVariables.
+	* @return Returns the List of OperationVariables for the property operationInoutputVariables.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable")
-	public List<OperationVariable> getInoutputVariables();
+	public List<OperationVariable> getOperationInoutputVariables();
 
 	/**
 	* "Output parameter of the operation."@en
-	* @return Returns the List of OperationVariables for the property outputVariables.
+	* @return Returns the List of OperationVariables for the property operationOutputVariables.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Operation/outputVariable
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Operation/outputVariable")
-	public List<OperationVariable> getOutputVariables();
+	public List<OperationVariable> getOperationOutputVariables();
 
 }

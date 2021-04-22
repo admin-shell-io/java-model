@@ -82,26 +82,26 @@ public interface Security {
 
 	/**
 	* "Access control policy points of the AAS."@en
-	* @return Returns the PolicyAdministrationPoint for the property accessControlPolicyPoints.
+	* @return Returns the PolicyAdministrationPoint for the property securityAccessControlPolicyPoints.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
-	public PolicyAdministrationPoint getAccessControlPolicyPoints();
+	public PolicyAdministrationPoint getSecurityAccessControlPolicyPoints();
 
 	/**
 	* "Certificates of the AAS."@en
-	* @return Returns the List of Certificates for the property certificates.
+	* @return Returns the List of Certificates for the property securityCertificates.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Security/certificate
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/certificate")
-	public List<Certificate> getCertificates();
+	public List<Certificate> getSecurityCertificates();
 
 	/**
 	* "Certificate extensions as required by the AAS."@en
-	* @return Returns the List of References for the property requiredCertificateExtensions.
+	* @return Returns the List of References for the property securityRequiredCertificateExtensions.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension")
-	public List<Reference> getRequiredCertificateExtensions();
+	public List<Reference> getSecurityRequiredCertificateExtensions();
 
 }

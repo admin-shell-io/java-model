@@ -45,144 +45,144 @@ public class AssetAdministrationShellBuilder {
 	}
 
 	/**
-	* This function allows setting a value for assetInformation
-	* @param assetInformation desired value to be set
-	* @return Builder object with new value for assetInformation
+	* This function allows setting a value for assetAdministrationShellAssetInformation
+	* @param assetAdministrationShellAssetInformation desired value to be set
+	* @return Builder object with new value for assetAdministrationShellAssetInformation
 	*/
-	final public AssetAdministrationShellBuilder assetInformation(AssetInformation assetInformation) {
-		this.defaultAssetAdministrationShell.assetInformation = assetInformation;
+	final public AssetAdministrationShellBuilder assetAdministrationShellAssetInformation(AssetInformation assetAdministrationShellAssetInformation) {
+		this.defaultAssetAdministrationShell.assetAdministrationShellAssetInformation = assetAdministrationShellAssetInformation;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for derivedFrom
-	* @param derivedFrom desired value to be set
-	* @return Builder object with new value for derivedFrom
+	* This function allows setting a value for assetAdministrationShellDerivedFrom
+	* @param assetAdministrationShellDerivedFrom desired value to be set
+	* @return Builder object with new value for assetAdministrationShellDerivedFrom
 	*/
-	final public AssetAdministrationShellBuilder derivedFrom(Reference derivedFrom) {
-		this.defaultAssetAdministrationShell.derivedFrom = derivedFrom;
+	final public AssetAdministrationShellBuilder assetAdministrationShellDerivedFrom(Reference assetAdministrationShellDerivedFrom) {
+		this.defaultAssetAdministrationShell.assetAdministrationShellDerivedFrom = assetAdministrationShellDerivedFrom;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for security
-	* @param security desired value to be set
-	* @return Builder object with new value for security
+	* This function allows setting a value for assetAdministrationShellSecurity
+	* @param assetAdministrationShellSecurity desired value to be set
+	* @return Builder object with new value for assetAdministrationShellSecurity
 	*/
-	final public AssetAdministrationShellBuilder security(Security security) {
-		this.defaultAssetAdministrationShell.security = security;
+	final public AssetAdministrationShellBuilder assetAdministrationShellSecurity(Security assetAdministrationShellSecurity) {
+		this.defaultAssetAdministrationShell.assetAdministrationShellSecurity = assetAdministrationShellSecurity;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for submodels
-	* @param submodels desired value to be set
-	* @return Builder object with new value for submodels
+	* This function allows setting a value for assetAdministrationShellSubmodels
+	* @param assetAdministrationShellSubmodels desired value to be set
+	* @return Builder object with new value for assetAdministrationShellSubmodels
 	*/
-	final public AssetAdministrationShellBuilder submodels(List<Submodel> submodels) {
-		this.defaultAssetAdministrationShell.submodels = submodels;
+	final public AssetAdministrationShellBuilder assetAdministrationShellSubmodels(List<Submodel> assetAdministrationShellSubmodels) {
+		this.defaultAssetAdministrationShell.assetAdministrationShellSubmodels = assetAdministrationShellSubmodels;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for views
-	* @param views desired value to be set
-	* @return Builder object with new value for views
+	* This function allows setting a value for assetAdministrationShellViews
+	* @param assetAdministrationShellViews desired value to be set
+	* @return Builder object with new value for assetAdministrationShellViews
 	*/
-	final public AssetAdministrationShellBuilder views(List<View> views) {
-		this.defaultAssetAdministrationShell.views = views;
+	final public AssetAdministrationShellBuilder assetAdministrationShellViews(List<View> assetAdministrationShellViews) {
+		this.defaultAssetAdministrationShell.assetAdministrationShellViews = assetAdministrationShellViews;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecifications
-	* @param dataSpecifications desired value to be set
-	* @return Builder object with new value for dataSpecifications
+	* This function allows setting a value for hasDataSpecificationDataSpecifications
+	* @param hasDataSpecificationDataSpecifications desired value to be set
+	* @return Builder object with new value for hasDataSpecificationDataSpecifications
 	*/
-	final public AssetAdministrationShellBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultAssetAdministrationShell.dataSpecifications = dataSpecifications;
+	final public AssetAdministrationShellBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
+		this.defaultAssetAdministrationShell.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for administration
-	* @param administration desired value to be set
-	* @return Builder object with new value for administration
+	* This function allows setting a value for identifiableAdministration
+	* @param identifiableAdministration desired value to be set
+	* @return Builder object with new value for identifiableAdministration
 	*/
-	final public AssetAdministrationShellBuilder administration(AdministrativeInformation administration) {
-		this.defaultAssetAdministrationShell.administration = administration;
+	final public AssetAdministrationShellBuilder identifiableAdministration(AdministrativeInformation identifiableAdministration) {
+		this.defaultAssetAdministrationShell.identifiableAdministration = identifiableAdministration;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for identification
-	* @param identification desired value to be set
-	* @return Builder object with new value for identification
+	* This function allows setting a value for identifiableIdentification
+	* @param identifiableIdentification desired value to be set
+	* @return Builder object with new value for identifiableIdentification
 	*/
-	final public AssetAdministrationShellBuilder identification(Identifier identification) {
-		this.defaultAssetAdministrationShell.identification = identification;
+	final public AssetAdministrationShellBuilder identifiableIdentification(Identifier identifiableIdentification) {
+		this.defaultAssetAdministrationShell.identifiableIdentification = identifiableIdentification;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableReferableCategories
+	* @param referableReferableCategories desired value to be set
+	* @return Builder object with new value for referableReferableCategories
 	*/
-	final public AssetAdministrationShellBuilder referableCategories(List<String> referableCategories) {
-		this.defaultAssetAdministrationShell.referableCategories = referableCategories;
+	final public AssetAdministrationShellBuilder referableReferableCategories(List<String> referableReferableCategories) {
+		this.defaultAssetAdministrationShell.referableReferableCategories = referableReferableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for referableDescriptions
+	* @param referableDescriptions desired value to be set
+	* @return Builder object with new value for referableDescriptions
 	*/
-	final public AssetAdministrationShellBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultAssetAdministrationShell.descriptions = descriptions;
+	final public AssetAdministrationShellBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
+		this.defaultAssetAdministrationShell.referableDescriptions = referableDescriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for displayName
-	* @param displayName desired value to be set
-	* @return Builder object with new value for displayName
+	* This function allows setting a value for referableDisplayName
+	* @param referableDisplayName desired value to be set
+	* @return Builder object with new value for referableDisplayName
 	*/
-	final public AssetAdministrationShellBuilder displayName(TypedLiteral displayName) {
-		this.defaultAssetAdministrationShell.displayName = displayName;
+	final public AssetAdministrationShellBuilder referableDisplayName(TypedLiteral referableDisplayName) {
+		this.defaultAssetAdministrationShell.referableDisplayName = referableDisplayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for idShort
-	* @param idShort desired value to be set
-	* @return Builder object with new value for idShort
+	* This function allows setting a value for referableIdShort
+	* @param referableIdShort desired value to be set
+	* @return Builder object with new value for referableIdShort
 	*/
-	final public AssetAdministrationShellBuilder idShort(String idShort) {
-		this.defaultAssetAdministrationShell.idShort = idShort;
+	final public AssetAdministrationShellBuilder referableIdShort(String referableIdShort) {
+		this.defaultAssetAdministrationShell.referableIdShort = referableIdShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
+	* This function allows setting a value for referableParent
+	* @param referableParent desired value to be set
+	* @return Builder object with new value for referableParent
 	*/
-	final public AssetAdministrationShellBuilder parent(URI parent) {
-		this.defaultAssetAdministrationShell.parent = parent;
+	final public AssetAdministrationShellBuilder referableParent(URI referableParent) {
+		this.defaultAssetAdministrationShell.referableParent = referableParent;
 		return this;
 	}
 	/**

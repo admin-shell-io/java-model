@@ -47,100 +47,100 @@ public class EventElementBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableReferableCategories
+	* @param referableReferableCategories desired value to be set
+	* @return Builder object with new value for referableReferableCategories
 	*/
-	final public EventElementBuilder referableCategories(List<String> referableCategories) {
-		this.defaultEventElement.referableCategories = referableCategories;
+	final public EventElementBuilder referableReferableCategories(List<String> referableReferableCategories) {
+		this.defaultEventElement.referableReferableCategories = referableReferableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for referableDescriptions
+	* @param referableDescriptions desired value to be set
+	* @return Builder object with new value for referableDescriptions
 	*/
-	final public EventElementBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultEventElement.descriptions = descriptions;
+	final public EventElementBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
+		this.defaultEventElement.referableDescriptions = referableDescriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for displayName
-	* @param displayName desired value to be set
-	* @return Builder object with new value for displayName
+	* This function allows setting a value for referableDisplayName
+	* @param referableDisplayName desired value to be set
+	* @return Builder object with new value for referableDisplayName
 	*/
-	final public EventElementBuilder displayName(TypedLiteral displayName) {
-		this.defaultEventElement.displayName = displayName;
+	final public EventElementBuilder referableDisplayName(TypedLiteral referableDisplayName) {
+		this.defaultEventElement.referableDisplayName = referableDisplayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for idShort
-	* @param idShort desired value to be set
-	* @return Builder object with new value for idShort
+	* This function allows setting a value for referableIdShort
+	* @param referableIdShort desired value to be set
+	* @return Builder object with new value for referableIdShort
 	*/
-	final public EventElementBuilder idShort(String idShort) {
-		this.defaultEventElement.idShort = idShort;
+	final public EventElementBuilder referableIdShort(String referableIdShort) {
+		this.defaultEventElement.referableIdShort = referableIdShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
+	* This function allows setting a value for referableParent
+	* @param referableParent desired value to be set
+	* @return Builder object with new value for referableParent
 	*/
-	final public EventElementBuilder parent(URI parent) {
-		this.defaultEventElement.parent = parent;
+	final public EventElementBuilder referableParent(URI referableParent) {
+		this.defaultEventElement.referableParent = referableParent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiers
-	* @param qualifiers desired value to be set
-	* @return Builder object with new value for qualifiers
+	* This function allows setting a value for qualifiableQualifiers
+	* @param qualifiableQualifiers desired value to be set
+	* @return Builder object with new value for qualifiableQualifiers
 	*/
-	final public EventElementBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultEventElement.qualifiers = qualifiers;
+	final public EventElementBuilder qualifiableQualifiers(List<Constraint> qualifiableQualifiers) {
+		this.defaultEventElement.qualifiableQualifiers = qualifiableQualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecifications
-	* @param dataSpecifications desired value to be set
-	* @return Builder object with new value for dataSpecifications
+	* This function allows setting a value for hasDataSpecificationDataSpecifications
+	* @param hasDataSpecificationDataSpecifications desired value to be set
+	* @return Builder object with new value for hasDataSpecificationDataSpecifications
 	*/
-	final public EventElementBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultEventElement.dataSpecifications = dataSpecifications;
+	final public EventElementBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
+		this.defaultEventElement.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for kind
-	* @param kind desired value to be set
-	* @return Builder object with new value for kind
+	* This function allows setting a value for hasKindKind
+	* @param hasKindKind desired value to be set
+	* @return Builder object with new value for hasKindKind
 	*/
-	final public EventElementBuilder kind(ModelingKind kind) {
-		this.defaultEventElement.kind = kind;
+	final public EventElementBuilder hasKindKind(ModelingKind hasKindKind) {
+		this.defaultEventElement.hasKindKind = hasKindKind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for semanticId
-	* @param semanticId desired value to be set
-	* @return Builder object with new value for semanticId
+	* This function allows setting a value for hasSemanticsSemanticId
+	* @param hasSemanticsSemanticId desired value to be set
+	* @return Builder object with new value for hasSemanticsSemanticId
 	*/
-	final public EventElementBuilder semanticId(Reference semanticId) {
-		this.defaultEventElement.semanticId = semanticId;
+	final public EventElementBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
+		this.defaultEventElement.hasSemanticsSemanticId = hasSemanticsSemanticId;
 		return this;
 	}
 	/**

@@ -83,18 +83,18 @@ public interface RelationshipElement extends SubmodelElement {
 
 	/**
 	* "First element in the relationship taking the role of the subject."@en
-	* @return Returns the Referable for the property first.
+	* @return Returns the Referable for the property relationshipElementFirst.
 	* More information under https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first")
-	public Referable getFirst();
+	public Referable getRelationshipElementFirst();
 
 	/**
 	* "Second element in the relationship taking the role of the object."@en
-	* @return Returns the Referable for the property second.
+	* @return Returns the Referable for the property relationshipElementSecond.
 	* More information under https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second")
-	public Referable getSecond();
+	public Referable getRelationshipElementSecond();
 
 }

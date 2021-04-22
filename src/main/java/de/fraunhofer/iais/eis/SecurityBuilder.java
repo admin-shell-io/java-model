@@ -45,34 +45,34 @@ public class SecurityBuilder {
 	}
 
 	/**
-	* This function allows setting a value for accessControlPolicyPoints
-	* @param accessControlPolicyPoints desired value to be set
-	* @return Builder object with new value for accessControlPolicyPoints
+	* This function allows setting a value for securityAccessControlPolicyPoints
+	* @param securityAccessControlPolicyPoints desired value to be set
+	* @return Builder object with new value for securityAccessControlPolicyPoints
 	*/
-	final public SecurityBuilder accessControlPolicyPoints(PolicyAdministrationPoint accessControlPolicyPoints) {
-		this.defaultSecurity.accessControlPolicyPoints = accessControlPolicyPoints;
+	final public SecurityBuilder securityAccessControlPolicyPoints(PolicyAdministrationPoint securityAccessControlPolicyPoints) {
+		this.defaultSecurity.securityAccessControlPolicyPoints = securityAccessControlPolicyPoints;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for certificates
-	* @param certificates desired value to be set
-	* @return Builder object with new value for certificates
+	* This function allows setting a value for securityCertificates
+	* @param securityCertificates desired value to be set
+	* @return Builder object with new value for securityCertificates
 	*/
-	final public SecurityBuilder certificates(List<Certificate> certificates) {
-		this.defaultSecurity.certificates = certificates;
+	final public SecurityBuilder securityCertificates(List<Certificate> securityCertificates) {
+		this.defaultSecurity.securityCertificates = securityCertificates;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for requiredCertificateExtensions
-	* @param requiredCertificateExtensions desired value to be set
-	* @return Builder object with new value for requiredCertificateExtensions
+	* This function allows setting a value for securityRequiredCertificateExtensions
+	* @param securityRequiredCertificateExtensions desired value to be set
+	* @return Builder object with new value for securityRequiredCertificateExtensions
 	*/
-	final public SecurityBuilder requiredCertificateExtensions(List<Reference> requiredCertificateExtensions) {
-		this.defaultSecurity.requiredCertificateExtensions = requiredCertificateExtensions;
+	final public SecurityBuilder securityRequiredCertificateExtensions(List<Reference> securityRequiredCertificateExtensions) {
+		this.defaultSecurity.securityRequiredCertificateExtensions = securityRequiredCertificateExtensions;
 		return this;
 	}
 	/**

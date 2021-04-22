@@ -82,18 +82,18 @@ public interface PolicyInformationPoints {
 
 	/**
 	* "If externalInformationPoints True then at least one Endpoint to external available information needs to be configured for the AAS."@en
-	* @return Returns the boolean for the property externalInformationPoints.
+	* @return Returns the boolean for the property policyInformationPointsExternalInformationPoints.
 	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints")
-	public boolean getExternalInformationPoints();
+	public boolean getPolicyInformationPointsExternalInformationPoints();
 
 	/**
 	* "References to submodels defining information used by security access permission rules."@en
-	* @return Returns the List of Submodels for the property internalInformationPoints.
+	* @return Returns the List of Submodels for the property policyInformationPointsInternalInformationPoints.
 	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint")
-	public List<Submodel> getInternalInformationPoints();
+	public List<Submodel> getPolicyInformationPointsInternalInformationPoints();
 
 }

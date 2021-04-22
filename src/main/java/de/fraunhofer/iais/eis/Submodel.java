@@ -84,10 +84,10 @@ public interface Submodel extends Qualifiable, HasDataSpecification, Identifiabl
 
 	/**
 	* "A submodel consists of zero or more submodel elements."@en
-	* @return Returns the List of SubmodelElements for the property submodelElements.
+	* @return Returns the List of SubmodelElements for the property submodelSubmodelElements.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement")
-	public List<SubmodelElement> getSubmodelElements();
+	public List<SubmodelElement> getSubmodelSubmodelElements();
 
 }

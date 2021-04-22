@@ -45,23 +45,23 @@ public class PolicyAdministrationPointBuilder {
 	}
 
 	/**
-	* This function allows setting a value for localAccessControl
-	* @param localAccessControl desired value to be set
-	* @return Builder object with new value for localAccessControl
+	* This function allows setting a value for policyAdministrationPointLocalAccessControl
+	* @param policyAdministrationPointLocalAccessControl desired value to be set
+	* @return Builder object with new value for policyAdministrationPointLocalAccessControl
 	*/
-	final public PolicyAdministrationPointBuilder localAccessControl(AccessControl localAccessControl) {
-		this.defaultPolicyAdministrationPoint.localAccessControl = localAccessControl;
+	final public PolicyAdministrationPointBuilder policyAdministrationPointLocalAccessControl(AccessControl policyAdministrationPointLocalAccessControl) {
+		this.defaultPolicyAdministrationPoint.policyAdministrationPointLocalAccessControl = policyAdministrationPointLocalAccessControl;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for externalAccessControl
-	* @param externalAccessControl desired value to be set
-	* @return Builder object with new value for externalAccessControl
+	* This function allows setting a value for policyAdministrationPointExternalAccessControl
+	* @param policyAdministrationPointExternalAccessControl desired value to be set
+	* @return Builder object with new value for policyAdministrationPointExternalAccessControl
 	*/
-	final public PolicyAdministrationPointBuilder externalAccessControl(boolean externalAccessControl) {
-		this.defaultPolicyAdministrationPoint.externalAccessControl = externalAccessControl;
+	final public PolicyAdministrationPointBuilder policyAdministrationPointExternalAccessControl(boolean policyAdministrationPointExternalAccessControl) {
+		this.defaultPolicyAdministrationPoint.policyAdministrationPointExternalAccessControl = policyAdministrationPointExternalAccessControl;
 		return this;
 	}
 	/**

@@ -45,23 +45,23 @@ public class PermissionBuilder {
 	}
 
 	/**
-	* This function allows setting a value for kindOfPermission
-	* @param kindOfPermission desired value to be set
-	* @return Builder object with new value for kindOfPermission
+	* This function allows setting a value for permissionKindOfPermission
+	* @param permissionKindOfPermission desired value to be set
+	* @return Builder object with new value for permissionKindOfPermission
 	*/
-	final public PermissionBuilder kindOfPermission(PermissionKind kindOfPermission) {
-		this.defaultPermission.kindOfPermission = kindOfPermission;
+	final public PermissionBuilder permissionKindOfPermission(PermissionKind permissionKindOfPermission) {
+		this.defaultPermission.permissionKindOfPermission = permissionKindOfPermission;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for permission
-	* @param permission desired value to be set
-	* @return Builder object with new value for permission
+	* This function allows setting a value for permissionPermission
+	* @param permissionPermission desired value to be set
+	* @return Builder object with new value for permissionPermission
 	*/
-	final public PermissionBuilder permission(Property permission) {
-		this.defaultPermission.permission = permission;
+	final public PermissionBuilder permissionPermission(Property permissionPermission) {
+		this.defaultPermission.permissionPermission = permissionPermission;
 		return this;
 	}
 	/**

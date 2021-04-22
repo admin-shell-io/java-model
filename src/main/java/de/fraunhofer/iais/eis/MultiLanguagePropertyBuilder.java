@@ -45,23 +45,23 @@ public class MultiLanguagePropertyBuilder {
 	}
 
 	/**
-	* This function allows setting a value for values
-	* @param values desired value to be set
-	* @return Builder object with new value for values
+	* This function allows setting a value for multiLanguagePropertyValues
+	* @param multiLanguagePropertyValues desired value to be set
+	* @return Builder object with new value for multiLanguagePropertyValues
 	*/
-	final public MultiLanguagePropertyBuilder values(List<TypedLiteral> values) {
-		this.defaultMultiLanguageProperty.values = values;
+	final public MultiLanguagePropertyBuilder multiLanguagePropertyValues(List<TypedLiteral> multiLanguagePropertyValues) {
+		this.defaultMultiLanguageProperty.multiLanguagePropertyValues = multiLanguagePropertyValues;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for valueIds
-	* @param valueIds desired value to be set
-	* @return Builder object with new value for valueIds
+	* This function allows setting a value for multiLanguagePropertyValueIds
+	* @param multiLanguagePropertyValueIds desired value to be set
+	* @return Builder object with new value for multiLanguagePropertyValueIds
 	*/
-	final public MultiLanguagePropertyBuilder valueIds(List<Reference> valueIds) {
-		this.defaultMultiLanguageProperty.valueIds = valueIds;
+	final public MultiLanguagePropertyBuilder multiLanguagePropertyValueIds(List<Reference> multiLanguagePropertyValueIds) {
+		this.defaultMultiLanguageProperty.multiLanguagePropertyValueIds = multiLanguagePropertyValueIds;
 		return this;
 	}
 
@@ -69,100 +69,100 @@ public class MultiLanguagePropertyBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableReferableCategories
+	* @param referableReferableCategories desired value to be set
+	* @return Builder object with new value for referableReferableCategories
 	*/
-	final public MultiLanguagePropertyBuilder referableCategories(List<String> referableCategories) {
-		this.defaultMultiLanguageProperty.referableCategories = referableCategories;
+	final public MultiLanguagePropertyBuilder referableReferableCategories(List<String> referableReferableCategories) {
+		this.defaultMultiLanguageProperty.referableReferableCategories = referableReferableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for referableDescriptions
+	* @param referableDescriptions desired value to be set
+	* @return Builder object with new value for referableDescriptions
 	*/
-	final public MultiLanguagePropertyBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultMultiLanguageProperty.descriptions = descriptions;
+	final public MultiLanguagePropertyBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
+		this.defaultMultiLanguageProperty.referableDescriptions = referableDescriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for displayName
-	* @param displayName desired value to be set
-	* @return Builder object with new value for displayName
+	* This function allows setting a value for referableDisplayName
+	* @param referableDisplayName desired value to be set
+	* @return Builder object with new value for referableDisplayName
 	*/
-	final public MultiLanguagePropertyBuilder displayName(TypedLiteral displayName) {
-		this.defaultMultiLanguageProperty.displayName = displayName;
+	final public MultiLanguagePropertyBuilder referableDisplayName(TypedLiteral referableDisplayName) {
+		this.defaultMultiLanguageProperty.referableDisplayName = referableDisplayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for idShort
-	* @param idShort desired value to be set
-	* @return Builder object with new value for idShort
+	* This function allows setting a value for referableIdShort
+	* @param referableIdShort desired value to be set
+	* @return Builder object with new value for referableIdShort
 	*/
-	final public MultiLanguagePropertyBuilder idShort(String idShort) {
-		this.defaultMultiLanguageProperty.idShort = idShort;
+	final public MultiLanguagePropertyBuilder referableIdShort(String referableIdShort) {
+		this.defaultMultiLanguageProperty.referableIdShort = referableIdShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
+	* This function allows setting a value for referableParent
+	* @param referableParent desired value to be set
+	* @return Builder object with new value for referableParent
 	*/
-	final public MultiLanguagePropertyBuilder parent(URI parent) {
-		this.defaultMultiLanguageProperty.parent = parent;
+	final public MultiLanguagePropertyBuilder referableParent(URI referableParent) {
+		this.defaultMultiLanguageProperty.referableParent = referableParent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiers
-	* @param qualifiers desired value to be set
-	* @return Builder object with new value for qualifiers
+	* This function allows setting a value for qualifiableQualifiers
+	* @param qualifiableQualifiers desired value to be set
+	* @return Builder object with new value for qualifiableQualifiers
 	*/
-	final public MultiLanguagePropertyBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultMultiLanguageProperty.qualifiers = qualifiers;
+	final public MultiLanguagePropertyBuilder qualifiableQualifiers(List<Constraint> qualifiableQualifiers) {
+		this.defaultMultiLanguageProperty.qualifiableQualifiers = qualifiableQualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecifications
-	* @param dataSpecifications desired value to be set
-	* @return Builder object with new value for dataSpecifications
+	* This function allows setting a value for hasDataSpecificationDataSpecifications
+	* @param hasDataSpecificationDataSpecifications desired value to be set
+	* @return Builder object with new value for hasDataSpecificationDataSpecifications
 	*/
-	final public MultiLanguagePropertyBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultMultiLanguageProperty.dataSpecifications = dataSpecifications;
+	final public MultiLanguagePropertyBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
+		this.defaultMultiLanguageProperty.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for kind
-	* @param kind desired value to be set
-	* @return Builder object with new value for kind
+	* This function allows setting a value for hasKindKind
+	* @param hasKindKind desired value to be set
+	* @return Builder object with new value for hasKindKind
 	*/
-	final public MultiLanguagePropertyBuilder kind(ModelingKind kind) {
-		this.defaultMultiLanguageProperty.kind = kind;
+	final public MultiLanguagePropertyBuilder hasKindKind(ModelingKind hasKindKind) {
+		this.defaultMultiLanguageProperty.hasKindKind = hasKindKind;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for semanticId
-	* @param semanticId desired value to be set
-	* @return Builder object with new value for semanticId
+	* This function allows setting a value for hasSemanticsSemanticId
+	* @param hasSemanticsSemanticId desired value to be set
+	* @return Builder object with new value for hasSemanticsSemanticId
 	*/
-	final public MultiLanguagePropertyBuilder semanticId(Reference semanticId) {
-		this.defaultMultiLanguageProperty.semanticId = semanticId;
+	final public MultiLanguagePropertyBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
+		this.defaultMultiLanguageProperty.hasSemanticsSemanticId = hasSemanticsSemanticId;
 		return this;
 	}
 	/**

@@ -86,10 +86,10 @@ public interface Qualifiable {
 
 	/**
 	* "Additional qualification of a qualifiable element."@en
-	* @return Returns the List of Constraints for the property qualifiers.
+	* @return Returns the List of Constraints for the property qualifiableQualifiers.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
-	public List<Constraint> getQualifiers();
+	public List<Constraint> getQualifiableQualifiers();
 
 }
