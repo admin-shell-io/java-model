@@ -1,107 +1,37 @@
 package de.fraunhofer.iais.eis;
 
-import de.fraunhofer.iais.eis.util.*;
-import de.fraunhofer.iais.eis.*;
-
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.lang.String;
-import java.math.BigInteger;
-import java.net.URL;
-import java.net.URI;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.io.Serializable;
-
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-* "identifier key value pair"
-* "An IdentifierKeyValuePair describes a generic identifier as key-value pair."@en
-*/
-@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
-@JsonSubTypes({
-	@JsonSubTypes.Type(value = DefaultIdentifierKeyValuePair.class)
-})
+ * An IdentifierKeyValuePair describes a generic identifier as key-value pair.
+ */
 public interface IdentifierKeyValuePair extends HasSemantics {
 
-	// standard methods
+    @Override
+    public int hashCode();
 
-	/**
-	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
-	* @return ID of current object as URI
-	*/
-	@JsonProperty("@id")
-	public URI getId();
+    @Override
+    public boolean equals(Object obj);
 
-	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
-	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
-	*/
-	public List<TypedLiteral> getLabel();
+    /**
+     * Key of the identifier.
+     *
+     * @return Returns the String for the property key.
+     */
+    public String getKey();
 
-	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
-	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
-	*/
-	public List<TypedLiteral> getComment();
+    /**
+     * The value of the identifier with the corresponding key.
+     *
+     * @return Returns the String for the property value.
+     */
+    public String getValue();
 
-	/**
-	* This function returns a hash code value for the IdentifierKeyValuePair for the benefit of e.g. hash tables.
-	* @return a hash code value for the IdentifierKeyValuePair
-	*/
-	public int hashCode();
-
-	/**
-	* This function indicates whether some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this IdentifierKeyValuePair is the same as the obj argument; false otherwise.
-	*/
-	public boolean equals(Object obj);
-
-	// accessor methods as derived from the Asset Administration Shell ontology
-
-
-	/**
-	* "Key of the identifier."@en
-	* @return Returns the String for the property key.
-	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key
-	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
-	public String getKey();
-
-	/**
-	* "The value of the identifier with the corresponding key."@en
-	* @return Returns the String for the property value.
-	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value
-	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
-	public String getValue();
-
-	/**
-	* "The (external) subject the key belongs to or has meaning to."@en
-	* @return Returns the Reference for the property externalSubjectId.
-	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId
-	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId")
-	public Reference getExternalSubjectId();
+    /**
+     * The (external) subject the key belongs to or has meaning to.
+     *
+     * @return Returns the Reference for the property externalSubjectId.
+     */
+    public Reference getExternalSubjectId();
 
 }

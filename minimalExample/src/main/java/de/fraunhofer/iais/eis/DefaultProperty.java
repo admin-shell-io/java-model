@@ -1,6 +1,5 @@
 package de.fraunhofer.iais.eis;
 
-import de.fraunhofer.iais.eis.util.*;
 import de.fraunhofer.iais.eis.*;
 
 import javax.xml.datatype.XMLGregorianCalendar;
