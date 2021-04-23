@@ -170,23 +170,6 @@ public class DefaultRange implements Serializable, Range {
 		return this.comments;
 	}
 
-	public Object urifyObjects(Object value) {
-		if (value instanceof String && value.toString().startsWith("http")) {
-			try {
-				value = new URI(value.toString());
-			} catch (Exception e) { /* do nothing */ }
-		} else if (value instanceof ArrayList) {
-			ArrayList<Object> result_array = new ArrayList<Object>();
-			((ArrayList) value).forEach(x -> result_array.add(urifyObjects(x)));
-			return result_array;
-		} else if (value instanceof Map) {
-			Map<String, Object> result_map = new HashMap<String, Object>();
-			((Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
-			return result_map;
-		}
-		return value;
-	}
-
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.rangeMaxs,
 			this.rangeMins,
