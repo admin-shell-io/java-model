@@ -81,10 +81,10 @@ public interface HasExtensions {
 
 	/**
 	* "An extension of the element."@en
-	* @return Returns the List of Extensions for the property hasExtensionsExtensions.
+	* @return Returns the List of Extensions for the property extensions.
 	* More information under https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension")
-	public List<Extension> getHasExtensionsExtensions();
+	public List<Extension> getExtensions();
 
 }

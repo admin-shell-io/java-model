@@ -80,10 +80,10 @@ public interface Formula extends Constraint {
 
 	/**
 	* "A formula may depend on referable or even external global elements - assumed that can be referenced and their value may be evaluated - that are used in the logical expression."@en
-	* @return Returns the List of References for the property formulaDependsOns.
+	* @return Returns the List of References for the property dependsOns.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn")
-	public List<Reference> getFormulaDependsOns();
+	public List<Reference> getDependsOns();
 
 }

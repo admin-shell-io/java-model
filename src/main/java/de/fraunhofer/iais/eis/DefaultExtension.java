@@ -57,32 +57,32 @@ public class DefaultExtension implements Serializable, Extension {
 	* "has extension name"
 	* "An extension of the element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Extension/name", "extensionName"})
-	protected String extensionName;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Extension/name", "name"})
+	protected String name;
 
 
 	/**
 	* "has extension reference to"
 	* "Reference to an element the extension refers to."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Extension/refersTo", "extensionRefersTo"})
-	protected Reference extensionRefersTo;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Extension/refersTo", "refersTo"})
+	protected Reference refersTo;
 
 
 	/**
 	* "has extension value"
 	* "Value of the extension."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Extension/value", "extensionValue"})
-	protected String extensionValue;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Extension/value", "value"})
+	protected String value;
 
 
 	/**
 	* "has extension value type"
 	* "Type of the value of the extension."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Extension/valueType", "extensionValueType"})
-	protected String extensionValueType;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Extension/valueType", "valueType"})
+	protected String valueType;
 
 
 	/**
@@ -90,8 +90,8 @@ public class DefaultExtension implements Serializable, Extension {
 	* "Points to the Expression Semantic of the Submodels"@en
 	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "hasSemanticsSemanticId"})
-	protected Reference hasSemanticsSemanticId;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "semanticId"})
+	protected Reference semanticId;
 
 
 	// no manual construction
@@ -113,11 +113,11 @@ public class DefaultExtension implements Serializable, Extension {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.extensionName,
-			this.extensionValueType,
-			this.extensionValue,
-			this.extensionRefersTo,
-			this.hasSemanticsSemanticId});
+		return Objects.hash(new Object[]{this.name,
+			this.valueType,
+			this.value,
+			this.refersTo,
+			this.semanticId});
 	}
 
 	public boolean equals(Object obj) {
@@ -129,11 +129,11 @@ public class DefaultExtension implements Serializable, Extension {
 			return false;
 		} else {
 			DefaultExtension other = (DefaultExtension) obj;
-			return Objects.equals(this.extensionName, other.extensionName) &&
-				Objects.equals(this.extensionValueType, other.extensionValueType) &&
-				Objects.equals(this.extensionValue, other.extensionValue) &&
-				Objects.equals(this.extensionRefersTo, other.extensionRefersTo) &&
-				Objects.equals(this.hasSemanticsSemanticId, other.hasSemanticsSemanticId);
+			return Objects.equals(this.name, other.name) &&
+				Objects.equals(this.valueType, other.valueType) &&
+				Objects.equals(this.value, other.value) &&
+				Objects.equals(this.refersTo, other.refersTo) &&
+				Objects.equals(this.semanticId, other.semanticId);
 		}
 	}
 
@@ -142,47 +142,47 @@ public class DefaultExtension implements Serializable, Extension {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/name")
-	final public String getExtensionName() {
-		return extensionName;
+	final public String getName() {
+		return name;
 	}
 	
-	final public void setExtensionName (String extensionName) {
-		this.extensionName = extensionName;
+	final public void setName (String name) {
+		this.name = name;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/valueType")
-	final public String getExtensionValueType() {
-		return extensionValueType;
+	final public String getValueType() {
+		return valueType;
 	}
 	
-	final public void setExtensionValueType (String extensionValueType) {
-		this.extensionValueType = extensionValueType;
+	final public void setValueType (String valueType) {
+		this.valueType = valueType;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/value")
-	final public String getExtensionValue() {
-		return extensionValue;
+	final public String getValue() {
+		return value;
 	}
 	
-	final public void setExtensionValue (String extensionValue) {
-		this.extensionValue = extensionValue;
+	final public void setValue (String value) {
+		this.value = value;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/refersTo")
-	final public Reference getExtensionRefersTo() {
-		return extensionRefersTo;
+	final public Reference getRefersTo() {
+		return refersTo;
 	}
 	
-	final public void setExtensionRefersTo (Reference extensionRefersTo) {
-		this.extensionRefersTo = extensionRefersTo;
+	final public void setRefersTo (Reference refersTo) {
+		this.refersTo = refersTo;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-	final public Reference getHasSemanticsSemanticId() {
-		return hasSemanticsSemanticId;
+	final public Reference getSemanticId() {
+		return semanticId;
 	}
 	
-	final public void setHasSemanticsSemanticId (Reference hasSemanticsSemanticId) {
-		this.hasSemanticsSemanticId = hasSemanticsSemanticId;
+	final public void setSemanticId (Reference semanticId) {
+		this.semanticId = semanticId;
 	}
 }

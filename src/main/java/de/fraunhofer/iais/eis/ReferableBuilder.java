@@ -44,56 +44,56 @@ public class ReferableBuilder {
 	}
 
 	/**
-	* This function allows setting a value for referableReferableCategories
-	* @param referableReferableCategories desired value to be set
-	* @return Builder object with new value for referableReferableCategories
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public ReferableBuilder referableReferableCategories(List<String> referableReferableCategories) {
-		this.defaultReferable.referableReferableCategories = referableReferableCategories;
+	final public ReferableBuilder referableCategories(List<String> referableCategories) {
+		this.defaultReferable.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescriptions
-	* @param referableDescriptions desired value to be set
-	* @return Builder object with new value for referableDescriptions
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public ReferableBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
-		this.defaultReferable.referableDescriptions = referableDescriptions;
+	final public ReferableBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultReferable.descriptions = descriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param referableDisplayName desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public ReferableBuilder referableDisplayName(TypedLiteral referableDisplayName) {
-		this.defaultReferable.referableDisplayName = referableDisplayName;
+	final public ReferableBuilder displayName(TypedLiteral displayName) {
+		this.defaultReferable.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param referableIdShort desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public ReferableBuilder referableIdShort(String referableIdShort) {
-		this.defaultReferable.referableIdShort = referableIdShort;
+	final public ReferableBuilder idShort(String idShort) {
+		this.defaultReferable.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param referableParent desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public ReferableBuilder referableParent(URI referableParent) {
-		this.defaultReferable.referableParent = referableParent;
+	final public ReferableBuilder parent(URI parent) {
+		this.defaultReferable.parent = parent;
 		return this;
 	}
 	/**

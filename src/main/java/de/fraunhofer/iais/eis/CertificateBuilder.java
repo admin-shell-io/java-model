@@ -44,12 +44,12 @@ public class CertificateBuilder {
 	}
 
 	/**
-	* This function allows setting a value for certificatePolicyAdministrationPoint
-	* @param certificatePolicyAdministrationPoint desired value to be set
-	* @return Builder object with new value for certificatePolicyAdministrationPoint
+	* This function allows setting a value for policyAdministrationPoint
+	* @param policyAdministrationPoint desired value to be set
+	* @return Builder object with new value for policyAdministrationPoint
 	*/
-	final public CertificateBuilder certificatePolicyAdministrationPoint(PolicyAdministrationPoint certificatePolicyAdministrationPoint) {
-		this.defaultCertificate.certificatePolicyAdministrationPoint = certificatePolicyAdministrationPoint;
+	final public CertificateBuilder policyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint) {
+		this.defaultCertificate.policyAdministrationPoint = policyAdministrationPoint;
 		return this;
 	}
 	/**

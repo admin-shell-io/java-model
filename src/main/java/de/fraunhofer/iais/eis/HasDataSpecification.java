@@ -89,10 +89,10 @@ public interface HasDataSpecification {
 
 	/**
 	* "Global reference to the data specification template used by the element."@en
-	* @return Returns the List of References for the property hasDataSpecificationDataSpecifications.
+	* @return Returns the List of References for the property dataSpecifications.
 	* More information under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
-	public List<Reference> getHasDataSpecificationDataSpecifications();
+	public List<Reference> getDataSpecifications();
 
 }

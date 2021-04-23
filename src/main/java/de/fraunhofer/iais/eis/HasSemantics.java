@@ -89,10 +89,10 @@ public interface HasSemantics {
 	/**
 	* "Points to the Expression Semantic of the Submodels"@en
 	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
-	* @return Returns the Reference for the property hasSemanticsSemanticId.
+	* @return Returns the Reference for the property semanticId.
 	* More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-	public Reference getHasSemanticsSemanticId();
+	public Reference getSemanticId();
 
 }

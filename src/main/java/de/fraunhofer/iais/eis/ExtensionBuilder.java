@@ -44,56 +44,56 @@ public class ExtensionBuilder {
 	}
 
 	/**
-	* This function allows setting a value for extensionName
-	* @param extensionName desired value to be set
-	* @return Builder object with new value for extensionName
+	* This function allows setting a value for name
+	* @param name desired value to be set
+	* @return Builder object with new value for name
 	*/
-	final public ExtensionBuilder extensionName(String extensionName) {
-		this.defaultExtension.extensionName = extensionName;
+	final public ExtensionBuilder name(String name) {
+		this.defaultExtension.name = name;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for extensionValueType
-	* @param extensionValueType desired value to be set
-	* @return Builder object with new value for extensionValueType
+	* This function allows setting a value for valueType
+	* @param valueType desired value to be set
+	* @return Builder object with new value for valueType
 	*/
-	final public ExtensionBuilder extensionValueType(String extensionValueType) {
-		this.defaultExtension.extensionValueType = extensionValueType;
+	final public ExtensionBuilder valueType(String valueType) {
+		this.defaultExtension.valueType = valueType;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for extensionValue
-	* @param extensionValue desired value to be set
-	* @return Builder object with new value for extensionValue
+	* This function allows setting a value for value
+	* @param value desired value to be set
+	* @return Builder object with new value for value
 	*/
-	final public ExtensionBuilder extensionValue(String extensionValue) {
-		this.defaultExtension.extensionValue = extensionValue;
+	final public ExtensionBuilder value(String value) {
+		this.defaultExtension.value = value;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for extensionRefersTo
-	* @param extensionRefersTo desired value to be set
-	* @return Builder object with new value for extensionRefersTo
+	* This function allows setting a value for refersTo
+	* @param refersTo desired value to be set
+	* @return Builder object with new value for refersTo
 	*/
-	final public ExtensionBuilder extensionRefersTo(Reference extensionRefersTo) {
-		this.defaultExtension.extensionRefersTo = extensionRefersTo;
+	final public ExtensionBuilder refersTo(Reference refersTo) {
+		this.defaultExtension.refersTo = refersTo;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param hasSemanticsSemanticId desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public ExtensionBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
-		this.defaultExtension.hasSemanticsSemanticId = hasSemanticsSemanticId;
+	final public ExtensionBuilder semanticId(Reference semanticId) {
+		this.defaultExtension.semanticId = semanticId;
 		return this;
 	}
 	/**

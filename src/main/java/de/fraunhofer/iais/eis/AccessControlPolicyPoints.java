@@ -81,34 +81,34 @@ public interface AccessControlPolicyPoints {
 
 	/**
 	* "The access control administration policy point of the AAS."@en
-	* @return Returns the PolicyAdministrationPoint for the property accessControlPolicyPointsPolicyAdministrationPoint.
+	* @return Returns the PolicyAdministrationPoint for the property policyAdministrationPoint.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint")
-	public PolicyAdministrationPoint getAccessControlPolicyPointsPolicyAdministrationPoint();
+	public PolicyAdministrationPoint getPolicyAdministrationPoint();
 
 	/**
 	* "The access control policy decision point of the AAS."@en
-	* @return Returns the PolicyDecisionPoint for the property accessControlPolicyPointsPolicyDecisionPoint.
+	* @return Returns the PolicyDecisionPoint for the property policyDecisionPoint.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint")
-	public PolicyDecisionPoint getAccessControlPolicyPointsPolicyDecisionPoint();
+	public PolicyDecisionPoint getPolicyDecisionPoint();
 
 	/**
 	* "The access control policy enforcement point of the AAS."@en
-	* @return Returns the PolicyEnforcementPoints for the property accessControlPolicyPointsPolicyEnforcementPoint.
+	* @return Returns the PolicyEnforcementPoints for the property policyEnforcementPoint.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint")
-	public PolicyEnforcementPoints getAccessControlPolicyPointsPolicyEnforcementPoint();
+	public PolicyEnforcementPoints getPolicyEnforcementPoint();
 
 	/**
 	* "The access control policy information points of the AAS."@en
-	* @return Returns the PolicyInformationPoints for the property accessControlPolicyPointsPolicyInformationPoints.
+	* @return Returns the PolicyInformationPoints for the property policyInformationPoints.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints")
-	public PolicyInformationPoints getAccessControlPolicyPointsPolicyInformationPoints();
+	public PolicyInformationPoints getPolicyInformationPoints();
 
 }

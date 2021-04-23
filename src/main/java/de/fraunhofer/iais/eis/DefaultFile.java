@@ -56,32 +56,32 @@ public class DefaultFile implements Serializable, File {
 	* "has mimetype"
 	* "Mime type of the content of the File."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/File/mimeType", "fileMimeType"})
-	protected String fileMimeType;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/File/mimeType", "mimeType"})
+	protected String mimeType;
 
 
 	/**
 	* "has value"
 	* "Path and name of the referenced file (with file extension). The path can be absolute or relative."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/File/value", "fileValue"})
-	protected String fileValue;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/File/value", "value"})
+	protected String value;
 
 
 	/**
 	* "has Data Specification"
 	* "Global reference to the data specification template used by the element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "hasDataSpecificationDataSpecification"})
-	protected List<Reference> hasDataSpecificationDataSpecifications;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "dataSpecification"})
+	protected List<Reference> dataSpecifications;
 
 
 	/**
 	* "has kind"
 	* "ModelingKind of the element: either type or instance."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasKind/kind", "hasKindKind"})
-	protected ModelingKind hasKindKind;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasKind/kind", "kind"})
+	protected ModelingKind kind;
 
 
 	/**
@@ -89,32 +89,32 @@ public class DefaultFile implements Serializable, File {
 	* "Points to the Expression Semantic of the Submodels"@en
 	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "hasSemanticsSemanticId"})
-	protected Reference hasSemanticsSemanticId;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "semanticId"})
+	protected Reference semanticId;
 
 
 	/**
 	* "has qualifier"
 	* "Additional qualification of a qualifiable element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier", "qualifiableQualifier"})
-	protected List<Constraint> qualifiableQualifiers;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier", "qualifier"})
+	protected List<Constraint> qualifiers;
 
 
 	/**
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "referableDescription"})
-	protected List<TypedLiteral> referableDescriptions;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "description"})
+	protected List<TypedLiteral> descriptions;
 
 
 	/**
 	* "has display name"
 	* "Display name. Can be provided in several languages."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "referableDisplayName"})
-	protected TypedLiteral referableDisplayName;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "displayName"})
+	protected TypedLiteral displayName;
 
 
 	/**
@@ -126,8 +126,8 @@ public class DefaultFile implements Serializable, File {
 	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
 	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "referableIdShort"})
-	protected String referableIdShort;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "idShort"})
+	protected String idShort;
 
 
 	/**
@@ -136,16 +136,16 @@ public class DefaultFile implements Serializable, File {
 	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
 	* "This element is used to ease navigation in the model and thus it enables more performant"@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/parent", "referableParent"})
-	protected URI referableParent;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/parent", "parent"})
+	protected URI parent;
 
 
 	/**
 	* "has category"
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableReferableCategory"})
-	protected List<String> referableReferableCategories;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableCategory"})
+	protected List<String> referableCategories;
 
 
 	// no manual construction
@@ -167,17 +167,17 @@ public class DefaultFile implements Serializable, File {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.fileMimeType,
-			this.fileValue,
-			this.referableReferableCategories,
-			this.referableDescriptions,
-			this.referableDisplayName,
-			this.referableIdShort,
-			this.referableParent,
-			this.qualifiableQualifiers,
-			this.hasDataSpecificationDataSpecifications,
-			this.hasKindKind,
-			this.hasSemanticsSemanticId});
+		return Objects.hash(new Object[]{this.mimeType,
+			this.value,
+			this.referableCategories,
+			this.descriptions,
+			this.displayName,
+			this.idShort,
+			this.parent,
+			this.qualifiers,
+			this.dataSpecifications,
+			this.kind,
+			this.semanticId});
 	}
 
 	public boolean equals(Object obj) {
@@ -189,17 +189,17 @@ public class DefaultFile implements Serializable, File {
 			return false;
 		} else {
 			DefaultFile other = (DefaultFile) obj;
-			return Objects.equals(this.fileMimeType, other.fileMimeType) &&
-				Objects.equals(this.fileValue, other.fileValue) &&
-				Objects.equals(this.referableReferableCategories, other.referableReferableCategories) &&
-				Objects.equals(this.referableDescriptions, other.referableDescriptions) &&
-				Objects.equals(this.referableDisplayName, other.referableDisplayName) &&
-				Objects.equals(this.referableIdShort, other.referableIdShort) &&
-				Objects.equals(this.referableParent, other.referableParent) &&
-				Objects.equals(this.qualifiableQualifiers, other.qualifiableQualifiers) &&
-				Objects.equals(this.hasDataSpecificationDataSpecifications, other.hasDataSpecificationDataSpecifications) &&
-				Objects.equals(this.hasKindKind, other.hasKindKind) &&
-				Objects.equals(this.hasSemanticsSemanticId, other.hasSemanticsSemanticId);
+			return Objects.equals(this.mimeType, other.mimeType) &&
+				Objects.equals(this.value, other.value) &&
+				Objects.equals(this.referableCategories, other.referableCategories) &&
+				Objects.equals(this.descriptions, other.descriptions) &&
+				Objects.equals(this.displayName, other.displayName) &&
+				Objects.equals(this.idShort, other.idShort) &&
+				Objects.equals(this.parent, other.parent) &&
+				Objects.equals(this.qualifiers, other.qualifiers) &&
+				Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
+				Objects.equals(this.kind, other.kind) &&
+				Objects.equals(this.semanticId, other.semanticId);
 		}
 	}
 
@@ -208,102 +208,102 @@ public class DefaultFile implements Serializable, File {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/File/mimeType")
-	final public String getFileMimeType() {
-		return fileMimeType;
+	final public String getMimeType() {
+		return mimeType;
 	}
 	
-	final public void setFileMimeType (String fileMimeType) {
-		this.fileMimeType = fileMimeType;
+	final public void setMimeType (String mimeType) {
+		this.mimeType = mimeType;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/File/value")
-	final public String getFileValue() {
-		return fileValue;
+	final public String getValue() {
+		return value;
 	}
 	
-	final public void setFileValue (String fileValue) {
-		this.fileValue = fileValue;
+	final public void setValue (String value) {
+		this.value = value;
 	}
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	final public List<String> getReferableReferableCategories() {
-		return referableReferableCategories;
+	final public List<String> getReferableCategories() {
+		return referableCategories;
 	}
 	
-	final public void setReferableReferableCategories (List<String> referableReferableCategories) {
-		this.referableReferableCategories = referableReferableCategories;
+	final public void setReferableCategories (List<String> referableCategories) {
+		this.referableCategories = referableCategories;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	final public List<TypedLiteral> getReferableDescriptions() {
-		return referableDescriptions;
+	final public List<TypedLiteral> getDescriptions() {
+		return descriptions;
 	}
 	
-	final public void setReferableDescriptions (List<TypedLiteral> referableDescriptions) {
-		this.referableDescriptions = referableDescriptions;
+	final public void setDescriptions (List<TypedLiteral> descriptions) {
+		this.descriptions = descriptions;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-	final public TypedLiteral getReferableDisplayName() {
-		return referableDisplayName;
+	final public TypedLiteral getDisplayName() {
+		return displayName;
 	}
 	
-	final public void setReferableDisplayName (TypedLiteral referableDisplayName) {
-		this.referableDisplayName = referableDisplayName;
+	final public void setDisplayName (TypedLiteral displayName) {
+		this.displayName = displayName;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-	final public String getReferableIdShort() {
-		return referableIdShort;
+	final public String getIdShort() {
+		return idShort;
 	}
 	
-	final public void setReferableIdShort (String referableIdShort) {
-		this.referableIdShort = referableIdShort;
+	final public void setIdShort (String idShort) {
+		this.idShort = idShort;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
-	final public URI getReferableParent() {
-		return referableParent;
+	final public URI getParent() {
+		return parent;
 	}
 	
-	final public void setReferableParent (URI referableParent) {
-		this.referableParent = referableParent;
+	final public void setParent (URI parent) {
+		this.parent = parent;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
-	final public List<Constraint> getQualifiableQualifiers() {
-		return qualifiableQualifiers;
+	final public List<Constraint> getQualifiers() {
+		return qualifiers;
 	}
 	
-	final public void setQualifiableQualifiers (List<Constraint> qualifiableQualifiers) {
-		this.qualifiableQualifiers = qualifiableQualifiers;
+	final public void setQualifiers (List<Constraint> qualifiers) {
+		this.qualifiers = qualifiers;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
-	final public List<Reference> getHasDataSpecificationDataSpecifications() {
-		return hasDataSpecificationDataSpecifications;
+	final public List<Reference> getDataSpecifications() {
+		return dataSpecifications;
 	}
 	
-	final public void setHasDataSpecificationDataSpecifications (List<Reference> hasDataSpecificationDataSpecifications) {
-		this.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
+	final public void setDataSpecifications (List<Reference> dataSpecifications) {
+		this.dataSpecifications = dataSpecifications;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-	final public ModelingKind getHasKindKind() {
-		return hasKindKind;
+	final public ModelingKind getKind() {
+		return kind;
 	}
 	
-	final public void setHasKindKind (ModelingKind hasKindKind) {
-		this.hasKindKind = hasKindKind;
+	final public void setKind (ModelingKind kind) {
+		this.kind = kind;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-	final public Reference getHasSemanticsSemanticId() {
-		return hasSemanticsSemanticId;
+	final public Reference getSemanticId() {
+		return semanticId;
 	}
 	
-	final public void setHasSemanticsSemanticId (Reference hasSemanticsSemanticId) {
-		this.hasSemanticsSemanticId = hasSemanticsSemanticId;
+	final public void setSemanticId (Reference semanticId) {
+		this.semanticId = semanticId;
 	}
 }

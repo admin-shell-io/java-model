@@ -56,8 +56,8 @@ public class DefaultHasExtensions implements Serializable, HasExtensions {
 	* "has extension"
 	* "An extension of the element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension", "hasExtensionsExtension"})
-	protected List<Extension> hasExtensionsExtensions;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension", "extension"})
+	protected List<Extension> extensions;
 
 
 	// no manual construction
@@ -79,7 +79,7 @@ public class DefaultHasExtensions implements Serializable, HasExtensions {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.hasExtensionsExtensions});
+		return Objects.hash(new Object[]{this.extensions});
 	}
 
 	public boolean equals(Object obj) {
@@ -91,7 +91,7 @@ public class DefaultHasExtensions implements Serializable, HasExtensions {
 			return false;
 		} else {
 			DefaultHasExtensions other = (DefaultHasExtensions) obj;
-			return Objects.equals(this.hasExtensionsExtensions, other.hasExtensionsExtensions);
+			return Objects.equals(this.extensions, other.extensions);
 		}
 	}
 
@@ -100,11 +100,11 @@ public class DefaultHasExtensions implements Serializable, HasExtensions {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension")
-	final public List<Extension> getHasExtensionsExtensions() {
-		return hasExtensionsExtensions;
+	final public List<Extension> getExtensions() {
+		return extensions;
 	}
 	
-	final public void setHasExtensionsExtensions (List<Extension> hasExtensionsExtensions) {
-		this.hasExtensionsExtensions = hasExtensionsExtensions;
+	final public void setExtensions (List<Extension> extensions) {
+		this.extensions = extensions;
 	}
 }

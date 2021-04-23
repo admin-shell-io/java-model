@@ -80,87 +80,87 @@ public interface RC01 extends DataSpecificationContent {
 
 
 	/**
-	* @return Returns the List of Strings for the property rC01ConversionFactors.
+	* @return Returns the List of Strings for the property conversionFactors.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor")
-	public List<String> getRC01ConversionFactors();
+	public List<String> getConversionFactors();
 
 	/**
-	* @return Returns the List of TypedLiterals for the property rC01Definitions.
+	* @return Returns the List of TypedLiterals for the property definitions.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/definition
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/definition")
-	public List<TypedLiteral> getRC01Definitions();
+	public List<TypedLiteral> getDefinitions();
 
 	/**
-	* @return Returns the List of Strings for the property rC01DinNotations.
+	* @return Returns the List of Strings for the property dinNotations.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation")
-	public List<String> getRC01DinNotations();
+	public List<String> getDinNotations();
 
 	/**
-	* @return Returns the List of Strings for the property rC01EceCodes.
+	* @return Returns the List of Strings for the property eceCodes.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode")
-	public List<String> getRC01EceCodes();
+	public List<String> getEceCodes();
 
 	/**
-	* @return Returns the List of Strings for the property rC01EceNames.
+	* @return Returns the List of Strings for the property eceNames.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName")
-	public List<String> getRC01EceNames();
+	public List<String> getEceNames();
 
 	/**
-	* @return Returns the List of Strings for the property rC01NistNames.
+	* @return Returns the List of Strings for the property nistNames.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName")
-	public List<String> getRC01NistNames();
+	public List<String> getNistNames();
 
 	/**
-	* @return Returns the List of Strings for the property rC01SiNames.
+	* @return Returns the List of Strings for the property siNames.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siName
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siName")
-	public List<String> getRC01SiNames();
+	public List<String> getSiNames();
 
 	/**
-	* @return Returns the List of Strings for the property rC01SiNotations.
+	* @return Returns the List of Strings for the property siNotations.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation")
-	public List<String> getRC01SiNotations();
+	public List<String> getSiNotations();
 
 	/**
-	* @return Returns the List of Strings for the property rC01RegistrationAuthorityIds.
+	* @return Returns the List of Strings for the property registrationAuthorityIds.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/registrationAuthorityId
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/registrationAuthorityId")
-	public List<String> getRC01RegistrationAuthorityIds();
+	public List<String> getRegistrationAuthorityIds();
 
 	/**
-	* @return Returns the List of Strings for the property rC01Suppliers.
+	* @return Returns the List of Strings for the property suppliers.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/supplier
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/supplier")
-	public List<String> getRC01Suppliers();
+	public List<String> getSuppliers();
 
 	/**
-	* @return Returns the List of Strings for the property rC01UnitNames.
+	* @return Returns the List of Strings for the property unitNames.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName")
-	public List<String> getRC01UnitNames();
+	public List<String> getUnitNames();
 
 	/**
-	* @return Returns the List of Strings for the property rC01UnitSymbols.
+	* @return Returns the List of Strings for the property unitSymbols.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol
 	*/
 	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol")
-	public List<String> getRC01UnitSymbols();
+	public List<String> getUnitSymbols();
 
 }

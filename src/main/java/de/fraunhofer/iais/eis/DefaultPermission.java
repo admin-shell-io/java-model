@@ -56,8 +56,8 @@ public class DefaultPermission implements Serializable, Permission {
 	* "has kind of permission"
 	* "Description of the kind of permission. Possible kind of permission also include the denial of the permission."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission", "permissionKindOfPermission"})
-	protected PermissionKind permissionKindOfPermission;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission", "kindOfPermission"})
+	protected PermissionKind kindOfPermission;
 
 
 	/**
@@ -66,8 +66,8 @@ public class DefaultPermission implements Serializable, Permission {
 	* "Constraint AASs-010: The property referenced in Permission/permission shall have the category \'CONSTANT\'."@en
 	* "Constraint AASs-011: The property referenced in Permission/permission shall be part of the submodel that is referenced within the \'selectablePermissions\' attribute of \'AccessControl\'."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Permission/permission", "permissionPermission"})
-	protected Property permissionPermission;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Permission/permission", "permission"})
+	protected Property permission;
 
 
 	// no manual construction
@@ -89,8 +89,8 @@ public class DefaultPermission implements Serializable, Permission {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.permissionKindOfPermission,
-			this.permissionPermission});
+		return Objects.hash(new Object[]{this.kindOfPermission,
+			this.permission});
 	}
 
 	public boolean equals(Object obj) {
@@ -102,8 +102,8 @@ public class DefaultPermission implements Serializable, Permission {
 			return false;
 		} else {
 			DefaultPermission other = (DefaultPermission) obj;
-			return Objects.equals(this.permissionKindOfPermission, other.permissionKindOfPermission) &&
-				Objects.equals(this.permissionPermission, other.permissionPermission);
+			return Objects.equals(this.kindOfPermission, other.kindOfPermission) &&
+				Objects.equals(this.permission, other.permission);
 		}
 	}
 
@@ -112,20 +112,20 @@ public class DefaultPermission implements Serializable, Permission {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
-	final public PermissionKind getPermissionKindOfPermission() {
-		return permissionKindOfPermission;
+	final public PermissionKind getKindOfPermission() {
+		return kindOfPermission;
 	}
 	
-	final public void setPermissionKindOfPermission (PermissionKind permissionKindOfPermission) {
-		this.permissionKindOfPermission = permissionKindOfPermission;
+	final public void setKindOfPermission (PermissionKind kindOfPermission) {
+		this.kindOfPermission = kindOfPermission;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Permission/permission")
-	final public Property getPermissionPermission() {
-		return permissionPermission;
+	final public Property getPermission() {
+		return permission;
 	}
 	
-	final public void setPermissionPermission (Property permissionPermission) {
-		this.permissionPermission = permissionPermission;
+	final public void setPermission (Property permission) {
+		this.permission = permission;
 	}
 }

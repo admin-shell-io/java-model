@@ -57,8 +57,8 @@ public class DefaultSubjectAttributes implements Serializable, SubjectAttributes
 	* "A data element that further classifies a specific subject. "@en
 	* "Constraint AASs-015: The data element SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the \'selectableSubjectAttributes\' attribute of \'AccessControl\'."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute", "subjectAttributesSubjectAttribute"})
-	protected List<DataElement> subjectAttributesSubjectAttributes;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute", "subjectAttribute"})
+	protected List<DataElement> subjectAttributes;
 
 
 	// no manual construction
@@ -80,7 +80,7 @@ public class DefaultSubjectAttributes implements Serializable, SubjectAttributes
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.subjectAttributesSubjectAttributes});
+		return Objects.hash(new Object[]{this.subjectAttributes});
 	}
 
 	public boolean equals(Object obj) {
@@ -92,7 +92,7 @@ public class DefaultSubjectAttributes implements Serializable, SubjectAttributes
 			return false;
 		} else {
 			DefaultSubjectAttributes other = (DefaultSubjectAttributes) obj;
-			return Objects.equals(this.subjectAttributesSubjectAttributes, other.subjectAttributesSubjectAttributes);
+			return Objects.equals(this.subjectAttributes, other.subjectAttributes);
 		}
 	}
 
@@ -101,11 +101,11 @@ public class DefaultSubjectAttributes implements Serializable, SubjectAttributes
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute")
-	final public List<DataElement> getSubjectAttributesSubjectAttributes() {
-		return subjectAttributesSubjectAttributes;
+	final public List<DataElement> getSubjectAttributes() {
+		return subjectAttributes;
 	}
 	
-	final public void setSubjectAttributesSubjectAttributes (List<DataElement> subjectAttributesSubjectAttributes) {
-		this.subjectAttributesSubjectAttributes = subjectAttributesSubjectAttributes;
+	final public void setSubjectAttributes (List<DataElement> subjectAttributes) {
+		this.subjectAttributes = subjectAttributes;
 	}
 }

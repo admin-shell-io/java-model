@@ -86,18 +86,18 @@ public interface Identifiable extends Referable {
 	/**
 	* "Administrative information of an identifiable element."@en
 	* "Some of the administrative information like the version number might need to be part of the identification."@en
-	* @return Returns the AdministrativeInformation for the property identifiableAdministration.
+	* @return Returns the AdministrativeInformation for the property administration.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Identifiable/administration
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
-	public AdministrativeInformation getIdentifiableAdministration();
+	public AdministrativeInformation getAdministration();
 
 	/**
 	* "The globally unique identification of the element."@en
-	* @return Returns the Identifier for the property identifiableIdentification.
+	* @return Returns the Identifier for the property identification.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Identifiable/identification
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
-	public Identifier getIdentifiableIdentification();
+	public Identifier getIdentification();
 
 }

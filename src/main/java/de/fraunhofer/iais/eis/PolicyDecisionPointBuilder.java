@@ -44,12 +44,12 @@ public class PolicyDecisionPointBuilder {
 	}
 
 	/**
-	* This function allows setting a value for policyDecisionPointExternalPolicyDecisionPoints
-	* @param policyDecisionPointExternalPolicyDecisionPoints desired value to be set
-	* @return Builder object with new value for policyDecisionPointExternalPolicyDecisionPoints
+	* This function allows setting a value for externalPolicyDecisionPoints
+	* @param externalPolicyDecisionPoints desired value to be set
+	* @return Builder object with new value for externalPolicyDecisionPoints
 	*/
-	final public PolicyDecisionPointBuilder policyDecisionPointExternalPolicyDecisionPoints(boolean policyDecisionPointExternalPolicyDecisionPoints) {
-		this.defaultPolicyDecisionPoint.policyDecisionPointExternalPolicyDecisionPoints = policyDecisionPointExternalPolicyDecisionPoints;
+	final public PolicyDecisionPointBuilder externalPolicyDecisionPoints(boolean externalPolicyDecisionPoints) {
+		this.defaultPolicyDecisionPoint.externalPolicyDecisionPoints = externalPolicyDecisionPoints;
 		return this;
 	}
 	/**

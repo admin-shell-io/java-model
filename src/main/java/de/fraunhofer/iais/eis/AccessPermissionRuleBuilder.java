@@ -44,89 +44,89 @@ public class AccessPermissionRuleBuilder {
 	}
 
 	/**
-	* This function allows setting a value for accessPermissionRulePermissionsPerObjects
-	* @param accessPermissionRulePermissionsPerObjects desired value to be set
-	* @return Builder object with new value for accessPermissionRulePermissionsPerObjects
+	* This function allows setting a value for permissionsPerObjects
+	* @param permissionsPerObjects desired value to be set
+	* @return Builder object with new value for permissionsPerObjects
 	*/
-	final public AccessPermissionRuleBuilder accessPermissionRulePermissionsPerObjects(List<PermissionsPerObject> accessPermissionRulePermissionsPerObjects) {
-		this.defaultAccessPermissionRule.accessPermissionRulePermissionsPerObjects = accessPermissionRulePermissionsPerObjects;
+	final public AccessPermissionRuleBuilder permissionsPerObjects(List<PermissionsPerObject> permissionsPerObjects) {
+		this.defaultAccessPermissionRule.permissionsPerObjects = permissionsPerObjects;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for accessPermissionRuleTargetSubjectAttributes
-	* @param accessPermissionRuleTargetSubjectAttributes desired value to be set
-	* @return Builder object with new value for accessPermissionRuleTargetSubjectAttributes
+	* This function allows setting a value for targetSubjectAttributes
+	* @param targetSubjectAttributes desired value to be set
+	* @return Builder object with new value for targetSubjectAttributes
 	*/
-	final public AccessPermissionRuleBuilder accessPermissionRuleTargetSubjectAttributes(SubjectAttributes accessPermissionRuleTargetSubjectAttributes) {
-		this.defaultAccessPermissionRule.accessPermissionRuleTargetSubjectAttributes = accessPermissionRuleTargetSubjectAttributes;
+	final public AccessPermissionRuleBuilder targetSubjectAttributes(SubjectAttributes targetSubjectAttributes) {
+		this.defaultAccessPermissionRule.targetSubjectAttributes = targetSubjectAttributes;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableReferableCategories
-	* @param referableReferableCategories desired value to be set
-	* @return Builder object with new value for referableReferableCategories
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public AccessPermissionRuleBuilder referableReferableCategories(List<String> referableReferableCategories) {
-		this.defaultAccessPermissionRule.referableReferableCategories = referableReferableCategories;
+	final public AccessPermissionRuleBuilder referableCategories(List<String> referableCategories) {
+		this.defaultAccessPermissionRule.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDescriptions
-	* @param referableDescriptions desired value to be set
-	* @return Builder object with new value for referableDescriptions
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public AccessPermissionRuleBuilder referableDescriptions(List<TypedLiteral> referableDescriptions) {
-		this.defaultAccessPermissionRule.referableDescriptions = referableDescriptions;
+	final public AccessPermissionRuleBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultAccessPermissionRule.descriptions = descriptions;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableDisplayName
-	* @param referableDisplayName desired value to be set
-	* @return Builder object with new value for referableDisplayName
+	* This function allows setting a value for displayName
+	* @param displayName desired value to be set
+	* @return Builder object with new value for displayName
 	*/
-	final public AccessPermissionRuleBuilder referableDisplayName(TypedLiteral referableDisplayName) {
-		this.defaultAccessPermissionRule.referableDisplayName = referableDisplayName;
+	final public AccessPermissionRuleBuilder displayName(TypedLiteral displayName) {
+		this.defaultAccessPermissionRule.displayName = displayName;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableIdShort
-	* @param referableIdShort desired value to be set
-	* @return Builder object with new value for referableIdShort
+	* This function allows setting a value for idShort
+	* @param idShort desired value to be set
+	* @return Builder object with new value for idShort
 	*/
-	final public AccessPermissionRuleBuilder referableIdShort(String referableIdShort) {
-		this.defaultAccessPermissionRule.referableIdShort = referableIdShort;
+	final public AccessPermissionRuleBuilder idShort(String idShort) {
+		this.defaultAccessPermissionRule.idShort = idShort;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for referableParent
-	* @param referableParent desired value to be set
-	* @return Builder object with new value for referableParent
+	* This function allows setting a value for parent
+	* @param parent desired value to be set
+	* @return Builder object with new value for parent
 	*/
-	final public AccessPermissionRuleBuilder referableParent(URI referableParent) {
-		this.defaultAccessPermissionRule.referableParent = referableParent;
+	final public AccessPermissionRuleBuilder parent(URI parent) {
+		this.defaultAccessPermissionRule.parent = parent;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifiableQualifiers
-	* @param qualifiableQualifiers desired value to be set
-	* @return Builder object with new value for qualifiableQualifiers
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public AccessPermissionRuleBuilder qualifiableQualifiers(List<Constraint> qualifiableQualifiers) {
-		this.defaultAccessPermissionRule.qualifiableQualifiers = qualifiableQualifiers;
+	final public AccessPermissionRuleBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultAccessPermissionRule.qualifiers = qualifiers;
 		return this;
 	}
 	/**

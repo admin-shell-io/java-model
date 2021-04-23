@@ -56,8 +56,8 @@ public class DefaultCertificate implements Serializable, Certificate {
 	* "has policy administration point"
 	* "The access control administration policy point of the AAS."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint", "certificatePolicyAdministrationPoint"})
-	protected PolicyAdministrationPoint certificatePolicyAdministrationPoint;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint", "policyAdministrationPoint"})
+	protected PolicyAdministrationPoint policyAdministrationPoint;
 
 
 	// no manual construction
@@ -79,7 +79,7 @@ public class DefaultCertificate implements Serializable, Certificate {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.certificatePolicyAdministrationPoint});
+		return Objects.hash(new Object[]{this.policyAdministrationPoint});
 	}
 
 	public boolean equals(Object obj) {
@@ -91,7 +91,7 @@ public class DefaultCertificate implements Serializable, Certificate {
 			return false;
 		} else {
 			DefaultCertificate other = (DefaultCertificate) obj;
-			return Objects.equals(this.certificatePolicyAdministrationPoint, other.certificatePolicyAdministrationPoint);
+			return Objects.equals(this.policyAdministrationPoint, other.policyAdministrationPoint);
 		}
 	}
 
@@ -100,11 +100,11 @@ public class DefaultCertificate implements Serializable, Certificate {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint")
-	final public PolicyAdministrationPoint getCertificatePolicyAdministrationPoint() {
-		return certificatePolicyAdministrationPoint;
+	final public PolicyAdministrationPoint getPolicyAdministrationPoint() {
+		return policyAdministrationPoint;
 	}
 	
-	final public void setCertificatePolicyAdministrationPoint (PolicyAdministrationPoint certificatePolicyAdministrationPoint) {
-		this.certificatePolicyAdministrationPoint = certificatePolicyAdministrationPoint;
+	final public void setPolicyAdministrationPoint (PolicyAdministrationPoint policyAdministrationPoint) {
+		this.policyAdministrationPoint = policyAdministrationPoint;
 	}
 }

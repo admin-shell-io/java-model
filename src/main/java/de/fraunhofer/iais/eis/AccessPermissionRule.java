@@ -81,18 +81,18 @@ public interface AccessPermissionRule extends Referable, Qualifiable {
 
 	/**
 	* "Set of object-permission pairs that define the permissions per object within the access permission rule."@en
-	* @return Returns the List of PermissionsPerObjects for the property accessPermissionRulePermissionsPerObjects.
+	* @return Returns the List of PermissionsPerObjects for the property permissionsPerObjects.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject")
-	public List<PermissionsPerObject> getAccessPermissionRulePermissionsPerObjects();
+	public List<PermissionsPerObject> getPermissionsPerObjects();
 
 	/**
 	* "Target subject attributes that need to be fulfilled by the accessing subject to get the permissions defined by this rule."@en
-	* @return Returns the SubjectAttributes for the property accessPermissionRuleTargetSubjectAttributes.
+	* @return Returns the SubjectAttributes for the property targetSubjectAttributes.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes")
-	public SubjectAttributes getAccessPermissionRuleTargetSubjectAttributes();
+	public SubjectAttributes getTargetSubjectAttributes();
 
 }

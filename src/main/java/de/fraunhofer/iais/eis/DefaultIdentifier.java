@@ -56,16 +56,16 @@ public class DefaultIdentifier implements Serializable, Identifier {
 	* "has idType"
 	* "Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the enumeration \'IdentifierType\'."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifier/idType", "identifierIdType"})
-	protected IdentifierType identifierIdType;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifier/idType", "idType"})
+	protected IdentifierType idType;
 
 
 	/**
 	* "has identification"
 	* "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifier/identifier", "identifierIdentifier"})
-	protected List<TypedLiteral> identifierIdentifiers;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifier/identifier", "identifier"})
+	protected List<TypedLiteral> identifiers;
 
 
 	// no manual construction
@@ -87,8 +87,8 @@ public class DefaultIdentifier implements Serializable, Identifier {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.identifierIdentifiers,
-			this.identifierIdType});
+		return Objects.hash(new Object[]{this.identifiers,
+			this.idType});
 	}
 
 	public boolean equals(Object obj) {
@@ -100,8 +100,8 @@ public class DefaultIdentifier implements Serializable, Identifier {
 			return false;
 		} else {
 			DefaultIdentifier other = (DefaultIdentifier) obj;
-			return Objects.equals(this.identifierIdentifiers, other.identifierIdentifiers) &&
-				Objects.equals(this.identifierIdType, other.identifierIdType);
+			return Objects.equals(this.identifiers, other.identifiers) &&
+				Objects.equals(this.idType, other.idType);
 		}
 	}
 
@@ -110,20 +110,20 @@ public class DefaultIdentifier implements Serializable, Identifier {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
-	final public List<TypedLiteral> getIdentifierIdentifiers() {
-		return identifierIdentifiers;
+	final public List<TypedLiteral> getIdentifiers() {
+		return identifiers;
 	}
 	
-	final public void setIdentifierIdentifiers (List<TypedLiteral> identifierIdentifiers) {
-		this.identifierIdentifiers = identifierIdentifiers;
+	final public void setIdentifiers (List<TypedLiteral> identifiers) {
+		this.identifiers = identifiers;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")
-	final public IdentifierType getIdentifierIdType() {
-		return identifierIdType;
+	final public IdentifierType getIdType() {
+		return idType;
 	}
 	
-	final public void setIdentifierIdType (IdentifierType identifierIdType) {
-		this.identifierIdType = identifierIdType;
+	final public void setIdType (IdentifierType idType) {
+		this.idType = idType;
 	}
 }

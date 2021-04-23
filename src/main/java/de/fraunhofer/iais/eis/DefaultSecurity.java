@@ -56,24 +56,24 @@ public class DefaultSecurity implements Serializable, Security {
 	* "has access control policy points"
 	* "Access control policy points of the AAS."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints", "securityAccessControlPolicyPoints"})
-	protected PolicyAdministrationPoint securityAccessControlPolicyPoints;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints", "accessControlPolicyPoints"})
+	protected PolicyAdministrationPoint accessControlPolicyPoints;
 
 
 	/**
 	* "has certificate"
 	* "Certificates of the AAS."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Security/certificate", "securityCertificate"})
-	protected List<Certificate> securityCertificates;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Security/certificate", "certificate"})
+	protected List<Certificate> certificates;
 
 
 	/**
 	* "has required certificate extension"
 	* "Certificate extensions as required by the AAS."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension", "securityRequiredCertificateExtension"})
-	protected List<Reference> securityRequiredCertificateExtensions;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension", "requiredCertificateExtension"})
+	protected List<Reference> requiredCertificateExtensions;
 
 
 	// no manual construction
@@ -95,9 +95,9 @@ public class DefaultSecurity implements Serializable, Security {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.securityAccessControlPolicyPoints,
-			this.securityCertificates,
-			this.securityRequiredCertificateExtensions});
+		return Objects.hash(new Object[]{this.accessControlPolicyPoints,
+			this.certificates,
+			this.requiredCertificateExtensions});
 	}
 
 	public boolean equals(Object obj) {
@@ -109,9 +109,9 @@ public class DefaultSecurity implements Serializable, Security {
 			return false;
 		} else {
 			DefaultSecurity other = (DefaultSecurity) obj;
-			return Objects.equals(this.securityAccessControlPolicyPoints, other.securityAccessControlPolicyPoints) &&
-				Objects.equals(this.securityCertificates, other.securityCertificates) &&
-				Objects.equals(this.securityRequiredCertificateExtensions, other.securityRequiredCertificateExtensions);
+			return Objects.equals(this.accessControlPolicyPoints, other.accessControlPolicyPoints) &&
+				Objects.equals(this.certificates, other.certificates) &&
+				Objects.equals(this.requiredCertificateExtensions, other.requiredCertificateExtensions);
 		}
 	}
 
@@ -120,29 +120,29 @@ public class DefaultSecurity implements Serializable, Security {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
-	final public PolicyAdministrationPoint getSecurityAccessControlPolicyPoints() {
-		return securityAccessControlPolicyPoints;
+	final public PolicyAdministrationPoint getAccessControlPolicyPoints() {
+		return accessControlPolicyPoints;
 	}
 	
-	final public void setSecurityAccessControlPolicyPoints (PolicyAdministrationPoint securityAccessControlPolicyPoints) {
-		this.securityAccessControlPolicyPoints = securityAccessControlPolicyPoints;
+	final public void setAccessControlPolicyPoints (PolicyAdministrationPoint accessControlPolicyPoints) {
+		this.accessControlPolicyPoints = accessControlPolicyPoints;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/certificate")
-	final public List<Certificate> getSecurityCertificates() {
-		return securityCertificates;
+	final public List<Certificate> getCertificates() {
+		return certificates;
 	}
 	
-	final public void setSecurityCertificates (List<Certificate> securityCertificates) {
-		this.securityCertificates = securityCertificates;
+	final public void setCertificates (List<Certificate> certificates) {
+		this.certificates = certificates;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension")
-	final public List<Reference> getSecurityRequiredCertificateExtensions() {
-		return securityRequiredCertificateExtensions;
+	final public List<Reference> getRequiredCertificateExtensions() {
+		return requiredCertificateExtensions;
 	}
 	
-	final public void setSecurityRequiredCertificateExtensions (List<Reference> securityRequiredCertificateExtensions) {
-		this.securityRequiredCertificateExtensions = securityRequiredCertificateExtensions;
+	final public void setRequiredCertificateExtensions (List<Reference> requiredCertificateExtensions) {
+		this.requiredCertificateExtensions = requiredCertificateExtensions;
 	}
 }

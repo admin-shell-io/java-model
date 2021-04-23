@@ -81,26 +81,26 @@ public interface IdentifierKeyValuePair extends HasSemantics {
 
 	/**
 	* "Key of the identifier."@en
-	* @return Returns the String for the property identifierKeyValuePairKey.
+	* @return Returns the String for the property key.
 	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
-	public String getIdentifierKeyValuePairKey();
+	public String getKey();
 
 	/**
 	* "The value of the identifier with the corresponding key."@en
-	* @return Returns the String for the property identifierKeyValuePairValue.
+	* @return Returns the String for the property value.
 	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
-	public String getIdentifierKeyValuePairValue();
+	public String getValue();
 
 	/**
 	* "The (external) subject the key belongs to or has meaning to."@en
-	* @return Returns the Reference for the property identifierKeyValuePairExternalSubjectId.
+	* @return Returns the Reference for the property externalSubjectId.
 	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId")
-	public Reference getIdentifierKeyValuePairExternalSubjectId();
+	public Reference getExternalSubjectId();
 
 }

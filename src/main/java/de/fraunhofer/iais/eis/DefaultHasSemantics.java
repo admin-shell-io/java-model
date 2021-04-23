@@ -58,8 +58,8 @@ public class DefaultHasSemantics implements Serializable, HasSemantics {
 	* "Points to the Expression Semantic of the Submodels"@en
 	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "hasSemanticsSemanticId"})
-	protected Reference hasSemanticsSemanticId;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "semanticId"})
+	protected Reference semanticId;
 
 
 	// no manual construction
@@ -81,7 +81,7 @@ public class DefaultHasSemantics implements Serializable, HasSemantics {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.hasSemanticsSemanticId});
+		return Objects.hash(new Object[]{this.semanticId});
 	}
 
 	public boolean equals(Object obj) {
@@ -93,7 +93,7 @@ public class DefaultHasSemantics implements Serializable, HasSemantics {
 			return false;
 		} else {
 			DefaultHasSemantics other = (DefaultHasSemantics) obj;
-			return Objects.equals(this.hasSemanticsSemanticId, other.hasSemanticsSemanticId);
+			return Objects.equals(this.semanticId, other.semanticId);
 		}
 	}
 
@@ -102,11 +102,11 @@ public class DefaultHasSemantics implements Serializable, HasSemantics {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-	final public Reference getHasSemanticsSemanticId() {
-		return hasSemanticsSemanticId;
+	final public Reference getSemanticId() {
+		return semanticId;
 	}
 	
-	final public void setHasSemanticsSemanticId (Reference hasSemanticsSemanticId) {
-		this.hasSemanticsSemanticId = hasSemanticsSemanticId;
+	final public void setSemanticId (Reference semanticId) {
+		this.semanticId = semanticId;
 	}
 }

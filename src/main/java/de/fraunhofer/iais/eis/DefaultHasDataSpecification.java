@@ -57,8 +57,8 @@ public class DefaultHasDataSpecification implements Serializable, HasDataSpecifi
 	* "has Data Specification"
 	* "Global reference to the data specification template used by the element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "hasDataSpecificationDataSpecification"})
-	protected List<Reference> hasDataSpecificationDataSpecifications;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "dataSpecification"})
+	protected List<Reference> dataSpecifications;
 
 
 	// no manual construction
@@ -80,7 +80,7 @@ public class DefaultHasDataSpecification implements Serializable, HasDataSpecifi
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.hasDataSpecificationDataSpecifications});
+		return Objects.hash(new Object[]{this.dataSpecifications});
 	}
 
 	public boolean equals(Object obj) {
@@ -92,7 +92,7 @@ public class DefaultHasDataSpecification implements Serializable, HasDataSpecifi
 			return false;
 		} else {
 			DefaultHasDataSpecification other = (DefaultHasDataSpecification) obj;
-			return Objects.equals(this.hasDataSpecificationDataSpecifications, other.hasDataSpecificationDataSpecifications);
+			return Objects.equals(this.dataSpecifications, other.dataSpecifications);
 		}
 	}
 
@@ -101,11 +101,11 @@ public class DefaultHasDataSpecification implements Serializable, HasDataSpecifi
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
-	final public List<Reference> getHasDataSpecificationDataSpecifications() {
-		return hasDataSpecificationDataSpecifications;
+	final public List<Reference> getDataSpecifications() {
+		return dataSpecifications;
 	}
 	
-	final public void setHasDataSpecificationDataSpecifications (List<Reference> hasDataSpecificationDataSpecifications) {
-		this.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
+	final public void setDataSpecifications (List<Reference> dataSpecifications) {
+		this.dataSpecifications = dataSpecifications;
 	}
 }

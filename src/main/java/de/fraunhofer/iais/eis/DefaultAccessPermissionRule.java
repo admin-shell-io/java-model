@@ -56,40 +56,40 @@ public class DefaultAccessPermissionRule implements Serializable, AccessPermissi
 	* "has permissions per object"
 	* "Set of object-permission pairs that define the permissions per object within the access permission rule."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject", "accessPermissionRulePermissionsPerObject"})
-	protected List<PermissionsPerObject> accessPermissionRulePermissionsPerObjects;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject", "permissionsPerObject"})
+	protected List<PermissionsPerObject> permissionsPerObjects;
 
 
 	/**
 	* "has target subject attributes"
 	* "Target subject attributes that need to be fulfilled by the accessing subject to get the permissions defined by this rule."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes", "accessPermissionRuleTargetSubjectAttributes"})
-	protected SubjectAttributes accessPermissionRuleTargetSubjectAttributes;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes", "targetSubjectAttributes"})
+	protected SubjectAttributes targetSubjectAttributes;
 
 
 	/**
 	* "has qualifier"
 	* "Additional qualification of a qualifiable element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier", "qualifiableQualifier"})
-	protected List<Constraint> qualifiableQualifiers;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier", "qualifier"})
+	protected List<Constraint> qualifiers;
 
 
 	/**
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "referableDescription"})
-	protected List<TypedLiteral> referableDescriptions;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "description"})
+	protected List<TypedLiteral> descriptions;
 
 
 	/**
 	* "has display name"
 	* "Display name. Can be provided in several languages."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "referableDisplayName"})
-	protected TypedLiteral referableDisplayName;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "displayName"})
+	protected TypedLiteral displayName;
 
 
 	/**
@@ -101,8 +101,8 @@ public class DefaultAccessPermissionRule implements Serializable, AccessPermissi
 	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
 	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "referableIdShort"})
-	protected String referableIdShort;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "idShort"})
+	protected String idShort;
 
 
 	/**
@@ -111,16 +111,16 @@ public class DefaultAccessPermissionRule implements Serializable, AccessPermissi
 	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
 	* "This element is used to ease navigation in the model and thus it enables more performant"@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/parent", "referableParent"})
-	protected URI referableParent;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/parent", "parent"})
+	protected URI parent;
 
 
 	/**
 	* "has category"
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableReferableCategory"})
-	protected List<String> referableReferableCategories;
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableCategory"})
+	protected List<String> referableCategories;
 
 
 	// no manual construction
@@ -142,14 +142,14 @@ public class DefaultAccessPermissionRule implements Serializable, AccessPermissi
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.accessPermissionRulePermissionsPerObjects,
-			this.accessPermissionRuleTargetSubjectAttributes,
-			this.referableReferableCategories,
-			this.referableDescriptions,
-			this.referableDisplayName,
-			this.referableIdShort,
-			this.referableParent,
-			this.qualifiableQualifiers});
+		return Objects.hash(new Object[]{this.permissionsPerObjects,
+			this.targetSubjectAttributes,
+			this.referableCategories,
+			this.descriptions,
+			this.displayName,
+			this.idShort,
+			this.parent,
+			this.qualifiers});
 	}
 
 	public boolean equals(Object obj) {
@@ -161,14 +161,14 @@ public class DefaultAccessPermissionRule implements Serializable, AccessPermissi
 			return false;
 		} else {
 			DefaultAccessPermissionRule other = (DefaultAccessPermissionRule) obj;
-			return Objects.equals(this.accessPermissionRulePermissionsPerObjects, other.accessPermissionRulePermissionsPerObjects) &&
-				Objects.equals(this.accessPermissionRuleTargetSubjectAttributes, other.accessPermissionRuleTargetSubjectAttributes) &&
-				Objects.equals(this.referableReferableCategories, other.referableReferableCategories) &&
-				Objects.equals(this.referableDescriptions, other.referableDescriptions) &&
-				Objects.equals(this.referableDisplayName, other.referableDisplayName) &&
-				Objects.equals(this.referableIdShort, other.referableIdShort) &&
-				Objects.equals(this.referableParent, other.referableParent) &&
-				Objects.equals(this.qualifiableQualifiers, other.qualifiableQualifiers);
+			return Objects.equals(this.permissionsPerObjects, other.permissionsPerObjects) &&
+				Objects.equals(this.targetSubjectAttributes, other.targetSubjectAttributes) &&
+				Objects.equals(this.referableCategories, other.referableCategories) &&
+				Objects.equals(this.descriptions, other.descriptions) &&
+				Objects.equals(this.displayName, other.displayName) &&
+				Objects.equals(this.idShort, other.idShort) &&
+				Objects.equals(this.parent, other.parent) &&
+				Objects.equals(this.qualifiers, other.qualifiers);
 		}
 	}
 
@@ -177,74 +177,74 @@ public class DefaultAccessPermissionRule implements Serializable, AccessPermissi
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject")
-	final public List<PermissionsPerObject> getAccessPermissionRulePermissionsPerObjects() {
-		return accessPermissionRulePermissionsPerObjects;
+	final public List<PermissionsPerObject> getPermissionsPerObjects() {
+		return permissionsPerObjects;
 	}
 	
-	final public void setAccessPermissionRulePermissionsPerObjects (List<PermissionsPerObject> accessPermissionRulePermissionsPerObjects) {
-		this.accessPermissionRulePermissionsPerObjects = accessPermissionRulePermissionsPerObjects;
+	final public void setPermissionsPerObjects (List<PermissionsPerObject> permissionsPerObjects) {
+		this.permissionsPerObjects = permissionsPerObjects;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes")
-	final public SubjectAttributes getAccessPermissionRuleTargetSubjectAttributes() {
-		return accessPermissionRuleTargetSubjectAttributes;
+	final public SubjectAttributes getTargetSubjectAttributes() {
+		return targetSubjectAttributes;
 	}
 	
-	final public void setAccessPermissionRuleTargetSubjectAttributes (SubjectAttributes accessPermissionRuleTargetSubjectAttributes) {
-		this.accessPermissionRuleTargetSubjectAttributes = accessPermissionRuleTargetSubjectAttributes;
+	final public void setTargetSubjectAttributes (SubjectAttributes targetSubjectAttributes) {
+		this.targetSubjectAttributes = targetSubjectAttributes;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	final public List<String> getReferableReferableCategories() {
-		return referableReferableCategories;
+	final public List<String> getReferableCategories() {
+		return referableCategories;
 	}
 	
-	final public void setReferableReferableCategories (List<String> referableReferableCategories) {
-		this.referableReferableCategories = referableReferableCategories;
+	final public void setReferableCategories (List<String> referableCategories) {
+		this.referableCategories = referableCategories;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	final public List<TypedLiteral> getReferableDescriptions() {
-		return referableDescriptions;
+	final public List<TypedLiteral> getDescriptions() {
+		return descriptions;
 	}
 	
-	final public void setReferableDescriptions (List<TypedLiteral> referableDescriptions) {
-		this.referableDescriptions = referableDescriptions;
+	final public void setDescriptions (List<TypedLiteral> descriptions) {
+		this.descriptions = descriptions;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-	final public TypedLiteral getReferableDisplayName() {
-		return referableDisplayName;
+	final public TypedLiteral getDisplayName() {
+		return displayName;
 	}
 	
-	final public void setReferableDisplayName (TypedLiteral referableDisplayName) {
-		this.referableDisplayName = referableDisplayName;
+	final public void setDisplayName (TypedLiteral displayName) {
+		this.displayName = displayName;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-	final public String getReferableIdShort() {
-		return referableIdShort;
+	final public String getIdShort() {
+		return idShort;
 	}
 	
-	final public void setReferableIdShort (String referableIdShort) {
-		this.referableIdShort = referableIdShort;
+	final public void setIdShort (String idShort) {
+		this.idShort = idShort;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
-	final public URI getReferableParent() {
-		return referableParent;
+	final public URI getParent() {
+		return parent;
 	}
 	
-	final public void setReferableParent (URI referableParent) {
-		this.referableParent = referableParent;
+	final public void setParent (URI parent) {
+		this.parent = parent;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
-	final public List<Constraint> getQualifiableQualifiers() {
-		return qualifiableQualifiers;
+	final public List<Constraint> getQualifiers() {
+		return qualifiers;
 	}
 	
-	final public void setQualifiableQualifiers (List<Constraint> qualifiableQualifiers) {
-		this.qualifiableQualifiers = qualifiableQualifiers;
+	final public void setQualifiers (List<Constraint> qualifiers) {
+		this.qualifiers = qualifiers;
 	}
 }

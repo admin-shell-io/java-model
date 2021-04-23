@@ -44,12 +44,12 @@ public class HasSemanticsBuilder {
 	}
 
 	/**
-	* This function allows setting a value for hasSemanticsSemanticId
-	* @param hasSemanticsSemanticId desired value to be set
-	* @return Builder object with new value for hasSemanticsSemanticId
+	* This function allows setting a value for semanticId
+	* @param semanticId desired value to be set
+	* @return Builder object with new value for semanticId
 	*/
-	final public HasSemanticsBuilder hasSemanticsSemanticId(Reference hasSemanticsSemanticId) {
-		this.defaultHasSemantics.hasSemanticsSemanticId = hasSemanticsSemanticId;
+	final public HasSemanticsBuilder semanticId(Reference semanticId) {
+		this.defaultHasSemantics.semanticId = semanticId;
 		return this;
 	}
 	/**

@@ -44,34 +44,34 @@ public class AdministrativeInformationBuilder {
 	}
 
 	/**
-	* This function allows setting a value for administrativeInformationVersion
-	* @param administrativeInformationVersion desired value to be set
-	* @return Builder object with new value for administrativeInformationVersion
+	* This function allows setting a value for version
+	* @param version desired value to be set
+	* @return Builder object with new value for version
 	*/
-	final public AdministrativeInformationBuilder administrativeInformationVersion(String administrativeInformationVersion) {
-		this.defaultAdministrativeInformation.administrativeInformationVersion = administrativeInformationVersion;
+	final public AdministrativeInformationBuilder version(String version) {
+		this.defaultAdministrativeInformation.version = version;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for administrativeInformationRevision
-	* @param administrativeInformationRevision desired value to be set
-	* @return Builder object with new value for administrativeInformationRevision
+	* This function allows setting a value for revision
+	* @param revision desired value to be set
+	* @return Builder object with new value for revision
 	*/
-	final public AdministrativeInformationBuilder administrativeInformationRevision(String administrativeInformationRevision) {
-		this.defaultAdministrativeInformation.administrativeInformationRevision = administrativeInformationRevision;
+	final public AdministrativeInformationBuilder revision(String revision) {
+		this.defaultAdministrativeInformation.revision = revision;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for hasDataSpecificationDataSpecifications
-	* @param hasDataSpecificationDataSpecifications desired value to be set
-	* @return Builder object with new value for hasDataSpecificationDataSpecifications
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public AdministrativeInformationBuilder hasDataSpecificationDataSpecifications(List<Reference> hasDataSpecificationDataSpecifications) {
-		this.defaultAdministrativeInformation.hasDataSpecificationDataSpecifications = hasDataSpecificationDataSpecifications;
+	final public AdministrativeInformationBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultAdministrativeInformation.dataSpecifications = dataSpecifications;
 		return this;
 	}
 	/**

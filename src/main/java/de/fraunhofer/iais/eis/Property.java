@@ -84,19 +84,19 @@ public interface Property extends DataElement {
 
 	/**
 	* "The value of the property instance."@en
-	* @return Returns the TypedLiteral for the property propertyValue.
+	* @return Returns the TypedLiteral for the property value.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Property/value
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Property/value")
-	public TypedLiteral getPropertyValue();
+	public TypedLiteral getValue();
 
 	/**
 	* "Reference to the global unique id of a coded value."@en
 	* "Constraint AASd-007: if both, the value and the valueId are present then the value needs to be identical to the value of the referenced coded value in valueId."@en
-	* @return Returns the Reference for the property propertyValueId.
+	* @return Returns the Reference for the property valueId.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Property/valueId
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Property/valueId")
-	public Reference getPropertyValueId();
+	public Reference getValueId();
 
 }
