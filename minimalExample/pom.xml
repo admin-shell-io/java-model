@@ -7,7 +7,10 @@
     <groupId>de.fraunhofer.iais.eis</groupId>
     <artifactId>MinimalExample</artifactId>
     <version>0.1-SNAPSHOT</version>
-
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -28,12 +31,20 @@
             <version>4.0.6-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>de.fraunhofer.iosb.ilt.aas.service</groupId>
+            <artifactId>serialization-json</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
-
-
     <repositories>
+        <repository>
+            <id>FAST-repo</id>
+            <url>https://gitlab-ext.iosb.fraunhofer.de/api/v4/projects/1949/packages/maven</url>
+        </repository>
         <repository>
             <id>eis-public-repo</id>
             <name>maven-public</name>

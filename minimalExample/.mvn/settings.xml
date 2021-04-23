@@ -1,0 +1,15 @@
+<settings>
+	<servers>
+		<server>
+			<id>FAST-repo</id>
+			<configuration>
+				<httpHeaders>
+					<property>
+						<name>Deploy-Token</name>
+						<value>cb4ykE2TaEWP5AGYrCDn</value>
+					</property>
+				</httpHeaders>
+			</configuration>
+		</server>
+	</servers>
+</settings>
