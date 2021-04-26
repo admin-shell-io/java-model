@@ -147,16 +147,6 @@ public class DefaultAssetAdministrationShell implements Serializable, AssetAdmin
 
 
 	/**
-	* "has parent"
-	* "Reference to the next referable parent element of the element."@en
-	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
-	* "This element is used to ease navigation in the model and thus it enables more performant"@en
-	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/parent", "parent"})
-	protected URI parent;
-
-
-	/**
 	* "has category"
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
@@ -194,8 +184,7 @@ public class DefaultAssetAdministrationShell implements Serializable, AssetAdmin
 			this.referableCategories,
 			this.descriptions,
 			this.displayName,
-			this.idShort,
-			this.parent});
+			this.idShort});
 	}
 
 	public boolean equals(Object obj) {
@@ -218,8 +207,7 @@ public class DefaultAssetAdministrationShell implements Serializable, AssetAdmin
 				Objects.equals(this.referableCategories, other.referableCategories) &&
 				Objects.equals(this.descriptions, other.descriptions) &&
 				Objects.equals(this.displayName, other.displayName) &&
-				Objects.equals(this.idShort, other.idShort) &&
-				Objects.equals(this.parent, other.parent);
+				Objects.equals(this.idShort, other.idShort);
 		}
 	}
 
@@ -333,14 +321,5 @@ public class DefaultAssetAdministrationShell implements Serializable, AssetAdmin
 	
 	final public void setIdShort (String idShort) {
 		this.idShort = idShort;
-	}
-
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
-	final public URI getParent() {
-		return parent;
-	}
-	
-	final public void setParent (URI parent) {
-		this.parent = parent;
 	}
 }

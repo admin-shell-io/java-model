@@ -120,14 +120,4 @@ public interface Referable {
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	public String getIdShort();
 
-	/**
-	* "Reference to the next referable parent element of the element."@en
-	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
-	* "This element is used to ease navigation in the model and thus it enables more performant"@en
-	* @return Returns the URI for the property parent.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/parent
-	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
-	public URI getParent();
-
 }

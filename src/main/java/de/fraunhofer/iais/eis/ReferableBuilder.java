@@ -85,17 +85,6 @@ public class ReferableBuilder {
 		this.defaultReferable.idShort = idShort;
 		return this;
 	}
-
-
-	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
-	*/
-	final public ReferableBuilder parent(URI parent) {
-		this.defaultReferable.parent = parent;
-		return this;
-	}
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
