@@ -44,23 +44,23 @@ public class RangeBuilder {
 	}
 
 	/**
-	* This function allows setting a value for maxs
-	* @param maxs desired value to be set
-	* @return Builder object with new value for maxs
+	* This function allows setting a value for max
+	* @param max desired value to be set
+	* @return Builder object with new value for max
 	*/
-	final public RangeBuilder maxs(List<TypedLiteral> maxs) {
-		this.defaultRange.maxs = maxs;
+	final public RangeBuilder max(TypedLiteral max) {
+		this.defaultRange.max = max;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for mins
-	* @param mins desired value to be set
-	* @return Builder object with new value for mins
+	* This function allows setting a value for min
+	* @param min desired value to be set
+	* @return Builder object with new value for min
 	*/
-	final public RangeBuilder mins(List<TypedLiteral> mins) {
-		this.defaultRange.mins = mins;
+	final public RangeBuilder min(TypedLiteral min) {
+		this.defaultRange.min = min;
 		return this;
 	}
 

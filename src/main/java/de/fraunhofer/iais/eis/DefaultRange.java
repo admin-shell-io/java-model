@@ -93,7 +93,7 @@ public class DefaultRange implements Serializable, Range {
 	* "The maximum value of the range."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Range/max", "max"})
-	protected List<TypedLiteral> maxs;
+	protected TypedLiteral max;
 
 
 	/**
@@ -101,7 +101,7 @@ public class DefaultRange implements Serializable, Range {
 	* "The minimum value of the range."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Range/min", "min"})
-	protected List<TypedLiteral> mins;
+	protected TypedLiteral min;
 
 
 	/**
@@ -160,8 +160,8 @@ public class DefaultRange implements Serializable, Range {
 	}
 
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.maxs,
-			this.mins,
+		return Objects.hash(new Object[]{this.max,
+			this.min,
 			this.referableCategories,
 			this.descriptions,
 			this.displayName,
@@ -181,8 +181,8 @@ public class DefaultRange implements Serializable, Range {
 			return false;
 		} else {
 			DefaultRange other = (DefaultRange) obj;
-			return Objects.equals(this.maxs, other.maxs) &&
-				Objects.equals(this.mins, other.mins) &&
+			return Objects.equals(this.max, other.max) &&
+				Objects.equals(this.min, other.min) &&
 				Objects.equals(this.referableCategories, other.referableCategories) &&
 				Objects.equals(this.descriptions, other.descriptions) &&
 				Objects.equals(this.displayName, other.displayName) &&
@@ -199,21 +199,21 @@ public class DefaultRange implements Serializable, Range {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Range/max")
-	final public List<TypedLiteral> getMaxs() {
-		return maxs;
+	final public TypedLiteral getMax() {
+		return max;
 	}
 	
-	final public void setMaxs (List<TypedLiteral> maxs) {
-		this.maxs = maxs;
+	final public void setMax (TypedLiteral max) {
+		this.max = max;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Range/min")
-	final public List<TypedLiteral> getMins() {
-		return mins;
+	final public TypedLiteral getMin() {
+		return min;
 	}
 	
-	final public void setMins (List<TypedLiteral> mins) {
-		this.mins = mins;
+	final public void setMin (TypedLiteral min) {
+		this.min = min;
 	}
 
 
