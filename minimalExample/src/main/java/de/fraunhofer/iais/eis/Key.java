@@ -7,12 +7,6 @@ import de.fraunhofer.iais.eis.builder.ExtendableBuilder;
  */
 public interface Key {
 
-    @Override
-    public int hashCode();
-
-    @Override
-    public boolean equals(Object obj);
-
     /**
      * Type of the key value. In case of idType = idShort local shall be true.
      * In case type=GlobalReference idType shall not be IdShort.

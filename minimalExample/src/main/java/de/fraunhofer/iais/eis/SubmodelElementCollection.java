@@ -2,6 +2,7 @@ package de.fraunhofer.iais.eis;
 
 import de.fraunhofer.iais.eis.builder.ExtendableBuilder;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * A submodel element collection is a set or list of submodel elements.
@@ -20,11 +21,17 @@ import java.util.List;
  */
 public interface SubmodelElementCollection extends SubmodelElement {
 
-    @Override
-    public int hashCode();
-
-    @Override
-    public boolean equals(Object obj);
+    /**
+     * If allowDuplicates=true then it is allowed that the collection contains
+     * the same element several times. Default = false
+     *
+     * Constraint AASd-026: If allowDuplicates==false then it is not allowed
+     * that the collection contains several elements with the same semantics
+     * (i.e. the same semanticId).
+     *
+     * @return Returns the property allowDuplicates.
+     */
+    public boolean getAllowDuplicates();
 
     /**
      * If allowDuplicates=true then it is allowed that the collection contains
@@ -34,21 +41,9 @@ public interface SubmodelElementCollection extends SubmodelElement {
      * that the collection contains several elements with the same semantics
      * (i.e. the same semanticId).
      *
-     * @return Returns the List of Boolean for the property allowDuplicates.
+     * @param value the boolean for the property allowDuplicates.
      */
-    public List<Boolean> getAllowDuplicates();
-
-    /**
-     * If allowDuplicates=true then it is allowed that the collection contains
-     * the same element several times. Default = false
-     *
-     * Constraint AASd-026: If allowDuplicates==false then it is not allowed
-     * that the collection contains several elements with the same semantics
-     * (i.e. the same semanticId).
-     *
-     * @param value the List of Boolean for the property allowDuplicates.
-     */
-    public void setAllowDuplicates(List<Boolean> value);
+    public void setAllowDuplicates(boolean value);
 
     /**
      * If ordered=false then the elements in the property collection are not
@@ -57,7 +52,7 @@ public interface SubmodelElementCollection extends SubmodelElement {
      *
      * @return Returns the List of Boolean for the property ordered.
      */
-    public List<Boolean> getOrdered();
+    public boolean getOrdered();
 
     /**
      * If ordered=false then the elements in the property collection are not
@@ -66,7 +61,7 @@ public interface SubmodelElementCollection extends SubmodelElement {
      *
      * @param value the List of Boolean for the property ordered.
      */
-    public void setOrdered(List<Boolean> value);
+    public void setOrdered(boolean value);
 
     /**
      * Submodel element contained in the collection.
@@ -84,23 +79,13 @@ public interface SubmodelElementCollection extends SubmodelElement {
 
     public static abstract class AbstractBuilder<T extends SubmodelElementCollection, B extends AbstractBuilder<T, B>> extends ExtendableBuilder<T, B> {
 
-        public B allowDuplicates(List<Boolean> value) {
+        public B allowDuplicates(boolean value) {
             getBuildingInstance().setAllowDuplicates(value);
             return getSelf();
         }
 
-        public B allowDuplicate(Boolean value) {
-            getBuildingInstance().getAllowDuplicates().add(value);
-            return getSelf();
-        }
-
-        public B ordered(List<Boolean> value) {
+        public B ordered(boolean value) {
             getBuildingInstance().setOrdered(value);
-            return getSelf();
-        }
-
-        public B ordered(Boolean value) {
-            getBuildingInstance().getOrdered().add(value);
             return getSelf();
         }
 

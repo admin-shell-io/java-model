@@ -11,15 +11,15 @@ import java.util.ArrayList;
  */
 public class DefaultSubmodelElementCollection implements Serializable, SubmodelElementCollection {
 
-    protected List<Boolean> allowDuplicates;
+    protected boolean allowDuplicates;
 
-    protected List<Boolean> ordered;
+    protected boolean ordered;
 
     protected List<SubmodelElement> values;
 
     protected DefaultSubmodelElementCollection() {
-        this.allowDuplicates = new ArrayList<>();
-        this.ordered = new ArrayList<>();
+        this.allowDuplicates = false;
+        this.ordered = false;
         this.values = new ArrayList<>();
     }
 
@@ -43,22 +43,22 @@ public class DefaultSubmodelElementCollection implements Serializable, SubmodelE
     }
 
     @Override
-    final public List<Boolean> getAllowDuplicates() {
+    final public boolean getAllowDuplicates() {
         return allowDuplicates;
     }
 
     @Override
-    final public void setAllowDuplicates(List<Boolean> allowDuplicates) {
+    final public void setAllowDuplicates(boolean allowDuplicates) {
         this.allowDuplicates = allowDuplicates;
     }
 
     @Override
-    final public List<Boolean> getOrdered() {
+    final public boolean getOrdered() {
         return ordered;
     }
 
     @Override
-    final public void setOrdered(List<Boolean> ordered) {
+    final public void setOrdered(boolean ordered) {
         this.ordered = ordered;
     }
 

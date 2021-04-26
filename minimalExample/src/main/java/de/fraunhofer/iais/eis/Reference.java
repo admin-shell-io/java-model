@@ -11,12 +11,6 @@ import java.util.List;
  */
 public interface Reference {
 
-    @Override
-    public int hashCode();
-
-    @Override
-    public boolean equals(Object obj);
-
     /**
      * Unique reference in its name space.
      *

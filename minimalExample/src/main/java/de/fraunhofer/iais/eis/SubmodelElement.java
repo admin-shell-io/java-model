@@ -13,10 +13,4 @@ package de.fraunhofer.iais.eis;
  */
 public interface SubmodelElement {
 
-    @Override
-    public int hashCode();
-
-    @Override
-    public boolean equals(Object obj);
-
 }

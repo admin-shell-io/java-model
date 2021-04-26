@@ -18,12 +18,6 @@ import java.util.List;
  */
 public interface Submodel {
 
-    @Override
-    public int hashCode();
-
-    @Override
-    public boolean equals(Object obj);
-
     /**
      * A submodel consists of zero or more submodel elements.
      *

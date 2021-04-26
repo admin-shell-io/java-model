@@ -10,12 +10,6 @@ package de.fraunhofer.iais.eis;
  */
 public interface HasSemantics {
 
-    @Override
-    public int hashCode();
-
-    @Override
-    public boolean equals(Object obj);
-
     /**
      * Points to the Expression Semantic of the Submodels The semantic id might
      * refer to an external information source, which explains the formulation

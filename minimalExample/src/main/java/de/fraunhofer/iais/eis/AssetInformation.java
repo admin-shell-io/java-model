@@ -17,12 +17,6 @@ import java.util.List;
  */
 public interface AssetInformation {
 
-    @Override
-    public int hashCode();
-
-    @Override
-    public boolean equals(Object obj);
-
     /**
      * Denotes whether the Asset is of kind 'Type' or 'Instance'.
      *

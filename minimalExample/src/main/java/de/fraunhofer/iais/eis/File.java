@@ -7,12 +7,6 @@ import de.fraunhofer.iais.eis.builder.ExtendableBuilder;
  */
 public interface File extends SubmodelElement {
 
-    @Override
-    public int hashCode();
-
-    @Override
-    public boolean equals(Object obj);
-
     /**
      * Mime type of the content of the File.
      *

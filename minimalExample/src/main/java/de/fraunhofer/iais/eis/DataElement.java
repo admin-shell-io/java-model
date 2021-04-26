@@ -7,10 +7,4 @@ package de.fraunhofer.iais.eis;
  */
 public interface DataElement extends SubmodelElement {
 
-    @Override
-    public int hashCode();
-
-    @Override
-    public boolean equals(Object obj);
-
 }

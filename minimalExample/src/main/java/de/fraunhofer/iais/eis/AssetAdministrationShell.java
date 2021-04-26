@@ -10,12 +10,6 @@ import java.util.List;
  */
 public interface AssetAdministrationShell {
 
-    @Override
-    public int hashCode();
-
-    @Override
-    public boolean equals(Object obj);
-
     /**
      * Points from the Admin Shell to the Submodels that describe the Admin
      * Shell of a given Asset

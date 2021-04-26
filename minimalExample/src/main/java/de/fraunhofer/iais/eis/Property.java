@@ -23,12 +23,6 @@ import de.fraunhofer.iais.eis.builder.ExtendableBuilder;
  */
 public interface Property extends DataElement {
 
-    @Override
-    public int hashCode();
-
-    @Override
-    public boolean equals(Object obj);
-
     /**
      * The value of the property instance.
      *

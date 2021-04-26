@@ -7,12 +7,6 @@ import de.fraunhofer.iais.eis.builder.ExtendableBuilder;
  */
 public interface IdentifierKeyValuePair extends HasSemantics {
 
-    @Override
-    public int hashCode();
-
-    @Override
-    public boolean equals(Object obj);
-
     /**
      * Key of the identifier.
      *
