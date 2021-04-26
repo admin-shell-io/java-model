@@ -1,6 +1,6 @@
 package de.fraunhofer.iais.eis;
 
-import de.fraunhofer.iais.eis.util.TypedLiteral;
+import de.fraunhofer.iais.eis.builder.ExtendableBuilder;
 
 /**
  * A property is a data element that has a single value.
@@ -32,9 +32,16 @@ public interface Property extends DataElement {
     /**
      * The value of the property instance.
      *
-     * @return Returns the TypedLiteral for the property value.
+     * @return Returns the value for the property value.
      */
-    public TypedLiteral getValue();
+    public String getValue();
+
+    /**
+     * The value of the property instance.
+     *
+     * @param value the value for the property value.
+     */
+    public void setValue(String value);
 
     /**
      * Reference to the global unique id of a coded value.
@@ -47,4 +54,28 @@ public interface Property extends DataElement {
      */
     public Reference getValueId();
 
+    /**
+     * Reference to the global unique id of a coded value.
+     *
+     * Constraint AASd-007: if both, the value and the valueId are present then
+     * the value needs to be identical to the value of the referenced coded
+     * value in valueId.
+     *
+     * @param value the Reference for the property valueId.
+     */
+    public void setValueId(Reference value);
+
+    public static abstract class AbstractBuilder<T extends Property, B extends AbstractBuilder<T, B>> extends ExtendableBuilder<T, B> {
+
+        public B value(String value) {
+            getBuildingInstance().setValue(value);
+            return getSelf();
+        }
+
+        public B valueId(Reference value) {
+            getBuildingInstance().setValueId(value);
+            return getSelf();
+        }
+
+    }
 }

@@ -32,5 +32,18 @@ public interface AssetAdministrationShell {
      */
     public void setSubmodels(List<Submodel> value);
 
+    public static abstract class AbstractBuilder<T extends AssetAdministrationShell, B extends AbstractBuilder<T, B>> extends ExtendableBuilder<T, B> {
+
+        public B submodels(List<Submodel> value) {
+            getBuildingInstance().setSubmodels(value);
+            return getSelf();
+        }
+
+        public B submodel(Submodel value) {
+            getBuildingInstance().getSubmodels().add(value);
+            return getSelf();
+        }
+
+    }
 
 }

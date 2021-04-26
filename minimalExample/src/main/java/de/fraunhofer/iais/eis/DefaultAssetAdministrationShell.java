@@ -12,9 +12,10 @@ import java.io.Serializable;
 public class DefaultAssetAdministrationShell implements Serializable, AssetAdministrationShell {
 
     // [explanation] do not use javadoc on internal implementations
-    protected List<Submodel> submodel = new ArrayList<>();
+    protected List<Submodel> submodel;
 
     protected DefaultAssetAdministrationShell() {
+        this.submodel = new ArrayList<>();
     }
 
     // [explanation] do not use javadoc on overriden methods when documentation of overridden method is already sufficient
@@ -32,7 +33,7 @@ public class DefaultAssetAdministrationShell implements Serializable, AssetAdmin
             return false;
         } else if (this.getClass() != obj.getClass()) {
             return false;
-        } else {                        
+        } else {
             DefaultAssetAdministrationShell other = (DefaultAssetAdministrationShell) obj;
             return super.equals(other) && Objects.equals(this.submodel, other.submodel);
         }
@@ -51,8 +52,6 @@ public class DefaultAssetAdministrationShell implements Serializable, AssetAdmin
     }
 
     public static class Builder extends AssetAdministrationShell.AbstractBuilder<DefaultAssetAdministrationShell, Builder> {
-
-        protected List<Submodel> submodel = new ArrayList<>();
 
         @Override
         protected Builder getSelf() {

@@ -25,4 +25,13 @@ public interface HasSemantics {
      */
     public Reference getSemanticId();
 
+    /**
+     * Points to the Expression Semantic of the Submodels The semantic id might
+     * refer to an external information source, which explains the formulation
+     * of the submodel (for example an PDF if a standard).
+     *
+     * @param value the Reference for the property semanticId.
+     */
+    public void setSemanticId(Reference value);
+
 }

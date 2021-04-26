@@ -1,23 +1,20 @@
 package de.fraunhofer.iais.eis;
 
+import de.fraunhofer.iais.eis.builder.ExtendableBuilder;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * "has Asset Identification Model" "In AssetInformation identifying meta data
- * of the asset that is represented by an AAS is defined."@en "The asset may
- * either represent an asset type or an asset instance."@en "The asset has a
- * globally unique identifier plus - if needed - additional domain specific
- * (proprietary) identifiers. However, to support the corner case of very first
- * phase of lifecycle where a stabilised/constant global asset identifier does
- * not already exist, the corresponding attribute \'globalAssetId\' is
- * optional."@en
+ * In AssetInformation identifying meta data of the asset that is represented by
+ * an AAS is defined.
+ *
+ * The asset may either represent an asset type or an asset instance.
+ *
+ * The asset has a * globally unique identifier plus - if needed - additional
+ * domain specific (proprietary) identifiers. However, to support the corner
+ * case of very first phase of lifecycle where a stabilised/constant global
+ * asset identifier does not already exist, the corresponding attribute
+ * 'globalAssetId' is optional.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@type")
-@JsonSubTypes({
-    @JsonSubTypes.Type(value = DefaultAssetInformation.class)
-})
 public interface AssetInformation {
 
     @Override
@@ -27,11 +24,18 @@ public interface AssetInformation {
     public boolean equals(Object obj);
 
     /**
-     * Denotes whether the Asset of of kind \'Type\' or \'Instance\'.
+     * Denotes whether the Asset is of kind 'Type' or 'Instance'.
      *
      * @return Returns the List of AssetKind for the property assetKind.
      */
     public List<AssetKind> getAssetKinds();
+
+    /**
+     * Denotes whether the Asset of of kind 'Type' or 'Instance'.
+     *
+     * @param value The List of AssetKind for the property assetKinds.
+     */
+    public void setAssetKinds(List<AssetKind> value);
 
     /**
      * Reference to either an Asset object or a global reference to the asset
@@ -39,12 +43,16 @@ public interface AssetInformation {
      * exchanged via partners in the life cycle of the asset. In a first phase
      * of the life cycle the asset might not yet have a global id but already an
      * internal identifier. The internal identifier would be modelled via
-     * \'externalAssetId\'. Constraint AASd-023: AssetInformation/globalAssetId
-     * either is a reference to an Asset object or a global reference.
+     * 'externalAssetId'.
+     *
+     * Constraint AASd-023: AssetInformation/globalAssetId either is a reference
+     * to an Asset object or a global reference.
      *
      * @return Returns the Reference for the property globalAssetId.
      */
     public Reference getGlobalAssetId();
+
+    public void setGlobalAssetId(Reference value);
 
     /**
      * Additional domain specific external, typically proprietary Identifier for
@@ -55,6 +63,8 @@ public interface AssetInformation {
      */
     public List<IdentifierKeyValuePair> getExternalAssetIds();
 
+    public void setExternalAssetIds(List<IdentifierKeyValuePair> value);
+
     /**
      * A reference to a Submodel that defines the bill of material of the asset
      * represented by the AAS. This submodel contains a set of entities
@@ -64,6 +74,8 @@ public interface AssetInformation {
      */
     public List<Submodel> getBillOfMaterials();
 
+    public void setBillOfMaterials(List<Submodel> value);
+
     /**
      * Thumbnail of the asset represented by the asset administration shell.
      *
@@ -71,4 +83,49 @@ public interface AssetInformation {
      */
     public File getThumbnail();
 
+    public void setThumbnail(File value);
+
+    public static abstract class AbstractBuilder<T extends AssetInformation, B extends AbstractBuilder<T, B>> extends ExtendableBuilder<T, B> {
+
+        public B assetKinds(List<AssetKind> value) {
+            getBuildingInstance().setAssetKinds(value);
+            return getSelf();
+        }
+
+        public B assetKind(AssetKind value) {
+            getBuildingInstance().getAssetKinds().add(value);
+            return getSelf();
+        }
+
+        public B billOfMaterials(List<Submodel> value) {
+            getBuildingInstance().setBillOfMaterials(value);
+            return getSelf();
+        }
+
+        public B billOfMaterials(Submodel value) {
+            getBuildingInstance().getBillOfMaterials().add(value);
+            return getSelf();
+        }
+
+        public B externalAssetIds(List<IdentifierKeyValuePair> value) {
+            getBuildingInstance().setExternalAssetIds(value);
+            return getSelf();
+        }
+
+        public B externalAssetId(IdentifierKeyValuePair value) {
+            getBuildingInstance().getExternalAssetIds().add(value);
+            return getSelf();
+        }
+
+        public B globalAssetId(Reference value) {
+            getBuildingInstance().setGlobalAssetId(value);
+            return getSelf();
+        }
+
+        public B thumbnail(File value) {
+            getBuildingInstance().setThumbnail(value);
+            return getSelf();
+        }
+
+    }
 }

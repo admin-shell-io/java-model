@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import de.fraunhofer.iais.eis.builder.ExtendableBuilder;
 import java.util.List;
 
 /**
@@ -23,4 +24,24 @@ public interface Reference {
      */
     public List<Key> getKeys();
 
+    /**
+     * Unique reference in its name space.
+     *
+     * @param value the List of Key for the property key.
+     */
+    public void setKeys(List<Key> value);
+
+    public static abstract class AbstractBuilder<T extends Reference, B extends AbstractBuilder<T, B>> extends ExtendableBuilder<T, B> {
+
+        public B keys(List<Key> value) {
+            getBuildingInstance().setKeys(value);
+            return getSelf();
+        }
+
+        public B key(Key value) {
+            getBuildingInstance().getKeys().add(value);
+            return getSelf();
+        }
+
+    }
 }

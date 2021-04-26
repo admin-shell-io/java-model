@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import de.fraunhofer.iais.eis.builder.ExtendableBuilder;
 import java.util.List;
 
 /**
@@ -31,4 +32,25 @@ public interface Submodel {
      */
     public List<SubmodelElement> getSubmodelElements();
 
+    /**
+     * A submodel consists of zero or more submodel elements.
+     *
+     * @param value the List of SubmodelElement for the property
+     * submodelElement.
+     */
+    public void setSubmodelElements(List<SubmodelElement> value);
+
+    public static abstract class AbstractBuilder<T extends Submodel, B extends AbstractBuilder<T, B>> extends ExtendableBuilder<T, B> {
+
+        public B submodelElements(List<SubmodelElement> value) {
+            getBuildingInstance().setSubmodelElements(value);
+            return getSelf();
+        }
+
+        public B submodelElement(SubmodelElement value) {
+            getBuildingInstance().getSubmodelElements().add(value);
+            return getSelf();
+        }
+
+    }
 }
