@@ -1,12 +1,11 @@
 package de.fraunhofer.iais.eis;
 
 import java.util.Objects;
-import java.io.Serializable;
 
 /**
  * Default implementation of {@link de.fraunhofer.iais.eis.File}"
  */
-public class DefaultFile implements Serializable, File {
+public class DefaultFile implements File {
 
     protected String mimeType;
 

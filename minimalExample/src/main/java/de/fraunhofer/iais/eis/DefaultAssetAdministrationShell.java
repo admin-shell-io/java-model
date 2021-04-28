@@ -3,13 +3,12 @@ package de.fraunhofer.iais.eis;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.io.Serializable;
 
 /**
  * Default implementation of
  * {@link de.fraunhofer.iais.eis.AssetAdministrationShell}"
  */
-public class DefaultAssetAdministrationShell implements Serializable, AssetAdministrationShell {
+public class DefaultAssetAdministrationShell implements AssetAdministrationShell {
 
     // [explanation] do not use javadoc on internal implementations
     protected List<Submodel> submodel;

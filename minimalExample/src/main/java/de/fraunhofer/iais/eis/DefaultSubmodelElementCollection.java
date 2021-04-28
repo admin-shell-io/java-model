@@ -2,14 +2,13 @@ package de.fraunhofer.iais.eis;
 
 import java.util.List;
 import java.util.Objects;
-import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Default implementation of
  * {@link de.fraunhofer.iais.eis.SubmodelElementCollection}"
  */
-public class DefaultSubmodelElementCollection implements Serializable, SubmodelElementCollection {
+public class DefaultSubmodelElementCollection implements SubmodelElementCollection {
 
     protected boolean allowDuplicates;
 

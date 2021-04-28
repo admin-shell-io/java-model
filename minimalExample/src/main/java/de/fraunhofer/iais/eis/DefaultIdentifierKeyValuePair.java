@@ -1,13 +1,12 @@
 package de.fraunhofer.iais.eis;
 
 import java.util.Objects;
-import java.io.Serializable;
 
 /**
  * Default implementation of
  * {@link de.fraunhofer.iais.eis.IdentifierKeyValuePair}"
  */
-public class DefaultIdentifierKeyValuePair implements Serializable, IdentifierKeyValuePair {
+public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 
     protected Reference semanticId;
 

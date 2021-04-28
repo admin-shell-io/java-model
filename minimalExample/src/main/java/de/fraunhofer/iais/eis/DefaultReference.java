@@ -2,13 +2,12 @@ package de.fraunhofer.iais.eis;
 
 import java.util.List;
 import java.util.Objects;
-import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Default implementation of {@link de.fraunhofer.iais.eis.Reference}"
  */
-public class DefaultReference implements Serializable, Reference {
+public class DefaultReference implements Reference {
 
     protected List<Key> key;
 

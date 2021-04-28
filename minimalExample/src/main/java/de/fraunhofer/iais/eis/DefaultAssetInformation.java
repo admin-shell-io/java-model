@@ -2,13 +2,12 @@ package de.fraunhofer.iais.eis;
 
 import java.util.List;
 import java.util.Objects;
-import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Default implementation of {@link de.fraunhofer.iais.eis.AssetInformation}"
  */
-public class DefaultAssetInformation implements Serializable, AssetInformation {
+public class DefaultAssetInformation implements AssetInformation {
 
     protected List<AssetKind> assetKind;
 
