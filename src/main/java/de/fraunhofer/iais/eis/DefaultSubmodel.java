@@ -15,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -38,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Submodel")
-public class DefaultSubmodel implements Serializable, Submodel {
+public class DefaultSubmodel implements Submodel {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
@@ -167,6 +166,7 @@ public class DefaultSubmodel implements Serializable, Submodel {
 		return this.comments;
 	}
 
+	@Override
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.submodelElements,
 			this.qualifiers,
@@ -181,6 +181,7 @@ public class DefaultSubmodel implements Serializable, Submodel {
 			this.semanticId});
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;

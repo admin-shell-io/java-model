@@ -15,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -36,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Reference")
-public class DefaultReference implements Serializable, Reference {
+public class DefaultReference implements Reference {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
@@ -78,10 +77,12 @@ public class DefaultReference implements Serializable, Reference {
 		return this.comments;
 	}
 
+	@Override
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.keys});
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;

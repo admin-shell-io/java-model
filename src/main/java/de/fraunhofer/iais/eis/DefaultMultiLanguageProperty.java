@@ -15,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -36,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:MultiLanguageProperty")
-public class DefaultMultiLanguageProperty implements Serializable, MultiLanguageProperty {
+public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
@@ -159,6 +158,7 @@ public class DefaultMultiLanguageProperty implements Serializable, MultiLanguage
 		return this.comments;
 	}
 
+	@Override
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.values,
 			this.valueIds,
@@ -172,6 +172,7 @@ public class DefaultMultiLanguageProperty implements Serializable, MultiLanguage
 			this.semanticId});
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;

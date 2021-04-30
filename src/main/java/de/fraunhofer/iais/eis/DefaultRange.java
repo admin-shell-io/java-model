@@ -15,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -39,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Range")
-public class DefaultRange implements Serializable, Range {
+public class DefaultRange implements Range {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
@@ -159,6 +158,7 @@ public class DefaultRange implements Serializable, Range {
 		return this.comments;
 	}
 
+	@Override
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.max,
 			this.min,
@@ -172,6 +172,7 @@ public class DefaultRange implements Serializable, Range {
 			this.semanticId});
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;

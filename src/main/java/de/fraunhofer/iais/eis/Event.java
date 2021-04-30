@@ -15,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -64,19 +63,6 @@ public interface Event extends SubmodelElement {
 	* @return Human readable explanatory comments
 	*/
 	public List<TypedLiteral> getComments();
-
-	/**
-	* This function returns a hash code value for the Event for the benefit of e.g. hash tables.
-	* @return a hash code value for the Event
-	*/
-	public int hashCode();
-
-	/**
-	* This function indicates whether some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this Event is the same as the obj argument; false otherwise.
-	*/
-	public boolean equals(Object obj);
 
 
 }

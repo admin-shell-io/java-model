@@ -15,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -36,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Key")
-public class DefaultKey implements Serializable, Key {
+public class DefaultKey implements Key {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
@@ -96,12 +95,14 @@ public class DefaultKey implements Serializable, Key {
 		return this.comments;
 	}
 
+	@Override
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.idType,
 			this.type,
 			this.value});
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;

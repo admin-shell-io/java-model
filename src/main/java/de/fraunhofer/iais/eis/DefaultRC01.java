@@ -15,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -36,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/")
-public class DefaultRC01 implements Serializable, RC01 {
+public class DefaultRC01 implements RC01 {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
@@ -154,6 +153,7 @@ public class DefaultRC01 implements Serializable, RC01 {
 		return this.comments;
 	}
 
+	@Override
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.conversionFactors,
 			this.definitions,
@@ -169,6 +169,7 @@ public class DefaultRC01 implements Serializable, RC01 {
 			this.unitSymbols});
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;

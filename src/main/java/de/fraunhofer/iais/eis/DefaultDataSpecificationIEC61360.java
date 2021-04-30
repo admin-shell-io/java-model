@@ -15,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -37,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360")
-public class DefaultDataSpecificationIEC61360 implements Serializable, DataSpecificationIEC61360 {
+public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC61360 {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
@@ -168,6 +167,7 @@ public class DefaultDataSpecificationIEC61360 implements Serializable, DataSpeci
 		return this.comments;
 	}
 
+	@Override
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.dataTypes,
 			this.definitions,
@@ -184,6 +184,7 @@ public class DefaultDataSpecificationIEC61360 implements Serializable, DataSpeci
 			this.valueId});
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;

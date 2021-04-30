@@ -15,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -36,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:AssetAdministrationShell")
-public class DefaultAssetAdministrationShell implements Serializable, AssetAdministrationShell {
+public class DefaultAssetAdministrationShell implements AssetAdministrationShell {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
@@ -172,6 +171,7 @@ public class DefaultAssetAdministrationShell implements Serializable, AssetAdmin
 		return this.comments;
 	}
 
+	@Override
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.assetInformation,
 			this.derivedFrom,
@@ -187,6 +187,7 @@ public class DefaultAssetAdministrationShell implements Serializable, AssetAdmin
 			this.idShort});
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;

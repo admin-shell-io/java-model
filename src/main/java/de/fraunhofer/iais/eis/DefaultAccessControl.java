@@ -15,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -36,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:AccessControl")
-public class DefaultAccessControl implements Serializable, AccessControl {
+public class DefaultAccessControl implements AccessControl {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
@@ -129,6 +128,7 @@ public class DefaultAccessControl implements Serializable, AccessControl {
 		return this.comments;
 	}
 
+	@Override
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.accessPermissionRules,
 			this.selectableSubjectAttributes,
@@ -139,6 +139,7 @@ public class DefaultAccessControl implements Serializable, AccessControl {
 			this.defaultEnvironmentAttributes});
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;

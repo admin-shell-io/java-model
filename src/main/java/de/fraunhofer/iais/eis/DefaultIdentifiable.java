@@ -15,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -36,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Identifiable")
-public class DefaultIdentifiable implements Serializable, Identifiable {
+public class DefaultIdentifiable implements Identifiable {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
@@ -124,6 +123,7 @@ public class DefaultIdentifiable implements Serializable, Identifiable {
 		return this.comments;
 	}
 
+	@Override
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.administration,
 			this.identification,
@@ -133,6 +133,7 @@ public class DefaultIdentifiable implements Serializable, Identifiable {
 			this.idShort});
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;

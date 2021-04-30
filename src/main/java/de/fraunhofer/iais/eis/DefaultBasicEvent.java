@@ -15,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -36,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:BasicEvent")
-public class DefaultBasicEvent implements Serializable, BasicEvent {
+public class DefaultBasicEvent implements BasicEvent {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
@@ -148,6 +147,7 @@ public class DefaultBasicEvent implements Serializable, BasicEvent {
 		return this.comments;
 	}
 
+	@Override
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.observed,
 			this.referableCategories,
@@ -160,6 +160,7 @@ public class DefaultBasicEvent implements Serializable, BasicEvent {
 			this.semanticId});
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
