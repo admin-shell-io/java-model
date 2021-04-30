@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -37,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:HasExtensions")
-public class DefaultHasExtensions implements Serializable, HasExtensions {
+public class DefaultHasExtensions implements HasExtensions {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
@@ -45,11 +43,11 @@ public class DefaultHasExtensions implements Serializable, HasExtensions {
 
 	//List of all labels of this class
 	@JsonIgnore
-	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("HasExtensions", ""));
+	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("HasExtensions", ""));
 
 	//List of all comments of this class
 	@JsonIgnore
-	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Element that can be extended by proprietary extensions.", "en"));
+	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Element that can be extended by proprietary extensions.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -57,8 +55,8 @@ public class DefaultHasExtensions implements Serializable, HasExtensions {
 	* "has extension"
 	* "An extension of the element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension", "extension"})
-	protected List<Extension> extension;
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension")
+	protected List<Extension> extensions;
 
 
 	// no manual construction
@@ -66,63 +64,25 @@ public class DefaultHasExtensions implements Serializable, HasExtensions {
 		id = VocabUtil.getInstance().createRandomUrl("hasExtensions");
 	}
 
-	/**
-	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
-	* @return ID of current object as URI
-	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
-	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
-	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
-	*/
-	public List<TypedLiteral> getLabel() {
-		return this.label;
+	public List<TypedLiteral> getLabels() {
+		return this.labels;
 	}
 
-	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
-	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
-	*/
-	public List<TypedLiteral> getComment() {
-		return this.comment;
+	public List<TypedLiteral> getComments() {
+		return this.comments;
 	}
 
-	public Object urifyObjects(Object value) {
-		if (value instanceof String && value.toString().startsWith("http")) {
-			try {
-				value = new URI(value.toString());
-			} catch (Exception e) { /* do nothing */ }
-		} else if (value instanceof ArrayList) {
-			ArrayList<Object> result_array = new ArrayList<Object>();
-			((ArrayList) value).forEach(x -> result_array.add(urifyObjects(x)));
-			return result_array;
-		} else if (value instanceof Map) {
-			Map<String, Object> result_map = new HashMap<String, Object>();
-			((Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
-			return result_map;
-		}
-		return value;
-	}
-
-	/**
-	* This function returns a hash code value for the HasExtensions for the benefit of e.g. hash tables.
-	* @return a hash code value for the HasExtensions
-	*/
+	@Override
 	public int hashCode() {
-		return Objects.hash(new Object[]{super.hashCode(), this.extension});
+		return Objects.hash(new Object[]{this.extensions});
 	}
 
-	/**
-	* This function indicates wheather some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this HasExtensions is the same as the obj argument; false otherwise.
-	*/
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -132,7 +92,7 @@ public class DefaultHasExtensions implements Serializable, HasExtensions {
 			return false;
 		} else {
 			DefaultHasExtensions other = (DefaultHasExtensions) obj;
-			return super.equals(other) && Objects.equals(this.extension, other.extension);
+			return Objects.equals(this.extensions, other.extensions);
 		}
 	}
 
@@ -140,23 +100,12 @@ public class DefaultHasExtensions implements Serializable, HasExtensions {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "An extension of the element."@en
-	* @return Returns the List of Extension for the property extension.
-	* More information under https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension")
-	final public List<Extension> getExtension() {
-		return extension;
+	final public List<Extension> getExtensions() {
+		return extensions;
 	}
-
 	
-	/**
-	* "An extension of the element."@en
-	* @param extension desired value for the property extension.
-	* More information under https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension
-	*/
-	final public void setExtension (List<Extension> extension) {
-		this.extension = extension;
+	final public void setExtensions (List<Extension> extensions) {
+		this.extensions = extensions;
 	}
 }

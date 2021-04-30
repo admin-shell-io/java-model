@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -78,35 +76,35 @@ public class EntityBuilder {
 
 
 	/**
-	* This function allows setting a value for statement
-	* @param statement desired value to be set
-	* @return Builder object with new value for statement
+	* This function allows setting a value for statements
+	* @param statements desired value to be set
+	* @return Builder object with new value for statements
 	*/
-	final public EntityBuilder statement(List<SubmodelElement> statement) {
-		this.defaultEntity.statement = statement;
+	final public EntityBuilder statements(List<SubmodelElement> statements) {
+		this.defaultEntity.statements = statements;
 		return this;
 	}
 
 
 
 	/**
-	* This function allows setting a value for referableCategory
-	* @param referableCategory desired value to be set
-	* @return Builder object with new value for referableCategory
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public EntityBuilder referableCategory(List<String> referableCategory) {
-		this.defaultEntity.referableCategory = referableCategory;
+	final public EntityBuilder referableCategories(List<String> referableCategories) {
+		this.defaultEntity.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public EntityBuilder description(List<TypedLiteral> description) {
-		this.defaultEntity.description = description;
+	final public EntityBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultEntity.descriptions = descriptions;
 		return this;
 	}
 
@@ -145,23 +143,23 @@ public class EntityBuilder {
 
 
 	/**
-	* This function allows setting a value for qualifier
-	* @param qualifier desired value to be set
-	* @return Builder object with new value for qualifier
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public EntityBuilder qualifier(List<Constraint> qualifier) {
-		this.defaultEntity.qualifier = qualifier;
+	final public EntityBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultEntity.qualifiers = qualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecification
-	* @param dataSpecification desired value to be set
-	* @return Builder object with new value for dataSpecification
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public EntityBuilder dataSpecification(List<Reference> dataSpecification) {
-		this.defaultEntity.dataSpecification = dataSpecification;
+	final public EntityBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultEntity.dataSpecifications = dataSpecifications;
 		return this;
 	}
 

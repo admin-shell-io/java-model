@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -36,8 +34,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 * "Describes the Administration Shell for Assets, Products, Components, e.g. Machines"@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
-@JsonSubTypes({
-	@JsonSubTypes.Type(value = DefaultAssetAdministrationShell.class)
+@KnownSubtypes({
+	@KnownSubtypes.Type(value = DefaultAssetAdministrationShell.class)
 })
 public interface AssetAdministrationShell extends HasDataSpecification, Identifiable {
 
@@ -51,31 +49,18 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
 	public URI getId();
 
 	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This function retrieves a human readable labels about the current class, as defined in the ontology.
 	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
+	* @return Human readable labels
 	*/
-	public List<TypedLiteral> getLabel();
+	public List<TypedLiteral> getLabels();
 
 	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This function retrieves a human readable explanatory comments about the current class, as defined in the ontology.
 	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
+	* @return Human readable explanatory comments
 	*/
-	public List<TypedLiteral> getComment();
-
-	/**
-	* This function returns a hash code value for the AssetAdministrationShell for the benefit of e.g. hash tables.
-	* @return a hash code value for the AssetAdministrationShell
-	*/
-	public int hashCode();
-
-	/**
-	* This function indicates wheather some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this AssetAdministrationShell is the same as the obj argument; false otherwise.
-	*/
-	public boolean equals(Object obj);
+	public List<TypedLiteral> getComments();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
@@ -106,18 +91,18 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
 
 	/**
 	* "Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset"@en
-	* @return Returns the List of Submodel for the property submodel.
+	* @return Returns the List of Submodels for the property submodels.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
-	public List<Submodel> getSubmodel();
+	public List<Submodel> getSubmodels();
 
 	/**
 	* "Points to the differents views associated to the Administration Shell via the Submodels."@en
-	* @return Returns the List of View for the property view.
+	* @return Returns the List of Views for the property views.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view")
-	public List<View> getView();
+	public List<View> getViews();
 
 }

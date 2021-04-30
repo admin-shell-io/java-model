@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -78,34 +76,34 @@ public class AssetAdministrationShellBuilder {
 
 
 	/**
-	* This function allows setting a value for submodel
-	* @param submodel desired value to be set
-	* @return Builder object with new value for submodel
+	* This function allows setting a value for submodels
+	* @param submodels desired value to be set
+	* @return Builder object with new value for submodels
 	*/
-	final public AssetAdministrationShellBuilder submodel(List<Submodel> submodel) {
-		this.defaultAssetAdministrationShell.submodel = submodel;
+	final public AssetAdministrationShellBuilder submodels(List<Submodel> submodels) {
+		this.defaultAssetAdministrationShell.submodels = submodels;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for view
-	* @param view desired value to be set
-	* @return Builder object with new value for view
+	* This function allows setting a value for views
+	* @param views desired value to be set
+	* @return Builder object with new value for views
 	*/
-	final public AssetAdministrationShellBuilder view(List<View> view) {
-		this.defaultAssetAdministrationShell.view = view;
+	final public AssetAdministrationShellBuilder views(List<View> views) {
+		this.defaultAssetAdministrationShell.views = views;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecification
-	* @param dataSpecification desired value to be set
-	* @return Builder object with new value for dataSpecification
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public AssetAdministrationShellBuilder dataSpecification(List<Reference> dataSpecification) {
-		this.defaultAssetAdministrationShell.dataSpecification = dataSpecification;
+	final public AssetAdministrationShellBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultAssetAdministrationShell.dataSpecifications = dataSpecifications;
 		return this;
 	}
 
@@ -133,23 +131,23 @@ public class AssetAdministrationShellBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategory
-	* @param referableCategory desired value to be set
-	* @return Builder object with new value for referableCategory
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public AssetAdministrationShellBuilder referableCategory(List<String> referableCategory) {
-		this.defaultAssetAdministrationShell.referableCategory = referableCategory;
+	final public AssetAdministrationShellBuilder referableCategories(List<String> referableCategories) {
+		this.defaultAssetAdministrationShell.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public AssetAdministrationShellBuilder description(List<TypedLiteral> description) {
-		this.defaultAssetAdministrationShell.description = description;
+	final public AssetAdministrationShellBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultAssetAdministrationShell.descriptions = descriptions;
 		return this;
 	}
 

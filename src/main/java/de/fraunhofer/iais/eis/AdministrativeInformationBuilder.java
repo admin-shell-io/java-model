@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -67,12 +65,12 @@ public class AdministrativeInformationBuilder {
 
 
 	/**
-	* This function allows setting a value for dataSpecification
-	* @param dataSpecification desired value to be set
-	* @return Builder object with new value for dataSpecification
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public AdministrativeInformationBuilder dataSpecification(List<Reference> dataSpecification) {
-		this.defaultAdministrativeInformation.dataSpecification = dataSpecification;
+	final public AdministrativeInformationBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultAdministrativeInformation.dataSpecifications = dataSpecifications;
 		return this;
 	}
 	/**

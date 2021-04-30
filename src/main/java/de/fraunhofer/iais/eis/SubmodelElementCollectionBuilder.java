@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -67,35 +65,35 @@ public class SubmodelElementCollectionBuilder {
 
 
 	/**
-	* This function allows setting a value for value
-	* @param value desired value to be set
-	* @return Builder object with new value for value
+	* This function allows setting a value for values
+	* @param values desired value to be set
+	* @return Builder object with new value for values
 	*/
-	final public SubmodelElementCollectionBuilder value(List<SubmodelElement> value) {
-		this.defaultSubmodelElementCollection.value = value;
+	final public SubmodelElementCollectionBuilder values(List<SubmodelElement> values) {
+		this.defaultSubmodelElementCollection.values = values;
 		return this;
 	}
 
 
 
 	/**
-	* This function allows setting a value for referableCategory
-	* @param referableCategory desired value to be set
-	* @return Builder object with new value for referableCategory
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public SubmodelElementCollectionBuilder referableCategory(List<String> referableCategory) {
-		this.defaultSubmodelElementCollection.referableCategory = referableCategory;
+	final public SubmodelElementCollectionBuilder referableCategories(List<String> referableCategories) {
+		this.defaultSubmodelElementCollection.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public SubmodelElementCollectionBuilder description(List<TypedLiteral> description) {
-		this.defaultSubmodelElementCollection.description = description;
+	final public SubmodelElementCollectionBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultSubmodelElementCollection.descriptions = descriptions;
 		return this;
 	}
 
@@ -134,23 +132,23 @@ public class SubmodelElementCollectionBuilder {
 
 
 	/**
-	* This function allows setting a value for qualifier
-	* @param qualifier desired value to be set
-	* @return Builder object with new value for qualifier
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public SubmodelElementCollectionBuilder qualifier(List<Constraint> qualifier) {
-		this.defaultSubmodelElementCollection.qualifier = qualifier;
+	final public SubmodelElementCollectionBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultSubmodelElementCollection.qualifiers = qualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecification
-	* @param dataSpecification desired value to be set
-	* @return Builder object with new value for dataSpecification
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public SubmodelElementCollectionBuilder dataSpecification(List<Reference> dataSpecification) {
-		this.defaultSubmodelElementCollection.dataSpecification = dataSpecification;
+	final public SubmodelElementCollectionBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultSubmodelElementCollection.dataSpecifications = dataSpecifications;
 		return this;
 	}
 

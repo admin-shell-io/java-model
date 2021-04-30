@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -36,8 +34,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 * "Defines the security policy information points (PIP). Serves as the retrieval source of attributes, or the data required for policy evaluation to provide the information needed by the policy decision point to make the decisions."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
-@JsonSubTypes({
-	@JsonSubTypes.Type(value = DefaultPolicyInformationPoints.class)
+@KnownSubtypes({
+	@KnownSubtypes.Type(value = DefaultPolicyInformationPoints.class)
 })
 public interface PolicyInformationPoints {
 
@@ -51,31 +49,18 @@ public interface PolicyInformationPoints {
 	public URI getId();
 
 	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This function retrieves a human readable labels about the current class, as defined in the ontology.
 	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
+	* @return Human readable labels
 	*/
-	public List<TypedLiteral> getLabel();
+	public List<TypedLiteral> getLabels();
 
 	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This function retrieves a human readable explanatory comments about the current class, as defined in the ontology.
 	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
+	* @return Human readable explanatory comments
 	*/
-	public List<TypedLiteral> getComment();
-
-	/**
-	* This function returns a hash code value for the PolicyInformationPoints for the benefit of e.g. hash tables.
-	* @return a hash code value for the PolicyInformationPoints
-	*/
-	public int hashCode();
-
-	/**
-	* This function indicates wheather some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this PolicyInformationPoints is the same as the obj argument; false otherwise.
-	*/
-	public boolean equals(Object obj);
+	public List<TypedLiteral> getComments();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
@@ -90,10 +75,10 @@ public interface PolicyInformationPoints {
 
 	/**
 	* "References to submodels defining information used by security access permission rules."@en
-	* @return Returns the List of Submodel for the property internalInformationPoint.
+	* @return Returns the List of Submodels for the property internalInformationPoints.
 	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint")
-	public List<Submodel> getInternalInformationPoint();
+	public List<Submodel> getInternalInformationPoints();
 
 }

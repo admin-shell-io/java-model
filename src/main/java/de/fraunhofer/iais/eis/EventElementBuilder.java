@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -47,23 +45,23 @@ public class EventElementBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategory
-	* @param referableCategory desired value to be set
-	* @return Builder object with new value for referableCategory
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public EventElementBuilder referableCategory(List<String> referableCategory) {
-		this.defaultEventElement.referableCategory = referableCategory;
+	final public EventElementBuilder referableCategories(List<String> referableCategories) {
+		this.defaultEventElement.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public EventElementBuilder description(List<TypedLiteral> description) {
-		this.defaultEventElement.description = description;
+	final public EventElementBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultEventElement.descriptions = descriptions;
 		return this;
 	}
 
@@ -102,23 +100,23 @@ public class EventElementBuilder {
 
 
 	/**
-	* This function allows setting a value for qualifier
-	* @param qualifier desired value to be set
-	* @return Builder object with new value for qualifier
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public EventElementBuilder qualifier(List<Constraint> qualifier) {
-		this.defaultEventElement.qualifier = qualifier;
+	final public EventElementBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultEventElement.qualifiers = qualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecification
-	* @param dataSpecification desired value to be set
-	* @return Builder object with new value for dataSpecification
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public EventElementBuilder dataSpecification(List<Reference> dataSpecification) {
-		this.defaultEventElement.dataSpecification = dataSpecification;
+	final public EventElementBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultEventElement.dataSpecifications = dataSpecifications;
 		return this;
 	}
 

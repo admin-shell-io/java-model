@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -37,18 +35,18 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 * "The concept of type and instance applies to submodel elements. Properties are special submodel elements. The property types are defined in dictionaries (like the IEC Common Data Dictionary or eCl@ss), they do not have a value. The property type (kind=Type) is also called data element type in some standards. The property instances (kind=Instance) typically have a value. A property instance is also called property-value pair in certain standards."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
-@JsonSubTypes({
-	@JsonSubTypes.Type(value = DefaultSubmodelElement.class),
-	@JsonSubTypes.Type(value = RelationshipElement.class),
-	@JsonSubTypes.Type(value = DataElement.class),
-	@JsonSubTypes.Type(value = File.class),
-	@JsonSubTypes.Type(value = Event.class),
-	@JsonSubTypes.Type(value = Capability.class),
-	@JsonSubTypes.Type(value = Entity.class),
-	@JsonSubTypes.Type(value = EventElement.class),
-	@JsonSubTypes.Type(value = EventMessage.class),
-	@JsonSubTypes.Type(value = Operation.class),
-	@JsonSubTypes.Type(value = SubmodelElementCollection.class)
+@KnownSubtypes({
+	@KnownSubtypes.Type(value = DefaultSubmodelElement.class),
+	@KnownSubtypes.Type(value = RelationshipElement.class),
+	@KnownSubtypes.Type(value = DataElement.class),
+	@KnownSubtypes.Type(value = File.class),
+	@KnownSubtypes.Type(value = Event.class),
+	@KnownSubtypes.Type(value = Capability.class),
+	@KnownSubtypes.Type(value = Entity.class),
+	@KnownSubtypes.Type(value = EventElement.class),
+	@KnownSubtypes.Type(value = EventMessage.class),
+	@KnownSubtypes.Type(value = Operation.class),
+	@KnownSubtypes.Type(value = SubmodelElementCollection.class)
 })
 public interface SubmodelElement extends Referable, Qualifiable, HasDataSpecification, HasKind, HasSemantics {
 
@@ -62,31 +60,18 @@ public interface SubmodelElement extends Referable, Qualifiable, HasDataSpecific
 	public URI getId();
 
 	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This function retrieves a human readable labels about the current class, as defined in the ontology.
 	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
+	* @return Human readable labels
 	*/
-	public List<TypedLiteral> getLabel();
+	public List<TypedLiteral> getLabels();
 
 	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This function retrieves a human readable explanatory comments about the current class, as defined in the ontology.
 	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
+	* @return Human readable explanatory comments
 	*/
-	public List<TypedLiteral> getComment();
-
-	/**
-	* This function returns a hash code value for the SubmodelElement for the benefit of e.g. hash tables.
-	* @return a hash code value for the SubmodelElement
-	*/
-	public int hashCode();
-
-	/**
-	* This function indicates wheather some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this SubmodelElement is the same as the obj argument; false otherwise.
-	*/
-	public boolean equals(Object obj);
+	public List<TypedLiteral> getComments();
 
 
 }

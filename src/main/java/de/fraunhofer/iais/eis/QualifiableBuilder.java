@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -45,12 +43,12 @@ public class QualifiableBuilder {
 	}
 
 	/**
-	* This function allows setting a value for qualifier
-	* @param qualifier desired value to be set
-	* @return Builder object with new value for qualifier
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public QualifiableBuilder qualifier(List<Constraint> qualifier) {
-		this.defaultQualifiable.qualifier = qualifier;
+	final public QualifiableBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultQualifiable.qualifiers = qualifiers;
 		return this;
 	}
 	/**

@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -45,12 +43,12 @@ public class HasExtensionsBuilder {
 	}
 
 	/**
-	* This function allows setting a value for extension
-	* @param extension desired value to be set
-	* @return Builder object with new value for extension
+	* This function allows setting a value for extensions
+	* @param extensions desired value to be set
+	* @return Builder object with new value for extensions
 	*/
-	final public HasExtensionsBuilder extension(List<Extension> extension) {
-		this.defaultHasExtensions.extension = extension;
+	final public HasExtensionsBuilder extensions(List<Extension> extensions) {
+		this.defaultHasExtensions.extensions = extensions;
 		return this;
 	}
 	/**

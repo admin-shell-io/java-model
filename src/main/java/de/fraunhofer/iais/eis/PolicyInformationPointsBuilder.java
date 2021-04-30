@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -56,12 +54,12 @@ public class PolicyInformationPointsBuilder {
 
 
 	/**
-	* This function allows setting a value for internalInformationPoint
-	* @param internalInformationPoint desired value to be set
-	* @return Builder object with new value for internalInformationPoint
+	* This function allows setting a value for internalInformationPoints
+	* @param internalInformationPoints desired value to be set
+	* @return Builder object with new value for internalInformationPoints
 	*/
-	final public PolicyInformationPointsBuilder internalInformationPoint(List<Submodel> internalInformationPoint) {
-		this.defaultPolicyInformationPoints.internalInformationPoint = internalInformationPoint;
+	final public PolicyInformationPointsBuilder internalInformationPoints(List<Submodel> internalInformationPoints) {
+		this.defaultPolicyInformationPoints.internalInformationPoints = internalInformationPoints;
 		return this;
 	}
 	/**

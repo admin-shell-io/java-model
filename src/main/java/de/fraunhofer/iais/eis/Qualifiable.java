@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -37,11 +35,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 * "Constraint AASd-021: Every qualifiable can only have one qualifier with the same Qualifier/type."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
-@JsonSubTypes({
-	@JsonSubTypes.Type(value = DefaultQualifiable.class),
-	@JsonSubTypes.Type(value = AccessPermissionRule.class),
-	@JsonSubTypes.Type(value = Submodel.class),
-	@JsonSubTypes.Type(value = SubmodelElement.class)
+@KnownSubtypes({
+	@KnownSubtypes.Type(value = DefaultQualifiable.class),
+	@KnownSubtypes.Type(value = AccessPermissionRule.class),
+	@KnownSubtypes.Type(value = Submodel.class),
+	@KnownSubtypes.Type(value = SubmodelElement.class)
 })
 public interface Qualifiable {
 
@@ -55,41 +53,28 @@ public interface Qualifiable {
 	public URI getId();
 
 	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This function retrieves a human readable labels about the current class, as defined in the ontology.
 	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
+	* @return Human readable labels
 	*/
-	public List<TypedLiteral> getLabel();
+	public List<TypedLiteral> getLabels();
 
 	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This function retrieves a human readable explanatory comments about the current class, as defined in the ontology.
 	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
+	* @return Human readable explanatory comments
 	*/
-	public List<TypedLiteral> getComment();
-
-	/**
-	* This function returns a hash code value for the Qualifiable for the benefit of e.g. hash tables.
-	* @return a hash code value for the Qualifiable
-	*/
-	public int hashCode();
-
-	/**
-	* This function indicates wheather some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this Qualifiable is the same as the obj argument; false otherwise.
-	*/
-	public boolean equals(Object obj);
+	public List<TypedLiteral> getComments();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
 	* "Additional qualification of a qualifiable element."@en
-	* @return Returns the List of Constraint for the property qualifier.
+	* @return Returns the List of Constraints for the property qualifiers.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
-	public List<Constraint> getQualifier();
+	public List<Constraint> getQualifiers();
 
 }

@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -45,34 +43,34 @@ public class ConceptDescriptionBuilder {
 	}
 
 	/**
-	* This function allows setting a value for content
-	* @param content desired value to be set
-	* @return Builder object with new value for content
+	* This function allows setting a value for contents
+	* @param contents desired value to be set
+	* @return Builder object with new value for contents
 	*/
-	final public ConceptDescriptionBuilder content(List<DataSpecificationContent> content) {
-		this.defaultConceptDescription.content = content;
+	final public ConceptDescriptionBuilder contents(List<DataSpecificationContent> contents) {
+		this.defaultConceptDescription.contents = contents;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for isCaseOf
-	* @param isCaseOf desired value to be set
-	* @return Builder object with new value for isCaseOf
+	* This function allows setting a value for isCaseOfs
+	* @param isCaseOfs desired value to be set
+	* @return Builder object with new value for isCaseOfs
 	*/
-	final public ConceptDescriptionBuilder isCaseOf(List<Reference> isCaseOf) {
-		this.defaultConceptDescription.isCaseOf = isCaseOf;
+	final public ConceptDescriptionBuilder isCaseOfs(List<Reference> isCaseOfs) {
+		this.defaultConceptDescription.isCaseOfs = isCaseOfs;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecification
-	* @param dataSpecification desired value to be set
-	* @return Builder object with new value for dataSpecification
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public ConceptDescriptionBuilder dataSpecification(List<Reference> dataSpecification) {
-		this.defaultConceptDescription.dataSpecification = dataSpecification;
+	final public ConceptDescriptionBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultConceptDescription.dataSpecifications = dataSpecifications;
 		return this;
 	}
 
@@ -100,23 +98,23 @@ public class ConceptDescriptionBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategory
-	* @param referableCategory desired value to be set
-	* @return Builder object with new value for referableCategory
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public ConceptDescriptionBuilder referableCategory(List<String> referableCategory) {
-		this.defaultConceptDescription.referableCategory = referableCategory;
+	final public ConceptDescriptionBuilder referableCategories(List<String> referableCategories) {
+		this.defaultConceptDescription.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public ConceptDescriptionBuilder description(List<TypedLiteral> description) {
-		this.defaultConceptDescription.description = description;
+	final public ConceptDescriptionBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultConceptDescription.descriptions = descriptions;
 		return this;
 	}
 

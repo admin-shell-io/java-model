@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -45,34 +43,34 @@ public class SubmodelBuilder {
 	}
 
 	/**
-	* This function allows setting a value for submodelElement
-	* @param submodelElement desired value to be set
-	* @return Builder object with new value for submodelElement
+	* This function allows setting a value for submodelElements
+	* @param submodelElements desired value to be set
+	* @return Builder object with new value for submodelElements
 	*/
-	final public SubmodelBuilder submodelElement(List<SubmodelElement> submodelElement) {
-		this.defaultSubmodel.submodelElement = submodelElement;
+	final public SubmodelBuilder submodelElements(List<SubmodelElement> submodelElements) {
+		this.defaultSubmodel.submodelElements = submodelElements;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for qualifier
-	* @param qualifier desired value to be set
-	* @return Builder object with new value for qualifier
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public SubmodelBuilder qualifier(List<Constraint> qualifier) {
-		this.defaultSubmodel.qualifier = qualifier;
+	final public SubmodelBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultSubmodel.qualifiers = qualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecification
-	* @param dataSpecification desired value to be set
-	* @return Builder object with new value for dataSpecification
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public SubmodelBuilder dataSpecification(List<Reference> dataSpecification) {
-		this.defaultSubmodel.dataSpecification = dataSpecification;
+	final public SubmodelBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultSubmodel.dataSpecifications = dataSpecifications;
 		return this;
 	}
 
@@ -100,23 +98,23 @@ public class SubmodelBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategory
-	* @param referableCategory desired value to be set
-	* @return Builder object with new value for referableCategory
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public SubmodelBuilder referableCategory(List<String> referableCategory) {
-		this.defaultSubmodel.referableCategory = referableCategory;
+	final public SubmodelBuilder referableCategories(List<String> referableCategories) {
+		this.defaultSubmodel.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public SubmodelBuilder description(List<TypedLiteral> description) {
-		this.defaultSubmodel.description = description;
+	final public SubmodelBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultSubmodel.descriptions = descriptions;
 		return this;
 	}
 

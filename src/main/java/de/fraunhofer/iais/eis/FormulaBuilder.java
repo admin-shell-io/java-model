@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -45,12 +43,12 @@ public class FormulaBuilder {
 	}
 
 	/**
-	* This function allows setting a value for dependsOn
-	* @param dependsOn desired value to be set
-	* @return Builder object with new value for dependsOn
+	* This function allows setting a value for dependsOns
+	* @param dependsOns desired value to be set
+	* @return Builder object with new value for dependsOns
 	*/
-	final public FormulaBuilder dependsOn(List<Reference> dependsOn) {
-		this.defaultFormula.dependsOn = dependsOn;
+	final public FormulaBuilder dependsOns(List<Reference> dependsOns) {
+		this.defaultFormula.dependsOns = dependsOns;
 		return this;
 	}
 

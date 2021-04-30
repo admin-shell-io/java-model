@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -38,8 +36,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 * "The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute \'globalAssetId\' is optional."@en
 */
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
-@JsonSubTypes({
-	@JsonSubTypes.Type(value = DefaultAssetInformation.class)
+@KnownSubtypes({
+	@KnownSubtypes.Type(value = DefaultAssetInformation.class)
 })
 public interface AssetInformation {
 
@@ -53,42 +51,29 @@ public interface AssetInformation {
 	public URI getId();
 
 	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
+	* This function retrieves a human readable labels about the current class, as defined in the ontology.
 	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
+	* @return Human readable labels
 	*/
-	public List<TypedLiteral> getLabel();
+	public List<TypedLiteral> getLabels();
 
 	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
+	* This function retrieves a human readable explanatory comments about the current class, as defined in the ontology.
 	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
+	* @return Human readable explanatory comments
 	*/
-	public List<TypedLiteral> getComment();
-
-	/**
-	* This function returns a hash code value for the AssetInformation for the benefit of e.g. hash tables.
-	* @return a hash code value for the AssetInformation
-	*/
-	public int hashCode();
-
-	/**
-	* This function indicates wheather some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this AssetInformation is the same as the obj argument; false otherwise.
-	*/
-	public boolean equals(Object obj);
+	public List<TypedLiteral> getComments();
 
 	// accessor methods as derived from the Asset Administration Shell ontology
 
 
 	/**
 	* "Denotes whether the Asset of of kind \'Type\' or \'Instance\'."@en
-	* @return Returns the List of AssetKind for the property assetKind.
+	* @return Returns the List of AssetKinds for the property assetKinds.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
-	public List<AssetKind> getAssetKind();
+	public List<AssetKind> getAssetKinds();
 
 	/**
 	* "Reference to either an Asset object or a global reference to the asset the AAS is representing."@en
@@ -102,19 +87,19 @@ public interface AssetInformation {
 
 	/**
 	* "Additional domain specific external, typically proprietary Identifier for the asset like e.g. serial number etc."@en
-	* @return Returns the List of IdentifierKeyValuePair for the property externalAssetId.
+	* @return Returns the List of IdentifierKeyValuePairs for the property externalAssetIds.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/externalAssetId
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/externalAssetId")
-	public List<IdentifierKeyValuePair> getExternalAssetId();
+	public List<IdentifierKeyValuePair> getExternalAssetIds();
 
 	/**
 	* "A reference to a Submodel that defines the bill of material of the asset represented by the AAS. This submodel contains a set of entities describing the material used to compose the composite I4.0 Component."@en
-	* @return Returns the List of Submodel for the property billOfMaterial.
+	* @return Returns the List of Submodels for the property billOfMaterials.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial")
-	public List<Submodel> getBillOfMaterial();
+	public List<Submodel> getBillOfMaterials();
 
 	/**
 	* "Thumbnail of the asset represented by the asset administration shell."@en

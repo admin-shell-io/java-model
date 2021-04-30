@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -45,12 +43,12 @@ public class SubjectAttributesBuilder {
 	}
 
 	/**
-	* This function allows setting a value for subjectAttribute
-	* @param subjectAttribute desired value to be set
-	* @return Builder object with new value for subjectAttribute
+	* This function allows setting a value for subjectAttributes
+	* @param subjectAttributes desired value to be set
+	* @return Builder object with new value for subjectAttributes
 	*/
-	final public SubjectAttributesBuilder subjectAttribute(List<DataElement> subjectAttribute) {
-		this.defaultSubjectAttributes.subjectAttribute = subjectAttribute;
+	final public SubjectAttributesBuilder subjectAttributes(List<DataElement> subjectAttributes) {
+		this.defaultSubjectAttributes.subjectAttributes = subjectAttributes;
 		return this;
 	}
 	/**

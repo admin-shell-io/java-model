@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -46,12 +44,12 @@ public class AssetBuilder {
 
 
 	/**
-	* This function allows setting a value for dataSpecification
-	* @param dataSpecification desired value to be set
-	* @return Builder object with new value for dataSpecification
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public AssetBuilder dataSpecification(List<Reference> dataSpecification) {
-		this.defaultAsset.dataSpecification = dataSpecification;
+	final public AssetBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultAsset.dataSpecifications = dataSpecifications;
 		return this;
 	}
 
@@ -79,23 +77,23 @@ public class AssetBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategory
-	* @param referableCategory desired value to be set
-	* @return Builder object with new value for referableCategory
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public AssetBuilder referableCategory(List<String> referableCategory) {
-		this.defaultAsset.referableCategory = referableCategory;
+	final public AssetBuilder referableCategories(List<String> referableCategories) {
+		this.defaultAsset.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public AssetBuilder description(List<TypedLiteral> description) {
-		this.defaultAsset.description = description;
+	final public AssetBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultAsset.descriptions = descriptions;
 		return this;
 	}
 

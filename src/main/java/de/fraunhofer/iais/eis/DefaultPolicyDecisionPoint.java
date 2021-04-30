@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -37,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:PolicyDecisionPoint")
-public class DefaultPolicyDecisionPoint implements Serializable, PolicyDecisionPoint {
+public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
@@ -45,11 +43,11 @@ public class DefaultPolicyDecisionPoint implements Serializable, PolicyDecisionP
 
 	//List of all labels of this class
 	@JsonIgnore
-	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Policy Decision Point", ""));
+	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Policy Decision Point", ""));
 
 	//List of all comments of this class
 	@JsonIgnore
-	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Defines a security policy decision point (PDP). ", "en"));
+	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Defines a security policy decision point (PDP). ", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -57,7 +55,7 @@ public class DefaultPolicyDecisionPoint implements Serializable, PolicyDecisionP
 	* "is external policy decision point defined"
 	* "If externalPolicyDecisionPoints True then Endpoints to external available decision points taking into consideration for access control for the AAS need to be configured."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints", "externalPolicyDecisionPoints"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
 	protected boolean externalPolicyDecisionPoints;
 
 
@@ -66,63 +64,25 @@ public class DefaultPolicyDecisionPoint implements Serializable, PolicyDecisionP
 		id = VocabUtil.getInstance().createRandomUrl("policyDecisionPoint");
 	}
 
-	/**
-	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
-	* @return ID of current object as URI
-	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
-	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
-	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
-	*/
-	public List<TypedLiteral> getLabel() {
-		return this.label;
+	public List<TypedLiteral> getLabels() {
+		return this.labels;
 	}
 
-	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
-	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
-	*/
-	public List<TypedLiteral> getComment() {
-		return this.comment;
+	public List<TypedLiteral> getComments() {
+		return this.comments;
 	}
 
-	public Object urifyObjects(Object value) {
-		if (value instanceof String && value.toString().startsWith("http")) {
-			try {
-				value = new URI(value.toString());
-			} catch (Exception e) { /* do nothing */ }
-		} else if (value instanceof ArrayList) {
-			ArrayList<Object> result_array = new ArrayList<Object>();
-			((ArrayList) value).forEach(x -> result_array.add(urifyObjects(x)));
-			return result_array;
-		} else if (value instanceof Map) {
-			Map<String, Object> result_map = new HashMap<String, Object>();
-			((Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
-			return result_map;
-		}
-		return value;
-	}
-
-	/**
-	* This function returns a hash code value for the PolicyDecisionPoint for the benefit of e.g. hash tables.
-	* @return a hash code value for the PolicyDecisionPoint
-	*/
+	@Override
 	public int hashCode() {
-		return Objects.hash(new Object[]{super.hashCode(), this.externalPolicyDecisionPoints});
+		return Objects.hash(new Object[]{this.externalPolicyDecisionPoints});
 	}
 
-	/**
-	* This function indicates wheather some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this PolicyDecisionPoint is the same as the obj argument; false otherwise.
-	*/
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -132,7 +92,7 @@ public class DefaultPolicyDecisionPoint implements Serializable, PolicyDecisionP
 			return false;
 		} else {
 			DefaultPolicyDecisionPoint other = (DefaultPolicyDecisionPoint) obj;
-			return super.equals(other) && Objects.equals(this.externalPolicyDecisionPoints, other.externalPolicyDecisionPoints);
+			return Objects.equals(this.externalPolicyDecisionPoints, other.externalPolicyDecisionPoints);
 		}
 	}
 
@@ -140,22 +100,11 @@ public class DefaultPolicyDecisionPoint implements Serializable, PolicyDecisionP
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "If externalPolicyDecisionPoints True then Endpoints to external available decision points taking into consideration for access control for the AAS need to be configured."@en
-	* @return Returns the boolean for the property externalPolicyDecisionPoints.
-	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
 	final public boolean getExternalPolicyDecisionPoints() {
 		return externalPolicyDecisionPoints;
 	}
-
 	
-	/**
-	* "If externalPolicyDecisionPoints True then Endpoints to external available decision points taking into consideration for access control for the AAS need to be configured."@en
-	* @param externalPolicyDecisionPoints desired value for the property externalPolicyDecisionPoints.
-	* More information under https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints
-	*/
 	final public void setExternalPolicyDecisionPoints (boolean externalPolicyDecisionPoints) {
 		this.externalPolicyDecisionPoints = externalPolicyDecisionPoints;
 	}

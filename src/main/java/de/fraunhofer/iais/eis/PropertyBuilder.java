@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -45,12 +43,12 @@ public class PropertyBuilder {
 	}
 
 	/**
-	* This function allows setting a value for propertyCategory
-	* @param propertyCategory desired value to be set
-	* @return Builder object with new value for propertyCategory
+	* This function allows setting a value for propertyCategories
+	* @param propertyCategories desired value to be set
+	* @return Builder object with new value for propertyCategories
 	*/
-	final public PropertyBuilder propertyCategory(List<Category> propertyCategory) {
-		this.defaultProperty.propertyCategory = propertyCategory;
+	final public PropertyBuilder propertyCategories(List<Category> propertyCategories) {
+		this.defaultProperty.propertyCategories = propertyCategories;
 		return this;
 	}
 
@@ -80,23 +78,23 @@ public class PropertyBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategory
-	* @param referableCategory desired value to be set
-	* @return Builder object with new value for referableCategory
+	* This function allows setting a value for referableCategories
+	* @param referableCategories desired value to be set
+	* @return Builder object with new value for referableCategories
 	*/
-	final public PropertyBuilder referableCategory(List<String> referableCategory) {
-		this.defaultProperty.referableCategory = referableCategory;
+	final public PropertyBuilder referableCategories(List<String> referableCategories) {
+		this.defaultProperty.referableCategories = referableCategories;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	final public PropertyBuilder description(List<TypedLiteral> description) {
-		this.defaultProperty.description = description;
+	final public PropertyBuilder descriptions(List<TypedLiteral> descriptions) {
+		this.defaultProperty.descriptions = descriptions;
 		return this;
 	}
 
@@ -135,23 +133,23 @@ public class PropertyBuilder {
 
 
 	/**
-	* This function allows setting a value for qualifier
-	* @param qualifier desired value to be set
-	* @return Builder object with new value for qualifier
+	* This function allows setting a value for qualifiers
+	* @param qualifiers desired value to be set
+	* @return Builder object with new value for qualifiers
 	*/
-	final public PropertyBuilder qualifier(List<Constraint> qualifier) {
-		this.defaultProperty.qualifier = qualifier;
+	final public PropertyBuilder qualifiers(List<Constraint> qualifiers) {
+		this.defaultProperty.qualifiers = qualifiers;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for dataSpecification
-	* @param dataSpecification desired value to be set
-	* @return Builder object with new value for dataSpecification
+	* This function allows setting a value for dataSpecifications
+	* @param dataSpecifications desired value to be set
+	* @return Builder object with new value for dataSpecifications
 	*/
-	final public PropertyBuilder dataSpecification(List<Reference> dataSpecification) {
-		this.defaultProperty.dataSpecification = dataSpecification;
+	final public PropertyBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.defaultProperty.dataSpecifications = dataSpecifications;
 		return this;
 	}
 

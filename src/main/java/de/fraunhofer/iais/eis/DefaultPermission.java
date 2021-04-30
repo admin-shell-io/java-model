@@ -8,7 +8,6 @@ import java.lang.String;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -37,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeName("aas:Permission")
-public class DefaultPermission implements Serializable, Permission {
+public class DefaultPermission implements Permission {
 
 	@JsonProperty("@id")
 	@JsonAlias({"@id", "id"})
@@ -45,11 +43,11 @@ public class DefaultPermission implements Serializable, Permission {
 
 	//List of all labels of this class
 	@JsonIgnore
-	protected List<TypedLiteral> label = Arrays.asList(new TypedLiteral("Permission", ""));
+	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Permission", ""));
 
 	//List of all comments of this class
 	@JsonIgnore
-	protected List<TypedLiteral> comment = Arrays.asList(new TypedLiteral("Description of a single permission.", "en"));
+	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Description of a single permission.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -57,7 +55,7 @@ public class DefaultPermission implements Serializable, Permission {
 	* "has kind of permission"
 	* "Description of the kind of permission. Possible kind of permission also include the denial of the permission."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission", "kindOfPermission"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
 	protected PermissionKind kindOfPermission;
 
 
@@ -67,7 +65,7 @@ public class DefaultPermission implements Serializable, Permission {
 	* "Constraint AASs-010: The property referenced in Permission/permission shall have the category \'CONSTANT\'."@en
 	* "Constraint AASs-011: The property referenced in Permission/permission shall be part of the submodel that is referenced within the \'selectablePermissions\' attribute of \'AccessControl\'."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Permission/permission", "permission"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Permission/permission")
 	protected Property permission;
 
 
@@ -76,63 +74,26 @@ public class DefaultPermission implements Serializable, Permission {
 		id = VocabUtil.getInstance().createRandomUrl("permission");
 	}
 
-	/**
-	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
-	* @return ID of current object as URI
-	*/
 	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
 
-	/**
-	* This function retrieves a human readable label about the current class, as defined in the ontology.
-	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable label
-	*/
-	public List<TypedLiteral> getLabel() {
-		return this.label;
+	public List<TypedLiteral> getLabels() {
+		return this.labels;
 	}
 
-	/**
-	* This function retrieves a human readable explanatory comment about the current class, as defined in the ontology.
-	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comment
-	*/
-	public List<TypedLiteral> getComment() {
-		return this.comment;
+	public List<TypedLiteral> getComments() {
+		return this.comments;
 	}
 
-	public Object urifyObjects(Object value) {
-		if (value instanceof String && value.toString().startsWith("http")) {
-			try {
-				value = new URI(value.toString());
-			} catch (Exception e) { /* do nothing */ }
-		} else if (value instanceof ArrayList) {
-			ArrayList<Object> result_array = new ArrayList<Object>();
-			((ArrayList) value).forEach(x -> result_array.add(urifyObjects(x)));
-			return result_array;
-		} else if (value instanceof Map) {
-			Map<String, Object> result_map = new HashMap<String, Object>();
-			((Map) value).forEach((k,v) -> result_map.put(k.toString(), urifyObjects(v)));
-			return result_map;
-		}
-		return value;
-	}
-
-	/**
-	* This function returns a hash code value for the Permission for the benefit of e.g. hash tables.
-	* @return a hash code value for the Permission
-	*/
+	@Override
 	public int hashCode() {
-		return Objects.hash(new Object[]{super.hashCode(), this.kindOfPermission, this.permission});
+		return Objects.hash(new Object[]{this.kindOfPermission,
+			this.permission});
 	}
 
-	/**
-	* This function indicates wheather some other object is equal to this one.
-	* @param obj the reference object with which to compare.
-	* @return true if this Permission is the same as the obj argument; false otherwise.
-	*/
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -142,7 +103,8 @@ public class DefaultPermission implements Serializable, Permission {
 			return false;
 		} else {
 			DefaultPermission other = (DefaultPermission) obj;
-			return super.equals(other) && Objects.equals(this.kindOfPermission, other.kindOfPermission) && Objects.equals(this.permission, other.permission);
+			return Objects.equals(this.kindOfPermission, other.kindOfPermission) &&
+				Objects.equals(this.permission, other.permission);
 		}
 	}
 
@@ -150,46 +112,20 @@ public class DefaultPermission implements Serializable, Permission {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	/**
-	* "Description of the kind of permission. Possible kind of permission also include the denial of the permission."@en
-	* @return Returns the PermissionKind for the property kindOfPermission.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
 	final public PermissionKind getKindOfPermission() {
 		return kindOfPermission;
 	}
-
 	
-	/**
-	* "Description of the kind of permission. Possible kind of permission also include the denial of the permission."@en
-	* @param kindOfPermission desired value for the property kindOfPermission.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission
-	*/
 	final public void setKindOfPermission (PermissionKind kindOfPermission) {
 		this.kindOfPermission = kindOfPermission;
 	}
 
-	/**
-	* "Reference to a property that defines the semantics of the permission."@en
-	* "Constraint AASs-010: The property referenced in Permission/permission shall have the category \'CONSTANT\'."@en
-	* "Constraint AASs-011: The property referenced in Permission/permission shall be part of the submodel that is referenced within the \'selectablePermissions\' attribute of \'AccessControl\'."@en
-	* @return Returns the Property for the property permission.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Permission/permission
-	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Permission/permission")
 	final public Property getPermission() {
 		return permission;
 	}
-
 	
-	/**
-	* "Reference to a property that defines the semantics of the permission."@en
-	* "Constraint AASs-010: The property referenced in Permission/permission shall have the category \'CONSTANT\'."@en
-	* "Constraint AASs-011: The property referenced in Permission/permission shall be part of the submodel that is referenced within the \'selectablePermissions\' attribute of \'AccessControl\'."@en
-	* @param permission desired value for the property permission.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Permission/permission
-	*/
 	final public void setPermission (Property permission) {
 		this.permission = permission;
 	}
