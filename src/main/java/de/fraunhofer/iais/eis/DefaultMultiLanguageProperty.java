@@ -88,7 +88,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 
 
 	/**
-	* "hsa value Id"
+	* "has value Id"
 	* "Reference to the global unqiue id of a coded value."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId", "valueId"})

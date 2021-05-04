@@ -80,7 +80,7 @@ public class AssetAdministrationShellBuilder {
 	* @param submodels desired value to be set
 	* @return Builder object with new value for submodels
 	*/
-	final public AssetAdministrationShellBuilder submodels(List<Submodel> submodels) {
+	final public AssetAdministrationShellBuilder submodels(List<Reference> submodels) {
 		this.defaultAssetAdministrationShell.submodels = submodels;
 		return this;
 	}

@@ -65,12 +65,12 @@ public class AssetInformationBuilder {
 
 
 	/**
-	* This function allows setting a value for externalAssetIds
-	* @param externalAssetIds desired value to be set
-	* @return Builder object with new value for externalAssetIds
+	* This function allows setting a value for specificAssetIds
+	* @param specificAssetIds desired value to be set
+	* @return Builder object with new value for specificAssetIds
 	*/
-	final public AssetInformationBuilder externalAssetIds(List<IdentifierKeyValuePair> externalAssetIds) {
-		this.defaultAssetInformation.externalAssetIds = externalAssetIds;
+	final public AssetInformationBuilder specificAssetIds(List<IdentifierKeyValuePair> specificAssetIds) {
+		this.defaultAssetInformation.specificAssetIds = specificAssetIds;
 		return this;
 	}
 
@@ -87,12 +87,12 @@ public class AssetInformationBuilder {
 
 
 	/**
-	* This function allows setting a value for thumbnail
-	* @param thumbnail desired value to be set
-	* @return Builder object with new value for thumbnail
+	* This function allows setting a value for defaultThumbnail
+	* @param defaultThumbnail desired value to be set
+	* @return Builder object with new value for defaultThumbnail
 	*/
-	final public AssetInformationBuilder thumbnail(File thumbnail) {
-		this.defaultAssetInformation.thumbnail = thumbnail;
+	final public AssetInformationBuilder defaultThumbnail(File defaultThumbnail) {
+		this.defaultAssetInformation.defaultThumbnail = defaultThumbnail;
 		return this;
 	}
 	/**

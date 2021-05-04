@@ -80,7 +80,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	* "Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset"@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel", "submodel"})
-	protected List<Submodel> submodels;
+	protected List<Reference> submodels;
 
 
 	/**
@@ -244,11 +244,11 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
-	final public List<Submodel> getSubmodels() {
+	final public List<Reference> getSubmodels() {
 		return submodels;
 	}
 	
-	final public void setSubmodels (List<Submodel> submodels) {
+	final public void setSubmodels (List<Reference> submodels) {
 		this.submodels = submodels;
 	}
 
