@@ -64,7 +64,7 @@ public class DefaultIdentifier implements Identifier {
 	* "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifier/identifier", "identifier"})
-	protected List<TypedLiteral> identifiers;
+	protected String identifier;
 
 
 	// no manual construction
@@ -87,7 +87,7 @@ public class DefaultIdentifier implements Identifier {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.identifiers,
+		return Objects.hash(new Object[]{this.identifier,
 			this.idType});
 	}
 
@@ -101,7 +101,7 @@ public class DefaultIdentifier implements Identifier {
 			return false;
 		} else {
 			DefaultIdentifier other = (DefaultIdentifier) obj;
-			return Objects.equals(this.identifiers, other.identifiers) &&
+			return Objects.equals(this.identifier, other.identifier) &&
 				Objects.equals(this.idType, other.idType);
 		}
 	}
@@ -111,12 +111,12 @@ public class DefaultIdentifier implements Identifier {
 
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
-	final public List<TypedLiteral> getIdentifiers() {
-		return identifiers;
+	final public String getIdentifier() {
+		return identifier;
 	}
 	
-	final public void setIdentifiers (List<TypedLiteral> identifiers) {
-		this.identifiers = identifiers;
+	final public void setIdentifier (String identifier) {
+		this.identifier = identifier;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")

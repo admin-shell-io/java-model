@@ -43,6 +43,17 @@ public class RangeBuilder {
 	}
 
 	/**
+	* This function allows setting a value for valueType
+	* @param valueType desired value to be set
+	* @return Builder object with new value for valueType
+	*/
+	final public RangeBuilder valueType(String valueType) {
+		this.defaultRange.valueType = valueType;
+		return this;
+	}
+
+
+	/**
 	* This function allows setting a value for max
 	* @param max desired value to be set
 	* @return Builder object with new value for max

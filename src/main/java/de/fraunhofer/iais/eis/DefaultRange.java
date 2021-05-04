@@ -104,6 +104,14 @@ public class DefaultRange implements Range {
 
 
 	/**
+	* "has value type of range"
+	* "Data type of the min and max."@en
+	*/
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Range/valueType", "valueType"})
+	protected String valueType;
+
+
+	/**
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
@@ -160,7 +168,8 @@ public class DefaultRange implements Range {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.max,
+		return Objects.hash(new Object[]{this.valueType,
+			this.max,
 			this.min,
 			this.referableCategories,
 			this.descriptions,
@@ -182,7 +191,8 @@ public class DefaultRange implements Range {
 			return false;
 		} else {
 			DefaultRange other = (DefaultRange) obj;
-			return Objects.equals(this.max, other.max) &&
+			return Objects.equals(this.valueType, other.valueType) &&
+				Objects.equals(this.max, other.max) &&
 				Objects.equals(this.min, other.min) &&
 				Objects.equals(this.referableCategories, other.referableCategories) &&
 				Objects.equals(this.descriptions, other.descriptions) &&
@@ -198,6 +208,15 @@ public class DefaultRange implements Range {
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Range/valueType")
+	final public String getValueType() {
+		return valueType;
+	}
+	
+	final public void setValueType (String valueType) {
+		this.valueType = valueType;
+	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Range/max")
 	final public TypedLiteral getMax() {

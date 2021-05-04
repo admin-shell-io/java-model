@@ -97,6 +97,14 @@ public class DefaultProperty implements Property {
 
 
 	/**
+	* "has property value type"
+	* "Data type pf the value."@en
+	*/
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Property/valueType", "valueType"})
+	protected String valueType;
+
+
+	/**
 	* "has qualifier"
 	* "Additional qualification of a qualifiable element."@en
 	*/
@@ -161,7 +169,8 @@ public class DefaultProperty implements Property {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.value,
+		return Objects.hash(new Object[]{this.valueType,
+			this.value,
 			this.valueId,
 			this.referableCategories,
 			this.descriptions,
@@ -183,7 +192,8 @@ public class DefaultProperty implements Property {
 			return false;
 		} else {
 			DefaultProperty other = (DefaultProperty) obj;
-			return Objects.equals(this.value, other.value) &&
+			return Objects.equals(this.valueType, other.valueType) &&
+				Objects.equals(this.value, other.value) &&
 				Objects.equals(this.valueId, other.valueId) &&
 				Objects.equals(this.referableCategories, other.referableCategories) &&
 				Objects.equals(this.descriptions, other.descriptions) &&
@@ -199,6 +209,15 @@ public class DefaultProperty implements Property {
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
+
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Property/valueType")
+	final public String getValueType() {
+		return valueType;
+	}
+	
+	final public void setValueType (String valueType) {
+		this.valueType = valueType;
+	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Property/value")
 	final public TypedLiteral getValue() {

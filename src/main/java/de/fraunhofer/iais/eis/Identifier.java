@@ -67,11 +67,11 @@ public interface Identifier {
 
 	/**
 	* "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
-	* @return Returns the List of TypedLiterals for the property identifiers.
+	* @return Returns the String for the property identifier.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Identifier/identifier
 	*/
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
-	public List<TypedLiteral> getIdentifiers();
+	public String getIdentifier();
 
 	/**
 	* "Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the enumeration \'IdentifierType\'."@en

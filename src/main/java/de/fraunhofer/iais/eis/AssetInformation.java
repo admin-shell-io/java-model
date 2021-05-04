@@ -68,7 +68,7 @@ public interface AssetInformation {
 
 
 	/**
-	* "Denotes whether the Asset of of kind \'Type\' or \'Instance\'."@en
+	* "Denotes whether the Asset of kind \'Type\' or \'Instance\'."@en
 	* @return Returns the List of AssetKinds for the property assetKinds.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind
 	*/

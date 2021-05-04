@@ -85,6 +85,13 @@ public class DefaultQualifier implements Qualifier {
 	protected Reference valueId;
 
 
+	/**
+	* "Data type of the qualifier value."@en
+	*/
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType", "valueType"})
+	protected String valueType;
+
+
 	// no manual construction
 	protected DefaultQualifier() {
 		id = VocabUtil.getInstance().createRandomUrl("qualifier");
@@ -106,6 +113,7 @@ public class DefaultQualifier implements Qualifier {
 	@Override
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.type,
+			this.valueType,
 			this.value,
 			this.valueId,
 			this.semanticId});
@@ -122,6 +130,7 @@ public class DefaultQualifier implements Qualifier {
 		} else {
 			DefaultQualifier other = (DefaultQualifier) obj;
 			return Objects.equals(this.type, other.type) &&
+				Objects.equals(this.valueType, other.valueType) &&
 				Objects.equals(this.value, other.value) &&
 				Objects.equals(this.valueId, other.valueId) &&
 				Objects.equals(this.semanticId, other.semanticId);
@@ -139,6 +148,15 @@ public class DefaultQualifier implements Qualifier {
 	
 	final public void setType (String type) {
 		this.type = type;
+	}
+
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType")
+	final public String getValueType() {
+		return valueType;
+	}
+	
+	final public void setValueType (String valueType) {
+		this.valueType = valueType;
 	}
 
 	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/value")

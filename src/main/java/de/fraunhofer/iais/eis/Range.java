@@ -69,6 +69,14 @@ public interface Range extends DataElement {
 
 
 	/**
+	* "Data type of the min and max."@en
+	* @return Returns the String for the property valueType.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Range/valueType
+	*/
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Range/valueType")
+	public String getValueType();
+
+	/**
 	* "The maximum value of the range."@en
 	* @return Returns the TypedLiteral for the property max.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Range/max

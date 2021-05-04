@@ -55,7 +55,7 @@ public class DefaultAssetInformation implements AssetInformation {
 
 	/**
 	* "has assetKind"
-	* "Denotes whether the Asset of of kind \'Type\' or \'Instance\'."@en
+	* "Denotes whether the Asset of kind \'Type\' or \'Instance\'."@en
 	*/
 	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind", "assetKind"})
 	protected List<AssetKind> assetKinds;

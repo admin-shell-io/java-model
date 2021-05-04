@@ -69,6 +69,14 @@ public interface Property extends DataElement {
 
 
 	/**
+	* "Data type pf the value."@en
+	* @return Returns the String for the property valueType.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Property/valueType
+	*/
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Property/valueType")
+	public String getValueType();
+
+	/**
 	* "The value of the property instance."@en
 	* @return Returns the TypedLiteral for the property value.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Property/value
