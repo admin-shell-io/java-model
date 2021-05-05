@@ -47,7 +47,7 @@ public class SecurityBuilder {
 	* @param accessControlPolicyPoints desired value to be set
 	* @return Builder object with new value for accessControlPolicyPoints
 	*/
-	final public SecurityBuilder accessControlPolicyPoints(PolicyAdministrationPoint accessControlPolicyPoints) {
+	final public SecurityBuilder accessControlPolicyPoints(AccessControlPolicyPoints accessControlPolicyPoints) {
 		this.defaultSecurity.accessControlPolicyPoints = accessControlPolicyPoints;
 		return this;
 	}
