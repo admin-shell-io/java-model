@@ -19,13 +19,16 @@ public class JsonSchemaValidator {
         ObjectMapper mapper = new ObjectMapper();
 
         JsonNode schemaNode = mapper.readTree(new String(Files.readAllBytes(Paths.get(SCHEMA))));
-        //JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersionDetector.detect(schemaNode));
-        JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V201909);
+        JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersionDetector.detect(schemaNode));
+        // used for a specific schema version
+        //JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V201909);
         JsonSchema schema = factory.getSchema(schemaNode);
         JsonNode node = mapper.readTree(content);
         Set<ValidationMessage> errors = schema.validate(node);
 
+        System.out.println(errors.size() == 0 ?
+                "--test result -> errors: keine-none-nada" : "--test result -> errors: " + errors);
+
         assertThat(errors.size(), is(0));
-        System.out.println(errors.size() == 0 ? "\n\n  test result -> errors: keine-none-nada" : errors);
     }
 }
