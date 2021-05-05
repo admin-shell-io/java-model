@@ -19,7 +19,6 @@
             <version>4.13</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>de.fraunhofer.iais.eis.infomodel</groupId>
             <artifactId>util</artifactId>
@@ -37,7 +36,26 @@
             <version>0.0.1-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.11.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.30</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.networknt</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>1.0.52</version>
+        </dependency>
     </dependencies>
 
     <repositories>
