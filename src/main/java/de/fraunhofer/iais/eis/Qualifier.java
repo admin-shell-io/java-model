@@ -16,15 +16,27 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Qualifier"
 * "A qualifier is a type-value pair that makes additional statements w.r.t. the value of the element."@en
 * "Constraint AASd-063: The semanticId of a Qualifier shall only reference a ConceptDescription with the category QUALIFIER."@en
 */
-@KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultQualifier.class)
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes({
+	@JsonSubTypes.Type(value = DefaultQualifier.class)
 })
 public interface Qualifier extends Constraint, HasSemantics {
 
@@ -34,6 +46,7 @@ public interface Qualifier extends Constraint, HasSemantics {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
+	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -58,7 +71,7 @@ public interface Qualifier extends Constraint, HasSemantics {
 	* @return Returns the String for the property type.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/type
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/type")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/type")
 	public String getType();
 
 	/**
@@ -66,7 +79,7 @@ public interface Qualifier extends Constraint, HasSemantics {
 	* @return Returns the String for the property valueType.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType")
 	public String getValueType();
 
 	/**
@@ -76,7 +89,7 @@ public interface Qualifier extends Constraint, HasSemantics {
 	* @return Returns the TypedLiteral for the property value.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/value
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/value")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/value")
 	public TypedLiteral getValue();
 
 	/**
@@ -84,7 +97,7 @@ public interface Qualifier extends Constraint, HasSemantics {
 	* @return Returns the Reference for the property valueId.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId")
 	public Reference getValueId();
 
 }

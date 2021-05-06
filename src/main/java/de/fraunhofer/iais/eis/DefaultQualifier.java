@@ -16,16 +16,30 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Qualifier"
 * "A qualifier is a type-value pair that makes additional statements w.r.t. the value of the element."@en
 * "Constraint AASd-063: The semanticId of a Qualifier shall only reference a ConceptDescription with the category QUALIFIER."@en 
 */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeName("aas:Qualifier")
 public class DefaultQualifier implements Qualifier {
 
+	@JsonProperty("@id")
+	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -43,7 +57,7 @@ public class DefaultQualifier implements Qualifier {
 	* "Points to the Expression Semantic of the Submodels"@en
 	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "semanticId"})
 	protected Reference semanticId;
 
 
@@ -51,7 +65,7 @@ public class DefaultQualifier implements Qualifier {
 	* "has qualifier type"
 	* "The qualifier type describes the type of the qualifier that is applied to the element."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/type")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifier/type", "type"})
 	protected String type;
 
 
@@ -60,21 +74,21 @@ public class DefaultQualifier implements Qualifier {
 	* "Constraint AASd-006: if both, the value and the valueId are present then the value needs to be identical to the short name of the referenced coded value in qualifierValueId."@en
 	* "Constraint AASd-020: The value of Qualifier/value shall be consistent to the data type as defined in Qualifier/valueType."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/value")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifier/value", "value"})
 	protected TypedLiteral value;
 
 
 	/**
 	* "Reference to the global unqiue id of a coded value."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId", "valueId"})
 	protected Reference valueId;
 
 
 	/**
 	* "Data type of the qualifier value."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType", "valueType"})
 	protected String valueType;
 
 
@@ -83,6 +97,7 @@ public class DefaultQualifier implements Qualifier {
 		id = VocabUtil.getInstance().createRandomUrl("qualifier");
 	}
 
+	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -126,7 +141,7 @@ public class DefaultQualifier implements Qualifier {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/type")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/type")
 	final public String getType() {
 		return type;
 	}
@@ -135,7 +150,7 @@ public class DefaultQualifier implements Qualifier {
 		this.type = type;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType")
 	final public String getValueType() {
 		return valueType;
 	}
@@ -144,7 +159,7 @@ public class DefaultQualifier implements Qualifier {
 		this.valueType = valueType;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/value")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/value")
 	final public TypedLiteral getValue() {
 		return value;
 	}
@@ -153,7 +168,7 @@ public class DefaultQualifier implements Qualifier {
 		this.value = value;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId")
 	final public Reference getValueId() {
 		return valueId;
 	}
@@ -163,7 +178,7 @@ public class DefaultQualifier implements Qualifier {
 	}
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	final public Reference getSemanticId() {
 		return semanticId;
 	}

@@ -16,16 +16,30 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Has Data Specification"
 * "Element that can have be extended by using data specification templates. A data specification template defines the additional attributes an element may or shall have. The data specifications used are explicitly specified with their id."@en
 * "Constraint AASd-050:  If the DataSpecificationContent DataSpecificationIEC61360 is used for an element then the value of hasDataSpecification/dataSpecification shall contain the global reference to the IRI of the corresponding data specification template https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0."@en 
 */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeName("aas:HasDataSpecification")
 public class DefaultHasDataSpecification implements HasDataSpecification {
 
+	@JsonProperty("@id")
+	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -42,7 +56,7 @@ public class DefaultHasDataSpecification implements HasDataSpecification {
 	* "has Data Specification"
 	* "Global reference to the data specification template used by the element."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "dataSpecification"})
 	protected List<Reference> dataSpecifications;
 
 
@@ -51,6 +65,7 @@ public class DefaultHasDataSpecification implements HasDataSpecification {
 		id = VocabUtil.getInstance().createRandomUrl("hasDataSpecification");
 	}
 
+	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -86,7 +101,7 @@ public class DefaultHasDataSpecification implements HasDataSpecification {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	final public List<Reference> getDataSpecifications() {
 		return dataSpecifications;
 	}

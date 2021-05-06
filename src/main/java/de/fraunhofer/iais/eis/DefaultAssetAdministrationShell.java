@@ -16,15 +16,29 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Asset Administration Shell"
 * "Describes the Administration Shell for Assets, Products, Components, e.g. Machines"@en 
 */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeName("aas:AssetAdministrationShell")
 public class DefaultAssetAdministrationShell implements AssetAdministrationShell {
 
+	@JsonProperty("@id")
+	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -41,7 +55,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	* "has assetInformation"
 	* "Meta information about the asset the AAS is representing."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation", "assetInformation"})
 	protected AssetInformation assetInformation;
 
 
@@ -49,7 +63,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	* "was derived from"
 	* "This relation connects instances of AAS with their respective types. Refer to Asset Kind for further information of instance and type kinds."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom", "derivedFrom"})
 	protected Reference derivedFrom;
 
 
@@ -57,7 +71,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	* "has security"
 	* "Definition of the security relevant aspects of the AAS."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security", "security"})
 	protected Security security;
 
 
@@ -65,7 +79,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	* "has Submodel"
 	* "Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset"@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel", "submodel"})
 	protected List<Reference> submodels;
 
 
@@ -73,7 +87,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	* "has View"
 	* "Points to the differents views associated to the Administration Shell via the Submodels."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view", "view"})
 	protected List<View> views;
 
 
@@ -81,7 +95,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	* "has Data Specification"
 	* "Global reference to the data specification template used by the element."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "dataSpecification"})
 	protected List<Reference> dataSpecifications;
 
 
@@ -90,7 +104,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	* "Administrative information of an identifiable element."@en
 	* "Some of the administrative information like the version number might need to be part of the identification."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifiable/administration", "administration"})
 	protected AdministrativeInformation administration;
 
 
@@ -98,7 +112,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	* "has identification"
 	* "The globally unique identification of the element."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifiable/identification", "identification"})
 	protected Identifier identification;
 
 
@@ -106,7 +120,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "description"})
 	protected List<TypedLiteral> descriptions;
 
 
@@ -114,7 +128,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	* "has display name"
 	* "Display name. Can be provided in several languages."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "displayName"})
 	protected TypedLiteral displayName;
 
 
@@ -127,7 +141,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
 	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "idShort"})
 	protected String idShort;
 
 
@@ -135,7 +149,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	* "has category"
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableCategory"})
 	protected List<String> referableCategories;
 
 
@@ -144,6 +158,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 		id = VocabUtil.getInstance().createRandomUrl("assetAdministrationShell");
 	}
 
+	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -201,7 +216,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation")
 	final public AssetInformation getAssetInformation() {
 		return assetInformation;
 	}
@@ -210,7 +225,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 		this.assetInformation = assetInformation;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom")
 	final public Reference getDerivedFrom() {
 		return derivedFrom;
 	}
@@ -219,7 +234,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 		this.derivedFrom = derivedFrom;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security")
 	final public Security getSecurity() {
 		return security;
 	}
@@ -228,7 +243,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 		this.security = security;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
 	final public List<Reference> getSubmodels() {
 		return submodels;
 	}
@@ -237,7 +252,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 		this.submodels = submodels;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view")
 	final public List<View> getViews() {
 		return views;
 	}
@@ -246,7 +261,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 		this.views = views;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	final public List<Reference> getDataSpecifications() {
 		return dataSpecifications;
 	}
@@ -255,7 +270,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 		this.dataSpecifications = dataSpecifications;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
 	final public AdministrativeInformation getAdministration() {
 		return administration;
 	}
@@ -264,7 +279,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 		this.administration = administration;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
 	final public Identifier getIdentification() {
 		return identification;
 	}
@@ -273,7 +288,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 		this.identification = identification;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	final public List<String> getReferableCategories() {
 		return referableCategories;
 	}
@@ -282,7 +297,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 		this.referableCategories = referableCategories;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	final public List<TypedLiteral> getDescriptions() {
 		return descriptions;
 	}
@@ -291,7 +306,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 		this.descriptions = descriptions;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	final public TypedLiteral getDisplayName() {
 		return displayName;
 	}
@@ -300,7 +315,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 		this.displayName = displayName;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	final public String getIdShort() {
 		return idShort;
 	}

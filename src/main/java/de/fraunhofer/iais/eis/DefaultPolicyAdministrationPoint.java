@@ -16,15 +16,29 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Policy Administration Point"
 * "Definition of a security administration point (PDP)."@en 
 */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeName("aas:PolicyAdministrationPoint")
 public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoint {
 
+	@JsonProperty("@id")
+	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -41,7 +55,7 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
 	* "has external access control"
 	* "Endpoint to an external access control defining a policy administration point to be used by the AAS."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl", "externalAccessControl"})
 	protected boolean externalAccessControl;
 
 
@@ -50,7 +64,7 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
 	* "The policy administration point of access control as realized by the AAS itself."@en
 	* "Constraint AASd-009: Either there is an external policy administration point endpoint defined or the AAS has its own access control."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl", "localAccessControl"})
 	protected AccessControl localAccessControl;
 
 
@@ -59,6 +73,7 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
 		id = VocabUtil.getInstance().createRandomUrl("policyAdministrationPoint");
 	}
 
+	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -96,7 +111,7 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl")
 	final public AccessControl getLocalAccessControl() {
 		return localAccessControl;
 	}
@@ -105,7 +120,7 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
 		this.localAccessControl = localAccessControl;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl")
 	final public boolean getExternalAccessControl() {
 		return externalAccessControl;
 	}

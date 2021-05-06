@@ -16,14 +16,26 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Asset Information"
 * "The asset may either represent an asset type or an asset instance. The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute \'globalAssetId\' is optional."@en
 */
-@KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultAssetInformation.class)
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes({
+	@JsonSubTypes.Type(value = DefaultAssetInformation.class)
 })
 public interface AssetInformation {
 
@@ -33,6 +45,7 @@ public interface AssetInformation {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
+	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -57,7 +70,7 @@ public interface AssetInformation {
 	* @return Returns the List of AssetKinds for the property assetKinds.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
 	public List<AssetKind> getAssetKinds();
 
 	/**
@@ -66,7 +79,7 @@ public interface AssetInformation {
 	* @return Returns the Reference for the property globalAssetId.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId")
 	public Reference getGlobalAssetId();
 
 	/**
@@ -74,7 +87,7 @@ public interface AssetInformation {
 	* @return Returns the List of IdentifierKeyValuePairs for the property specificAssetIds.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId")
 	public List<IdentifierKeyValuePair> getSpecificAssetIds();
 
 	/**
@@ -82,7 +95,7 @@ public interface AssetInformation {
 	* @return Returns the List of Submodels for the property billOfMaterials.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial")
 	public List<Submodel> getBillOfMaterials();
 
 	/**
@@ -90,7 +103,7 @@ public interface AssetInformation {
 	* @return Returns the File for the property defaultThumbnail.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail")
 	public File getDefaultThumbnail();
 
 }

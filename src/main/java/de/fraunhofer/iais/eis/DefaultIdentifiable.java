@@ -16,15 +16,29 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Identifiable"
 * "An element that has a globally unique identifier."@en 
 */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeName("aas:Identifiable")
 public class DefaultIdentifiable implements Identifiable {
 
+	@JsonProperty("@id")
+	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -42,7 +56,7 @@ public class DefaultIdentifiable implements Identifiable {
 	* "Administrative information of an identifiable element."@en
 	* "Some of the administrative information like the version number might need to be part of the identification."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifiable/administration", "administration"})
 	protected AdministrativeInformation administration;
 
 
@@ -50,7 +64,7 @@ public class DefaultIdentifiable implements Identifiable {
 	* "has identification"
 	* "The globally unique identification of the element."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifiable/identification", "identification"})
 	protected Identifier identification;
 
 
@@ -58,7 +72,7 @@ public class DefaultIdentifiable implements Identifiable {
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "description"})
 	protected List<TypedLiteral> descriptions;
 
 
@@ -66,7 +80,7 @@ public class DefaultIdentifiable implements Identifiable {
 	* "has display name"
 	* "Display name. Can be provided in several languages."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "displayName"})
 	protected TypedLiteral displayName;
 
 
@@ -79,7 +93,7 @@ public class DefaultIdentifiable implements Identifiable {
 	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
 	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "idShort"})
 	protected String idShort;
 
 
@@ -87,7 +101,7 @@ public class DefaultIdentifiable implements Identifiable {
 	* "has category"
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableCategory"})
 	protected List<String> referableCategories;
 
 
@@ -96,6 +110,7 @@ public class DefaultIdentifiable implements Identifiable {
 		id = VocabUtil.getInstance().createRandomUrl("identifiable");
 	}
 
+	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -141,7 +156,7 @@ public class DefaultIdentifiable implements Identifiable {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
 	final public AdministrativeInformation getAdministration() {
 		return administration;
 	}
@@ -150,7 +165,7 @@ public class DefaultIdentifiable implements Identifiable {
 		this.administration = administration;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
 	final public Identifier getIdentification() {
 		return identification;
 	}
@@ -159,7 +174,7 @@ public class DefaultIdentifiable implements Identifiable {
 		this.identification = identification;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	final public List<String> getReferableCategories() {
 		return referableCategories;
 	}
@@ -168,7 +183,7 @@ public class DefaultIdentifiable implements Identifiable {
 		this.referableCategories = referableCategories;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	final public List<TypedLiteral> getDescriptions() {
 		return descriptions;
 	}
@@ -177,7 +192,7 @@ public class DefaultIdentifiable implements Identifiable {
 		this.descriptions = descriptions;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	final public TypedLiteral getDisplayName() {
 		return displayName;
 	}
@@ -186,7 +201,7 @@ public class DefaultIdentifiable implements Identifiable {
 		this.displayName = displayName;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	final public String getIdShort() {
 		return idShort;
 	}

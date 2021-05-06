@@ -16,7 +16,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Submodel"
@@ -24,8 +35,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 * "Describe the different types of Data related to the I4.0 Asset"@en
 * "Constraint AASd-062: The semanticId of a Submodel shall only reference a ConceptDescription with the category APPLICATION_CLASS."@en
 */
-@KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultSubmodel.class)
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes({
+	@JsonSubTypes.Type(value = DefaultSubmodel.class)
 })
 public interface Submodel extends Qualifiable, HasDataSpecification, Identifiable, HasKind, HasSemantics {
 
@@ -35,6 +47,7 @@ public interface Submodel extends Qualifiable, HasDataSpecification, Identifiabl
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
+	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -59,7 +72,7 @@ public interface Submodel extends Qualifiable, HasDataSpecification, Identifiabl
 	* @return Returns the List of SubmodelElements for the property submodelElements.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement")
 	public List<SubmodelElement> getSubmodelElements();
 
 }

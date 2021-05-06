@@ -16,15 +16,29 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Identifier"
 * "Used to uniquely identify an entity by using an identifier."@en 
 */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeName("aas:Identifier")
 public class DefaultIdentifier implements Identifier {
 
+	@JsonProperty("@id")
+	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -41,7 +55,7 @@ public class DefaultIdentifier implements Identifier {
 	* "has idType"
 	* "Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the enumeration \'IdentifierType\'."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifier/idType", "idType"})
 	protected IdentifierType idType;
 
 
@@ -49,7 +63,7 @@ public class DefaultIdentifier implements Identifier {
 	* "has identification"
 	* "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifier/identifier", "identifier"})
 	protected String identifier;
 
 
@@ -58,6 +72,7 @@ public class DefaultIdentifier implements Identifier {
 		id = VocabUtil.getInstance().createRandomUrl("identifier");
 	}
 
+	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -95,7 +110,7 @@ public class DefaultIdentifier implements Identifier {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
 	final public String getIdentifier() {
 		return identifier;
 	}
@@ -104,7 +119,7 @@ public class DefaultIdentifier implements Identifier {
 		this.identifier = identifier;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")
 	final public IdentifierType getIdType() {
 		return idType;
 	}

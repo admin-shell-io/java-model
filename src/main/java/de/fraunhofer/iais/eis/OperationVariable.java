@@ -16,14 +16,26 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Operation Variable"
 * "An operation variable is a submodel element that is used as input or output variable of an operation."@en
 */
-@KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultOperationVariable.class)
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes({
+	@JsonSubTypes.Type(value = DefaultOperationVariable.class)
 })
 public interface OperationVariable {
 
@@ -33,6 +45,7 @@ public interface OperationVariable {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
+	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -58,7 +71,7 @@ public interface OperationVariable {
 	* @return Returns the SubmodelElement for the property value.
 	* More information under https://admin-shell.io/aas/3/0/RC01/OperationVariable/value
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/OperationVariable/value")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/OperationVariable/value")
 	public SubmodelElement getValue();
 
 }

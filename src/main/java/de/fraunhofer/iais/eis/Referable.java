@@ -16,18 +16,30 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Referable"
 * "An element that is referable by its idShort. This id is not globally unique. This id is unique within the name space of the element."@en
 */
-@KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultReferable.class),
-	@KnownSubtypes.Type(value = AccessPermissionRule.class),
-	@KnownSubtypes.Type(value = Identifiable.class),
-	@KnownSubtypes.Type(value = View.class),
-	@KnownSubtypes.Type(value = SubmodelElement.class)
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes({
+	@JsonSubTypes.Type(value = DefaultReferable.class),
+	@JsonSubTypes.Type(value = AccessPermissionRule.class),
+	@JsonSubTypes.Type(value = Identifiable.class),
+	@JsonSubTypes.Type(value = View.class),
+	@JsonSubTypes.Type(value = SubmodelElement.class)
 })
 public interface Referable {
 
@@ -37,6 +49,7 @@ public interface Referable {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
+	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -61,7 +74,7 @@ public interface Referable {
 	* @return Returns the List of Strings for the property referableCategories.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	public List<String> getReferableCategories();
 
 	/**
@@ -69,7 +82,7 @@ public interface Referable {
 	* @return Returns the List of TypedLiterals for the property descriptions.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/description
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	public List<TypedLiteral> getDescriptions();
 
 	/**
@@ -77,7 +90,7 @@ public interface Referable {
 	* @return Returns the TypedLiteral for the property displayName.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/displayName
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	public TypedLiteral getDisplayName();
 
 	/**
@@ -90,7 +103,7 @@ public interface Referable {
 	* @return Returns the String for the property idShort.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/idShort
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	public String getIdShort();
 
 }

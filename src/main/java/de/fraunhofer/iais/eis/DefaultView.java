@@ -16,16 +16,30 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "View"
 * "A view is a collection of referable elements w.r.t. to a specific viewpoint of one or more stakeholders."@en
 * "Constraint AASd-064: If the semanticId of a View references a ConceptDescription then the category of the ConceptDescription shall be VIEW."@en 
 */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeName("aas:View")
 public class DefaultView implements View {
 
+	@JsonProperty("@id")
+	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -42,7 +56,7 @@ public class DefaultView implements View {
 	* "has Data Specification"
 	* "Global reference to the data specification template used by the element."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "dataSpecification"})
 	protected List<Reference> dataSpecifications;
 
 
@@ -51,7 +65,7 @@ public class DefaultView implements View {
 	* "Points to the Expression Semantic of the Submodels"@en
 	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "semanticId"})
 	protected Reference semanticId;
 
 
@@ -59,7 +73,7 @@ public class DefaultView implements View {
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "description"})
 	protected List<TypedLiteral> descriptions;
 
 
@@ -67,7 +81,7 @@ public class DefaultView implements View {
 	* "has display name"
 	* "Display name. Can be provided in several languages."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "displayName"})
 	protected TypedLiteral displayName;
 
 
@@ -80,7 +94,7 @@ public class DefaultView implements View {
 	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
 	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "idShort"})
 	protected String idShort;
 
 
@@ -88,7 +102,7 @@ public class DefaultView implements View {
 	* "has category"
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableCategory"})
 	protected List<String> referableCategories;
 
 
@@ -96,7 +110,7 @@ public class DefaultView implements View {
 	* "contains element"
 	* "Referable elements that are contained in the view."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/View/containedElement", "containedElement"})
 	protected List<Referable> containedElements;
 
 
@@ -105,6 +119,7 @@ public class DefaultView implements View {
 		id = VocabUtil.getInstance().createRandomUrl("view");
 	}
 
+	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -152,7 +167,7 @@ public class DefaultView implements View {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
 	final public List<Referable> getContainedElements() {
 		return containedElements;
 	}
@@ -161,7 +176,7 @@ public class DefaultView implements View {
 		this.containedElements = containedElements;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	final public List<String> getReferableCategories() {
 		return referableCategories;
 	}
@@ -170,7 +185,7 @@ public class DefaultView implements View {
 		this.referableCategories = referableCategories;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	final public List<TypedLiteral> getDescriptions() {
 		return descriptions;
 	}
@@ -179,7 +194,7 @@ public class DefaultView implements View {
 		this.descriptions = descriptions;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	final public TypedLiteral getDisplayName() {
 		return displayName;
 	}
@@ -188,7 +203,7 @@ public class DefaultView implements View {
 		this.displayName = displayName;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	final public String getIdShort() {
 		return idShort;
 	}
@@ -197,7 +212,7 @@ public class DefaultView implements View {
 		this.idShort = idShort;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	final public List<Reference> getDataSpecifications() {
 		return dataSpecifications;
 	}
@@ -206,7 +221,7 @@ public class DefaultView implements View {
 		this.dataSpecifications = dataSpecifications;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	final public Reference getSemanticId() {
 		return semanticId;
 	}

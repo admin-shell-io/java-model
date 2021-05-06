@@ -16,15 +16,29 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Security"
 * "Container for security relevant information of the AAS."@en 
 */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeName("aas:Security")
 public class DefaultSecurity implements Security {
 
+	@JsonProperty("@id")
+	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -41,7 +55,7 @@ public class DefaultSecurity implements Security {
 	* "has access control policy points"
 	* "Access control policy points of the AAS."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints", "accessControlPolicyPoints"})
 	protected AccessControlPolicyPoints accessControlPolicyPoints;
 
 
@@ -49,7 +63,7 @@ public class DefaultSecurity implements Security {
 	* "has certificate"
 	* "Certificates of the AAS."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Security/certificate")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Security/certificate", "certificate"})
 	protected List<Certificate> certificates;
 
 
@@ -57,7 +71,7 @@ public class DefaultSecurity implements Security {
 	* "has required certificate extension"
 	* "Certificate extensions as required by the AAS."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension", "requiredCertificateExtension"})
 	protected List<Reference> requiredCertificateExtensions;
 
 
@@ -66,6 +80,7 @@ public class DefaultSecurity implements Security {
 		id = VocabUtil.getInstance().createRandomUrl("security");
 	}
 
+	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -105,7 +120,7 @@ public class DefaultSecurity implements Security {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
 	final public AccessControlPolicyPoints getAccessControlPolicyPoints() {
 		return accessControlPolicyPoints;
 	}
@@ -114,7 +129,7 @@ public class DefaultSecurity implements Security {
 		this.accessControlPolicyPoints = accessControlPolicyPoints;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Security/certificate")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/certificate")
 	final public List<Certificate> getCertificates() {
 		return certificates;
 	}
@@ -123,7 +138,7 @@ public class DefaultSecurity implements Security {
 		this.certificates = certificates;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension")
 	final public List<Reference> getRequiredCertificateExtensions() {
 		return requiredCertificateExtensions;
 	}

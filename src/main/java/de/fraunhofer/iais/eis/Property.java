@@ -16,7 +16,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Property"
@@ -25,8 +36,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 * "Constraint AASd-065: If the semanticId of a Property or MultiLanguageProperty references a ConceptDescription with the  category VALUE then the value of the property is identical to  DataSpecificationIEC61360/value and the valueId of the property is identical to DataSpecificationIEC61360/valueId."@en
 * "Constraint AASd-066: If the semanticId of a Property or MultiLanguageProperty references a ConceptDescription with the  category PROPERTY and DataSpecificationIEC61360/valueList is defined the value and valueId of the property is identical to one of the value reference pair types references in the value list, i.e. ValueReferencePairType/value or ValueReferencePairType/valueId, resp."@en
 */
-@KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultProperty.class)
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes({
+	@JsonSubTypes.Type(value = DefaultProperty.class)
 })
 public interface Property extends DataElement {
 
@@ -36,6 +48,7 @@ public interface Property extends DataElement {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
+	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -60,7 +73,7 @@ public interface Property extends DataElement {
 	* @return Returns the String for the property valueType.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Property/valueType
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueType")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Property/valueType")
 	public String getValueType();
 
 	/**
@@ -68,7 +81,7 @@ public interface Property extends DataElement {
 	* @return Returns the TypedLiteral for the property value.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Property/value
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Property/value")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Property/value")
 	public TypedLiteral getValue();
 
 	/**
@@ -77,7 +90,7 @@ public interface Property extends DataElement {
 	* @return Returns the Reference for the property valueId.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Property/valueId
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueId")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Property/valueId")
 	public Reference getValueId();
 
 }

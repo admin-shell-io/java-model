@@ -16,15 +16,27 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Concept Description"
 * "The semantics of a property or other elements that may have a semantic description is defined by a concept description. The description of the concept should follow a standardized schema (realized as data specification template)."@en
 * "Constraint AASd-051: A ConceptDescription shall have one of the following categories: VALUE, PROPERTY, REFERENCE, DOCUMENT, CAPABILITY, RELATIONSHIP, COLLECTION, FUNCTION, EVENT, ENTITY, APPLICATION_CLASS, QUALIFIER, VIEW. Default: PROPERTY."@en
 */
-@KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultConceptDescription.class)
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes({
+	@JsonSubTypes.Type(value = DefaultConceptDescription.class)
 })
 public interface ConceptDescription extends HasDataSpecification, Identifiable {
 
@@ -34,6 +46,7 @@ public interface ConceptDescription extends HasDataSpecification, Identifiable {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
+	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -58,7 +71,7 @@ public interface ConceptDescription extends HasDataSpecification, Identifiable {
 	* @return Returns the List of DataSpecificationContents for the property contents.
 	* More information under https://admin-shell.io/aas/3/0/RC01/ConceptDescription/content
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/content")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/content")
 	public List<DataSpecificationContent> getContents();
 
 	/**
@@ -67,7 +80,7 @@ public interface ConceptDescription extends HasDataSpecification, Identifiable {
 	* @return Returns the List of References for the property isCaseOfs.
 	* More information under https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf")
 	public List<Reference> getIsCaseOfs();
 
 }

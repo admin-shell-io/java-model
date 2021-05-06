@@ -16,15 +16,29 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Data Specification Physical Unit"
 * "Data Specification Template for Physical Units."@en 
 */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeName("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/")
 public class DefaultRC01 implements RC01 {
 
+	@JsonProperty("@id")
+	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -40,84 +54,84 @@ public class DefaultRC01 implements RC01 {
 	/**
 	* "has conversion factor"
 	*/
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor")
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor", "conversionFactor"})
 	protected List<String> conversionFactors;
 
 
 	/**
 	* "has definition"
 	*/
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/definition")
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/definition", "definition"})
 	protected List<TypedLiteral> definitions;
 
 
 	/**
 	* "has DIN notation"
 	*/
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation")
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation", "dinNotation"})
 	protected List<String> dinNotations;
 
 
 	/**
 	* "has ECE code"
 	*/
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode")
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode", "eceCode"})
 	protected List<String> eceCodes;
 
 
 	/**
 	* "has ECE name"
 	*/
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName")
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName", "eceName"})
 	protected List<String> eceNames;
 
 
 	/**
 	* "has NIST name"
 	*/
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName")
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName", "nistName"})
 	protected List<String> nistNames;
 
 
 	/**
 	* "has registration authority"
 	*/
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/registrationAuthorityId")
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/registrationAuthorityId", "registrationAuthorityId"})
 	protected List<String> registrationAuthorityIds;
 
 
 	/**
 	* "has SI name"
 	*/
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siName")
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siName", "siName"})
 	protected List<String> siNames;
 
 
 	/**
 	* "has SI notation"
 	*/
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation")
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation", "siNotation"})
 	protected List<String> siNotations;
 
 
 	/**
 	* "has supplier"
 	*/
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/supplier")
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/supplier", "supplier"})
 	protected List<String> suppliers;
 
 
 	/**
 	* "unit has name"
 	*/
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName")
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName", "unitName"})
 	protected List<String> unitNames;
 
 
 	/**
 	* "unit has symbol"
 	*/
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol")
+	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol", "unitSymbol"})
 	protected List<String> unitSymbols;
 
 
@@ -126,6 +140,7 @@ public class DefaultRC01 implements RC01 {
 		id = VocabUtil.getInstance().createRandomUrl("rC01");
 	}
 
+	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -183,7 +198,7 @@ public class DefaultRC01 implements RC01 {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor")
+	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor")
 	final public List<String> getConversionFactors() {
 		return conversionFactors;
 	}
@@ -192,7 +207,7 @@ public class DefaultRC01 implements RC01 {
 		this.conversionFactors = conversionFactors;
 	}
 
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/definition")
+	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/definition")
 	final public List<TypedLiteral> getDefinitions() {
 		return definitions;
 	}
@@ -201,7 +216,7 @@ public class DefaultRC01 implements RC01 {
 		this.definitions = definitions;
 	}
 
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation")
+	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation")
 	final public List<String> getDinNotations() {
 		return dinNotations;
 	}
@@ -210,7 +225,7 @@ public class DefaultRC01 implements RC01 {
 		this.dinNotations = dinNotations;
 	}
 
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode")
+	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode")
 	final public List<String> getEceCodes() {
 		return eceCodes;
 	}
@@ -219,7 +234,7 @@ public class DefaultRC01 implements RC01 {
 		this.eceCodes = eceCodes;
 	}
 
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName")
+	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName")
 	final public List<String> getEceNames() {
 		return eceNames;
 	}
@@ -228,7 +243,7 @@ public class DefaultRC01 implements RC01 {
 		this.eceNames = eceNames;
 	}
 
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName")
+	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName")
 	final public List<String> getNistNames() {
 		return nistNames;
 	}
@@ -237,7 +252,7 @@ public class DefaultRC01 implements RC01 {
 		this.nistNames = nistNames;
 	}
 
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siName")
+	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siName")
 	final public List<String> getSiNames() {
 		return siNames;
 	}
@@ -246,7 +261,7 @@ public class DefaultRC01 implements RC01 {
 		this.siNames = siNames;
 	}
 
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation")
+	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation")
 	final public List<String> getSiNotations() {
 		return siNotations;
 	}
@@ -255,7 +270,7 @@ public class DefaultRC01 implements RC01 {
 		this.siNotations = siNotations;
 	}
 
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/registrationAuthorityId")
+	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/registrationAuthorityId")
 	final public List<String> getRegistrationAuthorityIds() {
 		return registrationAuthorityIds;
 	}
@@ -264,7 +279,7 @@ public class DefaultRC01 implements RC01 {
 		this.registrationAuthorityIds = registrationAuthorityIds;
 	}
 
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/supplier")
+	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/supplier")
 	final public List<String> getSuppliers() {
 		return suppliers;
 	}
@@ -273,7 +288,7 @@ public class DefaultRC01 implements RC01 {
 		this.suppliers = suppliers;
 	}
 
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName")
+	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName")
 	final public List<String> getUnitNames() {
 		return unitNames;
 	}
@@ -282,7 +297,7 @@ public class DefaultRC01 implements RC01 {
 		this.unitNames = unitNames;
 	}
 
-	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol")
+	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol")
 	final public List<String> getUnitSymbols() {
 		return unitSymbols;
 	}

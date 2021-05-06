@@ -16,13 +16,25 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Formula"
 */
-@KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultFormula.class)
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes({
+	@JsonSubTypes.Type(value = DefaultFormula.class)
 })
 public interface Formula extends Constraint {
 
@@ -32,6 +44,7 @@ public interface Formula extends Constraint {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
+	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -56,7 +69,7 @@ public interface Formula extends Constraint {
 	* @return Returns the List of References for the property dependsOns.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn")
 	public List<Reference> getDependsOns();
 
 }

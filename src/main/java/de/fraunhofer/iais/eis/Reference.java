@@ -16,14 +16,26 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Reference"
 * "Reference to either a model element of the same or another AAs or to an external entity. A reference is an ordered list of keys, each key referencing an element. The complete list of keys may for example be concatenated to a path that then gives unique access to an element or entity."@en
 */
-@KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultReference.class)
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes({
+	@JsonSubTypes.Type(value = DefaultReference.class)
 })
 public interface Reference {
 
@@ -33,6 +45,7 @@ public interface Reference {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
+	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -57,7 +70,7 @@ public interface Reference {
 	* @return Returns the List of Keys for the property keys.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Reference/key
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Reference/key")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Reference/key")
 	public List<Key> getKeys();
 
 }

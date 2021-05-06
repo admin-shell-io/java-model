@@ -16,15 +16,29 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Access Control"
 * "Access Control defines the local access control policy administration point. Access Control has the major task to define the access permission rules."@en 
 */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeName("aas:AccessControl")
 public class DefaultAccessControl implements AccessControl {
 
+	@JsonProperty("@id")
+	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -41,7 +55,7 @@ public class DefaultAccessControl implements AccessControl {
 	* "has access permission rule"
 	* "Access permission rules of the AAS describing the rights assigned to (already authenticated) subjects to access elements of the AAS."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule", "accessPermissionRule"})
 	protected List<AccessPermissionRule> accessPermissionRules;
 
 
@@ -49,7 +63,7 @@ public class DefaultAccessControl implements AccessControl {
 	* "has default environment attributes"
 	* "Reference to a submodel defining default environment attributes, i.e. attributes that are not describing the asset itself. The submodel is of kind=Type. At the same type the values of these environment attributes need to be accessible when evaluating the access permission rules. This is realized as a policy information point."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultEnvironmentAttributes")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultEnvironmentAttributes", "defaultEnvironmentAttributes"})
 	protected Submodel defaultEnvironmentAttributes;
 
 
@@ -57,7 +71,7 @@ public class DefaultAccessControl implements AccessControl {
 	* "has default permissions"
 	* "Reference to a submodel defining the default permissions for the AAS."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultPermissions")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultPermissions", "defaultPermissions"})
 	protected Submodel defaultPermissions;
 
 
@@ -66,7 +80,7 @@ public class DefaultAccessControl implements AccessControl {
 	* "Reference to a submodel defining the default subjects attributes for the AAS that can be used to describe access permission rules."@en
 	* "The submodel is of kind=Type."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultSubjectAttributes")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultSubjectAttributes", "defaultSubjectAttributes"})
 	protected Submodel defaultSubjectAttributes;
 
 
@@ -74,7 +88,7 @@ public class DefaultAccessControl implements AccessControl {
 	* "has selectable environment attributes"
 	* "Reference to a submodel defining which environment attributes can be accessed via the permission rules."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableEnvironmentAttributes")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableEnvironmentAttributes", "selectableEnvironmentAttributes"})
 	protected Submodel selectableEnvironmentAttributes;
 
 
@@ -83,7 +97,7 @@ public class DefaultAccessControl implements AccessControl {
 	* "Reference to a submodel defining which permissions can be assigned to the subjects."@en
 	* "Default: reference to the submodel referenced via defaultPermissions"@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectablePermissions")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/selectablePermissions", "selectablePermissions"})
 	protected Submodel selectablePermissions;
 
 
@@ -92,7 +106,7 @@ public class DefaultAccessControl implements AccessControl {
 	* "Reference to a submodel defining the authenticated subjects that are configured for the AAS. They are selectable by the access permission rules to assign permissions to the subjects."@en
 	* "Default: reference to the submodel referenced via defaultSubjectAttributes."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableSubjectAttributes")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableSubjectAttributes", "selectableSubjectAttributes"})
 	protected Submodel selectableSubjectAttributes;
 
 
@@ -101,6 +115,7 @@ public class DefaultAccessControl implements AccessControl {
 		id = VocabUtil.getInstance().createRandomUrl("accessControl");
 	}
 
+	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -148,7 +163,7 @@ public class DefaultAccessControl implements AccessControl {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule")
 	final public List<AccessPermissionRule> getAccessPermissionRules() {
 		return accessPermissionRules;
 	}
@@ -157,7 +172,7 @@ public class DefaultAccessControl implements AccessControl {
 		this.accessPermissionRules = accessPermissionRules;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableSubjectAttributes")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableSubjectAttributes")
 	final public Submodel getSelectableSubjectAttributes() {
 		return selectableSubjectAttributes;
 	}
@@ -166,7 +181,7 @@ public class DefaultAccessControl implements AccessControl {
 		this.selectableSubjectAttributes = selectableSubjectAttributes;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultSubjectAttributes")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultSubjectAttributes")
 	final public Submodel getDefaultSubjectAttributes() {
 		return defaultSubjectAttributes;
 	}
@@ -175,7 +190,7 @@ public class DefaultAccessControl implements AccessControl {
 		this.defaultSubjectAttributes = defaultSubjectAttributes;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectablePermissions")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectablePermissions")
 	final public Submodel getSelectablePermissions() {
 		return selectablePermissions;
 	}
@@ -184,7 +199,7 @@ public class DefaultAccessControl implements AccessControl {
 		this.selectablePermissions = selectablePermissions;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultPermissions")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultPermissions")
 	final public Submodel getDefaultPermissions() {
 		return defaultPermissions;
 	}
@@ -193,7 +208,7 @@ public class DefaultAccessControl implements AccessControl {
 		this.defaultPermissions = defaultPermissions;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableEnvironmentAttributes")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableEnvironmentAttributes")
 	final public Submodel getSelectableEnvironmentAttributes() {
 		return selectableEnvironmentAttributes;
 	}
@@ -202,7 +217,7 @@ public class DefaultAccessControl implements AccessControl {
 		this.selectableEnvironmentAttributes = selectableEnvironmentAttributes;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultEnvironmentAttributes")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultEnvironmentAttributes")
 	final public Submodel getDefaultEnvironmentAttributes() {
 		return defaultEnvironmentAttributes;
 	}

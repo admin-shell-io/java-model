@@ -16,25 +16,37 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Submodel Element"
 * "A submodel element is an element suitable for the description and differentiation of assets."@en
 * "The concept of type and instance applies to submodel elements. Properties are special submodel elements. The property types are defined in dictionaries (like the IEC Common Data Dictionary or eCl@ss), they do not have a value. The property type (kind=Type) is also called data element type in some standards. The property instances (kind=Instance) typically have a value. A property instance is also called property-value pair in certain standards."@en
 */
-@KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultSubmodelElement.class),
-	@KnownSubtypes.Type(value = RelationshipElement.class),
-	@KnownSubtypes.Type(value = DataElement.class),
-	@KnownSubtypes.Type(value = File.class),
-	@KnownSubtypes.Type(value = Event.class),
-	@KnownSubtypes.Type(value = Capability.class),
-	@KnownSubtypes.Type(value = Entity.class),
-	@KnownSubtypes.Type(value = EventElement.class),
-	@KnownSubtypes.Type(value = EventMessage.class),
-	@KnownSubtypes.Type(value = Operation.class),
-	@KnownSubtypes.Type(value = SubmodelElementCollection.class)
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes({
+	@JsonSubTypes.Type(value = DefaultSubmodelElement.class),
+	@JsonSubTypes.Type(value = RelationshipElement.class),
+	@JsonSubTypes.Type(value = DataElement.class),
+	@JsonSubTypes.Type(value = File.class),
+	@JsonSubTypes.Type(value = Event.class),
+	@JsonSubTypes.Type(value = Capability.class),
+	@JsonSubTypes.Type(value = Entity.class),
+	@JsonSubTypes.Type(value = EventElement.class),
+	@JsonSubTypes.Type(value = EventMessage.class),
+	@JsonSubTypes.Type(value = Operation.class),
+	@JsonSubTypes.Type(value = SubmodelElementCollection.class)
 })
 public interface SubmodelElement extends Referable, Qualifiable, HasDataSpecification, HasKind, HasSemantics {
 
@@ -44,6 +56,7 @@ public interface SubmodelElement extends Referable, Qualifiable, HasDataSpecific
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
+	@JsonProperty("@id")
 	public URI getId();
 
 	/**

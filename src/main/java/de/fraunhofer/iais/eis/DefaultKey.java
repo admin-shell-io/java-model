@@ -16,15 +16,29 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Key"
 * "A key is a reference to an element by its id."@en 
 */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeName("aas:Key")
 public class DefaultKey implements Key {
 
+	@JsonProperty("@id")
+	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -43,7 +57,7 @@ public class DefaultKey implements Key {
 	* "Constraint AASd-080: In case Key/type == GlobalReference idType shall not be any LocalKeyType (IdShort, FragmentId)."@en
 	* "Constraint AASd-081: In case Key/type==AssetAdministrationShell Key/idType shall not be any  LocalKeyType (IdShort, FragmentId)."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Key/idType")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Key/idType", "idType"})
 	protected KeyType idType;
 
 
@@ -51,7 +65,7 @@ public class DefaultKey implements Key {
 	* "has type"
 	* "Denote which kind of entity is referenced. In case type = GlobalReference then the element is a global unique id. In all other cases the key references a model element of the same or of another AAS. The name of the model element is explicitly listed."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Key/type")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Key/type", "type"})
 	protected KeyElements type;
 
 
@@ -59,7 +73,7 @@ public class DefaultKey implements Key {
 	* "has value"
 	* "The key value, for example an IRDI if the idType=IRDI."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Key/value")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Key/value", "value"})
 	protected String value;
 
 
@@ -68,6 +82,7 @@ public class DefaultKey implements Key {
 		id = VocabUtil.getInstance().createRandomUrl("key");
 	}
 
+	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -107,7 +122,7 @@ public class DefaultKey implements Key {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Key/idType")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Key/idType")
 	final public KeyType getIdType() {
 		return idType;
 	}
@@ -116,7 +131,7 @@ public class DefaultKey implements Key {
 		this.idType = idType;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Key/type")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Key/type")
 	final public KeyElements getType() {
 		return type;
 	}
@@ -125,7 +140,7 @@ public class DefaultKey implements Key {
 		this.type = type;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Key/value")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Key/value")
 	final public String getValue() {
 		return value;
 	}

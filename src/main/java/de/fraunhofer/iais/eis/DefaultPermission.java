@@ -16,15 +16,29 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Permission"
 * "Description of a single permission."@en 
 */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeName("aas:Permission")
 public class DefaultPermission implements Permission {
 
+	@JsonProperty("@id")
+	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -41,7 +55,7 @@ public class DefaultPermission implements Permission {
 	* "has kind of permission"
 	* "Description of the kind of permission. Possible kind of permission also include the denial of the permission."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission", "kindOfPermission"})
 	protected PermissionKind kindOfPermission;
 
 
@@ -51,7 +65,7 @@ public class DefaultPermission implements Permission {
 	* "Constraint AASs-010: The property referenced in Permission/permission shall have the category \'CONSTANT\'."@en
 	* "Constraint AASs-011: The property referenced in Permission/permission shall be part of the submodel that is referenced within the \'selectablePermissions\' attribute of \'AccessControl\'."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Permission/permission")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Permission/permission", "permission"})
 	protected Property permission;
 
 
@@ -60,6 +74,7 @@ public class DefaultPermission implements Permission {
 		id = VocabUtil.getInstance().createRandomUrl("permission");
 	}
 
+	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -97,7 +112,7 @@ public class DefaultPermission implements Permission {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
 	final public PermissionKind getKindOfPermission() {
 		return kindOfPermission;
 	}
@@ -106,7 +121,7 @@ public class DefaultPermission implements Permission {
 		this.kindOfPermission = kindOfPermission;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Permission/permission")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Permission/permission")
 	final public Property getPermission() {
 		return permission;
 	}

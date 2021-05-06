@@ -16,15 +16,29 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "identifier key value pair"
 * "An IdentifierKeyValuePair describes a generic identifier as key-value pair."@en 
 */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeName("aas:IdentifierKeyValuePair")
 public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 
+	@JsonProperty("@id")
+	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -42,7 +56,7 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 	* "Points to the Expression Semantic of the Submodels"@en
 	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "semanticId"})
 	protected Reference semanticId;
 
 
@@ -50,7 +64,7 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 	* "has IdentifierKeyValuePair.externalSubjectId"
 	* "The (external) subject the key belongs to or has meaning to."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId", "externalSubjectId"})
 	protected Reference externalSubjectId;
 
 
@@ -58,7 +72,7 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 	* "has IdentifierKeyValuePair.key"
 	* "Key of the identifier."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key", "key"})
 	protected String key;
 
 
@@ -66,7 +80,7 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 	* "has IdentifierKeyValuePair.value"
 	* "The value of the identifier with the corresponding key."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value", "value"})
 	protected String value;
 
 
@@ -75,6 +89,7 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 		id = VocabUtil.getInstance().createRandomUrl("identifierKeyValuePair");
 	}
 
+	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -116,7 +131,7 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
 	final public String getKey() {
 		return key;
 	}
@@ -125,7 +140,7 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 		this.key = key;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
 	final public String getValue() {
 		return value;
 	}
@@ -134,7 +149,7 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 		this.value = value;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId")
 	final public Reference getExternalSubjectId() {
 		return externalSubjectId;
 	}
@@ -143,7 +158,7 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 		this.externalSubjectId = externalSubjectId;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	final public Reference getSemanticId() {
 		return semanticId;
 	}

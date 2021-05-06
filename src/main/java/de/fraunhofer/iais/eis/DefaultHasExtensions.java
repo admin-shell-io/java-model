@@ -16,15 +16,29 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "HasExtensions"
 * "Element that can be extended by proprietary extensions."@en 
 */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeName("aas:HasExtensions")
 public class DefaultHasExtensions implements HasExtensions {
 
+	@JsonProperty("@id")
+	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -41,7 +55,7 @@ public class DefaultHasExtensions implements HasExtensions {
 	* "has extension"
 	* "An extension of the element."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension", "extension"})
 	protected List<Extension> extensions;
 
 
@@ -50,6 +64,7 @@ public class DefaultHasExtensions implements HasExtensions {
 		id = VocabUtil.getInstance().createRandomUrl("hasExtensions");
 	}
 
+	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -85,7 +100,7 @@ public class DefaultHasExtensions implements HasExtensions {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension")
 	final public List<Extension> getExtensions() {
 		return extensions;
 	}

@@ -16,15 +16,29 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Permission Per Object"
 * "Table that defines access permissions for a specified object. The object is any referable element in the AAS. Additionally object attributes can be defined that further specify the kind of object the permissions apply to."@en 
 */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeName("aas:PermissionsPerObject")
 public class DefaultPermissionsPerObject implements PermissionsPerObject {
 
+	@JsonProperty("@id")
+	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -41,7 +55,7 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
 	* "has object"
 	* "Element to which permission shall be assigned."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object", "object"})
 	protected Referable object;
 
 
@@ -49,7 +63,7 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
 	* "has object permission"
 	* "Permissions assigned to the object. The permissions hold for all subjects as specified in the access permission rule."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission", "permission"})
 	protected List<Permission> permissions;
 
 
@@ -57,7 +71,7 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
 	* "has target object attributes"
 	* "Target object attributes that need to be fulfilled so that the access permissions apply to the accessing subject."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes", "targetObjectAttributes"})
 	protected ObjectAttributes targetObjectAttributes;
 
 
@@ -66,6 +80,7 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
 		id = VocabUtil.getInstance().createRandomUrl("permissionsPerObject");
 	}
 
+	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -105,7 +120,7 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")
 	final public Referable getObject() {
 		return object;
 	}
@@ -114,7 +129,7 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
 		this.object = object;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission")
 	final public List<Permission> getPermissions() {
 		return permissions;
 	}
@@ -123,7 +138,7 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
 		this.permissions = permissions;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes")
 	final public ObjectAttributes getTargetObjectAttributes() {
 		return targetObjectAttributes;
 	}

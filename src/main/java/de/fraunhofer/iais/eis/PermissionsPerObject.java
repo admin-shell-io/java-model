@@ -16,14 +16,26 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Permission Per Object"
 * "Table that defines access permissions for a specified object. The object is any referable element in the AAS. Additionally object attributes can be defined that further specify the kind of object the permissions apply to."@en
 */
-@KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultPermissionsPerObject.class)
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes({
+	@JsonSubTypes.Type(value = DefaultPermissionsPerObject.class)
 })
 public interface PermissionsPerObject {
 
@@ -33,6 +45,7 @@ public interface PermissionsPerObject {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
+	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -57,7 +70,7 @@ public interface PermissionsPerObject {
 	* @return Returns the Referable for the property object.
 	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")
 	public Referable getObject();
 
 	/**
@@ -65,7 +78,7 @@ public interface PermissionsPerObject {
 	* @return Returns the List of Permissions for the property permissions.
 	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission")
 	public List<Permission> getPermissions();
 
 	/**
@@ -73,7 +86,7 @@ public interface PermissionsPerObject {
 	* @return Returns the ObjectAttributes for the property targetObjectAttributes.
 	* More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes")
 	public ObjectAttributes getTargetObjectAttributes();
 
 }

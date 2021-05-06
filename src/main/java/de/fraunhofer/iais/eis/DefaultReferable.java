@@ -16,15 +16,29 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Referable"
 * "An element that is referable by its idShort. This id is not globally unique. This id is unique within the name space of the element."@en 
 */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeName("aas:Referable")
 public class DefaultReferable implements Referable {
 
+	@JsonProperty("@id")
+	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -41,7 +55,7 @@ public class DefaultReferable implements Referable {
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "description"})
 	protected List<TypedLiteral> descriptions;
 
 
@@ -49,7 +63,7 @@ public class DefaultReferable implements Referable {
 	* "has display name"
 	* "Display name. Can be provided in several languages."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "displayName"})
 	protected TypedLiteral displayName;
 
 
@@ -62,7 +76,7 @@ public class DefaultReferable implements Referable {
 	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
 	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "idShort"})
 	protected String idShort;
 
 
@@ -70,7 +84,7 @@ public class DefaultReferable implements Referable {
 	* "has category"
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableCategory"})
 	protected List<String> referableCategories;
 
 
@@ -79,6 +93,7 @@ public class DefaultReferable implements Referable {
 		id = VocabUtil.getInstance().createRandomUrl("referable");
 	}
 
+	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -120,7 +135,7 @@ public class DefaultReferable implements Referable {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	final public List<String> getReferableCategories() {
 		return referableCategories;
 	}
@@ -129,7 +144,7 @@ public class DefaultReferable implements Referable {
 		this.referableCategories = referableCategories;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	final public List<TypedLiteral> getDescriptions() {
 		return descriptions;
 	}
@@ -138,7 +153,7 @@ public class DefaultReferable implements Referable {
 		this.descriptions = descriptions;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	final public TypedLiteral getDisplayName() {
 		return displayName;
 	}
@@ -147,7 +162,7 @@ public class DefaultReferable implements Referable {
 		this.displayName = displayName;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	final public String getIdShort() {
 		return idShort;
 	}

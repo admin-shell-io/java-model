@@ -16,15 +16,27 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Entity"
 * "An entity is a submodel element that is used to model entities."@en
 * "Constraint AASd-056: The semanticId of a Entity submodel element shall only reference a ConceptDescription with the category ENTITY. The ConceptDescription describes the elements assigned to the entity via Entity/statement."@en
 */
-@KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultEntity.class)
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes({
+	@JsonSubTypes.Type(value = DefaultEntity.class)
 })
 public interface Entity extends SubmodelElement {
 
@@ -34,6 +46,7 @@ public interface Entity extends SubmodelElement {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
+	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -60,7 +73,7 @@ public interface Entity extends SubmodelElement {
 	* @return Returns the Reference for the property globalAssetId.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId")
 	public Reference getGlobalAssetId();
 
 	/**
@@ -70,7 +83,7 @@ public interface Entity extends SubmodelElement {
 	* @return Returns the IdentifierKeyValuePair for the property externalAssetId.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId")
 	public IdentifierKeyValuePair getExternalAssetId();
 
 	/**
@@ -78,7 +91,7 @@ public interface Entity extends SubmodelElement {
 	* @return Returns the EntityType for the property entityType.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Entity/entityType
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Entity/entityType")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Entity/entityType")
 	public EntityType getEntityType();
 
 	/**
@@ -86,7 +99,7 @@ public interface Entity extends SubmodelElement {
 	* @return Returns the List of SubmodelElements for the property statements.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Entity/statement
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Entity/statement")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Entity/statement")
 	public List<SubmodelElement> getStatements();
 
 }

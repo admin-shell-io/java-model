@@ -16,14 +16,26 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Security"
 * "Container for security relevant information of the AAS."@en
 */
-@KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultSecurity.class)
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes({
+	@JsonSubTypes.Type(value = DefaultSecurity.class)
 })
 public interface Security {
 
@@ -33,6 +45,7 @@ public interface Security {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
+	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -57,7 +70,7 @@ public interface Security {
 	* @return Returns the AccessControlPolicyPoints for the property accessControlPolicyPoints.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
 	public AccessControlPolicyPoints getAccessControlPolicyPoints();
 
 	/**
@@ -65,7 +78,7 @@ public interface Security {
 	* @return Returns the List of Certificates for the property certificates.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Security/certificate
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Security/certificate")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/certificate")
 	public List<Certificate> getCertificates();
 
 	/**
@@ -73,7 +86,7 @@ public interface Security {
 	* @return Returns the List of References for the property requiredCertificateExtensions.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension")
 	public List<Reference> getRequiredCertificateExtensions();
 
 }

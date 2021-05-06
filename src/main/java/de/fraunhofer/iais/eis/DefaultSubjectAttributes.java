@@ -16,15 +16,29 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Subject Attributes"
 * "A set of data elements that further classifies a specific subject."@en 
 */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeName("aas:SubjectAttributes")
 public class DefaultSubjectAttributes implements SubjectAttributes {
 
+	@JsonProperty("@id")
+	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -42,7 +56,7 @@ public class DefaultSubjectAttributes implements SubjectAttributes {
 	* "A data element that further classifies a specific subject. "@en
 	* "Constraint AASs-015: The data element SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the \'selectableSubjectAttributes\' attribute of \'AccessControl\'."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute")
+	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute", "subjectAttribute"})
 	protected List<DataElement> subjectAttributes;
 
 
@@ -51,6 +65,7 @@ public class DefaultSubjectAttributes implements SubjectAttributes {
 		id = VocabUtil.getInstance().createRandomUrl("subjectAttributes");
 	}
 
+	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -86,7 +101,7 @@ public class DefaultSubjectAttributes implements SubjectAttributes {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute")
 	final public List<DataElement> getSubjectAttributes() {
 		return subjectAttributes;
 	}

@@ -16,14 +16,26 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Blob Certificate"
 * "Certificate provided as BLOB."@en
 */
-@KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultBlobCertificate.class)
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes({
+	@JsonSubTypes.Type(value = DefaultBlobCertificate.class)
 })
 public interface BlobCertificate extends Certificate {
 
@@ -33,6 +45,7 @@ public interface BlobCertificate extends Certificate {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
+	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -57,7 +70,7 @@ public interface BlobCertificate extends Certificate {
 	* @return Returns the byte for the property blobCertificate.
 	* More information under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate")
 	public byte getBlobCertificate();
 
 	/**
@@ -65,7 +78,7 @@ public interface BlobCertificate extends Certificate {
 	* @return Returns the List of References for the property containedExtensions.
 	* More information under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension")
 	public List<Reference> getContainedExtensions();
 
 	/**
@@ -73,7 +86,7 @@ public interface BlobCertificate extends Certificate {
 	* @return Returns the boolean for the property lastCertificate.
 	* More information under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate")
+	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate")
 	public boolean getLastCertificate();
 
 }

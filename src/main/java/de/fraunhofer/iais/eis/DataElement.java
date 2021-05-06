@@ -16,19 +16,31 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Data Element"
 * "A data element is a submodel element that is not further composed out of other submodel elements. A data element is a submodel element that has a value. The type of value differs for different subtypes of data elements."@en
 */
-@KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultDataElement.class),
-	@KnownSubtypes.Type(value = Blob.class),
-	@KnownSubtypes.Type(value = MultiLanguageProperty.class),
-	@KnownSubtypes.Type(value = Property.class),
-	@KnownSubtypes.Type(value = Range.class),
-	@KnownSubtypes.Type(value = ReferenceElement.class)
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes({
+	@JsonSubTypes.Type(value = DefaultDataElement.class),
+	@JsonSubTypes.Type(value = Blob.class),
+	@JsonSubTypes.Type(value = MultiLanguageProperty.class),
+	@JsonSubTypes.Type(value = Property.class),
+	@JsonSubTypes.Type(value = Range.class),
+	@JsonSubTypes.Type(value = ReferenceElement.class)
 })
 public interface DataElement extends SubmodelElement {
 
@@ -38,6 +50,7 @@ public interface DataElement extends SubmodelElement {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
+	@JsonProperty("@id")
 	public URI getId();
 
 	/**
