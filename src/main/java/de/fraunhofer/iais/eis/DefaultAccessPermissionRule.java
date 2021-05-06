@@ -16,29 +16,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Access Permission Rule"
 * "Table that defines access permissions per authenticated subject for a set of objects (referable elements)."@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:AccessPermissionRule")
+
 public class DefaultAccessPermissionRule implements AccessPermissionRule {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -127,7 +113,6 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 		id = VocabUtil.getInstance().createRandomUrl("accessPermissionRule");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -177,7 +162,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject")
 	final public List<PermissionsPerObject> getPermissionsPerObjects() {
 		return permissionsPerObjects;
 	}
@@ -186,7 +171,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 		this.permissionsPerObjects = permissionsPerObjects;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes")
 	final public SubjectAttributes getTargetSubjectAttributes() {
 		return targetSubjectAttributes;
 	}
@@ -195,7 +180,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 		this.targetSubjectAttributes = targetSubjectAttributes;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	final public List<String> getReferableCategories() {
 		return referableCategories;
 	}
@@ -204,7 +189,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 		this.referableCategories = referableCategories;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	final public List<TypedLiteral> getDescriptions() {
 		return descriptions;
 	}
@@ -213,7 +198,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 		this.descriptions = descriptions;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	final public TypedLiteral getDisplayName() {
 		return displayName;
 	}
@@ -222,7 +207,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 		this.displayName = displayName;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	final public String getIdShort() {
 		return idShort;
 	}
@@ -231,7 +216,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 		this.idShort = idShort;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
 	final public URI getParent() {
 		return parent;
 	}
@@ -240,7 +225,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 		this.parent = parent;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
 	final public List<Constraint> getQualifiers() {
 		return qualifiers;
 	}

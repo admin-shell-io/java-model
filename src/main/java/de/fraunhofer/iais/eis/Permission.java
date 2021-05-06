@@ -16,24 +16,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Permission"
 * "Description of a single permission."@en
 */
-@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @KnownSubtypes({
 	@KnownSubtypes.Type(value = DefaultPermission.class)
 })
@@ -45,7 +33,6 @@ public interface Permission {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
-	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -70,7 +57,7 @@ public interface Permission {
 	* @return Returns the PermissionKind for the property kindOfPermission.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
 	public PermissionKind getKindOfPermission();
 
 	/**
@@ -80,7 +67,7 @@ public interface Permission {
 	* @return Returns the Property for the property permission.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Permission/permission
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Permission/permission")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Permission/permission")
 	public Property getPermission();
 
 }

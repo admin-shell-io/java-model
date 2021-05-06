@@ -16,29 +16,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Access Control"
 * "Access Control defines the local access control policy administration point. Access Control has the major task to define the access permission rules."@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:AccessControl")
+
 public class DefaultAccessControl implements AccessControl {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -115,7 +101,6 @@ public class DefaultAccessControl implements AccessControl {
 		id = VocabUtil.getInstance().createRandomUrl("accessControl");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -163,7 +148,7 @@ public class DefaultAccessControl implements AccessControl {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule")
 	final public List<AccessPermissionRule> getAccessPermissionRules() {
 		return accessPermissionRules;
 	}
@@ -172,7 +157,7 @@ public class DefaultAccessControl implements AccessControl {
 		this.accessPermissionRules = accessPermissionRules;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableSubjectAttributes")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableSubjectAttributes")
 	final public Submodel getSelectableSubjectAttributes() {
 		return selectableSubjectAttributes;
 	}
@@ -181,7 +166,7 @@ public class DefaultAccessControl implements AccessControl {
 		this.selectableSubjectAttributes = selectableSubjectAttributes;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultSubjectAttributes")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultSubjectAttributes")
 	final public Submodel getDefaultSubjectAttributes() {
 		return defaultSubjectAttributes;
 	}
@@ -190,7 +175,7 @@ public class DefaultAccessControl implements AccessControl {
 		this.defaultSubjectAttributes = defaultSubjectAttributes;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectablePermissions")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectablePermissions")
 	final public Submodel getSelectablePermissions() {
 		return selectablePermissions;
 	}
@@ -199,7 +184,7 @@ public class DefaultAccessControl implements AccessControl {
 		this.selectablePermissions = selectablePermissions;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultPermissions")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultPermissions")
 	final public Submodel getDefaultPermissions() {
 		return defaultPermissions;
 	}
@@ -208,7 +193,7 @@ public class DefaultAccessControl implements AccessControl {
 		this.defaultPermissions = defaultPermissions;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableEnvironmentAttributes")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableEnvironmentAttributes")
 	final public Submodel getSelectableEnvironmentAttributes() {
 		return selectableEnvironmentAttributes;
 	}
@@ -217,7 +202,7 @@ public class DefaultAccessControl implements AccessControl {
 		this.selectableEnvironmentAttributes = selectableEnvironmentAttributes;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultEnvironmentAttributes")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultEnvironmentAttributes")
 	final public Submodel getDefaultEnvironmentAttributes() {
 		return defaultEnvironmentAttributes;
 	}

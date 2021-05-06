@@ -16,24 +16,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Has Kind"
 * "An element with a kind is an element that can either represent a type or an instance. Default for an element is that it is representing an instance."@en
 */
-@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @KnownSubtypes({
 	@KnownSubtypes.Type(value = DefaultHasKind.class),
 	@KnownSubtypes.Type(value = Submodel.class),
@@ -47,7 +35,6 @@ public interface HasKind {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
-	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -72,7 +59,7 @@ public interface HasKind {
 	* @return Returns the ModelingKind for the property kind.
 	* More information under https://admin-shell.io/aas/3/0/RC01/HasKind/kind
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
 	public ModelingKind getKind();
 
 }

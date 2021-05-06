@@ -16,25 +16,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Reference Element"
 * "A reference element is a data element that defines a logical reference to another element within the same or another AAS or a reference to an external object or entity."@en
 * "Constraint AASd-054: The semanticId of a ReferenceElement shall only reference a ConceptDescription with the category REFERENCE."@en
 */
-@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @KnownSubtypes({
 	@KnownSubtypes.Type(value = DefaultReferenceElement.class)
 })
@@ -46,7 +34,6 @@ public interface ReferenceElement extends DataElement {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
-	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -71,7 +58,7 @@ public interface ReferenceElement extends DataElement {
 	* @return Returns the Reference for the property value.
 	* More information under https://admin-shell.io/aas/3/0/RC01/ReferenceElement/value
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ReferenceElement/value")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/ReferenceElement/value")
 	public Reference getValue();
 
 }

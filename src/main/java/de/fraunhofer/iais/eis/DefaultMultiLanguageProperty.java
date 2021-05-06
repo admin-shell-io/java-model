@@ -16,29 +16,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Multi Language Property"
 * "A property is a data element that has a multi language value."@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:MultiLanguageProperty")
+
 public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -155,7 +141,6 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 		id = VocabUtil.getInstance().createRandomUrl("multiLanguageProperty");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -211,7 +196,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value")
 	final public List<TypedLiteral> getValues() {
 		return values;
 	}
@@ -220,7 +205,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 		this.values = values;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId")
 	final public List<Reference> getValueIds() {
 		return valueIds;
 	}
@@ -231,7 +216,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	final public List<String> getReferableCategories() {
 		return referableCategories;
 	}
@@ -240,7 +225,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 		this.referableCategories = referableCategories;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	final public List<TypedLiteral> getDescriptions() {
 		return descriptions;
 	}
@@ -249,7 +234,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 		this.descriptions = descriptions;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	final public TypedLiteral getDisplayName() {
 		return displayName;
 	}
@@ -258,7 +243,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 		this.displayName = displayName;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	final public String getIdShort() {
 		return idShort;
 	}
@@ -267,7 +252,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 		this.idShort = idShort;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
 	final public URI getParent() {
 		return parent;
 	}
@@ -276,7 +261,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 		this.parent = parent;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
 	final public List<Constraint> getQualifiers() {
 		return qualifiers;
 	}
@@ -285,7 +270,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 		this.qualifiers = qualifiers;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	final public List<Reference> getDataSpecifications() {
 		return dataSpecifications;
 	}
@@ -294,7 +279,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 		this.dataSpecifications = dataSpecifications;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
 	final public ModelingKind getKind() {
 		return kind;
 	}
@@ -303,7 +288,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 		this.kind = kind;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	final public Reference getSemanticId() {
 		return semanticId;
 	}

@@ -16,24 +16,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Asset Administration Shell"
 * "Describes the Administration Shell for Assets, Products, Components, e.g. Machines"@en
 */
-@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @KnownSubtypes({
 	@KnownSubtypes.Type(value = DefaultAssetAdministrationShell.class)
 })
@@ -45,7 +33,6 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
-	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -70,7 +57,7 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
 	* @return Returns the AssetInformation for the property assetInformation.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation")
 	public AssetInformation getAssetInformation();
 
 	/**
@@ -78,7 +65,7 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
 	* @return Returns the Reference for the property derivedFrom.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom")
 	public Reference getDerivedFrom();
 
 	/**
@@ -86,7 +73,7 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
 	* @return Returns the Security for the property security.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security")
 	public Security getSecurity();
 
 	/**
@@ -94,7 +81,7 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
 	* @return Returns the List of Submodels for the property submodels.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
 	public List<Submodel> getSubmodels();
 
 	/**
@@ -102,7 +89,7 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
 	* @return Returns the List of Views for the property views.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view")
 	public List<View> getViews();
 
 }

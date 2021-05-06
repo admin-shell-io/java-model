@@ -16,25 +16,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Qualifiable"
 * "Additional qualification of a qualifiable element."@en
 * "Constraint AASd-021: Every qualifiable can only have one qualifier with the same Qualifier/type."@en
 */
-@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @KnownSubtypes({
 	@KnownSubtypes.Type(value = DefaultQualifiable.class),
 	@KnownSubtypes.Type(value = AccessPermissionRule.class),
@@ -49,7 +37,6 @@ public interface Qualifiable {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
-	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -74,7 +61,7 @@ public interface Qualifiable {
 	* @return Returns the List of Constraints for the property qualifiers.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
 	public List<Constraint> getQualifiers();
 
 }

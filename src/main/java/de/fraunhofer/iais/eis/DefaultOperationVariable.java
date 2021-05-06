@@ -16,29 +16,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Operation Variable"
 * "An operation variable is a submodel element that is used as input or output variable of an operation."@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:OperationVariable")
+
 public class DefaultOperationVariable implements OperationVariable {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -65,7 +51,6 @@ public class DefaultOperationVariable implements OperationVariable {
 		id = VocabUtil.getInstance().createRandomUrl("operationVariable");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -101,7 +86,7 @@ public class DefaultOperationVariable implements OperationVariable {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/OperationVariable/value")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/OperationVariable/value")
 	final public SubmodelElement getValue() {
 		return value;
 	}

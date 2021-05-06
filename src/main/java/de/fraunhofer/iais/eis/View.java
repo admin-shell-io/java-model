@@ -16,25 +16,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "View"
 * "A view is a collection of referable elements w.r.t. to a specific viewpoint of one or more stakeholders."@en
 * "Constraint AASd-064: If the semanticId of a View references a ConceptDescription then the category of the ConceptDescription shall be VIEW."@en
 */
-@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @KnownSubtypes({
 	@KnownSubtypes.Type(value = DefaultView.class)
 })
@@ -46,7 +34,6 @@ public interface View extends Referable, HasDataSpecification, HasSemantics {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
-	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -71,7 +58,7 @@ public interface View extends Referable, HasDataSpecification, HasSemantics {
 	* @return Returns the List of Referables for the property containedElements.
 	* More information under https://admin-shell.io/aas/3/0/RC01/View/containedElement
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
 	public List<Referable> getContainedElements();
 
 }

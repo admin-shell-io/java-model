@@ -16,24 +16,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Object Attributes"
 * "A set of data elements that describe object attributes. These attributes need to refer to a data element within an existing submodel."@en
 */
-@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @KnownSubtypes({
 	@KnownSubtypes.Type(value = DefaultObjectAttributes.class)
 })
@@ -45,7 +33,6 @@ public interface ObjectAttributes {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
-	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -70,7 +57,7 @@ public interface ObjectAttributes {
 	* @return Returns the List of DataElements for the property objectAttributes.
 	* More information under https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
 	public List<DataElement> getObjectAttributes();
 
 }

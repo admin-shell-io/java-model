@@ -16,29 +16,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Data Element"
 * "A data element is a submodel element that is not further composed out of other submodel elements. A data element is a submodel element that has a value. The type of value differs for different subtypes of data elements."@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:DataElement")
+
 public class DefaultDataElement implements DataElement {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -136,7 +122,6 @@ public class DefaultDataElement implements DataElement {
 		id = VocabUtil.getInstance().createRandomUrl("dataElement");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -190,7 +175,7 @@ public class DefaultDataElement implements DataElement {
 
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	final public List<String> getReferableCategories() {
 		return referableCategories;
 	}
@@ -199,7 +184,7 @@ public class DefaultDataElement implements DataElement {
 		this.referableCategories = referableCategories;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	final public List<TypedLiteral> getDescriptions() {
 		return descriptions;
 	}
@@ -208,7 +193,7 @@ public class DefaultDataElement implements DataElement {
 		this.descriptions = descriptions;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	final public TypedLiteral getDisplayName() {
 		return displayName;
 	}
@@ -217,7 +202,7 @@ public class DefaultDataElement implements DataElement {
 		this.displayName = displayName;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	final public String getIdShort() {
 		return idShort;
 	}
@@ -226,7 +211,7 @@ public class DefaultDataElement implements DataElement {
 		this.idShort = idShort;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
 	final public URI getParent() {
 		return parent;
 	}
@@ -235,7 +220,7 @@ public class DefaultDataElement implements DataElement {
 		this.parent = parent;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
 	final public List<Constraint> getQualifiers() {
 		return qualifiers;
 	}
@@ -244,7 +229,7 @@ public class DefaultDataElement implements DataElement {
 		this.qualifiers = qualifiers;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	final public List<Reference> getDataSpecifications() {
 		return dataSpecifications;
 	}
@@ -253,7 +238,7 @@ public class DefaultDataElement implements DataElement {
 		this.dataSpecifications = dataSpecifications;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
 	final public ModelingKind getKind() {
 		return kind;
 	}
@@ -262,7 +247,7 @@ public class DefaultDataElement implements DataElement {
 		this.kind = kind;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	final public Reference getSemanticId() {
 		return semanticId;
 	}

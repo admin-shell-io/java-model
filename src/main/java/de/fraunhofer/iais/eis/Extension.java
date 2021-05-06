@@ -16,25 +16,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Extensions"
 * "Single extension of an element."@en
 * "Constraint AASd-077: The name of an extension within HasExtensions needs to be unique."@en
 */
-@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
 @KnownSubtypes({
 	@KnownSubtypes.Type(value = DefaultExtension.class)
 })
@@ -46,7 +34,6 @@ public interface Extension extends HasSemantics {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
-	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -71,7 +58,7 @@ public interface Extension extends HasSemantics {
 	* @return Returns the String for the property name.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/name
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/name")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Extension/name")
 	public String getName();
 
 	/**
@@ -79,7 +66,7 @@ public interface Extension extends HasSemantics {
 	* @return Returns the String for the property valueType.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/valueType
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/valueType")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Extension/valueType")
 	public String getValueType();
 
 	/**
@@ -87,7 +74,7 @@ public interface Extension extends HasSemantics {
 	* @return Returns the String for the property value.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/value
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/value")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Extension/value")
 	public String getValue();
 
 	/**
@@ -95,7 +82,7 @@ public interface Extension extends HasSemantics {
 	* @return Returns the Reference for the property refersTo.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Extension/refersTo
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/refersTo")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Extension/refersTo")
 	public Reference getRefersTo();
 
 }

@@ -16,29 +16,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Identifiable"
 * "An element that has a globally unique identifier."@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:Identifiable")
+
 public class DefaultIdentifiable implements Identifiable {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -120,7 +106,6 @@ public class DefaultIdentifiable implements Identifiable {
 		id = VocabUtil.getInstance().createRandomUrl("identifiable");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -168,7 +153,7 @@ public class DefaultIdentifiable implements Identifiable {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
 	final public AdministrativeInformation getAdministration() {
 		return administration;
 	}
@@ -177,7 +162,7 @@ public class DefaultIdentifiable implements Identifiable {
 		this.administration = administration;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
 	final public Identifier getIdentification() {
 		return identification;
 	}
@@ -186,7 +171,7 @@ public class DefaultIdentifiable implements Identifiable {
 		this.identification = identification;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	final public List<String> getReferableCategories() {
 		return referableCategories;
 	}
@@ -195,7 +180,7 @@ public class DefaultIdentifiable implements Identifiable {
 		this.referableCategories = referableCategories;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	final public List<TypedLiteral> getDescriptions() {
 		return descriptions;
 	}
@@ -204,7 +189,7 @@ public class DefaultIdentifiable implements Identifiable {
 		this.descriptions = descriptions;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	final public TypedLiteral getDisplayName() {
 		return displayName;
 	}
@@ -213,7 +198,7 @@ public class DefaultIdentifiable implements Identifiable {
 		this.displayName = displayName;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	final public String getIdShort() {
 		return idShort;
 	}
@@ -222,7 +207,7 @@ public class DefaultIdentifiable implements Identifiable {
 		this.idShort = idShort;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
 	final public URI getParent() {
 		return parent;
 	}

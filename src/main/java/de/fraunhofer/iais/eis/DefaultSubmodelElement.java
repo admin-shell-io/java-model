@@ -16,30 +16,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Submodel Element"
 * "A submodel element is an element suitable for the description and differentiation of assets."@en
 * "The concept of type and instance applies to submodel elements. Properties are special submodel elements. The property types are defined in dictionaries (like the IEC Common Data Dictionary or eCl@ss), they do not have a value. The property type (kind=Type) is also called data element type in some standards. The property instances (kind=Instance) typically have a value. A property instance is also called property-value pair in certain standards."@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:SubmodelElement")
+
 public class DefaultSubmodelElement implements SubmodelElement {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -137,7 +123,6 @@ public class DefaultSubmodelElement implements SubmodelElement {
 		id = VocabUtil.getInstance().createRandomUrl("submodelElement");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -190,7 +175,7 @@ public class DefaultSubmodelElement implements SubmodelElement {
 
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	final public List<String> getReferableCategories() {
 		return referableCategories;
 	}
@@ -199,7 +184,7 @@ public class DefaultSubmodelElement implements SubmodelElement {
 		this.referableCategories = referableCategories;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	final public List<TypedLiteral> getDescriptions() {
 		return descriptions;
 	}
@@ -208,7 +193,7 @@ public class DefaultSubmodelElement implements SubmodelElement {
 		this.descriptions = descriptions;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	final public TypedLiteral getDisplayName() {
 		return displayName;
 	}
@@ -217,7 +202,7 @@ public class DefaultSubmodelElement implements SubmodelElement {
 		this.displayName = displayName;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	final public String getIdShort() {
 		return idShort;
 	}
@@ -226,7 +211,7 @@ public class DefaultSubmodelElement implements SubmodelElement {
 		this.idShort = idShort;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
 	final public URI getParent() {
 		return parent;
 	}
@@ -235,7 +220,7 @@ public class DefaultSubmodelElement implements SubmodelElement {
 		this.parent = parent;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
 	final public List<Constraint> getQualifiers() {
 		return qualifiers;
 	}
@@ -244,7 +229,7 @@ public class DefaultSubmodelElement implements SubmodelElement {
 		this.qualifiers = qualifiers;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	final public List<Reference> getDataSpecifications() {
 		return dataSpecifications;
 	}
@@ -253,7 +238,7 @@ public class DefaultSubmodelElement implements SubmodelElement {
 		this.dataSpecifications = dataSpecifications;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
 	final public ModelingKind getKind() {
 		return kind;
 	}
@@ -262,7 +247,7 @@ public class DefaultSubmodelElement implements SubmodelElement {
 		this.kind = kind;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	final public Reference getSemanticId() {
 		return semanticId;
 	}

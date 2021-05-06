@@ -16,29 +16,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Annotated Relationship Element"
 * "An annotated relationship element is an relationship element that can be annotated with additional data elements."@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:AnnotatedRelationshipElement")
+
 public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshipElement {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -160,7 +146,6 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 		id = VocabUtil.getInstance().createRandomUrl("annotatedRelationshipElement");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -218,7 +203,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation")
 	final public List<DataElement> getAnnotations() {
 		return annotations;
 	}
@@ -227,7 +212,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 		this.annotations = annotations;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first")
 	final public Referable getFirst() {
 		return first;
 	}
@@ -236,7 +221,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 		this.first = first;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second")
 	final public Referable getSecond() {
 		return second;
 	}
@@ -246,7 +231,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 	}
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	final public List<String> getReferableCategories() {
 		return referableCategories;
 	}
@@ -255,7 +240,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 		this.referableCategories = referableCategories;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	final public List<TypedLiteral> getDescriptions() {
 		return descriptions;
 	}
@@ -264,7 +249,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 		this.descriptions = descriptions;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	final public TypedLiteral getDisplayName() {
 		return displayName;
 	}
@@ -273,7 +258,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 		this.displayName = displayName;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	final public String getIdShort() {
 		return idShort;
 	}
@@ -282,7 +267,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 		this.idShort = idShort;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
 	final public URI getParent() {
 		return parent;
 	}
@@ -291,7 +276,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 		this.parent = parent;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
 	final public List<Constraint> getQualifiers() {
 		return qualifiers;
 	}
@@ -300,7 +285,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 		this.qualifiers = qualifiers;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	final public List<Reference> getDataSpecifications() {
 		return dataSpecifications;
 	}
@@ -309,7 +294,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 		this.dataSpecifications = dataSpecifications;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
 	final public ModelingKind getKind() {
 		return kind;
 	}
@@ -318,7 +303,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 		this.kind = kind;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	final public Reference getSemanticId() {
 		return semanticId;
 	}

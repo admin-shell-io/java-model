@@ -16,18 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "has Asset Identification Model"
@@ -35,12 +24,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 * "The asset may either represent an asset type or an asset instance."@en
 * "The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute \'globalAssetId\' is optional."@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:AssetInformation")
+
 public class DefaultAssetInformation implements AssetInformation {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -100,7 +86,6 @@ public class DefaultAssetInformation implements AssetInformation {
 		id = VocabUtil.getInstance().createRandomUrl("assetInformation");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -144,7 +129,7 @@ public class DefaultAssetInformation implements AssetInformation {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
 	final public List<AssetKind> getAssetKinds() {
 		return assetKinds;
 	}
@@ -153,7 +138,7 @@ public class DefaultAssetInformation implements AssetInformation {
 		this.assetKinds = assetKinds;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId")
 	final public Reference getGlobalAssetId() {
 		return globalAssetId;
 	}
@@ -162,7 +147,7 @@ public class DefaultAssetInformation implements AssetInformation {
 		this.globalAssetId = globalAssetId;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/externalAssetId")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/externalAssetId")
 	final public List<IdentifierKeyValuePair> getExternalAssetIds() {
 		return externalAssetIds;
 	}
@@ -171,7 +156,7 @@ public class DefaultAssetInformation implements AssetInformation {
 		this.externalAssetIds = externalAssetIds;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial")
 	final public List<Submodel> getBillOfMaterials() {
 		return billOfMaterials;
 	}
@@ -180,7 +165,7 @@ public class DefaultAssetInformation implements AssetInformation {
 		this.billOfMaterials = billOfMaterials;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AssetInformation/thumbnail")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/thumbnail")
 	final public File getThumbnail() {
 		return thumbnail;
 	}

@@ -16,18 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Submodel Element Collection"
@@ -36,12 +25,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 * "Constraint AASd-092: If the semanticId of a SubmodelElementCollection with SubmodelElementCollection/allowDuplicates == false references a ConceptDescription then the ConceptDescription/category shall be ENTITY."@en
 * "Constraint AASd-093: If the semanticId of a SubmodelElementCollection with SubmodelElementCollection/allowDuplicates == true references a ConceptDescription then the ConceptDescription/category shall be COLLECTION."@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:SubmodelElementCollection")
+
 public class DefaultSubmodelElementCollection implements SubmodelElementCollection {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -164,7 +150,6 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 		id = VocabUtil.getInstance().createRandomUrl("submodelElementCollection");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -222,7 +207,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates")
 	final public boolean getAllowDuplicates() {
 		return allowDuplicates;
 	}
@@ -231,7 +216,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 		this.allowDuplicates = allowDuplicates;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered")
 	final public boolean getOrdered() {
 		return ordered;
 	}
@@ -240,7 +225,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 		this.ordered = ordered;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value")
 	final public List<SubmodelElement> getValues() {
 		return values;
 	}
@@ -250,7 +235,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 	}
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	final public List<String> getReferableCategories() {
 		return referableCategories;
 	}
@@ -259,7 +244,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 		this.referableCategories = referableCategories;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	final public List<TypedLiteral> getDescriptions() {
 		return descriptions;
 	}
@@ -268,7 +253,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 		this.descriptions = descriptions;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	final public TypedLiteral getDisplayName() {
 		return displayName;
 	}
@@ -277,7 +262,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 		this.displayName = displayName;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	final public String getIdShort() {
 		return idShort;
 	}
@@ -286,7 +271,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 		this.idShort = idShort;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
 	final public URI getParent() {
 		return parent;
 	}
@@ -295,7 +280,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 		this.parent = parent;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
 	final public List<Constraint> getQualifiers() {
 		return qualifiers;
 	}
@@ -304,7 +289,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 		this.qualifiers = qualifiers;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	final public List<Reference> getDataSpecifications() {
 		return dataSpecifications;
 	}
@@ -313,7 +298,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 		this.dataSpecifications = dataSpecifications;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
 	final public ModelingKind getKind() {
 		return kind;
 	}
@@ -322,7 +307,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 		this.kind = kind;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	final public Reference getSemanticId() {
 		return semanticId;
 	}
