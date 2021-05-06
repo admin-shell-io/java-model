@@ -131,17 +131,6 @@ public class SubmodelBuilder {
 
 
 	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
-	*/
-	final public SubmodelBuilder parent(URI parent) {
-		this.defaultSubmodel.parent = parent;
-		return this;
-	}
-
-
-	/**
 	* This function allows setting a value for kind
 	* @param kind desired value to be set
 	* @return Builder object with new value for kind

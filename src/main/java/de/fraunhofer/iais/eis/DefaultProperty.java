@@ -66,14 +66,6 @@ public class DefaultProperty implements Property {
 
 
 	/**
-	* "has property category"
-	* "The following categories are defined for properties and multi-language properties: CONSTANT, PARAMETER, and VARIABLE."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Property/propertyCategory")
-	protected List<Category> propertyCategories;
-
-
-	/**
 	* "has property value"
 	* "The value of the property instance."@en
 	*/
@@ -88,6 +80,14 @@ public class DefaultProperty implements Property {
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueId")
 	protected Reference valueId;
+
+
+	/**
+	* "has property value type"
+	* "Data type pf the value."@en
+	*/
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueType")
+	protected String valueType;
 
 
 	/**
@@ -128,16 +128,6 @@ public class DefaultProperty implements Property {
 
 
 	/**
-	* "has parent"
-	* "Reference to the next referable parent element of the element."@en
-	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
-	* "This element is used to ease navigation in the model and thus it enables more performant"@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
-	protected URI parent;
-
-
-	/**
 	* "has category"
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
@@ -164,14 +154,13 @@ public class DefaultProperty implements Property {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.propertyCategories,
+		return Objects.hash(new Object[]{this.valueType,
 			this.value,
 			this.valueId,
 			this.referableCategories,
 			this.descriptions,
 			this.displayName,
 			this.idShort,
-			this.parent,
 			this.qualifiers,
 			this.dataSpecifications,
 			this.kind,
@@ -188,14 +177,13 @@ public class DefaultProperty implements Property {
 			return false;
 		} else {
 			DefaultProperty other = (DefaultProperty) obj;
-			return Objects.equals(this.propertyCategories, other.propertyCategories) &&
+			return Objects.equals(this.valueType, other.valueType) &&
 				Objects.equals(this.value, other.value) &&
 				Objects.equals(this.valueId, other.valueId) &&
 				Objects.equals(this.referableCategories, other.referableCategories) &&
 				Objects.equals(this.descriptions, other.descriptions) &&
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort) &&
-				Objects.equals(this.parent, other.parent) &&
 				Objects.equals(this.qualifiers, other.qualifiers) &&
 				Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
 				Objects.equals(this.kind, other.kind) &&
@@ -207,13 +195,13 @@ public class DefaultProperty implements Property {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Property/propertyCategory")
-	final public List<Category> getPropertyCategories() {
-		return propertyCategories;
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueType")
+	final public String getValueType() {
+		return valueType;
 	}
 	
-	final public void setPropertyCategories (List<Category> propertyCategories) {
-		this.propertyCategories = propertyCategories;
+	final public void setValueType (String valueType) {
+		this.valueType = valueType;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Property/value")
@@ -270,15 +258,6 @@ public class DefaultProperty implements Property {
 	
 	final public void setIdShort (String idShort) {
 		this.idShort = idShort;
-	}
-
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
-	final public URI getParent() {
-		return parent;
-	}
-	
-	final public void setParent (URI parent) {
-		this.parent = parent;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")

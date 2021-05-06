@@ -19,13 +19,13 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
-* "Identifier"
-* "Used to uniquely identify an entity by using an identifier."@en
+* "Asset Administration Shell Environment"
+* "A graph of Asset Administration Shells."@en
 */
 @KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultIdentifier.class)
+	@KnownSubtypes.Type(value = DefaultAssetAdministrationShellEnvironment.class)
 })
-public interface Identifier {
+public interface AssetAdministrationShellEnvironment {
 
 	// standard methods
 
@@ -53,19 +53,11 @@ public interface Identifier {
 
 
 	/**
-	* "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
-	* @return Returns the String for the property identifier.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Identifier/identifier
+	* "Points to the differents Administration Shells in one AssetAdministrationShellEnvironment graph."@en
+	* @return Returns the List of AssetAdministrationShells for the property assetAdministrationShells.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShell
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
-	public String getIdentifier();
-
-	/**
-	* "Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the enumeration \'IdentifierType\'."@en
-	* @return Returns the IdentifierType for the property idType.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Identifier/idType
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")
-	public IdentifierType getIdType();
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShell")
+	public List<AssetAdministrationShell> getAssetAdministrationShells();
 
 }

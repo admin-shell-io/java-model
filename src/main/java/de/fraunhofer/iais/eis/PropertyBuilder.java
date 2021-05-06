@@ -32,12 +32,12 @@ public class PropertyBuilder {
 	}
 
 	/**
-	* This function allows setting a value for propertyCategories
-	* @param propertyCategories desired value to be set
-	* @return Builder object with new value for propertyCategories
+	* This function allows setting a value for valueType
+	* @param valueType desired value to be set
+	* @return Builder object with new value for valueType
 	*/
-	final public PropertyBuilder propertyCategories(List<Category> propertyCategories) {
-		this.defaultProperty.propertyCategories = propertyCategories;
+	final public PropertyBuilder valueType(String valueType) {
+		this.defaultProperty.valueType = valueType;
 		return this;
 	}
 
@@ -106,17 +106,6 @@ public class PropertyBuilder {
 	*/
 	final public PropertyBuilder idShort(String idShort) {
 		this.defaultProperty.idShort = idShort;
-		return this;
-	}
-
-
-	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
-	*/
-	final public PropertyBuilder parent(URI parent) {
-		this.defaultProperty.parent = parent;
 		return this;
 	}
 

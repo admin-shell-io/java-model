@@ -69,7 +69,7 @@ public class AssetAdministrationShellBuilder {
 	* @param submodels desired value to be set
 	* @return Builder object with new value for submodels
 	*/
-	final public AssetAdministrationShellBuilder submodels(List<Submodel> submodels) {
+	final public AssetAdministrationShellBuilder submodels(List<Reference> submodels) {
 		this.defaultAssetAdministrationShell.submodels = submodels;
 		return this;
 	}
@@ -159,17 +159,6 @@ public class AssetAdministrationShellBuilder {
 	*/
 	final public AssetAdministrationShellBuilder idShort(String idShort) {
 		this.defaultAssetAdministrationShell.idShort = idShort;
-		return this;
-	}
-
-
-	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
-	*/
-	final public AssetAdministrationShellBuilder parent(URI parent) {
-		this.defaultAssetAdministrationShell.parent = parent;
 		return this;
 	}
 	/**

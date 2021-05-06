@@ -78,17 +78,6 @@ public class DataElementBuilder {
 
 
 	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
-	*/
-	final public DataElementBuilder parent(URI parent) {
-		this.defaultDataElement.parent = parent;
-		return this;
-	}
-
-
-	/**
 	* This function allows setting a value for qualifiers
 	* @param qualifiers desired value to be set
 	* @return Builder object with new value for qualifiers

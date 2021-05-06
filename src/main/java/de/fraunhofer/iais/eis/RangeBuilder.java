@@ -32,23 +32,34 @@ public class RangeBuilder {
 	}
 
 	/**
-	* This function allows setting a value for maxs
-	* @param maxs desired value to be set
-	* @return Builder object with new value for maxs
+	* This function allows setting a value for valueType
+	* @param valueType desired value to be set
+	* @return Builder object with new value for valueType
 	*/
-	final public RangeBuilder maxs(List<TypedLiteral> maxs) {
-		this.defaultRange.maxs = maxs;
+	final public RangeBuilder valueType(String valueType) {
+		this.defaultRange.valueType = valueType;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for mins
-	* @param mins desired value to be set
-	* @return Builder object with new value for mins
+	* This function allows setting a value for max
+	* @param max desired value to be set
+	* @return Builder object with new value for max
 	*/
-	final public RangeBuilder mins(List<TypedLiteral> mins) {
-		this.defaultRange.mins = mins;
+	final public RangeBuilder max(TypedLiteral max) {
+		this.defaultRange.max = max;
+		return this;
+	}
+
+
+	/**
+	* This function allows setting a value for min
+	* @param min desired value to be set
+	* @return Builder object with new value for min
+	*/
+	final public RangeBuilder min(TypedLiteral min) {
+		this.defaultRange.min = min;
 		return this;
 	}
 
@@ -95,17 +106,6 @@ public class RangeBuilder {
 	*/
 	final public RangeBuilder idShort(String idShort) {
 		this.defaultRange.idShort = idShort;
-		return this;
-	}
-
-
-	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
-	*/
-	final public RangeBuilder parent(URI parent) {
-		this.defaultRange.parent = parent;
 		return this;
 	}
 

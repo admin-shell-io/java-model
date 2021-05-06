@@ -42,7 +42,7 @@ public class DefaultSecurity implements Security {
 	* "Access control policy points of the AAS."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
-	protected PolicyAdministrationPoint accessControlPolicyPoints;
+	protected AccessControlPolicyPoints accessControlPolicyPoints;
 
 
 	/**
@@ -106,11 +106,11 @@ public class DefaultSecurity implements Security {
 
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
-	final public PolicyAdministrationPoint getAccessControlPolicyPoints() {
+	final public AccessControlPolicyPoints getAccessControlPolicyPoints() {
 		return accessControlPolicyPoints;
 	}
 	
-	final public void setAccessControlPolicyPoints (PolicyAdministrationPoint accessControlPolicyPoints) {
+	final public void setAccessControlPolicyPoints (AccessControlPolicyPoints accessControlPolicyPoints) {
 		this.accessControlPolicyPoints = accessControlPolicyPoints;
 	}
 

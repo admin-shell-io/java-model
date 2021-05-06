@@ -43,6 +43,17 @@ public class QualifierBuilder {
 
 
 	/**
+	* This function allows setting a value for valueType
+	* @param valueType desired value to be set
+	* @return Builder object with new value for valueType
+	*/
+	final public QualifierBuilder valueType(String valueType) {
+		this.defaultQualifier.valueType = valueType;
+		return this;
+	}
+
+
+	/**
 	* This function allows setting a value for value
 	* @param value desired value to be set
 	* @return Builder object with new value for value

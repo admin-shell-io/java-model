@@ -19,10 +19,8 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /** 
-* "has Asset Identification Model"
-* "In AssetInformation identifying meta data of the asset that is represented by an AAS is defined."@en
-* "The asset may either represent an asset type or an asset instance."@en
-* "The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute \'globalAssetId\' is optional."@en 
+* "Asset Information"
+* "The asset may either represent an asset type or an asset instance. The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute \'globalAssetId\' is optional."@en 
 */
 
 public class DefaultAssetInformation implements AssetInformation {
@@ -31,17 +29,17 @@ public class DefaultAssetInformation implements AssetInformation {
 
 	//List of all labels of this class
 	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("has Asset Identification Model", ""));
+	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Asset Information", ""));
 
 	//List of all comments of this class
 	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("In AssetInformation identifying meta data of the asset that is represented by an AAS is defined.", "en"), new TypedLiteral("The asset may either represent an asset type or an asset instance.", "en"), new TypedLiteral("The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute 'globalAssetId' is optional.", "en"));
+	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("The asset may either represent an asset type or an asset instance. The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute 'globalAssetId' is optional.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	* "has assetKind"
-	* "Denotes whether the Asset of of kind \'Type\' or \'Instance\'."@en
+	* "has asset kind"
+	* "Denotes whether the Asset of kind \'Type\' or \'Instance\'."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
 	protected List<AssetKind> assetKinds;
@@ -56,17 +54,16 @@ public class DefaultAssetInformation implements AssetInformation {
 
 
 	/**
-	* "has external asset id"
-	* "Additional domain specific external, typically proprietary Identifier for the asset like e.g. serial number etc."@en
+	* "has default Thumbnail"
+	* "Thumbnail of the asset represented by the asset administration shell."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/externalAssetId")
-	protected List<IdentifierKeyValuePair> externalAssetIds;
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail")
+	protected File defaultThumbnail;
 
 
 	/**
 	* "has global asset id"
-	* "Reference to either an Asset object or a global reference to the asset the AAS is representing."@en
-	* "This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the asset. In a first phase of the life cycle the asset might not yet have a global id but already an internal identifier. The internal identifier would be modelled via \'externalAssetId\'."@en
+	* "Reference to either an Asset object or a global reference to the asset the AAS is representing. This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the asset. In a first phase of the life cycle the asset might not yet have a global id but already an internal identifier. The internal identifier would be modelled via \'externalAssetId\'."@en
 	* "Constraint AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global reference."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId")
@@ -74,11 +71,11 @@ public class DefaultAssetInformation implements AssetInformation {
 
 
 	/**
-	* "has thumbnail"
-	* "Thumbnail of the asset represented by the asset administration shell."@en
+	* "has specific asset id"
+	* "Additional domain-specific, typically proprietary Identifier for the asset like e.g. serial number etc."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/thumbnail")
-	protected File thumbnail;
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId")
+	protected List<IdentifierKeyValuePair> specificAssetIds;
 
 
 	// no manual construction
@@ -102,9 +99,9 @@ public class DefaultAssetInformation implements AssetInformation {
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.assetKinds,
 			this.globalAssetId,
-			this.externalAssetIds,
+			this.specificAssetIds,
 			this.billOfMaterials,
-			this.thumbnail});
+			this.defaultThumbnail});
 	}
 
 	@Override
@@ -119,9 +116,9 @@ public class DefaultAssetInformation implements AssetInformation {
 			DefaultAssetInformation other = (DefaultAssetInformation) obj;
 			return Objects.equals(this.assetKinds, other.assetKinds) &&
 				Objects.equals(this.globalAssetId, other.globalAssetId) &&
-				Objects.equals(this.externalAssetIds, other.externalAssetIds) &&
+				Objects.equals(this.specificAssetIds, other.specificAssetIds) &&
 				Objects.equals(this.billOfMaterials, other.billOfMaterials) &&
-				Objects.equals(this.thumbnail, other.thumbnail);
+				Objects.equals(this.defaultThumbnail, other.defaultThumbnail);
 		}
 	}
 
@@ -147,13 +144,13 @@ public class DefaultAssetInformation implements AssetInformation {
 		this.globalAssetId = globalAssetId;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/externalAssetId")
-	final public List<IdentifierKeyValuePair> getExternalAssetIds() {
-		return externalAssetIds;
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId")
+	final public List<IdentifierKeyValuePair> getSpecificAssetIds() {
+		return specificAssetIds;
 	}
 	
-	final public void setExternalAssetIds (List<IdentifierKeyValuePair> externalAssetIds) {
-		this.externalAssetIds = externalAssetIds;
+	final public void setSpecificAssetIds (List<IdentifierKeyValuePair> specificAssetIds) {
+		this.specificAssetIds = specificAssetIds;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial")
@@ -165,12 +162,12 @@ public class DefaultAssetInformation implements AssetInformation {
 		this.billOfMaterials = billOfMaterials;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/thumbnail")
-	final public File getThumbnail() {
-		return thumbnail;
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail")
+	final public File getDefaultThumbnail() {
+		return defaultThumbnail;
 	}
 	
-	final public void setThumbnail (File thumbnail) {
-		this.thumbnail = thumbnail;
+	final public void setDefaultThumbnail (File defaultThumbnail) {
+		this.defaultThumbnail = defaultThumbnail;
 	}
 }

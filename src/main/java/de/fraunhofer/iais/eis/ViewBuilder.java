@@ -87,17 +87,6 @@ public class ViewBuilder {
 
 
 	/**
-	* This function allows setting a value for parent
-	* @param parent desired value to be set
-	* @return Builder object with new value for parent
-	*/
-	final public ViewBuilder parent(URI parent) {
-		this.defaultView.parent = parent;
-		return this;
-	}
-
-
-	/**
 	* This function allows setting a value for dataSpecifications
 	* @param dataSpecifications desired value to be set
 	* @return Builder object with new value for dataSpecifications

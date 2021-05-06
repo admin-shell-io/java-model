@@ -56,12 +56,12 @@ public interface Property extends DataElement {
 
 
 	/**
-	* "The following categories are defined for properties and multi-language properties: CONSTANT, PARAMETER, and VARIABLE."@en
-	* @return Returns the List of Categorys for the property propertyCategories.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Property/propertyCategory
+	* "Data type pf the value."@en
+	* @return Returns the String for the property valueType.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Property/valueType
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Property/propertyCategory")
-	public List<Category> getPropertyCategories();
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueType")
+	public String getValueType();
 
 	/**
 	* "The value of the property instance."@en

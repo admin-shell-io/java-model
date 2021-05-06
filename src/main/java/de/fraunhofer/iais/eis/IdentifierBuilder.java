@@ -32,12 +32,12 @@ public class IdentifierBuilder {
 	}
 
 	/**
-	* This function allows setting a value for identifiers
-	* @param identifiers desired value to be set
-	* @return Builder object with new value for identifiers
+	* This function allows setting a value for identifier
+	* @param identifier desired value to be set
+	* @return Builder object with new value for identifier
 	*/
-	final public IdentifierBuilder identifiers(List<TypedLiteral> identifiers) {
-		this.defaultIdentifier.identifiers = identifiers;
+	final public IdentifierBuilder identifier(String identifier) {
+		this.defaultIdentifier.identifier = identifier;
 		return this;
 	}
 

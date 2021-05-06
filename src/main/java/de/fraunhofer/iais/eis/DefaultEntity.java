@@ -137,16 +137,6 @@ public class DefaultEntity implements Entity {
 
 
 	/**
-	* "has parent"
-	* "Reference to the next referable parent element of the element."@en
-	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
-	* "This element is used to ease navigation in the model and thus it enables more performant"@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
-	protected URI parent;
-
-
-	/**
 	* "has category"
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
@@ -181,7 +171,6 @@ public class DefaultEntity implements Entity {
 			this.descriptions,
 			this.displayName,
 			this.idShort,
-			this.parent,
 			this.qualifiers,
 			this.dataSpecifications,
 			this.kind,
@@ -206,7 +195,6 @@ public class DefaultEntity implements Entity {
 				Objects.equals(this.descriptions, other.descriptions) &&
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort) &&
-				Objects.equals(this.parent, other.parent) &&
 				Objects.equals(this.qualifiers, other.qualifiers) &&
 				Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
 				Objects.equals(this.kind, other.kind) &&
@@ -289,15 +277,6 @@ public class DefaultEntity implements Entity {
 	
 	final public void setIdShort (String idShort) {
 		this.idShort = idShort;
-	}
-
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
-	final public URI getParent() {
-		return parent;
-	}
-	
-	final public void setParent (URI parent) {
-		this.parent = parent;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")

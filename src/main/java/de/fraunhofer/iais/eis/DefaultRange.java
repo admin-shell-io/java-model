@@ -78,7 +78,7 @@ public class DefaultRange implements Range {
 	* "The maximum value of the range."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/max")
-	protected List<TypedLiteral> maxs;
+	protected TypedLiteral max;
 
 
 	/**
@@ -86,7 +86,15 @@ public class DefaultRange implements Range {
 	* "The minimum value of the range."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/min")
-	protected List<TypedLiteral> mins;
+	protected TypedLiteral min;
+
+
+	/**
+	* "has value type of range"
+	* "Data type of the min and max."@en
+	*/
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/valueType")
+	protected String valueType;
 
 
 	/**
@@ -119,16 +127,6 @@ public class DefaultRange implements Range {
 
 
 	/**
-	* "has parent"
-	* "Reference to the next referable parent element of the element."@en
-	* "Constraint AASd-004: Add parent in case of non-identifiable elements."@en
-	* "This element is used to ease navigation in the model and thus it enables more performant"@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
-	protected URI parent;
-
-
-	/**
 	* "has category"
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
@@ -155,13 +153,13 @@ public class DefaultRange implements Range {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.maxs,
-			this.mins,
+		return Objects.hash(new Object[]{this.valueType,
+			this.max,
+			this.min,
 			this.referableCategories,
 			this.descriptions,
 			this.displayName,
 			this.idShort,
-			this.parent,
 			this.qualifiers,
 			this.dataSpecifications,
 			this.kind,
@@ -178,13 +176,13 @@ public class DefaultRange implements Range {
 			return false;
 		} else {
 			DefaultRange other = (DefaultRange) obj;
-			return Objects.equals(this.maxs, other.maxs) &&
-				Objects.equals(this.mins, other.mins) &&
+			return Objects.equals(this.valueType, other.valueType) &&
+				Objects.equals(this.max, other.max) &&
+				Objects.equals(this.min, other.min) &&
 				Objects.equals(this.referableCategories, other.referableCategories) &&
 				Objects.equals(this.descriptions, other.descriptions) &&
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort) &&
-				Objects.equals(this.parent, other.parent) &&
 				Objects.equals(this.qualifiers, other.qualifiers) &&
 				Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
 				Objects.equals(this.kind, other.kind) &&
@@ -196,22 +194,31 @@ public class DefaultRange implements Range {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/max")
-	final public List<TypedLiteral> getMaxs() {
-		return maxs;
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/valueType")
+	final public String getValueType() {
+		return valueType;
 	}
 	
-	final public void setMaxs (List<TypedLiteral> maxs) {
-		this.maxs = maxs;
+	final public void setValueType (String valueType) {
+		this.valueType = valueType;
+	}
+
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/max")
+	final public TypedLiteral getMax() {
+		return max;
+	}
+	
+	final public void setMax (TypedLiteral max) {
+		this.max = max;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/min")
-	final public List<TypedLiteral> getMins() {
-		return mins;
+	final public TypedLiteral getMin() {
+		return min;
 	}
 	
-	final public void setMins (List<TypedLiteral> mins) {
-		this.mins = mins;
+	final public void setMin (TypedLiteral min) {
+		this.min = min;
 	}
 
 
@@ -250,15 +257,6 @@ public class DefaultRange implements Range {
 	
 	final public void setIdShort (String idShort) {
 		this.idShort = idShort;
-	}
-
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/parent")
-	final public URI getParent() {
-		return parent;
-	}
-	
-	final public void setParent (URI parent) {
-		this.parent = parent;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")

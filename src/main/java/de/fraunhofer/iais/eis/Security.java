@@ -54,11 +54,11 @@ public interface Security {
 
 	/**
 	* "Access control policy points of the AAS."@en
-	* @return Returns the PolicyAdministrationPoint for the property accessControlPolicyPoints.
+	* @return Returns the AccessControlPolicyPoints for the property accessControlPolicyPoints.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
-	public PolicyAdministrationPoint getAccessControlPolicyPoints();
+	public AccessControlPolicyPoints getAccessControlPolicyPoints();
 
 	/**
 	* "Certificates of the AAS."@en

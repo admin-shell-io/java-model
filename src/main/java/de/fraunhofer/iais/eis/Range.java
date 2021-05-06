@@ -56,19 +56,27 @@ public interface Range extends DataElement {
 
 
 	/**
+	* "Data type of the min and max."@en
+	* @return Returns the String for the property valueType.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Range/valueType
+	*/
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/valueType")
+	public String getValueType();
+
+	/**
 	* "The maximum value of the range."@en
-	* @return Returns the List of TypedLiterals for the property maxs.
+	* @return Returns the TypedLiteral for the property max.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Range/max
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/max")
-	public List<TypedLiteral> getMaxs();
+	public TypedLiteral getMax();
 
 	/**
 	* "The minimum value of the range."@en
-	* @return Returns the List of TypedLiterals for the property mins.
+	* @return Returns the TypedLiteral for the property min.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Range/min
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/min")
-	public List<TypedLiteral> getMins();
+	public TypedLiteral getMin();
 
 }
