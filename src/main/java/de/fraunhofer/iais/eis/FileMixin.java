@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("File")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class FileMixin extends DefaultFile {
+public abstract class FileMixin {
 
 }

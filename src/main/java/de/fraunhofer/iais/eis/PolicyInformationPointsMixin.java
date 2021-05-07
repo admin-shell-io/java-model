@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("PolicyInformationPoints")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class PolicyInformationPointsMixin extends DefaultPolicyInformationPoints {
+public abstract class PolicyInformationPointsMixin {
 
 }

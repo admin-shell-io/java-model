@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("HasSemantics")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class HasSemanticsMixin extends DefaultHasSemantics {
+public abstract class HasSemanticsMixin {
 
 }

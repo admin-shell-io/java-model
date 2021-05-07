@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("DataSpecificationIEC61360")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class DataSpecificationIEC61360Mixin extends DefaultDataSpecificationIEC61360 {
+public abstract class DataSpecificationIEC61360Mixin {
 
 }

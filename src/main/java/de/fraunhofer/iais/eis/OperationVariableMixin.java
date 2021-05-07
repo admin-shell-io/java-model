@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("OperationVariable")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class OperationVariableMixin extends DefaultOperationVariable {
+public abstract class OperationVariableMixin {
 
 }

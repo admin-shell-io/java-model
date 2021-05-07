@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("ReferenceElement")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class ReferenceElementMixin extends DefaultReferenceElement {
+public abstract class ReferenceElementMixin {
 
 }

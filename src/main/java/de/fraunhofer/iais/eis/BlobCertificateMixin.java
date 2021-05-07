@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("BlobCertificate")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class BlobCertificateMixin extends DefaultBlobCertificate {
+public abstract class BlobCertificateMixin {
 
 }

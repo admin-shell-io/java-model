@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("SubjectAttributes")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class SubjectAttributesMixin extends DefaultSubjectAttributes {
+public abstract class SubjectAttributesMixin {
 
 }

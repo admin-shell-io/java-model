@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("AccessControl")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class AccessControlMixin extends DefaultAccessControl {
+public abstract class AccessControlMixin {
 
 }

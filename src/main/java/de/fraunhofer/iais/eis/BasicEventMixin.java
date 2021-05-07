@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("BasicEvent")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class BasicEventMixin extends DefaultBasicEvent {
+public abstract class BasicEventMixin {
 
 }

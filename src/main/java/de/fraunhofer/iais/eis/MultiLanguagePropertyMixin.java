@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("MultiLanguageProperty")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class MultiLanguagePropertyMixin extends DefaultMultiLanguageProperty {
+public abstract class MultiLanguagePropertyMixin {
 
 }

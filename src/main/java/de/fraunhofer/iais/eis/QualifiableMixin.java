@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("Qualifiable")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class QualifiableMixin extends DefaultQualifiable {
+public abstract class QualifiableMixin {
 
 }

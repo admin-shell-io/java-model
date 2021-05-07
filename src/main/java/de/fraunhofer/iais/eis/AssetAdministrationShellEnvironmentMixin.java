@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("AssetAdministrationShellEnvironment")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class AssetAdministrationShellEnvironmentMixin extends DefaultAssetAdministrationShellEnvironment {
+public abstract class AssetAdministrationShellEnvironmentMixin {
 
 }

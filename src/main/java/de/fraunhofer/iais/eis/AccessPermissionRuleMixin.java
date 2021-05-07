@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("AccessPermissionRule")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class AccessPermissionRuleMixin extends DefaultAccessPermissionRule {
+public abstract class AccessPermissionRuleMixin {
 
 }

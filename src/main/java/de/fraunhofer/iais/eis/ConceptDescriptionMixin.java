@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("ConceptDescription")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class ConceptDescriptionMixin extends DefaultConceptDescription {
+public abstract class ConceptDescriptionMixin {
 
 }

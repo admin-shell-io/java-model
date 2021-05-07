@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("AssetInformation")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class AssetInformationMixin extends DefaultAssetInformation {
+public abstract class AssetInformationMixin {
 
 }

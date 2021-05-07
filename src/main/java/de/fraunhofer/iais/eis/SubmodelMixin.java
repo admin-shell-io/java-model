@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("Submodel")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class SubmodelMixin extends DefaultSubmodel {
+public abstract class SubmodelMixin {
 
 }

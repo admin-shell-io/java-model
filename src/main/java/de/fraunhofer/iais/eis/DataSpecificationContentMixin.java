@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("DataSpecificationContent")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class DataSpecificationContentMixin extends DefaultDataSpecificationContent {
+public abstract class DataSpecificationContentMixin {
 
 }

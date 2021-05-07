@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("Identifiable")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class IdentifiableMixin extends DefaultIdentifiable {
+public abstract class IdentifiableMixin {
 
 }

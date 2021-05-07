@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("AnnotatedRelationshipElement")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class AnnotatedRelationshipElementMixin extends DefaultAnnotatedRelationshipElement {
+public abstract class AnnotatedRelationshipElementMixin {
 
 }

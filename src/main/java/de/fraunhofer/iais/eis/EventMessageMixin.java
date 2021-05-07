@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("EventMessage")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class EventMessageMixin extends DefaultEventMessage {
+public abstract class EventMessageMixin {
 
 }

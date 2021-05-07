@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("PermissionsPerObject")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class PermissionsPerObjectMixin extends DefaultPermissionsPerObject {
+public abstract class PermissionsPerObjectMixin {
 
 }

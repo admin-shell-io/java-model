@@ -22,6 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeName("IdentifierKeyValuePair")
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="modelType")
-public abstract class IdentifierKeyValuePairMixin extends DefaultIdentifierKeyValuePair {
+public abstract class IdentifierKeyValuePairMixin {
 
 }
