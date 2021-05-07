@@ -16,26 +16,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "identifier key value pair"
 * "An IdentifierKeyValuePair describes a generic identifier as key-value pair."@en
 */
-@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
-@JsonSubTypes({
-	@JsonSubTypes.Type(value = DefaultIdentifierKeyValuePair.class)
+@KnownSubtypes({
+	@KnownSubtypes.Type(value = DefaultIdentifierKeyValuePair.class)
 })
 public interface IdentifierKeyValuePair extends HasSemantics {
 
@@ -45,7 +33,6 @@ public interface IdentifierKeyValuePair extends HasSemantics {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
-	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -70,7 +57,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
 	* @return Returns the String for the property key.
 	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
 	public String getKey();
 
 	/**
@@ -78,7 +65,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
 	* @return Returns the String for the property value.
 	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
 	public String getValue();
 
 	/**
@@ -86,7 +73,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
 	* @return Returns the Reference for the property externalSubjectId.
 	* More information under https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId")
 	public Reference getExternalSubjectId();
 
 }

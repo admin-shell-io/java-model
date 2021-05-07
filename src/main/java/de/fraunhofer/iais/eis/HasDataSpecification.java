@@ -16,34 +16,22 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Has Data Specification"
 * "Element that can have be extended by using data specification templates. A data specification template defines the additional attributes an element may or shall have. The data specifications used are explicitly specified with their id."@en
 * "Constraint AASd-050:  If the DataSpecificationContent DataSpecificationIEC61360 is used for an element then the value of hasDataSpecification/dataSpecification shall contain the global reference to the IRI of the corresponding data specification template https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0."@en
 */
-@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
-@JsonSubTypes({
-	@JsonSubTypes.Type(value = DefaultHasDataSpecification.class),
-	@JsonSubTypes.Type(value = Submodel.class),
-	@JsonSubTypes.Type(value = AdministrativeInformation.class),
-	@JsonSubTypes.Type(value = Asset.class),
-	@JsonSubTypes.Type(value = AssetAdministrationShell.class),
-	@JsonSubTypes.Type(value = View.class),
-	@JsonSubTypes.Type(value = SubmodelElement.class),
-	@JsonSubTypes.Type(value = ConceptDescription.class)
+@KnownSubtypes({
+	@KnownSubtypes.Type(value = DefaultHasDataSpecification.class),
+	@KnownSubtypes.Type(value = Submodel.class),
+	@KnownSubtypes.Type(value = AdministrativeInformation.class),
+	@KnownSubtypes.Type(value = Asset.class),
+	@KnownSubtypes.Type(value = AssetAdministrationShell.class),
+	@KnownSubtypes.Type(value = View.class),
+	@KnownSubtypes.Type(value = SubmodelElement.class),
+	@KnownSubtypes.Type(value = ConceptDescription.class)
 })
 public interface HasDataSpecification {
 
@@ -53,7 +41,6 @@ public interface HasDataSpecification {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
-	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -78,7 +65,7 @@ public interface HasDataSpecification {
 	* @return Returns the List of References for the property dataSpecifications.
 	* More information under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	public List<Reference> getDataSpecifications();
 
 }

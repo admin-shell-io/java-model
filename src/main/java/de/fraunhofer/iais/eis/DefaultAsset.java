@@ -16,30 +16,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Asset"
 * "An Asset describes meta data of an asset that is represented by an AAS. The asset may either represent an asset type or an asset instance. The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers."@en
 * "Objects may be known in the form of a type or of an instance. An object in the planning phase is known as a type"@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:Asset")
+
 public class DefaultAsset implements Asset {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -56,7 +42,7 @@ public class DefaultAsset implements Asset {
 	* "has Data Specification"
 	* "Global reference to the data specification template used by the element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "dataSpecification"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	protected List<Reference> dataSpecifications;
 
 
@@ -65,7 +51,7 @@ public class DefaultAsset implements Asset {
 	* "Administrative information of an identifiable element."@en
 	* "Some of the administrative information like the version number might need to be part of the identification."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifiable/administration", "administration"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
 	protected AdministrativeInformation administration;
 
 
@@ -73,7 +59,7 @@ public class DefaultAsset implements Asset {
 	* "has identification"
 	* "The globally unique identification of the element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Identifiable/identification", "identification"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
 	protected Identifier identification;
 
 
@@ -81,7 +67,7 @@ public class DefaultAsset implements Asset {
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "description"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	protected List<TypedLiteral> descriptions;
 
 
@@ -89,7 +75,7 @@ public class DefaultAsset implements Asset {
 	* "has display name"
 	* "Display name. Can be provided in several languages."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "displayName"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	protected TypedLiteral displayName;
 
 
@@ -102,7 +88,7 @@ public class DefaultAsset implements Asset {
 	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
 	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "idShort"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	protected String idShort;
 
 
@@ -110,7 +96,7 @@ public class DefaultAsset implements Asset {
 	* "has category"
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableCategory"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	protected List<String> referableCategories;
 
 
@@ -119,7 +105,6 @@ public class DefaultAsset implements Asset {
 		id = VocabUtil.getInstance().createRandomUrl("asset");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -168,7 +153,7 @@ public class DefaultAsset implements Asset {
 
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	final public List<Reference> getDataSpecifications() {
 		return dataSpecifications;
 	}
@@ -177,7 +162,7 @@ public class DefaultAsset implements Asset {
 		this.dataSpecifications = dataSpecifications;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
 	final public AdministrativeInformation getAdministration() {
 		return administration;
 	}
@@ -186,7 +171,7 @@ public class DefaultAsset implements Asset {
 		this.administration = administration;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
 	final public Identifier getIdentification() {
 		return identification;
 	}
@@ -195,7 +180,7 @@ public class DefaultAsset implements Asset {
 		this.identification = identification;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	final public List<String> getReferableCategories() {
 		return referableCategories;
 	}
@@ -204,7 +189,7 @@ public class DefaultAsset implements Asset {
 		this.referableCategories = referableCategories;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	final public List<TypedLiteral> getDescriptions() {
 		return descriptions;
 	}
@@ -213,7 +198,7 @@ public class DefaultAsset implements Asset {
 		this.descriptions = descriptions;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	final public TypedLiteral getDisplayName() {
 		return displayName;
 	}
@@ -222,7 +207,7 @@ public class DefaultAsset implements Asset {
 		this.displayName = displayName;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	final public String getIdShort() {
 		return idShort;
 	}

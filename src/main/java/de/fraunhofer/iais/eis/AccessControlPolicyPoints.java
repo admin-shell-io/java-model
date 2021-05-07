@@ -16,26 +16,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Access ControlPolicy Points"
 * "Container for access control policy points."@en
 */
-@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
-@JsonSubTypes({
-	@JsonSubTypes.Type(value = DefaultAccessControlPolicyPoints.class)
+@KnownSubtypes({
+	@KnownSubtypes.Type(value = DefaultAccessControlPolicyPoints.class)
 })
 public interface AccessControlPolicyPoints {
 
@@ -45,7 +33,6 @@ public interface AccessControlPolicyPoints {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
-	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -70,7 +57,7 @@ public interface AccessControlPolicyPoints {
 	* @return Returns the PolicyAdministrationPoint for the property policyAdministrationPoint.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint")
 	public PolicyAdministrationPoint getPolicyAdministrationPoint();
 
 	/**
@@ -78,7 +65,7 @@ public interface AccessControlPolicyPoints {
 	* @return Returns the PolicyDecisionPoint for the property policyDecisionPoint.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint")
 	public PolicyDecisionPoint getPolicyDecisionPoint();
 
 	/**
@@ -86,7 +73,7 @@ public interface AccessControlPolicyPoints {
 	* @return Returns the PolicyEnforcementPoints for the property policyEnforcementPoint.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint")
 	public PolicyEnforcementPoints getPolicyEnforcementPoint();
 
 	/**
@@ -94,7 +81,7 @@ public interface AccessControlPolicyPoints {
 	* @return Returns the PolicyInformationPoints for the property policyInformationPoints.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints")
 	public PolicyInformationPoints getPolicyInformationPoints();
 
 }

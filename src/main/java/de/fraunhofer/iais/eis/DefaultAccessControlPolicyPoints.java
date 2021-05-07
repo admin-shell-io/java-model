@@ -16,29 +16,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Access ControlPolicy Points"
 * "Container for access control policy points."@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:AccessControlPolicyPoints")
+
 public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoints {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -55,7 +41,7 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
 	* "has policy administration point"
 	* "The access control administration policy point of the AAS."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint", "policyAdministrationPoint"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint")
 	protected PolicyAdministrationPoint policyAdministrationPoint;
 
 
@@ -63,7 +49,7 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
 	* "has policy decision point"
 	* "The access control policy decision point of the AAS."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint", "policyDecisionPoint"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint")
 	protected PolicyDecisionPoint policyDecisionPoint;
 
 
@@ -71,7 +57,7 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
 	* "has policy enforcement point"
 	* "The access control policy enforcement point of the AAS."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint", "policyEnforcementPoint"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint")
 	protected PolicyEnforcementPoints policyEnforcementPoint;
 
 
@@ -79,7 +65,7 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
 	* "has policy information points"
 	* "The access control policy information points of the AAS."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints", "policyInformationPoints"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints")
 	protected PolicyInformationPoints policyInformationPoints;
 
 
@@ -88,7 +74,6 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
 		id = VocabUtil.getInstance().createRandomUrl("accessControlPolicyPoints");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -130,7 +115,7 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint")
 	final public PolicyAdministrationPoint getPolicyAdministrationPoint() {
 		return policyAdministrationPoint;
 	}
@@ -139,7 +124,7 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
 		this.policyAdministrationPoint = policyAdministrationPoint;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint")
 	final public PolicyDecisionPoint getPolicyDecisionPoint() {
 		return policyDecisionPoint;
 	}
@@ -148,7 +133,7 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
 		this.policyDecisionPoint = policyDecisionPoint;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint")
 	final public PolicyEnforcementPoints getPolicyEnforcementPoint() {
 		return policyEnforcementPoint;
 	}
@@ -157,7 +142,7 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
 		this.policyEnforcementPoint = policyEnforcementPoint;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints")
 	final public PolicyInformationPoints getPolicyInformationPoints() {
 		return policyInformationPoints;
 	}

@@ -16,29 +16,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Access Permission Rule"
 * "Table that defines access permissions per authenticated subject for a set of objects (referable elements)."@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:AccessPermissionRule")
+
 public class DefaultAccessPermissionRule implements AccessPermissionRule {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -55,7 +41,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 	* "has permissions per object"
 	* "Set of object-permission pairs that define the permissions per object within the access permission rule."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject", "permissionsPerObject"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject")
 	protected List<PermissionsPerObject> permissionsPerObjects;
 
 
@@ -63,7 +49,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 	* "has target subject attributes"
 	* "Target subject attributes that need to be fulfilled by the accessing subject to get the permissions defined by this rule."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes", "targetSubjectAttributes"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes")
 	protected SubjectAttributes targetSubjectAttributes;
 
 
@@ -71,7 +57,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 	* "has qualifier"
 	* "Additional qualification of a qualifiable element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier", "qualifier"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
 	protected List<Constraint> qualifiers;
 
 
@@ -79,7 +65,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "description"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	protected List<TypedLiteral> descriptions;
 
 
@@ -87,7 +73,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 	* "has display name"
 	* "Display name. Can be provided in several languages."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "displayName"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	protected TypedLiteral displayName;
 
 
@@ -100,7 +86,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
 	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "idShort"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	protected String idShort;
 
 
@@ -108,7 +94,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 	* "has category"
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableCategory"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	protected List<String> referableCategories;
 
 
@@ -117,7 +103,6 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 		id = VocabUtil.getInstance().createRandomUrl("accessPermissionRule");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -165,7 +150,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject")
 	final public List<PermissionsPerObject> getPermissionsPerObjects() {
 		return permissionsPerObjects;
 	}
@@ -174,7 +159,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 		this.permissionsPerObjects = permissionsPerObjects;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes")
 	final public SubjectAttributes getTargetSubjectAttributes() {
 		return targetSubjectAttributes;
 	}
@@ -183,7 +168,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 		this.targetSubjectAttributes = targetSubjectAttributes;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	final public List<String> getReferableCategories() {
 		return referableCategories;
 	}
@@ -192,7 +177,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 		this.referableCategories = referableCategories;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	final public List<TypedLiteral> getDescriptions() {
 		return descriptions;
 	}
@@ -201,7 +186,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 		this.descriptions = descriptions;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	final public TypedLiteral getDisplayName() {
 		return displayName;
 	}
@@ -210,7 +195,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 		this.displayName = displayName;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	final public String getIdShort() {
 		return idShort;
 	}
@@ -219,7 +204,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 		this.idShort = idShort;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
 	final public List<Constraint> getQualifiers() {
 		return qualifiers;
 	}

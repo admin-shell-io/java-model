@@ -16,29 +16,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Blob Certificate"
 * "Certificate provided as BLOB."@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:BlobCertificate")
+
 public class DefaultBlobCertificate implements BlobCertificate {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -55,15 +41,15 @@ public class DefaultBlobCertificate implements BlobCertificate {
 	* "Blob Certificate"
 	* "Certificate as BLOB."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate", "blobCertificate"})
-	protected byte blobCertificate;
+	@IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate")
+	protected Blob blobCertificate;
 
 
 	/**
 	* "contains extension"
 	* "Extensions contained in the certificate."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension", "containedExtension"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension")
 	protected List<Reference> containedExtensions;
 
 
@@ -71,7 +57,7 @@ public class DefaultBlobCertificate implements BlobCertificate {
 	* "is last certificate"
 	* "Denotes whether this certificate is the certificated that fast added last."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate", "lastCertificate"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate")
 	protected boolean lastCertificate;
 
 
@@ -79,7 +65,7 @@ public class DefaultBlobCertificate implements BlobCertificate {
 	* "has policy administration point"
 	* "The access control administration policy point of the AAS."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint", "policyAdministrationPoint"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint")
 	protected PolicyAdministrationPoint policyAdministrationPoint;
 
 
@@ -88,7 +74,6 @@ public class DefaultBlobCertificate implements BlobCertificate {
 		id = VocabUtil.getInstance().createRandomUrl("blobCertificate");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -130,16 +115,16 @@ public class DefaultBlobCertificate implements BlobCertificate {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate")
-	final public byte getBlobCertificate() {
+	@IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate")
+	final public Blob getBlobCertificate() {
 		return blobCertificate;
 	}
 	
-	final public void setBlobCertificate (byte blobCertificate) {
+	final public void setBlobCertificate (Blob blobCertificate) {
 		this.blobCertificate = blobCertificate;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension")
 	final public List<Reference> getContainedExtensions() {
 		return containedExtensions;
 	}
@@ -148,7 +133,7 @@ public class DefaultBlobCertificate implements BlobCertificate {
 		this.containedExtensions = containedExtensions;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate")
 	final public boolean getLastCertificate() {
 		return lastCertificate;
 	}
@@ -157,7 +142,7 @@ public class DefaultBlobCertificate implements BlobCertificate {
 		this.lastCertificate = lastCertificate;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint")
 	final public PolicyAdministrationPoint getPolicyAdministrationPoint() {
 		return policyAdministrationPoint;
 	}

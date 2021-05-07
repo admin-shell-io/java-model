@@ -16,26 +16,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Administrative Information"
 * "Every Identifiable may have administrative information. Administrative information includes for example 1) Information about the version of the element 2) Information about who created or who made the last change to the element 3) Information about the languages available in case the element contains text, for translating purposed also themmaster or default language may be definedIn the first version of the AAS metamodel only version information as defined by IEC 61360 is defined. In later versions additional attributes may be added."@en
 */
-@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
-@JsonSubTypes({
-	@JsonSubTypes.Type(value = DefaultAdministrativeInformation.class)
+@KnownSubtypes({
+	@KnownSubtypes.Type(value = DefaultAdministrativeInformation.class)
 })
 public interface AdministrativeInformation extends HasDataSpecification {
 
@@ -45,7 +33,6 @@ public interface AdministrativeInformation extends HasDataSpecification {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
-	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -70,7 +57,7 @@ public interface AdministrativeInformation extends HasDataSpecification {
 	* @return Returns the String for the property version.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
 	public String getVersion();
 
 	/**
@@ -79,7 +66,7 @@ public interface AdministrativeInformation extends HasDataSpecification {
 	* @return Returns the String for the property revision.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
 	public String getRevision();
 
 }

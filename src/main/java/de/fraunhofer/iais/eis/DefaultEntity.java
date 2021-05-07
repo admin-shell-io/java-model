@@ -16,30 +16,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Entity"
 * "An entity is a submodel element that is used to model entities."@en
 * "Constraint AASd-056: The semanticId of a Entity submodel element shall only reference a ConceptDescription with the category ENTITY. The ConceptDescription describes the elements assigned to the entity via Entity/statement."@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:Entity")
+
 public class DefaultEntity implements Entity {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -56,7 +42,7 @@ public class DefaultEntity implements Entity {
 	* "has entity type"
 	* "Describes whether the entity is a co-managed entity or a self-managed entity."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Entity/entityType", "entityType"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Entity/entityType")
 	protected EntityType entityType;
 
 
@@ -66,7 +52,7 @@ public class DefaultEntity implements Entity {
 	* "The asset attribute must be set if entityType is set to \'SelfManagedEntity\'. It is empty otherwise."@en
 	* "Constraint AASd-014: Either the attribute globalAssetId or externalAssetId of an Entity must be set if Entity/entityType is set to \'SelfManagedEntity\'. They are not existing otherwise."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId", "externalAssetId"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId")
 	protected IdentifierKeyValuePair externalAssetId;
 
 
@@ -76,7 +62,7 @@ public class DefaultEntity implements Entity {
 	* "The asset attribute must be set if entityType is set to \'SelfManagedEntity\'. It is empty otherwise."@en
 	* "Constraint AASd-014: Either the attribute globalAssetId or externalAssetId of an Entity must be set if Entity/entityType is set to \'SelfManagedEntity\'. They are not existing otherwise."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId", "globalAssetId"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId")
 	protected Reference globalAssetId;
 
 
@@ -84,7 +70,7 @@ public class DefaultEntity implements Entity {
 	* "has statement"
 	* "Describes statements applicable to the entity by a set of submodel elements, typically with a qualified value."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Entity/statement", "statement"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Entity/statement")
 	protected List<SubmodelElement> statements;
 
 
@@ -92,7 +78,7 @@ public class DefaultEntity implements Entity {
 	* "has Data Specification"
 	* "Global reference to the data specification template used by the element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "dataSpecification"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	protected List<Reference> dataSpecifications;
 
 
@@ -100,7 +86,7 @@ public class DefaultEntity implements Entity {
 	* "has kind"
 	* "ModelingKind of the element: either type or instance."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasKind/kind", "kind"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
 	protected ModelingKind kind;
 
 
@@ -109,7 +95,7 @@ public class DefaultEntity implements Entity {
 	* "Points to the Expression Semantic of the Submodels"@en
 	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "semanticId"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	protected Reference semanticId;
 
 
@@ -117,7 +103,7 @@ public class DefaultEntity implements Entity {
 	* "has qualifier"
 	* "Additional qualification of a qualifiable element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier", "qualifier"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
 	protected List<Constraint> qualifiers;
 
 
@@ -125,7 +111,7 @@ public class DefaultEntity implements Entity {
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "description"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	protected List<TypedLiteral> descriptions;
 
 
@@ -133,7 +119,7 @@ public class DefaultEntity implements Entity {
 	* "has display name"
 	* "Display name. Can be provided in several languages."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "displayName"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	protected TypedLiteral displayName;
 
 
@@ -146,7 +132,7 @@ public class DefaultEntity implements Entity {
 	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
 	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "idShort"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	protected String idShort;
 
 
@@ -154,7 +140,7 @@ public class DefaultEntity implements Entity {
 	* "has category"
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableCategory"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	protected List<String> referableCategories;
 
 
@@ -163,7 +149,6 @@ public class DefaultEntity implements Entity {
 		id = VocabUtil.getInstance().createRandomUrl("entity");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -221,7 +206,7 @@ public class DefaultEntity implements Entity {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId")
 	final public Reference getGlobalAssetId() {
 		return globalAssetId;
 	}
@@ -230,7 +215,7 @@ public class DefaultEntity implements Entity {
 		this.globalAssetId = globalAssetId;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId")
 	final public IdentifierKeyValuePair getExternalAssetId() {
 		return externalAssetId;
 	}
@@ -239,7 +224,7 @@ public class DefaultEntity implements Entity {
 		this.externalAssetId = externalAssetId;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Entity/entityType")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Entity/entityType")
 	final public EntityType getEntityType() {
 		return entityType;
 	}
@@ -248,7 +233,7 @@ public class DefaultEntity implements Entity {
 		this.entityType = entityType;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Entity/statement")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Entity/statement")
 	final public List<SubmodelElement> getStatements() {
 		return statements;
 	}
@@ -258,7 +243,7 @@ public class DefaultEntity implements Entity {
 	}
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	final public List<String> getReferableCategories() {
 		return referableCategories;
 	}
@@ -267,7 +252,7 @@ public class DefaultEntity implements Entity {
 		this.referableCategories = referableCategories;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	final public List<TypedLiteral> getDescriptions() {
 		return descriptions;
 	}
@@ -276,7 +261,7 @@ public class DefaultEntity implements Entity {
 		this.descriptions = descriptions;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	final public TypedLiteral getDisplayName() {
 		return displayName;
 	}
@@ -285,7 +270,7 @@ public class DefaultEntity implements Entity {
 		this.displayName = displayName;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	final public String getIdShort() {
 		return idShort;
 	}
@@ -294,7 +279,7 @@ public class DefaultEntity implements Entity {
 		this.idShort = idShort;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
 	final public List<Constraint> getQualifiers() {
 		return qualifiers;
 	}
@@ -303,7 +288,7 @@ public class DefaultEntity implements Entity {
 		this.qualifiers = qualifiers;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	final public List<Reference> getDataSpecifications() {
 		return dataSpecifications;
 	}
@@ -312,7 +297,7 @@ public class DefaultEntity implements Entity {
 		this.dataSpecifications = dataSpecifications;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
 	final public ModelingKind getKind() {
 		return kind;
 	}
@@ -321,7 +306,7 @@ public class DefaultEntity implements Entity {
 		this.kind = kind;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	final public Reference getSemanticId() {
 		return semanticId;
 	}

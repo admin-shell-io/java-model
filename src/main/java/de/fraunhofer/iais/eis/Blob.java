@@ -16,27 +16,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Blob Data Element"
 * "A BLOB is a data element that represents a file that is contained with its source code in the value attribute."@en
 * "Constraint AASd-057: The semanticId of a File or Blob submodel element shall only reference a ConceptDescription with the category DOCUMENT."@en
 */
-@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
-@JsonSubTypes({
-	@JsonSubTypes.Type(value = DefaultBlob.class)
+@KnownSubtypes({
+	@KnownSubtypes.Type(value = DefaultBlob.class)
 })
 public interface Blob extends DataElement {
 
@@ -46,7 +34,6 @@ public interface Blob extends DataElement {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
-	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -71,16 +58,16 @@ public interface Blob extends DataElement {
 	* @return Returns the String for the property mimeType.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Blob/mimeType
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Blob/mimeType")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Blob/mimeType")
 	public String getMimeType();
 
 	/**
 	* "The value of the BLOB instance of a blob data element."@en
 	* "In contrast to the file property the file content is stored directly as value in the Blob data element."@en
-	* @return Returns the byte for the property value.
+	* @return Returns the byte[] for the property value.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Blob/value
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Blob/value")
-	public byte getValue();
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Blob/value")
+	public byte[] getValue();
 
 }

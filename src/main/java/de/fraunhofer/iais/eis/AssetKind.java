@@ -16,18 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.databind.JsonNode;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -36,8 +25,6 @@ import java.util.stream.Stream;
 * "Asset Kind"
 * "Enumeration for denoting whether an element is a type or an instance."@en 
 */
-@JsonFormat(shape = JsonFormat.Shape.OBJECT)
-@JsonTypeName("aas:AssetKind")
 public enum AssetKind {
 
 	/** 
@@ -105,7 +92,6 @@ public enum AssetKind {
 	}
 
 
-	@JsonProperty("@id")
 	final public URI getSerializedId() {
 		return id;
 	}

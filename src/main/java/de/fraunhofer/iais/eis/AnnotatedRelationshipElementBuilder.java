@@ -16,18 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class AnnotatedRelationshipElementBuilder {
 
@@ -47,7 +36,7 @@ public class AnnotatedRelationshipElementBuilder {
 	* @param annotations desired value to be set
 	* @return Builder object with new value for annotations
 	*/
-	final public AnnotatedRelationshipElementBuilder annotations(List<DataElement> annotations) {
+	final public AnnotatedRelationshipElementBuilder annotations(List<Reference> annotations) {
 		this.defaultAnnotatedRelationshipElement.annotations = annotations;
 		return this;
 	}
@@ -58,7 +47,7 @@ public class AnnotatedRelationshipElementBuilder {
 	* @param first desired value to be set
 	* @return Builder object with new value for first
 	*/
-	final public AnnotatedRelationshipElementBuilder first(Referable first) {
+	final public AnnotatedRelationshipElementBuilder first(Reference first) {
 		this.defaultAnnotatedRelationshipElement.first = first;
 		return this;
 	}
@@ -69,7 +58,7 @@ public class AnnotatedRelationshipElementBuilder {
 	* @param second desired value to be set
 	* @return Builder object with new value for second
 	*/
-	final public AnnotatedRelationshipElementBuilder second(Referable second) {
+	final public AnnotatedRelationshipElementBuilder second(Reference second) {
 		this.defaultAnnotatedRelationshipElement.second = second;
 		return this;
 	}

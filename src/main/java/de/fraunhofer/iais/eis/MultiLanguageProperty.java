@@ -16,26 +16,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Multi Language Property"
 * "A property is a data element that has a multi language value."@en
 */
-@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
-@JsonSubTypes({
-	@JsonSubTypes.Type(value = DefaultMultiLanguageProperty.class)
+@KnownSubtypes({
+	@KnownSubtypes.Type(value = DefaultMultiLanguageProperty.class)
 })
 public interface MultiLanguageProperty extends DataElement {
 
@@ -45,7 +33,6 @@ public interface MultiLanguageProperty extends DataElement {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
-	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -73,7 +60,7 @@ public interface MultiLanguageProperty extends DataElement {
 	* @return Returns the List of TypedLiterals for the property values.
 	* More information under https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value")
 	public List<TypedLiteral> getValues();
 
 	/**
@@ -81,7 +68,7 @@ public interface MultiLanguageProperty extends DataElement {
 	* @return Returns the List of References for the property valueIds.
 	* More information under https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId")
 	public List<Reference> getValueIds();
 
 }

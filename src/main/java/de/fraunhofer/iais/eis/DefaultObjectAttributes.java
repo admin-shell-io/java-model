@@ -16,29 +16,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Object Attributes"
 * "A set of data elements that describe object attributes. These attributes need to refer to a data element within an existing submodel."@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:ObjectAttributes")
+
 public class DefaultObjectAttributes implements ObjectAttributes {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -55,8 +41,8 @@ public class DefaultObjectAttributes implements ObjectAttributes {
 	* "has object attribute"
 	* "A data elements that further classifies an object."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute", "objectAttribute"})
-	protected List<DataElement> objectAttributes;
+	@IRI("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
+	protected List<Reference> objectAttributes;
 
 
 	// no manual construction
@@ -64,7 +50,6 @@ public class DefaultObjectAttributes implements ObjectAttributes {
 		id = VocabUtil.getInstance().createRandomUrl("objectAttributes");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -100,12 +85,12 @@ public class DefaultObjectAttributes implements ObjectAttributes {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
-	final public List<DataElement> getObjectAttributes() {
+	@IRI("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
+	final public List<Reference> getObjectAttributes() {
 		return objectAttributes;
 	}
 	
-	final public void setObjectAttributes (List<DataElement> objectAttributes) {
+	final public void setObjectAttributes (List<Reference> objectAttributes) {
 		this.objectAttributes = objectAttributes;
 	}
 }

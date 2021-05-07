@@ -16,30 +16,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Extensions"
 * "Single extension of an element."@en
 * "Constraint AASd-077: The name of an extension within HasExtensions needs to be unique."@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:Extension")
+
 public class DefaultExtension implements Extension {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -56,7 +42,7 @@ public class DefaultExtension implements Extension {
 	* "has extension name"
 	* "An extension of the element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Extension/name", "name"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Extension/name")
 	protected String name;
 
 
@@ -64,7 +50,7 @@ public class DefaultExtension implements Extension {
 	* "has extension reference to"
 	* "Reference to an element the extension refers to."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Extension/refersTo", "refersTo"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Extension/refersTo")
 	protected Reference refersTo;
 
 
@@ -72,7 +58,7 @@ public class DefaultExtension implements Extension {
 	* "has extension value"
 	* "Value of the extension."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Extension/value", "value"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Extension/value")
 	protected String value;
 
 
@@ -80,7 +66,7 @@ public class DefaultExtension implements Extension {
 	* "has extension value type"
 	* "Type of the value of the extension."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Extension/valueType", "valueType"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Extension/valueType")
 	protected String valueType;
 
 
@@ -89,7 +75,7 @@ public class DefaultExtension implements Extension {
 	* "Points to the Expression Semantic of the Submodels"@en
 	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "semanticId"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	protected Reference semanticId;
 
 
@@ -98,7 +84,6 @@ public class DefaultExtension implements Extension {
 		id = VocabUtil.getInstance().createRandomUrl("extension");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -142,7 +127,7 @@ public class DefaultExtension implements Extension {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/name")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Extension/name")
 	final public String getName() {
 		return name;
 	}
@@ -151,7 +136,7 @@ public class DefaultExtension implements Extension {
 		this.name = name;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/valueType")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Extension/valueType")
 	final public String getValueType() {
 		return valueType;
 	}
@@ -160,7 +145,7 @@ public class DefaultExtension implements Extension {
 		this.valueType = valueType;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/value")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Extension/value")
 	final public String getValue() {
 		return value;
 	}
@@ -169,7 +154,7 @@ public class DefaultExtension implements Extension {
 		this.value = value;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Extension/refersTo")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Extension/refersTo")
 	final public Reference getRefersTo() {
 		return refersTo;
 	}
@@ -178,7 +163,7 @@ public class DefaultExtension implements Extension {
 		this.refersTo = refersTo;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	final public Reference getSemanticId() {
 		return semanticId;
 	}

@@ -16,18 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class AccessControlBuilder {
 
@@ -58,7 +47,7 @@ public class AccessControlBuilder {
 	* @param selectableSubjectAttributes desired value to be set
 	* @return Builder object with new value for selectableSubjectAttributes
 	*/
-	final public AccessControlBuilder selectableSubjectAttributes(Submodel selectableSubjectAttributes) {
+	final public AccessControlBuilder selectableSubjectAttributes(Reference selectableSubjectAttributes) {
 		this.defaultAccessControl.selectableSubjectAttributes = selectableSubjectAttributes;
 		return this;
 	}
@@ -69,7 +58,7 @@ public class AccessControlBuilder {
 	* @param defaultSubjectAttributes desired value to be set
 	* @return Builder object with new value for defaultSubjectAttributes
 	*/
-	final public AccessControlBuilder defaultSubjectAttributes(Submodel defaultSubjectAttributes) {
+	final public AccessControlBuilder defaultSubjectAttributes(Reference defaultSubjectAttributes) {
 		this.defaultAccessControl.defaultSubjectAttributes = defaultSubjectAttributes;
 		return this;
 	}
@@ -80,7 +69,7 @@ public class AccessControlBuilder {
 	* @param selectablePermissions desired value to be set
 	* @return Builder object with new value for selectablePermissions
 	*/
-	final public AccessControlBuilder selectablePermissions(Submodel selectablePermissions) {
+	final public AccessControlBuilder selectablePermissions(Reference selectablePermissions) {
 		this.defaultAccessControl.selectablePermissions = selectablePermissions;
 		return this;
 	}
@@ -91,7 +80,7 @@ public class AccessControlBuilder {
 	* @param defaultPermissions desired value to be set
 	* @return Builder object with new value for defaultPermissions
 	*/
-	final public AccessControlBuilder defaultPermissions(Submodel defaultPermissions) {
+	final public AccessControlBuilder defaultPermissions(Reference defaultPermissions) {
 		this.defaultAccessControl.defaultPermissions = defaultPermissions;
 		return this;
 	}
@@ -102,7 +91,7 @@ public class AccessControlBuilder {
 	* @param selectableEnvironmentAttributes desired value to be set
 	* @return Builder object with new value for selectableEnvironmentAttributes
 	*/
-	final public AccessControlBuilder selectableEnvironmentAttributes(Submodel selectableEnvironmentAttributes) {
+	final public AccessControlBuilder selectableEnvironmentAttributes(Reference selectableEnvironmentAttributes) {
 		this.defaultAccessControl.selectableEnvironmentAttributes = selectableEnvironmentAttributes;
 		return this;
 	}
@@ -113,7 +102,7 @@ public class AccessControlBuilder {
 	* @param defaultEnvironmentAttributes desired value to be set
 	* @return Builder object with new value for defaultEnvironmentAttributes
 	*/
-	final public AccessControlBuilder defaultEnvironmentAttributes(Submodel defaultEnvironmentAttributes) {
+	final public AccessControlBuilder defaultEnvironmentAttributes(Reference defaultEnvironmentAttributes) {
 		this.defaultAccessControl.defaultEnvironmentAttributes = defaultEnvironmentAttributes;
 		return this;
 	}

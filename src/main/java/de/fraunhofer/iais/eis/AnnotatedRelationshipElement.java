@@ -16,26 +16,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
 * "Annotated Relationship Element"
 * "An annotated relationship element is an relationship element that can be annotated with additional data elements."@en
 */
-@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, property="@type")
-@JsonSubTypes({
-	@JsonSubTypes.Type(value = DefaultAnnotatedRelationshipElement.class)
+@KnownSubtypes({
+	@KnownSubtypes.Type(value = DefaultAnnotatedRelationshipElement.class)
 })
 public interface AnnotatedRelationshipElement extends RelationshipElement {
 
@@ -45,7 +33,6 @@ public interface AnnotatedRelationshipElement extends RelationshipElement {
 	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
 	* @return ID of current object as URI
 	*/
-	@JsonProperty("@id")
 	public URI getId();
 
 	/**
@@ -67,10 +54,10 @@ public interface AnnotatedRelationshipElement extends RelationshipElement {
 
 	/**
 	* "Annotations that hold for the relationships between the two elements."@en
-	* @return Returns the List of DataElements for the property annotations.
+	* @return Returns the List of References for the property annotations.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation
 	*/
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation")
-	public List<DataElement> getAnnotations();
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation")
+	public List<Reference> getAnnotations();
 
 }

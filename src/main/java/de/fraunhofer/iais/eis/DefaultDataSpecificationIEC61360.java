@@ -16,30 +16,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Data Specification IEC 61360"
 * "Data Specification Template for defining Property Descriptions conformant to IEC 61360."@en
 * "Constraint AASd-075: For all ConceptDescriptions using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) values for the attributes not being marked as mandatory or optional in tables Table 9, Table 10, Table 11 and Table 12.depending on its category are ignored and handled as undefined."@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360")
+
 public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC61360 {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -59,7 +45,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 	* "Constraint AASd-072: For a ConceptDescription with category DOCUMENT using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/dataType shall be one of the following values: STRING or URL."@en
 	* "Constraint AASd-073: For a ConceptDescription with category QUALIFIER using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/dataType is mandatory and shall be defined."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType", "dataType"})
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
 	protected List<DataTypeIEC61360> dataTypes;
 
 
@@ -67,77 +53,77 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 	* "has definition"
 	* "Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions of category VALUE using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/definition is mandatory and shall be defined at least in English."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition", "definition"})
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
 	protected List<TypedLiteral> definitions;
 
 
 	/**
 	* "has level type"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/levelType", "levelType"})
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/levelType")
 	protected List<LevelType> levelTypes;
 
 
 	/**
 	* "has preferred name"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName", "preferredName"})
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
 	protected TypedLiteral preferredName;
 
 
 	/**
 	* "has short name"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName", "shortName"})
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
 	protected TypedLiteral shortName;
 
 
 	/**
 	* "has source of definition"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition", "sourceOfDefinition"})
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition")
 	protected String sourceOfDefinition;
 
 
 	/**
 	* "has symbol"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/symbol", "symbol"})
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/symbol")
 	protected String symbol;
 
 
 	/**
 	* "has unit"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit", "unit"})
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit")
 	protected String unit;
 
 
 	/**
 	* "has unit id"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId", "unitId"})
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId")
 	protected Reference unitId;
 
 
 	/**
 	* "has value"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/value", "value"})
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/value")
 	protected String value;
 
 
 	/**
 	* "has value format"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueFormat", "valueFormat"})
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueFormat")
 	protected String valueFormat;
 
 
 	/**
 	* "has value id"
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueId", "valueId"})
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueId")
 	protected Reference valueId;
 
 
@@ -145,7 +131,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 	* "has value list"
 	* "The Type \'ValueList\' lists all the allowed values for a concept description for which the allowed values are listed in an enumeration. The value list is a set of value reference pairs."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList", "valueList"})
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList")
 	protected String valueList;
 
 
@@ -154,7 +140,6 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 		id = VocabUtil.getInstance().createRandomUrl("dataSpecificationIEC61360");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -214,7 +199,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
 	final public List<DataTypeIEC61360> getDataTypes() {
 		return dataTypes;
 	}
@@ -223,7 +208,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 		this.dataTypes = dataTypes;
 	}
 
-	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
 	final public List<TypedLiteral> getDefinitions() {
 		return definitions;
 	}
@@ -232,7 +217,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 		this.definitions = definitions;
 	}
 
-	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/levelType")
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/levelType")
 	final public List<LevelType> getLevelTypes() {
 		return levelTypes;
 	}
@@ -241,7 +226,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 		this.levelTypes = levelTypes;
 	}
 
-	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
 	final public TypedLiteral getPreferredName() {
 		return preferredName;
 	}
@@ -250,7 +235,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 		this.preferredName = preferredName;
 	}
 
-	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
 	final public TypedLiteral getShortName() {
 		return shortName;
 	}
@@ -259,7 +244,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 		this.shortName = shortName;
 	}
 
-	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition")
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition")
 	final public String getSourceOfDefinition() {
 		return sourceOfDefinition;
 	}
@@ -268,7 +253,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 		this.sourceOfDefinition = sourceOfDefinition;
 	}
 
-	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/symbol")
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/symbol")
 	final public String getSymbol() {
 		return symbol;
 	}
@@ -277,7 +262,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 		this.symbol = symbol;
 	}
 
-	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit")
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit")
 	final public String getUnit() {
 		return unit;
 	}
@@ -286,7 +271,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 		this.unit = unit;
 	}
 
-	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId")
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId")
 	final public Reference getUnitId() {
 		return unitId;
 	}
@@ -295,7 +280,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 		this.unitId = unitId;
 	}
 
-	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueFormat")
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueFormat")
 	final public String getValueFormat() {
 		return valueFormat;
 	}
@@ -304,7 +289,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 		this.valueFormat = valueFormat;
 	}
 
-	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/value")
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/value")
 	final public String getValue() {
 		return value;
 	}
@@ -313,7 +298,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 		this.value = value;
 	}
 
-	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList")
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList")
 	final public String getValueList() {
 		return valueList;
 	}
@@ -322,7 +307,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 		this.valueList = valueList;
 	}
 
-	@JsonProperty("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueId")
+	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueId")
 	final public Reference getValueId() {
 		return valueId;
 	}

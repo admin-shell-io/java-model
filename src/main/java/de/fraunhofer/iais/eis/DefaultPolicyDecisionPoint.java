@@ -16,29 +16,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "Policy Decision Point"
 * "Defines a security policy decision point (PDP). "@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:PolicyDecisionPoint")
+
 public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -55,7 +41,7 @@ public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
 	* "is external policy decision point defined"
 	* "If externalPolicyDecisionPoints True then Endpoints to external available decision points taking into consideration for access control for the AAS need to be configured."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints", "externalPolicyDecisionPoints"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
 	protected boolean externalPolicyDecisionPoints;
 
 
@@ -64,7 +50,6 @@ public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
 		id = VocabUtil.getInstance().createRandomUrl("policyDecisionPoint");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -100,7 +85,7 @@ public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
 	final public boolean getExternalPolicyDecisionPoints() {
 		return externalPolicyDecisionPoints;
 	}

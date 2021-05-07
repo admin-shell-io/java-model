@@ -16,29 +16,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** 
 * "File Submodel Element"
 * "A File is a data element that represents a file via its path description."@en 
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeName("aas:File")
+
 public class DefaultFile implements File {
 
-	@JsonProperty("@id")
-	@JsonAlias({"@id", "id"})
 	protected URI id;
 
 	//List of all labels of this class
@@ -55,7 +41,7 @@ public class DefaultFile implements File {
 	* "has mimetype"
 	* "Mime type of the content of the File."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/File/mimeType", "mimeType"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/File/mimeType")
 	protected String mimeType;
 
 
@@ -63,7 +49,7 @@ public class DefaultFile implements File {
 	* "has value"
 	* "Path and name of the referenced file (with file extension). The path can be absolute or relative."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/File/value", "value"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/File/value")
 	protected String value;
 
 
@@ -71,7 +57,7 @@ public class DefaultFile implements File {
 	* "has Data Specification"
 	* "Global reference to the data specification template used by the element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification", "dataSpecification"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	protected List<Reference> dataSpecifications;
 
 
@@ -79,7 +65,7 @@ public class DefaultFile implements File {
 	* "has kind"
 	* "ModelingKind of the element: either type or instance."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasKind/kind", "kind"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
 	protected ModelingKind kind;
 
 
@@ -88,7 +74,7 @@ public class DefaultFile implements File {
 	* "Points to the Expression Semantic of the Submodels"@en
 	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId", "semanticId"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	protected Reference semanticId;
 
 
@@ -96,7 +82,7 @@ public class DefaultFile implements File {
 	* "has qualifier"
 	* "Additional qualification of a qualifiable element."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier", "qualifier"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
 	protected List<Constraint> qualifiers;
 
 
@@ -104,7 +90,7 @@ public class DefaultFile implements File {
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/description", "description"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	protected List<TypedLiteral> descriptions;
 
 
@@ -112,7 +98,7 @@ public class DefaultFile implements File {
 	* "has display name"
 	* "Display name. Can be provided in several languages."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/displayName", "displayName"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	protected TypedLiteral displayName;
 
 
@@ -125,7 +111,7 @@ public class DefaultFile implements File {
 	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
 	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/idShort", "idShort"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	protected String idShort;
 
 
@@ -133,7 +119,7 @@ public class DefaultFile implements File {
 	* "has category"
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
-	@JsonAlias({"https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory", "referableCategory"})
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	protected List<String> referableCategories;
 
 
@@ -142,7 +128,6 @@ public class DefaultFile implements File {
 		id = VocabUtil.getInstance().createRandomUrl("file");
 	}
 
-	@JsonProperty("@id")
 	final public URI getId() {
 		return id;
 	}
@@ -196,7 +181,7 @@ public class DefaultFile implements File {
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/File/mimeType")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/File/mimeType")
 	final public String getMimeType() {
 		return mimeType;
 	}
@@ -205,7 +190,7 @@ public class DefaultFile implements File {
 		this.mimeType = mimeType;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/File/value")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/File/value")
 	final public String getValue() {
 		return value;
 	}
@@ -215,7 +200,7 @@ public class DefaultFile implements File {
 	}
 
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
 	final public List<String> getReferableCategories() {
 		return referableCategories;
 	}
@@ -224,7 +209,7 @@ public class DefaultFile implements File {
 		this.referableCategories = referableCategories;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
 	final public List<TypedLiteral> getDescriptions() {
 		return descriptions;
 	}
@@ -233,7 +218,7 @@ public class DefaultFile implements File {
 		this.descriptions = descriptions;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
 	final public TypedLiteral getDisplayName() {
 		return displayName;
 	}
@@ -242,7 +227,7 @@ public class DefaultFile implements File {
 		this.displayName = displayName;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	final public String getIdShort() {
 		return idShort;
 	}
@@ -251,7 +236,7 @@ public class DefaultFile implements File {
 		this.idShort = idShort;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
 	final public List<Constraint> getQualifiers() {
 		return qualifiers;
 	}
@@ -260,7 +245,7 @@ public class DefaultFile implements File {
 		this.qualifiers = qualifiers;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
 	final public List<Reference> getDataSpecifications() {
 		return dataSpecifications;
 	}
@@ -269,7 +254,7 @@ public class DefaultFile implements File {
 		this.dataSpecifications = dataSpecifications;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
 	final public ModelingKind getKind() {
 		return kind;
 	}
@@ -278,7 +263,7 @@ public class DefaultFile implements File {
 		this.kind = kind;
 	}
 
-	@JsonProperty("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
 	final public Reference getSemanticId() {
 		return semanticId;
 	}

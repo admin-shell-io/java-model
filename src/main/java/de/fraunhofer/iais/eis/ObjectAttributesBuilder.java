@@ -16,18 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class ObjectAttributesBuilder {
 
@@ -47,7 +36,7 @@ public class ObjectAttributesBuilder {
 	* @param objectAttributes desired value to be set
 	* @return Builder object with new value for objectAttributes
 	*/
-	final public ObjectAttributesBuilder objectAttributes(List<DataElement> objectAttributes) {
+	final public ObjectAttributesBuilder objectAttributes(List<Reference> objectAttributes) {
 		this.defaultObjectAttributes.objectAttributes = objectAttributes;
 		return this;
 	}
