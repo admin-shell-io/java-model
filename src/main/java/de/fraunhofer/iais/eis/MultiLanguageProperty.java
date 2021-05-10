@@ -65,10 +65,10 @@ public interface MultiLanguageProperty extends DataElement {
 
 	/**
 	* "Reference to the global unqiue id of a coded value."@en
-	* @return Returns the List of References for the property valueIds.
+	* @return Returns the Reference for the property valueId.
 	* More information under https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId")
-	public List<Reference> getValueIds();
+	public Reference getValueId();
 
 }

@@ -43,12 +43,12 @@ public class MultiLanguagePropertyBuilder {
 
 
 	/**
-	* This function allows setting a value for valueIds
-	* @param valueIds desired value to be set
-	* @return Builder object with new value for valueIds
+	* This function allows setting a value for valueId
+	* @param valueId desired value to be set
+	* @return Builder object with new value for valueId
 	*/
-	final public MultiLanguagePropertyBuilder valueIds(List<Reference> valueIds) {
-		this.defaultMultiLanguageProperty.valueIds = valueIds;
+	final public MultiLanguagePropertyBuilder valueId(Reference valueId) {
+		this.defaultMultiLanguageProperty.valueId = valueId;
 		return this;
 	}
 

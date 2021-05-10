@@ -54,11 +54,11 @@ public interface AssetInformation {
 
 	/**
 	* "Denotes whether the Asset of kind \'Type\' or \'Instance\'."@en
-	* @return Returns the List of AssetKinds for the property assetKinds.
+	* @return Returns the AssetKind for the property assetKind.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
-	public List<AssetKind> getAssetKinds();
+	public AssetKind getAssetKind();
 
 	/**
 	* "Reference to either an Asset object or a global reference to the asset the AAS is representing. This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the asset. In a first phase of the life cycle the asset might not yet have a global id but already an internal identifier. The internal identifier would be modelled via \'externalAssetId\'."@en

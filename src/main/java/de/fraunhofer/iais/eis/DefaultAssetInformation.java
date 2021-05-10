@@ -42,7 +42,7 @@ public class DefaultAssetInformation implements AssetInformation {
 	* "Denotes whether the Asset of kind \'Type\' or \'Instance\'."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
-	protected List<AssetKind> assetKinds;
+	protected AssetKind assetKind;
 
 
 	/**
@@ -97,7 +97,7 @@ public class DefaultAssetInformation implements AssetInformation {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.assetKinds,
+		return Objects.hash(new Object[]{this.assetKind,
 			this.globalAssetId,
 			this.specificAssetIds,
 			this.billOfMaterials,
@@ -114,7 +114,7 @@ public class DefaultAssetInformation implements AssetInformation {
 			return false;
 		} else {
 			DefaultAssetInformation other = (DefaultAssetInformation) obj;
-			return Objects.equals(this.assetKinds, other.assetKinds) &&
+			return Objects.equals(this.assetKind, other.assetKind) &&
 				Objects.equals(this.globalAssetId, other.globalAssetId) &&
 				Objects.equals(this.specificAssetIds, other.specificAssetIds) &&
 				Objects.equals(this.billOfMaterials, other.billOfMaterials) &&
@@ -127,12 +127,12 @@ public class DefaultAssetInformation implements AssetInformation {
 
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
-	final public List<AssetKind> getAssetKinds() {
-		return assetKinds;
+	final public AssetKind getAssetKind() {
+		return assetKind;
 	}
 	
-	final public void setAssetKinds (List<AssetKind> assetKinds) {
-		this.assetKinds = assetKinds;
+	final public void setAssetKind (AssetKind assetKind) {
+		this.assetKind = assetKind;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId")

@@ -78,7 +78,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 	* "Reference to the global unqiue id of a coded value."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId")
-	protected List<Reference> valueIds;
+	protected Reference valueId;
 
 
 	/**
@@ -146,7 +146,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 	@Override
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.values,
-			this.valueIds,
+			this.valueId,
 			this.referableCategories,
 			this.descriptions,
 			this.displayName,
@@ -168,7 +168,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 		} else {
 			DefaultMultiLanguageProperty other = (DefaultMultiLanguageProperty) obj;
 			return Objects.equals(this.values, other.values) &&
-				Objects.equals(this.valueIds, other.valueIds) &&
+				Objects.equals(this.valueId, other.valueId) &&
 				Objects.equals(this.referableCategories, other.referableCategories) &&
 				Objects.equals(this.descriptions, other.descriptions) &&
 				Objects.equals(this.displayName, other.displayName) &&
@@ -194,12 +194,12 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId")
-	final public List<Reference> getValueIds() {
-		return valueIds;
+	final public Reference getValueId() {
+		return valueId;
 	}
 	
-	final public void setValueIds (List<Reference> valueIds) {
-		this.valueIds = valueIds;
+	final public void setValueId (Reference valueId) {
+		this.valueId = valueId;
 	}
 
 

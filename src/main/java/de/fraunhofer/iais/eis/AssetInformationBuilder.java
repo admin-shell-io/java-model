@@ -32,12 +32,12 @@ public class AssetInformationBuilder {
 	}
 
 	/**
-	* This function allows setting a value for assetKinds
-	* @param assetKinds desired value to be set
-	* @return Builder object with new value for assetKinds
+	* This function allows setting a value for assetKind
+	* @param assetKind desired value to be set
+	* @return Builder object with new value for assetKind
 	*/
-	final public AssetInformationBuilder assetKinds(List<AssetKind> assetKinds) {
-		this.defaultAssetInformation.assetKinds = assetKinds;
+	final public AssetInformationBuilder assetKind(AssetKind assetKind) {
+		this.defaultAssetInformation.assetKind = assetKind;
 		return this;
 	}
 
