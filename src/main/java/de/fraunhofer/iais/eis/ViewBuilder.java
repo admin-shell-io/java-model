@@ -43,23 +43,23 @@ public class ViewBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public ViewBuilder referableCategories(List<String> referableCategories) {
-		this.defaultView.referableCategories = referableCategories;
+	final public ViewBuilder referableCategory(String referableCategory) {
+		this.defaultView.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public ViewBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultView.descriptions = descriptions;
+	final public ViewBuilder description(TypedLiteral description) {
+		this.defaultView.description = description;
 		return this;
 	}
 

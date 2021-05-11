@@ -54,23 +54,23 @@ public class AccessPermissionRuleBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public AccessPermissionRuleBuilder referableCategories(List<String> referableCategories) {
-		this.defaultAccessPermissionRule.referableCategories = referableCategories;
+	final public AccessPermissionRuleBuilder referableCategory(String referableCategory) {
+		this.defaultAccessPermissionRule.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public AccessPermissionRuleBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultAccessPermissionRule.descriptions = descriptions;
+	final public AccessPermissionRuleBuilder description(TypedLiteral description) {
+		this.defaultAccessPermissionRule.description = description;
 		return this;
 	}
 

@@ -32,23 +32,23 @@ public class ReferableBuilder {
 	}
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public ReferableBuilder referableCategories(List<String> referableCategories) {
-		this.defaultReferable.referableCategories = referableCategories;
+	final public ReferableBuilder referableCategory(String referableCategory) {
+		this.defaultReferable.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public ReferableBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultReferable.descriptions = descriptions;
+	final public ReferableBuilder description(TypedLiteral description) {
+		this.defaultReferable.description = description;
 		return this;
 	}
 

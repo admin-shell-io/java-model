@@ -34,23 +34,23 @@ public class EventMessageBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public EventMessageBuilder referableCategories(List<String> referableCategories) {
-		this.defaultEventMessage.referableCategories = referableCategories;
+	final public EventMessageBuilder referableCategory(String referableCategory) {
+		this.defaultEventMessage.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public EventMessageBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultEventMessage.descriptions = descriptions;
+	final public EventMessageBuilder description(TypedLiteral description) {
+		this.defaultEventMessage.description = description;
 		return this;
 	}
 

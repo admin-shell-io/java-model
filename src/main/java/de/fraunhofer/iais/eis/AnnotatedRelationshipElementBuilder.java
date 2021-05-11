@@ -66,23 +66,23 @@ public class AnnotatedRelationshipElementBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public AnnotatedRelationshipElementBuilder referableCategories(List<String> referableCategories) {
-		this.defaultAnnotatedRelationshipElement.referableCategories = referableCategories;
+	final public AnnotatedRelationshipElementBuilder referableCategory(String referableCategory) {
+		this.defaultAnnotatedRelationshipElement.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public AnnotatedRelationshipElementBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultAnnotatedRelationshipElement.descriptions = descriptions;
+	final public AnnotatedRelationshipElementBuilder description(TypedLiteral description) {
+		this.defaultAnnotatedRelationshipElement.description = description;
 		return this;
 	}
 

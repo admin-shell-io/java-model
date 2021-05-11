@@ -120,23 +120,23 @@ public class AssetAdministrationShellBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public AssetAdministrationShellBuilder referableCategories(List<String> referableCategories) {
-		this.defaultAssetAdministrationShell.referableCategories = referableCategories;
+	final public AssetAdministrationShellBuilder referableCategory(String referableCategory) {
+		this.defaultAssetAdministrationShell.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public AssetAdministrationShellBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultAssetAdministrationShell.descriptions = descriptions;
+	final public AssetAdministrationShellBuilder description(TypedLiteral description) {
+		this.defaultAssetAdministrationShell.description = description;
 		return this;
 	}
 

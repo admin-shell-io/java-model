@@ -56,23 +56,23 @@ public class BlobBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public BlobBuilder referableCategories(List<String> referableCategories) {
-		this.defaultBlob.referableCategories = referableCategories;
+	final public BlobBuilder referableCategory(String referableCategory) {
+		this.defaultBlob.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public BlobBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultBlob.descriptions = descriptions;
+	final public BlobBuilder description(TypedLiteral description) {
+		this.defaultBlob.description = description;
 		return this;
 	}
 

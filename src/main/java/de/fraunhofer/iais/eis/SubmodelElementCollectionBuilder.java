@@ -66,23 +66,23 @@ public class SubmodelElementCollectionBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public SubmodelElementCollectionBuilder referableCategories(List<String> referableCategories) {
-		this.defaultSubmodelElementCollection.referableCategories = referableCategories;
+	final public SubmodelElementCollectionBuilder referableCategory(String referableCategory) {
+		this.defaultSubmodelElementCollection.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public SubmodelElementCollectionBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultSubmodelElementCollection.descriptions = descriptions;
+	final public SubmodelElementCollectionBuilder description(TypedLiteral description) {
+		this.defaultSubmodelElementCollection.description = description;
 		return this;
 	}
 

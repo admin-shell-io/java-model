@@ -75,7 +75,7 @@ public class DefaultRelationshipElement implements RelationshipElement {
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	protected List<TypedLiteral> descriptions;
+	protected TypedLiteral description;
 
 
 	/**
@@ -100,11 +100,11 @@ public class DefaultRelationshipElement implements RelationshipElement {
 
 
 	/**
-	* "has category"
+	* "has referable category"
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	protected List<String> referableCategories;
+	protected String referableCategory;
 
 
 	/**
@@ -144,8 +144,8 @@ public class DefaultRelationshipElement implements RelationshipElement {
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.first,
 			this.second,
-			this.referableCategories,
-			this.descriptions,
+			this.referableCategory,
+			this.description,
 			this.displayName,
 			this.idShort,
 			this.qualifiers,
@@ -166,8 +166,8 @@ public class DefaultRelationshipElement implements RelationshipElement {
 			DefaultRelationshipElement other = (DefaultRelationshipElement) obj;
 			return Objects.equals(this.first, other.first) &&
 				Objects.equals(this.second, other.second) &&
-				Objects.equals(this.referableCategories, other.referableCategories) &&
-				Objects.equals(this.descriptions, other.descriptions) &&
+				Objects.equals(this.referableCategory, other.referableCategory) &&
+				Objects.equals(this.description, other.description) &&
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort) &&
 				Objects.equals(this.qualifiers, other.qualifiers) &&
@@ -201,21 +201,21 @@ public class DefaultRelationshipElement implements RelationshipElement {
 
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	final public List<String> getReferableCategories() {
-		return referableCategories;
+	final public String getReferableCategory() {
+		return referableCategory;
 	}
 	
-	final public void setReferableCategories (List<String> referableCategories) {
-		this.referableCategories = referableCategories;
+	final public void setReferableCategory (String referableCategory) {
+		this.referableCategory = referableCategory;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	final public List<TypedLiteral> getDescriptions() {
-		return descriptions;
+	final public TypedLiteral getDescription() {
+		return description;
 	}
 	
-	final public void setDescriptions (List<TypedLiteral> descriptions) {
-		this.descriptions = descriptions;
+	final public void setDescription (TypedLiteral description) {
+		this.description = description;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")

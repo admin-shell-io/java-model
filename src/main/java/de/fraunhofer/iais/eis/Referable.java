@@ -58,19 +58,19 @@ public interface Referable {
 
 	/**
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
-	* @return Returns the List of Strings for the property referableCategories.
+	* @return Returns the String for the property referableCategory.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	public List<String> getReferableCategories();
+	public String getReferableCategory();
 
 	/**
 	* "Description or comments on the element. The description can be provided in several languages."@en
-	* @return Returns the List of TypedLiterals for the property descriptions.
+	* @return Returns the TypedLiteral for the property description.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/description
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	public List<TypedLiteral> getDescriptions();
+	public TypedLiteral getDescription();
 
 	/**
 	* "Display name. Can be provided in several languages."@en

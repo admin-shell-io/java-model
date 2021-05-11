@@ -30,8 +30,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 	@KnownSubtypes.Type(value = Asset.class),
 	@KnownSubtypes.Type(value = AssetAdministrationShell.class),
 	@KnownSubtypes.Type(value = View.class),
-	@KnownSubtypes.Type(value = SubmodelElement.class),
-	@KnownSubtypes.Type(value = ConceptDescription.class)
+	@KnownSubtypes.Type(value = ConceptDescription.class),
+	@KnownSubtypes.Type(value = SubmodelElement.class)
 })
 public interface HasDataSpecification {
 

@@ -41,8 +41,32 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
 	* "has Asset Administration Shells"
 	* "Points to the differents Administration Shells in one AssetAdministrationShellEnvironment graph."@en
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShell")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShells")
 	protected List<AssetAdministrationShell> assetAdministrationShells;
+
+
+	/**
+	* "has Assets"
+	* "Points to the differents Assets in one AssetAdministrationShellEnvironment graph."@en
+	*/
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assets")
+	protected List<Asset> assets;
+
+
+	/**
+	* "has Concept Descriptions"
+	* "Points to the differents Concept Descriptions in one AssetAdministrationShellEnvironment graph."@en
+	*/
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/conceptDescriptions")
+	protected List<ConceptDescription> conceptDescriptions;
+
+
+	/**
+	* "has submodels"
+	* "Points to the differents Submodels in one AssetAdministrationShellEnvironment graph."@en
+	*/
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/submodels")
+	protected List<Submodel> submodels;
 
 
 	// no manual construction
@@ -64,7 +88,10 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.assetAdministrationShells});
+		return Objects.hash(new Object[]{this.assetAdministrationShells,
+			this.assets,
+			this.conceptDescriptions,
+			this.submodels});
 	}
 
 	@Override
@@ -77,7 +104,10 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
 			return false;
 		} else {
 			DefaultAssetAdministrationShellEnvironment other = (DefaultAssetAdministrationShellEnvironment) obj;
-			return Objects.equals(this.assetAdministrationShells, other.assetAdministrationShells);
+			return Objects.equals(this.assetAdministrationShells, other.assetAdministrationShells) &&
+				Objects.equals(this.assets, other.assets) &&
+				Objects.equals(this.conceptDescriptions, other.conceptDescriptions) &&
+				Objects.equals(this.submodels, other.submodels);
 		}
 	}
 
@@ -85,12 +115,39 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShell")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShells")
 	final public List<AssetAdministrationShell> getAssetAdministrationShells() {
 		return assetAdministrationShells;
 	}
 	
 	final public void setAssetAdministrationShells (List<AssetAdministrationShell> assetAdministrationShells) {
 		this.assetAdministrationShells = assetAdministrationShells;
+	}
+
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assets")
+	final public List<Asset> getAssets() {
+		return assets;
+	}
+	
+	final public void setAssets (List<Asset> assets) {
+		this.assets = assets;
+	}
+
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/conceptDescriptions")
+	final public List<ConceptDescription> getConceptDescriptions() {
+		return conceptDescriptions;
+	}
+	
+	final public void setConceptDescriptions (List<ConceptDescription> conceptDescriptions) {
+		this.conceptDescriptions = conceptDescriptions;
+	}
+
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/submodels")
+	final public List<Submodel> getSubmodels() {
+		return submodels;
+	}
+	
+	final public void setSubmodels (List<Submodel> submodels) {
+		this.submodels = submodels;
 	}
 }

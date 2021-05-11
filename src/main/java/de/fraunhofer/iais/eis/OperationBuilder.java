@@ -66,23 +66,23 @@ public class OperationBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public OperationBuilder referableCategories(List<String> referableCategories) {
-		this.defaultOperation.referableCategories = referableCategories;
+	final public OperationBuilder referableCategory(String referableCategory) {
+		this.defaultOperation.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public OperationBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultOperation.descriptions = descriptions;
+	final public OperationBuilder description(TypedLiteral description) {
+		this.defaultOperation.description = description;
 		return this;
 	}
 

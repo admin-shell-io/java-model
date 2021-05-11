@@ -77,23 +77,23 @@ public class EntityBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public EntityBuilder referableCategories(List<String> referableCategories) {
-		this.defaultEntity.referableCategories = referableCategories;
+	final public EntityBuilder referableCategory(String referableCategory) {
+		this.defaultEntity.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public EntityBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultEntity.descriptions = descriptions;
+	final public EntityBuilder description(TypedLiteral description) {
+		this.defaultEntity.description = description;
 		return this;
 	}
 

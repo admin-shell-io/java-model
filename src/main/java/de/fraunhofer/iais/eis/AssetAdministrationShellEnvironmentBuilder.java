@@ -40,6 +40,39 @@ public class AssetAdministrationShellEnvironmentBuilder {
 		this.defaultAssetAdministrationShellEnvironment.assetAdministrationShells = assetAdministrationShells;
 		return this;
 	}
+
+
+	/**
+	* This function allows setting a value for assets
+	* @param assets desired value to be set
+	* @return Builder object with new value for assets
+	*/
+	final public AssetAdministrationShellEnvironmentBuilder assets(List<Asset> assets) {
+		this.defaultAssetAdministrationShellEnvironment.assets = assets;
+		return this;
+	}
+
+
+	/**
+	* This function allows setting a value for conceptDescriptions
+	* @param conceptDescriptions desired value to be set
+	* @return Builder object with new value for conceptDescriptions
+	*/
+	final public AssetAdministrationShellEnvironmentBuilder conceptDescriptions(List<ConceptDescription> conceptDescriptions) {
+		this.defaultAssetAdministrationShellEnvironment.conceptDescriptions = conceptDescriptions;
+		return this;
+	}
+
+
+	/**
+	* This function allows setting a value for submodels
+	* @param submodels desired value to be set
+	* @return Builder object with new value for submodels
+	*/
+	final public AssetAdministrationShellEnvironmentBuilder submodels(List<Submodel> submodels) {
+		this.defaultAssetAdministrationShellEnvironment.submodels = submodels;
+		return this;
+	}
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values

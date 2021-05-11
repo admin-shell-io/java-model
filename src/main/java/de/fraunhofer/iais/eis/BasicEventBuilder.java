@@ -45,23 +45,23 @@ public class BasicEventBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public BasicEventBuilder referableCategories(List<String> referableCategories) {
-		this.defaultBasicEvent.referableCategories = referableCategories;
+	final public BasicEventBuilder referableCategory(String referableCategory) {
+		this.defaultBasicEvent.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public BasicEventBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultBasicEvent.descriptions = descriptions;
+	final public BasicEventBuilder description(TypedLiteral description) {
+		this.defaultBasicEvent.description = description;
 		return this;
 	}
 

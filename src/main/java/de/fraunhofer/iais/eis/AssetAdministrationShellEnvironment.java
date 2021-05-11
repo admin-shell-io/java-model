@@ -55,9 +55,33 @@ public interface AssetAdministrationShellEnvironment {
 	/**
 	* "Points to the differents Administration Shells in one AssetAdministrationShellEnvironment graph."@en
 	* @return Returns the List of AssetAdministrationShells for the property assetAdministrationShells.
-	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShell
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShells
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShell")
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShells")
 	public List<AssetAdministrationShell> getAssetAdministrationShells();
+
+	/**
+	* "Points to the differents Assets in one AssetAdministrationShellEnvironment graph."@en
+	* @return Returns the List of Assets for the property assets.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assets
+	*/
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assets")
+	public List<Asset> getAssets();
+
+	/**
+	* "Points to the differents Concept Descriptions in one AssetAdministrationShellEnvironment graph."@en
+	* @return Returns the List of ConceptDescriptions for the property conceptDescriptions.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/conceptDescriptions
+	*/
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/conceptDescriptions")
+	public List<ConceptDescription> getConceptDescriptions();
+
+	/**
+	* "Points to the differents Submodels in one AssetAdministrationShellEnvironment graph."@en
+	* @return Returns the List of Submodels for the property submodels.
+	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/submodels
+	*/
+	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/submodels")
+	public List<Submodel> getSubmodels();
 
 }

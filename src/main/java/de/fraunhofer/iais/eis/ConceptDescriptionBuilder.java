@@ -87,23 +87,23 @@ public class ConceptDescriptionBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public ConceptDescriptionBuilder referableCategories(List<String> referableCategories) {
-		this.defaultConceptDescription.referableCategories = referableCategories;
+	final public ConceptDescriptionBuilder referableCategory(String referableCategory) {
+		this.defaultConceptDescription.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public ConceptDescriptionBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultConceptDescription.descriptions = descriptions;
+	final public ConceptDescriptionBuilder description(TypedLiteral description) {
+		this.defaultConceptDescription.description = description;
 		return this;
 	}
 

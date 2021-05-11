@@ -54,23 +54,23 @@ public class IdentifiableBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public IdentifiableBuilder referableCategories(List<String> referableCategories) {
-		this.defaultIdentifiable.referableCategories = referableCategories;
+	final public IdentifiableBuilder referableCategory(String referableCategory) {
+		this.defaultIdentifiable.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public IdentifiableBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultIdentifiable.descriptions = descriptions;
+	final public IdentifiableBuilder description(TypedLiteral description) {
+		this.defaultIdentifiable.description = description;
 		return this;
 	}
 

@@ -45,23 +45,23 @@ public class ReferenceElementBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public ReferenceElementBuilder referableCategories(List<String> referableCategories) {
-		this.defaultReferenceElement.referableCategories = referableCategories;
+	final public ReferenceElementBuilder referableCategory(String referableCategory) {
+		this.defaultReferenceElement.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public ReferenceElementBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultReferenceElement.descriptions = descriptions;
+	final public ReferenceElementBuilder description(TypedLiteral description) {
+		this.defaultReferenceElement.description = description;
 		return this;
 	}
 

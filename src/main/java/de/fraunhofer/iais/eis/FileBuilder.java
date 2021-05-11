@@ -55,23 +55,23 @@ public class FileBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategories
-	* @param referableCategories desired value to be set
-	* @return Builder object with new value for referableCategories
+	* This function allows setting a value for referableCategory
+	* @param referableCategory desired value to be set
+	* @return Builder object with new value for referableCategory
 	*/
-	final public FileBuilder referableCategories(List<String> referableCategories) {
-		this.defaultFile.referableCategories = referableCategories;
+	final public FileBuilder referableCategory(String referableCategory) {
+		this.defaultFile.referableCategory = referableCategory;
 		return this;
 	}
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	final public FileBuilder descriptions(List<TypedLiteral> descriptions) {
-		this.defaultFile.descriptions = descriptions;
+	final public FileBuilder description(TypedLiteral description) {
+		this.defaultFile.description = description;
 		return this;
 	}
 
