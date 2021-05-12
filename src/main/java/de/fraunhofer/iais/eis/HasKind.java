@@ -23,7 +23,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 * "An element with a kind is an element that can either represent a type or an instance. Default for an element is that it is representing an instance."@en
 */
 @KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultHasKind.class),
 	@KnownSubtypes.Type(value = Submodel.class),
 	@KnownSubtypes.Type(value = SubmodelElement.class)
 })
