@@ -23,7 +23,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 * "An element that is referable by its idShort. This id is not globally unique. This id is unique within the name space of the element."@en
 */
 @KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultReferable.class),
 	@KnownSubtypes.Type(value = AccessPermissionRule.class),
 	@KnownSubtypes.Type(value = Identifiable.class),
 	@KnownSubtypes.Type(value = View.class),

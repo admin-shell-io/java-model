@@ -23,7 +23,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 * "A data element is a submodel element that is not further composed out of other submodel elements. A data element is a submodel element that has a value. The type of value differs for different subtypes of data elements."@en
 */
 @KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultDataElement.class),
 	@KnownSubtypes.Type(value = Blob.class),
 	@KnownSubtypes.Type(value = MultiLanguageProperty.class),
 	@KnownSubtypes.Type(value = Property.class),

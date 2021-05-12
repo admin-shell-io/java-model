@@ -23,7 +23,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 * "Element that can be extended by proprietary extensions."@en
 */
 @KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultHasExtensions.class)
 })
 public interface HasExtensions {
 

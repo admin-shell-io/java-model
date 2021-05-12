@@ -23,7 +23,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 * "A constraint is used to further qualify an element."@en
 */
 @KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultConstraint.class),
 	@KnownSubtypes.Type(value = Formula.class),
 	@KnownSubtypes.Type(value = Qualifier.class)
 })

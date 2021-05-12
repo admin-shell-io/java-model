@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 * "In many cases the idShort is identical to the English short name within the semantic definition as referenced vi aits semantic id."@en
 */
 @KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultHasSemantics.class),
 	@KnownSubtypes.Type(value = Submodel.class),
 	@KnownSubtypes.Type(value = IdentifierKeyValuePair.class),
 	@KnownSubtypes.Type(value = View.class),

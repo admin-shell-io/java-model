@@ -23,7 +23,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 * "A technical certificate proofing the identity through cryptographic measures."@en
 */
 @KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultCertificate.class),
 	@KnownSubtypes.Type(value = BlobCertificate.class)
 })
 public interface Certificate {

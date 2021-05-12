@@ -23,7 +23,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 * "An element that has a globally unique identifier."@en
 */
 @KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultIdentifiable.class),
 	@KnownSubtypes.Type(value = Submodel.class),
 	@KnownSubtypes.Type(value = Asset.class),
 	@KnownSubtypes.Type(value = AssetAdministrationShell.class),

@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 * "Constraint AASd-061: The semanticId of a Event submodel element shall only reference a ConceptDescription with the category EVENT."@en
 */
 @KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultEvent.class),
 	@KnownSubtypes.Type(value = BasicEvent.class)
 })
 public interface Event extends SubmodelElement {

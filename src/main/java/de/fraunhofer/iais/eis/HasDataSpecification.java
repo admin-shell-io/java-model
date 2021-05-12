@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 * "Constraint AASd-050:  If the DataSpecificationContent DataSpecificationIEC61360 is used for an element then the value of hasDataSpecification/dataSpecification shall contain the global reference to the IRI of the corresponding data specification template https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0."@en
 */
 @KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultHasDataSpecification.class),
 	@KnownSubtypes.Type(value = Submodel.class),
 	@KnownSubtypes.Type(value = AdministrativeInformation.class),
 	@KnownSubtypes.Type(value = Asset.class),
