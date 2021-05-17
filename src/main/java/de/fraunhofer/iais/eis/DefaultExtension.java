@@ -26,15 +26,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultExtension implements Extension {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Extensions", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Single extension of an element.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -81,19 +72,6 @@ public class DefaultExtension implements Extension {
 
 	// no manual construction
 	protected DefaultExtension() {
-		id = VocabUtil.getInstance().createRandomUrl("extension");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -121,6 +99,17 @@ public class DefaultExtension implements Extension {
 				Objects.equals(this.refersTo, other.refersTo) &&
 				Objects.equals(this.semanticId, other.semanticId);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultExtension other = new DefaultExtension();
+		other.name = (String) Util.clone(this.name);
+		other.valueType = (String) Util.clone(this.valueType);
+		other.value = (String) Util.clone(this.value);
+		other.refersTo = (Reference) Util.clone(this.refersTo);
+		other.semanticId = (Reference) Util.clone(this.semanticId);
+		return other;
 	}
 
 

@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class PermissionsPerObjectBuilder {
 
-	private DefaultPermissionsPerObject defaultPermissionsPerObject;
+	private Map<String, Object> map;
 
 	public PermissionsPerObjectBuilder() {
-		defaultPermissionsPerObject = new DefaultPermissionsPerObject();
+		this.map = new HashMap<>();
 	}
 
-	public PermissionsPerObjectBuilder(URI id) {
+	public PermissionsPerObjectBuilder(Map<String, Object> map) {
 		this();
-		defaultPermissionsPerObject.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for object
 	* @param object desired value to be set
 	* @return Builder object with new value for object
 	*/
-	final public PermissionsPerObjectBuilder object(Referable object) {
-		this.defaultPermissionsPerObject.object = object;
+	public PermissionsPerObjectBuilder object(Referable object) {
+		this.map.put("object", object);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class PermissionsPerObjectBuilder {
 	* @param permissions desired value to be set
 	* @return Builder object with new value for permissions
 	*/
-	final public PermissionsPerObjectBuilder permissions(List<Permission> permissions) {
-		this.defaultPermissionsPerObject.permissions = permissions;
+	public PermissionsPerObjectBuilder permissions(List<Permission> permissions) {
+		this.map.put("permissions", permissions);
 		return this;
 	}
 
@@ -58,18 +61,18 @@ public class PermissionsPerObjectBuilder {
 	* @param targetObjectAttributes desired value to be set
 	* @return Builder object with new value for targetObjectAttributes
 	*/
-	final public PermissionsPerObjectBuilder targetObjectAttributes(ObjectAttributes targetObjectAttributes) {
-		this.defaultPermissionsPerObject.targetObjectAttributes = targetObjectAttributes;
+	public PermissionsPerObjectBuilder targetObjectAttributes(ObjectAttributes targetObjectAttributes) {
+		this.map.put("targetObjectAttributes", targetObjectAttributes);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public PermissionsPerObject build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultPermissionsPerObject);
+		DefaultPermissionsPerObject defaultPermissionsPerObject = Util.fillInstanceFromMap(new DefaultPermissionsPerObject(), this.map);
 		return defaultPermissionsPerObject;
 	}
 }

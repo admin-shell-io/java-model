@@ -26,15 +26,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC61360 {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Data Specification IEC 61360", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Data Specification Template for defining Property Descriptions conformant to IEC 61360.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -137,19 +128,6 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 
 	// no manual construction
 	protected DefaultDataSpecificationIEC61360() {
-		id = VocabUtil.getInstance().createRandomUrl("dataSpecificationIEC61360");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -193,6 +171,25 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 				Objects.equals(this.valueList, other.valueList) &&
 				Objects.equals(this.valueId, other.valueId);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultDataSpecificationIEC61360 other = new DefaultDataSpecificationIEC61360();
+		other.dataTypes = (List<DataTypeIEC61360>) Util.clone(this.dataTypes);
+		other.definitions = (List<TypedLiteral>) Util.clone(this.definitions);
+		other.levelTypes = (List<LevelType>) Util.clone(this.levelTypes);
+		other.preferredName = (TypedLiteral) Util.clone(this.preferredName);
+		other.shortName = (TypedLiteral) Util.clone(this.shortName);
+		other.sourceOfDefinition = (String) Util.clone(this.sourceOfDefinition);
+		other.symbol = (String) Util.clone(this.symbol);
+		other.unit = (String) Util.clone(this.unit);
+		other.unitId = (Reference) Util.clone(this.unitId);
+		other.valueFormat = (String) Util.clone(this.valueFormat);
+		other.value = (String) Util.clone(this.value);
+		other.valueList = (String) Util.clone(this.valueList);
+		other.valueId = (Reference) Util.clone(this.valueId);
+		return other;
 	}
 
 

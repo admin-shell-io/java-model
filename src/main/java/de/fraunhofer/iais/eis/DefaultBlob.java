@@ -26,15 +26,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultBlob implements Blob {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Blob Data Element", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("A BLOB is a data element that represents a file that is contained with its source code in the value attribute.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -127,19 +118,6 @@ public class DefaultBlob implements Blob {
 
 	// no manual construction
 	protected DefaultBlob() {
-		id = VocabUtil.getInstance().createRandomUrl("blob");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -177,6 +155,22 @@ public class DefaultBlob implements Blob {
 				Objects.equals(this.kind, other.kind) &&
 				Objects.equals(this.semanticId, other.semanticId);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultBlob other = new DefaultBlob();
+		other.mimeType = (String) Util.clone(this.mimeType);
+		other.value = (byte[]) Util.clone(this.value);
+		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.description = (TypedLiteral) Util.clone(this.description);
+		other.displayName = (TypedLiteral) Util.clone(this.displayName);
+		other.idShort = (String) Util.clone(this.idShort);
+		other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
+		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
+		other.kind = (ModelingKind) Util.clone(this.kind);
+		other.semanticId = (Reference) Util.clone(this.semanticId);
+		return other;
 	}
 
 

@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultOperationVariable implements OperationVariable {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Operation Variable", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("An operation variable is a submodel element that is used as input or output variable of an operation.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -48,19 +39,6 @@ public class DefaultOperationVariable implements OperationVariable {
 
 	// no manual construction
 	protected DefaultOperationVariable() {
-		id = VocabUtil.getInstance().createRandomUrl("operationVariable");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -80,6 +58,13 @@ public class DefaultOperationVariable implements OperationVariable {
 			DefaultOperationVariable other = (DefaultOperationVariable) obj;
 			return Objects.equals(this.value, other.value);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultOperationVariable other = new DefaultOperationVariable();
+		other.value = (SubmodelElement) Util.clone(this.value);
+		return other;
 	}
 
 

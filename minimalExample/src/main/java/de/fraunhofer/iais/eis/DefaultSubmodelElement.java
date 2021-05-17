@@ -26,34 +26,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultSubmodelElement implements SubmodelElement {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Submodel Element", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("A submodel element is an element suitable for the description and differentiation of assets.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
 
 	// no manual construction
 	protected DefaultSubmodelElement() {
-		id = VocabUtil.getInstance().createRandomUrl("submodelElement");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -71,6 +49,13 @@ public class DefaultSubmodelElement implements SubmodelElement {
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultSubmodelElement other = new DefaultSubmodelElement();
+		
+		return other;
 	}
 
 }

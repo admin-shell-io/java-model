@@ -20,35 +20,38 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class FormulaBuilder {
 
-	private DefaultFormula defaultFormula;
+	private Map<String, Object> map;
 
 	public FormulaBuilder() {
-		defaultFormula = new DefaultFormula();
+		this.map = new HashMap<>();
 	}
 
-	public FormulaBuilder(URI id) {
+	public FormulaBuilder(Map<String, Object> map) {
 		this();
-		defaultFormula.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for dependsOns
 	* @param dependsOns desired value to be set
 	* @return Builder object with new value for dependsOns
 	*/
-	final public FormulaBuilder dependsOns(List<Reference> dependsOns) {
-		this.defaultFormula.dependsOns = dependsOns;
+	public FormulaBuilder dependsOns(List<Reference> dependsOns) {
+		this.map.put("dependsOns", dependsOns);
 		return this;
 	}
+
 
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public Formula build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultFormula);
+		DefaultFormula defaultFormula = Util.fillInstanceFromMap(new DefaultFormula(), this.map);
 		return defaultFormula;
 	}
 }

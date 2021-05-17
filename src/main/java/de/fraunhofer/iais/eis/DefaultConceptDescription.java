@@ -26,15 +26,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultConceptDescription implements ConceptDescription {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Concept Description", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("The semantics of a property or other elements that may have a semantic description is defined by a concept description. The description of the concept should follow a standardized schema (realized as data specification template).", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -119,19 +110,6 @@ public class DefaultConceptDescription implements ConceptDescription {
 
 	// no manual construction
 	protected DefaultConceptDescription() {
-		id = VocabUtil.getInstance().createRandomUrl("conceptDescription");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -167,6 +145,21 @@ public class DefaultConceptDescription implements ConceptDescription {
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultConceptDescription other = new DefaultConceptDescription();
+		other.contents = (List<DataSpecificationContent>) Util.clone(this.contents);
+		other.isCaseOfs = (List<Reference>) Util.clone(this.isCaseOfs);
+		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
+		other.administration = (AdministrativeInformation) Util.clone(this.administration);
+		other.identification = (Identifier) Util.clone(this.identification);
+		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.description = (TypedLiteral) Util.clone(this.description);
+		other.displayName = (TypedLiteral) Util.clone(this.displayName);
+		other.idShort = (String) Util.clone(this.idShort);
+		return other;
 	}
 
 

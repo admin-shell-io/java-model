@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultFile implements File {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("File Submodel Element", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("A File is a data element that represents a file via its path description.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -125,19 +116,6 @@ public class DefaultFile implements File {
 
 	// no manual construction
 	protected DefaultFile() {
-		id = VocabUtil.getInstance().createRandomUrl("file");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -175,6 +153,22 @@ public class DefaultFile implements File {
 				Objects.equals(this.kind, other.kind) &&
 				Objects.equals(this.semanticId, other.semanticId);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultFile other = new DefaultFile();
+		other.mimeType = (String) Util.clone(this.mimeType);
+		other.value = (String) Util.clone(this.value);
+		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.description = (TypedLiteral) Util.clone(this.description);
+		other.displayName = (TypedLiteral) Util.clone(this.displayName);
+		other.idShort = (String) Util.clone(this.idShort);
+		other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
+		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
+		other.kind = (ModelingKind) Util.clone(this.kind);
+		other.semanticId = (Reference) Util.clone(this.semanticId);
+		return other;
 	}
 
 

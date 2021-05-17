@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultPolicyEnforcementPoints implements PolicyEnforcementPoints {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Policy Enforcement Point", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Defines the security policy enforcement points (PEP).", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -47,19 +38,6 @@ public class DefaultPolicyEnforcementPoints implements PolicyEnforcementPoints {
 
 	// no manual construction
 	protected DefaultPolicyEnforcementPoints() {
-		id = VocabUtil.getInstance().createRandomUrl("policyEnforcementPoints");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -79,6 +57,13 @@ public class DefaultPolicyEnforcementPoints implements PolicyEnforcementPoints {
 			DefaultPolicyEnforcementPoints other = (DefaultPolicyEnforcementPoints) obj;
 			return Objects.equals(this.externalPolicyEnforcementPoint, other.externalPolicyEnforcementPoint);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultPolicyEnforcementPoints other = new DefaultPolicyEnforcementPoints();
+		other.externalPolicyEnforcementPoint = (boolean) Util.clone(this.externalPolicyEnforcementPoint);
+		return other;
 	}
 
 

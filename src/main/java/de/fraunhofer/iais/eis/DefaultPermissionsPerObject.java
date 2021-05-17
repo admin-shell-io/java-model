@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultPermissionsPerObject implements PermissionsPerObject {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Permission Per Object", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Table that defines access permissions for a specified object. The object is any referable element in the AAS. Additionally object attributes can be defined that further specify the kind of object the permissions apply to.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -63,19 +54,6 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
 
 	// no manual construction
 	protected DefaultPermissionsPerObject() {
-		id = VocabUtil.getInstance().createRandomUrl("permissionsPerObject");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -99,6 +77,15 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
 				Objects.equals(this.permissions, other.permissions) &&
 				Objects.equals(this.targetObjectAttributes, other.targetObjectAttributes);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultPermissionsPerObject other = new DefaultPermissionsPerObject();
+		other.object = (Referable) Util.clone(this.object);
+		other.permissions = (List<Permission>) Util.clone(this.permissions);
+		other.targetObjectAttributes = (ObjectAttributes) Util.clone(this.targetObjectAttributes);
+		return other;
 	}
 
 

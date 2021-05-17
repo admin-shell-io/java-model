@@ -20,16 +20,19 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class EventMessageBuilder {
 
-	private DefaultEventMessage defaultEventMessage;
+	private Map<String, Object> map;
 
 	public EventMessageBuilder() {
-		defaultEventMessage = new DefaultEventMessage();
+		this.map = new HashMap<>();
 	}
 
-	public EventMessageBuilder(URI id) {
+	public EventMessageBuilder(Map<String, Object> map) {
 		this();
-		defaultEventMessage.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 
 
@@ -38,8 +41,8 @@ public class EventMessageBuilder {
 	* @param referableCategory desired value to be set
 	* @return Builder object with new value for referableCategory
 	*/
-	final public EventMessageBuilder referableCategory(String referableCategory) {
-		this.defaultEventMessage.referableCategory = referableCategory;
+	public EventMessageBuilder referableCategory(String referableCategory) {
+		this.map.put("referableCategory", referableCategory);
 		return this;
 	}
 
@@ -49,8 +52,8 @@ public class EventMessageBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	final public EventMessageBuilder description(TypedLiteral description) {
-		this.defaultEventMessage.description = description;
+	public EventMessageBuilder description(TypedLiteral description) {
+		this.map.put("description", description);
 		return this;
 	}
 
@@ -60,8 +63,8 @@ public class EventMessageBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	final public EventMessageBuilder displayName(TypedLiteral displayName) {
-		this.defaultEventMessage.displayName = displayName;
+	public EventMessageBuilder displayName(TypedLiteral displayName) {
+		this.map.put("displayName", displayName);
 		return this;
 	}
 
@@ -71,8 +74,8 @@ public class EventMessageBuilder {
 	* @param idShort desired value to be set
 	* @return Builder object with new value for idShort
 	*/
-	final public EventMessageBuilder idShort(String idShort) {
-		this.defaultEventMessage.idShort = idShort;
+	public EventMessageBuilder idShort(String idShort) {
+		this.map.put("idShort", idShort);
 		return this;
 	}
 
@@ -82,8 +85,8 @@ public class EventMessageBuilder {
 	* @param qualifiers desired value to be set
 	* @return Builder object with new value for qualifiers
 	*/
-	final public EventMessageBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultEventMessage.qualifiers = qualifiers;
+	public EventMessageBuilder qualifiers(List<Constraint> qualifiers) {
+		this.map.put("qualifiers", qualifiers);
 		return this;
 	}
 
@@ -93,8 +96,8 @@ public class EventMessageBuilder {
 	* @param dataSpecifications desired value to be set
 	* @return Builder object with new value for dataSpecifications
 	*/
-	final public EventMessageBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultEventMessage.dataSpecifications = dataSpecifications;
+	public EventMessageBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.map.put("dataSpecifications", dataSpecifications);
 		return this;
 	}
 
@@ -104,8 +107,8 @@ public class EventMessageBuilder {
 	* @param kind desired value to be set
 	* @return Builder object with new value for kind
 	*/
-	final public EventMessageBuilder kind(ModelingKind kind) {
-		this.defaultEventMessage.kind = kind;
+	public EventMessageBuilder kind(ModelingKind kind) {
+		this.map.put("kind", kind);
 		return this;
 	}
 
@@ -115,18 +118,18 @@ public class EventMessageBuilder {
 	* @param semanticId desired value to be set
 	* @return Builder object with new value for semanticId
 	*/
-	final public EventMessageBuilder semanticId(Reference semanticId) {
-		this.defaultEventMessage.semanticId = semanticId;
+	public EventMessageBuilder semanticId(Reference semanticId) {
+		this.map.put("semanticId", semanticId);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public EventMessage build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultEventMessage);
+		DefaultEventMessage defaultEventMessage = Util.fillInstanceFromMap(new DefaultEventMessage(), this.map);
 		return defaultEventMessage;
 	}
 }

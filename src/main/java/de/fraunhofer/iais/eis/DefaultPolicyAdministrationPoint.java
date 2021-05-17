@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoint {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Policy Administration Point", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Definition of a security administration point (PDP).", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -56,19 +47,6 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
 
 	// no manual construction
 	protected DefaultPolicyAdministrationPoint() {
-		id = VocabUtil.getInstance().createRandomUrl("policyAdministrationPoint");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -90,6 +68,14 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
 			return Objects.equals(this.localAccessControl, other.localAccessControl) &&
 				Objects.equals(this.externalAccessControl, other.externalAccessControl);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultPolicyAdministrationPoint other = new DefaultPolicyAdministrationPoint();
+		other.localAccessControl = (AccessControl) Util.clone(this.localAccessControl);
+		other.externalAccessControl = (boolean) Util.clone(this.externalAccessControl);
+		return other;
 	}
 
 

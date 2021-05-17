@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class ViewBuilder {
 
-	private DefaultView defaultView;
+	private Map<String, Object> map;
 
 	public ViewBuilder() {
-		defaultView = new DefaultView();
+		this.map = new HashMap<>();
 	}
 
-	public ViewBuilder(URI id) {
+	public ViewBuilder(Map<String, Object> map) {
 		this();
-		defaultView.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for containedElements
 	* @param containedElements desired value to be set
 	* @return Builder object with new value for containedElements
 	*/
-	final public ViewBuilder containedElements(List<Reference> containedElements) {
-		this.defaultView.containedElements = containedElements;
+	public ViewBuilder containedElements(List<Reference> containedElements) {
+		this.map.put("containedElements", containedElements);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class ViewBuilder {
 	* @param referableCategory desired value to be set
 	* @return Builder object with new value for referableCategory
 	*/
-	final public ViewBuilder referableCategory(String referableCategory) {
-		this.defaultView.referableCategory = referableCategory;
+	public ViewBuilder referableCategory(String referableCategory) {
+		this.map.put("referableCategory", referableCategory);
 		return this;
 	}
 
@@ -58,8 +61,8 @@ public class ViewBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	final public ViewBuilder description(TypedLiteral description) {
-		this.defaultView.description = description;
+	public ViewBuilder description(TypedLiteral description) {
+		this.map.put("description", description);
 		return this;
 	}
 
@@ -69,8 +72,8 @@ public class ViewBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	final public ViewBuilder displayName(TypedLiteral displayName) {
-		this.defaultView.displayName = displayName;
+	public ViewBuilder displayName(TypedLiteral displayName) {
+		this.map.put("displayName", displayName);
 		return this;
 	}
 
@@ -80,8 +83,8 @@ public class ViewBuilder {
 	* @param idShort desired value to be set
 	* @return Builder object with new value for idShort
 	*/
-	final public ViewBuilder idShort(String idShort) {
-		this.defaultView.idShort = idShort;
+	public ViewBuilder idShort(String idShort) {
+		this.map.put("idShort", idShort);
 		return this;
 	}
 
@@ -91,8 +94,8 @@ public class ViewBuilder {
 	* @param dataSpecifications desired value to be set
 	* @return Builder object with new value for dataSpecifications
 	*/
-	final public ViewBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultView.dataSpecifications = dataSpecifications;
+	public ViewBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.map.put("dataSpecifications", dataSpecifications);
 		return this;
 	}
 
@@ -102,18 +105,18 @@ public class ViewBuilder {
 	* @param semanticId desired value to be set
 	* @return Builder object with new value for semanticId
 	*/
-	final public ViewBuilder semanticId(Reference semanticId) {
-		this.defaultView.semanticId = semanticId;
+	public ViewBuilder semanticId(Reference semanticId) {
+		this.map.put("semanticId", semanticId);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public View build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultView);
+		DefaultView defaultView = Util.fillInstanceFromMap(new DefaultView(), this.map);
 		return defaultView;
 	}
 }

@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultReference implements Reference {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Reference", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Reference to either a model element of the same or another AAs or to an external entity. A reference is an ordered list of keys, each key referencing an element. The complete list of keys may for example be concatenated to a path that then gives unique access to an element or entity.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -47,19 +38,6 @@ public class DefaultReference implements Reference {
 
 	// no manual construction
 	protected DefaultReference() {
-		id = VocabUtil.getInstance().createRandomUrl("reference");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -79,6 +57,13 @@ public class DefaultReference implements Reference {
 			DefaultReference other = (DefaultReference) obj;
 			return Objects.equals(this.keys, other.keys);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultReference other = new DefaultReference();
+		other.keys = (List<Key>) Util.clone(this.keys);
+		return other;
 	}
 
 

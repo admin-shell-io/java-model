@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class RangeBuilder {
 
-	private DefaultRange defaultRange;
+	private Map<String, Object> map;
 
 	public RangeBuilder() {
-		defaultRange = new DefaultRange();
+		this.map = new HashMap<>();
 	}
 
-	public RangeBuilder(URI id) {
+	public RangeBuilder(Map<String, Object> map) {
 		this();
-		defaultRange.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for valueType
 	* @param valueType desired value to be set
 	* @return Builder object with new value for valueType
 	*/
-	final public RangeBuilder valueType(String valueType) {
-		this.defaultRange.valueType = valueType;
+	public RangeBuilder valueType(String valueType) {
+		this.map.put("valueType", valueType);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class RangeBuilder {
 	* @param max desired value to be set
 	* @return Builder object with new value for max
 	*/
-	final public RangeBuilder max(TypedLiteral max) {
-		this.defaultRange.max = max;
+	public RangeBuilder max(TypedLiteral max) {
+		this.map.put("max", max);
 		return this;
 	}
 
@@ -58,8 +61,8 @@ public class RangeBuilder {
 	* @param min desired value to be set
 	* @return Builder object with new value for min
 	*/
-	final public RangeBuilder min(TypedLiteral min) {
-		this.defaultRange.min = min;
+	public RangeBuilder min(TypedLiteral min) {
+		this.map.put("min", min);
 		return this;
 	}
 
@@ -71,8 +74,8 @@ public class RangeBuilder {
 	* @param referableCategory desired value to be set
 	* @return Builder object with new value for referableCategory
 	*/
-	final public RangeBuilder referableCategory(String referableCategory) {
-		this.defaultRange.referableCategory = referableCategory;
+	public RangeBuilder referableCategory(String referableCategory) {
+		this.map.put("referableCategory", referableCategory);
 		return this;
 	}
 
@@ -82,8 +85,8 @@ public class RangeBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	final public RangeBuilder description(TypedLiteral description) {
-		this.defaultRange.description = description;
+	public RangeBuilder description(TypedLiteral description) {
+		this.map.put("description", description);
 		return this;
 	}
 
@@ -93,8 +96,8 @@ public class RangeBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	final public RangeBuilder displayName(TypedLiteral displayName) {
-		this.defaultRange.displayName = displayName;
+	public RangeBuilder displayName(TypedLiteral displayName) {
+		this.map.put("displayName", displayName);
 		return this;
 	}
 
@@ -104,8 +107,8 @@ public class RangeBuilder {
 	* @param idShort desired value to be set
 	* @return Builder object with new value for idShort
 	*/
-	final public RangeBuilder idShort(String idShort) {
-		this.defaultRange.idShort = idShort;
+	public RangeBuilder idShort(String idShort) {
+		this.map.put("idShort", idShort);
 		return this;
 	}
 
@@ -115,8 +118,8 @@ public class RangeBuilder {
 	* @param qualifiers desired value to be set
 	* @return Builder object with new value for qualifiers
 	*/
-	final public RangeBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultRange.qualifiers = qualifiers;
+	public RangeBuilder qualifiers(List<Constraint> qualifiers) {
+		this.map.put("qualifiers", qualifiers);
 		return this;
 	}
 
@@ -126,8 +129,8 @@ public class RangeBuilder {
 	* @param dataSpecifications desired value to be set
 	* @return Builder object with new value for dataSpecifications
 	*/
-	final public RangeBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultRange.dataSpecifications = dataSpecifications;
+	public RangeBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.map.put("dataSpecifications", dataSpecifications);
 		return this;
 	}
 
@@ -137,8 +140,8 @@ public class RangeBuilder {
 	* @param kind desired value to be set
 	* @return Builder object with new value for kind
 	*/
-	final public RangeBuilder kind(ModelingKind kind) {
-		this.defaultRange.kind = kind;
+	public RangeBuilder kind(ModelingKind kind) {
+		this.map.put("kind", kind);
 		return this;
 	}
 
@@ -148,18 +151,18 @@ public class RangeBuilder {
 	* @param semanticId desired value to be set
 	* @return Builder object with new value for semanticId
 	*/
-	final public RangeBuilder semanticId(Reference semanticId) {
-		this.defaultRange.semanticId = semanticId;
+	public RangeBuilder semanticId(Reference semanticId) {
+		this.map.put("semanticId", semanticId);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public Range build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultRange);
+		DefaultRange defaultRange = Util.fillInstanceFromMap(new DefaultRange(), this.map);
 		return defaultRange;
 	}
 }

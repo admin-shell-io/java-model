@@ -20,34 +20,37 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class SubmodelBuilder {
 
-	private DefaultSubmodel defaultSubmodel;
+	private Map<String, Object> map;
 
 	public SubmodelBuilder() {
-		defaultSubmodel = new DefaultSubmodel();
+		this.map = new HashMap<>();
 	}
 
-	public SubmodelBuilder(URI id) {
+	public SubmodelBuilder(Map<String, Object> map) {
 		this();
-		defaultSubmodel.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for submodelElements
 	* @param submodelElements desired value to be set
 	* @return Builder object with new value for submodelElements
 	*/
-	final public SubmodelBuilder submodelElements(List<SubmodelElement> submodelElements) {
-		this.defaultSubmodel.submodelElements = submodelElements;
+	public SubmodelBuilder submodelElements(List<SubmodelElement> submodelElements) {
+		this.map.put("submodelElements", submodelElements);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public Submodel build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultSubmodel);
+		DefaultSubmodel defaultSubmodel = Util.fillInstanceFromMap(new DefaultSubmodel(), this.map);
 		return defaultSubmodel;
 	}
 }

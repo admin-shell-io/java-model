@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class BlobBuilder {
 
-	private DefaultBlob defaultBlob;
+	private Map<String, Object> map;
 
 	public BlobBuilder() {
-		defaultBlob = new DefaultBlob();
+		this.map = new HashMap<>();
 	}
 
-	public BlobBuilder(URI id) {
+	public BlobBuilder(Map<String, Object> map) {
 		this();
-		defaultBlob.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for mimeType
 	* @param mimeType desired value to be set
 	* @return Builder object with new value for mimeType
 	*/
-	final public BlobBuilder mimeType(String mimeType) {
-		this.defaultBlob.mimeType = mimeType;
+	public BlobBuilder mimeType(String mimeType) {
+		this.map.put("mimeType", mimeType);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class BlobBuilder {
 	* @param value desired value to be set
 	* @return Builder object with new value for value
 	*/
-	final public BlobBuilder value(byte[] value) {
-		this.defaultBlob.value = value;
+	public BlobBuilder value(byte[] value) {
+		this.map.put("value", value);
 		return this;
 	}
 
@@ -60,8 +63,8 @@ public class BlobBuilder {
 	* @param referableCategory desired value to be set
 	* @return Builder object with new value for referableCategory
 	*/
-	final public BlobBuilder referableCategory(String referableCategory) {
-		this.defaultBlob.referableCategory = referableCategory;
+	public BlobBuilder referableCategory(String referableCategory) {
+		this.map.put("referableCategory", referableCategory);
 		return this;
 	}
 
@@ -71,8 +74,8 @@ public class BlobBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	final public BlobBuilder description(TypedLiteral description) {
-		this.defaultBlob.description = description;
+	public BlobBuilder description(TypedLiteral description) {
+		this.map.put("description", description);
 		return this;
 	}
 
@@ -82,8 +85,8 @@ public class BlobBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	final public BlobBuilder displayName(TypedLiteral displayName) {
-		this.defaultBlob.displayName = displayName;
+	public BlobBuilder displayName(TypedLiteral displayName) {
+		this.map.put("displayName", displayName);
 		return this;
 	}
 
@@ -93,8 +96,8 @@ public class BlobBuilder {
 	* @param idShort desired value to be set
 	* @return Builder object with new value for idShort
 	*/
-	final public BlobBuilder idShort(String idShort) {
-		this.defaultBlob.idShort = idShort;
+	public BlobBuilder idShort(String idShort) {
+		this.map.put("idShort", idShort);
 		return this;
 	}
 
@@ -104,8 +107,8 @@ public class BlobBuilder {
 	* @param qualifiers desired value to be set
 	* @return Builder object with new value for qualifiers
 	*/
-	final public BlobBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultBlob.qualifiers = qualifiers;
+	public BlobBuilder qualifiers(List<Constraint> qualifiers) {
+		this.map.put("qualifiers", qualifiers);
 		return this;
 	}
 
@@ -115,8 +118,8 @@ public class BlobBuilder {
 	* @param dataSpecifications desired value to be set
 	* @return Builder object with new value for dataSpecifications
 	*/
-	final public BlobBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultBlob.dataSpecifications = dataSpecifications;
+	public BlobBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.map.put("dataSpecifications", dataSpecifications);
 		return this;
 	}
 
@@ -126,8 +129,8 @@ public class BlobBuilder {
 	* @param kind desired value to be set
 	* @return Builder object with new value for kind
 	*/
-	final public BlobBuilder kind(ModelingKind kind) {
-		this.defaultBlob.kind = kind;
+	public BlobBuilder kind(ModelingKind kind) {
+		this.map.put("kind", kind);
 		return this;
 	}
 
@@ -137,18 +140,18 @@ public class BlobBuilder {
 	* @param semanticId desired value to be set
 	* @return Builder object with new value for semanticId
 	*/
-	final public BlobBuilder semanticId(Reference semanticId) {
-		this.defaultBlob.semanticId = semanticId;
+	public BlobBuilder semanticId(Reference semanticId) {
+		this.map.put("semanticId", semanticId);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public Blob build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultBlob);
+		DefaultBlob defaultBlob = Util.fillInstanceFromMap(new DefaultBlob(), this.map);
 		return defaultBlob;
 	}
 }

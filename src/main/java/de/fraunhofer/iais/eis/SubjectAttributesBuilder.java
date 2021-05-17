@@ -20,34 +20,37 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class SubjectAttributesBuilder {
 
-	private DefaultSubjectAttributes defaultSubjectAttributes;
+	private Map<String, Object> map;
 
 	public SubjectAttributesBuilder() {
-		defaultSubjectAttributes = new DefaultSubjectAttributes();
+		this.map = new HashMap<>();
 	}
 
-	public SubjectAttributesBuilder(URI id) {
+	public SubjectAttributesBuilder(Map<String, Object> map) {
 		this();
-		defaultSubjectAttributes.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for subjectAttributes
 	* @param subjectAttributes desired value to be set
 	* @return Builder object with new value for subjectAttributes
 	*/
-	final public SubjectAttributesBuilder subjectAttributes(List<DataElement> subjectAttributes) {
-		this.defaultSubjectAttributes.subjectAttributes = subjectAttributes;
+	public SubjectAttributesBuilder subjectAttributes(List<DataElement> subjectAttributes) {
+		this.map.put("subjectAttributes", subjectAttributes);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public SubjectAttributes build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultSubjectAttributes);
+		DefaultSubjectAttributes defaultSubjectAttributes = Util.fillInstanceFromMap(new DefaultSubjectAttributes(), this.map);
 		return defaultSubjectAttributes;
 	}
 }

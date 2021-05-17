@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultKey implements Key {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Key", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("A key is a reference to an element by its id.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -65,19 +56,6 @@ public class DefaultKey implements Key {
 
 	// no manual construction
 	protected DefaultKey() {
-		id = VocabUtil.getInstance().createRandomUrl("key");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -101,6 +79,15 @@ public class DefaultKey implements Key {
 				Objects.equals(this.type, other.type) &&
 				Objects.equals(this.value, other.value);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultKey other = new DefaultKey();
+		other.idType = (KeyType) Util.clone(this.idType);
+		other.type = (KeyElements) Util.clone(this.type);
+		other.value = (String) Util.clone(this.value);
+		return other;
 	}
 
 

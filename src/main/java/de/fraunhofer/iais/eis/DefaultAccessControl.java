@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultAccessControl implements AccessControl {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Access Control", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Access Control defines the local access control policy administration point. Access Control has the major task to define the access permission rules.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -98,19 +89,6 @@ public class DefaultAccessControl implements AccessControl {
 
 	// no manual construction
 	protected DefaultAccessControl() {
-		id = VocabUtil.getInstance().createRandomUrl("accessControl");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -142,6 +120,19 @@ public class DefaultAccessControl implements AccessControl {
 				Objects.equals(this.selectableEnvironmentAttributes, other.selectableEnvironmentAttributes) &&
 				Objects.equals(this.defaultEnvironmentAttributes, other.defaultEnvironmentAttributes);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultAccessControl other = new DefaultAccessControl();
+		other.accessPermissionRules = (List<AccessPermissionRule>) Util.clone(this.accessPermissionRules);
+		other.selectableSubjectAttributes = (Reference) Util.clone(this.selectableSubjectAttributes);
+		other.defaultSubjectAttributes = (Reference) Util.clone(this.defaultSubjectAttributes);
+		other.selectablePermissions = (Reference) Util.clone(this.selectablePermissions);
+		other.defaultPermissions = (Reference) Util.clone(this.defaultPermissions);
+		other.selectableEnvironmentAttributes = (Reference) Util.clone(this.selectableEnvironmentAttributes);
+		other.defaultEnvironmentAttributes = (Reference) Util.clone(this.defaultEnvironmentAttributes);
+		return other;
 	}
 
 

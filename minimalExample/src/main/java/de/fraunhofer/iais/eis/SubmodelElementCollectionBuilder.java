@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class SubmodelElementCollectionBuilder {
 
-	private DefaultSubmodelElementCollection defaultSubmodelElementCollection;
+	private Map<String, Object> map;
 
 	public SubmodelElementCollectionBuilder() {
-		defaultSubmodelElementCollection = new DefaultSubmodelElementCollection();
+		this.map = new HashMap<>();
 	}
 
-	public SubmodelElementCollectionBuilder(URI id) {
+	public SubmodelElementCollectionBuilder(Map<String, Object> map) {
 		this();
-		defaultSubmodelElementCollection.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for allowDuplicates
 	* @param allowDuplicates desired value to be set
 	* @return Builder object with new value for allowDuplicates
 	*/
-	final public SubmodelElementCollectionBuilder allowDuplicates(List<Boolean> allowDuplicates) {
-		this.defaultSubmodelElementCollection.allowDuplicates = allowDuplicates;
+	public SubmodelElementCollectionBuilder allowDuplicates(List<Boolean> allowDuplicates) {
+		this.map.put("allowDuplicates", allowDuplicates);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class SubmodelElementCollectionBuilder {
 	* @param ordereds desired value to be set
 	* @return Builder object with new value for ordereds
 	*/
-	final public SubmodelElementCollectionBuilder ordereds(List<Boolean> ordereds) {
-		this.defaultSubmodelElementCollection.ordereds = ordereds;
+	public SubmodelElementCollectionBuilder ordereds(List<Boolean> ordereds) {
+		this.map.put("ordereds", ordereds);
 		return this;
 	}
 
@@ -58,19 +61,19 @@ public class SubmodelElementCollectionBuilder {
 	* @param values desired value to be set
 	* @return Builder object with new value for values
 	*/
-	final public SubmodelElementCollectionBuilder values(List<SubmodelElement> values) {
-		this.defaultSubmodelElementCollection.values = values;
+	public SubmodelElementCollectionBuilder values(List<SubmodelElement> values) {
+		this.map.put("values", values);
 		return this;
 	}
+
 
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public SubmodelElementCollection build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultSubmodelElementCollection);
+		DefaultSubmodelElementCollection defaultSubmodelElementCollection = Util.fillInstanceFromMap(new DefaultSubmodelElementCollection(), this.map);
 		return defaultSubmodelElementCollection;
 	}
 }

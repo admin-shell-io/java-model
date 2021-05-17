@@ -28,15 +28,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultSubmodelElementCollection implements SubmodelElementCollection {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Submodel Element Collection", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("A submodel element collection is a set or list of submodel elements.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -137,19 +128,6 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 
 	// no manual construction
 	protected DefaultSubmodelElementCollection() {
-		id = VocabUtil.getInstance().createRandomUrl("submodelElementCollection");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -189,6 +167,23 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 				Objects.equals(this.kind, other.kind) &&
 				Objects.equals(this.semanticId, other.semanticId);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultSubmodelElementCollection other = new DefaultSubmodelElementCollection();
+		other.allowDuplicates = (boolean) Util.clone(this.allowDuplicates);
+		other.ordered = (boolean) Util.clone(this.ordered);
+		other.values = (List<SubmodelElement>) Util.clone(this.values);
+		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.description = (TypedLiteral) Util.clone(this.description);
+		other.displayName = (TypedLiteral) Util.clone(this.displayName);
+		other.idShort = (String) Util.clone(this.idShort);
+		other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
+		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
+		other.kind = (ModelingKind) Util.clone(this.kind);
+		other.semanticId = (Reference) Util.clone(this.semanticId);
+		return other;
 	}
 
 

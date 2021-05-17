@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultSubjectAttributes implements SubjectAttributes {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Subject Attributes", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("A set of data elements that further classifies a specific subject.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -48,19 +39,6 @@ public class DefaultSubjectAttributes implements SubjectAttributes {
 
 	// no manual construction
 	protected DefaultSubjectAttributes() {
-		id = VocabUtil.getInstance().createRandomUrl("subjectAttributes");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -80,6 +58,13 @@ public class DefaultSubjectAttributes implements SubjectAttributes {
 			DefaultSubjectAttributes other = (DefaultSubjectAttributes) obj;
 			return Objects.equals(this.subjectAttributes, other.subjectAttributes);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultSubjectAttributes other = new DefaultSubjectAttributes();
+		other.subjectAttributes = (List<DataElement>) Util.clone(this.subjectAttributes);
+		return other;
 	}
 
 

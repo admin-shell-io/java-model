@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Policy Information Points", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Defines the security policy information points (PIP). Serves as the retrieval source of attributes, or the data required for policy evaluation to provide the information needed by the policy decision point to make the decisions.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -55,19 +46,6 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
 
 	// no manual construction
 	protected DefaultPolicyInformationPoints() {
-		id = VocabUtil.getInstance().createRandomUrl("policyInformationPoints");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -89,6 +67,14 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
 			return Objects.equals(this.externalInformationPoints, other.externalInformationPoints) &&
 				Objects.equals(this.internalInformationPoints, other.internalInformationPoints);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultPolicyInformationPoints other = new DefaultPolicyInformationPoints();
+		other.externalInformationPoints = (boolean) Util.clone(this.externalInformationPoints);
+		other.internalInformationPoints = (List<Submodel>) Util.clone(this.internalInformationPoints);
+		return other;
 	}
 
 

@@ -26,15 +26,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultOperation implements Operation {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Operation", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("An operation is a submodel element with input and output variables.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -134,19 +125,6 @@ public class DefaultOperation implements Operation {
 
 	// no manual construction
 	protected DefaultOperation() {
-		id = VocabUtil.getInstance().createRandomUrl("operation");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -186,6 +164,23 @@ public class DefaultOperation implements Operation {
 				Objects.equals(this.kind, other.kind) &&
 				Objects.equals(this.semanticId, other.semanticId);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultOperation other = new DefaultOperation();
+		other.inputVariables = (List<OperationVariable>) Util.clone(this.inputVariables);
+		other.inoutputVariables = (List<OperationVariable>) Util.clone(this.inoutputVariables);
+		other.outputVariables = (List<OperationVariable>) Util.clone(this.outputVariables);
+		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.description = (TypedLiteral) Util.clone(this.description);
+		other.displayName = (TypedLiteral) Util.clone(this.displayName);
+		other.idShort = (String) Util.clone(this.idShort);
+		other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
+		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
+		other.kind = (ModelingKind) Util.clone(this.kind);
+		other.semanticId = (Reference) Util.clone(this.semanticId);
+		return other;
 	}
 
 

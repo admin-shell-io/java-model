@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class AccessControlPolicyPointsBuilder {
 
-	private DefaultAccessControlPolicyPoints defaultAccessControlPolicyPoints;
+	private Map<String, Object> map;
 
 	public AccessControlPolicyPointsBuilder() {
-		defaultAccessControlPolicyPoints = new DefaultAccessControlPolicyPoints();
+		this.map = new HashMap<>();
 	}
 
-	public AccessControlPolicyPointsBuilder(URI id) {
+	public AccessControlPolicyPointsBuilder(Map<String, Object> map) {
 		this();
-		defaultAccessControlPolicyPoints.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for policyAdministrationPoint
 	* @param policyAdministrationPoint desired value to be set
 	* @return Builder object with new value for policyAdministrationPoint
 	*/
-	final public AccessControlPolicyPointsBuilder policyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint) {
-		this.defaultAccessControlPolicyPoints.policyAdministrationPoint = policyAdministrationPoint;
+	public AccessControlPolicyPointsBuilder policyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint) {
+		this.map.put("policyAdministrationPoint", policyAdministrationPoint);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class AccessControlPolicyPointsBuilder {
 	* @param policyDecisionPoint desired value to be set
 	* @return Builder object with new value for policyDecisionPoint
 	*/
-	final public AccessControlPolicyPointsBuilder policyDecisionPoint(PolicyDecisionPoint policyDecisionPoint) {
-		this.defaultAccessControlPolicyPoints.policyDecisionPoint = policyDecisionPoint;
+	public AccessControlPolicyPointsBuilder policyDecisionPoint(PolicyDecisionPoint policyDecisionPoint) {
+		this.map.put("policyDecisionPoint", policyDecisionPoint);
 		return this;
 	}
 
@@ -58,8 +61,8 @@ public class AccessControlPolicyPointsBuilder {
 	* @param policyEnforcementPoint desired value to be set
 	* @return Builder object with new value for policyEnforcementPoint
 	*/
-	final public AccessControlPolicyPointsBuilder policyEnforcementPoint(PolicyEnforcementPoints policyEnforcementPoint) {
-		this.defaultAccessControlPolicyPoints.policyEnforcementPoint = policyEnforcementPoint;
+	public AccessControlPolicyPointsBuilder policyEnforcementPoint(PolicyEnforcementPoints policyEnforcementPoint) {
+		this.map.put("policyEnforcementPoint", policyEnforcementPoint);
 		return this;
 	}
 
@@ -69,18 +72,18 @@ public class AccessControlPolicyPointsBuilder {
 	* @param policyInformationPoints desired value to be set
 	* @return Builder object with new value for policyInformationPoints
 	*/
-	final public AccessControlPolicyPointsBuilder policyInformationPoints(PolicyInformationPoints policyInformationPoints) {
-		this.defaultAccessControlPolicyPoints.policyInformationPoints = policyInformationPoints;
+	public AccessControlPolicyPointsBuilder policyInformationPoints(PolicyInformationPoints policyInformationPoints) {
+		this.map.put("policyInformationPoints", policyInformationPoints);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public AccessControlPolicyPoints build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultAccessControlPolicyPoints);
+		DefaultAccessControlPolicyPoints defaultAccessControlPolicyPoints = Util.fillInstanceFromMap(new DefaultAccessControlPolicyPoints(), this.map);
 		return defaultAccessControlPolicyPoints;
 	}
 }

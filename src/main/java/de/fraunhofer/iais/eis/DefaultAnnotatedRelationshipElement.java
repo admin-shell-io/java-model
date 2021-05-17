@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshipElement {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Annotated Relationship Element", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("An annotated relationship element is an relationship element that can be annotated with additional data elements.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -133,19 +124,6 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 
 	// no manual construction
 	protected DefaultAnnotatedRelationshipElement() {
-		id = VocabUtil.getInstance().createRandomUrl("annotatedRelationshipElement");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -185,6 +163,23 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 				Objects.equals(this.kind, other.kind) &&
 				Objects.equals(this.semanticId, other.semanticId);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultAnnotatedRelationshipElement other = new DefaultAnnotatedRelationshipElement();
+		other.annotations = (List<DataElement>) Util.clone(this.annotations);
+		other.first = (Reference) Util.clone(this.first);
+		other.second = (Reference) Util.clone(this.second);
+		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.description = (TypedLiteral) Util.clone(this.description);
+		other.displayName = (TypedLiteral) Util.clone(this.displayName);
+		other.idShort = (String) Util.clone(this.idShort);
+		other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
+		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
+		other.kind = (ModelingKind) Util.clone(this.kind);
+		other.semanticId = (Reference) Util.clone(this.semanticId);
+		return other;
 	}
 
 

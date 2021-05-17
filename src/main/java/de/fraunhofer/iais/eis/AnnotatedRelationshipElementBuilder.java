@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class AnnotatedRelationshipElementBuilder {
 
-	private DefaultAnnotatedRelationshipElement defaultAnnotatedRelationshipElement;
+	private Map<String, Object> map;
 
 	public AnnotatedRelationshipElementBuilder() {
-		defaultAnnotatedRelationshipElement = new DefaultAnnotatedRelationshipElement();
+		this.map = new HashMap<>();
 	}
 
-	public AnnotatedRelationshipElementBuilder(URI id) {
+	public AnnotatedRelationshipElementBuilder(Map<String, Object> map) {
 		this();
-		defaultAnnotatedRelationshipElement.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for annotations
 	* @param annotations desired value to be set
 	* @return Builder object with new value for annotations
 	*/
-	final public AnnotatedRelationshipElementBuilder annotations(List<DataElement> annotations) {
-		this.defaultAnnotatedRelationshipElement.annotations = annotations;
+	public AnnotatedRelationshipElementBuilder annotations(List<DataElement> annotations) {
+		this.map.put("annotations", annotations);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class AnnotatedRelationshipElementBuilder {
 	* @param first desired value to be set
 	* @return Builder object with new value for first
 	*/
-	final public AnnotatedRelationshipElementBuilder first(Reference first) {
-		this.defaultAnnotatedRelationshipElement.first = first;
+	public AnnotatedRelationshipElementBuilder first(Reference first) {
+		this.map.put("first", first);
 		return this;
 	}
 
@@ -58,8 +61,8 @@ public class AnnotatedRelationshipElementBuilder {
 	* @param second desired value to be set
 	* @return Builder object with new value for second
 	*/
-	final public AnnotatedRelationshipElementBuilder second(Reference second) {
-		this.defaultAnnotatedRelationshipElement.second = second;
+	public AnnotatedRelationshipElementBuilder second(Reference second) {
+		this.map.put("second", second);
 		return this;
 	}
 
@@ -70,8 +73,8 @@ public class AnnotatedRelationshipElementBuilder {
 	* @param referableCategory desired value to be set
 	* @return Builder object with new value for referableCategory
 	*/
-	final public AnnotatedRelationshipElementBuilder referableCategory(String referableCategory) {
-		this.defaultAnnotatedRelationshipElement.referableCategory = referableCategory;
+	public AnnotatedRelationshipElementBuilder referableCategory(String referableCategory) {
+		this.map.put("referableCategory", referableCategory);
 		return this;
 	}
 
@@ -81,8 +84,8 @@ public class AnnotatedRelationshipElementBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	final public AnnotatedRelationshipElementBuilder description(TypedLiteral description) {
-		this.defaultAnnotatedRelationshipElement.description = description;
+	public AnnotatedRelationshipElementBuilder description(TypedLiteral description) {
+		this.map.put("description", description);
 		return this;
 	}
 
@@ -92,8 +95,8 @@ public class AnnotatedRelationshipElementBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	final public AnnotatedRelationshipElementBuilder displayName(TypedLiteral displayName) {
-		this.defaultAnnotatedRelationshipElement.displayName = displayName;
+	public AnnotatedRelationshipElementBuilder displayName(TypedLiteral displayName) {
+		this.map.put("displayName", displayName);
 		return this;
 	}
 
@@ -103,8 +106,8 @@ public class AnnotatedRelationshipElementBuilder {
 	* @param idShort desired value to be set
 	* @return Builder object with new value for idShort
 	*/
-	final public AnnotatedRelationshipElementBuilder idShort(String idShort) {
-		this.defaultAnnotatedRelationshipElement.idShort = idShort;
+	public AnnotatedRelationshipElementBuilder idShort(String idShort) {
+		this.map.put("idShort", idShort);
 		return this;
 	}
 
@@ -114,8 +117,8 @@ public class AnnotatedRelationshipElementBuilder {
 	* @param qualifiers desired value to be set
 	* @return Builder object with new value for qualifiers
 	*/
-	final public AnnotatedRelationshipElementBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultAnnotatedRelationshipElement.qualifiers = qualifiers;
+	public AnnotatedRelationshipElementBuilder qualifiers(List<Constraint> qualifiers) {
+		this.map.put("qualifiers", qualifiers);
 		return this;
 	}
 
@@ -125,8 +128,8 @@ public class AnnotatedRelationshipElementBuilder {
 	* @param dataSpecifications desired value to be set
 	* @return Builder object with new value for dataSpecifications
 	*/
-	final public AnnotatedRelationshipElementBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultAnnotatedRelationshipElement.dataSpecifications = dataSpecifications;
+	public AnnotatedRelationshipElementBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.map.put("dataSpecifications", dataSpecifications);
 		return this;
 	}
 
@@ -136,8 +139,8 @@ public class AnnotatedRelationshipElementBuilder {
 	* @param kind desired value to be set
 	* @return Builder object with new value for kind
 	*/
-	final public AnnotatedRelationshipElementBuilder kind(ModelingKind kind) {
-		this.defaultAnnotatedRelationshipElement.kind = kind;
+	public AnnotatedRelationshipElementBuilder kind(ModelingKind kind) {
+		this.map.put("kind", kind);
 		return this;
 	}
 
@@ -147,18 +150,18 @@ public class AnnotatedRelationshipElementBuilder {
 	* @param semanticId desired value to be set
 	* @return Builder object with new value for semanticId
 	*/
-	final public AnnotatedRelationshipElementBuilder semanticId(Reference semanticId) {
-		this.defaultAnnotatedRelationshipElement.semanticId = semanticId;
+	public AnnotatedRelationshipElementBuilder semanticId(Reference semanticId) {
+		this.map.put("semanticId", semanticId);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public AnnotatedRelationshipElement build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultAnnotatedRelationshipElement);
+		DefaultAnnotatedRelationshipElement defaultAnnotatedRelationshipElement = Util.fillInstanceFromMap(new DefaultAnnotatedRelationshipElement(), this.map);
 		return defaultAnnotatedRelationshipElement;
 	}
 }

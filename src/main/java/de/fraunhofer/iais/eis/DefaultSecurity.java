@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultSecurity implements Security {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Security", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Container for security relevant information of the AAS.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -63,19 +54,6 @@ public class DefaultSecurity implements Security {
 
 	// no manual construction
 	protected DefaultSecurity() {
-		id = VocabUtil.getInstance().createRandomUrl("security");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -99,6 +77,15 @@ public class DefaultSecurity implements Security {
 				Objects.equals(this.certificates, other.certificates) &&
 				Objects.equals(this.requiredCertificateExtensions, other.requiredCertificateExtensions);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultSecurity other = new DefaultSecurity();
+		other.accessControlPolicyPoints = (AccessControlPolicyPoints) Util.clone(this.accessControlPolicyPoints);
+		other.certificates = (List<Certificate>) Util.clone(this.certificates);
+		other.requiredCertificateExtensions = (List<Reference>) Util.clone(this.requiredCertificateExtensions);
+		return other;
 	}
 
 

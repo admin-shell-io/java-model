@@ -20,16 +20,19 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class EventElementBuilder {
 
-	private DefaultEventElement defaultEventElement;
+	private Map<String, Object> map;
 
 	public EventElementBuilder() {
-		defaultEventElement = new DefaultEventElement();
+		this.map = new HashMap<>();
 	}
 
-	public EventElementBuilder(URI id) {
+	public EventElementBuilder(Map<String, Object> map) {
 		this();
-		defaultEventElement.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 
 
@@ -38,8 +41,8 @@ public class EventElementBuilder {
 	* @param referableCategory desired value to be set
 	* @return Builder object with new value for referableCategory
 	*/
-	final public EventElementBuilder referableCategory(String referableCategory) {
-		this.defaultEventElement.referableCategory = referableCategory;
+	public EventElementBuilder referableCategory(String referableCategory) {
+		this.map.put("referableCategory", referableCategory);
 		return this;
 	}
 
@@ -49,8 +52,8 @@ public class EventElementBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	final public EventElementBuilder description(TypedLiteral description) {
-		this.defaultEventElement.description = description;
+	public EventElementBuilder description(TypedLiteral description) {
+		this.map.put("description", description);
 		return this;
 	}
 
@@ -60,8 +63,8 @@ public class EventElementBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	final public EventElementBuilder displayName(TypedLiteral displayName) {
-		this.defaultEventElement.displayName = displayName;
+	public EventElementBuilder displayName(TypedLiteral displayName) {
+		this.map.put("displayName", displayName);
 		return this;
 	}
 
@@ -71,8 +74,8 @@ public class EventElementBuilder {
 	* @param idShort desired value to be set
 	* @return Builder object with new value for idShort
 	*/
-	final public EventElementBuilder idShort(String idShort) {
-		this.defaultEventElement.idShort = idShort;
+	public EventElementBuilder idShort(String idShort) {
+		this.map.put("idShort", idShort);
 		return this;
 	}
 
@@ -82,8 +85,8 @@ public class EventElementBuilder {
 	* @param qualifiers desired value to be set
 	* @return Builder object with new value for qualifiers
 	*/
-	final public EventElementBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultEventElement.qualifiers = qualifiers;
+	public EventElementBuilder qualifiers(List<Constraint> qualifiers) {
+		this.map.put("qualifiers", qualifiers);
 		return this;
 	}
 
@@ -93,8 +96,8 @@ public class EventElementBuilder {
 	* @param dataSpecifications desired value to be set
 	* @return Builder object with new value for dataSpecifications
 	*/
-	final public EventElementBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultEventElement.dataSpecifications = dataSpecifications;
+	public EventElementBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.map.put("dataSpecifications", dataSpecifications);
 		return this;
 	}
 
@@ -104,8 +107,8 @@ public class EventElementBuilder {
 	* @param kind desired value to be set
 	* @return Builder object with new value for kind
 	*/
-	final public EventElementBuilder kind(ModelingKind kind) {
-		this.defaultEventElement.kind = kind;
+	public EventElementBuilder kind(ModelingKind kind) {
+		this.map.put("kind", kind);
 		return this;
 	}
 
@@ -115,18 +118,18 @@ public class EventElementBuilder {
 	* @param semanticId desired value to be set
 	* @return Builder object with new value for semanticId
 	*/
-	final public EventElementBuilder semanticId(Reference semanticId) {
-		this.defaultEventElement.semanticId = semanticId;
+	public EventElementBuilder semanticId(Reference semanticId) {
+		this.map.put("semanticId", semanticId);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public EventElement build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultEventElement);
+		DefaultEventElement defaultEventElement = Util.fillInstanceFromMap(new DefaultEventElement(), this.map);
 		return defaultEventElement;
 	}
 }

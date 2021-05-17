@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultBlobCertificate implements BlobCertificate {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Blob Certificate", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Certificate provided as BLOB.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -71,19 +62,6 @@ public class DefaultBlobCertificate implements BlobCertificate {
 
 	// no manual construction
 	protected DefaultBlobCertificate() {
-		id = VocabUtil.getInstance().createRandomUrl("blobCertificate");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -109,6 +87,16 @@ public class DefaultBlobCertificate implements BlobCertificate {
 				Objects.equals(this.lastCertificate, other.lastCertificate) &&
 				Objects.equals(this.policyAdministrationPoint, other.policyAdministrationPoint);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultBlobCertificate other = new DefaultBlobCertificate();
+		other.blobCertificate = (Blob) Util.clone(this.blobCertificate);
+		other.containedExtensions = (List<Reference>) Util.clone(this.containedExtensions);
+		other.lastCertificate = (boolean) Util.clone(this.lastCertificate);
+		other.policyAdministrationPoint = (PolicyAdministrationPoint) Util.clone(this.policyAdministrationPoint);
+		return other;
 	}
 
 

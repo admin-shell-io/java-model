@@ -20,16 +20,19 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class AssetBuilder {
 
-	private DefaultAsset defaultAsset;
+	private Map<String, Object> map;
 
 	public AssetBuilder() {
-		defaultAsset = new DefaultAsset();
+		this.map = new HashMap<>();
 	}
 
-	public AssetBuilder(URI id) {
+	public AssetBuilder(Map<String, Object> map) {
 		this();
-		defaultAsset.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 
 	/**
@@ -37,8 +40,8 @@ public class AssetBuilder {
 	* @param dataSpecifications desired value to be set
 	* @return Builder object with new value for dataSpecifications
 	*/
-	final public AssetBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultAsset.dataSpecifications = dataSpecifications;
+	public AssetBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.map.put("dataSpecifications", dataSpecifications);
 		return this;
 	}
 
@@ -48,8 +51,8 @@ public class AssetBuilder {
 	* @param administration desired value to be set
 	* @return Builder object with new value for administration
 	*/
-	final public AssetBuilder administration(AdministrativeInformation administration) {
-		this.defaultAsset.administration = administration;
+	public AssetBuilder administration(AdministrativeInformation administration) {
+		this.map.put("administration", administration);
 		return this;
 	}
 
@@ -59,8 +62,8 @@ public class AssetBuilder {
 	* @param identification desired value to be set
 	* @return Builder object with new value for identification
 	*/
-	final public AssetBuilder identification(Identifier identification) {
-		this.defaultAsset.identification = identification;
+	public AssetBuilder identification(Identifier identification) {
+		this.map.put("identification", identification);
 		return this;
 	}
 
@@ -70,8 +73,8 @@ public class AssetBuilder {
 	* @param referableCategory desired value to be set
 	* @return Builder object with new value for referableCategory
 	*/
-	final public AssetBuilder referableCategory(String referableCategory) {
-		this.defaultAsset.referableCategory = referableCategory;
+	public AssetBuilder referableCategory(String referableCategory) {
+		this.map.put("referableCategory", referableCategory);
 		return this;
 	}
 
@@ -81,8 +84,8 @@ public class AssetBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	final public AssetBuilder description(TypedLiteral description) {
-		this.defaultAsset.description = description;
+	public AssetBuilder description(TypedLiteral description) {
+		this.map.put("description", description);
 		return this;
 	}
 
@@ -92,8 +95,8 @@ public class AssetBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	final public AssetBuilder displayName(TypedLiteral displayName) {
-		this.defaultAsset.displayName = displayName;
+	public AssetBuilder displayName(TypedLiteral displayName) {
+		this.map.put("displayName", displayName);
 		return this;
 	}
 
@@ -103,18 +106,18 @@ public class AssetBuilder {
 	* @param idShort desired value to be set
 	* @return Builder object with new value for idShort
 	*/
-	final public AssetBuilder idShort(String idShort) {
-		this.defaultAsset.idShort = idShort;
+	public AssetBuilder idShort(String idShort) {
+		this.map.put("idShort", idShort);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public Asset build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultAsset);
+		DefaultAsset defaultAsset = Util.fillInstanceFromMap(new DefaultAsset(), this.map);
 		return defaultAsset;
 	}
 }

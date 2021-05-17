@@ -26,15 +26,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultQualifier implements Qualifier {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Qualifier", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("A qualifier is a type-value pair that makes additional statements w.r.t. the value of the element.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -80,19 +71,6 @@ public class DefaultQualifier implements Qualifier {
 
 	// no manual construction
 	protected DefaultQualifier() {
-		id = VocabUtil.getInstance().createRandomUrl("qualifier");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -120,6 +98,17 @@ public class DefaultQualifier implements Qualifier {
 				Objects.equals(this.valueId, other.valueId) &&
 				Objects.equals(this.semanticId, other.semanticId);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultQualifier other = new DefaultQualifier();
+		other.type = (String) Util.clone(this.type);
+		other.valueType = (String) Util.clone(this.valueType);
+		other.value = (TypedLiteral) Util.clone(this.value);
+		other.valueId = (Reference) Util.clone(this.valueId);
+		other.semanticId = (Reference) Util.clone(this.semanticId);
+		return other;
 	}
 
 

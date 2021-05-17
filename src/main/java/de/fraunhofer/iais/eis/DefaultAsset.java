@@ -26,15 +26,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultAsset implements Asset {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Asset", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("An Asset describes meta data of an asset that is represented by an AAS. The asset may either represent an asset type or an asset instance. The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -102,19 +93,6 @@ public class DefaultAsset implements Asset {
 
 	// no manual construction
 	protected DefaultAsset() {
-		id = VocabUtil.getInstance().createRandomUrl("asset");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -146,6 +124,19 @@ public class DefaultAsset implements Asset {
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultAsset other = new DefaultAsset();
+		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
+		other.administration = (AdministrativeInformation) Util.clone(this.administration);
+		other.identification = (Identifier) Util.clone(this.identification);
+		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.description = (TypedLiteral) Util.clone(this.description);
+		other.displayName = (TypedLiteral) Util.clone(this.displayName);
+		other.idShort = (String) Util.clone(this.idShort);
+		return other;
 	}
 
 

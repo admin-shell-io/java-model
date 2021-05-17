@@ -28,15 +28,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultSubmodelElementCollection implements SubmodelElementCollection {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Submodel Element Collection", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("A submodel element collection is a set or list of submodel elements.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -67,19 +58,6 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 
 	// no manual construction
 	protected DefaultSubmodelElementCollection() {
-		id = VocabUtil.getInstance().createRandomUrl("submodelElementCollection");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -103,6 +81,15 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 				Objects.equals(this.ordereds, other.ordereds) &&
 				Objects.equals(this.values, other.values);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultSubmodelElementCollection other = new DefaultSubmodelElementCollection();
+		other.allowDuplicates = (List<Boolean>) Util.clone(this.allowDuplicates);
+		other.ordereds = (List<Boolean>) Util.clone(this.ordereds);
+		other.values = (List<SubmodelElement>) Util.clone(this.values);
+		return other;
 	}
 
 

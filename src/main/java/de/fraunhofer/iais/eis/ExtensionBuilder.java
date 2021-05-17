@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class ExtensionBuilder {
 
-	private DefaultExtension defaultExtension;
+	private Map<String, Object> map;
 
 	public ExtensionBuilder() {
-		defaultExtension = new DefaultExtension();
+		this.map = new HashMap<>();
 	}
 
-	public ExtensionBuilder(URI id) {
+	public ExtensionBuilder(Map<String, Object> map) {
 		this();
-		defaultExtension.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for name
 	* @param name desired value to be set
 	* @return Builder object with new value for name
 	*/
-	final public ExtensionBuilder name(String name) {
-		this.defaultExtension.name = name;
+	public ExtensionBuilder name(String name) {
+		this.map.put("name", name);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class ExtensionBuilder {
 	* @param valueType desired value to be set
 	* @return Builder object with new value for valueType
 	*/
-	final public ExtensionBuilder valueType(String valueType) {
-		this.defaultExtension.valueType = valueType;
+	public ExtensionBuilder valueType(String valueType) {
+		this.map.put("valueType", valueType);
 		return this;
 	}
 
@@ -58,8 +61,8 @@ public class ExtensionBuilder {
 	* @param value desired value to be set
 	* @return Builder object with new value for value
 	*/
-	final public ExtensionBuilder value(String value) {
-		this.defaultExtension.value = value;
+	public ExtensionBuilder value(String value) {
+		this.map.put("value", value);
 		return this;
 	}
 
@@ -69,8 +72,8 @@ public class ExtensionBuilder {
 	* @param refersTo desired value to be set
 	* @return Builder object with new value for refersTo
 	*/
-	final public ExtensionBuilder refersTo(Reference refersTo) {
-		this.defaultExtension.refersTo = refersTo;
+	public ExtensionBuilder refersTo(Reference refersTo) {
+		this.map.put("refersTo", refersTo);
 		return this;
 	}
 
@@ -80,18 +83,18 @@ public class ExtensionBuilder {
 	* @param semanticId desired value to be set
 	* @return Builder object with new value for semanticId
 	*/
-	final public ExtensionBuilder semanticId(Reference semanticId) {
-		this.defaultExtension.semanticId = semanticId;
+	public ExtensionBuilder semanticId(Reference semanticId) {
+		this.map.put("semanticId", semanticId);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public Extension build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultExtension);
+		DefaultExtension defaultExtension = Util.fillInstanceFromMap(new DefaultExtension(), this.map);
 		return defaultExtension;
 	}
 }

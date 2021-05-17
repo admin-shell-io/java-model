@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Policy Decision Point", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Defines a security policy decision point (PDP). ", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -47,19 +38,6 @@ public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
 
 	// no manual construction
 	protected DefaultPolicyDecisionPoint() {
-		id = VocabUtil.getInstance().createRandomUrl("policyDecisionPoint");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -79,6 +57,13 @@ public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
 			DefaultPolicyDecisionPoint other = (DefaultPolicyDecisionPoint) obj;
 			return Objects.equals(this.externalPolicyDecisionPoints, other.externalPolicyDecisionPoints);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultPolicyDecisionPoint other = new DefaultPolicyDecisionPoint();
+		other.externalPolicyDecisionPoints = (boolean) Util.clone(this.externalPolicyDecisionPoints);
+		return other;
 	}
 
 

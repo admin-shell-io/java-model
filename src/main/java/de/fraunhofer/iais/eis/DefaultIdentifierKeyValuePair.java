@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("identifier key value pair", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("An IdentifierKeyValuePair describes a generic identifier as key-value pair.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -72,19 +63,6 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 
 	// no manual construction
 	protected DefaultIdentifierKeyValuePair() {
-		id = VocabUtil.getInstance().createRandomUrl("identifierKeyValuePair");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -110,6 +88,16 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 				Objects.equals(this.externalSubjectId, other.externalSubjectId) &&
 				Objects.equals(this.semanticId, other.semanticId);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultIdentifierKeyValuePair other = new DefaultIdentifierKeyValuePair();
+		other.key = (String) Util.clone(this.key);
+		other.value = (String) Util.clone(this.value);
+		other.externalSubjectId = (Reference) Util.clone(this.externalSubjectId);
+		other.semanticId = (Reference) Util.clone(this.semanticId);
+		return other;
 	}
 
 

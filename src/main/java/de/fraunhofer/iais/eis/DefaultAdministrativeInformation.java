@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultAdministrativeInformation implements AdministrativeInformation {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Administrative Information", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Every Identifiable may have administrative information. Administrative information includes for example 1) Information about the version of the element 2) Information about who created or who made the last change to the element 3) Information about the languages available in case the element contains text, for translating purposed also themmaster or default language may be definedIn the first version of the AAS metamodel only version information as defined by IEC 61360 is defined. In later versions additional attributes may be added.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -64,19 +55,6 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
 
 	// no manual construction
 	protected DefaultAdministrativeInformation() {
-		id = VocabUtil.getInstance().createRandomUrl("administrativeInformation");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -100,6 +78,15 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
 				Objects.equals(this.revision, other.revision) &&
 				Objects.equals(this.dataSpecifications, other.dataSpecifications);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultAdministrativeInformation other = new DefaultAdministrativeInformation();
+		other.version = (String) Util.clone(this.version);
+		other.revision = (String) Util.clone(this.revision);
+		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
+		return other;
 	}
 
 

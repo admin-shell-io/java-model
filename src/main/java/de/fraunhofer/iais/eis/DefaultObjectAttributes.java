@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultObjectAttributes implements ObjectAttributes {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Object Attributes", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("A set of data elements that describe object attributes. These attributes need to refer to a data element within an existing submodel.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -47,19 +38,6 @@ public class DefaultObjectAttributes implements ObjectAttributes {
 
 	// no manual construction
 	protected DefaultObjectAttributes() {
-		id = VocabUtil.getInstance().createRandomUrl("objectAttributes");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -79,6 +57,13 @@ public class DefaultObjectAttributes implements ObjectAttributes {
 			DefaultObjectAttributes other = (DefaultObjectAttributes) obj;
 			return Objects.equals(this.objectAttributes, other.objectAttributes);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultObjectAttributes other = new DefaultObjectAttributes();
+		other.objectAttributes = (List<Reference>) Util.clone(this.objectAttributes);
+		return other;
 	}
 
 

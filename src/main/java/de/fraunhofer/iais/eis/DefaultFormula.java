@@ -24,15 +24,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultFormula implements Formula {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Formula", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Collections.emptyList();
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -46,19 +37,6 @@ public class DefaultFormula implements Formula {
 
 	// no manual construction
 	protected DefaultFormula() {
-		id = VocabUtil.getInstance().createRandomUrl("formula");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -78,6 +56,13 @@ public class DefaultFormula implements Formula {
 			DefaultFormula other = (DefaultFormula) obj;
 			return Objects.equals(this.dependsOns, other.dependsOns);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultFormula other = new DefaultFormula();
+		other.dependsOns = (List<Reference>) Util.clone(this.dependsOns);
+		return other;
 	}
 
 

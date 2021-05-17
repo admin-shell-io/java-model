@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultIdentifier implements Identifier {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Identifier", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Used to uniquely identify an entity by using an identifier.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -55,19 +46,6 @@ public class DefaultIdentifier implements Identifier {
 
 	// no manual construction
 	protected DefaultIdentifier() {
-		id = VocabUtil.getInstance().createRandomUrl("identifier");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -89,6 +67,14 @@ public class DefaultIdentifier implements Identifier {
 			return Objects.equals(this.identifier, other.identifier) &&
 				Objects.equals(this.idType, other.idType);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultIdentifier other = new DefaultIdentifier();
+		other.identifier = (String) Util.clone(this.identifier);
+		other.idType = (IdentifierType) Util.clone(this.idType);
+		return other;
 	}
 
 

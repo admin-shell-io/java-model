@@ -27,15 +27,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultSubmodel implements Submodel {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Submodel", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("A Submodel defines a specific aspect of the asset represented by the AAS. A submodel is used to structure the virtual representation and technical functionality of an Administration Shell into distinguishable parts. Each submodel refers to a well-defined domain or subject matter. Submodels can become standardized and thus become submodels types. Submodels can have different life-cycles.", "en"), new TypedLiteral("Describe the different types of Data related to the I4.0 Asset", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -49,19 +40,6 @@ public class DefaultSubmodel implements Submodel {
 
 	// no manual construction
 	protected DefaultSubmodel() {
-		id = VocabUtil.getInstance().createRandomUrl("submodel");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -81,6 +59,13 @@ public class DefaultSubmodel implements Submodel {
 			DefaultSubmodel other = (DefaultSubmodel) obj;
 			return Objects.equals(this.submodelElements, other.submodelElements);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultSubmodel other = new DefaultSubmodel();
+		other.submodelElements = (List<SubmodelElement>) Util.clone(this.submodelElements);
+		return other;
 	}
 
 

@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class OperationBuilder {
 
-	private DefaultOperation defaultOperation;
+	private Map<String, Object> map;
 
 	public OperationBuilder() {
-		defaultOperation = new DefaultOperation();
+		this.map = new HashMap<>();
 	}
 
-	public OperationBuilder(URI id) {
+	public OperationBuilder(Map<String, Object> map) {
 		this();
-		defaultOperation.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for inputVariables
 	* @param inputVariables desired value to be set
 	* @return Builder object with new value for inputVariables
 	*/
-	final public OperationBuilder inputVariables(List<OperationVariable> inputVariables) {
-		this.defaultOperation.inputVariables = inputVariables;
+	public OperationBuilder inputVariables(List<OperationVariable> inputVariables) {
+		this.map.put("inputVariables", inputVariables);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class OperationBuilder {
 	* @param inoutputVariables desired value to be set
 	* @return Builder object with new value for inoutputVariables
 	*/
-	final public OperationBuilder inoutputVariables(List<OperationVariable> inoutputVariables) {
-		this.defaultOperation.inoutputVariables = inoutputVariables;
+	public OperationBuilder inoutputVariables(List<OperationVariable> inoutputVariables) {
+		this.map.put("inoutputVariables", inoutputVariables);
 		return this;
 	}
 
@@ -58,8 +61,8 @@ public class OperationBuilder {
 	* @param outputVariables desired value to be set
 	* @return Builder object with new value for outputVariables
 	*/
-	final public OperationBuilder outputVariables(List<OperationVariable> outputVariables) {
-		this.defaultOperation.outputVariables = outputVariables;
+	public OperationBuilder outputVariables(List<OperationVariable> outputVariables) {
+		this.map.put("outputVariables", outputVariables);
 		return this;
 	}
 
@@ -70,8 +73,8 @@ public class OperationBuilder {
 	* @param referableCategory desired value to be set
 	* @return Builder object with new value for referableCategory
 	*/
-	final public OperationBuilder referableCategory(String referableCategory) {
-		this.defaultOperation.referableCategory = referableCategory;
+	public OperationBuilder referableCategory(String referableCategory) {
+		this.map.put("referableCategory", referableCategory);
 		return this;
 	}
 
@@ -81,8 +84,8 @@ public class OperationBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	final public OperationBuilder description(TypedLiteral description) {
-		this.defaultOperation.description = description;
+	public OperationBuilder description(TypedLiteral description) {
+		this.map.put("description", description);
 		return this;
 	}
 
@@ -92,8 +95,8 @@ public class OperationBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	final public OperationBuilder displayName(TypedLiteral displayName) {
-		this.defaultOperation.displayName = displayName;
+	public OperationBuilder displayName(TypedLiteral displayName) {
+		this.map.put("displayName", displayName);
 		return this;
 	}
 
@@ -103,8 +106,8 @@ public class OperationBuilder {
 	* @param idShort desired value to be set
 	* @return Builder object with new value for idShort
 	*/
-	final public OperationBuilder idShort(String idShort) {
-		this.defaultOperation.idShort = idShort;
+	public OperationBuilder idShort(String idShort) {
+		this.map.put("idShort", idShort);
 		return this;
 	}
 
@@ -114,8 +117,8 @@ public class OperationBuilder {
 	* @param qualifiers desired value to be set
 	* @return Builder object with new value for qualifiers
 	*/
-	final public OperationBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultOperation.qualifiers = qualifiers;
+	public OperationBuilder qualifiers(List<Constraint> qualifiers) {
+		this.map.put("qualifiers", qualifiers);
 		return this;
 	}
 
@@ -125,8 +128,8 @@ public class OperationBuilder {
 	* @param dataSpecifications desired value to be set
 	* @return Builder object with new value for dataSpecifications
 	*/
-	final public OperationBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultOperation.dataSpecifications = dataSpecifications;
+	public OperationBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.map.put("dataSpecifications", dataSpecifications);
 		return this;
 	}
 
@@ -136,8 +139,8 @@ public class OperationBuilder {
 	* @param kind desired value to be set
 	* @return Builder object with new value for kind
 	*/
-	final public OperationBuilder kind(ModelingKind kind) {
-		this.defaultOperation.kind = kind;
+	public OperationBuilder kind(ModelingKind kind) {
+		this.map.put("kind", kind);
 		return this;
 	}
 
@@ -147,18 +150,18 @@ public class OperationBuilder {
 	* @param semanticId desired value to be set
 	* @return Builder object with new value for semanticId
 	*/
-	final public OperationBuilder semanticId(Reference semanticId) {
-		this.defaultOperation.semanticId = semanticId;
+	public OperationBuilder semanticId(Reference semanticId) {
+		this.map.put("semanticId", semanticId);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public Operation build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultOperation);
+		DefaultOperation defaultOperation = Util.fillInstanceFromMap(new DefaultOperation(), this.map);
 		return defaultOperation;
 	}
 }

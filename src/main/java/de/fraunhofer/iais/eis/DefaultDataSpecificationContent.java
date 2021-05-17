@@ -25,34 +25,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultDataSpecificationContent implements DataSpecificationContent {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Data Specification Content", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("DataSpecificationContent contains the additional attributes to be added to the element instance that references the data specification template and meta information about the template itself.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
 
 	// no manual construction
 	protected DefaultDataSpecificationContent() {
-		id = VocabUtil.getInstance().createRandomUrl("dataSpecificationContent");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -70,6 +48,13 @@ public class DefaultDataSpecificationContent implements DataSpecificationContent
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultDataSpecificationContent other = new DefaultDataSpecificationContent();
+		
+		return other;
 	}
 
 }

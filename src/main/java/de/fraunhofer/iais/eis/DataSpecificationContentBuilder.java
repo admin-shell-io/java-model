@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DataSpecificationContentBuilder {
 
-	private DefaultDataSpecificationContent defaultDataSpecificationContent;
+	private Map<String, Object> map;
 
 	public DataSpecificationContentBuilder() {
-		defaultDataSpecificationContent = new DefaultDataSpecificationContent();
+		this.map = new HashMap<>();
 	}
 
-	public DataSpecificationContentBuilder(URI id) {
+	public DataSpecificationContentBuilder(Map<String, Object> map) {
 		this();
-		defaultDataSpecificationContent.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public DataSpecificationContent build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultDataSpecificationContent);
+		DefaultDataSpecificationContent defaultDataSpecificationContent = Util.fillInstanceFromMap(new DefaultDataSpecificationContent(), this.map);
 		return defaultDataSpecificationContent;
 	}
 }

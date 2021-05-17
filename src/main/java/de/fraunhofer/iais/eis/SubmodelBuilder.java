@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class SubmodelBuilder {
 
-	private DefaultSubmodel defaultSubmodel;
+	private Map<String, Object> map;
 
 	public SubmodelBuilder() {
-		defaultSubmodel = new DefaultSubmodel();
+		this.map = new HashMap<>();
 	}
 
-	public SubmodelBuilder(URI id) {
+	public SubmodelBuilder(Map<String, Object> map) {
 		this();
-		defaultSubmodel.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for submodelElements
 	* @param submodelElements desired value to be set
 	* @return Builder object with new value for submodelElements
 	*/
-	final public SubmodelBuilder submodelElements(List<SubmodelElement> submodelElements) {
-		this.defaultSubmodel.submodelElements = submodelElements;
+	public SubmodelBuilder submodelElements(List<SubmodelElement> submodelElements) {
+		this.map.put("submodelElements", submodelElements);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class SubmodelBuilder {
 	* @param qualifiers desired value to be set
 	* @return Builder object with new value for qualifiers
 	*/
-	final public SubmodelBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultSubmodel.qualifiers = qualifiers;
+	public SubmodelBuilder qualifiers(List<Constraint> qualifiers) {
+		this.map.put("qualifiers", qualifiers);
 		return this;
 	}
 
@@ -58,8 +61,8 @@ public class SubmodelBuilder {
 	* @param dataSpecifications desired value to be set
 	* @return Builder object with new value for dataSpecifications
 	*/
-	final public SubmodelBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultSubmodel.dataSpecifications = dataSpecifications;
+	public SubmodelBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.map.put("dataSpecifications", dataSpecifications);
 		return this;
 	}
 
@@ -69,8 +72,8 @@ public class SubmodelBuilder {
 	* @param administration desired value to be set
 	* @return Builder object with new value for administration
 	*/
-	final public SubmodelBuilder administration(AdministrativeInformation administration) {
-		this.defaultSubmodel.administration = administration;
+	public SubmodelBuilder administration(AdministrativeInformation administration) {
+		this.map.put("administration", administration);
 		return this;
 	}
 
@@ -80,8 +83,8 @@ public class SubmodelBuilder {
 	* @param identification desired value to be set
 	* @return Builder object with new value for identification
 	*/
-	final public SubmodelBuilder identification(Identifier identification) {
-		this.defaultSubmodel.identification = identification;
+	public SubmodelBuilder identification(Identifier identification) {
+		this.map.put("identification", identification);
 		return this;
 	}
 
@@ -91,8 +94,8 @@ public class SubmodelBuilder {
 	* @param referableCategory desired value to be set
 	* @return Builder object with new value for referableCategory
 	*/
-	final public SubmodelBuilder referableCategory(String referableCategory) {
-		this.defaultSubmodel.referableCategory = referableCategory;
+	public SubmodelBuilder referableCategory(String referableCategory) {
+		this.map.put("referableCategory", referableCategory);
 		return this;
 	}
 
@@ -102,8 +105,8 @@ public class SubmodelBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	final public SubmodelBuilder description(TypedLiteral description) {
-		this.defaultSubmodel.description = description;
+	public SubmodelBuilder description(TypedLiteral description) {
+		this.map.put("description", description);
 		return this;
 	}
 
@@ -113,8 +116,8 @@ public class SubmodelBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	final public SubmodelBuilder displayName(TypedLiteral displayName) {
-		this.defaultSubmodel.displayName = displayName;
+	public SubmodelBuilder displayName(TypedLiteral displayName) {
+		this.map.put("displayName", displayName);
 		return this;
 	}
 
@@ -124,8 +127,8 @@ public class SubmodelBuilder {
 	* @param idShort desired value to be set
 	* @return Builder object with new value for idShort
 	*/
-	final public SubmodelBuilder idShort(String idShort) {
-		this.defaultSubmodel.idShort = idShort;
+	public SubmodelBuilder idShort(String idShort) {
+		this.map.put("idShort", idShort);
 		return this;
 	}
 
@@ -135,8 +138,8 @@ public class SubmodelBuilder {
 	* @param kind desired value to be set
 	* @return Builder object with new value for kind
 	*/
-	final public SubmodelBuilder kind(ModelingKind kind) {
-		this.defaultSubmodel.kind = kind;
+	public SubmodelBuilder kind(ModelingKind kind) {
+		this.map.put("kind", kind);
 		return this;
 	}
 
@@ -146,18 +149,18 @@ public class SubmodelBuilder {
 	* @param semanticId desired value to be set
 	* @return Builder object with new value for semanticId
 	*/
-	final public SubmodelBuilder semanticId(Reference semanticId) {
-		this.defaultSubmodel.semanticId = semanticId;
+	public SubmodelBuilder semanticId(Reference semanticId) {
+		this.map.put("semanticId", semanticId);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public Submodel build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultSubmodel);
+		DefaultSubmodel defaultSubmodel = Util.fillInstanceFromMap(new DefaultSubmodel(), this.map);
 		return defaultSubmodel;
 	}
 }

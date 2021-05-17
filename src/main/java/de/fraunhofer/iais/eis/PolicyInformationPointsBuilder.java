@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class PolicyInformationPointsBuilder {
 
-	private DefaultPolicyInformationPoints defaultPolicyInformationPoints;
+	private Map<String, Object> map;
 
 	public PolicyInformationPointsBuilder() {
-		defaultPolicyInformationPoints = new DefaultPolicyInformationPoints();
+		this.map = new HashMap<>();
 	}
 
-	public PolicyInformationPointsBuilder(URI id) {
+	public PolicyInformationPointsBuilder(Map<String, Object> map) {
 		this();
-		defaultPolicyInformationPoints.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for externalInformationPoints
 	* @param externalInformationPoints desired value to be set
 	* @return Builder object with new value for externalInformationPoints
 	*/
-	final public PolicyInformationPointsBuilder externalInformationPoints(boolean externalInformationPoints) {
-		this.defaultPolicyInformationPoints.externalInformationPoints = externalInformationPoints;
+	public PolicyInformationPointsBuilder externalInformationPoints(boolean externalInformationPoints) {
+		this.map.put("externalInformationPoints", externalInformationPoints);
 		return this;
 	}
 
@@ -47,18 +50,18 @@ public class PolicyInformationPointsBuilder {
 	* @param internalInformationPoints desired value to be set
 	* @return Builder object with new value for internalInformationPoints
 	*/
-	final public PolicyInformationPointsBuilder internalInformationPoints(List<Submodel> internalInformationPoints) {
-		this.defaultPolicyInformationPoints.internalInformationPoints = internalInformationPoints;
+	public PolicyInformationPointsBuilder internalInformationPoints(List<Submodel> internalInformationPoints) {
+		this.map.put("internalInformationPoints", internalInformationPoints);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public PolicyInformationPoints build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultPolicyInformationPoints);
+		DefaultPolicyInformationPoints defaultPolicyInformationPoints = Util.fillInstanceFromMap(new DefaultPolicyInformationPoints(), this.map);
 		return defaultPolicyInformationPoints;
 	}
 }

@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class AssetAdministrationShellEnvironmentBuilder {
 
-	private DefaultAssetAdministrationShellEnvironment defaultAssetAdministrationShellEnvironment;
+	private Map<String, Object> map;
 
 	public AssetAdministrationShellEnvironmentBuilder() {
-		defaultAssetAdministrationShellEnvironment = new DefaultAssetAdministrationShellEnvironment();
+		this.map = new HashMap<>();
 	}
 
-	public AssetAdministrationShellEnvironmentBuilder(URI id) {
+	public AssetAdministrationShellEnvironmentBuilder(Map<String, Object> map) {
 		this();
-		defaultAssetAdministrationShellEnvironment.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for assetAdministrationShells
 	* @param assetAdministrationShells desired value to be set
 	* @return Builder object with new value for assetAdministrationShells
 	*/
-	final public AssetAdministrationShellEnvironmentBuilder assetAdministrationShells(List<AssetAdministrationShell> assetAdministrationShells) {
-		this.defaultAssetAdministrationShellEnvironment.assetAdministrationShells = assetAdministrationShells;
+	public AssetAdministrationShellEnvironmentBuilder assetAdministrationShells(List<AssetAdministrationShell> assetAdministrationShells) {
+		this.map.put("assetAdministrationShells", assetAdministrationShells);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class AssetAdministrationShellEnvironmentBuilder {
 	* @param assets desired value to be set
 	* @return Builder object with new value for assets
 	*/
-	final public AssetAdministrationShellEnvironmentBuilder assets(List<Asset> assets) {
-		this.defaultAssetAdministrationShellEnvironment.assets = assets;
+	public AssetAdministrationShellEnvironmentBuilder assets(List<Asset> assets) {
+		this.map.put("assets", assets);
 		return this;
 	}
 
@@ -58,8 +61,8 @@ public class AssetAdministrationShellEnvironmentBuilder {
 	* @param conceptDescriptions desired value to be set
 	* @return Builder object with new value for conceptDescriptions
 	*/
-	final public AssetAdministrationShellEnvironmentBuilder conceptDescriptions(List<ConceptDescription> conceptDescriptions) {
-		this.defaultAssetAdministrationShellEnvironment.conceptDescriptions = conceptDescriptions;
+	public AssetAdministrationShellEnvironmentBuilder conceptDescriptions(List<ConceptDescription> conceptDescriptions) {
+		this.map.put("conceptDescriptions", conceptDescriptions);
 		return this;
 	}
 
@@ -69,18 +72,18 @@ public class AssetAdministrationShellEnvironmentBuilder {
 	* @param submodels desired value to be set
 	* @return Builder object with new value for submodels
 	*/
-	final public AssetAdministrationShellEnvironmentBuilder submodels(List<Submodel> submodels) {
-		this.defaultAssetAdministrationShellEnvironment.submodels = submodels;
+	public AssetAdministrationShellEnvironmentBuilder submodels(List<Submodel> submodels) {
+		this.map.put("submodels", submodels);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public AssetAdministrationShellEnvironment build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultAssetAdministrationShellEnvironment);
+		DefaultAssetAdministrationShellEnvironment defaultAssetAdministrationShellEnvironment = Util.fillInstanceFromMap(new DefaultAssetAdministrationShellEnvironment(), this.map);
 		return defaultAssetAdministrationShellEnvironment;
 	}
 }

@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class AccessControlBuilder {
 
-	private DefaultAccessControl defaultAccessControl;
+	private Map<String, Object> map;
 
 	public AccessControlBuilder() {
-		defaultAccessControl = new DefaultAccessControl();
+		this.map = new HashMap<>();
 	}
 
-	public AccessControlBuilder(URI id) {
+	public AccessControlBuilder(Map<String, Object> map) {
 		this();
-		defaultAccessControl.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for accessPermissionRules
 	* @param accessPermissionRules desired value to be set
 	* @return Builder object with new value for accessPermissionRules
 	*/
-	final public AccessControlBuilder accessPermissionRules(List<AccessPermissionRule> accessPermissionRules) {
-		this.defaultAccessControl.accessPermissionRules = accessPermissionRules;
+	public AccessControlBuilder accessPermissionRules(List<AccessPermissionRule> accessPermissionRules) {
+		this.map.put("accessPermissionRules", accessPermissionRules);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class AccessControlBuilder {
 	* @param selectableSubjectAttributes desired value to be set
 	* @return Builder object with new value for selectableSubjectAttributes
 	*/
-	final public AccessControlBuilder selectableSubjectAttributes(Reference selectableSubjectAttributes) {
-		this.defaultAccessControl.selectableSubjectAttributes = selectableSubjectAttributes;
+	public AccessControlBuilder selectableSubjectAttributes(Reference selectableSubjectAttributes) {
+		this.map.put("selectableSubjectAttributes", selectableSubjectAttributes);
 		return this;
 	}
 
@@ -58,8 +61,8 @@ public class AccessControlBuilder {
 	* @param defaultSubjectAttributes desired value to be set
 	* @return Builder object with new value for defaultSubjectAttributes
 	*/
-	final public AccessControlBuilder defaultSubjectAttributes(Reference defaultSubjectAttributes) {
-		this.defaultAccessControl.defaultSubjectAttributes = defaultSubjectAttributes;
+	public AccessControlBuilder defaultSubjectAttributes(Reference defaultSubjectAttributes) {
+		this.map.put("defaultSubjectAttributes", defaultSubjectAttributes);
 		return this;
 	}
 
@@ -69,8 +72,8 @@ public class AccessControlBuilder {
 	* @param selectablePermissions desired value to be set
 	* @return Builder object with new value for selectablePermissions
 	*/
-	final public AccessControlBuilder selectablePermissions(Reference selectablePermissions) {
-		this.defaultAccessControl.selectablePermissions = selectablePermissions;
+	public AccessControlBuilder selectablePermissions(Reference selectablePermissions) {
+		this.map.put("selectablePermissions", selectablePermissions);
 		return this;
 	}
 
@@ -80,8 +83,8 @@ public class AccessControlBuilder {
 	* @param defaultPermissions desired value to be set
 	* @return Builder object with new value for defaultPermissions
 	*/
-	final public AccessControlBuilder defaultPermissions(Reference defaultPermissions) {
-		this.defaultAccessControl.defaultPermissions = defaultPermissions;
+	public AccessControlBuilder defaultPermissions(Reference defaultPermissions) {
+		this.map.put("defaultPermissions", defaultPermissions);
 		return this;
 	}
 
@@ -91,8 +94,8 @@ public class AccessControlBuilder {
 	* @param selectableEnvironmentAttributes desired value to be set
 	* @return Builder object with new value for selectableEnvironmentAttributes
 	*/
-	final public AccessControlBuilder selectableEnvironmentAttributes(Reference selectableEnvironmentAttributes) {
-		this.defaultAccessControl.selectableEnvironmentAttributes = selectableEnvironmentAttributes;
+	public AccessControlBuilder selectableEnvironmentAttributes(Reference selectableEnvironmentAttributes) {
+		this.map.put("selectableEnvironmentAttributes", selectableEnvironmentAttributes);
 		return this;
 	}
 
@@ -102,18 +105,18 @@ public class AccessControlBuilder {
 	* @param defaultEnvironmentAttributes desired value to be set
 	* @return Builder object with new value for defaultEnvironmentAttributes
 	*/
-	final public AccessControlBuilder defaultEnvironmentAttributes(Reference defaultEnvironmentAttributes) {
-		this.defaultAccessControl.defaultEnvironmentAttributes = defaultEnvironmentAttributes;
+	public AccessControlBuilder defaultEnvironmentAttributes(Reference defaultEnvironmentAttributes) {
+		this.map.put("defaultEnvironmentAttributes", defaultEnvironmentAttributes);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public AccessControl build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultAccessControl);
+		DefaultAccessControl defaultAccessControl = Util.fillInstanceFromMap(new DefaultAccessControl(), this.map);
 		return defaultAccessControl;
 	}
 }

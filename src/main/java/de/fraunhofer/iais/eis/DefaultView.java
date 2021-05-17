@@ -26,15 +26,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultView implements View {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("View", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("A view is a collection of referable elements w.r.t. to a specific viewpoint of one or more stakeholders.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -102,19 +93,6 @@ public class DefaultView implements View {
 
 	// no manual construction
 	protected DefaultView() {
-		id = VocabUtil.getInstance().createRandomUrl("view");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -146,6 +124,19 @@ public class DefaultView implements View {
 				Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
 				Objects.equals(this.semanticId, other.semanticId);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultView other = new DefaultView();
+		other.containedElements = (List<Reference>) Util.clone(this.containedElements);
+		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.description = (TypedLiteral) Util.clone(this.description);
+		other.displayName = (TypedLiteral) Util.clone(this.displayName);
+		other.idShort = (String) Util.clone(this.idShort);
+		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
+		other.semanticId = (Reference) Util.clone(this.semanticId);
+		return other;
 	}
 
 

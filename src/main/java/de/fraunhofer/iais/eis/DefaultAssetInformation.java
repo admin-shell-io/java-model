@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultAssetInformation implements AssetInformation {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Asset Information", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("The asset may either represent an asset type or an asset instance. The asset has a globally unique identifier plus - if needed - additional domain specific (proprietary) identifiers. However, to support the corner case of very first phase of lifecycle where a stabilised/constant global asset identifier does not already exist, the corresponding attribute 'globalAssetId' is optional.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -80,19 +71,6 @@ public class DefaultAssetInformation implements AssetInformation {
 
 	// no manual construction
 	protected DefaultAssetInformation() {
-		id = VocabUtil.getInstance().createRandomUrl("assetInformation");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -120,6 +98,17 @@ public class DefaultAssetInformation implements AssetInformation {
 				Objects.equals(this.billOfMaterials, other.billOfMaterials) &&
 				Objects.equals(this.defaultThumbnail, other.defaultThumbnail);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultAssetInformation other = new DefaultAssetInformation();
+		other.assetKind = (AssetKind) Util.clone(this.assetKind);
+		other.globalAssetId = (Reference) Util.clone(this.globalAssetId);
+		other.specificAssetIds = (List<IdentifierKeyValuePair>) Util.clone(this.specificAssetIds);
+		other.billOfMaterials = (List<Reference>) Util.clone(this.billOfMaterials);
+		other.defaultThumbnail = (File) Util.clone(this.defaultThumbnail);
+		return other;
 	}
 
 

@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultPermission implements Permission {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Permission", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Description of a single permission.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -57,19 +48,6 @@ public class DefaultPermission implements Permission {
 
 	// no manual construction
 	protected DefaultPermission() {
-		id = VocabUtil.getInstance().createRandomUrl("permission");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -91,6 +69,14 @@ public class DefaultPermission implements Permission {
 			return Objects.equals(this.kindOfPermission, other.kindOfPermission) &&
 				Objects.equals(this.permission, other.permission);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultPermission other = new DefaultPermission();
+		other.kindOfPermission = (PermissionKind) Util.clone(this.kindOfPermission);
+		other.permission = (Reference) Util.clone(this.permission);
+		return other;
 	}
 
 

@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class SecurityBuilder {
 
-	private DefaultSecurity defaultSecurity;
+	private Map<String, Object> map;
 
 	public SecurityBuilder() {
-		defaultSecurity = new DefaultSecurity();
+		this.map = new HashMap<>();
 	}
 
-	public SecurityBuilder(URI id) {
+	public SecurityBuilder(Map<String, Object> map) {
 		this();
-		defaultSecurity.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for accessControlPolicyPoints
 	* @param accessControlPolicyPoints desired value to be set
 	* @return Builder object with new value for accessControlPolicyPoints
 	*/
-	final public SecurityBuilder accessControlPolicyPoints(AccessControlPolicyPoints accessControlPolicyPoints) {
-		this.defaultSecurity.accessControlPolicyPoints = accessControlPolicyPoints;
+	public SecurityBuilder accessControlPolicyPoints(AccessControlPolicyPoints accessControlPolicyPoints) {
+		this.map.put("accessControlPolicyPoints", accessControlPolicyPoints);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class SecurityBuilder {
 	* @param certificates desired value to be set
 	* @return Builder object with new value for certificates
 	*/
-	final public SecurityBuilder certificates(List<Certificate> certificates) {
-		this.defaultSecurity.certificates = certificates;
+	public SecurityBuilder certificates(List<Certificate> certificates) {
+		this.map.put("certificates", certificates);
 		return this;
 	}
 
@@ -58,18 +61,18 @@ public class SecurityBuilder {
 	* @param requiredCertificateExtensions desired value to be set
 	* @return Builder object with new value for requiredCertificateExtensions
 	*/
-	final public SecurityBuilder requiredCertificateExtensions(List<Reference> requiredCertificateExtensions) {
-		this.defaultSecurity.requiredCertificateExtensions = requiredCertificateExtensions;
+	public SecurityBuilder requiredCertificateExtensions(List<Reference> requiredCertificateExtensions) {
+		this.map.put("requiredCertificateExtensions", requiredCertificateExtensions);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public Security build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultSecurity);
+		DefaultSecurity defaultSecurity = Util.fillInstanceFromMap(new DefaultSecurity(), this.map);
 		return defaultSecurity;
 	}
 }

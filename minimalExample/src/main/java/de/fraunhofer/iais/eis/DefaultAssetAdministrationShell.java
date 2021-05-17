@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultAssetAdministrationShell implements AssetAdministrationShell {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Asset Administration Shell", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Describes the Administration Shell for Assets, Products, Components, e.g. Machines", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -47,19 +38,6 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 
 	// no manual construction
 	protected DefaultAssetAdministrationShell() {
-		id = VocabUtil.getInstance().createRandomUrl("assetAdministrationShell");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -79,6 +57,13 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 			DefaultAssetAdministrationShell other = (DefaultAssetAdministrationShell) obj;
 			return Objects.equals(this.submodels, other.submodels);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultAssetAdministrationShell other = new DefaultAssetAdministrationShell();
+		other.submodels = (List<Submodel>) Util.clone(this.submodels);
+		return other;
 	}
 
 

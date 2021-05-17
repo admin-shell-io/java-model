@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class BasicEventBuilder {
 
-	private DefaultBasicEvent defaultBasicEvent;
+	private Map<String, Object> map;
 
 	public BasicEventBuilder() {
-		defaultBasicEvent = new DefaultBasicEvent();
+		this.map = new HashMap<>();
 	}
 
-	public BasicEventBuilder(URI id) {
+	public BasicEventBuilder(Map<String, Object> map) {
 		this();
-		defaultBasicEvent.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for observed
 	* @param observed desired value to be set
 	* @return Builder object with new value for observed
 	*/
-	final public BasicEventBuilder observed(Reference observed) {
-		this.defaultBasicEvent.observed = observed;
+	public BasicEventBuilder observed(Reference observed) {
+		this.map.put("observed", observed);
 		return this;
 	}
 
@@ -49,8 +52,8 @@ public class BasicEventBuilder {
 	* @param referableCategory desired value to be set
 	* @return Builder object with new value for referableCategory
 	*/
-	final public BasicEventBuilder referableCategory(String referableCategory) {
-		this.defaultBasicEvent.referableCategory = referableCategory;
+	public BasicEventBuilder referableCategory(String referableCategory) {
+		this.map.put("referableCategory", referableCategory);
 		return this;
 	}
 
@@ -60,8 +63,8 @@ public class BasicEventBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	final public BasicEventBuilder description(TypedLiteral description) {
-		this.defaultBasicEvent.description = description;
+	public BasicEventBuilder description(TypedLiteral description) {
+		this.map.put("description", description);
 		return this;
 	}
 
@@ -71,8 +74,8 @@ public class BasicEventBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	final public BasicEventBuilder displayName(TypedLiteral displayName) {
-		this.defaultBasicEvent.displayName = displayName;
+	public BasicEventBuilder displayName(TypedLiteral displayName) {
+		this.map.put("displayName", displayName);
 		return this;
 	}
 
@@ -82,8 +85,8 @@ public class BasicEventBuilder {
 	* @param idShort desired value to be set
 	* @return Builder object with new value for idShort
 	*/
-	final public BasicEventBuilder idShort(String idShort) {
-		this.defaultBasicEvent.idShort = idShort;
+	public BasicEventBuilder idShort(String idShort) {
+		this.map.put("idShort", idShort);
 		return this;
 	}
 
@@ -93,8 +96,8 @@ public class BasicEventBuilder {
 	* @param qualifiers desired value to be set
 	* @return Builder object with new value for qualifiers
 	*/
-	final public BasicEventBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultBasicEvent.qualifiers = qualifiers;
+	public BasicEventBuilder qualifiers(List<Constraint> qualifiers) {
+		this.map.put("qualifiers", qualifiers);
 		return this;
 	}
 
@@ -104,8 +107,8 @@ public class BasicEventBuilder {
 	* @param dataSpecifications desired value to be set
 	* @return Builder object with new value for dataSpecifications
 	*/
-	final public BasicEventBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultBasicEvent.dataSpecifications = dataSpecifications;
+	public BasicEventBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.map.put("dataSpecifications", dataSpecifications);
 		return this;
 	}
 
@@ -115,8 +118,8 @@ public class BasicEventBuilder {
 	* @param kind desired value to be set
 	* @return Builder object with new value for kind
 	*/
-	final public BasicEventBuilder kind(ModelingKind kind) {
-		this.defaultBasicEvent.kind = kind;
+	public BasicEventBuilder kind(ModelingKind kind) {
+		this.map.put("kind", kind);
 		return this;
 	}
 
@@ -126,18 +129,18 @@ public class BasicEventBuilder {
 	* @param semanticId desired value to be set
 	* @return Builder object with new value for semanticId
 	*/
-	final public BasicEventBuilder semanticId(Reference semanticId) {
-		this.defaultBasicEvent.semanticId = semanticId;
+	public BasicEventBuilder semanticId(Reference semanticId) {
+		this.map.put("semanticId", semanticId);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public BasicEvent build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultBasicEvent);
+		DefaultBasicEvent defaultBasicEvent = Util.fillInstanceFromMap(new DefaultBasicEvent(), this.map);
 		return defaultBasicEvent;
 	}
 }

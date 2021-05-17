@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class MultiLanguagePropertyBuilder {
 
-	private DefaultMultiLanguageProperty defaultMultiLanguageProperty;
+	private Map<String, Object> map;
 
 	public MultiLanguagePropertyBuilder() {
-		defaultMultiLanguageProperty = new DefaultMultiLanguageProperty();
+		this.map = new HashMap<>();
 	}
 
-	public MultiLanguagePropertyBuilder(URI id) {
+	public MultiLanguagePropertyBuilder(Map<String, Object> map) {
 		this();
-		defaultMultiLanguageProperty.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for values
 	* @param values desired value to be set
 	* @return Builder object with new value for values
 	*/
-	final public MultiLanguagePropertyBuilder values(List<TypedLiteral> values) {
-		this.defaultMultiLanguageProperty.values = values;
+	public MultiLanguagePropertyBuilder values(List<TypedLiteral> values) {
+		this.map.put("values", values);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class MultiLanguagePropertyBuilder {
 	* @param valueId desired value to be set
 	* @return Builder object with new value for valueId
 	*/
-	final public MultiLanguagePropertyBuilder valueId(Reference valueId) {
-		this.defaultMultiLanguageProperty.valueId = valueId;
+	public MultiLanguagePropertyBuilder valueId(Reference valueId) {
+		this.map.put("valueId", valueId);
 		return this;
 	}
 
@@ -60,8 +63,8 @@ public class MultiLanguagePropertyBuilder {
 	* @param referableCategory desired value to be set
 	* @return Builder object with new value for referableCategory
 	*/
-	final public MultiLanguagePropertyBuilder referableCategory(String referableCategory) {
-		this.defaultMultiLanguageProperty.referableCategory = referableCategory;
+	public MultiLanguagePropertyBuilder referableCategory(String referableCategory) {
+		this.map.put("referableCategory", referableCategory);
 		return this;
 	}
 
@@ -71,8 +74,8 @@ public class MultiLanguagePropertyBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	final public MultiLanguagePropertyBuilder description(TypedLiteral description) {
-		this.defaultMultiLanguageProperty.description = description;
+	public MultiLanguagePropertyBuilder description(TypedLiteral description) {
+		this.map.put("description", description);
 		return this;
 	}
 
@@ -82,8 +85,8 @@ public class MultiLanguagePropertyBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	final public MultiLanguagePropertyBuilder displayName(TypedLiteral displayName) {
-		this.defaultMultiLanguageProperty.displayName = displayName;
+	public MultiLanguagePropertyBuilder displayName(TypedLiteral displayName) {
+		this.map.put("displayName", displayName);
 		return this;
 	}
 
@@ -93,8 +96,8 @@ public class MultiLanguagePropertyBuilder {
 	* @param idShort desired value to be set
 	* @return Builder object with new value for idShort
 	*/
-	final public MultiLanguagePropertyBuilder idShort(String idShort) {
-		this.defaultMultiLanguageProperty.idShort = idShort;
+	public MultiLanguagePropertyBuilder idShort(String idShort) {
+		this.map.put("idShort", idShort);
 		return this;
 	}
 
@@ -104,8 +107,8 @@ public class MultiLanguagePropertyBuilder {
 	* @param qualifiers desired value to be set
 	* @return Builder object with new value for qualifiers
 	*/
-	final public MultiLanguagePropertyBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultMultiLanguageProperty.qualifiers = qualifiers;
+	public MultiLanguagePropertyBuilder qualifiers(List<Constraint> qualifiers) {
+		this.map.put("qualifiers", qualifiers);
 		return this;
 	}
 
@@ -115,8 +118,8 @@ public class MultiLanguagePropertyBuilder {
 	* @param dataSpecifications desired value to be set
 	* @return Builder object with new value for dataSpecifications
 	*/
-	final public MultiLanguagePropertyBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultMultiLanguageProperty.dataSpecifications = dataSpecifications;
+	public MultiLanguagePropertyBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.map.put("dataSpecifications", dataSpecifications);
 		return this;
 	}
 
@@ -126,8 +129,8 @@ public class MultiLanguagePropertyBuilder {
 	* @param kind desired value to be set
 	* @return Builder object with new value for kind
 	*/
-	final public MultiLanguagePropertyBuilder kind(ModelingKind kind) {
-		this.defaultMultiLanguageProperty.kind = kind;
+	public MultiLanguagePropertyBuilder kind(ModelingKind kind) {
+		this.map.put("kind", kind);
 		return this;
 	}
 
@@ -137,18 +140,18 @@ public class MultiLanguagePropertyBuilder {
 	* @param semanticId desired value to be set
 	* @return Builder object with new value for semanticId
 	*/
-	final public MultiLanguagePropertyBuilder semanticId(Reference semanticId) {
-		this.defaultMultiLanguageProperty.semanticId = semanticId;
+	public MultiLanguagePropertyBuilder semanticId(Reference semanticId) {
+		this.map.put("semanticId", semanticId);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public MultiLanguageProperty build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultMultiLanguageProperty);
+		DefaultMultiLanguageProperty defaultMultiLanguageProperty = Util.fillInstanceFromMap(new DefaultMultiLanguageProperty(), this.map);
 		return defaultMultiLanguageProperty;
 	}
 }

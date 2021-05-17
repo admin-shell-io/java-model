@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultRC01 implements RC01 {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Data Specification Physical Unit", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Data Specification Template for Physical Units.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -123,19 +114,6 @@ public class DefaultRC01 implements RC01 {
 
 	// no manual construction
 	protected DefaultRC01() {
-		id = VocabUtil.getInstance().createRandomUrl("rC01");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -177,6 +155,24 @@ public class DefaultRC01 implements RC01 {
 				Objects.equals(this.unitNames, other.unitNames) &&
 				Objects.equals(this.unitSymbols, other.unitSymbols);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultRC01 other = new DefaultRC01();
+		other.conversionFactors = (List<String>) Util.clone(this.conversionFactors);
+		other.definitions = (List<TypedLiteral>) Util.clone(this.definitions);
+		other.dinNotations = (List<String>) Util.clone(this.dinNotations);
+		other.eceCodes = (List<String>) Util.clone(this.eceCodes);
+		other.eceNames = (List<String>) Util.clone(this.eceNames);
+		other.nistNames = (List<String>) Util.clone(this.nistNames);
+		other.siNames = (List<String>) Util.clone(this.siNames);
+		other.siNotations = (List<String>) Util.clone(this.siNotations);
+		other.registrationAuthorityIds = (List<String>) Util.clone(this.registrationAuthorityIds);
+		other.suppliers = (List<String>) Util.clone(this.suppliers);
+		other.unitNames = (List<String>) Util.clone(this.unitNames);
+		other.unitSymbols = (List<String>) Util.clone(this.unitSymbols);
+		return other;
 	}
 
 

@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class RelationshipElementBuilder {
 
-	private DefaultRelationshipElement defaultRelationshipElement;
+	private Map<String, Object> map;
 
 	public RelationshipElementBuilder() {
-		defaultRelationshipElement = new DefaultRelationshipElement();
+		this.map = new HashMap<>();
 	}
 
-	public RelationshipElementBuilder(URI id) {
+	public RelationshipElementBuilder(Map<String, Object> map) {
 		this();
-		defaultRelationshipElement.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for first
 	* @param first desired value to be set
 	* @return Builder object with new value for first
 	*/
-	final public RelationshipElementBuilder first(Reference first) {
-		this.defaultRelationshipElement.first = first;
+	public RelationshipElementBuilder first(Reference first) {
+		this.map.put("first", first);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class RelationshipElementBuilder {
 	* @param second desired value to be set
 	* @return Builder object with new value for second
 	*/
-	final public RelationshipElementBuilder second(Reference second) {
-		this.defaultRelationshipElement.second = second;
+	public RelationshipElementBuilder second(Reference second) {
+		this.map.put("second", second);
 		return this;
 	}
 
@@ -59,8 +62,8 @@ public class RelationshipElementBuilder {
 	* @param referableCategory desired value to be set
 	* @return Builder object with new value for referableCategory
 	*/
-	final public RelationshipElementBuilder referableCategory(String referableCategory) {
-		this.defaultRelationshipElement.referableCategory = referableCategory;
+	public RelationshipElementBuilder referableCategory(String referableCategory) {
+		this.map.put("referableCategory", referableCategory);
 		return this;
 	}
 
@@ -70,8 +73,8 @@ public class RelationshipElementBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	final public RelationshipElementBuilder description(TypedLiteral description) {
-		this.defaultRelationshipElement.description = description;
+	public RelationshipElementBuilder description(TypedLiteral description) {
+		this.map.put("description", description);
 		return this;
 	}
 
@@ -81,8 +84,8 @@ public class RelationshipElementBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	final public RelationshipElementBuilder displayName(TypedLiteral displayName) {
-		this.defaultRelationshipElement.displayName = displayName;
+	public RelationshipElementBuilder displayName(TypedLiteral displayName) {
+		this.map.put("displayName", displayName);
 		return this;
 	}
 
@@ -92,8 +95,8 @@ public class RelationshipElementBuilder {
 	* @param idShort desired value to be set
 	* @return Builder object with new value for idShort
 	*/
-	final public RelationshipElementBuilder idShort(String idShort) {
-		this.defaultRelationshipElement.idShort = idShort;
+	public RelationshipElementBuilder idShort(String idShort) {
+		this.map.put("idShort", idShort);
 		return this;
 	}
 
@@ -103,8 +106,8 @@ public class RelationshipElementBuilder {
 	* @param qualifiers desired value to be set
 	* @return Builder object with new value for qualifiers
 	*/
-	final public RelationshipElementBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultRelationshipElement.qualifiers = qualifiers;
+	public RelationshipElementBuilder qualifiers(List<Constraint> qualifiers) {
+		this.map.put("qualifiers", qualifiers);
 		return this;
 	}
 
@@ -114,8 +117,8 @@ public class RelationshipElementBuilder {
 	* @param dataSpecifications desired value to be set
 	* @return Builder object with new value for dataSpecifications
 	*/
-	final public RelationshipElementBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultRelationshipElement.dataSpecifications = dataSpecifications;
+	public RelationshipElementBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.map.put("dataSpecifications", dataSpecifications);
 		return this;
 	}
 
@@ -125,8 +128,8 @@ public class RelationshipElementBuilder {
 	* @param kind desired value to be set
 	* @return Builder object with new value for kind
 	*/
-	final public RelationshipElementBuilder kind(ModelingKind kind) {
-		this.defaultRelationshipElement.kind = kind;
+	public RelationshipElementBuilder kind(ModelingKind kind) {
+		this.map.put("kind", kind);
 		return this;
 	}
 
@@ -136,18 +139,18 @@ public class RelationshipElementBuilder {
 	* @param semanticId desired value to be set
 	* @return Builder object with new value for semanticId
 	*/
-	final public RelationshipElementBuilder semanticId(Reference semanticId) {
-		this.defaultRelationshipElement.semanticId = semanticId;
+	public RelationshipElementBuilder semanticId(Reference semanticId) {
+		this.map.put("semanticId", semanticId);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public RelationshipElement build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultRelationshipElement);
+		DefaultRelationshipElement defaultRelationshipElement = Util.fillInstanceFromMap(new DefaultRelationshipElement(), this.map);
 		return defaultRelationshipElement;
 	}
 }

@@ -39,67 +39,7 @@ public enum EntityType {
 	*/
 	SELF_MANAGED_ENTITY("https://admin-shell.io/aas/3/0/RC01/EntityType/SELF_MANAGED_ENTITY", Arrays.asList(new TypedLiteral("Self-managed Entity", "")), Arrays.asList(new TypedLiteral("Self-Managed Entities have their own AAS but can be part of the bill of material of a composite self-managed entity. The asset of an I4.0 Component is a self-managed entity per definition.", "en")));
 
-	private static final Map<String,EntityType> uriInstanceMapping;
-	static {
-		uriInstanceMapping = new HashMap<>();
-		uriInstanceMapping.putAll(Stream.of(values()).collect(Collectors.toMap(instance -> instance.toString(), instance -> instance)));
-		uriInstanceMapping.putAll(Stream.of(values()).collect(Collectors.toMap(instance -> instance.getSerializedId().toString(), instance -> instance)));
-	}
-
-	private URI id;
-	private List<TypedLiteral> labels;
-	private List<TypedLiteral> comments;
-
-
 	EntityType(String id, List<TypedLiteral> labels, List<TypedLiteral> comments) {
-		try {
-			this.id = new URI(id);
-			this.labels = labels;
-			this.comments = comments;
-		}
-		catch (java.net.URISyntaxException e) {
-			throw new IllegalArgumentException(e);
-		}
-	}
-	/**
-	* This function retrieves the ID of the current object (can be set via the constructor of the builder class)
-	* @return ID of current object as URI
-	*/
-
-	@JsonIgnore
-	final public URI getId() {
-		return id;
-	}
-
-	/**
-	* This function retrieves a human readable labels about the current class, as defined in the ontology.
-	* This label could, for example, be used as a field heading in a user interface
-	* @return Human readable labels
-	*/
-	@JsonIgnore
-	final public List<TypedLiteral> getLabels() {
-		return labels;
-	}
-
-	/**
-	* This function retrieves a human readable explanatory comments about the current class, as defined in the ontology.
-	* This comment could, for example, be used as a tooltip in a user interface
-	* @return Human readable explanatory comments
-	*/
-	@JsonIgnore
-	final public List<TypedLiteral> getComments() {
-		return comments;
-	}
-
-
-	final public URI getSerializedId() {
-		return id;
-	}
-	
-
-	@Override
-	public String toString() {
-		return id.toString();
 	}
 
 }

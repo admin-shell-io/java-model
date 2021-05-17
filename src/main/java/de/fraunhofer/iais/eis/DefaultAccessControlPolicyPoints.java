@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoints {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Access ControlPolicy Points", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Container for access control policy points.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -71,19 +62,6 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
 
 	// no manual construction
 	protected DefaultAccessControlPolicyPoints() {
-		id = VocabUtil.getInstance().createRandomUrl("accessControlPolicyPoints");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -109,6 +87,16 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
 				Objects.equals(this.policyEnforcementPoint, other.policyEnforcementPoint) &&
 				Objects.equals(this.policyInformationPoints, other.policyInformationPoints);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultAccessControlPolicyPoints other = new DefaultAccessControlPolicyPoints();
+		other.policyAdministrationPoint = (PolicyAdministrationPoint) Util.clone(this.policyAdministrationPoint);
+		other.policyDecisionPoint = (PolicyDecisionPoint) Util.clone(this.policyDecisionPoint);
+		other.policyEnforcementPoint = (PolicyEnforcementPoints) Util.clone(this.policyEnforcementPoint);
+		other.policyInformationPoints = (PolicyInformationPoints) Util.clone(this.policyInformationPoints);
+		return other;
 	}
 
 

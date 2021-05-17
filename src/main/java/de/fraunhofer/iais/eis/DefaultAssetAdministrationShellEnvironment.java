@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultAssetAdministrationShellEnvironment implements AssetAdministrationShellEnvironment {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Asset Administration Shell Environment", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("A graph of Asset Administration Shells.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -71,19 +62,6 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
 
 	// no manual construction
 	protected DefaultAssetAdministrationShellEnvironment() {
-		id = VocabUtil.getInstance().createRandomUrl("assetAdministrationShellEnvironment");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -109,6 +87,16 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
 				Objects.equals(this.conceptDescriptions, other.conceptDescriptions) &&
 				Objects.equals(this.submodels, other.submodels);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultAssetAdministrationShellEnvironment other = new DefaultAssetAdministrationShellEnvironment();
+		other.assetAdministrationShells = (List<AssetAdministrationShell>) Util.clone(this.assetAdministrationShells);
+		other.assets = (List<Asset>) Util.clone(this.assets);
+		other.conceptDescriptions = (List<ConceptDescription>) Util.clone(this.conceptDescriptions);
+		other.submodels = (List<Submodel>) Util.clone(this.submodels);
+		return other;
 	}
 
 

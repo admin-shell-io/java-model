@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class QualifierBuilder {
 
-	private DefaultQualifier defaultQualifier;
+	private Map<String, Object> map;
 
 	public QualifierBuilder() {
-		defaultQualifier = new DefaultQualifier();
+		this.map = new HashMap<>();
 	}
 
-	public QualifierBuilder(URI id) {
+	public QualifierBuilder(Map<String, Object> map) {
 		this();
-		defaultQualifier.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for type
 	* @param type desired value to be set
 	* @return Builder object with new value for type
 	*/
-	final public QualifierBuilder type(String type) {
-		this.defaultQualifier.type = type;
+	public QualifierBuilder type(String type) {
+		this.map.put("type", type);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class QualifierBuilder {
 	* @param valueType desired value to be set
 	* @return Builder object with new value for valueType
 	*/
-	final public QualifierBuilder valueType(String valueType) {
-		this.defaultQualifier.valueType = valueType;
+	public QualifierBuilder valueType(String valueType) {
+		this.map.put("valueType", valueType);
 		return this;
 	}
 
@@ -58,8 +61,8 @@ public class QualifierBuilder {
 	* @param value desired value to be set
 	* @return Builder object with new value for value
 	*/
-	final public QualifierBuilder value(TypedLiteral value) {
-		this.defaultQualifier.value = value;
+	public QualifierBuilder value(TypedLiteral value) {
+		this.map.put("value", value);
 		return this;
 	}
 
@@ -69,8 +72,8 @@ public class QualifierBuilder {
 	* @param valueId desired value to be set
 	* @return Builder object with new value for valueId
 	*/
-	final public QualifierBuilder valueId(Reference valueId) {
-		this.defaultQualifier.valueId = valueId;
+	public QualifierBuilder valueId(Reference valueId) {
+		this.map.put("valueId", valueId);
 		return this;
 	}
 
@@ -81,18 +84,18 @@ public class QualifierBuilder {
 	* @param semanticId desired value to be set
 	* @return Builder object with new value for semanticId
 	*/
-	final public QualifierBuilder semanticId(Reference semanticId) {
-		this.defaultQualifier.semanticId = semanticId;
+	public QualifierBuilder semanticId(Reference semanticId) {
+		this.map.put("semanticId", semanticId);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public Qualifier build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultQualifier);
+		DefaultQualifier defaultQualifier = Util.fillInstanceFromMap(new DefaultQualifier(), this.map);
 		return defaultQualifier;
 	}
 }

@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class IdentifierKeyValuePairBuilder {
 
-	private DefaultIdentifierKeyValuePair defaultIdentifierKeyValuePair;
+	private Map<String, Object> map;
 
 	public IdentifierKeyValuePairBuilder() {
-		defaultIdentifierKeyValuePair = new DefaultIdentifierKeyValuePair();
+		this.map = new HashMap<>();
 	}
 
-	public IdentifierKeyValuePairBuilder(URI id) {
+	public IdentifierKeyValuePairBuilder(Map<String, Object> map) {
 		this();
-		defaultIdentifierKeyValuePair.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for key
 	* @param key desired value to be set
 	* @return Builder object with new value for key
 	*/
-	final public IdentifierKeyValuePairBuilder key(String key) {
-		this.defaultIdentifierKeyValuePair.key = key;
+	public IdentifierKeyValuePairBuilder key(String key) {
+		this.map.put("key", key);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class IdentifierKeyValuePairBuilder {
 	* @param value desired value to be set
 	* @return Builder object with new value for value
 	*/
-	final public IdentifierKeyValuePairBuilder value(String value) {
-		this.defaultIdentifierKeyValuePair.value = value;
+	public IdentifierKeyValuePairBuilder value(String value) {
+		this.map.put("value", value);
 		return this;
 	}
 
@@ -58,8 +61,8 @@ public class IdentifierKeyValuePairBuilder {
 	* @param externalSubjectId desired value to be set
 	* @return Builder object with new value for externalSubjectId
 	*/
-	final public IdentifierKeyValuePairBuilder externalSubjectId(Reference externalSubjectId) {
-		this.defaultIdentifierKeyValuePair.externalSubjectId = externalSubjectId;
+	public IdentifierKeyValuePairBuilder externalSubjectId(Reference externalSubjectId) {
+		this.map.put("externalSubjectId", externalSubjectId);
 		return this;
 	}
 
@@ -69,18 +72,18 @@ public class IdentifierKeyValuePairBuilder {
 	* @param semanticId desired value to be set
 	* @return Builder object with new value for semanticId
 	*/
-	final public IdentifierKeyValuePairBuilder semanticId(Reference semanticId) {
-		this.defaultIdentifierKeyValuePair.semanticId = semanticId;
+	public IdentifierKeyValuePairBuilder semanticId(Reference semanticId) {
+		this.map.put("semanticId", semanticId);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public IdentifierKeyValuePair build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultIdentifierKeyValuePair);
+		DefaultIdentifierKeyValuePair defaultIdentifierKeyValuePair = Util.fillInstanceFromMap(new DefaultIdentifierKeyValuePair(), this.map);
 		return defaultIdentifierKeyValuePair;
 	}
 }

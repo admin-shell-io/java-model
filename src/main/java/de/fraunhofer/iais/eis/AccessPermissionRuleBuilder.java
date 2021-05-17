@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class AccessPermissionRuleBuilder {
 
-	private DefaultAccessPermissionRule defaultAccessPermissionRule;
+	private Map<String, Object> map;
 
 	public AccessPermissionRuleBuilder() {
-		defaultAccessPermissionRule = new DefaultAccessPermissionRule();
+		this.map = new HashMap<>();
 	}
 
-	public AccessPermissionRuleBuilder(URI id) {
+	public AccessPermissionRuleBuilder(Map<String, Object> map) {
 		this();
-		defaultAccessPermissionRule.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for permissionsPerObjects
 	* @param permissionsPerObjects desired value to be set
 	* @return Builder object with new value for permissionsPerObjects
 	*/
-	final public AccessPermissionRuleBuilder permissionsPerObjects(List<PermissionsPerObject> permissionsPerObjects) {
-		this.defaultAccessPermissionRule.permissionsPerObjects = permissionsPerObjects;
+	public AccessPermissionRuleBuilder permissionsPerObjects(List<PermissionsPerObject> permissionsPerObjects) {
+		this.map.put("permissionsPerObjects", permissionsPerObjects);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class AccessPermissionRuleBuilder {
 	* @param targetSubjectAttributes desired value to be set
 	* @return Builder object with new value for targetSubjectAttributes
 	*/
-	final public AccessPermissionRuleBuilder targetSubjectAttributes(SubjectAttributes targetSubjectAttributes) {
-		this.defaultAccessPermissionRule.targetSubjectAttributes = targetSubjectAttributes;
+	public AccessPermissionRuleBuilder targetSubjectAttributes(SubjectAttributes targetSubjectAttributes) {
+		this.map.put("targetSubjectAttributes", targetSubjectAttributes);
 		return this;
 	}
 
@@ -58,8 +61,8 @@ public class AccessPermissionRuleBuilder {
 	* @param referableCategory desired value to be set
 	* @return Builder object with new value for referableCategory
 	*/
-	final public AccessPermissionRuleBuilder referableCategory(String referableCategory) {
-		this.defaultAccessPermissionRule.referableCategory = referableCategory;
+	public AccessPermissionRuleBuilder referableCategory(String referableCategory) {
+		this.map.put("referableCategory", referableCategory);
 		return this;
 	}
 
@@ -69,8 +72,8 @@ public class AccessPermissionRuleBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	final public AccessPermissionRuleBuilder description(TypedLiteral description) {
-		this.defaultAccessPermissionRule.description = description;
+	public AccessPermissionRuleBuilder description(TypedLiteral description) {
+		this.map.put("description", description);
 		return this;
 	}
 
@@ -80,8 +83,8 @@ public class AccessPermissionRuleBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	final public AccessPermissionRuleBuilder displayName(TypedLiteral displayName) {
-		this.defaultAccessPermissionRule.displayName = displayName;
+	public AccessPermissionRuleBuilder displayName(TypedLiteral displayName) {
+		this.map.put("displayName", displayName);
 		return this;
 	}
 
@@ -91,8 +94,8 @@ public class AccessPermissionRuleBuilder {
 	* @param idShort desired value to be set
 	* @return Builder object with new value for idShort
 	*/
-	final public AccessPermissionRuleBuilder idShort(String idShort) {
-		this.defaultAccessPermissionRule.idShort = idShort;
+	public AccessPermissionRuleBuilder idShort(String idShort) {
+		this.map.put("idShort", idShort);
 		return this;
 	}
 
@@ -102,18 +105,18 @@ public class AccessPermissionRuleBuilder {
 	* @param qualifiers desired value to be set
 	* @return Builder object with new value for qualifiers
 	*/
-	final public AccessPermissionRuleBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultAccessPermissionRule.qualifiers = qualifiers;
+	public AccessPermissionRuleBuilder qualifiers(List<Constraint> qualifiers) {
+		this.map.put("qualifiers", qualifiers);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public AccessPermissionRule build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultAccessPermissionRule);
+		DefaultAccessPermissionRule defaultAccessPermissionRule = Util.fillInstanceFromMap(new DefaultAccessPermissionRule(), this.map);
 		return defaultAccessPermissionRule;
 	}
 }

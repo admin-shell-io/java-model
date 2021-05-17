@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class ReferenceElementBuilder {
 
-	private DefaultReferenceElement defaultReferenceElement;
+	private Map<String, Object> map;
 
 	public ReferenceElementBuilder() {
-		defaultReferenceElement = new DefaultReferenceElement();
+		this.map = new HashMap<>();
 	}
 
-	public ReferenceElementBuilder(URI id) {
+	public ReferenceElementBuilder(Map<String, Object> map) {
 		this();
-		defaultReferenceElement.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for value
 	* @param value desired value to be set
 	* @return Builder object with new value for value
 	*/
-	final public ReferenceElementBuilder value(Reference value) {
-		this.defaultReferenceElement.value = value;
+	public ReferenceElementBuilder value(Reference value) {
+		this.map.put("value", value);
 		return this;
 	}
 
@@ -49,8 +52,8 @@ public class ReferenceElementBuilder {
 	* @param referableCategory desired value to be set
 	* @return Builder object with new value for referableCategory
 	*/
-	final public ReferenceElementBuilder referableCategory(String referableCategory) {
-		this.defaultReferenceElement.referableCategory = referableCategory;
+	public ReferenceElementBuilder referableCategory(String referableCategory) {
+		this.map.put("referableCategory", referableCategory);
 		return this;
 	}
 
@@ -60,8 +63,8 @@ public class ReferenceElementBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	final public ReferenceElementBuilder description(TypedLiteral description) {
-		this.defaultReferenceElement.description = description;
+	public ReferenceElementBuilder description(TypedLiteral description) {
+		this.map.put("description", description);
 		return this;
 	}
 
@@ -71,8 +74,8 @@ public class ReferenceElementBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	final public ReferenceElementBuilder displayName(TypedLiteral displayName) {
-		this.defaultReferenceElement.displayName = displayName;
+	public ReferenceElementBuilder displayName(TypedLiteral displayName) {
+		this.map.put("displayName", displayName);
 		return this;
 	}
 
@@ -82,8 +85,8 @@ public class ReferenceElementBuilder {
 	* @param idShort desired value to be set
 	* @return Builder object with new value for idShort
 	*/
-	final public ReferenceElementBuilder idShort(String idShort) {
-		this.defaultReferenceElement.idShort = idShort;
+	public ReferenceElementBuilder idShort(String idShort) {
+		this.map.put("idShort", idShort);
 		return this;
 	}
 
@@ -93,8 +96,8 @@ public class ReferenceElementBuilder {
 	* @param qualifiers desired value to be set
 	* @return Builder object with new value for qualifiers
 	*/
-	final public ReferenceElementBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultReferenceElement.qualifiers = qualifiers;
+	public ReferenceElementBuilder qualifiers(List<Constraint> qualifiers) {
+		this.map.put("qualifiers", qualifiers);
 		return this;
 	}
 
@@ -104,8 +107,8 @@ public class ReferenceElementBuilder {
 	* @param dataSpecifications desired value to be set
 	* @return Builder object with new value for dataSpecifications
 	*/
-	final public ReferenceElementBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultReferenceElement.dataSpecifications = dataSpecifications;
+	public ReferenceElementBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.map.put("dataSpecifications", dataSpecifications);
 		return this;
 	}
 
@@ -115,8 +118,8 @@ public class ReferenceElementBuilder {
 	* @param kind desired value to be set
 	* @return Builder object with new value for kind
 	*/
-	final public ReferenceElementBuilder kind(ModelingKind kind) {
-		this.defaultReferenceElement.kind = kind;
+	public ReferenceElementBuilder kind(ModelingKind kind) {
+		this.map.put("kind", kind);
 		return this;
 	}
 
@@ -126,18 +129,18 @@ public class ReferenceElementBuilder {
 	* @param semanticId desired value to be set
 	* @return Builder object with new value for semanticId
 	*/
-	final public ReferenceElementBuilder semanticId(Reference semanticId) {
-		this.defaultReferenceElement.semanticId = semanticId;
+	public ReferenceElementBuilder semanticId(Reference semanticId) {
+		this.map.put("semanticId", semanticId);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public ReferenceElement build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultReferenceElement);
+		DefaultReferenceElement defaultReferenceElement = Util.fillInstanceFromMap(new DefaultReferenceElement(), this.map);
 		return defaultReferenceElement;
 	}
 }

@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class EntityBuilder {
 
-	private DefaultEntity defaultEntity;
+	private Map<String, Object> map;
 
 	public EntityBuilder() {
-		defaultEntity = new DefaultEntity();
+		this.map = new HashMap<>();
 	}
 
-	public EntityBuilder(URI id) {
+	public EntityBuilder(Map<String, Object> map) {
 		this();
-		defaultEntity.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for globalAssetId
 	* @param globalAssetId desired value to be set
 	* @return Builder object with new value for globalAssetId
 	*/
-	final public EntityBuilder globalAssetId(Reference globalAssetId) {
-		this.defaultEntity.globalAssetId = globalAssetId;
+	public EntityBuilder globalAssetId(Reference globalAssetId) {
+		this.map.put("globalAssetId", globalAssetId);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class EntityBuilder {
 	* @param externalAssetId desired value to be set
 	* @return Builder object with new value for externalAssetId
 	*/
-	final public EntityBuilder externalAssetId(IdentifierKeyValuePair externalAssetId) {
-		this.defaultEntity.externalAssetId = externalAssetId;
+	public EntityBuilder externalAssetId(IdentifierKeyValuePair externalAssetId) {
+		this.map.put("externalAssetId", externalAssetId);
 		return this;
 	}
 
@@ -58,8 +61,8 @@ public class EntityBuilder {
 	* @param entityType desired value to be set
 	* @return Builder object with new value for entityType
 	*/
-	final public EntityBuilder entityType(EntityType entityType) {
-		this.defaultEntity.entityType = entityType;
+	public EntityBuilder entityType(EntityType entityType) {
+		this.map.put("entityType", entityType);
 		return this;
 	}
 
@@ -69,8 +72,8 @@ public class EntityBuilder {
 	* @param statements desired value to be set
 	* @return Builder object with new value for statements
 	*/
-	final public EntityBuilder statements(List<SubmodelElement> statements) {
-		this.defaultEntity.statements = statements;
+	public EntityBuilder statements(List<SubmodelElement> statements) {
+		this.map.put("statements", statements);
 		return this;
 	}
 
@@ -81,8 +84,8 @@ public class EntityBuilder {
 	* @param referableCategory desired value to be set
 	* @return Builder object with new value for referableCategory
 	*/
-	final public EntityBuilder referableCategory(String referableCategory) {
-		this.defaultEntity.referableCategory = referableCategory;
+	public EntityBuilder referableCategory(String referableCategory) {
+		this.map.put("referableCategory", referableCategory);
 		return this;
 	}
 
@@ -92,8 +95,8 @@ public class EntityBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	final public EntityBuilder description(TypedLiteral description) {
-		this.defaultEntity.description = description;
+	public EntityBuilder description(TypedLiteral description) {
+		this.map.put("description", description);
 		return this;
 	}
 
@@ -103,8 +106,8 @@ public class EntityBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	final public EntityBuilder displayName(TypedLiteral displayName) {
-		this.defaultEntity.displayName = displayName;
+	public EntityBuilder displayName(TypedLiteral displayName) {
+		this.map.put("displayName", displayName);
 		return this;
 	}
 
@@ -114,8 +117,8 @@ public class EntityBuilder {
 	* @param idShort desired value to be set
 	* @return Builder object with new value for idShort
 	*/
-	final public EntityBuilder idShort(String idShort) {
-		this.defaultEntity.idShort = idShort;
+	public EntityBuilder idShort(String idShort) {
+		this.map.put("idShort", idShort);
 		return this;
 	}
 
@@ -125,8 +128,8 @@ public class EntityBuilder {
 	* @param qualifiers desired value to be set
 	* @return Builder object with new value for qualifiers
 	*/
-	final public EntityBuilder qualifiers(List<Constraint> qualifiers) {
-		this.defaultEntity.qualifiers = qualifiers;
+	public EntityBuilder qualifiers(List<Constraint> qualifiers) {
+		this.map.put("qualifiers", qualifiers);
 		return this;
 	}
 
@@ -136,8 +139,8 @@ public class EntityBuilder {
 	* @param dataSpecifications desired value to be set
 	* @return Builder object with new value for dataSpecifications
 	*/
-	final public EntityBuilder dataSpecifications(List<Reference> dataSpecifications) {
-		this.defaultEntity.dataSpecifications = dataSpecifications;
+	public EntityBuilder dataSpecifications(List<Reference> dataSpecifications) {
+		this.map.put("dataSpecifications", dataSpecifications);
 		return this;
 	}
 
@@ -147,8 +150,8 @@ public class EntityBuilder {
 	* @param kind desired value to be set
 	* @return Builder object with new value for kind
 	*/
-	final public EntityBuilder kind(ModelingKind kind) {
-		this.defaultEntity.kind = kind;
+	public EntityBuilder kind(ModelingKind kind) {
+		this.map.put("kind", kind);
 		return this;
 	}
 
@@ -158,18 +161,18 @@ public class EntityBuilder {
 	* @param semanticId desired value to be set
 	* @return Builder object with new value for semanticId
 	*/
-	final public EntityBuilder semanticId(Reference semanticId) {
-		this.defaultEntity.semanticId = semanticId;
+	public EntityBuilder semanticId(Reference semanticId) {
+		this.map.put("semanticId", semanticId);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public Entity build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultEntity);
+		DefaultEntity defaultEntity = Util.fillInstanceFromMap(new DefaultEntity(), this.map);
 		return defaultEntity;
 	}
 }

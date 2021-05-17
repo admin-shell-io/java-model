@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Multi Language Property", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("A property is a data element that has a multi language value.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -128,19 +119,6 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 
 	// no manual construction
 	protected DefaultMultiLanguageProperty() {
-		id = VocabUtil.getInstance().createRandomUrl("multiLanguageProperty");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -178,6 +156,22 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 				Objects.equals(this.kind, other.kind) &&
 				Objects.equals(this.semanticId, other.semanticId);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultMultiLanguageProperty other = new DefaultMultiLanguageProperty();
+		other.values = (List<TypedLiteral>) Util.clone(this.values);
+		other.valueId = (Reference) Util.clone(this.valueId);
+		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.description = (TypedLiteral) Util.clone(this.description);
+		other.displayName = (TypedLiteral) Util.clone(this.displayName);
+		other.idShort = (String) Util.clone(this.idShort);
+		other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
+		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
+		other.kind = (ModelingKind) Util.clone(this.kind);
+		other.semanticId = (Reference) Util.clone(this.semanticId);
+		return other;
 	}
 
 

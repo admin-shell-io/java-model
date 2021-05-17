@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultAccessPermissionRule implements AccessPermissionRule {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Access Permission Rule", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Table that defines access permissions per authenticated subject for a set of objects (referable elements).", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -100,19 +91,6 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 
 	// no manual construction
 	protected DefaultAccessPermissionRule() {
-		id = VocabUtil.getInstance().createRandomUrl("accessPermissionRule");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -144,6 +122,19 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 				Objects.equals(this.idShort, other.idShort) &&
 				Objects.equals(this.qualifiers, other.qualifiers);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultAccessPermissionRule other = new DefaultAccessPermissionRule();
+		other.permissionsPerObjects = (List<PermissionsPerObject>) Util.clone(this.permissionsPerObjects);
+		other.targetSubjectAttributes = (SubjectAttributes) Util.clone(this.targetSubjectAttributes);
+		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.description = (TypedLiteral) Util.clone(this.description);
+		other.displayName = (TypedLiteral) Util.clone(this.displayName);
+		other.idShort = (String) Util.clone(this.idShort);
+		other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
+		return other;
 	}
 
 

@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class RC01Builder {
 
-	private DefaultRC01 defaultRC01;
+	private Map<String, Object> map;
 
 	public RC01Builder() {
-		defaultRC01 = new DefaultRC01();
+		this.map = new HashMap<>();
 	}
 
-	public RC01Builder(URI id) {
+	public RC01Builder(Map<String, Object> map) {
 		this();
-		defaultRC01.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for conversionFactors
 	* @param conversionFactors desired value to be set
 	* @return Builder object with new value for conversionFactors
 	*/
-	final public RC01Builder conversionFactors(List<String> conversionFactors) {
-		this.defaultRC01.conversionFactors = conversionFactors;
+	public RC01Builder conversionFactors(List<String> conversionFactors) {
+		this.map.put("conversionFactors", conversionFactors);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class RC01Builder {
 	* @param definitions desired value to be set
 	* @return Builder object with new value for definitions
 	*/
-	final public RC01Builder definitions(List<TypedLiteral> definitions) {
-		this.defaultRC01.definitions = definitions;
+	public RC01Builder definitions(List<TypedLiteral> definitions) {
+		this.map.put("definitions", definitions);
 		return this;
 	}
 
@@ -58,8 +61,8 @@ public class RC01Builder {
 	* @param dinNotations desired value to be set
 	* @return Builder object with new value for dinNotations
 	*/
-	final public RC01Builder dinNotations(List<String> dinNotations) {
-		this.defaultRC01.dinNotations = dinNotations;
+	public RC01Builder dinNotations(List<String> dinNotations) {
+		this.map.put("dinNotations", dinNotations);
 		return this;
 	}
 
@@ -69,8 +72,8 @@ public class RC01Builder {
 	* @param eceCodes desired value to be set
 	* @return Builder object with new value for eceCodes
 	*/
-	final public RC01Builder eceCodes(List<String> eceCodes) {
-		this.defaultRC01.eceCodes = eceCodes;
+	public RC01Builder eceCodes(List<String> eceCodes) {
+		this.map.put("eceCodes", eceCodes);
 		return this;
 	}
 
@@ -80,8 +83,8 @@ public class RC01Builder {
 	* @param eceNames desired value to be set
 	* @return Builder object with new value for eceNames
 	*/
-	final public RC01Builder eceNames(List<String> eceNames) {
-		this.defaultRC01.eceNames = eceNames;
+	public RC01Builder eceNames(List<String> eceNames) {
+		this.map.put("eceNames", eceNames);
 		return this;
 	}
 
@@ -91,8 +94,8 @@ public class RC01Builder {
 	* @param nistNames desired value to be set
 	* @return Builder object with new value for nistNames
 	*/
-	final public RC01Builder nistNames(List<String> nistNames) {
-		this.defaultRC01.nistNames = nistNames;
+	public RC01Builder nistNames(List<String> nistNames) {
+		this.map.put("nistNames", nistNames);
 		return this;
 	}
 
@@ -102,8 +105,8 @@ public class RC01Builder {
 	* @param siNames desired value to be set
 	* @return Builder object with new value for siNames
 	*/
-	final public RC01Builder siNames(List<String> siNames) {
-		this.defaultRC01.siNames = siNames;
+	public RC01Builder siNames(List<String> siNames) {
+		this.map.put("siNames", siNames);
 		return this;
 	}
 
@@ -113,8 +116,8 @@ public class RC01Builder {
 	* @param siNotations desired value to be set
 	* @return Builder object with new value for siNotations
 	*/
-	final public RC01Builder siNotations(List<String> siNotations) {
-		this.defaultRC01.siNotations = siNotations;
+	public RC01Builder siNotations(List<String> siNotations) {
+		this.map.put("siNotations", siNotations);
 		return this;
 	}
 
@@ -124,8 +127,8 @@ public class RC01Builder {
 	* @param registrationAuthorityIds desired value to be set
 	* @return Builder object with new value for registrationAuthorityIds
 	*/
-	final public RC01Builder registrationAuthorityIds(List<String> registrationAuthorityIds) {
-		this.defaultRC01.registrationAuthorityIds = registrationAuthorityIds;
+	public RC01Builder registrationAuthorityIds(List<String> registrationAuthorityIds) {
+		this.map.put("registrationAuthorityIds", registrationAuthorityIds);
 		return this;
 	}
 
@@ -135,8 +138,8 @@ public class RC01Builder {
 	* @param suppliers desired value to be set
 	* @return Builder object with new value for suppliers
 	*/
-	final public RC01Builder suppliers(List<String> suppliers) {
-		this.defaultRC01.suppliers = suppliers;
+	public RC01Builder suppliers(List<String> suppliers) {
+		this.map.put("suppliers", suppliers);
 		return this;
 	}
 
@@ -146,8 +149,8 @@ public class RC01Builder {
 	* @param unitNames desired value to be set
 	* @return Builder object with new value for unitNames
 	*/
-	final public RC01Builder unitNames(List<String> unitNames) {
-		this.defaultRC01.unitNames = unitNames;
+	public RC01Builder unitNames(List<String> unitNames) {
+		this.map.put("unitNames", unitNames);
 		return this;
 	}
 
@@ -157,19 +160,19 @@ public class RC01Builder {
 	* @param unitSymbols desired value to be set
 	* @return Builder object with new value for unitSymbols
 	*/
-	final public RC01Builder unitSymbols(List<String> unitSymbols) {
-		this.defaultRC01.unitSymbols = unitSymbols;
+	public RC01Builder unitSymbols(List<String> unitSymbols) {
+		this.map.put("unitSymbols", unitSymbols);
 		return this;
 	}
+
 
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public RC01 build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultRC01);
+		DefaultRC01 defaultRC01 = Util.fillInstanceFromMap(new DefaultRC01(), this.map);
 		return defaultRC01;
 	}
 }

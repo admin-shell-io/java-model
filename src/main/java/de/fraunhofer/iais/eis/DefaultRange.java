@@ -28,15 +28,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultRange implements Range {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Range", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("An element that is referable by its idShort. This id is not globally unique. This id is unique within the name space of the element.", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -136,19 +127,6 @@ public class DefaultRange implements Range {
 
 	// no manual construction
 	protected DefaultRange() {
-		id = VocabUtil.getInstance().createRandomUrl("range");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -188,6 +166,23 @@ public class DefaultRange implements Range {
 				Objects.equals(this.kind, other.kind) &&
 				Objects.equals(this.semanticId, other.semanticId);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultRange other = new DefaultRange();
+		other.valueType = (String) Util.clone(this.valueType);
+		other.max = (TypedLiteral) Util.clone(this.max);
+		other.min = (TypedLiteral) Util.clone(this.min);
+		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.description = (TypedLiteral) Util.clone(this.description);
+		other.displayName = (TypedLiteral) Util.clone(this.displayName);
+		other.idShort = (String) Util.clone(this.idShort);
+		other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
+		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
+		other.kind = (ModelingKind) Util.clone(this.kind);
+		other.semanticId = (Reference) Util.clone(this.semanticId);
+		return other;
 	}
 
 

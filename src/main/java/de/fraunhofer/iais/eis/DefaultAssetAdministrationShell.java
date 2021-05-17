@@ -25,15 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class DefaultAssetAdministrationShell implements AssetAdministrationShell {
 
-	protected URI id;
-
-	//List of all labels of this class
-	@JsonIgnore
-	protected List<TypedLiteral> labels = Arrays.asList(new TypedLiteral("Asset Administration Shell", ""));
-
-	//List of all comments of this class
-	@JsonIgnore
-	protected List<TypedLiteral> comments = Arrays.asList(new TypedLiteral("Describes the Administration Shell for Assets, Products, Components, e.g. Machines", "en"));
 
 	// instance fields as derived from the Asset Administration Shell ontology
 
@@ -141,19 +132,6 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 
 	// no manual construction
 	protected DefaultAssetAdministrationShell() {
-		id = VocabUtil.getInstance().createRandomUrl("assetAdministrationShell");
-	}
-
-	final public URI getId() {
-		return id;
-	}
-
-	public List<TypedLiteral> getLabels() {
-		return this.labels;
-	}
-
-	public List<TypedLiteral> getComments() {
-		return this.comments;
 	}
 
 	@Override
@@ -195,6 +173,24 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort);
 		}
+	}
+
+	@Override
+	public Object deepCopy() {
+		DefaultAssetAdministrationShell other = new DefaultAssetAdministrationShell();
+		other.assetInformation = (AssetInformation) Util.clone(this.assetInformation);
+		other.derivedFrom = (Reference) Util.clone(this.derivedFrom);
+		other.security = (Security) Util.clone(this.security);
+		other.submodels = (List<Reference>) Util.clone(this.submodels);
+		other.views = (List<View>) Util.clone(this.views);
+		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
+		other.administration = (AdministrativeInformation) Util.clone(this.administration);
+		other.identification = (Identifier) Util.clone(this.identification);
+		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.description = (TypedLiteral) Util.clone(this.description);
+		other.displayName = (TypedLiteral) Util.clone(this.displayName);
+		other.idShort = (String) Util.clone(this.idShort);
+		return other;
 	}
 
 

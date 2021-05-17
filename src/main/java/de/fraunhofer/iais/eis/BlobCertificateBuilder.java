@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class BlobCertificateBuilder {
 
-	private DefaultBlobCertificate defaultBlobCertificate;
+	private Map<String, Object> map;
 
 	public BlobCertificateBuilder() {
-		defaultBlobCertificate = new DefaultBlobCertificate();
+		this.map = new HashMap<>();
 	}
 
-	public BlobCertificateBuilder(URI id) {
+	public BlobCertificateBuilder(Map<String, Object> map) {
 		this();
-		defaultBlobCertificate.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for blobCertificate
 	* @param blobCertificate desired value to be set
 	* @return Builder object with new value for blobCertificate
 	*/
-	final public BlobCertificateBuilder blobCertificate(Blob blobCertificate) {
-		this.defaultBlobCertificate.blobCertificate = blobCertificate;
+	public BlobCertificateBuilder blobCertificate(Blob blobCertificate) {
+		this.map.put("blobCertificate", blobCertificate);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class BlobCertificateBuilder {
 	* @param containedExtensions desired value to be set
 	* @return Builder object with new value for containedExtensions
 	*/
-	final public BlobCertificateBuilder containedExtensions(List<Reference> containedExtensions) {
-		this.defaultBlobCertificate.containedExtensions = containedExtensions;
+	public BlobCertificateBuilder containedExtensions(List<Reference> containedExtensions) {
+		this.map.put("containedExtensions", containedExtensions);
 		return this;
 	}
 
@@ -58,8 +61,8 @@ public class BlobCertificateBuilder {
 	* @param lastCertificate desired value to be set
 	* @return Builder object with new value for lastCertificate
 	*/
-	final public BlobCertificateBuilder lastCertificate(boolean lastCertificate) {
-		this.defaultBlobCertificate.lastCertificate = lastCertificate;
+	public BlobCertificateBuilder lastCertificate(boolean lastCertificate) {
+		this.map.put("lastCertificate", lastCertificate);
 		return this;
 	}
 
@@ -69,18 +72,18 @@ public class BlobCertificateBuilder {
 	* @param policyAdministrationPoint desired value to be set
 	* @return Builder object with new value for policyAdministrationPoint
 	*/
-	final public BlobCertificateBuilder policyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint) {
-		this.defaultBlobCertificate.policyAdministrationPoint = policyAdministrationPoint;
+	public BlobCertificateBuilder policyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint) {
+		this.map.put("policyAdministrationPoint", policyAdministrationPoint);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public BlobCertificate build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultBlobCertificate);
+		DefaultBlobCertificate defaultBlobCertificate = Util.fillInstanceFromMap(new DefaultBlobCertificate(), this.map);
 		return defaultBlobCertificate;
 	}
 }

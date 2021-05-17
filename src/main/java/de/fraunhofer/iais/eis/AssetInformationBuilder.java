@@ -20,24 +20,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class AssetInformationBuilder {
 
-	private DefaultAssetInformation defaultAssetInformation;
+	private Map<String, Object> map;
 
 	public AssetInformationBuilder() {
-		defaultAssetInformation = new DefaultAssetInformation();
+		this.map = new HashMap<>();
 	}
 
-	public AssetInformationBuilder(URI id) {
+	public AssetInformationBuilder(Map<String, Object> map) {
 		this();
-		defaultAssetInformation.id = id;
+		for (Map.Entry<String, Object> entry : map.entrySet()){
+			this.map.put(entry.getKey(), Util.clone(entry.getValue()));
+		}
 	}
+
 
 	/**
 	* This function allows setting a value for assetKind
 	* @param assetKind desired value to be set
 	* @return Builder object with new value for assetKind
 	*/
-	final public AssetInformationBuilder assetKind(AssetKind assetKind) {
-		this.defaultAssetInformation.assetKind = assetKind;
+	public AssetInformationBuilder assetKind(AssetKind assetKind) {
+		this.map.put("assetKind", assetKind);
 		return this;
 	}
 
@@ -47,8 +50,8 @@ public class AssetInformationBuilder {
 	* @param globalAssetId desired value to be set
 	* @return Builder object with new value for globalAssetId
 	*/
-	final public AssetInformationBuilder globalAssetId(Reference globalAssetId) {
-		this.defaultAssetInformation.globalAssetId = globalAssetId;
+	public AssetInformationBuilder globalAssetId(Reference globalAssetId) {
+		this.map.put("globalAssetId", globalAssetId);
 		return this;
 	}
 
@@ -58,8 +61,8 @@ public class AssetInformationBuilder {
 	* @param specificAssetIds desired value to be set
 	* @return Builder object with new value for specificAssetIds
 	*/
-	final public AssetInformationBuilder specificAssetIds(List<IdentifierKeyValuePair> specificAssetIds) {
-		this.defaultAssetInformation.specificAssetIds = specificAssetIds;
+	public AssetInformationBuilder specificAssetIds(List<IdentifierKeyValuePair> specificAssetIds) {
+		this.map.put("specificAssetIds", specificAssetIds);
 		return this;
 	}
 
@@ -69,8 +72,8 @@ public class AssetInformationBuilder {
 	* @param billOfMaterials desired value to be set
 	* @return Builder object with new value for billOfMaterials
 	*/
-	final public AssetInformationBuilder billOfMaterials(List<Reference> billOfMaterials) {
-		this.defaultAssetInformation.billOfMaterials = billOfMaterials;
+	public AssetInformationBuilder billOfMaterials(List<Reference> billOfMaterials) {
+		this.map.put("billOfMaterials", billOfMaterials);
 		return this;
 	}
 
@@ -80,18 +83,18 @@ public class AssetInformationBuilder {
 	* @param defaultThumbnail desired value to be set
 	* @return Builder object with new value for defaultThumbnail
 	*/
-	final public AssetInformationBuilder defaultThumbnail(File defaultThumbnail) {
-		this.defaultAssetInformation.defaultThumbnail = defaultThumbnail;
+	public AssetInformationBuilder defaultThumbnail(File defaultThumbnail) {
+		this.map.put("defaultThumbnail", defaultThumbnail);
 		return this;
 	}
+
 	/**
 	* This function takes the values that were set previously via the other functions of this class and turns them into a Java bean.
 	* @return Bean with specified values
 	* @throws ConstraintViolationException This exception is thrown, if a validator is used and a violation is found.
 	*/
-
 	final public AssetInformation build() throws ConstraintViolationException {
-		VocabUtil.getInstance().validate(defaultAssetInformation);
+		DefaultAssetInformation defaultAssetInformation = Util.fillInstanceFromMap(new DefaultAssetInformation(), this.map);
 		return defaultAssetInformation;
 	}
 }
