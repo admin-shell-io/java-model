@@ -42,7 +42,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 	* "Annotations that hold for the relationships between the two elements."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation")
-	protected List<Reference> annotations;
+	protected List<DataElement> annotations;
 
 
 	/**
@@ -192,11 +192,11 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation")
-	final public List<Reference> getAnnotations() {
+	final public List<DataElement> getAnnotations() {
 		return annotations;
 	}
 	
-	final public void setAnnotations (List<Reference> annotations) {
+	final public void setAnnotations (List<DataElement> annotations) {
 		this.annotations = annotations;
 	}
 

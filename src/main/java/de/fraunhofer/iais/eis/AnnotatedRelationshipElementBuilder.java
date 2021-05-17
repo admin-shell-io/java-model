@@ -36,7 +36,7 @@ public class AnnotatedRelationshipElementBuilder {
 	* @param annotations desired value to be set
 	* @return Builder object with new value for annotations
 	*/
-	final public AnnotatedRelationshipElementBuilder annotations(List<Reference> annotations) {
+	final public AnnotatedRelationshipElementBuilder annotations(List<DataElement> annotations) {
 		this.defaultAnnotatedRelationshipElement.annotations = annotations;
 		return this;
 	}
