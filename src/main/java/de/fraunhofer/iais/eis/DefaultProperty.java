@@ -90,6 +90,14 @@ public class DefaultProperty implements Property {
 
 
 	/**
+	* "has referable category"
+	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	*/
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
+	protected String category;
+
+
+	/**
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
@@ -118,14 +126,6 @@ public class DefaultProperty implements Property {
 	protected String idShort;
 
 
-	/**
-	* "has referable category"
-	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	protected String referableCategory;
-
-
 	// no manual construction
 	protected DefaultProperty() {
 	}
@@ -135,7 +135,7 @@ public class DefaultProperty implements Property {
 		return Objects.hash(new Object[]{this.valueType,
 			this.value,
 			this.valueId,
-			this.referableCategory,
+			this.category,
 			this.description,
 			this.displayName,
 			this.idShort,
@@ -158,7 +158,7 @@ public class DefaultProperty implements Property {
 			return Objects.equals(this.valueType, other.valueType) &&
 				Objects.equals(this.value, other.value) &&
 				Objects.equals(this.valueId, other.valueId) &&
-				Objects.equals(this.referableCategory, other.referableCategory) &&
+				Objects.equals(this.category, other.category) &&
 				Objects.equals(this.description, other.description) &&
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort) &&
@@ -175,7 +175,7 @@ public class DefaultProperty implements Property {
 		other.valueType = (String) Util.clone(this.valueType);
 		other.value = (TypedLiteral) Util.clone(this.value);
 		other.valueId = (Reference) Util.clone(this.valueId);
-		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.category = (String) Util.clone(this.category);
 		other.description = (LangStringSet) Util.clone(this.description);
 		other.displayName = (LangStringSet) Util.clone(this.displayName);
 		other.idShort = (String) Util.clone(this.idShort);
@@ -219,13 +219,13 @@ public class DefaultProperty implements Property {
 
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	final public String getReferableCategory() {
-		return referableCategory;
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
+	final public String getCategory() {
+		return category;
 	}
 	
-	final public void setReferableCategory (String referableCategory) {
-		this.referableCategory = referableCategory;
+	final public void setCategory (String category) {
+		this.category = category;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")

@@ -32,6 +32,14 @@ public class DefaultConceptDescription implements ConceptDescription {
 	/**
 	* "is case of"
 	* "Reference to an external definition the concept is compatible to or was derived from."@en
+	*/
+	@IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification")
+	protected List<DataSpecification> embeddedDataSpecifications;
+
+
+	/**
+	* "is case of"
+	* "Reference to an external definition the concept is compatible to or was derived from."@en
 	* "Compare to is-case-of relationship in ISO 13584-32 and IEC EN 61360."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf")
@@ -64,6 +72,14 @@ public class DefaultConceptDescription implements ConceptDescription {
 
 
 	/**
+	* "has referable category"
+	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	*/
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
+	protected String category;
+
+
+	/**
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
@@ -92,14 +108,6 @@ public class DefaultConceptDescription implements ConceptDescription {
 	protected String idShort;
 
 
-	/**
-	* "has referable category"
-	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	protected String referableCategory;
-
-
 	// no manual construction
 	protected DefaultConceptDescription() {
 	}
@@ -107,10 +115,11 @@ public class DefaultConceptDescription implements ConceptDescription {
 	@Override
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.isCaseOfs,
+			this.embeddedDataSpecifications,
 			this.dataSpecifications,
 			this.administration,
 			this.identification,
-			this.referableCategory,
+			this.category,
 			this.description,
 			this.displayName,
 			this.idShort});
@@ -127,10 +136,11 @@ public class DefaultConceptDescription implements ConceptDescription {
 		} else {
 			DefaultConceptDescription other = (DefaultConceptDescription) obj;
 			return Objects.equals(this.isCaseOfs, other.isCaseOfs) &&
+				Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications) &&
 				Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
 				Objects.equals(this.administration, other.administration) &&
 				Objects.equals(this.identification, other.identification) &&
-				Objects.equals(this.referableCategory, other.referableCategory) &&
+				Objects.equals(this.category, other.category) &&
 				Objects.equals(this.description, other.description) &&
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort);
@@ -141,10 +151,11 @@ public class DefaultConceptDescription implements ConceptDescription {
 	public Object deepCopy() {
 		DefaultConceptDescription other = new DefaultConceptDescription();
 		other.isCaseOfs = (List<Reference>) Util.clone(this.isCaseOfs);
+		other.embeddedDataSpecifications = (List<DataSpecification>) Util.clone(this.embeddedDataSpecifications);
 		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
 		other.administration = (AdministrativeInformation) Util.clone(this.administration);
 		other.identification = (Identifier) Util.clone(this.identification);
-		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.category = (String) Util.clone(this.category);
 		other.description = (LangStringSet) Util.clone(this.description);
 		other.displayName = (LangStringSet) Util.clone(this.displayName);
 		other.idShort = (String) Util.clone(this.idShort);
@@ -162,6 +173,15 @@ public class DefaultConceptDescription implements ConceptDescription {
 	
 	final public void setIsCaseOfs (List<Reference> isCaseOfs) {
 		this.isCaseOfs = isCaseOfs;
+	}
+
+	@IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification")
+	final public List<DataSpecification> getEmbeddedDataSpecifications() {
+		return embeddedDataSpecifications;
+	}
+	
+	final public void setEmbeddedDataSpecifications (List<DataSpecification> embeddedDataSpecifications) {
+		this.embeddedDataSpecifications = embeddedDataSpecifications;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
@@ -191,13 +211,13 @@ public class DefaultConceptDescription implements ConceptDescription {
 		this.identification = identification;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	final public String getReferableCategory() {
-		return referableCategory;
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
+	final public String getCategory() {
+		return category;
 	}
 	
-	final public void setReferableCategory (String referableCategory) {
-		this.referableCategory = referableCategory;
+	final public void setCategory (String category) {
+		this.category = category;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")

@@ -53,6 +53,14 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 
 
 	/**
+	* "has referable category"
+	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	*/
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
+	protected String category;
+
+
+	/**
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
@@ -81,14 +89,6 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 	protected String idShort;
 
 
-	/**
-	* "has referable category"
-	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	protected String referableCategory;
-
-
 	// no manual construction
 	protected DefaultAccessPermissionRule() {
 	}
@@ -97,7 +97,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.permissionsPerObjects,
 			this.targetSubjectAttributes,
-			this.referableCategory,
+			this.category,
 			this.description,
 			this.displayName,
 			this.idShort,
@@ -116,7 +116,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 			DefaultAccessPermissionRule other = (DefaultAccessPermissionRule) obj;
 			return Objects.equals(this.permissionsPerObjects, other.permissionsPerObjects) &&
 				Objects.equals(this.targetSubjectAttributes, other.targetSubjectAttributes) &&
-				Objects.equals(this.referableCategory, other.referableCategory) &&
+				Objects.equals(this.category, other.category) &&
 				Objects.equals(this.description, other.description) &&
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort) &&
@@ -129,7 +129,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 		DefaultAccessPermissionRule other = new DefaultAccessPermissionRule();
 		other.permissionsPerObjects = (List<PermissionsPerObject>) Util.clone(this.permissionsPerObjects);
 		other.targetSubjectAttributes = (SubjectAttributes) Util.clone(this.targetSubjectAttributes);
-		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.category = (String) Util.clone(this.category);
 		other.description = (LangStringSet) Util.clone(this.description);
 		other.displayName = (LangStringSet) Util.clone(this.displayName);
 		other.idShort = (String) Util.clone(this.idShort);
@@ -159,13 +159,13 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 		this.targetSubjectAttributes = targetSubjectAttributes;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	final public String getReferableCategory() {
-		return referableCategory;
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
+	final public String getCategory() {
+		return category;
 	}
 	
-	final public void setReferableCategory (String referableCategory) {
-		this.referableCategory = referableCategory;
+	final public void setCategory (String category) {
+		this.category = category;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")

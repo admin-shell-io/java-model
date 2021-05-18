@@ -55,6 +55,14 @@ public class DefaultAsset implements Asset {
 
 
 	/**
+	* "has referable category"
+	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	*/
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
+	protected String category;
+
+
+	/**
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
@@ -83,14 +91,6 @@ public class DefaultAsset implements Asset {
 	protected String idShort;
 
 
-	/**
-	* "has referable category"
-	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	protected String referableCategory;
-
-
 	// no manual construction
 	protected DefaultAsset() {
 	}
@@ -100,7 +100,7 @@ public class DefaultAsset implements Asset {
 		return Objects.hash(new Object[]{this.dataSpecifications,
 			this.administration,
 			this.identification,
-			this.referableCategory,
+			this.category,
 			this.description,
 			this.displayName,
 			this.idShort});
@@ -119,7 +119,7 @@ public class DefaultAsset implements Asset {
 			return Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
 				Objects.equals(this.administration, other.administration) &&
 				Objects.equals(this.identification, other.identification) &&
-				Objects.equals(this.referableCategory, other.referableCategory) &&
+				Objects.equals(this.category, other.category) &&
 				Objects.equals(this.description, other.description) &&
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort);
@@ -132,7 +132,7 @@ public class DefaultAsset implements Asset {
 		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
 		other.administration = (AdministrativeInformation) Util.clone(this.administration);
 		other.identification = (Identifier) Util.clone(this.identification);
-		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.category = (String) Util.clone(this.category);
 		other.description = (LangStringSet) Util.clone(this.description);
 		other.displayName = (LangStringSet) Util.clone(this.displayName);
 		other.idShort = (String) Util.clone(this.idShort);
@@ -171,13 +171,13 @@ public class DefaultAsset implements Asset {
 		this.identification = identification;
 	}
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	final public String getReferableCategory() {
-		return referableCategory;
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
+	final public String getCategory() {
+		return category;
 	}
 	
-	final public void setReferableCategory (String referableCategory) {
-		this.referableCategory = referableCategory;
+	final public void setCategory (String category) {
+		this.category = category;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")

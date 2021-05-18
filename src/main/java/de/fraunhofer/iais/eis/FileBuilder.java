@@ -58,12 +58,12 @@ public class FileBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategory
-	* @param referableCategory desired value to be set
-	* @return Builder object with new value for referableCategory
+	* This function allows setting a value for category
+	* @param category desired value to be set
+	* @return Builder object with new value for category
 	*/
-	public FileBuilder referableCategory(String referableCategory) {
-		this.map.put("referableCategory", referableCategory);
+	public FileBuilder category(String category) {
+		this.map.put("category", category);
 		return this;
 	}
 

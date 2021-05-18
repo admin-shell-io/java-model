@@ -65,6 +65,14 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 
 
 	/**
+	* "has referable category"
+	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	*/
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
+	protected String category;
+
+
+	/**
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
@@ -91,14 +99,6 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
 	protected String idShort;
-
-
-	/**
-	* "has referable category"
-	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	protected String referableCategory;
 
 
 	/**
@@ -135,7 +135,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 		return Objects.hash(new Object[]{this.allowDuplicates,
 			this.ordered,
 			this.values,
-			this.referableCategory,
+			this.category,
 			this.description,
 			this.displayName,
 			this.idShort,
@@ -158,7 +158,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 			return Objects.equals(this.allowDuplicates, other.allowDuplicates) &&
 				Objects.equals(this.ordered, other.ordered) &&
 				Objects.equals(this.values, other.values) &&
-				Objects.equals(this.referableCategory, other.referableCategory) &&
+				Objects.equals(this.category, other.category) &&
 				Objects.equals(this.description, other.description) &&
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort) &&
@@ -175,7 +175,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 		other.allowDuplicates = (boolean) Util.clone(this.allowDuplicates);
 		other.ordered = (boolean) Util.clone(this.ordered);
 		other.values = (List<SubmodelElement>) Util.clone(this.values);
-		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.category = (String) Util.clone(this.category);
 		other.description = (LangStringSet) Util.clone(this.description);
 		other.displayName = (LangStringSet) Util.clone(this.displayName);
 		other.idShort = (String) Util.clone(this.idShort);
@@ -218,13 +218,13 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 	}
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	final public String getReferableCategory() {
-		return referableCategory;
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
+	final public String getCategory() {
+		return category;
 	}
 	
-	final public void setReferableCategory (String referableCategory) {
-		this.referableCategory = referableCategory;
+	final public void setCategory (String category) {
+		this.category = category;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")

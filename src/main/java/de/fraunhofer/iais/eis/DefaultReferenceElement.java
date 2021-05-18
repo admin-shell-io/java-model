@@ -63,6 +63,14 @@ public class DefaultReferenceElement implements ReferenceElement {
 
 
 	/**
+	* "has referable category"
+	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	*/
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
+	protected String category;
+
+
+	/**
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
@@ -92,14 +100,6 @@ public class DefaultReferenceElement implements ReferenceElement {
 
 
 	/**
-	* "has referable category"
-	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	protected String referableCategory;
-
-
-	/**
 	* "has reference value"
 	* "Reference to any other referable element of the same of any other AAS or a reference to an external object or entity."@en
 	*/
@@ -114,7 +114,7 @@ public class DefaultReferenceElement implements ReferenceElement {
 	@Override
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.value,
-			this.referableCategory,
+			this.category,
 			this.description,
 			this.displayName,
 			this.idShort,
@@ -135,7 +135,7 @@ public class DefaultReferenceElement implements ReferenceElement {
 		} else {
 			DefaultReferenceElement other = (DefaultReferenceElement) obj;
 			return Objects.equals(this.value, other.value) &&
-				Objects.equals(this.referableCategory, other.referableCategory) &&
+				Objects.equals(this.category, other.category) &&
 				Objects.equals(this.description, other.description) &&
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort) &&
@@ -150,7 +150,7 @@ public class DefaultReferenceElement implements ReferenceElement {
 	public Object deepCopy() {
 		DefaultReferenceElement other = new DefaultReferenceElement();
 		other.value = (Reference) Util.clone(this.value);
-		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.category = (String) Util.clone(this.category);
 		other.description = (LangStringSet) Util.clone(this.description);
 		other.displayName = (LangStringSet) Util.clone(this.displayName);
 		other.idShort = (String) Util.clone(this.idShort);
@@ -176,13 +176,13 @@ public class DefaultReferenceElement implements ReferenceElement {
 
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	final public String getReferableCategory() {
-		return referableCategory;
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
+	final public String getCategory() {
+		return category;
 	}
 	
-	final public void setReferableCategory (String referableCategory) {
-		this.referableCategory = referableCategory;
+	final public void setCategory (String category) {
+		this.category = category;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")

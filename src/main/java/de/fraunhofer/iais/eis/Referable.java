@@ -37,11 +37,11 @@ public interface Referable extends ModelClass {
 
 	/**
 	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
-	* @return Returns the String for the property referableCategory.
-	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory
+	* @return Returns the String for the property category.
+	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/category
 	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	public String getReferableCategory();
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
+	public String getCategory();
 
 	/**
 	* "Description or comments on the element. The description can be provided in several languages."@en

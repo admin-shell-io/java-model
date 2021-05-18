@@ -70,6 +70,14 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 
 
 	/**
+	* "has referable category"
+	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
+	*/
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
+	protected String category;
+
+
+	/**
 	* "has description"
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
@@ -99,14 +107,6 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 
 
 	/**
-	* "has referable category"
-	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	protected String referableCategory;
-
-
-	/**
 	* "has first relationship"
 	* "First element in the relationship taking the role of the subject."@en
 	*/
@@ -131,7 +131,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 		return Objects.hash(new Object[]{this.annotations,
 			this.first,
 			this.second,
-			this.referableCategory,
+			this.category,
 			this.description,
 			this.displayName,
 			this.idShort,
@@ -154,7 +154,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 			return Objects.equals(this.annotations, other.annotations) &&
 				Objects.equals(this.first, other.first) &&
 				Objects.equals(this.second, other.second) &&
-				Objects.equals(this.referableCategory, other.referableCategory) &&
+				Objects.equals(this.category, other.category) &&
 				Objects.equals(this.description, other.description) &&
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort) &&
@@ -171,7 +171,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 		other.annotations = (List<DataElement>) Util.clone(this.annotations);
 		other.first = (Reference) Util.clone(this.first);
 		other.second = (Reference) Util.clone(this.second);
-		other.referableCategory = (String) Util.clone(this.referableCategory);
+		other.category = (String) Util.clone(this.category);
 		other.description = (LangStringSet) Util.clone(this.description);
 		other.displayName = (LangStringSet) Util.clone(this.displayName);
 		other.idShort = (String) Util.clone(this.idShort);
@@ -214,13 +214,13 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 	}
 
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-	final public String getReferableCategory() {
-		return referableCategory;
+	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
+	final public String getCategory() {
+		return category;
 	}
 	
-	final public void setReferableCategory (String referableCategory) {
-		this.referableCategory = referableCategory;
+	final public void setCategory (String category) {
+		this.category = category;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")

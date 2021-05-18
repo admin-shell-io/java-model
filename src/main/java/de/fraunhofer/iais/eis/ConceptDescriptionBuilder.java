@@ -46,6 +46,17 @@ public class ConceptDescriptionBuilder {
 
 
 	/**
+	* This function allows setting a value for embeddedDataSpecifications
+	* @param embeddedDataSpecifications desired value to be set
+	* @return Builder object with new value for embeddedDataSpecifications
+	*/
+	public ConceptDescriptionBuilder embeddedDataSpecifications(List<DataSpecification> embeddedDataSpecifications) {
+		this.map.put("embeddedDataSpecifications", embeddedDataSpecifications);
+		return this;
+	}
+
+
+	/**
 	* This function allows setting a value for dataSpecifications
 	* @param dataSpecifications desired value to be set
 	* @return Builder object with new value for dataSpecifications
@@ -79,12 +90,12 @@ public class ConceptDescriptionBuilder {
 
 
 	/**
-	* This function allows setting a value for referableCategory
-	* @param referableCategory desired value to be set
-	* @return Builder object with new value for referableCategory
+	* This function allows setting a value for category
+	* @param category desired value to be set
+	* @return Builder object with new value for category
 	*/
-	public ConceptDescriptionBuilder referableCategory(String referableCategory) {
-		this.map.put("referableCategory", referableCategory);
+	public ConceptDescriptionBuilder category(String category) {
+		this.map.put("category", category);
 		return this;
 	}
 
