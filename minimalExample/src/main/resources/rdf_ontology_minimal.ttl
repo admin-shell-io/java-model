@@ -103,7 +103,7 @@ aas:AssetInformation rdf:type owl:Class ;
 	  skos:note "Constraint AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global reference."@en ;
 .
 
-###  https://admin-shell.io/aas/3/0/RC01/AssetInformation/specifiAssetId
+###  https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId
 <https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId> rdf:type owl:ObjectProperty ;
     rdfs:domain aas:AssetInformation ;
     rdfs:range aas:IdentifierKeyValuePair ;
@@ -111,7 +111,7 @@ aas:AssetInformation rdf:type owl:Class ;
 	  rdfs:label "has specific asset id"^^xsd:string ;
 .
 
-###  https://admin-shell.io/aas/3/0/RC01/AssetInformation/thumbnail
+###  https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail
 <https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail> rdf:type owl:ObjectProperty ;
     rdfs:domain aas:AssetInformation ;
     rdfs:range aas:File ;
@@ -188,23 +188,36 @@ aas:ConceptDescription rdf:type owl:Class ;
 	skos:note "Constraint AASd-051: A ConceptDescription shall have one of the following categories: VALUE, PROPERTY, REFERENCE, DOCUMENT, CAPABILITY, RELATIONSHIP, COLLECTION, FUNCTION, EVENT, ENTITY, APPLICATION_CLASS, QUALIFIER, VIEW. Default: PROPERTY."@en ;
 .
 
-###  https://admin-shell.io/aas/3/0/RC01/ConceptDescription/content
-<https://admin-shell.io/aas/3/0/RC01/ConceptDescription/content> rdf:type owl:ObjectProperty ;
-    #rdfs:subPropertyOf dcterms:identifier ;
-    rdfs:comment "Link from a ConceptDescription to its explaining DataSpecificationContent."@en ;
-    rdfs:label "has content"^^xsd:string ;
-    rdfs:domain aas:ConceptDescription ;
-    rdfs:range aas:DataSpecificationContent ;
-.
-
 ###  https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf
 <https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf> rdf:type owl:ObjectProperty ;
-    #rdfs:subPropertyOf dcterms:identifier ;
+    rdfs:subPropertyOf dcterms:identifier ;
     rdfs:comment "Reference to an external definition the concept is compatible to or was derived from."@en ;
     skos:note "Compare to is-case-of relationship in ISO 13584-32 and IEC EN 61360."@en ;
     rdfs:label "is case of"^^xsd:string ;
     rdfs:domain aas:ConceptDescription ;
     rdfs:range aas:Reference ;
+.
+
+###  https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification
+<https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification> rdf:type owl:ObjectProperty ;
+    rdfs:comment "The embedded data specification template of the description of the concept."@en ;
+    rdfs:label "embedded data speciification"^^xsd:string ;
+    rdfs:domain aas:ConceptDescription ;
+    rdfs:range aas:DataSpecification ;
+.
+
+###  https://admin-shell.io/aas/3/0/RC01/DataSpecification
+<https://admin-shell.io/aas/3/0/RC01/DataSpecification> rdf:type owl:Class ;
+    rdfs:comment "Data specification template of the description of the concept."@en ;
+    rdfs:label "Data Specification"^^xsd:string ;
+.
+
+###  https://admin-shell.io/aas/3/0/RC01/DataSpecification/dataSpecificationContent
+<https://admin-shell.io/aas/3/0/RC01/DataSpecification/dataSpecificationContent> rdf:type owl:ObjectProperty ;
+    rdfs:comment "DataSpecificationContent contains the additional attributes to be added to the element instance that references the data specification template and meta information about the template itself."@en ;
+    rdfs:label "Data Specification Content"^^xsd:string ;
+    rdfs:domain aas:DataSpecification ;
+    rdfs:range aas:DataSpecificationContent ;
 .
 
 ###  https://admin-shell.io/aas/3/0/RC01/DataSpecificationContent
@@ -433,6 +446,53 @@ aas:IdentifierKeyValuePair rdf:type owl:Class ;
     rdfs:label "has IdentifierKeyValuePair.value"^^xsd:string ;
 .
 
+###  https://admin-shell.io/aas/3/0/RC01/Referable
+aas:Referable rdf:type owl:Class ;
+    dash:abstract true ;
+    rdfs:comment "An element that is referable by its idShort. This id is not globally unique. This id is unique within the name space of the element."@en ;
+    rdfs:label "Referable"^^xsd:string ;
+.
+
+###  https://admin-shell.io/aas/3/0/RC01/Referable/category
+<https://admin-shell.io/aas/3/0/RC01/Referable/category> rdf:type owl:DatatypeProperty ;
+    rdfs:label "has referable category"^^xsd:string ;
+    rdfs:comment "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en ;
+    rdfs:domain aas:Referable ;
+    rdfs:range xsd:string ;
+.
+
+###  https://admin-shell.io/aas/3/0/RC01/Referable/description
+<https://admin-shell.io/aas/3/0/RC01/Referable/description> rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf rdfs:comment ;
+    rdfs:label "has description"^^xsd:string ;
+    rdfs:domain aas:Referable ;
+    rdfs:range aas:LangStringSet ;
+    rdfs:comment "Description or comments on the element. The description can be provided in several languages."@en ;
+.
+
+###  https://admin-shell.io/aas/3/0/RC01/Referable/displayName
+<https://admin-shell.io/aas/3/0/RC01/Referable/displayName> rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf rdfs:comment ;
+    rdfs:label "has display name"^^xsd:string ;
+    rdfs:domain aas:Referable ;
+    rdfs:range aas:LangStringSet ;
+    rdfs:comment "Display name. Can be provided in several languages."@en ;
+.
+
+###  https://admin-shell.io/aas/3/0/RC01/Referable/idShort
+<https://admin-shell.io/aas/3/0/RC01/Referable/idShort> rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    rdfs:label "has short id"^^xsd:string ;
+    rdfs:comment "Identifying string of the element within its name space."@en ;
+    skos:note "Constraint AASd-002: idShort shall only feature letters, digits, underscore ('_'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en ;
+    skos:note "Constraint AASd-003: idShort shall be matched case-insensitive."@en ;
+	skos:note "Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en ;
+    skos:note "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en ;
+    skos:note "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the 'BrowserPath' in OPC UA."@en ;
+    rdfs:domain aas:Referable ;
+    rdfs:range xsd:string ;
+.
+
 ###  https://admin-shell.io/aas/3/0/RC01/Key
 aas:Key rdf:type owl:Class ;
     rdfs:comment "A key is a reference to an element by its id."@en ;
@@ -475,23 +535,6 @@ aas:KeyElements rdf:type owl:Class ;
 aas:KeyType rdf:type owl:Class ;
     rdfs:label "Key Type"^^xsd:string ;
     rdfs:comment "Enumeration of different key value types within a key. Contains IdentifierType and LocalKeyType."@en ;
-.
-
-###  https://admin-shell.io/aas/3/0/RC01/LocalKeyType
-aas:LocalKeyType rdf:type owl:Class ;
-    rdfs:subClassOf aas:KeyType ;
-    rdfs:label "Local Key Type"^^xsd:string ;
-    rdfs:comment "Enumeration of different key value types within a key."@en ;
-    owl:oneOf (
-       <https://admin-shell.io/aas/3/0/RC01/LocalKeyType/IDSHORT>
-       <https://admin-shell.io/aas/3/0/RC01/LocalKeyType/FRAGMENT_ID>
-    ) ;
-.
-
-###  https://admin-shell.io/aas/3/0/RC01/LocalKeyType/IDSHORT
-<https://admin-shell.io/aas/3/0/RC01/LocalKeyType/IDSHORT> rdf:type aas:LocalKeyType ;
-    rdfs:label "IdShort"^^xsd:string ;
-    rdfs:comment "idShort of a referable element"@en ;
 .
 
 ###  https://admin-shell.io/aas/3/0/RC01/Reference
