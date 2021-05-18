@@ -67,7 +67,7 @@ public class DefaultReferenceElement implements ReferenceElement {
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	protected List<LangStringSet> descriptions;
+	protected LangStringSet description;
 
 
 	/**
@@ -115,7 +115,7 @@ public class DefaultReferenceElement implements ReferenceElement {
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.value,
 			this.referableCategory,
-			this.descriptions,
+			this.description,
 			this.displayName,
 			this.idShort,
 			this.qualifiers,
@@ -136,7 +136,7 @@ public class DefaultReferenceElement implements ReferenceElement {
 			DefaultReferenceElement other = (DefaultReferenceElement) obj;
 			return Objects.equals(this.value, other.value) &&
 				Objects.equals(this.referableCategory, other.referableCategory) &&
-				Objects.equals(this.descriptions, other.descriptions) &&
+				Objects.equals(this.description, other.description) &&
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort) &&
 				Objects.equals(this.qualifiers, other.qualifiers) &&
@@ -151,7 +151,7 @@ public class DefaultReferenceElement implements ReferenceElement {
 		DefaultReferenceElement other = new DefaultReferenceElement();
 		other.value = (Reference) Util.clone(this.value);
 		other.referableCategory = (String) Util.clone(this.referableCategory);
-		other.descriptions = (List<LangStringSet>) Util.clone(this.descriptions);
+		other.description = (LangStringSet) Util.clone(this.description);
 		other.displayName = (LangStringSet) Util.clone(this.displayName);
 		other.idShort = (String) Util.clone(this.idShort);
 		other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
@@ -186,12 +186,12 @@ public class DefaultReferenceElement implements ReferenceElement {
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	final public List<LangStringSet> getDescriptions() {
-		return descriptions;
+	final public LangStringSet getDescription() {
+		return description;
 	}
 	
-	final public void setDescriptions (List<LangStringSet> descriptions) {
-		this.descriptions = descriptions;
+	final public void setDescription (LangStringSet description) {
+		this.description = description;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")

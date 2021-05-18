@@ -58,11 +58,11 @@ public interface AssetAdministrationShell extends ModelClass, HasDataSpecificati
 
 	/**
 	* "Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset"@en
-	* @return Returns the List of References for the property submodels.
+	* @return Returns the List of Submodels for the property submodels.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
-	public List<Reference> getSubmodels();
+	public List<Submodel> getSubmodels();
 
 	/**
 	* "Points to the differents views associated to the Administration Shell via the Submodels."@en

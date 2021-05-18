@@ -35,17 +35,6 @@ public class ConceptDescriptionBuilder {
 
 
 	/**
-	* This function allows setting a value for contents
-	* @param contents desired value to be set
-	* @return Builder object with new value for contents
-	*/
-	public ConceptDescriptionBuilder contents(List<DataSpecificationContent> contents) {
-		this.map.put("contents", contents);
-		return this;
-	}
-
-
-	/**
 	* This function allows setting a value for isCaseOfs
 	* @param isCaseOfs desired value to be set
 	* @return Builder object with new value for isCaseOfs
@@ -101,12 +90,12 @@ public class ConceptDescriptionBuilder {
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	public ConceptDescriptionBuilder descriptions(List<LangStringSet> descriptions) {
-		this.map.put("descriptions", descriptions);
+	public ConceptDescriptionBuilder description(LangStringSet description) {
+		this.map.put("description", description);
 		return this;
 	}
 

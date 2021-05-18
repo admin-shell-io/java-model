@@ -37,11 +37,11 @@ public interface MultiLanguageProperty extends ModelClass, DataElement {
 	* "Constraint AASd-052b: If the semanticId of a MultiLanguageProperty references a ConceptDescription then the ConceptDescription/category shall be one of  following values: PROPERTY."@en
 	* "Constraint AASd-012: If both, the MultiLanguageProperty/value and the MultiLanguageProperty/valueId are present then for each string in a specific language the meaning must be the same as specified in MultiLanguageProperty/valueId."@en
 	* "Constraint AASd-067: If the semanticId of a MultiLanguageProperty references a ConceptDescription then DataSpecificationIEC61360/dataType shall be STRING_TRANSLATABLE."@en
-	* @return Returns the List of LangStringSets for the property values.
+	* @return Returns the LangStringSet for the property value.
 	* More information under https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value")
-	public List<LangStringSet> getValues();
+	public LangStringSet getValue();
 
 	/**
 	* "Reference to the global unqiue id of a coded value."@en

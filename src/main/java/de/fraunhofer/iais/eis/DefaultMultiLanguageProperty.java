@@ -61,7 +61,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 	* "Constraint AASd-067: If the semanticId of a MultiLanguageProperty references a ConceptDescription then DataSpecificationIEC61360/dataType shall be STRING_TRANSLATABLE."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value")
-	protected List<LangStringSet> values;
+	protected LangStringSet value;
 
 
 	/**
@@ -85,7 +85,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	protected List<LangStringSet> descriptions;
+	protected LangStringSet description;
 
 
 	/**
@@ -123,10 +123,10 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.values,
+		return Objects.hash(new Object[]{this.value,
 			this.valueId,
 			this.referableCategory,
-			this.descriptions,
+			this.description,
 			this.displayName,
 			this.idShort,
 			this.qualifiers,
@@ -145,10 +145,10 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 			return false;
 		} else {
 			DefaultMultiLanguageProperty other = (DefaultMultiLanguageProperty) obj;
-			return Objects.equals(this.values, other.values) &&
+			return Objects.equals(this.value, other.value) &&
 				Objects.equals(this.valueId, other.valueId) &&
 				Objects.equals(this.referableCategory, other.referableCategory) &&
-				Objects.equals(this.descriptions, other.descriptions) &&
+				Objects.equals(this.description, other.description) &&
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort) &&
 				Objects.equals(this.qualifiers, other.qualifiers) &&
@@ -161,10 +161,10 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 	@Override
 	public Object deepCopy() {
 		DefaultMultiLanguageProperty other = new DefaultMultiLanguageProperty();
-		other.values = (List<LangStringSet>) Util.clone(this.values);
+		other.value = (LangStringSet) Util.clone(this.value);
 		other.valueId = (Reference) Util.clone(this.valueId);
 		other.referableCategory = (String) Util.clone(this.referableCategory);
-		other.descriptions = (List<LangStringSet>) Util.clone(this.descriptions);
+		other.description = (LangStringSet) Util.clone(this.description);
 		other.displayName = (LangStringSet) Util.clone(this.displayName);
 		other.idShort = (String) Util.clone(this.idShort);
 		other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
@@ -179,12 +179,12 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value")
-	final public List<LangStringSet> getValues() {
-		return values;
+	final public LangStringSet getValue() {
+		return value;
 	}
 	
-	final public void setValues (List<LangStringSet> values) {
-		this.values = values;
+	final public void setValue (LangStringSet value) {
+		this.value = value;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId")
@@ -208,12 +208,12 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	final public List<LangStringSet> getDescriptions() {
-		return descriptions;
+	final public LangStringSet getDescription() {
+		return description;
 	}
 	
-	final public void setDescriptions (List<LangStringSet> descriptions) {
-		this.descriptions = descriptions;
+	final public void setDescription (LangStringSet description) {
+		this.description = description;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")

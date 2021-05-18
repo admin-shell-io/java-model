@@ -35,12 +35,12 @@ public class MultiLanguagePropertyBuilder {
 
 
 	/**
-	* This function allows setting a value for values
-	* @param values desired value to be set
-	* @return Builder object with new value for values
+	* This function allows setting a value for value
+	* @param value desired value to be set
+	* @return Builder object with new value for value
 	*/
-	public MultiLanguagePropertyBuilder values(List<LangStringSet> values) {
-		this.map.put("values", values);
+	public MultiLanguagePropertyBuilder value(LangStringSet value) {
+		this.map.put("value", value);
 		return this;
 	}
 
@@ -70,12 +70,12 @@ public class MultiLanguagePropertyBuilder {
 
 
 	/**
-	* This function allows setting a value for descriptions
-	* @param descriptions desired value to be set
-	* @return Builder object with new value for descriptions
+	* This function allows setting a value for description
+	* @param description desired value to be set
+	* @return Builder object with new value for description
 	*/
-	public MultiLanguagePropertyBuilder descriptions(List<LangStringSet> descriptions) {
-		this.map.put("descriptions", descriptions);
+	public MultiLanguagePropertyBuilder description(LangStringSet description) {
+		this.map.put("description", description);
 		return this;
 	}
 

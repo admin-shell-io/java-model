@@ -34,14 +34,6 @@ public interface ConceptDescription extends ModelClass, HasDataSpecification, Id
 
 
 	/**
-	* "Link from a ConceptDescription to its explaining DataSpecificationContent."@en
-	* @return Returns the List of DataSpecificationContents for the property contents.
-	* More information under https://admin-shell.io/aas/3/0/RC01/ConceptDescription/content
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/content")
-	public List<DataSpecificationContent> getContents();
-
-	/**
 	* "Reference to an external definition the concept is compatible to or was derived from."@en
 	* "Compare to is-case-of relationship in ISO 13584-32 and IEC EN 61360."@en
 	* @return Returns the List of References for the property isCaseOfs.

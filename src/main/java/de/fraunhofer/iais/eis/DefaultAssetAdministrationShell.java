@@ -57,7 +57,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	* "Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset"@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
-	protected List<Reference> submodels;
+	protected List<Submodel> submodels;
 
 
 	/**
@@ -98,7 +98,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	protected List<LangStringSet> descriptions;
+	protected LangStringSet description;
 
 
 	/**
@@ -145,7 +145,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 			this.administration,
 			this.identification,
 			this.referableCategory,
-			this.descriptions,
+			this.description,
 			this.displayName,
 			this.idShort});
 	}
@@ -169,7 +169,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 				Objects.equals(this.administration, other.administration) &&
 				Objects.equals(this.identification, other.identification) &&
 				Objects.equals(this.referableCategory, other.referableCategory) &&
-				Objects.equals(this.descriptions, other.descriptions) &&
+				Objects.equals(this.description, other.description) &&
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort);
 		}
@@ -181,13 +181,13 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 		other.assetInformation = (AssetInformation) Util.clone(this.assetInformation);
 		other.derivedFrom = (Reference) Util.clone(this.derivedFrom);
 		other.security = (Security) Util.clone(this.security);
-		other.submodels = (List<Reference>) Util.clone(this.submodels);
+		other.submodels = (List<Submodel>) Util.clone(this.submodels);
 		other.views = (List<View>) Util.clone(this.views);
 		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
 		other.administration = (AdministrativeInformation) Util.clone(this.administration);
 		other.identification = (Identifier) Util.clone(this.identification);
 		other.referableCategory = (String) Util.clone(this.referableCategory);
-		other.descriptions = (List<LangStringSet>) Util.clone(this.descriptions);
+		other.description = (LangStringSet) Util.clone(this.description);
 		other.displayName = (LangStringSet) Util.clone(this.displayName);
 		other.idShort = (String) Util.clone(this.idShort);
 		return other;
@@ -225,11 +225,11 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
-	final public List<Reference> getSubmodels() {
+	final public List<Submodel> getSubmodels() {
 		return submodels;
 	}
 	
-	final public void setSubmodels (List<Reference> submodels) {
+	final public void setSubmodels (List<Submodel> submodels) {
 		this.submodels = submodels;
 	}
 
@@ -279,12 +279,12 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	final public List<LangStringSet> getDescriptions() {
-		return descriptions;
+	final public LangStringSet getDescription() {
+		return description;
 	}
 	
-	final public void setDescriptions (List<LangStringSet> descriptions) {
-		this.descriptions = descriptions;
+	final public void setDescription (LangStringSet description) {
+		this.description = description;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")

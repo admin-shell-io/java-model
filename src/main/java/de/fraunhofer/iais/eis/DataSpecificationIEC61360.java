@@ -46,11 +46,11 @@ public interface DataSpecificationIEC61360 extends ModelClass, DataSpecification
 
 	/**
 	* "Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions of category VALUE using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/definition is mandatory and shall be defined at least in English."@en
-	* @return Returns the List of LangStringSets for the property definitions.
+	* @return Returns the LangStringSet for the property definition.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition
 	*/
 	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
-	public List<LangStringSet> getDefinitions();
+	public LangStringSet getDefinition();
 
 	/**
 	* @return Returns the List of LevelTypes for the property levelTypes.

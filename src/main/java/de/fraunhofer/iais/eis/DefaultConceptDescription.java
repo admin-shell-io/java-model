@@ -30,14 +30,6 @@ public class DefaultConceptDescription implements ConceptDescription {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	* "has content"
-	* "Link from a ConceptDescription to its explaining DataSpecificationContent."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/content")
-	protected List<DataSpecificationContent> contents;
-
-
-	/**
 	* "is case of"
 	* "Reference to an external definition the concept is compatible to or was derived from."@en
 	* "Compare to is-case-of relationship in ISO 13584-32 and IEC EN 61360."@en
@@ -76,7 +68,7 @@ public class DefaultConceptDescription implements ConceptDescription {
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	protected List<LangStringSet> descriptions;
+	protected LangStringSet description;
 
 
 	/**
@@ -114,13 +106,12 @@ public class DefaultConceptDescription implements ConceptDescription {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.contents,
-			this.isCaseOfs,
+		return Objects.hash(new Object[]{this.isCaseOfs,
 			this.dataSpecifications,
 			this.administration,
 			this.identification,
 			this.referableCategory,
-			this.descriptions,
+			this.description,
 			this.displayName,
 			this.idShort});
 	}
@@ -135,13 +126,12 @@ public class DefaultConceptDescription implements ConceptDescription {
 			return false;
 		} else {
 			DefaultConceptDescription other = (DefaultConceptDescription) obj;
-			return Objects.equals(this.contents, other.contents) &&
-				Objects.equals(this.isCaseOfs, other.isCaseOfs) &&
+			return Objects.equals(this.isCaseOfs, other.isCaseOfs) &&
 				Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
 				Objects.equals(this.administration, other.administration) &&
 				Objects.equals(this.identification, other.identification) &&
 				Objects.equals(this.referableCategory, other.referableCategory) &&
-				Objects.equals(this.descriptions, other.descriptions) &&
+				Objects.equals(this.description, other.description) &&
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort);
 		}
@@ -150,13 +140,12 @@ public class DefaultConceptDescription implements ConceptDescription {
 	@Override
 	public Object deepCopy() {
 		DefaultConceptDescription other = new DefaultConceptDescription();
-		other.contents = (List<DataSpecificationContent>) Util.clone(this.contents);
 		other.isCaseOfs = (List<Reference>) Util.clone(this.isCaseOfs);
 		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
 		other.administration = (AdministrativeInformation) Util.clone(this.administration);
 		other.identification = (Identifier) Util.clone(this.identification);
 		other.referableCategory = (String) Util.clone(this.referableCategory);
-		other.descriptions = (List<LangStringSet>) Util.clone(this.descriptions);
+		other.description = (LangStringSet) Util.clone(this.description);
 		other.displayName = (LangStringSet) Util.clone(this.displayName);
 		other.idShort = (String) Util.clone(this.idShort);
 		return other;
@@ -165,15 +154,6 @@ public class DefaultConceptDescription implements ConceptDescription {
 
 	// accessor method implementations as derived from the Asset Administration Shell ontology
 
-
-	@IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/content")
-	final public List<DataSpecificationContent> getContents() {
-		return contents;
-	}
-	
-	final public void setContents (List<DataSpecificationContent> contents) {
-		this.contents = contents;
-	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf")
 	final public List<Reference> getIsCaseOfs() {
@@ -221,12 +201,12 @@ public class DefaultConceptDescription implements ConceptDescription {
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	final public List<LangStringSet> getDescriptions() {
-		return descriptions;
+	final public LangStringSet getDescription() {
+		return description;
 	}
 	
-	final public void setDescriptions (List<LangStringSet> descriptions) {
-		this.descriptions = descriptions;
+	final public void setDescription (LangStringSet description) {
+		this.description = description;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")

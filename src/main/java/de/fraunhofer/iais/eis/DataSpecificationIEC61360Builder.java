@@ -46,12 +46,12 @@ public class DataSpecificationIEC61360Builder {
 
 
 	/**
-	* This function allows setting a value for definitions
-	* @param definitions desired value to be set
-	* @return Builder object with new value for definitions
+	* This function allows setting a value for definition
+	* @param definition desired value to be set
+	* @return Builder object with new value for definition
 	*/
-	public DataSpecificationIEC61360Builder definitions(List<LangStringSet> definitions) {
-		this.map.put("definitions", definitions);
+	public DataSpecificationIEC61360Builder definition(LangStringSet definition) {
+		this.map.put("definition", definition);
 		return this;
 	}
 
