@@ -43,7 +43,7 @@ public interface ConceptDescription extends ModelClass, HasDataSpecification, Id
 	public List<Reference> getIsCaseOfs();
 
 	/**
-	* "Reference to an external definition the concept is compatible to or was derived from."@en
+	* "The embedded data specification template of the description of the concept."@en
 	* @return Returns the List of DataSpecifications for the property embeddedDataSpecifications.
 	* More information under https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification
 	*/

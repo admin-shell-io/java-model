@@ -30,8 +30,8 @@ public class DefaultConceptDescription implements ConceptDescription {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	* "is case of"
-	* "Reference to an external definition the concept is compatible to or was derived from."@en
+	* "embedded data speciification"
+	* "The embedded data specification template of the description of the concept."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification")
 	protected List<DataSpecification> embeddedDataSpecifications;

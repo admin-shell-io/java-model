@@ -19,8 +19,8 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
-* "is case of"
-* "Reference to an external definition the concept is compatible to or was derived from."@en
+* "Data Specification"
+* "Data specification template of the description of the concept."@en
 */
 @KnownSubtypes({
 	@KnownSubtypes.Type(value = DefaultDataSpecification.class)
@@ -33,7 +33,7 @@ public interface DataSpecification extends ModelClass {
 
 
 	/**
-	* "Reference to an external definition the concept is compatible to or was derived from."@en
+	* "DataSpecificationContent contains the additional attributes to be added to the element instance that references the data specification template and meta information about the template itself."@en
 	* @return Returns the List of DataSpecificationContents for the property dataSpecificationContents.
 	* More information under https://admin-shell.io/aas/3/0/RC01/DataSpecification/dataSpecificationContent
 	*/

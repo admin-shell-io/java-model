@@ -19,8 +19,8 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /** 
-* "is case of"
-* "Reference to an external definition the concept is compatible to or was derived from."@en 
+* "Data Specification"
+* "Data specification template of the description of the concept."@en 
 */
 
 public class DefaultDataSpecification implements DataSpecification {
@@ -29,8 +29,8 @@ public class DefaultDataSpecification implements DataSpecification {
 	// instance fields as derived from the Asset Administration Shell ontology
 
 	/**
-	* "is case of"
-	* "Reference to an external definition the concept is compatible to or was derived from."@en
+	* "Data Specification Content"
+	* "DataSpecificationContent contains the additional attributes to be added to the element instance that references the data specification template and meta information about the template itself."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/DataSpecification/dataSpecificationContent")
 	protected List<DataSpecificationContent> dataSpecificationContents;
