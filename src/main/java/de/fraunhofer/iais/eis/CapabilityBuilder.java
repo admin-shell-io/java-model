@@ -48,12 +48,12 @@ public class CapabilityBuilder {
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	public CapabilityBuilder description(TypedLiteral description) {
-		this.map.put("description", description);
+	public CapabilityBuilder descriptions(List<LangStringSet> descriptions) {
+		this.map.put("descriptions", descriptions);
 		return this;
 	}
 
@@ -63,7 +63,7 @@ public class CapabilityBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	public CapabilityBuilder displayName(TypedLiteral displayName) {
+	public CapabilityBuilder displayName(LangStringSet displayName) {
 		this.map.put("displayName", displayName);
 		return this;
 	}

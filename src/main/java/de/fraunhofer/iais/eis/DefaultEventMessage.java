@@ -67,7 +67,7 @@ public class DefaultEventMessage implements EventMessage {
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	protected TypedLiteral description;
+	protected List<LangStringSet> descriptions;
 
 
 	/**
@@ -75,7 +75,7 @@ public class DefaultEventMessage implements EventMessage {
 	* "Display name. Can be provided in several languages."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-	protected TypedLiteral displayName;
+	protected LangStringSet displayName;
 
 
 	/**
@@ -106,7 +106,7 @@ public class DefaultEventMessage implements EventMessage {
 	@Override
 	public int hashCode() {
 		return Objects.hash(new Object[]{this.referableCategory,
-			this.description,
+			this.descriptions,
 			this.displayName,
 			this.idShort,
 			this.qualifiers,
@@ -126,7 +126,7 @@ public class DefaultEventMessage implements EventMessage {
 		} else {
 			DefaultEventMessage other = (DefaultEventMessage) obj;
 			return Objects.equals(this.referableCategory, other.referableCategory) &&
-				Objects.equals(this.description, other.description) &&
+				Objects.equals(this.descriptions, other.descriptions) &&
 				Objects.equals(this.displayName, other.displayName) &&
 				Objects.equals(this.idShort, other.idShort) &&
 				Objects.equals(this.qualifiers, other.qualifiers) &&
@@ -140,8 +140,8 @@ public class DefaultEventMessage implements EventMessage {
 	public Object deepCopy() {
 		DefaultEventMessage other = new DefaultEventMessage();
 		other.referableCategory = (String) Util.clone(this.referableCategory);
-		other.description = (TypedLiteral) Util.clone(this.description);
-		other.displayName = (TypedLiteral) Util.clone(this.displayName);
+		other.descriptions = (List<LangStringSet>) Util.clone(this.descriptions);
+		other.displayName = (LangStringSet) Util.clone(this.displayName);
 		other.idShort = (String) Util.clone(this.idShort);
 		other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
 		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
@@ -166,20 +166,20 @@ public class DefaultEventMessage implements EventMessage {
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	final public TypedLiteral getDescription() {
-		return description;
+	final public List<LangStringSet> getDescriptions() {
+		return descriptions;
 	}
 	
-	final public void setDescription (TypedLiteral description) {
-		this.description = description;
+	final public void setDescriptions (List<LangStringSet> descriptions) {
+		this.descriptions = descriptions;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-	final public TypedLiteral getDisplayName() {
+	final public LangStringSet getDisplayName() {
 		return displayName;
 	}
 	
-	final public void setDisplayName (TypedLiteral displayName) {
+	final public void setDisplayName (LangStringSet displayName) {
 		this.displayName = displayName;
 	}
 

@@ -57,12 +57,12 @@ public class ViewBuilder {
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	public ViewBuilder description(TypedLiteral description) {
-		this.map.put("description", description);
+	public ViewBuilder descriptions(List<LangStringSet> descriptions) {
+		this.map.put("descriptions", descriptions);
 		return this;
 	}
 
@@ -72,7 +72,7 @@ public class ViewBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	public ViewBuilder displayName(TypedLiteral displayName) {
+	public ViewBuilder displayName(LangStringSet displayName) {
 		this.map.put("displayName", displayName);
 		return this;
 	}

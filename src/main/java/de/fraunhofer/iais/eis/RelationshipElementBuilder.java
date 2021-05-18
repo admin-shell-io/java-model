@@ -69,12 +69,12 @@ public class RelationshipElementBuilder {
 
 
 	/**
-	* This function allows setting a value for description
-	* @param description desired value to be set
-	* @return Builder object with new value for description
+	* This function allows setting a value for descriptions
+	* @param descriptions desired value to be set
+	* @return Builder object with new value for descriptions
 	*/
-	public RelationshipElementBuilder description(TypedLiteral description) {
-		this.map.put("description", description);
+	public RelationshipElementBuilder descriptions(List<LangStringSet> descriptions) {
+		this.map.put("descriptions", descriptions);
 		return this;
 	}
 
@@ -84,7 +84,7 @@ public class RelationshipElementBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	public RelationshipElementBuilder displayName(TypedLiteral displayName) {
+	public RelationshipElementBuilder displayName(LangStringSet displayName) {
 		this.map.put("displayName", displayName);
 		return this;
 	}
