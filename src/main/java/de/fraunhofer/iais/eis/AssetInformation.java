@@ -59,11 +59,11 @@ public interface AssetInformation extends ModelClass {
 
 	/**
 	* "A reference to a Submodel that defines the bill of material of the asset represented by the AAS. This submodel contains a set of entities describing the material used to compose the composite I4.0 Component."@en
-	* @return Returns the List of References for the property billOfMaterials.
+	* @return Returns the List of Submodels for the property billOfMaterials.
 	* More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial")
-	public List<Reference> getBillOfMaterials();
+	public List<Submodel> getBillOfMaterials();
 
 	/**
 	* "Thumbnail of the asset represented by the asset administration shell."@en

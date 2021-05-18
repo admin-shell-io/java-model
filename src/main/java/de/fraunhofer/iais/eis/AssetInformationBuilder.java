@@ -72,7 +72,7 @@ public class AssetInformationBuilder {
 	* @param billOfMaterials desired value to be set
 	* @return Builder object with new value for billOfMaterials
 	*/
-	public AssetInformationBuilder billOfMaterials(List<Reference> billOfMaterials) {
+	public AssetInformationBuilder billOfMaterials(List<Submodel> billOfMaterials) {
 		this.map.put("billOfMaterials", billOfMaterials);
 		return this;
 	}

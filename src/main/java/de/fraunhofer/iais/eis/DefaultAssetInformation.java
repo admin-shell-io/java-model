@@ -41,7 +41,7 @@ public class DefaultAssetInformation implements AssetInformation {
 	* "A reference to a Submodel that defines the bill of material of the asset represented by the AAS. This submodel contains a set of entities describing the material used to compose the composite I4.0 Component."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial")
-	protected List<Reference> billOfMaterials;
+	protected List<Submodel> billOfMaterials;
 
 
 	/**
@@ -106,7 +106,7 @@ public class DefaultAssetInformation implements AssetInformation {
 		other.assetKind = (AssetKind) Util.clone(this.assetKind);
 		other.globalAssetId = (Reference) Util.clone(this.globalAssetId);
 		other.specificAssetIds = (List<IdentifierKeyValuePair>) Util.clone(this.specificAssetIds);
-		other.billOfMaterials = (List<Reference>) Util.clone(this.billOfMaterials);
+		other.billOfMaterials = (List<Submodel>) Util.clone(this.billOfMaterials);
 		other.defaultThumbnail = (File) Util.clone(this.defaultThumbnail);
 		return other;
 	}
@@ -143,11 +143,11 @@ public class DefaultAssetInformation implements AssetInformation {
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial")
-	final public List<Reference> getBillOfMaterials() {
+	final public List<Submodel> getBillOfMaterials() {
 		return billOfMaterials;
 	}
 	
-	final public void setBillOfMaterials (List<Reference> billOfMaterials) {
+	final public void setBillOfMaterials (List<Submodel> billOfMaterials) {
 		this.billOfMaterials = billOfMaterials;
 	}
 
