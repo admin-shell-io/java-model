@@ -194,6 +194,7 @@ public class DefaultFile implements File {
 	}
 
 
+
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
 	final public String getCategory() {
 		return category;

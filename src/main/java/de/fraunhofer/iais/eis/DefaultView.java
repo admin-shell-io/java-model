@@ -88,7 +88,7 @@ public class DefaultView implements View {
 	* "Referable elements that are contained in the view."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
-	protected List<Reference> containedElements;
+	protected List<Referable> containedElements;
 
 
 	// no manual construction
@@ -129,7 +129,7 @@ public class DefaultView implements View {
 	@Override
 	public Object deepCopy() {
 		DefaultView other = new DefaultView();
-		other.containedElements = (List<Reference>) Util.clone(this.containedElements);
+		other.containedElements = (List<Referable>) Util.clone(this.containedElements);
 		other.category = (String) Util.clone(this.category);
 		other.description = (LangStringSet) Util.clone(this.description);
 		other.displayName = (LangStringSet) Util.clone(this.displayName);
@@ -144,11 +144,11 @@ public class DefaultView implements View {
 
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
-	final public List<Reference> getContainedElements() {
+	final public List<Referable> getContainedElements() {
 		return containedElements;
 	}
 	
-	final public void setContainedElements (List<Reference> containedElements) {
+	final public void setContainedElements (List<Referable> containedElements) {
 		this.containedElements = containedElements;
 	}
 

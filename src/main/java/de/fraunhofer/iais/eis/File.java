@@ -25,7 +25,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @KnownSubtypes({
 	@KnownSubtypes.Type(value = DefaultFile.class)
 })
-public interface File extends ModelClass, SubmodelElement {
+public interface File extends ModelClass, DataElement, SubmodelElement {
 
 	// standard methods
 

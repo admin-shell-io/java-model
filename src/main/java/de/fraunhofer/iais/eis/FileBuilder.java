@@ -57,6 +57,7 @@ public class FileBuilder {
 
 
 
+
 	/**
 	* This function allows setting a value for category
 	* @param category desired value to be set

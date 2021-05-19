@@ -39,7 +39,7 @@ public class ViewBuilder {
 	* @param containedElements desired value to be set
 	* @return Builder object with new value for containedElements
 	*/
-	public ViewBuilder containedElements(List<Reference> containedElements) {
+	public ViewBuilder containedElements(List<Referable> containedElements) {
 		this.map.put("containedElements", containedElements);
 		return this;
 	}

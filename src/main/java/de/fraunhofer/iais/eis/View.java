@@ -35,10 +35,10 @@ public interface View extends ModelClass, Referable, HasDataSpecification, HasSe
 
 	/**
 	* "Referable elements that are contained in the view."@en
-	* @return Returns the List of References for the property containedElements.
+	* @return Returns the List of Referables for the property containedElements.
 	* More information under https://admin-shell.io/aas/3/0/RC01/View/containedElement
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
-	public List<Reference> getContainedElements();
+	public List<Referable> getContainedElements();
 
 }
