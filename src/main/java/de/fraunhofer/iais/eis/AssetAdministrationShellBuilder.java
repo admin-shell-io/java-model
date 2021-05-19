@@ -72,7 +72,7 @@ public class AssetAdministrationShellBuilder {
 	* @param submodels desired value to be set
 	* @return Builder object with new value for submodels
 	*/
-	public AssetAdministrationShellBuilder submodels(List<Submodel> submodels) {
+	public AssetAdministrationShellBuilder submodels(List<Reference> submodels) {
 		this.map.put("submodels", submodels);
 		return this;
 	}

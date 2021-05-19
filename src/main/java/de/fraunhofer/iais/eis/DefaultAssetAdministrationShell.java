@@ -57,7 +57,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	* "Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset"@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
-	protected List<Submodel> submodels;
+	protected List<Reference> submodels;
 
 
 	/**
@@ -181,7 +181,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 		other.assetInformation = (AssetInformation) Util.clone(this.assetInformation);
 		other.derivedFrom = (Reference) Util.clone(this.derivedFrom);
 		other.security = (Security) Util.clone(this.security);
-		other.submodels = (List<Submodel>) Util.clone(this.submodels);
+		other.submodels = (List<Reference>) Util.clone(this.submodels);
 		other.views = (List<View>) Util.clone(this.views);
 		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
 		other.administration = (AdministrativeInformation) Util.clone(this.administration);
@@ -225,11 +225,11 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
-	final public List<Submodel> getSubmodels() {
+	final public List<Reference> getSubmodels() {
 		return submodels;
 	}
 	
-	final public void setSubmodels (List<Submodel> submodels) {
+	final public void setSubmodels (List<Reference> submodels) {
 		this.submodels = submodels;
 	}
 
