@@ -50,7 +50,7 @@ public class RC01Builder {
 	* @param definitions desired value to be set
 	* @return Builder object with new value for definitions
 	*/
-	public RC01Builder definitions(List<TypedLiteral> definitions) {
+	public RC01Builder definitions(List<LangString> definitions) {
 		this.map.put("definitions", definitions);
 		return this;
 	}

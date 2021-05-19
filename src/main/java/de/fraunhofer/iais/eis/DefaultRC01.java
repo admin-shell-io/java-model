@@ -39,7 +39,7 @@ public class DefaultRC01 implements RC01 {
 	* "has definition"
 	*/
 	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/definition")
-	protected List<TypedLiteral> definitions;
+	protected List<LangString> definitions;
 
 
 	/**
@@ -161,7 +161,7 @@ public class DefaultRC01 implements RC01 {
 	public Object deepCopy() {
 		DefaultRC01 other = new DefaultRC01();
 		other.conversionFactors = (List<String>) Util.clone(this.conversionFactors);
-		other.definitions = (List<TypedLiteral>) Util.clone(this.definitions);
+		other.definitions = (List<LangString>) Util.clone(this.definitions);
 		other.dinNotations = (List<String>) Util.clone(this.dinNotations);
 		other.eceCodes = (List<String>) Util.clone(this.eceCodes);
 		other.eceNames = (List<String>) Util.clone(this.eceNames);
@@ -189,11 +189,11 @@ public class DefaultRC01 implements RC01 {
 	}
 
 	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/definition")
-	final public List<TypedLiteral> getDefinitions() {
+	final public List<LangString> getDefinitions() {
 		return definitions;
 	}
 	
-	final public void setDefinitions (List<TypedLiteral> definitions) {
+	final public void setDefinitions (List<LangString> definitions) {
 		this.definitions = definitions;
 	}
 

@@ -30,130 +30,127 @@ public enum KeyElements {
 	/** 
 	* "Asset"
 	*/
-	ASSET("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/ASSET", Arrays.asList(new TypedLiteral("Asset", "")), Collections.emptyList()),
+	ASSET,
 
 	/** 
 	* "Asset Administration Shell"
 	*/
-	ASSET_ADMINISTRATION_SHELL("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/ASSET_ADMINISTRATION_SHELL", Arrays.asList(new TypedLiteral("Asset Administration Shell", "")), Collections.emptyList()),
+	ASSET_ADMINISTRATION_SHELL,
 
 	/** 
 	* "Concept Description"
 	*/
-	CONCEPT_DESCRIPTION("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/CONCEPT_DESCRIPTION", Arrays.asList(new TypedLiteral("Concept Description", "")), Collections.emptyList()),
+	CONCEPT_DESCRIPTION,
 
 	/** 
 	* "Submodel"
 	*/
-	SUBMODEL("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/SUBMODEL", Arrays.asList(new TypedLiteral("Submodel", "")), Collections.emptyList()),
+	SUBMODEL,
 
 	/** 
 	* "Fragement Reference"
 	*/
-	FRAGMENT_REFERENCE("https://admin-shell.io/aas/3/0/RC01/KeyElements/FRAGMENT_REFERENCE", Arrays.asList(new TypedLiteral("Fragement Reference", "")), Collections.emptyList()),
+	FRAGMENT_REFERENCE,
 
 	/** 
 	* "Gobal Reference"
 	* "reference to an element not belonging to an asset administration shell"@en
 	*/
-	GLOBAL_REFERENCE("https://admin-shell.io/aas/3/0/RC01/KeyElements/GLOBAL_REFERENCE", Arrays.asList(new TypedLiteral("Gobal Reference", "")), Arrays.asList(new TypedLiteral("reference to an element not belonging to an asset administration shell", "en"))),
+	GLOBAL_REFERENCE,
 
 	/** 
 	* "Access Permission Rule"
 	*/
-	ACCESS_PERMISSION_RULE("https://admin-shell.io/aas/3/0/RC01/ReferableElements/ACCESS_PERMISSION_RULE", Arrays.asList(new TypedLiteral("Access Permission Rule", "")), Collections.emptyList()),
+	ACCESS_PERMISSION_RULE,
 
 	/** 
 	* "Annotated relationship element"
 	*/
-	ANNOTATED_RELATIONSHIP_ELEMENT("https://admin-shell.io/aas/3/0/RC01/ReferableElements/ANNOTATED_RELATIONSHIP_ELEMENT", Arrays.asList(new TypedLiteral("Annotated relationship element", "")), Collections.emptyList()),
+	ANNOTATED_RELATIONSHIP_ELEMENT,
 
 	/** 
 	* "Basic Event"
 	*/
-	BASIC_EVENT("https://admin-shell.io/aas/3/0/RC01/ReferableElements/BASIC_EVENT", Arrays.asList(new TypedLiteral("Basic Event", "")), Collections.emptyList()),
+	BASIC_EVENT,
 
 	/** 
 	* "Blob"
 	*/
-	BLOB("https://admin-shell.io/aas/3/0/RC01/ReferableElements/BLOB", Arrays.asList(new TypedLiteral("Blob", "")), Collections.emptyList()),
+	BLOB,
 
 	/** 
 	* "Capability"
 	*/
-	CAPABILITY("https://admin-shell.io/aas/3/0/RC01/ReferableElements/CAPABILITY", Arrays.asList(new TypedLiteral("Capability", "")), Collections.emptyList()),
+	CAPABILITY,
 
 	/** 
 	* "Concept Dictionary"
 	*/
-	CONCEPT_DICTIONARY("https://admin-shell.io/aas/3/0/RC01/ReferableElements/CONCEPT_DICTIONARY", Arrays.asList(new TypedLiteral("Concept Dictionary", "")), Collections.emptyList()),
+	CONCEPT_DICTIONARY,
 
 	/** 
 	* "Data Element"
 	* "Data Element is abstract, i.e. if a key uses \'DataElement\' the reference may be a Property, a File etc."@en
 	*/
-	DATA_ELEMENT("https://admin-shell.io/aas/3/0/RC01/ReferableElements/DATA_ELEMENT", Arrays.asList(new TypedLiteral("Data Element", "")), Collections.emptyList()),
+	DATA_ELEMENT,
 
 	/** 
 	* "Entity"
 	*/
-	ENTITY("https://admin-shell.io/aas/3/0/RC01/ReferableElements/ENTITY", Arrays.asList(new TypedLiteral("Entity", "")), Collections.emptyList()),
+	ENTITY,
 
 	/** 
 	* "Event"
 	* "Event is abstract"@en
 	*/
-	EVENT("https://admin-shell.io/aas/3/0/RC01/ReferableElements/EVENT", Arrays.asList(new TypedLiteral("Event", "")), Collections.emptyList()),
+	EVENT,
 
 	/** 
 	* "Multi-language Property"
 	* "Property with a value that can be provided in multiple languages."@en
 	*/
-	MULTI_LANGUAGE_PROPERTY("https://admin-shell.io/aas/3/0/RC01/ReferableElements/MULTI_LANGUAGE_PROPERTY", Arrays.asList(new TypedLiteral("Multi-language Property", "")), Arrays.asList(new TypedLiteral("Property with a value that can be provided in multiple languages.", "en"))),
+	MULTI_LANGUAGE_PROPERTY,
 
 	/** 
 	* "Operation"
 	*/
-	OPERATION("https://admin-shell.io/aas/3/0/RC01/ReferableElements/OPERATION", Arrays.asList(new TypedLiteral("Operation", "")), Collections.emptyList()),
+	OPERATION,
 
 	/** 
 	* "Property"
 	*/
-	PROPERTY("https://admin-shell.io/aas/3/0/RC01/ReferableElements/PROPERTY", Arrays.asList(new TypedLiteral("Property", "")), Collections.emptyList()),
+	PROPERTY,
 
 	/** 
 	* "Range"
 	*/
-	RANGE("https://admin-shell.io/aas/3/0/RC01/ReferableElements/RANGE", Arrays.asList(new TypedLiteral("Range", "")), Collections.emptyList()),
+	RANGE,
 
 	/** 
 	* "Reference Element"
 	*/
-	REFERENCE_ELEMENT("https://admin-shell.io/aas/3/0/RC01/ReferableElements/REFERENCE_ELEMENT", Arrays.asList(new TypedLiteral("Reference Element", "")), Collections.emptyList()),
+	REFERENCE_ELEMENT,
 
 	/** 
 	* "Relationship Element"
 	*/
-	RELATIONSHIPT_ELEMENT("https://admin-shell.io/aas/3/0/RC01/ReferableElements/RELATIONSHIPT_ELEMENT", Arrays.asList(new TypedLiteral("Relationship Element", "")), Collections.emptyList()),
+	RELATIONSHIPT_ELEMENT,
 
 	/** 
 	* "Submodel Element"
 	* "Submodel Element is abstract, i.e. if a key uses \'SubmodelElement\' the reference may be a Property, a SubmodelElementCollection, an Operation etc."@en
 	*/
-	SUBMODEL_ELEMENT("https://admin-shell.io/aas/3/0/RC01/ReferableElements/SUBMODEL_ELEMENT", Arrays.asList(new TypedLiteral("Submodel Element", "")), Collections.emptyList()),
+	SUBMODEL_ELEMENT,
 
 	/** 
 	* "Submodel Element Collection"
 	* "Collection of Submodel Elements"@en
 	*/
-	SUBMODEL_ELEMENT_COLLECTION("https://admin-shell.io/aas/3/0/RC01/ReferableElements/SUBMODEL_ELEMENT_COLLECTION", Arrays.asList(new TypedLiteral("Submodel Element Collection", "")), Arrays.asList(new TypedLiteral("Collection of Submodel Elements", "en"))),
+	SUBMODEL_ELEMENT_COLLECTION,
 
 	/** 
 	* "View"
 	*/
-	VIEW("https://admin-shell.io/aas/3/0/RC01/ReferableElements/VIEW", Arrays.asList(new TypedLiteral("View", "")), Collections.emptyList());
-
-	KeyElements(String id, List<TypedLiteral> labels, List<TypedLiteral> comments) {
-	}
+	VIEW;
 
 }

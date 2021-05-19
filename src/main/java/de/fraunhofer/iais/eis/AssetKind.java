@@ -31,15 +31,12 @@ public enum AssetKind {
 	* "Asset Instance"
 	* "Concrete, clearly identifiable component of a certain type."@en
 	*/
-	INSTANCE("https://admin-shell.io/aas/3/0/RC01/AssetKind/INSTANCE", Arrays.asList(new TypedLiteral("Asset Instance", "")), Arrays.asList(new TypedLiteral("Concrete, clearly identifiable component of a certain type.", "en"))),
+	INSTANCE,
 
 	/** 
 	* "Asset Type"
 	* "hardware or software element which specifies the common attributes shared by all instances of the type."@en
 	*/
-	TYPE("https://admin-shell.io/aas/3/0/RC01/AssetKind/TYPE", Arrays.asList(new TypedLiteral("Asset Type", "")), Arrays.asList(new TypedLiteral("hardware or software element which specifies the common attributes shared by all instances of the type.", "en")));
-
-	AssetKind(String id, List<TypedLiteral> labels, List<TypedLiteral> comments) {
-	}
+	TYPE;
 
 }

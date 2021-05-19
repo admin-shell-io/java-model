@@ -31,22 +31,19 @@ public enum IdentifierType {
 	* "Custom"
 	* "Custom identifiers like GUIDs (globally unique Identifiers)"@en
 	*/
-	CUSTOM("https://admin-shell.io/aas/3/0/RC01/IdentifierType/CUSTOM", Arrays.asList(new TypedLiteral("Custom", "")), Arrays.asList(new TypedLiteral("Custom identifiers like GUIDs (globally unique Identifiers)", "en"))),
+	CUSTOM,
 
 	/** 
 	* "IRDI"
 	* "IRDI according to ISO29002-5 as an Identifier scheme for properties and classifications."@en
 	*/
-	IRDI("https://admin-shell.io/aas/3/0/RC01/IdentifierType/IRDI", Arrays.asList(new TypedLiteral("IRDI", "")), Arrays.asList(new TypedLiteral("IRDI according to ISO29002-5 as an Identifier scheme for properties and classifications.", "en"))),
+	IRDI,
 
 	/** 
 	* "IRI"
 	* "IRI. Should only be used if unicode symbols are used that are not allowed in URI."@en
 	*/
-	IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierType/IRI", Arrays.asList(new TypedLiteral("IRI", "")), Arrays.asList(new TypedLiteral("IRI. Should only be used if unicode symbols are used that are not allowed in URI.", "en")));
-
-	IdentifierType(String id, List<TypedLiteral> labels, List<TypedLiteral> comments) {
-	}
+	IRI;
 
 
 }

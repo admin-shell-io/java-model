@@ -31,33 +31,30 @@ public enum KeyType {
 	* "Custom"
 	* "Custom identifiers like GUIDs (globally unique Identifiers)"@en
 	*/
-	CUSTOM("https://admin-shell.io/aas/3/0/RC01/IdentifierType/CUSTOM", Arrays.asList(new TypedLiteral("Custom", "")), Arrays.asList(new TypedLiteral("Custom identifiers like GUIDs (globally unique Identifiers)", "en"))),
+	CUSTOM,
 
 	/** 
 	* "IRDI"
 	* "IRDI according to ISO29002-5 as an Identifier scheme for properties and classifications."@en
 	*/
-	IRDI("https://admin-shell.io/aas/3/0/RC01/IdentifierType/IRDI", Arrays.asList(new TypedLiteral("IRDI", "")), Arrays.asList(new TypedLiteral("IRDI according to ISO29002-5 as an Identifier scheme for properties and classifications.", "en"))),
+	IRDI,
 
 	/** 
 	* "IRI"
 	* "IRI. Should only be used if unicode symbols are used that are not allowed in URI."@en
 	*/
-	IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierType/IRI", Arrays.asList(new TypedLiteral("IRI", "")), Arrays.asList(new TypedLiteral("IRI. Should only be used if unicode symbols are used that are not allowed in URI.", "en"))),
+	IRI,
 
 	/** 
 	* "FragementId"
 	* "Identifier of a fragment within a file"@en
 	*/
-	FRAGMENT_ID("https://admin-shell.io/aas/3/0/RC01/LocalKeyType/FRAGMENT_ID", Arrays.asList(new TypedLiteral("FragementId", "")), Arrays.asList(new TypedLiteral("Identifier of a fragment within a file", "en"))),
+	FRAGMENT_ID,
 
 	/** 
 	* "IdShort"
 	* "idShort of a referable element"@en
 	*/
-	IDSHORT("https://admin-shell.io/aas/3/0/RC01/LocalKeyType/IDSHORT", Arrays.asList(new TypedLiteral("IdShort", "")), Arrays.asList(new TypedLiteral("idShort of a referable element", "en")));
-
-	KeyType(String id, List<TypedLiteral> labels, List<TypedLiteral> comments) {
-	}
+	IDSHORT;
 
 }

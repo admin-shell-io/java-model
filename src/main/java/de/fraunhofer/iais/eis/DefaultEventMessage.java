@@ -75,7 +75,7 @@ public class DefaultEventMessage implements EventMessage {
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	protected TypedLiteral description;
+	protected LangString description;
 
 
 	/**
@@ -83,7 +83,7 @@ public class DefaultEventMessage implements EventMessage {
 	* "Display name. Can be provided in several languages."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-	protected TypedLiteral displayName;
+	protected LangString displayName;
 
 
 	/**
@@ -140,8 +140,8 @@ public class DefaultEventMessage implements EventMessage {
 	public Object deepCopy() {
 		DefaultEventMessage other = new DefaultEventMessage();
 		other.category = (String) Util.clone(this.category);
-		other.description = (TypedLiteral) Util.clone(this.description);
-		other.displayName = (TypedLiteral) Util.clone(this.displayName);
+		other.description = (LangString) Util.clone(this.description);
+		other.displayName = (LangString) Util.clone(this.displayName);
 		other.idShort = (String) Util.clone(this.idShort);
 		other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
 		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
@@ -166,20 +166,20 @@ public class DefaultEventMessage implements EventMessage {
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	final public TypedLiteral getDescription() {
+	final public LangString getDescription() {
 		return description;
 	}
 	
-	final public void setDescription (TypedLiteral description) {
+	final public void setDescription (LangString description) {
 		this.description = description;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-	final public TypedLiteral getDisplayName() {
+	final public LangString getDisplayName() {
 		return displayName;
 	}
 	
-	final public void setDisplayName (TypedLiteral displayName) {
+	final public void setDisplayName (LangString displayName) {
 		this.displayName = displayName;
 	}
 

@@ -74,7 +74,7 @@ public class BlobBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	public BlobBuilder description(TypedLiteral description) {
+	public BlobBuilder description(LangString description) {
 		this.map.put("description", description);
 		return this;
 	}
@@ -85,7 +85,7 @@ public class BlobBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	public BlobBuilder displayName(TypedLiteral displayName) {
+	public BlobBuilder displayName(LangString displayName) {
 		this.map.put("displayName", displayName);
 		return this;
 	}

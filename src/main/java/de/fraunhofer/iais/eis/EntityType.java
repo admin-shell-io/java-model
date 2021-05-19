@@ -31,15 +31,12 @@ public enum EntityType {
 	* "Co-managed Entity"
 	* "For co-managed entities there is no separate AAS. Co-managed entities need to be part of a self-managed entity."@en
 	*/
-	CO_MANAGED_ENTITY("https://admin-shell.io/aas/3/0/RC01/EntityType/CO_MANAGED_ENTITY", Arrays.asList(new TypedLiteral("Co-managed Entity", "")), Arrays.asList(new TypedLiteral("For co-managed entities there is no separate AAS. Co-managed entities need to be part of a self-managed entity.", "en"))),
+	CO_MANAGED_ENTITY,
 
 	/** 
 	* "Self-managed Entity"
 	* "Self-Managed Entities have their own AAS but can be part of the bill of material of a composite self-managed entity. The asset of an I4.0 Component is a self-managed entity per definition."@en
 	*/
-	SELF_MANAGED_ENTITY("https://admin-shell.io/aas/3/0/RC01/EntityType/SELF_MANAGED_ENTITY", Arrays.asList(new TypedLiteral("Self-managed Entity", "")), Arrays.asList(new TypedLiteral("Self-Managed Entities have their own AAS but can be part of the bill of material of a composite self-managed entity. The asset of an I4.0 Component is a self-managed entity per definition.", "en")));
-
-	EntityType(String id, List<TypedLiteral> labels, List<TypedLiteral> comments) {
-	}
+	SELF_MANAGED_ENTITY;
 
 }

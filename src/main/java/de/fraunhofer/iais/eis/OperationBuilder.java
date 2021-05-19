@@ -84,7 +84,7 @@ public class OperationBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	public OperationBuilder description(TypedLiteral description) {
+	public OperationBuilder description(LangString description) {
 		this.map.put("description", description);
 		return this;
 	}
@@ -95,7 +95,7 @@ public class OperationBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	public OperationBuilder displayName(TypedLiteral displayName) {
+	public OperationBuilder displayName(LangString displayName) {
 		this.map.put("displayName", displayName);
 		return this;
 	}

@@ -30,25 +30,22 @@ public enum IdentifiableElements {
 	/** 
 	* "Asset"
 	*/
-	ASSET("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/ASSET", Arrays.asList(new TypedLiteral("Asset", "")), Collections.emptyList()),
+	ASSET,
 
 	/** 
 	* "Asset Administration Shell"
 	*/
-	ASSET_ADMINISTRATION_SHELL("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/ASSET_ADMINISTRATION_SHELL", Arrays.asList(new TypedLiteral("Asset Administration Shell", "")), Collections.emptyList()),
+	ASSET_ADMINISTRATION_SHELL,
 
 	/** 
 	* "Concept Description"
 	*/
-	CONCEPT_DESCRIPTION("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/CONCEPT_DESCRIPTION", Arrays.asList(new TypedLiteral("Concept Description", "")), Collections.emptyList()),
+	CONCEPT_DESCRIPTION,
 
 	/** 
 	* "Submodel"
 	*/
-	SUBMODEL("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/SUBMODEL", Arrays.asList(new TypedLiteral("Submodel", "")), Collections.emptyList());
-
-	IdentifiableElements(String id, List<TypedLiteral> labels, List<TypedLiteral> comments) {
-	}
+	SUBMODEL;
 
 
 

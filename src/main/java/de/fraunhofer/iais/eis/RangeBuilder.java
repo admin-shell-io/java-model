@@ -85,7 +85,7 @@ public class RangeBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	public RangeBuilder description(TypedLiteral description) {
+	public RangeBuilder description(LangString description) {
 		this.map.put("description", description);
 		return this;
 	}
@@ -96,7 +96,7 @@ public class RangeBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	public RangeBuilder displayName(TypedLiteral displayName) {
+	public RangeBuilder displayName(LangString displayName) {
 		this.map.put("displayName", displayName);
 		return this;
 	}

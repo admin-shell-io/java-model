@@ -50,7 +50,7 @@ public class DataSpecificationIEC61360Builder {
 	* @param definition desired value to be set
 	* @return Builder object with new value for definition
 	*/
-	public DataSpecificationIEC61360Builder definition(TypedLiteral definition) {
+	public DataSpecificationIEC61360Builder definition(LangString definition) {
 		this.map.put("definition", definition);
 		return this;
 	}
@@ -72,7 +72,7 @@ public class DataSpecificationIEC61360Builder {
 	* @param preferredName desired value to be set
 	* @return Builder object with new value for preferredName
 	*/
-	public DataSpecificationIEC61360Builder preferredName(TypedLiteral preferredName) {
+	public DataSpecificationIEC61360Builder preferredName(LangString preferredName) {
 		this.map.put("preferredName", preferredName);
 		return this;
 	}
@@ -83,7 +83,7 @@ public class DataSpecificationIEC61360Builder {
 	* @param shortName desired value to be set
 	* @return Builder object with new value for shortName
 	*/
-	public DataSpecificationIEC61360Builder shortName(TypedLiteral shortName) {
+	public DataSpecificationIEC61360Builder shortName(LangString shortName) {
 		this.map.put("shortName", shortName);
 		return this;
 	}

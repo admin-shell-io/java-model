@@ -105,7 +105,7 @@ public class ConceptDescriptionBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	public ConceptDescriptionBuilder description(TypedLiteral description) {
+	public ConceptDescriptionBuilder description(LangString description) {
 		this.map.put("description", description);
 		return this;
 	}
@@ -116,7 +116,7 @@ public class ConceptDescriptionBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	public ConceptDescriptionBuilder displayName(TypedLiteral displayName) {
+	public ConceptDescriptionBuilder displayName(LangString displayName) {
 		this.map.put("displayName", displayName);
 		return this;
 	}

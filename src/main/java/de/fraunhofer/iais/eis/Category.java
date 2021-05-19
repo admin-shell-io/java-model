@@ -31,21 +31,18 @@ public enum Category {
 	* "Constant"
 	* "A constant property is a property with a value that does not change over time. In eCl@ss this kind of category has the category \'Coded Value\'."@en
 	*/
-	CONSTANT("https://admin-shell.io/aas/3/0/RC01/Category/CONSTANT", Arrays.asList(new TypedLiteral("Constant", "")), Arrays.asList(new TypedLiteral("A constant property is a property with a value that does not change over time. In eCl@ss this kind of category has the category 'Coded Value'.", "en"))),
+	CONSTANT,
 
 	/** 
 	* "Parameter"
 	* "A parameter property is a property that is once set and then typically does not change over time. This is for example the case for configuration parameters."@en
 	*/
-	PARAMETER("https://admin-shell.io/aas/3/0/RC01/Category/PARAMETER", Arrays.asList(new TypedLiteral("Parameter", "")), Arrays.asList(new TypedLiteral("A parameter property is a property that is once set and then typically does not change over time. This is for example the case for configuration parameters.", "en"))),
+	PARAMETER,
 
 	/** 
 	* "Variable"
 	* "A variable property is a property that is calculated during runtime, i.e. its value is a runtime value."@en
 	*/
-	VARIABLE("https://admin-shell.io/aas/3/0/RC01/Category/VARIABLE", Arrays.asList(new TypedLiteral("Variable", "")), Arrays.asList(new TypedLiteral("A variable property is a property that is calculated during runtime, i.e. its value is a runtime value.", "en")));
-
-	Category(String id, List<TypedLiteral> labels, List<TypedLiteral> comments) {
-	}
+	VARIABLE;
 
 }

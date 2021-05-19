@@ -40,11 +40,11 @@ public interface RC01 extends ModelClass, DataSpecificationContent {
 	public List<String> getConversionFactors();
 
 	/**
-	* @return Returns the List of TypedLiterals for the property definitions.
+	* @return Returns the List of LangStrings for the property definitions.
 	* More information under https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/definition
 	*/
 	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/definition")
-	public List<TypedLiteral> getDefinitions();
+	public List<LangString> getDefinitions();
 
 	/**
 	* @return Returns the List of Strings for the property dinNotations.

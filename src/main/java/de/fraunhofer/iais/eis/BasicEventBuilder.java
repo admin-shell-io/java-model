@@ -63,7 +63,7 @@ public class BasicEventBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	public BasicEventBuilder description(TypedLiteral description) {
+	public BasicEventBuilder description(LangString description) {
 		this.map.put("description", description);
 		return this;
 	}
@@ -74,7 +74,7 @@ public class BasicEventBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	public BasicEventBuilder displayName(TypedLiteral displayName) {
+	public BasicEventBuilder displayName(LangString displayName) {
 		this.map.put("displayName", displayName);
 		return this;
 	}

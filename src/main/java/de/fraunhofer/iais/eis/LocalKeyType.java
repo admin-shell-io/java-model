@@ -31,16 +31,13 @@ public enum LocalKeyType {
 	* "FragementId"
 	* "Identifier of a fragment within a file"@en
 	*/
-	FRAGMENT_ID("https://admin-shell.io/aas/3/0/RC01/LocalKeyType/FRAGMENT_ID", Arrays.asList(new TypedLiteral("FragementId", "")), Arrays.asList(new TypedLiteral("Identifier of a fragment within a file", "en"))),
+	FRAGMENT_ID,
 
 	/** 
 	* "IdShort"
 	* "idShort of a referable element"@en
 	*/
-	IDSHORT("https://admin-shell.io/aas/3/0/RC01/LocalKeyType/IDSHORT", Arrays.asList(new TypedLiteral("IdShort", "")), Arrays.asList(new TypedLiteral("idShort of a referable element", "en")));
-
-	LocalKeyType(String id, List<TypedLiteral> labels, List<TypedLiteral> comments) {
-	}
+	IDSHORT;
 
 
 }

@@ -33,15 +33,12 @@ public enum ModelingKind {
 	* "It becomes an individual entity of a template, for example a device model, by defining specific property values."@en
 	* "In an object oriented view, an instance denotes an object (of a template) (class)."@en
 	*/
-	INSTANCE("https://admin-shell.io/aas/3/0/RC01/ModelingKind/INSTANCE", Arrays.asList(new TypedLiteral("Instance", "")), Arrays.asList(new TypedLiteral("Concrete, clearly identifiable component of a certain template.", "en"))),
+	INSTANCE,
 
 	/** 
 	* "Template"
 	* "Software element which specifies the common attributes shared by all instances of the template."@en
 	*/
-	TEMPLATE("https://admin-shell.io/aas/3/0/RC01/ModelingKind/TEMPLATE", Arrays.asList(new TypedLiteral("Template", "")), Arrays.asList(new TypedLiteral("Software element which specifies the common attributes shared by all instances of the template.", "en")));
-
-	ModelingKind(String id, List<TypedLiteral> labels, List<TypedLiteral> comments) {
-	}
+	TEMPLATE;
 
 }

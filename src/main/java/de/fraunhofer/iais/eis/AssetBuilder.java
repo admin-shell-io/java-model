@@ -84,7 +84,7 @@ public class AssetBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	public AssetBuilder description(TypedLiteral description) {
+	public AssetBuilder description(LangString description) {
 		this.map.put("description", description);
 		return this;
 	}
@@ -95,7 +95,7 @@ public class AssetBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	public AssetBuilder displayName(TypedLiteral displayName) {
+	public AssetBuilder displayName(LangString displayName) {
 		this.map.put("displayName", displayName);
 		return this;
 	}

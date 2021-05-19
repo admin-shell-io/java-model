@@ -45,19 +45,19 @@ public interface Referable extends ModelClass {
 
 	/**
 	* "Description or comments on the element. The description can be provided in several languages."@en
-	* @return Returns the TypedLiteral for the property description.
+	* @return Returns the LangString for the property description.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/description
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	public TypedLiteral getDescription();
+	public LangString getDescription();
 
 	/**
 	* "Display name. Can be provided in several languages."@en
-	* @return Returns the TypedLiteral for the property displayName.
+	* @return Returns the LangString for the property displayName.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Referable/displayName
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-	public TypedLiteral getDisplayName();
+	public LangString getDisplayName();
 
 	/**
 	* "Identifying string of the element within its name space."@en

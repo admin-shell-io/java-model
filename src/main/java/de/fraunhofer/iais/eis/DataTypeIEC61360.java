@@ -30,75 +30,72 @@ public enum DataTypeIEC61360 {
 	/** 
 	* "boolean according to IEC61360"
 	*/
-	BOOLEAN("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/BOOLEAN", Arrays.asList(new TypedLiteral("boolean according to IEC61360", "")), Collections.emptyList()),
+	BOOLEAN,
 
 	/** 
 	* "date according to IEC61360"
 	*/
-	DATE("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DATE", Arrays.asList(new TypedLiteral("date according to IEC61360", "")), Collections.emptyList()),
+	DATE,
 
 	/** 
 	* "integer count according to IEC61360"
 	*/
-	INTEGER_COUNT("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/INTEGER_COUNT", Arrays.asList(new TypedLiteral("integer count according to IEC61360", "")), Collections.emptyList()),
+	INTEGER_COUNT,
 
 	/** 
 	* "integer currency according to IEC61360"
 	* "real currency according to IEC61360"
 	*/
-	INTEGER_CURRENCY("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/INTEGER_CURRENCY", Arrays.asList(new TypedLiteral("integer currency according to IEC61360", ""), new TypedLiteral("real currency according to IEC61360", "")), Collections.emptyList()),
+	INTEGER_CURRENCY,
 
 	/** 
 	* "integer measure according to IEC61360"
 	*/
-	INTEGER_MEASURE("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/INTEGER_MEASURE", Arrays.asList(new TypedLiteral("integer measure according to IEC61360", "")), Collections.emptyList()),
+	INTEGER_MEASURE,
 
 	/** 
 	* "retional according to IEC61360"
 	*/
-	RATIONAL("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/RATIONAL", Arrays.asList(new TypedLiteral("retional according to IEC61360", "")), Collections.emptyList()),
+	RATIONAL,
 
 	/** 
 	* "retional measure according to IEC61360"
 	*/
-	RATIONAL_MEASURE("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/RATIONAL_MEASURE", Arrays.asList(new TypedLiteral("retional measure according to IEC61360", "")), Collections.emptyList()),
+	RATIONAL_MEASURE,
 
 	/** 
 	* "real count according to IEC61360"
 	*/
-	REAL_COUNT("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/REAL_COUNT", Arrays.asList(new TypedLiteral("real count according to IEC61360", "")), Collections.emptyList()),
+	REAL_COUNT,
 
 	/** 
 	* "real measure according to IEC61360"
 	*/
-	REAL_MEASURE("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/REAL_MEASURE", Arrays.asList(new TypedLiteral("real measure according to IEC61360", "")), Collections.emptyList()),
+	REAL_MEASURE,
 
 	/** 
 	* "string according to IEC61360"
 	*/
-	STRING("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/STRING", Arrays.asList(new TypedLiteral("string according to IEC61360", "")), Collections.emptyList()),
+	STRING,
 
 	/** 
 	* "translatable string according to IEC61360"
 	*/
-	STRING_TRANSLATABLE("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/STRING_TRANSLATABLE", Arrays.asList(new TypedLiteral("translatable string according to IEC61360", "")), Collections.emptyList()),
+	STRING_TRANSLATABLE,
 
 	/** 
 	* "time according to IEC61360"
 	*/
-	TIME("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/TIME", Arrays.asList(new TypedLiteral("time according to IEC61360", "")), Collections.emptyList()),
+	TIME,
 
 	/** 
 	* "time stamp according to IEC61360"
 	*/
-	TIMESTAMP("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/TIMESTAMP", Arrays.asList(new TypedLiteral("time stamp according to IEC61360", "")), Collections.emptyList()),
+	TIMESTAMP,
 
 	/** 
 	* "url according to IEC61360"
 	*/
-	URL("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/URL", Arrays.asList(new TypedLiteral("url according to IEC61360", "")), Collections.emptyList());
-
-	DataTypeIEC61360(String id, List<TypedLiteral> labels, List<TypedLiteral> comments) {
-	}
+	URL;
 
 }
