@@ -84,7 +84,7 @@ public class AnnotatedRelationshipElementBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	public AnnotatedRelationshipElementBuilder description(LangStringSet description) {
+	public AnnotatedRelationshipElementBuilder description(TypedLiteral description) {
 		this.map.put("description", description);
 		return this;
 	}
@@ -95,7 +95,7 @@ public class AnnotatedRelationshipElementBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	public AnnotatedRelationshipElementBuilder displayName(LangStringSet displayName) {
+	public AnnotatedRelationshipElementBuilder displayName(TypedLiteral displayName) {
 		this.map.put("displayName", displayName);
 		return this;
 	}

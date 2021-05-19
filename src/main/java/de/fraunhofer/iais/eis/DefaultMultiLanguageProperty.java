@@ -61,7 +61,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 	* "Constraint AASd-067: If the semanticId of a MultiLanguageProperty references a ConceptDescription then DataSpecificationIEC61360/dataType shall be STRING_TRANSLATABLE."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value")
-	protected LangStringSet value;
+	protected TypedLiteral value;
 
 
 	/**
@@ -93,7 +93,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 	* "Description or comments on the element. The description can be provided in several languages."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	protected LangStringSet description;
+	protected TypedLiteral description;
 
 
 	/**
@@ -101,7 +101,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 	* "Display name. Can be provided in several languages."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-	protected LangStringSet displayName;
+	protected TypedLiteral displayName;
 
 
 	/**
@@ -161,11 +161,11 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 	@Override
 	public Object deepCopy() {
 		DefaultMultiLanguageProperty other = new DefaultMultiLanguageProperty();
-		other.value = (LangStringSet) Util.clone(this.value);
+		other.value = (TypedLiteral) Util.clone(this.value);
 		other.valueId = (Reference) Util.clone(this.valueId);
 		other.category = (String) Util.clone(this.category);
-		other.description = (LangStringSet) Util.clone(this.description);
-		other.displayName = (LangStringSet) Util.clone(this.displayName);
+		other.description = (TypedLiteral) Util.clone(this.description);
+		other.displayName = (TypedLiteral) Util.clone(this.displayName);
 		other.idShort = (String) Util.clone(this.idShort);
 		other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
 		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
@@ -179,11 +179,11 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value")
-	final public LangStringSet getValue() {
+	final public TypedLiteral getValue() {
 		return value;
 	}
 	
-	final public void setValue (LangStringSet value) {
+	final public void setValue (TypedLiteral value) {
 		this.value = value;
 	}
 
@@ -208,20 +208,20 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	final public LangStringSet getDescription() {
+	final public TypedLiteral getDescription() {
 		return description;
 	}
 	
-	final public void setDescription (LangStringSet description) {
+	final public void setDescription (TypedLiteral description) {
 		this.description = description;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-	final public LangStringSet getDisplayName() {
+	final public TypedLiteral getDisplayName() {
 		return displayName;
 	}
 	
-	final public void setDisplayName (LangStringSet displayName) {
+	final public void setDisplayName (TypedLiteral displayName) {
 		this.displayName = displayName;
 	}
 

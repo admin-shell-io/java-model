@@ -84,7 +84,7 @@ public class SubmodelElementCollectionBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	public SubmodelElementCollectionBuilder description(LangStringSet description) {
+	public SubmodelElementCollectionBuilder description(TypedLiteral description) {
 		this.map.put("description", description);
 		return this;
 	}
@@ -95,7 +95,7 @@ public class SubmodelElementCollectionBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	public SubmodelElementCollectionBuilder displayName(LangStringSet displayName) {
+	public SubmodelElementCollectionBuilder displayName(TypedLiteral displayName) {
 		this.map.put("displayName", displayName);
 		return this;
 	}

@@ -138,7 +138,7 @@ public class AssetAdministrationShellBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	public AssetAdministrationShellBuilder description(LangStringSet description) {
+	public AssetAdministrationShellBuilder description(TypedLiteral description) {
 		this.map.put("description", description);
 		return this;
 	}
@@ -149,7 +149,7 @@ public class AssetAdministrationShellBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	public AssetAdministrationShellBuilder displayName(LangStringSet displayName) {
+	public AssetAdministrationShellBuilder displayName(TypedLiteral displayName) {
 		this.map.put("displayName", displayName);
 		return this;
 	}

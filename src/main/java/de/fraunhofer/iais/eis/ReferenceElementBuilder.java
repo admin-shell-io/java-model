@@ -63,7 +63,7 @@ public class ReferenceElementBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	public ReferenceElementBuilder description(LangStringSet description) {
+	public ReferenceElementBuilder description(TypedLiteral description) {
 		this.map.put("description", description);
 		return this;
 	}
@@ -74,7 +74,7 @@ public class ReferenceElementBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	public ReferenceElementBuilder displayName(LangStringSet displayName) {
+	public ReferenceElementBuilder displayName(TypedLiteral displayName) {
 		this.map.put("displayName", displayName);
 		return this;
 	}

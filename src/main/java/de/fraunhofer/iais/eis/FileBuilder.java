@@ -74,7 +74,7 @@ public class FileBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	public FileBuilder description(LangStringSet description) {
+	public FileBuilder description(TypedLiteral description) {
 		this.map.put("description", description);
 		return this;
 	}
@@ -85,7 +85,7 @@ public class FileBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	public FileBuilder displayName(LangStringSet displayName) {
+	public FileBuilder displayName(TypedLiteral displayName) {
 		this.map.put("displayName", displayName);
 		return this;
 	}

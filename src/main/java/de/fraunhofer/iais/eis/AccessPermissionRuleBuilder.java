@@ -72,7 +72,7 @@ public class AccessPermissionRuleBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	public AccessPermissionRuleBuilder description(LangStringSet description) {
+	public AccessPermissionRuleBuilder description(TypedLiteral description) {
 		this.map.put("description", description);
 		return this;
 	}
@@ -83,7 +83,7 @@ public class AccessPermissionRuleBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	public AccessPermissionRuleBuilder displayName(LangStringSet displayName) {
+	public AccessPermissionRuleBuilder displayName(TypedLiteral displayName) {
 		this.map.put("displayName", displayName);
 		return this;
 	}

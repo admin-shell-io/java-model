@@ -39,7 +39,7 @@ public class MultiLanguagePropertyBuilder {
 	* @param value desired value to be set
 	* @return Builder object with new value for value
 	*/
-	public MultiLanguagePropertyBuilder value(LangStringSet value) {
+	public MultiLanguagePropertyBuilder value(TypedLiteral value) {
 		this.map.put("value", value);
 		return this;
 	}
@@ -74,7 +74,7 @@ public class MultiLanguagePropertyBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	public MultiLanguagePropertyBuilder description(LangStringSet description) {
+	public MultiLanguagePropertyBuilder description(TypedLiteral description) {
 		this.map.put("description", description);
 		return this;
 	}
@@ -85,7 +85,7 @@ public class MultiLanguagePropertyBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	public MultiLanguagePropertyBuilder displayName(LangStringSet displayName) {
+	public MultiLanguagePropertyBuilder displayName(TypedLiteral displayName) {
 		this.map.put("displayName", displayName);
 		return this;
 	}

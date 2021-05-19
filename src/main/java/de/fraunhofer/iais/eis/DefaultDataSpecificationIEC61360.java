@@ -45,7 +45,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 	* "Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions of category VALUE using data specification template IEC61360 (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -  DataSpecificationIEC61360/definition is mandatory and shall be defined at least in English."@en
 	*/
 	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
-	protected LangStringSet definition;
+	protected TypedLiteral definition;
 
 
 	/**
@@ -59,14 +59,14 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 	* "has preferred name"
 	*/
 	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
-	protected LangStringSet preferredName;
+	protected TypedLiteral preferredName;
 
 
 	/**
 	* "has short name"
 	*/
 	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
-	protected LangStringSet shortName;
+	protected TypedLiteral shortName;
 
 
 	/**
@@ -177,10 +177,10 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 	public Object deepCopy() {
 		DefaultDataSpecificationIEC61360 other = new DefaultDataSpecificationIEC61360();
 		other.dataTypes = (List<DataTypeIEC61360>) Util.clone(this.dataTypes);
-		other.definition = (LangStringSet) Util.clone(this.definition);
+		other.definition = (TypedLiteral) Util.clone(this.definition);
 		other.levelTypes = (List<LevelType>) Util.clone(this.levelTypes);
-		other.preferredName = (LangStringSet) Util.clone(this.preferredName);
-		other.shortName = (LangStringSet) Util.clone(this.shortName);
+		other.preferredName = (TypedLiteral) Util.clone(this.preferredName);
+		other.shortName = (TypedLiteral) Util.clone(this.shortName);
 		other.sourceOfDefinition = (String) Util.clone(this.sourceOfDefinition);
 		other.symbol = (String) Util.clone(this.symbol);
 		other.unit = (String) Util.clone(this.unit);
@@ -206,11 +206,11 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 	}
 
 	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
-	final public LangStringSet getDefinition() {
+	final public TypedLiteral getDefinition() {
 		return definition;
 	}
 	
-	final public void setDefinition (LangStringSet definition) {
+	final public void setDefinition (TypedLiteral definition) {
 		this.definition = definition;
 	}
 
@@ -224,20 +224,20 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 	}
 
 	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
-	final public LangStringSet getPreferredName() {
+	final public TypedLiteral getPreferredName() {
 		return preferredName;
 	}
 	
-	final public void setPreferredName (LangStringSet preferredName) {
+	final public void setPreferredName (TypedLiteral preferredName) {
 		this.preferredName = preferredName;
 	}
 
 	@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
-	final public LangStringSet getShortName() {
+	final public TypedLiteral getShortName() {
 		return shortName;
 	}
 	
-	final public void setShortName (LangStringSet shortName) {
+	final public void setShortName (TypedLiteral shortName) {
 		this.shortName = shortName;
 	}
 

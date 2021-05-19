@@ -105,7 +105,7 @@ public class SubmodelBuilder {
 	* @param description desired value to be set
 	* @return Builder object with new value for description
 	*/
-	public SubmodelBuilder description(LangStringSet description) {
+	public SubmodelBuilder description(TypedLiteral description) {
 		this.map.put("description", description);
 		return this;
 	}
@@ -116,7 +116,7 @@ public class SubmodelBuilder {
 	* @param displayName desired value to be set
 	* @return Builder object with new value for displayName
 	*/
-	public SubmodelBuilder displayName(LangStringSet displayName) {
+	public SubmodelBuilder displayName(TypedLiteral displayName) {
 		this.map.put("displayName", displayName);
 		return this;
 	}
