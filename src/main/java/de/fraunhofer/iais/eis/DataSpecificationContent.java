@@ -23,7 +23,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 * "DataSpecificationContent contains the additional attributes to be added to the element instance that references the data specification template and meta information about the template itself."@en
 */
 @KnownSubtypes({
-	@KnownSubtypes.Type(value = DefaultDataSpecificationContent.class)
 })
 public interface DataSpecificationContent extends ModelClass {
 

@@ -35,12 +35,12 @@ public class DataSpecificationBuilder {
 
 
 	/**
-	* This function allows setting a value for dataSpecificationContents
-	* @param dataSpecificationContents desired value to be set
-	* @return Builder object with new value for dataSpecificationContents
+	* This function allows setting a value for dataSpecificationContent
+	* @param dataSpecificationContent desired value to be set
+	* @return Builder object with new value for dataSpecificationContent
 	*/
-	public DataSpecificationBuilder dataSpecificationContents(List<DataSpecificationContent> dataSpecificationContents) {
-		this.map.put("dataSpecificationContents", dataSpecificationContents);
+	public DataSpecificationBuilder dataSpecificationContent(DataSpecificationContent dataSpecificationContent) {
+		this.map.put("dataSpecificationContent", dataSpecificationContent);
 		return this;
 	}
 

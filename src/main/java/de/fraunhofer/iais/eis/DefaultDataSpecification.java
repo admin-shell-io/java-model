@@ -33,7 +33,7 @@ public class DefaultDataSpecification implements DataSpecification {
 	* "DataSpecificationContent contains the additional attributes to be added to the element instance that references the data specification template and meta information about the template itself."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/DataSpecification/dataSpecificationContent")
-	protected List<DataSpecificationContent> dataSpecificationContents;
+	protected DataSpecificationContent dataSpecificationContent;
 
 
 	// no manual construction
@@ -42,7 +42,7 @@ public class DefaultDataSpecification implements DataSpecification {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(new Object[]{this.dataSpecificationContents});
+		return Objects.hash(new Object[]{this.dataSpecificationContent});
 	}
 
 	@Override
@@ -55,14 +55,14 @@ public class DefaultDataSpecification implements DataSpecification {
 			return false;
 		} else {
 			DefaultDataSpecification other = (DefaultDataSpecification) obj;
-			return Objects.equals(this.dataSpecificationContents, other.dataSpecificationContents);
+			return Objects.equals(this.dataSpecificationContent, other.dataSpecificationContent);
 		}
 	}
 
 	@Override
 	public Object deepCopy() {
 		DefaultDataSpecification other = new DefaultDataSpecification();
-		other.dataSpecificationContents = (List<DataSpecificationContent>) Util.clone(this.dataSpecificationContents);
+		other.dataSpecificationContent = (DataSpecificationContent) Util.clone(this.dataSpecificationContent);
 		return other;
 	}
 
@@ -71,11 +71,11 @@ public class DefaultDataSpecification implements DataSpecification {
 
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/DataSpecification/dataSpecificationContent")
-	final public List<DataSpecificationContent> getDataSpecificationContents() {
-		return dataSpecificationContents;
+	final public DataSpecificationContent getDataSpecificationContent() {
+		return dataSpecificationContent;
 	}
 	
-	final public void setDataSpecificationContents (List<DataSpecificationContent> dataSpecificationContents) {
-		this.dataSpecificationContents = dataSpecificationContents;
+	final public void setDataSpecificationContent (DataSpecificationContent dataSpecificationContent) {
+		this.dataSpecificationContent = dataSpecificationContent;
 	}
 }
