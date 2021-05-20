@@ -35,13 +35,13 @@ public class DataSpecificationIEC61360Builder {
     }
 
     /**
-     * This function allows setting a value for definition
+     * This function allows setting a value for definitions
      * 
-     * @param definition desired value to be set
-     * @return Builder object with new value for definition
+     * @param definitions desired value to be set
+     * @return Builder object with new value for definitions
      */
-    public DataSpecificationIEC61360Builder definition(LangString definition) {
-        this.map.put("definition", definition);
+    public DataSpecificationIEC61360Builder definitions(List<LangString> definitions) {
+        this.map.put("definitions", definitions);
         return this;
     }
 
@@ -57,24 +57,24 @@ public class DataSpecificationIEC61360Builder {
     }
 
     /**
-     * This function allows setting a value for preferredName
+     * This function allows setting a value for preferredNames
      * 
-     * @param preferredName desired value to be set
-     * @return Builder object with new value for preferredName
+     * @param preferredNames desired value to be set
+     * @return Builder object with new value for preferredNames
      */
-    public DataSpecificationIEC61360Builder preferredName(LangString preferredName) {
-        this.map.put("preferredName", preferredName);
+    public DataSpecificationIEC61360Builder preferredNames(List<LangString> preferredNames) {
+        this.map.put("preferredNames", preferredNames);
         return this;
     }
 
     /**
-     * This function allows setting a value for shortName
+     * This function allows setting a value for shortNames
      * 
-     * @param shortName desired value to be set
-     * @return Builder object with new value for shortName
+     * @param shortNames desired value to be set
+     * @return Builder object with new value for shortNames
      */
-    public DataSpecificationIEC61360Builder shortName(LangString shortName) {
-        this.map.put("shortName", shortName);
+    public DataSpecificationIEC61360Builder shortNames(List<LangString> shortNames) {
+        this.map.put("shortNames", shortNames);
         return this;
     }
 

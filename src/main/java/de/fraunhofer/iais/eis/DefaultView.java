@@ -45,13 +45,13 @@ public class DefaultView implements View {
      * several languages."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-    protected LangString description;
+    protected List<LangString> descriptions;
 
     /**
      * "has display name" "Display name. Can be provided in several languages."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-    protected LangString displayName;
+    protected List<LangString> displayNames;
 
     /**
      * "has short id" "Identifying string of the element within its name space."@en "Constraint
@@ -81,8 +81,8 @@ public class DefaultView implements View {
     public int hashCode() {
         return Objects.hash(new Object[] {this.containedElements,
             this.category,
-            this.description,
-            this.displayName,
+            this.descriptions,
+            this.displayNames,
             this.idShort,
             this.dataSpecifications,
             this.semanticId});
@@ -100,8 +100,8 @@ public class DefaultView implements View {
             DefaultView other = (DefaultView) obj;
             return Objects.equals(this.containedElements, other.containedElements) &&
                 Objects.equals(this.category, other.category) &&
-                Objects.equals(this.description, other.description) &&
-                Objects.equals(this.displayName, other.displayName) &&
+                Objects.equals(this.descriptions, other.descriptions) &&
+                Objects.equals(this.displayNames, other.displayNames) &&
                 Objects.equals(this.idShort, other.idShort) &&
                 Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
                 Objects.equals(this.semanticId, other.semanticId);
@@ -113,8 +113,8 @@ public class DefaultView implements View {
         DefaultView other = new DefaultView();
         other.containedElements = (List<Referable>) Util.clone(this.containedElements);
         other.category = (String) Util.clone(this.category);
-        other.description = (LangString) Util.clone(this.description);
-        other.displayName = (LangString) Util.clone(this.displayName);
+        other.descriptions = (List<LangString>) Util.clone(this.descriptions);
+        other.displayNames = (List<LangString>) Util.clone(this.displayNames);
         other.idShort = (String) Util.clone(this.idShort);
         other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
         other.semanticId = (Reference) Util.clone(this.semanticId);
@@ -142,21 +142,21 @@ public class DefaultView implements View {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-    final public LangString getDescription() {
-        return description;
+    final public List<LangString> getDescriptions() {
+        return descriptions;
     }
 
-    final public void setDescription(LangString description) {
-        this.description = description;
+    final public void setDescriptions(List<LangString> descriptions) {
+        this.descriptions = descriptions;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-    final public LangString getDisplayName() {
-        return displayName;
+    final public List<LangString> getDisplayNames() {
+        return displayNames;
     }
 
-    final public void setDisplayName(LangString displayName) {
-        this.displayName = displayName;
+    final public void setDisplayNames(List<LangString> displayNames) {
+        this.displayNames = displayNames;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")

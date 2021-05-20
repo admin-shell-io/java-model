@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 
 
 
@@ -27,11 +28,11 @@ public interface MultiLanguageProperty extends ModelClass, DataElement {
      * MultiLanguageProperty references a ConceptDescription then DataSpecificationIEC61360/dataType
      * shall be STRING_TRANSLATABLE."@en
      * 
-     * @return Returns the LangString for the property value. More information under
+     * @return Returns the List of LangStrings for the property values. More information under
      *         https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value")
-    public LangString getValue();
+    public List<LangString> getValues();
 
     /**
      * "Reference to the global unqiue id of a coded value."@en

@@ -46,7 +46,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
      * DataSpecificationIEC61360/definition is mandatory and shall be defined at least in English."@en
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
-    protected LangString definition;
+    protected List<LangString> definitions;
 
     /**
      * "has level type"
@@ -58,13 +58,13 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
      * "has preferred name"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
-    protected LangString preferredName;
+    protected List<LangString> preferredNames;
 
     /**
      * "has short name"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
-    protected LangString shortName;
+    protected List<LangString> shortNames;
 
     /**
      * "has source of definition"
@@ -122,10 +122,10 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
     @Override
     public int hashCode() {
         return Objects.hash(new Object[] {this.dataTypes,
-            this.definition,
+            this.definitions,
             this.levelTypes,
-            this.preferredName,
-            this.shortName,
+            this.preferredNames,
+            this.shortNames,
             this.sourceOfDefinition,
             this.symbol,
             this.unit,
@@ -147,10 +147,10 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
         } else {
             DefaultDataSpecificationIEC61360 other = (DefaultDataSpecificationIEC61360) obj;
             return Objects.equals(this.dataTypes, other.dataTypes) &&
-                Objects.equals(this.definition, other.definition) &&
+                Objects.equals(this.definitions, other.definitions) &&
                 Objects.equals(this.levelTypes, other.levelTypes) &&
-                Objects.equals(this.preferredName, other.preferredName) &&
-                Objects.equals(this.shortName, other.shortName) &&
+                Objects.equals(this.preferredNames, other.preferredNames) &&
+                Objects.equals(this.shortNames, other.shortNames) &&
                 Objects.equals(this.sourceOfDefinition, other.sourceOfDefinition) &&
                 Objects.equals(this.symbol, other.symbol) &&
                 Objects.equals(this.unit, other.unit) &&
@@ -166,10 +166,10 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
     public Object deepCopy() {
         DefaultDataSpecificationIEC61360 other = new DefaultDataSpecificationIEC61360();
         other.dataTypes = (List<DataTypeIEC61360>) Util.clone(this.dataTypes);
-        other.definition = (LangString) Util.clone(this.definition);
+        other.definitions = (List<LangString>) Util.clone(this.definitions);
         other.levelTypes = (List<LevelType>) Util.clone(this.levelTypes);
-        other.preferredName = (LangString) Util.clone(this.preferredName);
-        other.shortName = (LangString) Util.clone(this.shortName);
+        other.preferredNames = (List<LangString>) Util.clone(this.preferredNames);
+        other.shortNames = (List<LangString>) Util.clone(this.shortNames);
         other.sourceOfDefinition = (String) Util.clone(this.sourceOfDefinition);
         other.symbol = (String) Util.clone(this.symbol);
         other.unit = (String) Util.clone(this.unit);
@@ -193,12 +193,12 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
     }
 
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
-    final public LangString getDefinition() {
-        return definition;
+    final public List<LangString> getDefinitions() {
+        return definitions;
     }
 
-    final public void setDefinition(LangString definition) {
-        this.definition = definition;
+    final public void setDefinitions(List<LangString> definitions) {
+        this.definitions = definitions;
     }
 
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/levelType")
@@ -211,21 +211,21 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
     }
 
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
-    final public LangString getPreferredName() {
-        return preferredName;
+    final public List<LangString> getPreferredNames() {
+        return preferredNames;
     }
 
-    final public void setPreferredName(LangString preferredName) {
-        this.preferredName = preferredName;
+    final public void setPreferredNames(List<LangString> preferredNames) {
+        this.preferredNames = preferredNames;
     }
 
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
-    final public LangString getShortName() {
-        return shortName;
+    final public List<LangString> getShortNames() {
+        return shortNames;
     }
 
-    final public void setShortName(LangString shortName) {
-        this.shortName = shortName;
+    final public void setShortNames(List<LangString> shortNames) {
+        this.shortNames = shortNames;
     }
 
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition")

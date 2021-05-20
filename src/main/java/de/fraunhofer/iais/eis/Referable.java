@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 
 
 
@@ -35,20 +36,20 @@ public interface Referable extends ModelClass {
      * "Description or comments on the element. The description can be provided in several
      * languages."@en
      * 
-     * @return Returns the LangString for the property description. More information under
+     * @return Returns the List of LangStrings for the property descriptions. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Referable/description
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-    public LangString getDescription();
+    public List<LangString> getDescriptions();
 
     /**
      * "Display name. Can be provided in several languages."@en
      * 
-     * @return Returns the LangString for the property displayName. More information under
+     * @return Returns the List of LangStrings for the property displayNames. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Referable/displayName
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-    public LangString getDisplayName();
+    public List<LangString> getDisplayNames();
 
     /**
      * "Identifying string of the element within its name space."@en "Constraint AASd-002: idShort shall

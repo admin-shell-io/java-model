@@ -123,24 +123,24 @@ public class AssetAdministrationShellBuilder {
     }
 
     /**
-     * This function allows setting a value for description
+     * This function allows setting a value for descriptions
      * 
-     * @param description desired value to be set
-     * @return Builder object with new value for description
+     * @param descriptions desired value to be set
+     * @return Builder object with new value for descriptions
      */
-    public AssetAdministrationShellBuilder description(LangString description) {
-        this.map.put("description", description);
+    public AssetAdministrationShellBuilder descriptions(List<LangString> descriptions) {
+        this.map.put("descriptions", descriptions);
         return this;
     }
 
     /**
-     * This function allows setting a value for displayName
+     * This function allows setting a value for displayNames
      * 
-     * @param displayName desired value to be set
-     * @return Builder object with new value for displayName
+     * @param displayNames desired value to be set
+     * @return Builder object with new value for displayNames
      */
-    public AssetAdministrationShellBuilder displayName(LangString displayName) {
-        this.map.put("displayName", displayName);
+    public AssetAdministrationShellBuilder displayNames(List<LangString> displayNames) {
+        this.map.put("displayNames", displayNames);
         return this;
     }
 

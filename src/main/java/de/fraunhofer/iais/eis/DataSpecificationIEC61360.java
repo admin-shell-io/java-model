@@ -51,11 +51,11 @@ public interface DataSpecificationIEC61360 extends ModelClass, DataSpecification
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
      * DataSpecificationIEC61360/definition is mandatory and shall be defined at least in English."@en
      * 
-     * @return Returns the LangString for the property definition. More information under
+     * @return Returns the List of LangStrings for the property definitions. More information under
      *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
-    public LangString getDefinition();
+    public List<LangString> getDefinitions();
 
     /**
      * @return Returns the List of LevelTypes for the property levelTypes. More information under
@@ -65,18 +65,18 @@ public interface DataSpecificationIEC61360 extends ModelClass, DataSpecification
     public List<LevelType> getLevelTypes();
 
     /**
-     * @return Returns the LangString for the property preferredName. More information under
+     * @return Returns the List of LangStrings for the property preferredNames. More information under
      *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
-    public LangString getPreferredName();
+    public List<LangString> getPreferredNames();
 
     /**
-     * @return Returns the LangString for the property shortName. More information under
+     * @return Returns the List of LangStrings for the property shortNames. More information under
      *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
-    public LangString getShortName();
+    public List<LangString> getShortNames();
 
     /**
      * @return Returns the String for the property sourceOfDefinition. More information under
