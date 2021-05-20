@@ -50,7 +50,7 @@ public class RangeBuilder {
 	* @param max desired value to be set
 	* @return Builder object with new value for max
 	*/
-	public RangeBuilder max(TypedLiteral max) {
+	public RangeBuilder max(String max) {
 		this.map.put("max", max);
 		return this;
 	}
@@ -61,7 +61,7 @@ public class RangeBuilder {
 	* @param min desired value to be set
 	* @return Builder object with new value for min
 	*/
-	public RangeBuilder min(TypedLiteral min) {
+	public RangeBuilder min(String min) {
 		this.map.put("min", min);
 		return this;
 	}

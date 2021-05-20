@@ -45,18 +45,18 @@ public interface Range extends ModelClass, DataElement {
 
 	/**
 	* "The maximum value of the range."@en
-	* @return Returns the TypedLiteral for the property max.
+	* @return Returns the String for the property max.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Range/max
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/max")
-	public TypedLiteral getMax();
+	public String getMax();
 
 	/**
 	* "The minimum value of the range."@en
-	* @return Returns the TypedLiteral for the property min.
+	* @return Returns the String for the property min.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Range/min
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/min")
-	public TypedLiteral getMin();
+	public String getMin();
 
 }

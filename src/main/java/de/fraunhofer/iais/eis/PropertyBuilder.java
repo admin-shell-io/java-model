@@ -50,7 +50,7 @@ public class PropertyBuilder {
 	* @param value desired value to be set
 	* @return Builder object with new value for value
 	*/
-	public PropertyBuilder value(TypedLiteral value) {
+	public PropertyBuilder value(String value) {
 		this.map.put("value", value);
 		return this;
 	}

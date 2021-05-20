@@ -69,7 +69,7 @@ public class DefaultRange implements Range {
 	* "The maximum value of the range."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/max")
-	protected TypedLiteral max;
+	protected String max;
 
 
 	/**
@@ -77,7 +77,7 @@ public class DefaultRange implements Range {
 	* "The minimum value of the range."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/min")
-	protected TypedLiteral min;
+	protected String min;
 
 
 	/**
@@ -172,8 +172,8 @@ public class DefaultRange implements Range {
 	public Object deepCopy() {
 		DefaultRange other = new DefaultRange();
 		other.valueType = (String) Util.clone(this.valueType);
-		other.max = (TypedLiteral) Util.clone(this.max);
-		other.min = (TypedLiteral) Util.clone(this.min);
+		other.max = (String) Util.clone(this.max);
+		other.min = (String) Util.clone(this.min);
 		other.category = (String) Util.clone(this.category);
 		other.description = (LangString) Util.clone(this.description);
 		other.displayName = (LangString) Util.clone(this.displayName);
@@ -199,20 +199,20 @@ public class DefaultRange implements Range {
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/max")
-	final public TypedLiteral getMax() {
+	final public String getMax() {
 		return max;
 	}
 	
-	final public void setMax (TypedLiteral max) {
+	final public void setMax (String max) {
 		this.max = max;
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/min")
-	final public TypedLiteral getMin() {
+	final public String getMin() {
 		return min;
 	}
 	
-	final public void setMin (TypedLiteral min) {
+	final public void setMin (String min) {
 		this.min = min;
 	}
 

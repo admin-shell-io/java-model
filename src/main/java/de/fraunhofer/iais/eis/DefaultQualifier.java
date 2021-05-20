@@ -52,7 +52,7 @@ public class DefaultQualifier implements Qualifier {
 	* "Constraint AASd-020: The value of Qualifier/value shall be consistent to the data type as defined in Qualifier/valueType."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/value")
-	protected TypedLiteral value;
+	protected String value;
 
 
 	/**
@@ -105,7 +105,7 @@ public class DefaultQualifier implements Qualifier {
 		DefaultQualifier other = new DefaultQualifier();
 		other.type = (String) Util.clone(this.type);
 		other.valueType = (String) Util.clone(this.valueType);
-		other.value = (TypedLiteral) Util.clone(this.value);
+		other.value = (String) Util.clone(this.value);
 		other.valueId = (Reference) Util.clone(this.valueId);
 		other.semanticId = (Reference) Util.clone(this.semanticId);
 		return other;
@@ -134,11 +134,11 @@ public class DefaultQualifier implements Qualifier {
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/value")
-	final public TypedLiteral getValue() {
+	final public String getValue() {
 		return value;
 	}
 	
-	final public void setValue (TypedLiteral value) {
+	final public void setValue (String value) {
 		this.value = value;
 	}
 

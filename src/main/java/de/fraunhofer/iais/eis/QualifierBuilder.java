@@ -61,7 +61,7 @@ public class QualifierBuilder {
 	* @param value desired value to be set
 	* @return Builder object with new value for value
 	*/
-	public QualifierBuilder value(TypedLiteral value) {
+	public QualifierBuilder value(String value) {
 		this.map.put("value", value);
 		return this;
 	}

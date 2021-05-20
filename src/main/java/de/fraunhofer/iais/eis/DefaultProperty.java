@@ -61,7 +61,7 @@ public class DefaultProperty implements Property {
 	* "The value of the property instance."@en
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Property/value")
-	protected TypedLiteral value;
+	protected String value;
 
 
 	/**
@@ -173,7 +173,7 @@ public class DefaultProperty implements Property {
 	public Object deepCopy() {
 		DefaultProperty other = new DefaultProperty();
 		other.valueType = (String) Util.clone(this.valueType);
-		other.value = (TypedLiteral) Util.clone(this.value);
+		other.value = (String) Util.clone(this.value);
 		other.valueId = (Reference) Util.clone(this.valueId);
 		other.category = (String) Util.clone(this.category);
 		other.description = (LangString) Util.clone(this.description);
@@ -200,11 +200,11 @@ public class DefaultProperty implements Property {
 	}
 
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Property/value")
-	final public TypedLiteral getValue() {
+	final public String getValue() {
 		return value;
 	}
 	
-	final public void setValue (TypedLiteral value) {
+	final public void setValue (String value) {
 		this.value = value;
 	}
 

@@ -45,11 +45,11 @@ public interface Property extends ModelClass, DataElement {
 
 	/**
 	* "The value of the property instance."@en
-	* @return Returns the TypedLiteral for the property value.
+	* @return Returns the String for the property value.
 	* More information under https://admin-shell.io/aas/3/0/RC01/Property/value
 	*/
 	@IRI("https://admin-shell.io/aas/3/0/RC01/Property/value")
-	public TypedLiteral getValue();
+	public String getValue();
 
 	/**
 	* "Reference to the global unique id of a coded value."@en
