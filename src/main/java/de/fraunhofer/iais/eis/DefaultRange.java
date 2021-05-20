@@ -1,292 +1,264 @@
 package de.fraunhofer.iais.eis;
 
-import de.fraunhofer.iais.eis.util.*;
-import de.fraunhofer.iais.eis.*;
-
-import javax.xml.datatype.XMLGregorianCalendar;
-import java.lang.String;
-import java.math.BigInteger;
-import java.net.URL;
-import java.net.URI;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
-/** 
-* "Range"
-* "An element that is referable by its idShort. This id is not globally unique. This id is unique within the name space of the element."@en
-* "Constraint AASd-053: The semanticId of a Range submodel element shall only reference a ConceptDescription with the category PROPERTY."@en
-* "Constraint AASd-068: If the semanticId of a  Range references a ConceptDescription then DataSpecificationIEC61360/dataType shall be a numerical one, i.e. REAL_* or RATIONAL_*."@en
-* "Constraint AASd-069: If the semanticId of a  Range references a ConceptDescription then DataSpecificationIEC61360/levelType shall be identical to the set {Min,Max}."@en 
-*/
+
+import de.fraunhofer.iais.eis.util.*;
+
+/**
+ * "Range" "An element that is referable by its idShort. This id is not globally unique. This id is
+ * unique within the name space of the element."@en "Constraint AASd-053: The semanticId of a Range
+ * submodel element shall only reference a ConceptDescription with the category PROPERTY."@en
+ * "Constraint AASd-068: If the semanticId of a Range references a ConceptDescription then
+ * DataSpecificationIEC61360/dataType shall be a numerical one, i.e. REAL_* or RATIONAL_*."@en
+ * "Constraint AASd-069: If the semanticId of a Range references a ConceptDescription then
+ * DataSpecificationIEC61360/levelType shall be identical to the set {Min,Max}."@en
+ */
 
 public class DefaultRange implements Range {
 
+    // instance fields as derived from the Asset Administration Shell ontology
 
-	// instance fields as derived from the Asset Administration Shell ontology
+    /**
+     * "has Data Specification" "Global reference to the data specification template used by the
+     * element."@en
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+    protected List<Reference> dataSpecifications;
 
-	/**
-	* "has Data Specification"
-	* "Global reference to the data specification template used by the element."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
-	protected List<Reference> dataSpecifications;
+    /**
+     * "has kind" "ModelingKind of the element: either type or instance."@en
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
+    protected ModelingKind kind;
 
+    /**
+     * "has semantic ID" "Points to the Expression Semantic of the Submodels"@en "The semantic id might
+     * refer to an external information source, which explains the formulation of the submodel (for
+     * example an PDF if a standard)."@en
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
+    protected Reference semanticId;
 
-	/**
-	* "has kind"
-	* "ModelingKind of the element: either type or instance."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-	protected ModelingKind kind;
+    /**
+     * "has qualifier" "Additional qualification of a qualifiable element."@en
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
+    protected List<Constraint> qualifiers;
 
+    /**
+     * "has maximum value" "The maximum value of the range."@en
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Range/max")
+    protected String max;
 
-	/**
-	* "has semantic ID"
-	* "Points to the Expression Semantic of the Submodels"@en
-	* "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-	protected Reference semanticId;
+    /**
+     * "has minimum value" "The minimum value of the range."@en
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Range/min")
+    protected String min;
 
+    /**
+     * "has value type of range" "Data type of the min and max."@en
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Range/valueType")
+    protected String valueType;
 
-	/**
-	* "has qualifier"
-	* "Additional qualification of a qualifiable element."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
-	protected List<Constraint> qualifiers;
+    /**
+     * "has referable category" "The category is a value that gives further meta information w.r.t. to
+     * the class of the element. It affects the expected existence of attributes and the applicability
+     * of constraints."@en
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
+    protected String category;
 
+    /**
+     * "has description" "Description or comments on the element. The description can be provided in
+     * several languages."@en
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+    protected LangString description;
 
-	/**
-	* "has maximum value"
-	* "The maximum value of the range."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/max")
-	protected String max;
+    /**
+     * "has display name" "Display name. Can be provided in several languages."@en
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+    protected LangString displayName;
 
+    /**
+     * "has short id" "Identifying string of the element within its name space."@en "Constraint
+     * AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small
+     * letter. I.e. [a-z][a-zA-Z0-9_]+."@en "Constraint AASd-003: idShort shall be matched
+     * case-insensitive."@en "Constraint AASd-022: idShort of non-identifiable referables shall be
+     * unqiue in its namespace."@en "Note: In case the element is a property and the property has a
+     * semantic definition (HasSemantics) the idShort is typically identical to the short name in
+     * English. "@en "Note: In case of an identifiable element idShort is optional but recommended to be
+     * defined. It can be used for unique reference in its name space and thus allows better usability
+     * and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC
+     * UA."@en
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+    protected String idShort;
 
-	/**
-	* "has minimum value"
-	* "The minimum value of the range."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/min")
-	protected String min;
+    // no manual construction
+    protected DefaultRange() {}
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(new Object[] {this.valueType,
+            this.max,
+            this.min,
+            this.category,
+            this.description,
+            this.displayName,
+            this.idShort,
+            this.qualifiers,
+            this.dataSpecifications,
+            this.kind,
+            this.semanticId});
+    }
 
-	/**
-	* "has value type of range"
-	* "Data type of the min and max."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/valueType")
-	protected String valueType;
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        } else if (obj == null) {
+            return false;
+        } else if (this.getClass() != obj.getClass()) {
+            return false;
+        } else {
+            DefaultRange other = (DefaultRange) obj;
+            return Objects.equals(this.valueType, other.valueType) &&
+                Objects.equals(this.max, other.max) &&
+                Objects.equals(this.min, other.min) &&
+                Objects.equals(this.category, other.category) &&
+                Objects.equals(this.description, other.description) &&
+                Objects.equals(this.displayName, other.displayName) &&
+                Objects.equals(this.idShort, other.idShort) &&
+                Objects.equals(this.qualifiers, other.qualifiers) &&
+                Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
+                Objects.equals(this.kind, other.kind) &&
+                Objects.equals(this.semanticId, other.semanticId);
+        }
+    }
 
+    @Override
+    public Object deepCopy() {
+        DefaultRange other = new DefaultRange();
+        other.valueType = (String) Util.clone(this.valueType);
+        other.max = (String) Util.clone(this.max);
+        other.min = (String) Util.clone(this.min);
+        other.category = (String) Util.clone(this.category);
+        other.description = (LangString) Util.clone(this.description);
+        other.displayName = (LangString) Util.clone(this.displayName);
+        other.idShort = (String) Util.clone(this.idShort);
+        other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
+        other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
+        other.kind = (ModelingKind) Util.clone(this.kind);
+        other.semanticId = (Reference) Util.clone(this.semanticId);
+        return other;
+    }
 
-	/**
-	* "has referable category"
-	* "The category is a value that gives further meta information w.r.t. to the class of the element. It affects the expected existence of attributes and the applicability of constraints."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-	protected String category;
+    // accessor method implementations as derived from the Asset Administration Shell ontology
 
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Range/valueType")
+    final public String getValueType() {
+        return valueType;
+    }
 
-	/**
-	* "has description"
-	* "Description or comments on the element. The description can be provided in several languages."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	protected LangString description;
+    final public void setValueType(String valueType) {
+        this.valueType = valueType;
+    }
 
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Range/max")
+    final public String getMax() {
+        return max;
+    }
 
-	/**
-	* "has display name"
-	* "Display name. Can be provided in several languages."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-	protected LangString displayName;
+    final public void setMax(String max) {
+        this.max = max;
+    }
 
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Range/min")
+    final public String getMin() {
+        return min;
+    }
 
-	/**
-	* "has short id"
-	* "Identifying string of the element within its name space."@en
-	* "Constraint AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+."@en
-	* "Constraint AASd-003: idShort shall be matched case-insensitive."@en
-	* "Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace."@en
-	* "Note: In case the element is a property and the property has a semantic definition (HasSemantics) the idShort is typically identical to the short name in English. "@en
-	* "Note: In case of an identifiable element idShort is optional but recommended to be defined. It can be used for unique reference in its name space and thus allows better usability and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-	protected String idShort;
+    final public void setMin(String min) {
+        this.min = min;
+    }
 
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
+    final public String getCategory() {
+        return category;
+    }
 
-	// no manual construction
-	protected DefaultRange() {
-	}
+    final public void setCategory(String category) {
+        this.category = category;
+    }
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(new Object[]{this.valueType,
-			this.max,
-			this.min,
-			this.category,
-			this.description,
-			this.displayName,
-			this.idShort,
-			this.qualifiers,
-			this.dataSpecifications,
-			this.kind,
-			this.semanticId});
-	}
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
+    final public LangString getDescription() {
+        return description;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		} else if (obj == null) {
-			return false;
-		} else if (this.getClass() != obj.getClass()) {
-			return false;
-		} else {
-			DefaultRange other = (DefaultRange) obj;
-			return Objects.equals(this.valueType, other.valueType) &&
-				Objects.equals(this.max, other.max) &&
-				Objects.equals(this.min, other.min) &&
-				Objects.equals(this.category, other.category) &&
-				Objects.equals(this.description, other.description) &&
-				Objects.equals(this.displayName, other.displayName) &&
-				Objects.equals(this.idShort, other.idShort) &&
-				Objects.equals(this.qualifiers, other.qualifiers) &&
-				Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-				Objects.equals(this.kind, other.kind) &&
-				Objects.equals(this.semanticId, other.semanticId);
-		}
-	}
+    final public void setDescription(LangString description) {
+        this.description = description;
+    }
 
-	@Override
-	public Object deepCopy() {
-		DefaultRange other = new DefaultRange();
-		other.valueType = (String) Util.clone(this.valueType);
-		other.max = (String) Util.clone(this.max);
-		other.min = (String) Util.clone(this.min);
-		other.category = (String) Util.clone(this.category);
-		other.description = (LangString) Util.clone(this.description);
-		other.displayName = (LangString) Util.clone(this.displayName);
-		other.idShort = (String) Util.clone(this.idShort);
-		other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
-		other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
-		other.kind = (ModelingKind) Util.clone(this.kind);
-		other.semanticId = (Reference) Util.clone(this.semanticId);
-		return other;
-	}
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
+    final public LangString getDisplayName() {
+        return displayName;
+    }
 
+    final public void setDisplayName(LangString displayName) {
+        this.displayName = displayName;
+    }
 
-	// accessor method implementations as derived from the Asset Administration Shell ontology
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
+    final public String getIdShort() {
+        return idShort;
+    }
 
+    final public void setIdShort(String idShort) {
+        this.idShort = idShort;
+    }
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/valueType")
-	final public String getValueType() {
-		return valueType;
-	}
-	
-	final public void setValueType (String valueType) {
-		this.valueType = valueType;
-	}
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
+    final public List<Constraint> getQualifiers() {
+        return qualifiers;
+    }
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/max")
-	final public String getMax() {
-		return max;
-	}
-	
-	final public void setMax (String max) {
-		this.max = max;
-	}
+    final public void setQualifiers(List<Constraint> qualifiers) {
+        this.qualifiers = qualifiers;
+    }
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Range/min")
-	final public String getMin() {
-		return min;
-	}
-	
-	final public void setMin (String min) {
-		this.min = min;
-	}
+    @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+    final public List<Reference> getDataSpecifications() {
+        return dataSpecifications;
+    }
 
+    final public void setDataSpecifications(List<Reference> dataSpecifications) {
+        this.dataSpecifications = dataSpecifications;
+    }
 
+    @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
+    final public ModelingKind getKind() {
+        return kind;
+    }
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-	final public String getCategory() {
-		return category;
-	}
-	
-	final public void setCategory (String category) {
-		this.category = category;
-	}
+    final public void setKind(ModelingKind kind) {
+        this.kind = kind;
+    }
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-	final public LangString getDescription() {
-		return description;
-	}
-	
-	final public void setDescription (LangString description) {
-		this.description = description;
-	}
+    @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
+    final public Reference getSemanticId() {
+        return semanticId;
+    }
 
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-	final public LangString getDisplayName() {
-		return displayName;
-	}
-	
-	final public void setDisplayName (LangString displayName) {
-		this.displayName = displayName;
-	}
-
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-	final public String getIdShort() {
-		return idShort;
-	}
-	
-	final public void setIdShort (String idShort) {
-		this.idShort = idShort;
-	}
-
-	@IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
-	final public List<Constraint> getQualifiers() {
-		return qualifiers;
-	}
-	
-	final public void setQualifiers (List<Constraint> qualifiers) {
-		this.qualifiers = qualifiers;
-	}
-
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
-	final public List<Reference> getDataSpecifications() {
-		return dataSpecifications;
-	}
-	
-	final public void setDataSpecifications (List<Reference> dataSpecifications) {
-		this.dataSpecifications = dataSpecifications;
-	}
-
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-	final public ModelingKind getKind() {
-		return kind;
-	}
-	
-	final public void setKind (ModelingKind kind) {
-		this.kind = kind;
-	}
-
-	@IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-	final public Reference getSemanticId() {
-		return semanticId;
-	}
-	
-	final public void setSemanticId (Reference semanticId) {
-		this.semanticId = semanticId;
-	}
+    final public void setSemanticId(Reference semanticId) {
+        this.semanticId = semanticId;
+    }
 }

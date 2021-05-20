@@ -1,34 +1,19 @@
 package de.fraunhofer.iais.eis;
 
+
+
+
 import de.fraunhofer.iais.eis.util.*;
-import de.fraunhofer.iais.eis.*;
-
-import javax.xml.datatype.XMLGregorianCalendar;
-import java.lang.String;
-import java.math.BigInteger;
-import java.net.URL;
-import java.net.URI;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
-* "Constraint"
-* "A constraint is used to further qualify an element."@en
-*/
+ * "Constraint" "A constraint is used to further qualify an element."@en
+ */
 @KnownSubtypes({
-	@KnownSubtypes.Type(value = Formula.class),
-	@KnownSubtypes.Type(value = Qualifier.class)
+    @KnownSubtypes.Type(value = Formula.class),
+    @KnownSubtypes.Type(value = Qualifier.class)
 })
 public interface Constraint extends ModelClass {
 
-	// standard methods
-
+    // standard methods
 
 }

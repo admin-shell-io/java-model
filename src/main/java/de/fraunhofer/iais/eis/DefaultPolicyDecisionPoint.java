@@ -1,81 +1,64 @@
 package de.fraunhofer.iais.eis;
 
-import de.fraunhofer.iais.eis.util.*;
-import de.fraunhofer.iais.eis.*;
-
-import javax.xml.datatype.XMLGregorianCalendar;
-import java.lang.String;
-import java.math.BigInteger;
-import java.net.URL;
-import java.net.URI;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
-/** 
-* "Policy Decision Point"
-* "Defines a security policy decision point (PDP). "@en 
-*/
+
+import de.fraunhofer.iais.eis.util.*;
+
+/**
+ * "Policy Decision Point" "Defines a security policy decision point (PDP). "@en
+ */
 
 public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
 
+    // instance fields as derived from the Asset Administration Shell ontology
 
-	// instance fields as derived from the Asset Administration Shell ontology
+    /**
+     * "is external policy decision point defined" "If externalPolicyDecisionPoints True then Endpoints
+     * to external available decision points taking into consideration for access control for the AAS
+     * need to be configured."@en
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
+    protected boolean externalPolicyDecisionPoints;
 
-	/**
-	* "is external policy decision point defined"
-	* "If externalPolicyDecisionPoints True then Endpoints to external available decision points taking into consideration for access control for the AAS need to be configured."@en
-	*/
-	@IRI("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
-	protected boolean externalPolicyDecisionPoints;
+    // no manual construction
+    protected DefaultPolicyDecisionPoint() {}
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(new Object[] {this.externalPolicyDecisionPoints});
+    }
 
-	// no manual construction
-	protected DefaultPolicyDecisionPoint() {
-	}
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        } else if (obj == null) {
+            return false;
+        } else if (this.getClass() != obj.getClass()) {
+            return false;
+        } else {
+            DefaultPolicyDecisionPoint other = (DefaultPolicyDecisionPoint) obj;
+            return Objects.equals(this.externalPolicyDecisionPoints, other.externalPolicyDecisionPoints);
+        }
+    }
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(new Object[]{this.externalPolicyDecisionPoints});
-	}
+    @Override
+    public Object deepCopy() {
+        DefaultPolicyDecisionPoint other = new DefaultPolicyDecisionPoint();
+        other.externalPolicyDecisionPoints = (boolean) Util.clone(this.externalPolicyDecisionPoints);
+        return other;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		} else if (obj == null) {
-			return false;
-		} else if (this.getClass() != obj.getClass()) {
-			return false;
-		} else {
-			DefaultPolicyDecisionPoint other = (DefaultPolicyDecisionPoint) obj;
-			return Objects.equals(this.externalPolicyDecisionPoints, other.externalPolicyDecisionPoints);
-		}
-	}
+    // accessor method implementations as derived from the Asset Administration Shell ontology
 
-	@Override
-	public Object deepCopy() {
-		DefaultPolicyDecisionPoint other = new DefaultPolicyDecisionPoint();
-		other.externalPolicyDecisionPoints = (boolean) Util.clone(this.externalPolicyDecisionPoints);
-		return other;
-	}
+    @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
+    final public boolean getExternalPolicyDecisionPoints() {
+        return externalPolicyDecisionPoints;
+    }
 
-
-	// accessor method implementations as derived from the Asset Administration Shell ontology
-
-
-	@IRI("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
-	final public boolean getExternalPolicyDecisionPoints() {
-		return externalPolicyDecisionPoints;
-	}
-	
-	final public void setExternalPolicyDecisionPoints (boolean externalPolicyDecisionPoints) {
-		this.externalPolicyDecisionPoints = externalPolicyDecisionPoints;
-	}
+    final public void setExternalPolicyDecisionPoints(boolean externalPolicyDecisionPoints) {
+        this.externalPolicyDecisionPoints = externalPolicyDecisionPoints;
+    }
 }
