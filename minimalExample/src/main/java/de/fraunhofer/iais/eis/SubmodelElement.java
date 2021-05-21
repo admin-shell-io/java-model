@@ -16,6 +16,7 @@ import de.fraunhofer.iais.eis.util.*;
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultSubmodelElement.class),
+    @KnownSubtypes.Type(value = File.class),
     @KnownSubtypes.Type(value = SubmodelElementCollection.class)
 })
 public interface SubmodelElement extends ModelClass {

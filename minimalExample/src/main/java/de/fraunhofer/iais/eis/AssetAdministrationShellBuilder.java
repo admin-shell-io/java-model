@@ -24,6 +24,17 @@ public class AssetAdministrationShellBuilder {
     }
 
     /**
+     * This function allows setting a value for assetInformations
+     * 
+     * @param assetInformations desired value to be set
+     * @return Builder object with new value for assetInformations
+     */
+    public AssetAdministrationShellBuilder assetInformations(List<AssetInformation> assetInformations) {
+        this.map.put("assetInformations", assetInformations);
+        return this;
+    }
+
+    /**
      * This function allows setting a value for submodels
      * 
      * @param submodels desired value to be set
