@@ -655,3 +655,8 @@ aas:SubmodelElementCollection rdf:type owl:Class ;
     rdfs:range aas:SubmodelElement ;
 .
 
+### https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataTypeIEC61360
+iec61360:DataTypeIEC61360 rdf:type owl:Class ;
+    rdfs:label "Data Type IEC61360"^^xsd:string ;
+    rdfs:comment "Enumeration of all IEC 61360 defined data types."@en ;
+.
