@@ -6,6 +6,8 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix iec61360: <https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @base <https://admin-shell.io/aas/3/0/RC01/> .
 
 <https://admin-shell.io/aas/3/0/RC01/> rdf:type owl:Ontology ;
@@ -155,7 +157,7 @@ aas:AssetKind rdf:type owl:Class ;
 
 ###  https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation
 aas:AdministrativeInformation rdf:type owl:Class ;
-    rdfs:subClassOf aas:HasDataSpecification ;
+    #rdfs:subClassOf aas:HasDataSpecification ;
     rdfs:comment "Every Identifiable may have administrative information. Administrative information includes for example 1) Information about the version of the element 2) Information about who created or who made the last change to the element 3) Information about the languages available in case the element contains text, for translating purposed also themmaster or default language may be definedIn the first version of the AAS metamodel only version information as defined by IEC 61360 is defined. In later versions additional attributes may be added."@en ;
     rdfs:label "Administrative Information"^^xsd:string ;
 .
@@ -553,7 +555,7 @@ aas:Reference rdf:type owl:Class ;
 
 ###  https://admin-shell.io/aas/3/0/RC01/Property
 aas:Property rdf:type owl:Class ;
-    rdfs:subClassOf aas:DataElement ;
+    #rdfs:subClassOf aas:DataElement ;
     rdfs:comment "A property is a data element that has a single value."@en ;
     rdfs:label "Property"^^xsd:string ;
 	skos:note "Constraint AASd-052a: If the semanticId of a Property references a ConceptDescription then the ConceptDescription/category shall be one of  following values: VALUE, PROPERTY."@en ;
