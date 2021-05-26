@@ -1,6 +1,6 @@
 package de.fraunhofer.iais.eis;
 
-import java.util.List;
+import java.util.Collection;
 
 
 
@@ -50,10 +50,10 @@ public interface SubmodelElementCollection extends ModelClass, SubmodelElement {
     /**
      * "Submodel element contained in the collection."@en
      * 
-     * @return Returns the List of SubmodelElements for the property values. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value
+     * @return Returns the Collection of SubmodelElements for the property values. More information
+     *         under https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value")
-    public List<SubmodelElement> getValues();
+    public Collection<SubmodelElement> getValues();
 
 }

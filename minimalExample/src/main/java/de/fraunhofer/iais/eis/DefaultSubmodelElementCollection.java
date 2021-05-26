@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
@@ -42,7 +43,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
      * "has value" "Submodel element contained in the collection."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value")
-    protected List<SubmodelElement> values;
+    protected Collection<SubmodelElement> values;
 
     // no manual construction
     protected DefaultSubmodelElementCollection() {}
@@ -75,7 +76,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
         DefaultSubmodelElementCollection other = new DefaultSubmodelElementCollection();
         other.allowDuplicates = (List<Boolean>) Util.clone(this.allowDuplicates);
         other.ordereds = (List<Boolean>) Util.clone(this.ordereds);
-        other.values = (List<SubmodelElement>) Util.clone(this.values);
+        other.values = (Collection<SubmodelElement>) Util.clone(this.values);
         return other;
     }
 
@@ -100,11 +101,11 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value")
-    final public List<SubmodelElement> getValues() {
+    final public Collection<SubmodelElement> getValues() {
         return values;
     }
 
-    final public void setValues(List<SubmodelElement> values) {
+    final public void setValues(Collection<SubmodelElement> values) {
         this.values = values;
     }
 

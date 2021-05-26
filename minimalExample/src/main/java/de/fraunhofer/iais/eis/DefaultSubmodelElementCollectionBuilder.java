@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.Collection;
 import java.util.List;
 
 
@@ -44,7 +45,7 @@ public class DefaultSubmodelElementCollectionBuilder extends AbstractBuilder<Def
      * @param values desired value to be set
      * @return Builder object with new value for values
      */
-    public DefaultSubmodelElementCollectionBuilder values(List<SubmodelElement> values) {
+    public DefaultSubmodelElementCollectionBuilder values(Collection<SubmodelElement> values) {
         this.map.put("values", values);
         return this;
     }
