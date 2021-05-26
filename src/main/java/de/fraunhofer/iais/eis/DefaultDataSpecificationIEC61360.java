@@ -37,7 +37,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
      * DataSpecificationIEC61360/dataType is mandatory and shall be defined."@en
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
-    protected List<DataTypeIEC61360> dataTypes;
+    protected DataTypeIEC61360 dataType;
 
     /**
      * "has definition" "Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions
@@ -121,7 +121,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.dataTypes,
+        return Objects.hash(new Object[] {this.dataType,
             this.definitions,
             this.levelTypes,
             this.preferredNames,
@@ -146,7 +146,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
             return false;
         } else {
             DefaultDataSpecificationIEC61360 other = (DefaultDataSpecificationIEC61360) obj;
-            return Objects.equals(this.dataTypes, other.dataTypes) &&
+            return Objects.equals(this.dataType, other.dataType) &&
                 Objects.equals(this.definitions, other.definitions) &&
                 Objects.equals(this.levelTypes, other.levelTypes) &&
                 Objects.equals(this.preferredNames, other.preferredNames) &&
@@ -165,7 +165,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
     @Override
     public Object deepCopy() {
         DefaultDataSpecificationIEC61360 other = new DefaultDataSpecificationIEC61360();
-        other.dataTypes = (List<DataTypeIEC61360>) Util.clone(this.dataTypes);
+        other.dataType = (DataTypeIEC61360) Util.clone(this.dataType);
         other.definitions = (List<LangString>) Util.clone(this.definitions);
         other.levelTypes = (List<LevelType>) Util.clone(this.levelTypes);
         other.preferredNames = (List<LangString>) Util.clone(this.preferredNames);
@@ -184,12 +184,12 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
-    final public List<DataTypeIEC61360> getDataTypes() {
-        return dataTypes;
+    final public DataTypeIEC61360 getDataType() {
+        return dataType;
     }
 
-    final public void setDataTypes(List<DataTypeIEC61360> dataTypes) {
-        this.dataTypes = dataTypes;
+    final public void setDataType(DataTypeIEC61360 dataType) {
+        this.dataType = dataType;
     }
 
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")

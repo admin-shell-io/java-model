@@ -17,13 +17,13 @@ public class DefaultDataSpecificationIEC61360Builder extends AbstractBuilder<Def
     }
 
     /**
-     * This function allows setting a value for dataTypes
+     * This function allows setting a value for dataType
      * 
-     * @param dataTypes desired value to be set
-     * @return Builder object with new value for dataTypes
+     * @param dataType desired value to be set
+     * @return Builder object with new value for dataType
      */
-    public DefaultDataSpecificationIEC61360Builder dataTypes(List<DataTypeIEC61360> dataTypes) {
-        this.map.put("dataTypes", dataTypes);
+    public DefaultDataSpecificationIEC61360Builder dataType(DataTypeIEC61360 dataType) {
+        this.map.put("dataType", dataType);
         return this;
     }
 

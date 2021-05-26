@@ -39,11 +39,11 @@ public interface DataSpecificationIEC61360 extends ModelClass, DataSpecification
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
      * DataSpecificationIEC61360/dataType is mandatory and shall be defined."@en
      * 
-     * @return Returns the List of DataTypeIEC61360s for the property dataTypes. More information under
+     * @return Returns the DataTypeIEC61360 for the property dataType. More information under
      *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
-    public List<DataTypeIEC61360> getDataTypes();
+    public DataTypeIEC61360 getDataType();
 
     /**
      * "Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions of category
