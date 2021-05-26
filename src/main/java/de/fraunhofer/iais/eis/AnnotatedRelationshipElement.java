@@ -28,4 +28,12 @@ public interface AnnotatedRelationshipElement extends ModelClass, RelationshipEl
     @IRI("https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation")
     public List<DataElement> getAnnotations();
 
+    /**
+     * "Annotations that hold for the relationships between the two elements."@en
+     * 
+     * @param annotations desired value for the property annotations. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation
+     */
+    public void setAnnotations(List<DataElement> annotations);
+
 }

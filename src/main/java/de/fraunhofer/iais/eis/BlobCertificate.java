@@ -28,6 +28,14 @@ public interface BlobCertificate extends ModelClass, Certificate {
     public Blob getBlobCertificate();
 
     /**
+     * "Certificate as BLOB."@en
+     * 
+     * @param blobCertificate desired value for the property blobCertificate. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate
+     */
+    public void setBlobCertificate(Blob blobCertificate);
+
+    /**
      * "Extensions contained in the certificate."@en
      * 
      * @return Returns the List of References for the property containedExtensions. More information
@@ -37,6 +45,14 @@ public interface BlobCertificate extends ModelClass, Certificate {
     public List<Reference> getContainedExtensions();
 
     /**
+     * "Extensions contained in the certificate."@en
+     * 
+     * @param containedExtensions desired value for the property containedExtensions. More information
+     *        under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension
+     */
+    public void setContainedExtensions(List<Reference> containedExtensions);
+
+    /**
      * "Denotes whether this certificate is the certificated that fast added last."@en
      * 
      * @return Returns the boolean for the property lastCertificate. More information under
@@ -44,5 +60,13 @@ public interface BlobCertificate extends ModelClass, Certificate {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate")
     public boolean getLastCertificate();
+
+    /**
+     * "Denotes whether this certificate is the certificated that fast added last."@en
+     * 
+     * @param lastCertificate desired value for the property lastCertificate. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate
+     */
+    public void setLastCertificate(boolean lastCertificate);
 
 }

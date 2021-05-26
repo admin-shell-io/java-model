@@ -28,6 +28,14 @@ public interface File extends ModelClass, DataElement, SubmodelElement {
     public String getMimeType();
 
     /**
+     * "Mime type of the content of the File."@en
+     * 
+     * @param mimeType desired value for the property mimeType. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/File/mimeType
+     */
+    public void setMimeType(String mimeType);
+
+    /**
      * "Path and name of the referenced file (with file extension). The path can be absolute or
      * relative."@en
      * 
@@ -36,5 +44,14 @@ public interface File extends ModelClass, DataElement, SubmodelElement {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/File/value")
     public String getValue();
+
+    /**
+     * "Path and name of the referenced file (with file extension). The path can be absolute or
+     * relative."@en
+     * 
+     * @param value desired value for the property value. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/File/value
+     */
+    public void setValue(String value);
 
 }

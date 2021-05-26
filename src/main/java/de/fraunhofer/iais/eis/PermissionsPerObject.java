@@ -30,6 +30,14 @@ public interface PermissionsPerObject extends ModelClass {
     public Referable getObject();
 
     /**
+     * "Element to which permission shall be assigned."@en
+     * 
+     * @param object desired value for the property object. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object
+     */
+    public void setObject(Referable object);
+
+    /**
      * "Permissions assigned to the object. The permissions hold for all subjects as specified in the
      * access permission rule."@en
      * 
@@ -40,6 +48,15 @@ public interface PermissionsPerObject extends ModelClass {
     public List<Permission> getPermissions();
 
     /**
+     * "Permissions assigned to the object. The permissions hold for all subjects as specified in the
+     * access permission rule."@en
+     * 
+     * @param permissions desired value for the property permissions. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission
+     */
+    public void setPermissions(List<Permission> permissions);
+
+    /**
      * "Target object attributes that need to be fulfilled so that the access permissions apply to the
      * accessing subject."@en
      * 
@@ -48,5 +65,15 @@ public interface PermissionsPerObject extends ModelClass {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes")
     public ObjectAttributes getTargetObjectAttributes();
+
+    /**
+     * "Target object attributes that need to be fulfilled so that the access permissions apply to the
+     * accessing subject."@en
+     * 
+     * @param targetObjectAttributes desired value for the property targetObjectAttributes. More
+     *        information under
+     *        https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes
+     */
+    public void setTargetObjectAttributes(ObjectAttributes targetObjectAttributes);
 
 }

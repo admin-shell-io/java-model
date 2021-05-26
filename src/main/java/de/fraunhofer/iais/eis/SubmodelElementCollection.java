@@ -38,6 +38,17 @@ public interface SubmodelElementCollection extends ModelClass, SubmodelElement {
     public boolean getAllowDuplicates();
 
     /**
+     * "If allowDuplicates=true then it is allowed that the collection contains the same element several
+     * times. Default = false"@en "Constraint AASd-026: If allowDuplicates==false then it is not allowed
+     * that the collection contains several elements with the same semantics (i.e. the same
+     * semanticId)."@en
+     * 
+     * @param allowDuplicates desired value for the property allowDuplicates. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates
+     */
+    public void setAllowDuplicates(boolean allowDuplicates);
+
+    /**
      * "If ordered=false then the elements in the property collection are not ordered. If ordered=true
      * then the elements in the collection are ordered. Default = false"@en
      * 
@@ -48,6 +59,15 @@ public interface SubmodelElementCollection extends ModelClass, SubmodelElement {
     public boolean getOrdered();
 
     /**
+     * "If ordered=false then the elements in the property collection are not ordered. If ordered=true
+     * then the elements in the collection are ordered. Default = false"@en
+     * 
+     * @param ordered desired value for the property ordered. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered
+     */
+    public void setOrdered(boolean ordered);
+
+    /**
      * "Submodel element contained in the collection."@en
      * 
      * @return Returns the Collection of SubmodelElements for the property values. More information
@@ -55,5 +75,13 @@ public interface SubmodelElementCollection extends ModelClass, SubmodelElement {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value")
     public Collection<SubmodelElement> getValues();
+
+    /**
+     * "Submodel element contained in the collection."@en
+     * 
+     * @param values desired value for the property values. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value
+     */
+    public void setValues(Collection<SubmodelElement> values);
 
 }

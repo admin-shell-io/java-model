@@ -30,6 +30,14 @@ public interface Operation extends ModelClass, SubmodelElement {
     public List<OperationVariable> getInputVariables();
 
     /**
+     * "Input parameter of the operation."@en
+     * 
+     * @param inputVariables desired value for the property inputVariables. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Operation/inputVariable
+     */
+    public void setInputVariables(List<OperationVariable> inputVariables);
+
+    /**
      * "Parameter that is input and output of the operation."@en
      * 
      * @return Returns the List of OperationVariables for the property inoutputVariables. More
@@ -39,6 +47,14 @@ public interface Operation extends ModelClass, SubmodelElement {
     public List<OperationVariable> getInoutputVariables();
 
     /**
+     * "Parameter that is input and output of the operation."@en
+     * 
+     * @param inoutputVariables desired value for the property inoutputVariables. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable
+     */
+    public void setInoutputVariables(List<OperationVariable> inoutputVariables);
+
+    /**
      * "Output parameter of the operation."@en
      * 
      * @return Returns the List of OperationVariables for the property outputVariables. More information
@@ -46,5 +62,13 @@ public interface Operation extends ModelClass, SubmodelElement {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Operation/outputVariable")
     public List<OperationVariable> getOutputVariables();
+
+    /**
+     * "Output parameter of the operation."@en
+     * 
+     * @param outputVariables desired value for the property outputVariables. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Operation/outputVariable
+     */
+    public void setOutputVariables(List<OperationVariable> outputVariables);
 
 }

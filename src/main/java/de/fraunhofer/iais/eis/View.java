@@ -29,4 +29,12 @@ public interface View extends ModelClass, Referable, HasDataSpecification, HasSe
     @IRI("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
     public List<Referable> getContainedElements();
 
+    /**
+     * "Referable elements that are contained in the view."@en
+     * 
+     * @param containedElements desired value for the property containedElements. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/View/containedElement
+     */
+    public void setContainedElements(List<Referable> containedElements);
+
 }

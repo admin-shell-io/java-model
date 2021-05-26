@@ -29,6 +29,16 @@ public interface PolicyAdministrationPoint extends ModelClass {
     public AccessControl getLocalAccessControl();
 
     /**
+     * "The policy administration point of access control as realized by the AAS itself."@en "Constraint
+     * AASd-009: Either there is an external policy administration point endpoint defined or the AAS has
+     * its own access control."@en
+     * 
+     * @param localAccessControl desired value for the property localAccessControl. More information
+     *        under https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl
+     */
+    public void setLocalAccessControl(AccessControl localAccessControl);
+
+    /**
      * "Endpoint to an external access control defining a policy administration point to be used by the
      * AAS."@en
      * 
@@ -37,5 +47,15 @@ public interface PolicyAdministrationPoint extends ModelClass {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl")
     public boolean getExternalAccessControl();
+
+    /**
+     * "Endpoint to an external access control defining a policy administration point to be used by the
+     * AAS."@en
+     * 
+     * @param externalAccessControl desired value for the property externalAccessControl. More
+     *        information under
+     *        https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl
+     */
+    public void setExternalAccessControl(boolean externalAccessControl);
 
 }

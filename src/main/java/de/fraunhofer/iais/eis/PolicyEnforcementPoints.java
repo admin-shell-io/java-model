@@ -28,4 +28,14 @@ public interface PolicyEnforcementPoints extends ModelClass {
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyEnforcementPoints/externalPolicyEnforcementPoint")
     public boolean getExternalPolicyEnforcementPoint();
 
+    /**
+     * "If externalPolicyEnforcementPoint True then an Endpoint to external available enforcement point
+     * taking needs to be configured for the AAS."@en
+     * 
+     * @param externalPolicyEnforcementPoint desired value for the property
+     *        externalPolicyEnforcementPoint. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/PolicyEnforcementPoints/externalPolicyEnforcementPoint
+     */
+    public void setExternalPolicyEnforcementPoint(boolean externalPolicyEnforcementPoint);
+
 }

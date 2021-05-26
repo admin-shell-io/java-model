@@ -36,6 +36,14 @@ public interface Property extends ModelClass, DataElement {
     public String getValueType();
 
     /**
+     * "Data type pf the value."@en
+     * 
+     * @param valueType desired value for the property valueType. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Property/valueType
+     */
+    public void setValueType(String valueType);
+
+    /**
      * "The value of the property instance."@en
      * 
      * @return Returns the String for the property value. More information under
@@ -43,6 +51,14 @@ public interface Property extends ModelClass, DataElement {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/value")
     public String getValue();
+
+    /**
+     * "The value of the property instance."@en
+     * 
+     * @param value desired value for the property value. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Property/value
+     */
+    public void setValue(String value);
 
     /**
      * "Reference to the global unique id of a coded value."@en "Constraint AASd-007: if both, the value
@@ -54,5 +70,15 @@ public interface Property extends ModelClass, DataElement {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueId")
     public Reference getValueId();
+
+    /**
+     * "Reference to the global unique id of a coded value."@en "Constraint AASd-007: if both, the value
+     * and the valueId are present then the value needs to be identical to the value of the referenced
+     * coded value in valueId."@en
+     * 
+     * @param valueId desired value for the property valueId. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Property/valueId
+     */
+    public void setValueId(Reference valueId);
 
 }

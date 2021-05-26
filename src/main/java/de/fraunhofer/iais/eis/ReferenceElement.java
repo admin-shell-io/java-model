@@ -30,4 +30,13 @@ public interface ReferenceElement extends ModelClass, DataElement {
     @IRI("https://admin-shell.io/aas/3/0/RC01/ReferenceElement/value")
     public Reference getValue();
 
+    /**
+     * "Reference to any other referable element of the same of any other AAS or a reference to an
+     * external object or entity."@en
+     * 
+     * @param value desired value for the property value. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/ReferenceElement/value
+     */
+    public void setValue(Reference value);
+
 }

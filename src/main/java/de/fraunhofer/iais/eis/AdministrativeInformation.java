@@ -33,6 +33,14 @@ public interface AdministrativeInformation extends ModelClass, HasDataSpecificat
     public String getVersion();
 
     /**
+     * "Version of the element."@en
+     * 
+     * @param version desired value for the property version. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version
+     */
+    public void setVersion(String version);
+
+    /**
      * "Revision of the element."@en "Constraint AASd-005: A revision requires a version. This means, if
      * there is no version there is no revision neither."@en
      * 
@@ -41,5 +49,14 @@ public interface AdministrativeInformation extends ModelClass, HasDataSpecificat
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
     public String getRevision();
+
+    /**
+     * "Revision of the element."@en "Constraint AASd-005: A revision requires a version. This means, if
+     * there is no version there is no revision neither."@en
+     * 
+     * @param revision desired value for the property revision. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision
+     */
+    public void setRevision(String revision);
 
 }

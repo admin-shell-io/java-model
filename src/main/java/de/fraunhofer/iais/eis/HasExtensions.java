@@ -26,4 +26,12 @@ public interface HasExtensions extends ModelClass {
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension")
     public List<Extension> getExtensions();
 
+    /**
+     * "An extension of the element."@en
+     * 
+     * @param extensions desired value for the property extensions. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension
+     */
+    public void setExtensions(List<Extension> extensions);
+
 }

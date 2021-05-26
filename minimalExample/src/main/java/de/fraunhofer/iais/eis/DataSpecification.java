@@ -30,4 +30,15 @@ public interface DataSpecification extends ModelClass {
     @IRI("https://admin-shell.io/aas/3/0/RC01/DataSpecification/dataSpecificationContent")
     public List<DataSpecificationContent> getDataSpecificationContents();
 
+    /**
+     * "DataSpecificationContent contains the additional attributes to be added to the element instance
+     * that references the data specification template and meta information about the template
+     * itself."@en
+     * 
+     * @param dataSpecificationContents desired value for the property dataSpecificationContents. More
+     *        information under
+     *        https://admin-shell.io/aas/3/0/RC01/DataSpecification/dataSpecificationContent
+     */
+    public void setDataSpecificationContents(List<DataSpecificationContent> dataSpecificationContents);
+
 }

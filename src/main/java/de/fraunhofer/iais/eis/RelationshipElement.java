@@ -30,6 +30,14 @@ public interface RelationshipElement extends ModelClass, SubmodelElement {
     public Reference getFirst();
 
     /**
+     * "First element in the relationship taking the role of the subject."@en
+     * 
+     * @param first desired value for the property first. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first
+     */
+    public void setFirst(Reference first);
+
+    /**
      * "Second element in the relationship taking the role of the object."@en
      * 
      * @return Returns the Reference for the property second. More information under
@@ -37,5 +45,13 @@ public interface RelationshipElement extends ModelClass, SubmodelElement {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second")
     public Reference getSecond();
+
+    /**
+     * "Second element in the relationship taking the role of the object."@en
+     * 
+     * @param second desired value for the property second. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second
+     */
+    public void setSecond(Reference second);
 
 }

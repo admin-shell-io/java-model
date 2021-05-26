@@ -39,4 +39,12 @@ public interface HasDataSpecification extends ModelClass {
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
     public List<Reference> getDataSpecifications();
 
+    /**
+     * "Global reference to the data specification template used by the element."@en
+     * 
+     * @param dataSpecifications desired value for the property dataSpecifications. More information
+     *        under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
+     */
+    public void setDataSpecifications(List<Reference> dataSpecifications);
+
 }

@@ -30,4 +30,12 @@ public interface Qualifiable extends ModelClass {
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
     public List<Constraint> getQualifiers();
 
+    /**
+     * "Additional qualification of a qualifiable element."@en
+     * 
+     * @param qualifiers desired value for the property qualifiers. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier
+     */
+    public void setQualifiers(List<Constraint> qualifiers);
+
 }

@@ -28,4 +28,12 @@ public interface ObjectAttributes extends ModelClass {
     @IRI("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
     public List<Reference> getObjectAttributes();
 
+    /**
+     * "A data elements that further classifies an object."@en
+     * 
+     * @param objectAttributes desired value for the property objectAttributes. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute
+     */
+    public void setObjectAttributes(List<Reference> objectAttributes);
+
 }

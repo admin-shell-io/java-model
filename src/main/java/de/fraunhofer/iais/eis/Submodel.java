@@ -33,4 +33,12 @@ public interface Submodel extends ModelClass, Qualifiable, HasDataSpecification,
     @IRI("https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement")
     public List<SubmodelElement> getSubmodelElements();
 
+    /**
+     * "A submodel consists of zero or more submodel elements."@en
+     * 
+     * @param submodelElements desired value for the property submodelElements. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement
+     */
+    public void setSubmodelElements(List<SubmodelElement> submodelElements);
+
 }

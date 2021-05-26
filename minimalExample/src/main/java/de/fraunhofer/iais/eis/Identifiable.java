@@ -29,6 +29,15 @@ public interface Identifiable extends ModelClass {
     public List<AdministrativeInformation> getAdministrations();
 
     /**
+     * "Administrative information of an identifiable element."@en "Some of the administrative
+     * information like the version number might need to be part of the identification."@en
+     * 
+     * @param administrations desired value for the property administrations. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Identifiable/administration
+     */
+    public void setAdministrations(List<AdministrativeInformation> administrations);
+
+    /**
      * "The globally unique identification of the element."@en
      * 
      * @return Returns the List of Identifiers for the property identifications. More information under
@@ -36,5 +45,13 @@ public interface Identifiable extends ModelClass {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
     public List<Identifier> getIdentifications();
+
+    /**
+     * "The globally unique identification of the element."@en
+     * 
+     * @param identifications desired value for the property identifications. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Identifiable/identification
+     */
+    public void setIdentifications(List<Identifier> identifications);
 
 }

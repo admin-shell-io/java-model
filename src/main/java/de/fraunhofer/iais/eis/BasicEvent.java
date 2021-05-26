@@ -26,4 +26,12 @@ public interface BasicEvent extends ModelClass, Event {
     @IRI("https://admin-shell.io/aas/3/0/RC01/BasicEvent/observed")
     public Reference getObserved();
 
+    /**
+     * "Reference to the data or other elements that are being observed."@en
+     * 
+     * @param observed desired value for the property observed. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/BasicEvent/observed
+     */
+    public void setObserved(Reference observed);
+
 }

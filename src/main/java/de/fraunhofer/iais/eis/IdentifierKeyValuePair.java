@@ -28,6 +28,14 @@ public interface IdentifierKeyValuePair extends ModelClass, HasSemantics {
     public String getKey();
 
     /**
+     * "Key of the identifier."@en
+     * 
+     * @param key desired value for the property key. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key
+     */
+    public void setKey(String key);
+
+    /**
      * "The value of the identifier with the corresponding key."@en
      * 
      * @return Returns the String for the property value. More information under
@@ -37,6 +45,14 @@ public interface IdentifierKeyValuePair extends ModelClass, HasSemantics {
     public String getValue();
 
     /**
+     * "The value of the identifier with the corresponding key."@en
+     * 
+     * @param value desired value for the property value. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value
+     */
+    public void setValue(String value);
+
+    /**
      * "The (external) subject the key belongs to or has meaning to."@en
      * 
      * @return Returns the Reference for the property externalSubjectId. More information under
@@ -44,5 +60,13 @@ public interface IdentifierKeyValuePair extends ModelClass, HasSemantics {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId")
     public Reference getExternalSubjectId();
+
+    /**
+     * "The (external) subject the key belongs to or has meaning to."@en
+     * 
+     * @param externalSubjectId desired value for the property externalSubjectId. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId
+     */
+    public void setExternalSubjectId(Reference externalSubjectId);
 
 }

@@ -27,4 +27,13 @@ public interface Certificate extends ModelClass {
     @IRI("https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint")
     public PolicyAdministrationPoint getPolicyAdministrationPoint();
 
+    /**
+     * "The access control administration policy point of the AAS."@en
+     * 
+     * @param policyAdministrationPoint desired value for the property policyAdministrationPoint. More
+     *        information under
+     *        https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint
+     */
+    public void setPolicyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint);
+
 }

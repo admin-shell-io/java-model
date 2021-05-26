@@ -32,6 +32,14 @@ public interface AssetInformation extends ModelClass {
     public List<AssetKind> getAssetKinds();
 
     /**
+     * "Denotes whether the Asset of kind \'Type\' or \'Instance\'."@en
+     * 
+     * @param assetKinds desired value for the property assetKinds. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind
+     */
+    public void setAssetKinds(List<AssetKind> assetKinds);
+
+    /**
      * "Reference to either an Asset object or a global reference to the asset the AAS is representing.
      * This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the
      * asset. In a first phase of the life cycle the asset might not yet have a global id but already an
@@ -46,6 +54,19 @@ public interface AssetInformation extends ModelClass {
     public List<Reference> getGlobalAssetIds();
 
     /**
+     * "Reference to either an Asset object or a global reference to the asset the AAS is representing.
+     * This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the
+     * asset. In a first phase of the life cycle the asset might not yet have a global id but already an
+     * internal identifier. The internal identifier would be modelled via \'externalAssetId\'."@en
+     * "Constraint AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or
+     * a global reference."@en
+     * 
+     * @param globalAssetIds desired value for the property globalAssetIds. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId
+     */
+    public void setGlobalAssetIds(List<Reference> globalAssetIds);
+
+    /**
      * "Additional domain-specific, typically proprietary Identifier for the asset like e.g. serial
      * number etc."@en
      * 
@@ -56,6 +77,15 @@ public interface AssetInformation extends ModelClass {
     public List<IdentifierKeyValuePair> getSpecificAssetIds();
 
     /**
+     * "Additional domain-specific, typically proprietary Identifier for the asset like e.g. serial
+     * number etc."@en
+     * 
+     * @param specificAssetIds desired value for the property specificAssetIds. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId
+     */
+    public void setSpecificAssetIds(List<IdentifierKeyValuePair> specificAssetIds);
+
+    /**
      * "Thumbnail of the asset represented by the asset administration shell."@en
      * 
      * @return Returns the List of Files for the property defaultThumbnails. More information under
@@ -63,5 +93,13 @@ public interface AssetInformation extends ModelClass {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail")
     public List<File> getDefaultThumbnails();
+
+    /**
+     * "Thumbnail of the asset represented by the asset administration shell."@en
+     * 
+     * @param defaultThumbnails desired value for the property defaultThumbnails. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail
+     */
+    public void setDefaultThumbnails(List<File> defaultThumbnails);
 
 }

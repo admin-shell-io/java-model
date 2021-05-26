@@ -28,4 +28,12 @@ public interface LangStringSet extends ModelClass {
     @IRI("https://admin-shell.io/aas/3/0/RC01/LangStringSet/langString")
     public List<LangString> getLangStrings();
 
+    /**
+     * "A string in a specified language."@en
+     * 
+     * @param langStrings desired value for the property langStrings. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/LangStringSet/langString
+     */
+    public void setLangStrings(List<LangString> langStrings);
+
 }

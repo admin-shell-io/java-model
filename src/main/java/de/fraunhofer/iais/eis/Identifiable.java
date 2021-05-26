@@ -31,6 +31,15 @@ public interface Identifiable extends ModelClass, Referable {
     public AdministrativeInformation getAdministration();
 
     /**
+     * "Administrative information of an identifiable element."@en "Some of the administrative
+     * information like the version number might need to be part of the identification."@en
+     * 
+     * @param administration desired value for the property administration. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Identifiable/administration
+     */
+    public void setAdministration(AdministrativeInformation administration);
+
+    /**
      * "The globally unique identification of the element."@en
      * 
      * @return Returns the Identifier for the property identification. More information under
@@ -38,5 +47,13 @@ public interface Identifiable extends ModelClass, Referable {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
     public Identifier getIdentification();
+
+    /**
+     * "The globally unique identification of the element."@en
+     * 
+     * @param identification desired value for the property identification. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Identifiable/identification
+     */
+    public void setIdentification(Identifier identification);
 
 }

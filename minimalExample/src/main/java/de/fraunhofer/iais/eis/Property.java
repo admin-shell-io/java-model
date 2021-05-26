@@ -37,6 +37,14 @@ public interface Property extends ModelClass {
     public List<String> getValueTypes();
 
     /**
+     * "Data type pf the value."@en
+     * 
+     * @param valueTypes desired value for the property valueTypes. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Property/valueType
+     */
+    public void setValueTypes(List<String> valueTypes);
+
+    /**
      * "The value of the property instance."@en
      * 
      * @return Returns the List of Strings for the property values. More information under
@@ -44,6 +52,14 @@ public interface Property extends ModelClass {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/value")
     public List<String> getValues();
+
+    /**
+     * "The value of the property instance."@en
+     * 
+     * @param values desired value for the property values. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Property/value
+     */
+    public void setValues(List<String> values);
 
     /**
      * "Reference to the global unique id of a coded value."@en "Constraint AASd-007: if both, the value
@@ -55,5 +71,15 @@ public interface Property extends ModelClass {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueId")
     public List<Reference> getValueIds();
+
+    /**
+     * "Reference to the global unique id of a coded value."@en "Constraint AASd-007: if both, the value
+     * and the valueId are present then the value needs to be identical to the value of the referenced
+     * coded value in valueId."@en
+     * 
+     * @param valueIds desired value for the property valueIds. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Property/valueId
+     */
+    public void setValueIds(List<Reference> valueIds);
 
 }

@@ -35,6 +35,21 @@ public interface MultiLanguageProperty extends ModelClass, DataElement {
     public List<LangString> getValues();
 
     /**
+     * "The value of the property instance."@en "Constraint AASd-052b: If the semanticId of a
+     * MultiLanguageProperty references a ConceptDescription then the ConceptDescription/category shall
+     * be one of following values: PROPERTY."@en "Constraint AASd-012: If both, the
+     * MultiLanguageProperty/value and the MultiLanguageProperty/valueId are present then for each
+     * string in a specific language the meaning must be the same as specified in
+     * MultiLanguageProperty/valueId."@en "Constraint AASd-067: If the semanticId of a
+     * MultiLanguageProperty references a ConceptDescription then DataSpecificationIEC61360/dataType
+     * shall be STRING_TRANSLATABLE."@en
+     * 
+     * @param values desired value for the property values. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value
+     */
+    public void setValues(List<LangString> values);
+
+    /**
      * "Reference to the global unqiue id of a coded value."@en
      * 
      * @return Returns the Reference for the property valueId. More information under
@@ -42,5 +57,13 @@ public interface MultiLanguageProperty extends ModelClass, DataElement {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId")
     public Reference getValueId();
+
+    /**
+     * "Reference to the global unqiue id of a coded value."@en
+     * 
+     * @param valueId desired value for the property valueId. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId
+     */
+    public void setValueId(Reference valueId);
 
 }

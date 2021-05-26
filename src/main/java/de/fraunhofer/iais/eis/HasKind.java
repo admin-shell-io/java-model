@@ -28,4 +28,12 @@ public interface HasKind extends ModelClass {
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
     public ModelingKind getKind();
 
+    /**
+     * "ModelingKind of the element: either type or instance."@en
+     * 
+     * @param kind desired value for the property kind. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/HasKind/kind
+     */
+    public void setKind(ModelingKind kind);
+
 }

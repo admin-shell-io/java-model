@@ -28,4 +28,13 @@ public interface OperationVariable extends ModelClass {
     @IRI("https://admin-shell.io/aas/3/0/RC01/OperationVariable/value")
     public SubmodelElement getValue();
 
+    /**
+     * "Describes the needed argument for an operation via a submodel element of kind=Template."@en "The
+     * submodel element value of an operation variable shall be of kind=Template."@en
+     * 
+     * @param value desired value for the property value. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/OperationVariable/value
+     */
+    public void setValue(SubmodelElement value);
+
 }

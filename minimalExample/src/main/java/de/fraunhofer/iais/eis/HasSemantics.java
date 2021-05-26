@@ -34,4 +34,14 @@ public interface HasSemantics extends ModelClass {
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
     public List<Reference> getSemanticIds();
 
+    /**
+     * "Points to the Expression Semantic of the Submodels"@en "The semantic id might refer to an
+     * external information source, which explains the formulation of the submodel (for example an PDF
+     * if a standard)."@en
+     * 
+     * @param semanticIds desired value for the property semanticIds. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
+     */
+    public void setSemanticIds(List<Reference> semanticIds);
+
 }

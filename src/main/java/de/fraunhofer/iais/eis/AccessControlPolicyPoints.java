@@ -28,6 +28,15 @@ public interface AccessControlPolicyPoints extends ModelClass {
     public PolicyAdministrationPoint getPolicyAdministrationPoint();
 
     /**
+     * "The access control administration policy point of the AAS."@en
+     * 
+     * @param policyAdministrationPoint desired value for the property policyAdministrationPoint. More
+     *        information under
+     *        https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint
+     */
+    public void setPolicyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint);
+
+    /**
      * "The access control policy decision point of the AAS."@en
      * 
      * @return Returns the PolicyDecisionPoint for the property policyDecisionPoint. More information
@@ -35,6 +44,14 @@ public interface AccessControlPolicyPoints extends ModelClass {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint")
     public PolicyDecisionPoint getPolicyDecisionPoint();
+
+    /**
+     * "The access control policy decision point of the AAS."@en
+     * 
+     * @param policyDecisionPoint desired value for the property policyDecisionPoint. More information
+     *        under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint
+     */
+    public void setPolicyDecisionPoint(PolicyDecisionPoint policyDecisionPoint);
 
     /**
      * "The access control policy enforcement point of the AAS."@en
@@ -47,6 +64,15 @@ public interface AccessControlPolicyPoints extends ModelClass {
     public PolicyEnforcementPoints getPolicyEnforcementPoint();
 
     /**
+     * "The access control policy enforcement point of the AAS."@en
+     * 
+     * @param policyEnforcementPoint desired value for the property policyEnforcementPoint. More
+     *        information under
+     *        https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint
+     */
+    public void setPolicyEnforcementPoint(PolicyEnforcementPoints policyEnforcementPoint);
+
+    /**
      * "The access control policy information points of the AAS."@en
      * 
      * @return Returns the PolicyInformationPoints for the property policyInformationPoints. More
@@ -55,5 +81,14 @@ public interface AccessControlPolicyPoints extends ModelClass {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints")
     public PolicyInformationPoints getPolicyInformationPoints();
+
+    /**
+     * "The access control policy information points of the AAS."@en
+     * 
+     * @param policyInformationPoints desired value for the property policyInformationPoints. More
+     *        information under
+     *        https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints
+     */
+    public void setPolicyInformationPoints(PolicyInformationPoints policyInformationPoints);
 
 }

@@ -29,6 +29,14 @@ public interface IdentifierKeyValuePair extends ModelClass, HasSemantics {
     public List<String> getKeys();
 
     /**
+     * "Key of the identifier."@en
+     * 
+     * @param keys desired value for the property keys. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key
+     */
+    public void setKeys(List<String> keys);
+
+    /**
      * "The value of the identifier with the corresponding key."@en
      * 
      * @return Returns the List of Strings for the property values. More information under
@@ -36,5 +44,13 @@ public interface IdentifierKeyValuePair extends ModelClass, HasSemantics {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
     public List<String> getValues();
+
+    /**
+     * "The value of the identifier with the corresponding key."@en
+     * 
+     * @param values desired value for the property values. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value
+     */
+    public void setValues(List<String> values);
 
 }

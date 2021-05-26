@@ -28,4 +28,13 @@ public interface Formula extends ModelClass, Constraint {
     @IRI("https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn")
     public List<Reference> getDependsOns();
 
+    /**
+     * "A formula may depend on referable or even external global elements - assumed that can be
+     * referenced and their value may be evaluated - that are used in the logical expression."@en
+     * 
+     * @param dependsOns desired value for the property dependsOns. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn
+     */
+    public void setDependsOns(List<Reference> dependsOns);
+
 }

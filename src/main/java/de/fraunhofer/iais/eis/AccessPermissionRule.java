@@ -31,6 +31,16 @@ public interface AccessPermissionRule extends ModelClass, Referable, Qualifiable
     public List<PermissionsPerObject> getPermissionsPerObjects();
 
     /**
+     * "Set of object-permission pairs that define the permissions per object within the access
+     * permission rule."@en
+     * 
+     * @param permissionsPerObjects desired value for the property permissionsPerObjects. More
+     *        information under
+     *        https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject
+     */
+    public void setPermissionsPerObjects(List<PermissionsPerObject> permissionsPerObjects);
+
+    /**
      * "Target subject attributes that need to be fulfilled by the accessing subject to get the
      * permissions defined by this rule."@en
      * 
@@ -39,5 +49,15 @@ public interface AccessPermissionRule extends ModelClass, Referable, Qualifiable
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes")
     public SubjectAttributes getTargetSubjectAttributes();
+
+    /**
+     * "Target subject attributes that need to be fulfilled by the accessing subject to get the
+     * permissions defined by this rule."@en
+     * 
+     * @param targetSubjectAttributes desired value for the property targetSubjectAttributes. More
+     *        information under
+     *        https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes
+     */
+    public void setTargetSubjectAttributes(SubjectAttributes targetSubjectAttributes);
 
 }

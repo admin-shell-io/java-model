@@ -34,6 +34,15 @@ public interface ConceptDescription extends ModelClass, HasDataSpecification, Id
     public List<Reference> getIsCaseOfs();
 
     /**
+     * "Reference to an external definition the concept is compatible to or was derived from."@en
+     * "Compare to is-case-of relationship in ISO 13584-32 and IEC EN 61360."@en
+     * 
+     * @param isCaseOfs desired value for the property isCaseOfs. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf
+     */
+    public void setIsCaseOfs(List<Reference> isCaseOfs);
+
+    /**
      * "The embedded data specification template of the description of the concept."@en
      * 
      * @return Returns the List of DataSpecifications for the property embeddedDataSpecifications. More
@@ -42,5 +51,14 @@ public interface ConceptDescription extends ModelClass, HasDataSpecification, Id
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification")
     public List<DataSpecification> getEmbeddedDataSpecifications();
+
+    /**
+     * "The embedded data specification template of the description of the concept."@en
+     * 
+     * @param embeddedDataSpecifications desired value for the property embeddedDataSpecifications. More
+     *        information under
+     *        https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification
+     */
+    public void setEmbeddedDataSpecifications(List<DataSpecification> embeddedDataSpecifications);
 
 }

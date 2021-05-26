@@ -33,6 +33,14 @@ public interface Range extends ModelClass, DataElement {
     public String getValueType();
 
     /**
+     * "Data type of the min and max."@en
+     * 
+     * @param valueType desired value for the property valueType. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Range/valueType
+     */
+    public void setValueType(String valueType);
+
+    /**
      * "The maximum value of the range."@en
      * 
      * @return Returns the String for the property max. More information under
@@ -42,6 +50,14 @@ public interface Range extends ModelClass, DataElement {
     public String getMax();
 
     /**
+     * "The maximum value of the range."@en
+     * 
+     * @param max desired value for the property max. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Range/max
+     */
+    public void setMax(String max);
+
+    /**
      * "The minimum value of the range."@en
      * 
      * @return Returns the String for the property min. More information under
@@ -49,5 +65,13 @@ public interface Range extends ModelClass, DataElement {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Range/min")
     public String getMin();
+
+    /**
+     * "The minimum value of the range."@en
+     * 
+     * @param min desired value for the property min. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Range/min
+     */
+    public void setMin(String min);
 
 }

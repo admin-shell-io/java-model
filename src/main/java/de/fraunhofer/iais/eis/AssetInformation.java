@@ -32,6 +32,14 @@ public interface AssetInformation extends ModelClass {
     public AssetKind getAssetKind();
 
     /**
+     * "Denotes whether the Asset of kind \'Type\' or \'Instance\'."@en
+     * 
+     * @param assetKind desired value for the property assetKind. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind
+     */
+    public void setAssetKind(AssetKind assetKind);
+
+    /**
      * "Reference to either an Asset object or a global reference to the asset the AAS is representing.
      * This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the
      * asset. In a first phase of the life cycle the asset might not yet have a global id but already an
@@ -46,6 +54,19 @@ public interface AssetInformation extends ModelClass {
     public Reference getGlobalAssetId();
 
     /**
+     * "Reference to either an Asset object or a global reference to the asset the AAS is representing.
+     * This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the
+     * asset. In a first phase of the life cycle the asset might not yet have a global id but already an
+     * internal identifier. The internal identifier would be modelled via \'externalAssetId\'."@en
+     * "Constraint AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or
+     * a global reference."@en
+     * 
+     * @param globalAssetId desired value for the property globalAssetId. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId
+     */
+    public void setGlobalAssetId(Reference globalAssetId);
+
+    /**
      * "Additional domain-specific, typically proprietary Identifier for the asset like e.g. serial
      * number etc."@en
      * 
@@ -54,6 +75,15 @@ public interface AssetInformation extends ModelClass {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId")
     public List<IdentifierKeyValuePair> getSpecificAssetIds();
+
+    /**
+     * "Additional domain-specific, typically proprietary Identifier for the asset like e.g. serial
+     * number etc."@en
+     * 
+     * @param specificAssetIds desired value for the property specificAssetIds. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId
+     */
+    public void setSpecificAssetIds(List<IdentifierKeyValuePair> specificAssetIds);
 
     /**
      * "A reference to a Submodel that defines the bill of material of the asset represented by the AAS.
@@ -67,6 +97,16 @@ public interface AssetInformation extends ModelClass {
     public List<Submodel> getBillOfMaterials();
 
     /**
+     * "A reference to a Submodel that defines the bill of material of the asset represented by the AAS.
+     * This submodel contains a set of entities describing the material used to compose the composite
+     * I4.0 Component."@en
+     * 
+     * @param billOfMaterials desired value for the property billOfMaterials. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial
+     */
+    public void setBillOfMaterials(List<Submodel> billOfMaterials);
+
+    /**
      * "Thumbnail of the asset represented by the asset administration shell."@en
      * 
      * @return Returns the File for the property defaultThumbnail. More information under
@@ -74,5 +114,13 @@ public interface AssetInformation extends ModelClass {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail")
     public File getDefaultThumbnail();
+
+    /**
+     * "Thumbnail of the asset represented by the asset administration shell."@en
+     * 
+     * @param defaultThumbnail desired value for the property defaultThumbnail. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail
+     */
+    public void setDefaultThumbnail(File defaultThumbnail);
 
 }

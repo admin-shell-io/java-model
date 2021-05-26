@@ -31,6 +31,16 @@ public interface Blob extends ModelClass, DataElement {
     public String getMimeType();
 
     /**
+     * "Mime type of the content of the BLOB. The mime type states which file extension the file has.
+     * Valid values are e.g. \'application/json\', \'application/xls\', \'image/jpg\' The allowed values
+     * are defined as in RFC2046."@en
+     * 
+     * @param mimeType desired value for the property mimeType. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Blob/mimeType
+     */
+    public void setMimeType(String mimeType);
+
+    /**
      * "The value of the BLOB instance of a blob data element."@en "In contrast to the file property the
      * file content is stored directly as value in the Blob data element."@en
      * 
@@ -39,5 +49,14 @@ public interface Blob extends ModelClass, DataElement {
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Blob/value")
     public byte[] getValue();
+
+    /**
+     * "The value of the BLOB instance of a blob data element."@en "In contrast to the file property the
+     * file content is stored directly as value in the Blob data element."@en
+     * 
+     * @param value desired value for the property value. More information under
+     *        https://admin-shell.io/aas/3/0/RC01/Blob/value
+     */
+    public void setValue(byte[] value);
 
 }
