@@ -7,8 +7,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 import de.fraunhofer.iais.eis.util.*;
 
-@JsonTypeName("VakueList")
+@JsonTypeName("ValueList")
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "modelType")
-public abstract class VakueListMixin {
+public abstract class ValueListMixin {
 
 }
