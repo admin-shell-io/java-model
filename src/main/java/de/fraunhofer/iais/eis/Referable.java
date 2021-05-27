@@ -11,6 +11,7 @@ import de.fraunhofer.iais.eis.util.*;
  * is unique within the name space of the element."@en
  */
 @KnownSubtypes({
+    @KnownSubtypes.Type(value = DefaultReferable.class),
     @KnownSubtypes.Type(value = AccessPermissionRule.class),
     @KnownSubtypes.Type(value = Identifiable.class),
     @KnownSubtypes.Type(value = View.class),
@@ -26,20 +27,20 @@ public interface Referable extends ModelClass {
      * "The category is a value that gives further meta information w.r.t. to the class of the element.
      * It affects the expected existence of attributes and the applicability of constraints."@en
      * 
-     * @return Returns the String for the property category. More information under
+     * @return Returns the List of Strings for the property categories. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Referable/category
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    public String getCategory();
+    public List<String> getCategories();
 
     /**
      * "The category is a value that gives further meta information w.r.t. to the class of the element.
      * It affects the expected existence of attributes and the applicability of constraints."@en
      * 
-     * @param category desired value for the property category. More information under
+     * @param categories desired value for the property categories. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Referable/category
      */
-    public void setCategory(String category);
+    public void setCategories(List<String> categories);
 
     /**
      * "Description or comments on the element. The description can be provided in several
@@ -88,11 +89,11 @@ public interface Referable extends ModelClass {
      * can be used for unique reference in its name space and thus allows better usability and a more
      * performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
      * 
-     * @return Returns the String for the property idShort. More information under
+     * @return Returns the List of Strings for the property idShorts. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Referable/idShort
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    public String getIdShort();
+    public List<String> getIdShorts();
 
     /**
      * "Identifying string of the element within its name space."@en "Constraint AASd-002: idShort shall
@@ -105,9 +106,9 @@ public interface Referable extends ModelClass {
      * can be used for unique reference in its name space and thus allows better usability and a more
      * performant implementation. In this case it is similar to the \'BrowserPath\' in OPC UA."@en
      * 
-     * @param idShort desired value for the property idShort. More information under
+     * @param idShorts desired value for the property idShorts. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Referable/idShort
      */
-    public void setIdShort(String idShort);
+    public void setIdShorts(List<String> idShorts);
 
 }

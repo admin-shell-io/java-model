@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 
 
 
@@ -16,35 +17,35 @@ public class DefaultKeyBuilder extends AbstractBuilder<DefaultKey> {
     }
 
     /**
-     * This function allows setting a value for idType
+     * This function allows setting a value for idTypes
      * 
-     * @param idType desired value to be set
-     * @return Builder object with new value for idType
+     * @param idTypes desired value to be set
+     * @return Builder object with new value for idTypes
      */
-    public DefaultKeyBuilder idType(KeyType idType) {
-        this.map.put("idType", idType);
+    public DefaultKeyBuilder idTypes(List<KeyType> idTypes) {
+        this.map.put("idTypes", idTypes);
         return this;
     }
 
     /**
-     * This function allows setting a value for type
+     * This function allows setting a value for types
      * 
-     * @param type desired value to be set
-     * @return Builder object with new value for type
+     * @param types desired value to be set
+     * @return Builder object with new value for types
      */
-    public DefaultKeyBuilder type(KeyElements type) {
-        this.map.put("type", type);
+    public DefaultKeyBuilder types(List<KeyElements> types) {
+        this.map.put("types", types);
         return this;
     }
 
     /**
-     * This function allows setting a value for value
+     * This function allows setting a value for values
      * 
-     * @param value desired value to be set
-     * @return Builder object with new value for value
+     * @param values desired value to be set
+     * @return Builder object with new value for values
      */
-    public DefaultKeyBuilder value(String value) {
-        this.map.put("value", value);
+    public DefaultKeyBuilder values(List<String> values) {
+        this.map.put("values", values);
         return this;
     }
 

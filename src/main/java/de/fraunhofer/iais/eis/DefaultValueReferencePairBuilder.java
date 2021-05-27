@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 
 
 
@@ -16,24 +17,24 @@ public class DefaultValueReferencePairBuilder extends AbstractBuilder<DefaultVal
     }
 
     /**
-     * This function allows setting a value for value
+     * This function allows setting a value for values
      * 
-     * @param value desired value to be set
-     * @return Builder object with new value for value
+     * @param values desired value to be set
+     * @return Builder object with new value for values
      */
-    public DefaultValueReferencePairBuilder value(String value) {
-        this.map.put("value", value);
+    public DefaultValueReferencePairBuilder values(List<String> values) {
+        this.map.put("values", values);
         return this;
     }
 
     /**
-     * This function allows setting a value for valueId
+     * This function allows setting a value for valueIds
      * 
-     * @param valueId desired value to be set
-     * @return Builder object with new value for valueId
+     * @param valueIds desired value to be set
+     * @return Builder object with new value for valueIds
      */
-    public DefaultValueReferencePairBuilder valueId(Reference valueId) {
-        this.map.put("valueId", valueId);
+    public DefaultValueReferencePairBuilder valueIds(List<Reference> valueIds) {
+        this.map.put("valueIds", valueIds);
         return this;
     }
 

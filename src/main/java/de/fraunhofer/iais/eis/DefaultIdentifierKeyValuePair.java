@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 import java.util.Objects;
 
 
@@ -21,7 +22,7 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
      * example an PDF if a standard)."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    protected Reference semanticId;
+    protected List<Reference> semanticIds;
 
     /**
      * "has IdentifierKeyValuePair.externalSubjectId" "The (external) subject the key belongs to or has
@@ -50,7 +51,7 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
         return Objects.hash(new Object[] {this.key,
             this.value,
             this.externalSubjectId,
-            this.semanticId});
+            this.semanticIds});
     }
 
     @Override
@@ -66,7 +67,7 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
             return Objects.equals(this.key, other.key) &&
                 Objects.equals(this.value, other.value) &&
                 Objects.equals(this.externalSubjectId, other.externalSubjectId) &&
-                Objects.equals(this.semanticId, other.semanticId);
+                Objects.equals(this.semanticIds, other.semanticIds);
         }
     }
 
@@ -76,7 +77,7 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
         other.key = (String) Util.clone(this.key);
         other.value = (String) Util.clone(this.value);
         other.externalSubjectId = (Reference) Util.clone(this.externalSubjectId);
-        other.semanticId = (Reference) Util.clone(this.semanticId);
+        other.semanticIds = (List<Reference>) Util.clone(this.semanticIds);
         return other;
     }
 
@@ -110,11 +111,11 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    final public Reference getSemanticId() {
-        return semanticId;
+    final public List<Reference> getSemanticIds() {
+        return semanticIds;
     }
 
-    final public void setSemanticId(Reference semanticId) {
-        this.semanticId = semanticId;
+    final public void setSemanticIds(List<Reference> semanticIds) {
+        this.semanticIds = semanticIds;
     }
 }

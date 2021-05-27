@@ -16,6 +16,7 @@ import de.fraunhofer.iais.eis.util.*;
  * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0."@en
  */
 @KnownSubtypes({
+    @KnownSubtypes.Type(value = DefaultHasDataSpecification.class),
     @KnownSubtypes.Type(value = Submodel.class),
     @KnownSubtypes.Type(value = AdministrativeInformation.class),
     @KnownSubtypes.Type(value = Asset.class),

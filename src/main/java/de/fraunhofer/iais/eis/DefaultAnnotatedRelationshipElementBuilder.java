@@ -28,35 +28,35 @@ public class DefaultAnnotatedRelationshipElementBuilder extends AbstractBuilder<
     }
 
     /**
-     * This function allows setting a value for first
+     * This function allows setting a value for firsts
      * 
-     * @param first desired value to be set
-     * @return Builder object with new value for first
+     * @param firsts desired value to be set
+     * @return Builder object with new value for firsts
      */
-    public DefaultAnnotatedRelationshipElementBuilder first(Reference first) {
-        this.map.put("first", first);
+    public DefaultAnnotatedRelationshipElementBuilder firsts(List<Referable> firsts) {
+        this.map.put("firsts", firsts);
         return this;
     }
 
     /**
-     * This function allows setting a value for second
+     * This function allows setting a value for seconds
      * 
-     * @param second desired value to be set
-     * @return Builder object with new value for second
+     * @param seconds desired value to be set
+     * @return Builder object with new value for seconds
      */
-    public DefaultAnnotatedRelationshipElementBuilder second(Reference second) {
-        this.map.put("second", second);
+    public DefaultAnnotatedRelationshipElementBuilder seconds(List<Referable> seconds) {
+        this.map.put("seconds", seconds);
         return this;
     }
 
     /**
-     * This function allows setting a value for category
+     * This function allows setting a value for categories
      * 
-     * @param category desired value to be set
-     * @return Builder object with new value for category
+     * @param categories desired value to be set
+     * @return Builder object with new value for categories
      */
-    public DefaultAnnotatedRelationshipElementBuilder category(String category) {
-        this.map.put("category", category);
+    public DefaultAnnotatedRelationshipElementBuilder categories(List<String> categories) {
+        this.map.put("categories", categories);
         return this;
     }
 
@@ -83,13 +83,13 @@ public class DefaultAnnotatedRelationshipElementBuilder extends AbstractBuilder<
     }
 
     /**
-     * This function allows setting a value for idShort
+     * This function allows setting a value for idShorts
      * 
-     * @param idShort desired value to be set
-     * @return Builder object with new value for idShort
+     * @param idShorts desired value to be set
+     * @return Builder object with new value for idShorts
      */
-    public DefaultAnnotatedRelationshipElementBuilder idShort(String idShort) {
-        this.map.put("idShort", idShort);
+    public DefaultAnnotatedRelationshipElementBuilder idShorts(List<String> idShorts) {
+        this.map.put("idShorts", idShorts);
         return this;
     }
 
@@ -116,24 +116,24 @@ public class DefaultAnnotatedRelationshipElementBuilder extends AbstractBuilder<
     }
 
     /**
-     * This function allows setting a value for kind
+     * This function allows setting a value for kinds
      * 
-     * @param kind desired value to be set
-     * @return Builder object with new value for kind
+     * @param kinds desired value to be set
+     * @return Builder object with new value for kinds
      */
-    public DefaultAnnotatedRelationshipElementBuilder kind(ModelingKind kind) {
-        this.map.put("kind", kind);
+    public DefaultAnnotatedRelationshipElementBuilder kinds(List<ModelingKind> kinds) {
+        this.map.put("kinds", kinds);
         return this;
     }
 
     /**
-     * This function allows setting a value for semanticId
+     * This function allows setting a value for semanticIds
      * 
-     * @param semanticId desired value to be set
-     * @return Builder object with new value for semanticId
+     * @param semanticIds desired value to be set
+     * @return Builder object with new value for semanticIds
      */
-    public DefaultAnnotatedRelationshipElementBuilder semanticId(Reference semanticId) {
-        this.map.put("semanticId", semanticId);
+    public DefaultAnnotatedRelationshipElementBuilder semanticIds(List<Reference> semanticIds) {
+        this.map.put("semanticIds", semanticIds);
         return this;
     }
 

@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 import java.util.Objects;
 
 
@@ -19,25 +20,25 @@ public class DefaultExtension implements Extension {
      * "has extension name" "An extension of the element."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/name")
-    protected String name;
+    protected List<String> names;
 
     /**
      * "has extension reference to" "Reference to an element the extension refers to."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/refersTo")
-    protected Reference refersTo;
+    protected List<Reference> refersTos;
 
     /**
      * "has extension value" "Value of the extension."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/value")
-    protected String value;
+    protected List<String> values;
 
     /**
      * "has extension value type" "Type of the value of the extension."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/valueType")
-    protected String valueType;
+    protected List<String> valueTypes;
 
     /**
      * "has semantic ID" "Points to the Expression Semantic of the Submodels"@en "The semantic id might
@@ -45,18 +46,18 @@ public class DefaultExtension implements Extension {
      * example an PDF if a standard)."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    protected Reference semanticId;
+    protected List<Reference> semanticIds;
 
     // no manual construction
     protected DefaultExtension() {}
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.name,
-            this.valueType,
-            this.value,
-            this.refersTo,
-            this.semanticId});
+        return Objects.hash(new Object[] {this.names,
+            this.valueTypes,
+            this.values,
+            this.refersTos,
+            this.semanticIds});
     }
 
     @Override
@@ -69,69 +70,69 @@ public class DefaultExtension implements Extension {
             return false;
         } else {
             DefaultExtension other = (DefaultExtension) obj;
-            return Objects.equals(this.name, other.name) &&
-                Objects.equals(this.valueType, other.valueType) &&
-                Objects.equals(this.value, other.value) &&
-                Objects.equals(this.refersTo, other.refersTo) &&
-                Objects.equals(this.semanticId, other.semanticId);
+            return Objects.equals(this.names, other.names) &&
+                Objects.equals(this.valueTypes, other.valueTypes) &&
+                Objects.equals(this.values, other.values) &&
+                Objects.equals(this.refersTos, other.refersTos) &&
+                Objects.equals(this.semanticIds, other.semanticIds);
         }
     }
 
     @Override
     public Object deepCopy() {
         DefaultExtension other = new DefaultExtension();
-        other.name = (String) Util.clone(this.name);
-        other.valueType = (String) Util.clone(this.valueType);
-        other.value = (String) Util.clone(this.value);
-        other.refersTo = (Reference) Util.clone(this.refersTo);
-        other.semanticId = (Reference) Util.clone(this.semanticId);
+        other.names = (List<String>) Util.clone(this.names);
+        other.valueTypes = (List<String>) Util.clone(this.valueTypes);
+        other.values = (List<String>) Util.clone(this.values);
+        other.refersTos = (List<Reference>) Util.clone(this.refersTos);
+        other.semanticIds = (List<Reference>) Util.clone(this.semanticIds);
         return other;
     }
 
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/name")
-    final public String getName() {
-        return name;
+    final public List<String> getNames() {
+        return names;
     }
 
-    final public void setName(String name) {
-        this.name = name;
+    final public void setNames(List<String> names) {
+        this.names = names;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/valueType")
-    final public String getValueType() {
-        return valueType;
+    final public List<String> getValueTypes() {
+        return valueTypes;
     }
 
-    final public void setValueType(String valueType) {
-        this.valueType = valueType;
+    final public void setValueTypes(List<String> valueTypes) {
+        this.valueTypes = valueTypes;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/value")
-    final public String getValue() {
-        return value;
+    final public List<String> getValues() {
+        return values;
     }
 
-    final public void setValue(String value) {
-        this.value = value;
+    final public void setValues(List<String> values) {
+        this.values = values;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/refersTo")
-    final public Reference getRefersTo() {
-        return refersTo;
+    final public List<Reference> getRefersTos() {
+        return refersTos;
     }
 
-    final public void setRefersTo(Reference refersTo) {
-        this.refersTo = refersTo;
+    final public void setRefersTos(List<Reference> refersTos) {
+        this.refersTos = refersTos;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    final public Reference getSemanticId() {
-        return semanticId;
+    final public List<Reference> getSemanticIds() {
+        return semanticIds;
     }
 
-    final public void setSemanticId(Reference semanticId) {
-        this.semanticId = semanticId;
+    final public void setSemanticIds(List<Reference> semanticIds) {
+        this.semanticIds = semanticIds;
     }
 }

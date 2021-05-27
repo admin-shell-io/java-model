@@ -28,13 +28,13 @@ public class DefaultViewBuilder extends AbstractBuilder<DefaultView> {
     }
 
     /**
-     * This function allows setting a value for category
+     * This function allows setting a value for categories
      * 
-     * @param category desired value to be set
-     * @return Builder object with new value for category
+     * @param categories desired value to be set
+     * @return Builder object with new value for categories
      */
-    public DefaultViewBuilder category(String category) {
-        this.map.put("category", category);
+    public DefaultViewBuilder categories(List<String> categories) {
+        this.map.put("categories", categories);
         return this;
     }
 
@@ -61,13 +61,13 @@ public class DefaultViewBuilder extends AbstractBuilder<DefaultView> {
     }
 
     /**
-     * This function allows setting a value for idShort
+     * This function allows setting a value for idShorts
      * 
-     * @param idShort desired value to be set
-     * @return Builder object with new value for idShort
+     * @param idShorts desired value to be set
+     * @return Builder object with new value for idShorts
      */
-    public DefaultViewBuilder idShort(String idShort) {
-        this.map.put("idShort", idShort);
+    public DefaultViewBuilder idShorts(List<String> idShorts) {
+        this.map.put("idShorts", idShorts);
         return this;
     }
 
@@ -83,13 +83,13 @@ public class DefaultViewBuilder extends AbstractBuilder<DefaultView> {
     }
 
     /**
-     * This function allows setting a value for semanticId
+     * This function allows setting a value for semanticIds
      * 
-     * @param semanticId desired value to be set
-     * @return Builder object with new value for semanticId
+     * @param semanticIds desired value to be set
+     * @return Builder object with new value for semanticIds
      */
-    public DefaultViewBuilder semanticId(Reference semanticId) {
-        this.map.put("semanticId", semanticId);
+    public DefaultViewBuilder semanticIds(List<Reference> semanticIds) {
+        this.map.put("semanticIds", semanticIds);
         return this;
     }
 

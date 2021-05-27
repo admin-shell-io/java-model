@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 
 
 
@@ -21,69 +22,69 @@ public interface Extension extends ModelClass, HasSemantics {
     /**
      * "An extension of the element."@en
      * 
-     * @return Returns the String for the property name. More information under
+     * @return Returns the List of Strings for the property names. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Extension/name
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/name")
-    public String getName();
+    public List<String> getNames();
 
     /**
      * "An extension of the element."@en
      * 
-     * @param name desired value for the property name. More information under
+     * @param names desired value for the property names. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Extension/name
      */
-    public void setName(String name);
+    public void setNames(List<String> names);
 
     /**
      * "Type of the value of the extension."@en
      * 
-     * @return Returns the String for the property valueType. More information under
+     * @return Returns the List of Strings for the property valueTypes. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Extension/valueType
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/valueType")
-    public String getValueType();
+    public List<String> getValueTypes();
 
     /**
      * "Type of the value of the extension."@en
      * 
-     * @param valueType desired value for the property valueType. More information under
+     * @param valueTypes desired value for the property valueTypes. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Extension/valueType
      */
-    public void setValueType(String valueType);
+    public void setValueTypes(List<String> valueTypes);
 
     /**
      * "Value of the extension."@en
      * 
-     * @return Returns the String for the property value. More information under
+     * @return Returns the List of Strings for the property values. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Extension/value
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/value")
-    public String getValue();
+    public List<String> getValues();
 
     /**
      * "Value of the extension."@en
      * 
-     * @param value desired value for the property value. More information under
+     * @param values desired value for the property values. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Extension/value
      */
-    public void setValue(String value);
+    public void setValues(List<String> values);
 
     /**
      * "Reference to an element the extension refers to."@en
      * 
-     * @return Returns the Reference for the property refersTo. More information under
+     * @return Returns the List of References for the property refersTos. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Extension/refersTo
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/refersTo")
-    public Reference getRefersTo();
+    public List<Reference> getRefersTos();
 
     /**
      * "Reference to an element the extension refers to."@en
      * 
-     * @param refersTo desired value for the property refersTo. More information under
+     * @param refersTos desired value for the property refersTos. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Extension/refersTo
      */
-    public void setRefersTo(Reference refersTo);
+    public void setRefersTos(List<Reference> refersTos);
 
 }

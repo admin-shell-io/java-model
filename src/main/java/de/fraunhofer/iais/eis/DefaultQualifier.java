@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 import java.util.Objects;
 
 
@@ -22,14 +23,14 @@ public class DefaultQualifier implements Qualifier {
      * example an PDF if a standard)."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    protected Reference semanticId;
+    protected List<Reference> semanticIds;
 
     /**
      * "has qualifier type" "The qualifier type describes the type of the qualifier that is applied to
      * the element."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/type")
-    protected String type;
+    protected List<String> types;
 
     /**
      * "The qualifier value is the value of the qualifier."@en "Constraint AASd-006: if both, the value
@@ -38,30 +39,30 @@ public class DefaultQualifier implements Qualifier {
      * Qualifier/value shall be consistent to the data type as defined in Qualifier/valueType."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/value")
-    protected String value;
+    protected List<String> values;
 
     /**
      * "Reference to the global unqiue id of a coded value."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId")
-    protected Reference valueId;
+    protected List<Reference> valueIds;
 
     /**
      * "Data type of the qualifier value."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType")
-    protected String valueType;
+    protected List<String> valueTypes;
 
     // no manual construction
     protected DefaultQualifier() {}
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.type,
-            this.valueType,
-            this.value,
-            this.valueId,
-            this.semanticId});
+        return Objects.hash(new Object[] {this.types,
+            this.valueTypes,
+            this.values,
+            this.valueIds,
+            this.semanticIds});
     }
 
     @Override
@@ -74,69 +75,69 @@ public class DefaultQualifier implements Qualifier {
             return false;
         } else {
             DefaultQualifier other = (DefaultQualifier) obj;
-            return Objects.equals(this.type, other.type) &&
-                Objects.equals(this.valueType, other.valueType) &&
-                Objects.equals(this.value, other.value) &&
-                Objects.equals(this.valueId, other.valueId) &&
-                Objects.equals(this.semanticId, other.semanticId);
+            return Objects.equals(this.types, other.types) &&
+                Objects.equals(this.valueTypes, other.valueTypes) &&
+                Objects.equals(this.values, other.values) &&
+                Objects.equals(this.valueIds, other.valueIds) &&
+                Objects.equals(this.semanticIds, other.semanticIds);
         }
     }
 
     @Override
     public Object deepCopy() {
         DefaultQualifier other = new DefaultQualifier();
-        other.type = (String) Util.clone(this.type);
-        other.valueType = (String) Util.clone(this.valueType);
-        other.value = (String) Util.clone(this.value);
-        other.valueId = (Reference) Util.clone(this.valueId);
-        other.semanticId = (Reference) Util.clone(this.semanticId);
+        other.types = (List<String>) Util.clone(this.types);
+        other.valueTypes = (List<String>) Util.clone(this.valueTypes);
+        other.values = (List<String>) Util.clone(this.values);
+        other.valueIds = (List<Reference>) Util.clone(this.valueIds);
+        other.semanticIds = (List<Reference>) Util.clone(this.semanticIds);
         return other;
     }
 
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/type")
-    final public String getType() {
-        return type;
+    final public List<String> getTypes() {
+        return types;
     }
 
-    final public void setType(String type) {
-        this.type = type;
+    final public void setTypes(List<String> types) {
+        this.types = types;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType")
-    final public String getValueType() {
-        return valueType;
+    final public List<String> getValueTypes() {
+        return valueTypes;
     }
 
-    final public void setValueType(String valueType) {
-        this.valueType = valueType;
+    final public void setValueTypes(List<String> valueTypes) {
+        this.valueTypes = valueTypes;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/value")
-    final public String getValue() {
-        return value;
+    final public List<String> getValues() {
+        return values;
     }
 
-    final public void setValue(String value) {
-        this.value = value;
+    final public void setValues(List<String> values) {
+        this.values = values;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId")
-    final public Reference getValueId() {
-        return valueId;
+    final public List<Reference> getValueIds() {
+        return valueIds;
     }
 
-    final public void setValueId(Reference valueId) {
-        this.valueId = valueId;
+    final public void setValueIds(List<Reference> valueIds) {
+        this.valueIds = valueIds;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    final public Reference getSemanticId() {
-        return semanticId;
+    final public List<Reference> getSemanticIds() {
+        return semanticIds;
     }
 
-    final public void setSemanticId(Reference semanticId) {
-        this.semanticId = semanticId;
+    final public void setSemanticIds(List<Reference> semanticIds) {
+        this.semanticIds = semanticIds;
     }
 }

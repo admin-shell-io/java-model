@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 
 
 
@@ -22,19 +23,19 @@ public interface OperationVariable extends ModelClass {
      * "Describes the needed argument for an operation via a submodel element of kind=Template."@en "The
      * submodel element value of an operation variable shall be of kind=Template."@en
      * 
-     * @return Returns the SubmodelElement for the property value. More information under
+     * @return Returns the List of SubmodelElements for the property values. More information under
      *         https://admin-shell.io/aas/3/0/RC01/OperationVariable/value
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/OperationVariable/value")
-    public SubmodelElement getValue();
+    public List<SubmodelElement> getValues();
 
     /**
      * "Describes the needed argument for an operation via a submodel element of kind=Template."@en "The
      * submodel element value of an operation variable shall be of kind=Template."@en
      * 
-     * @param value desired value for the property value. More information under
+     * @param values desired value for the property values. More information under
      *        https://admin-shell.io/aas/3/0/RC01/OperationVariable/value
      */
-    public void setValue(SubmodelElement value);
+    public void setValues(List<SubmodelElement> values);
 
 }

@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 
 
 
@@ -16,57 +17,57 @@ public class DefaultQualifierBuilder extends AbstractBuilder<DefaultQualifier> {
     }
 
     /**
-     * This function allows setting a value for type
+     * This function allows setting a value for types
      * 
-     * @param type desired value to be set
-     * @return Builder object with new value for type
+     * @param types desired value to be set
+     * @return Builder object with new value for types
      */
-    public DefaultQualifierBuilder type(String type) {
-        this.map.put("type", type);
+    public DefaultQualifierBuilder types(List<String> types) {
+        this.map.put("types", types);
         return this;
     }
 
     /**
-     * This function allows setting a value for valueType
+     * This function allows setting a value for valueTypes
      * 
-     * @param valueType desired value to be set
-     * @return Builder object with new value for valueType
+     * @param valueTypes desired value to be set
+     * @return Builder object with new value for valueTypes
      */
-    public DefaultQualifierBuilder valueType(String valueType) {
-        this.map.put("valueType", valueType);
+    public DefaultQualifierBuilder valueTypes(List<String> valueTypes) {
+        this.map.put("valueTypes", valueTypes);
         return this;
     }
 
     /**
-     * This function allows setting a value for value
+     * This function allows setting a value for values
      * 
-     * @param value desired value to be set
-     * @return Builder object with new value for value
+     * @param values desired value to be set
+     * @return Builder object with new value for values
      */
-    public DefaultQualifierBuilder value(String value) {
-        this.map.put("value", value);
+    public DefaultQualifierBuilder values(List<String> values) {
+        this.map.put("values", values);
         return this;
     }
 
     /**
-     * This function allows setting a value for valueId
+     * This function allows setting a value for valueIds
      * 
-     * @param valueId desired value to be set
-     * @return Builder object with new value for valueId
+     * @param valueIds desired value to be set
+     * @return Builder object with new value for valueIds
      */
-    public DefaultQualifierBuilder valueId(Reference valueId) {
-        this.map.put("valueId", valueId);
+    public DefaultQualifierBuilder valueIds(List<Reference> valueIds) {
+        this.map.put("valueIds", valueIds);
         return this;
     }
 
     /**
-     * This function allows setting a value for semanticId
+     * This function allows setting a value for semanticIds
      * 
-     * @param semanticId desired value to be set
-     * @return Builder object with new value for semanticId
+     * @param semanticIds desired value to be set
+     * @return Builder object with new value for semanticIds
      */
-    public DefaultQualifierBuilder semanticId(Reference semanticId) {
-        this.map.put("semanticId", semanticId);
+    public DefaultQualifierBuilder semanticIds(List<Reference> semanticIds) {
+        this.map.put("semanticIds", semanticIds);
         return this;
     }
 

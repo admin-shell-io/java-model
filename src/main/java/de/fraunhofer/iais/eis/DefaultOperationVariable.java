@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 import java.util.Objects;
 
 
@@ -21,14 +22,14 @@ public class DefaultOperationVariable implements OperationVariable {
      * kind=Template."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/OperationVariable/value")
-    protected SubmodelElement value;
+    protected List<SubmodelElement> values;
 
     // no manual construction
     protected DefaultOperationVariable() {}
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.value});
+        return Objects.hash(new Object[] {this.values});
     }
 
     @Override
@@ -41,25 +42,25 @@ public class DefaultOperationVariable implements OperationVariable {
             return false;
         } else {
             DefaultOperationVariable other = (DefaultOperationVariable) obj;
-            return Objects.equals(this.value, other.value);
+            return Objects.equals(this.values, other.values);
         }
     }
 
     @Override
     public Object deepCopy() {
         DefaultOperationVariable other = new DefaultOperationVariable();
-        other.value = (SubmodelElement) Util.clone(this.value);
+        other.values = (List<SubmodelElement>) Util.clone(this.values);
         return other;
     }
 
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/OperationVariable/value")
-    final public SubmodelElement getValue() {
-        return value;
+    final public List<SubmodelElement> getValues() {
+        return values;
     }
 
-    final public void setValue(SubmodelElement value) {
-        this.value = value;
+    final public void setValues(List<SubmodelElement> values) {
+        this.values = values;
     }
 }

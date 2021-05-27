@@ -22,11 +22,11 @@ public interface ObjectAttributes extends ModelClass {
     /**
      * "A data elements that further classifies an object."@en
      * 
-     * @return Returns the List of References for the property objectAttributes. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute
+     * @return Returns the List of DataElements for the property objectAttributes. More information
+     *         under https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
-    public List<Reference> getObjectAttributes();
+    public List<DataElement> getObjectAttributes();
 
     /**
      * "A data elements that further classifies an object."@en
@@ -34,6 +34,6 @@ public interface ObjectAttributes extends ModelClass {
      * @param objectAttributes desired value for the property objectAttributes. More information under
      *        https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute
      */
-    public void setObjectAttributes(List<Reference> objectAttributes);
+    public void setObjectAttributes(List<DataElement> objectAttributes);
 
 }

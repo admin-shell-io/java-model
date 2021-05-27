@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 
 
 
@@ -21,37 +22,37 @@ public interface File extends ModelClass, DataElement, SubmodelElement {
     /**
      * "Mime type of the content of the File."@en
      * 
-     * @return Returns the String for the property mimeType. More information under
+     * @return Returns the List of Strings for the property mimeTypes. More information under
      *         https://admin-shell.io/aas/3/0/RC01/File/mimeType
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/File/mimeType")
-    public String getMimeType();
+    public List<String> getMimeTypes();
 
     /**
      * "Mime type of the content of the File."@en
      * 
-     * @param mimeType desired value for the property mimeType. More information under
+     * @param mimeTypes desired value for the property mimeTypes. More information under
      *        https://admin-shell.io/aas/3/0/RC01/File/mimeType
      */
-    public void setMimeType(String mimeType);
+    public void setMimeTypes(List<String> mimeTypes);
 
     /**
      * "Path and name of the referenced file (with file extension). The path can be absolute or
      * relative."@en
      * 
-     * @return Returns the String for the property value. More information under
+     * @return Returns the List of Strings for the property values. More information under
      *         https://admin-shell.io/aas/3/0/RC01/File/value
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/File/value")
-    public String getValue();
+    public List<String> getValues();
 
     /**
      * "Path and name of the referenced file (with file extension). The path can be absolute or
      * relative."@en
      * 
-     * @param value desired value for the property value. More information under
+     * @param values desired value for the property values. More information under
      *        https://admin-shell.io/aas/3/0/RC01/File/value
      */
-    public void setValue(String value);
+    public void setValues(List<String> values);
 
 }

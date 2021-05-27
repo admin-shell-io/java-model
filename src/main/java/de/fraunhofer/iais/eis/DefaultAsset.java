@@ -32,13 +32,13 @@ public class DefaultAsset implements Asset {
      * identification."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
-    protected AdministrativeInformation administration;
+    protected List<AdministrativeInformation> administrations;
 
     /**
      * "has identification" "The globally unique identification of the element."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
-    protected Identifier identification;
+    protected List<Identifier> identifications;
 
     /**
      * "has referable category" "The category is a value that gives further meta information w.r.t. to
@@ -46,7 +46,7 @@ public class DefaultAsset implements Asset {
      * of constraints."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    protected String category;
+    protected List<String> categories;
 
     /**
      * "has description" "Description or comments on the element. The description can be provided in
@@ -74,7 +74,7 @@ public class DefaultAsset implements Asset {
      * UA."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    protected String idShort;
+    protected List<String> idShorts;
 
     // no manual construction
     protected DefaultAsset() {}
@@ -82,12 +82,12 @@ public class DefaultAsset implements Asset {
     @Override
     public int hashCode() {
         return Objects.hash(new Object[] {this.dataSpecifications,
-            this.administration,
-            this.identification,
-            this.category,
+            this.administrations,
+            this.identifications,
+            this.categories,
             this.descriptions,
             this.displayNames,
-            this.idShort});
+            this.idShorts});
     }
 
     @Override
@@ -101,12 +101,12 @@ public class DefaultAsset implements Asset {
         } else {
             DefaultAsset other = (DefaultAsset) obj;
             return Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-                Objects.equals(this.administration, other.administration) &&
-                Objects.equals(this.identification, other.identification) &&
-                Objects.equals(this.category, other.category) &&
+                Objects.equals(this.administrations, other.administrations) &&
+                Objects.equals(this.identifications, other.identifications) &&
+                Objects.equals(this.categories, other.categories) &&
                 Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayNames, other.displayNames) &&
-                Objects.equals(this.idShort, other.idShort);
+                Objects.equals(this.idShorts, other.idShorts);
         }
     }
 
@@ -114,12 +114,12 @@ public class DefaultAsset implements Asset {
     public Object deepCopy() {
         DefaultAsset other = new DefaultAsset();
         other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
-        other.administration = (AdministrativeInformation) Util.clone(this.administration);
-        other.identification = (Identifier) Util.clone(this.identification);
-        other.category = (String) Util.clone(this.category);
+        other.administrations = (List<AdministrativeInformation>) Util.clone(this.administrations);
+        other.identifications = (List<Identifier>) Util.clone(this.identifications);
+        other.categories = (List<String>) Util.clone(this.categories);
         other.descriptions = (List<LangString>) Util.clone(this.descriptions);
         other.displayNames = (List<LangString>) Util.clone(this.displayNames);
-        other.idShort = (String) Util.clone(this.idShort);
+        other.idShorts = (List<String>) Util.clone(this.idShorts);
         return other;
     }
 
@@ -135,30 +135,30 @@ public class DefaultAsset implements Asset {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
-    final public AdministrativeInformation getAdministration() {
-        return administration;
+    final public List<AdministrativeInformation> getAdministrations() {
+        return administrations;
     }
 
-    final public void setAdministration(AdministrativeInformation administration) {
-        this.administration = administration;
+    final public void setAdministrations(List<AdministrativeInformation> administrations) {
+        this.administrations = administrations;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
-    final public Identifier getIdentification() {
-        return identification;
+    final public List<Identifier> getIdentifications() {
+        return identifications;
     }
 
-    final public void setIdentification(Identifier identification) {
-        this.identification = identification;
+    final public void setIdentifications(List<Identifier> identifications) {
+        this.identifications = identifications;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    final public String getCategory() {
-        return category;
+    final public List<String> getCategories() {
+        return categories;
     }
 
-    final public void setCategory(String category) {
-        this.category = category;
+    final public void setCategories(List<String> categories) {
+        this.categories = categories;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
@@ -180,11 +180,11 @@ public class DefaultAsset implements Asset {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    final public String getIdShort() {
-        return idShort;
+    final public List<String> getIdShorts() {
+        return idShorts;
     }
 
-    final public void setIdShort(String idShort) {
-        this.idShort = idShort;
+    final public void setIdShorts(List<String> idShorts) {
+        this.idShorts = idShorts;
     }
 }

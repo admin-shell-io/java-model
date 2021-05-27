@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 
 
 
@@ -22,36 +23,36 @@ public interface Qualifier extends ModelClass, Constraint, HasSemantics {
     /**
      * "The qualifier type describes the type of the qualifier that is applied to the element."@en
      * 
-     * @return Returns the String for the property type. More information under
+     * @return Returns the List of Strings for the property types. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Qualifier/type
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/type")
-    public String getType();
+    public List<String> getTypes();
 
     /**
      * "The qualifier type describes the type of the qualifier that is applied to the element."@en
      * 
-     * @param type desired value for the property type. More information under
+     * @param types desired value for the property types. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Qualifier/type
      */
-    public void setType(String type);
+    public void setTypes(List<String> types);
 
     /**
      * "Data type of the qualifier value."@en
      * 
-     * @return Returns the String for the property valueType. More information under
+     * @return Returns the List of Strings for the property valueTypes. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType")
-    public String getValueType();
+    public List<String> getValueTypes();
 
     /**
      * "Data type of the qualifier value."@en
      * 
-     * @param valueType desired value for the property valueType. More information under
+     * @param valueTypes desired value for the property valueTypes. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType
      */
-    public void setValueType(String valueType);
+    public void setValueTypes(List<String> valueTypes);
 
     /**
      * "The qualifier value is the value of the qualifier."@en "Constraint AASd-006: if both, the value
@@ -59,11 +60,11 @@ public interface Qualifier extends ModelClass, Constraint, HasSemantics {
      * referenced coded value in qualifierValueId."@en "Constraint AASd-020: The value of
      * Qualifier/value shall be consistent to the data type as defined in Qualifier/valueType."@en
      * 
-     * @return Returns the String for the property value. More information under
+     * @return Returns the List of Strings for the property values. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Qualifier/value
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/value")
-    public String getValue();
+    public List<String> getValues();
 
     /**
      * "The qualifier value is the value of the qualifier."@en "Constraint AASd-006: if both, the value
@@ -71,26 +72,26 @@ public interface Qualifier extends ModelClass, Constraint, HasSemantics {
      * referenced coded value in qualifierValueId."@en "Constraint AASd-020: The value of
      * Qualifier/value shall be consistent to the data type as defined in Qualifier/valueType."@en
      * 
-     * @param value desired value for the property value. More information under
+     * @param values desired value for the property values. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Qualifier/value
      */
-    public void setValue(String value);
+    public void setValues(List<String> values);
 
     /**
      * "Reference to the global unqiue id of a coded value."@en
      * 
-     * @return Returns the Reference for the property valueId. More information under
+     * @return Returns the List of References for the property valueIds. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId")
-    public Reference getValueId();
+    public List<Reference> getValueIds();
 
     /**
      * "Reference to the global unqiue id of a coded value."@en
      * 
-     * @param valueId desired value for the property valueId. More information under
+     * @param valueIds desired value for the property valueIds. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId
      */
-    public void setValueId(Reference valueId);
+    public void setValueIds(List<Reference> valueIds);
 
 }

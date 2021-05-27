@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 
 
 
@@ -26,52 +27,52 @@ public interface Range extends ModelClass, DataElement {
     /**
      * "Data type of the min and max."@en
      * 
-     * @return Returns the String for the property valueType. More information under
+     * @return Returns the List of Strings for the property valueTypes. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Range/valueType
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Range/valueType")
-    public String getValueType();
+    public List<String> getValueTypes();
 
     /**
      * "Data type of the min and max."@en
      * 
-     * @param valueType desired value for the property valueType. More information under
+     * @param valueTypes desired value for the property valueTypes. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Range/valueType
      */
-    public void setValueType(String valueType);
+    public void setValueTypes(List<String> valueTypes);
 
     /**
      * "The maximum value of the range."@en
      * 
-     * @return Returns the String for the property max. More information under
+     * @return Returns the List of Strings for the property maxs. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Range/max
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Range/max")
-    public String getMax();
+    public List<String> getMaxs();
 
     /**
      * "The maximum value of the range."@en
      * 
-     * @param max desired value for the property max. More information under
+     * @param maxs desired value for the property maxs. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Range/max
      */
-    public void setMax(String max);
+    public void setMaxs(List<String> maxs);
 
     /**
      * "The minimum value of the range."@en
      * 
-     * @return Returns the String for the property min. More information under
+     * @return Returns the List of Strings for the property mins. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Range/min
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Range/min")
-    public String getMin();
+    public List<String> getMins();
 
     /**
      * "The minimum value of the range."@en
      * 
-     * @param min desired value for the property min. More information under
+     * @param mins desired value for the property mins. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Range/min
      */
-    public void setMin(String min);
+    public void setMins(List<String> mins);
 
 }

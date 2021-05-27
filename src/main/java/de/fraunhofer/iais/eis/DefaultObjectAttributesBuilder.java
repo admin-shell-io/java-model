@@ -22,7 +22,7 @@ public class DefaultObjectAttributesBuilder extends AbstractBuilder<DefaultObjec
      * @param objectAttributes desired value to be set
      * @return Builder object with new value for objectAttributes
      */
-    public DefaultObjectAttributesBuilder objectAttributes(List<Reference> objectAttributes) {
+    public DefaultObjectAttributesBuilder objectAttributes(List<DataElement> objectAttributes) {
         this.map.put("objectAttributes", objectAttributes);
         return this;
     }

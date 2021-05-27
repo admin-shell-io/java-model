@@ -10,6 +10,7 @@ import de.fraunhofer.iais.eis.util.*;
  * "HasExtensions" "Element that can be extended by proprietary extensions."@en
  */
 @KnownSubtypes({
+    @KnownSubtypes.Type(value = DefaultHasExtensions.class)
 })
 public interface HasExtensions extends ModelClass {
 

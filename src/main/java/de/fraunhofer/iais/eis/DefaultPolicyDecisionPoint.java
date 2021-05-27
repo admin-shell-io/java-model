@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 import java.util.Objects;
 
 
@@ -20,7 +21,7 @@ public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
      * need to be configured."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
-    protected boolean externalPolicyDecisionPoints;
+    protected List<Boolean> externalPolicyDecisionPoints;
 
     // no manual construction
     protected DefaultPolicyDecisionPoint() {}
@@ -47,18 +48,18 @@ public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
     @Override
     public Object deepCopy() {
         DefaultPolicyDecisionPoint other = new DefaultPolicyDecisionPoint();
-        other.externalPolicyDecisionPoints = (boolean) Util.clone(this.externalPolicyDecisionPoints);
+        other.externalPolicyDecisionPoints = (List<Boolean>) Util.clone(this.externalPolicyDecisionPoints);
         return other;
     }
 
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
-    final public boolean getExternalPolicyDecisionPoints() {
+    final public List<Boolean> getExternalPolicyDecisionPoints() {
         return externalPolicyDecisionPoints;
     }
 
-    final public void setExternalPolicyDecisionPoints(boolean externalPolicyDecisionPoints) {
+    final public void setExternalPolicyDecisionPoints(List<Boolean> externalPolicyDecisionPoints) {
         this.externalPolicyDecisionPoints = externalPolicyDecisionPoints;
     }
 }

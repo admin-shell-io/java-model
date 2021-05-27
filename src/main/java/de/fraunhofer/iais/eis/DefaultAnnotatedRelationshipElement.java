@@ -33,7 +33,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
      * "has kind" "ModelingKind of the element: either type or instance."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-    protected ModelingKind kind;
+    protected List<ModelingKind> kinds;
 
     /**
      * "has semantic ID" "Points to the Expression Semantic of the Submodels"@en "The semantic id might
@@ -41,7 +41,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
      * example an PDF if a standard)."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    protected Reference semanticId;
+    protected List<Reference> semanticIds;
 
     /**
      * "has qualifier" "Additional qualification of a qualifiable element."@en
@@ -55,7 +55,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
      * of constraints."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    protected String category;
+    protected List<String> categories;
 
     /**
      * "has description" "Description or comments on the element. The description can be provided in
@@ -83,19 +83,19 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
      * UA."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    protected String idShort;
+    protected List<String> idShorts;
 
     /**
      * "has first relationship" "First element in the relationship taking the role of the subject."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first")
-    protected Reference first;
+    protected List<Referable> firsts;
 
     /**
      * "has second relationship" "Second element in the relationship taking the role of the object."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second")
-    protected Reference second;
+    protected List<Referable> seconds;
 
     // no manual construction
     protected DefaultAnnotatedRelationshipElement() {}
@@ -103,16 +103,16 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
     @Override
     public int hashCode() {
         return Objects.hash(new Object[] {this.annotations,
-            this.first,
-            this.second,
-            this.category,
+            this.firsts,
+            this.seconds,
+            this.categories,
             this.descriptions,
             this.displayNames,
-            this.idShort,
+            this.idShorts,
             this.qualifiers,
             this.dataSpecifications,
-            this.kind,
-            this.semanticId});
+            this.kinds,
+            this.semanticIds});
     }
 
     @Override
@@ -126,16 +126,16 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
         } else {
             DefaultAnnotatedRelationshipElement other = (DefaultAnnotatedRelationshipElement) obj;
             return Objects.equals(this.annotations, other.annotations) &&
-                Objects.equals(this.first, other.first) &&
-                Objects.equals(this.second, other.second) &&
-                Objects.equals(this.category, other.category) &&
+                Objects.equals(this.firsts, other.firsts) &&
+                Objects.equals(this.seconds, other.seconds) &&
+                Objects.equals(this.categories, other.categories) &&
                 Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayNames, other.displayNames) &&
-                Objects.equals(this.idShort, other.idShort) &&
+                Objects.equals(this.idShorts, other.idShorts) &&
                 Objects.equals(this.qualifiers, other.qualifiers) &&
                 Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-                Objects.equals(this.kind, other.kind) &&
-                Objects.equals(this.semanticId, other.semanticId);
+                Objects.equals(this.kinds, other.kinds) &&
+                Objects.equals(this.semanticIds, other.semanticIds);
         }
     }
 
@@ -143,16 +143,16 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
     public Object deepCopy() {
         DefaultAnnotatedRelationshipElement other = new DefaultAnnotatedRelationshipElement();
         other.annotations = (List<DataElement>) Util.clone(this.annotations);
-        other.first = (Reference) Util.clone(this.first);
-        other.second = (Reference) Util.clone(this.second);
-        other.category = (String) Util.clone(this.category);
+        other.firsts = (List<Referable>) Util.clone(this.firsts);
+        other.seconds = (List<Referable>) Util.clone(this.seconds);
+        other.categories = (List<String>) Util.clone(this.categories);
         other.descriptions = (List<LangString>) Util.clone(this.descriptions);
         other.displayNames = (List<LangString>) Util.clone(this.displayNames);
-        other.idShort = (String) Util.clone(this.idShort);
+        other.idShorts = (List<String>) Util.clone(this.idShorts);
         other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
         other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
-        other.kind = (ModelingKind) Util.clone(this.kind);
-        other.semanticId = (Reference) Util.clone(this.semanticId);
+        other.kinds = (List<ModelingKind>) Util.clone(this.kinds);
+        other.semanticIds = (List<Reference>) Util.clone(this.semanticIds);
         return other;
     }
 
@@ -168,30 +168,30 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first")
-    final public Reference getFirst() {
-        return first;
+    final public List<Referable> getFirsts() {
+        return firsts;
     }
 
-    final public void setFirst(Reference first) {
-        this.first = first;
+    final public void setFirsts(List<Referable> firsts) {
+        this.firsts = firsts;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second")
-    final public Reference getSecond() {
-        return second;
+    final public List<Referable> getSeconds() {
+        return seconds;
     }
 
-    final public void setSecond(Reference second) {
-        this.second = second;
+    final public void setSeconds(List<Referable> seconds) {
+        this.seconds = seconds;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    final public String getCategory() {
-        return category;
+    final public List<String> getCategories() {
+        return categories;
     }
 
-    final public void setCategory(String category) {
-        this.category = category;
+    final public void setCategories(List<String> categories) {
+        this.categories = categories;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
@@ -213,12 +213,12 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    final public String getIdShort() {
-        return idShort;
+    final public List<String> getIdShorts() {
+        return idShorts;
     }
 
-    final public void setIdShort(String idShort) {
-        this.idShort = idShort;
+    final public void setIdShorts(List<String> idShorts) {
+        this.idShorts = idShorts;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
@@ -240,20 +240,20 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-    final public ModelingKind getKind() {
-        return kind;
+    final public List<ModelingKind> getKinds() {
+        return kinds;
     }
 
-    final public void setKind(ModelingKind kind) {
-        this.kind = kind;
+    final public void setKinds(List<ModelingKind> kinds) {
+        this.kinds = kinds;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    final public Reference getSemanticId() {
-        return semanticId;
+    final public List<Reference> getSemanticIds() {
+        return semanticIds;
     }
 
-    final public void setSemanticId(Reference semanticId) {
-        this.semanticId = semanticId;
+    final public void setSemanticIds(List<Reference> semanticIds) {
+        this.semanticIds = semanticIds;
     }
 }

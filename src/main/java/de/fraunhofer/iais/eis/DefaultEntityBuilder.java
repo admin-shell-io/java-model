@@ -17,35 +17,35 @@ public class DefaultEntityBuilder extends AbstractBuilder<DefaultEntity> {
     }
 
     /**
-     * This function allows setting a value for globalAssetId
+     * This function allows setting a value for globalAssetIds
      * 
-     * @param globalAssetId desired value to be set
-     * @return Builder object with new value for globalAssetId
+     * @param globalAssetIds desired value to be set
+     * @return Builder object with new value for globalAssetIds
      */
-    public DefaultEntityBuilder globalAssetId(Reference globalAssetId) {
-        this.map.put("globalAssetId", globalAssetId);
+    public DefaultEntityBuilder globalAssetIds(List<Reference> globalAssetIds) {
+        this.map.put("globalAssetIds", globalAssetIds);
         return this;
     }
 
     /**
-     * This function allows setting a value for externalAssetId
+     * This function allows setting a value for externalAssetIds
      * 
-     * @param externalAssetId desired value to be set
-     * @return Builder object with new value for externalAssetId
+     * @param externalAssetIds desired value to be set
+     * @return Builder object with new value for externalAssetIds
      */
-    public DefaultEntityBuilder externalAssetId(IdentifierKeyValuePair externalAssetId) {
-        this.map.put("externalAssetId", externalAssetId);
+    public DefaultEntityBuilder externalAssetIds(List<IdentifierKeyValuePair> externalAssetIds) {
+        this.map.put("externalAssetIds", externalAssetIds);
         return this;
     }
 
     /**
-     * This function allows setting a value for entityType
+     * This function allows setting a value for entityTypes
      * 
-     * @param entityType desired value to be set
-     * @return Builder object with new value for entityType
+     * @param entityTypes desired value to be set
+     * @return Builder object with new value for entityTypes
      */
-    public DefaultEntityBuilder entityType(EntityType entityType) {
-        this.map.put("entityType", entityType);
+    public DefaultEntityBuilder entityTypes(List<EntityType> entityTypes) {
+        this.map.put("entityTypes", entityTypes);
         return this;
     }
 
@@ -61,13 +61,13 @@ public class DefaultEntityBuilder extends AbstractBuilder<DefaultEntity> {
     }
 
     /**
-     * This function allows setting a value for category
+     * This function allows setting a value for categories
      * 
-     * @param category desired value to be set
-     * @return Builder object with new value for category
+     * @param categories desired value to be set
+     * @return Builder object with new value for categories
      */
-    public DefaultEntityBuilder category(String category) {
-        this.map.put("category", category);
+    public DefaultEntityBuilder categories(List<String> categories) {
+        this.map.put("categories", categories);
         return this;
     }
 
@@ -94,13 +94,13 @@ public class DefaultEntityBuilder extends AbstractBuilder<DefaultEntity> {
     }
 
     /**
-     * This function allows setting a value for idShort
+     * This function allows setting a value for idShorts
      * 
-     * @param idShort desired value to be set
-     * @return Builder object with new value for idShort
+     * @param idShorts desired value to be set
+     * @return Builder object with new value for idShorts
      */
-    public DefaultEntityBuilder idShort(String idShort) {
-        this.map.put("idShort", idShort);
+    public DefaultEntityBuilder idShorts(List<String> idShorts) {
+        this.map.put("idShorts", idShorts);
         return this;
     }
 
@@ -127,24 +127,24 @@ public class DefaultEntityBuilder extends AbstractBuilder<DefaultEntity> {
     }
 
     /**
-     * This function allows setting a value for kind
+     * This function allows setting a value for kinds
      * 
-     * @param kind desired value to be set
-     * @return Builder object with new value for kind
+     * @param kinds desired value to be set
+     * @return Builder object with new value for kinds
      */
-    public DefaultEntityBuilder kind(ModelingKind kind) {
-        this.map.put("kind", kind);
+    public DefaultEntityBuilder kinds(List<ModelingKind> kinds) {
+        this.map.put("kinds", kinds);
         return this;
     }
 
     /**
-     * This function allows setting a value for semanticId
+     * This function allows setting a value for semanticIds
      * 
-     * @param semanticId desired value to be set
-     * @return Builder object with new value for semanticId
+     * @param semanticIds desired value to be set
+     * @return Builder object with new value for semanticIds
      */
-    public DefaultEntityBuilder semanticId(Reference semanticId) {
-        this.map.put("semanticId", semanticId);
+    public DefaultEntityBuilder semanticIds(List<Reference> semanticIds) {
+        this.map.put("semanticIds", semanticIds);
         return this;
     }
 

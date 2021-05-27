@@ -22,7 +22,7 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
      * external available information needs to be configured for the AAS."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints")
-    protected boolean externalInformationPoints;
+    protected List<Boolean> externalInformationPoints;
 
     /**
      * "has internal information point" "References to submodels defining information used by security
@@ -58,7 +58,7 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
     @Override
     public Object deepCopy() {
         DefaultPolicyInformationPoints other = new DefaultPolicyInformationPoints();
-        other.externalInformationPoints = (boolean) Util.clone(this.externalInformationPoints);
+        other.externalInformationPoints = (List<Boolean>) Util.clone(this.externalInformationPoints);
         other.internalInformationPoints = (List<Submodel>) Util.clone(this.internalInformationPoints);
         return other;
     }
@@ -66,11 +66,11 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints")
-    final public boolean getExternalInformationPoints() {
+    final public List<Boolean> getExternalInformationPoints() {
         return externalInformationPoints;
     }
 
-    final public void setExternalInformationPoints(boolean externalInformationPoints) {
+    final public void setExternalInformationPoints(List<Boolean> externalInformationPoints) {
         this.externalInformationPoints = externalInformationPoints;
     }
 

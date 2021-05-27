@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 import java.util.Objects;
 
 
@@ -19,7 +20,7 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
      * administration point to be used by the AAS."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl")
-    protected boolean externalAccessControl;
+    protected List<Boolean> externalAccessControls;
 
     /**
      * "has local access control" "The policy administration point of access control as realized by the
@@ -27,15 +28,15 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
      * endpoint defined or the AAS has its own access control."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl")
-    protected AccessControl localAccessControl;
+    protected List<AccessControl> localAccessControls;
 
     // no manual construction
     protected DefaultPolicyAdministrationPoint() {}
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.localAccessControl,
-            this.externalAccessControl});
+        return Objects.hash(new Object[] {this.localAccessControls,
+            this.externalAccessControls});
     }
 
     @Override
@@ -48,36 +49,36 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
             return false;
         } else {
             DefaultPolicyAdministrationPoint other = (DefaultPolicyAdministrationPoint) obj;
-            return Objects.equals(this.localAccessControl, other.localAccessControl) &&
-                Objects.equals(this.externalAccessControl, other.externalAccessControl);
+            return Objects.equals(this.localAccessControls, other.localAccessControls) &&
+                Objects.equals(this.externalAccessControls, other.externalAccessControls);
         }
     }
 
     @Override
     public Object deepCopy() {
         DefaultPolicyAdministrationPoint other = new DefaultPolicyAdministrationPoint();
-        other.localAccessControl = (AccessControl) Util.clone(this.localAccessControl);
-        other.externalAccessControl = (boolean) Util.clone(this.externalAccessControl);
+        other.localAccessControls = (List<AccessControl>) Util.clone(this.localAccessControls);
+        other.externalAccessControls = (List<Boolean>) Util.clone(this.externalAccessControls);
         return other;
     }
 
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl")
-    final public AccessControl getLocalAccessControl() {
-        return localAccessControl;
+    final public List<AccessControl> getLocalAccessControls() {
+        return localAccessControls;
     }
 
-    final public void setLocalAccessControl(AccessControl localAccessControl) {
-        this.localAccessControl = localAccessControl;
+    final public void setLocalAccessControls(List<AccessControl> localAccessControls) {
+        this.localAccessControls = localAccessControls;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl")
-    final public boolean getExternalAccessControl() {
-        return externalAccessControl;
+    final public List<Boolean> getExternalAccessControls() {
+        return externalAccessControls;
     }
 
-    final public void setExternalAccessControl(boolean externalAccessControl) {
-        this.externalAccessControl = externalAccessControl;
+    final public void setExternalAccessControls(List<Boolean> externalAccessControls) {
+        this.externalAccessControls = externalAccessControls;
     }
 }

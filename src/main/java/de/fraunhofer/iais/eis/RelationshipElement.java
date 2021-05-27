@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 
 
 
@@ -23,35 +24,35 @@ public interface RelationshipElement extends ModelClass, SubmodelElement {
     /**
      * "First element in the relationship taking the role of the subject."@en
      * 
-     * @return Returns the Reference for the property first. More information under
+     * @return Returns the List of Referables for the property firsts. More information under
      *         https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first")
-    public Reference getFirst();
+    public List<Referable> getFirsts();
 
     /**
      * "First element in the relationship taking the role of the subject."@en
      * 
-     * @param first desired value for the property first. More information under
+     * @param firsts desired value for the property firsts. More information under
      *        https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first
      */
-    public void setFirst(Reference first);
+    public void setFirsts(List<Referable> firsts);
 
     /**
      * "Second element in the relationship taking the role of the object."@en
      * 
-     * @return Returns the Reference for the property second. More information under
+     * @return Returns the List of Referables for the property seconds. More information under
      *         https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second")
-    public Reference getSecond();
+    public List<Referable> getSeconds();
 
     /**
      * "Second element in the relationship taking the role of the object."@en
      * 
-     * @param second desired value for the property second. More information under
+     * @param seconds desired value for the property seconds. More information under
      *        https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second
      */
-    public void setSecond(Reference second);
+    public void setSeconds(List<Referable> seconds);
 
 }

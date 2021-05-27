@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 import java.util.Objects;
 
 
@@ -19,7 +20,7 @@ public class DefaultPermission implements Permission {
      * include the denial of the permission."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
-    protected PermissionKind kindOfPermission;
+    protected List<PermissionKind> kindOfPermissions;
 
     /**
      * "has permission" "Reference to a property that defines the semantics of the permission."@en
@@ -29,15 +30,15 @@ public class DefaultPermission implements Permission {
      * \'AccessControl\'."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Permission/permission")
-    protected Reference permission;
+    protected List<Property> permissions;
 
     // no manual construction
     protected DefaultPermission() {}
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.kindOfPermission,
-            this.permission});
+        return Objects.hash(new Object[] {this.kindOfPermissions,
+            this.permissions});
     }
 
     @Override
@@ -50,36 +51,36 @@ public class DefaultPermission implements Permission {
             return false;
         } else {
             DefaultPermission other = (DefaultPermission) obj;
-            return Objects.equals(this.kindOfPermission, other.kindOfPermission) &&
-                Objects.equals(this.permission, other.permission);
+            return Objects.equals(this.kindOfPermissions, other.kindOfPermissions) &&
+                Objects.equals(this.permissions, other.permissions);
         }
     }
 
     @Override
     public Object deepCopy() {
         DefaultPermission other = new DefaultPermission();
-        other.kindOfPermission = (PermissionKind) Util.clone(this.kindOfPermission);
-        other.permission = (Reference) Util.clone(this.permission);
+        other.kindOfPermissions = (List<PermissionKind>) Util.clone(this.kindOfPermissions);
+        other.permissions = (List<Property>) Util.clone(this.permissions);
         return other;
     }
 
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
-    final public PermissionKind getKindOfPermission() {
-        return kindOfPermission;
+    final public List<PermissionKind> getKindOfPermissions() {
+        return kindOfPermissions;
     }
 
-    final public void setKindOfPermission(PermissionKind kindOfPermission) {
-        this.kindOfPermission = kindOfPermission;
+    final public void setKindOfPermissions(List<PermissionKind> kindOfPermissions) {
+        this.kindOfPermissions = kindOfPermissions;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Permission/permission")
-    final public Reference getPermission() {
-        return permission;
+    final public List<Property> getPermissions() {
+        return permissions;
     }
 
-    final public void setPermission(Reference permission) {
-        this.permission = permission;
+    final public void setPermissions(List<Property> permissions) {
+        this.permissions = permissions;
     }
 }

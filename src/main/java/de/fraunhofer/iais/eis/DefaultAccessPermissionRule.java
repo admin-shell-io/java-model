@@ -42,7 +42,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
      * of constraints."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    protected String category;
+    protected List<String> categories;
 
     /**
      * "has description" "Description or comments on the element. The description can be provided in
@@ -70,7 +70,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
      * UA."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    protected String idShort;
+    protected List<String> idShorts;
 
     // no manual construction
     protected DefaultAccessPermissionRule() {}
@@ -79,10 +79,10 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
     public int hashCode() {
         return Objects.hash(new Object[] {this.permissionsPerObjects,
             this.targetSubjectAttributes,
-            this.category,
+            this.categories,
             this.descriptions,
             this.displayNames,
-            this.idShort,
+            this.idShorts,
             this.qualifiers});
     }
 
@@ -98,10 +98,10 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
             DefaultAccessPermissionRule other = (DefaultAccessPermissionRule) obj;
             return Objects.equals(this.permissionsPerObjects, other.permissionsPerObjects) &&
                 Objects.equals(this.targetSubjectAttributes, other.targetSubjectAttributes) &&
-                Objects.equals(this.category, other.category) &&
+                Objects.equals(this.categories, other.categories) &&
                 Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayNames, other.displayNames) &&
-                Objects.equals(this.idShort, other.idShort) &&
+                Objects.equals(this.idShorts, other.idShorts) &&
                 Objects.equals(this.qualifiers, other.qualifiers);
         }
     }
@@ -111,10 +111,10 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
         DefaultAccessPermissionRule other = new DefaultAccessPermissionRule();
         other.permissionsPerObjects = (List<PermissionsPerObject>) Util.clone(this.permissionsPerObjects);
         other.targetSubjectAttributes = (SubjectAttributes) Util.clone(this.targetSubjectAttributes);
-        other.category = (String) Util.clone(this.category);
+        other.categories = (List<String>) Util.clone(this.categories);
         other.descriptions = (List<LangString>) Util.clone(this.descriptions);
         other.displayNames = (List<LangString>) Util.clone(this.displayNames);
-        other.idShort = (String) Util.clone(this.idShort);
+        other.idShorts = (List<String>) Util.clone(this.idShorts);
         other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
         return other;
     }
@@ -140,12 +140,12 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    final public String getCategory() {
-        return category;
+    final public List<String> getCategories() {
+        return categories;
     }
 
-    final public void setCategory(String category) {
-        this.category = category;
+    final public void setCategories(List<String> categories) {
+        this.categories = categories;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
@@ -167,12 +167,12 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    final public String getIdShort() {
-        return idShort;
+    final public List<String> getIdShorts() {
+        return idShorts;
     }
 
-    final public void setIdShort(String idShort) {
-        this.idShort = idShort;
+    final public void setIdShorts(List<String> idShorts) {
+        this.idShorts = idShorts;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")

@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 
 
 
@@ -9,6 +10,7 @@ import de.fraunhofer.iais.eis.util.*;
  * "Identifiable" "An element that has a globally unique identifier."@en
  */
 @KnownSubtypes({
+    @KnownSubtypes.Type(value = DefaultIdentifiable.class),
     @KnownSubtypes.Type(value = Submodel.class),
     @KnownSubtypes.Type(value = Asset.class),
     @KnownSubtypes.Type(value = AssetAdministrationShell.class),
@@ -24,36 +26,36 @@ public interface Identifiable extends ModelClass, Referable {
      * "Administrative information of an identifiable element."@en "Some of the administrative
      * information like the version number might need to be part of the identification."@en
      * 
-     * @return Returns the AdministrativeInformation for the property administration. More information
-     *         under https://admin-shell.io/aas/3/0/RC01/Identifiable/administration
+     * @return Returns the List of AdministrativeInformations for the property administrations. More
+     *         information under https://admin-shell.io/aas/3/0/RC01/Identifiable/administration
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
-    public AdministrativeInformation getAdministration();
+    public List<AdministrativeInformation> getAdministrations();
 
     /**
      * "Administrative information of an identifiable element."@en "Some of the administrative
      * information like the version number might need to be part of the identification."@en
      * 
-     * @param administration desired value for the property administration. More information under
+     * @param administrations desired value for the property administrations. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Identifiable/administration
      */
-    public void setAdministration(AdministrativeInformation administration);
+    public void setAdministrations(List<AdministrativeInformation> administrations);
 
     /**
      * "The globally unique identification of the element."@en
      * 
-     * @return Returns the Identifier for the property identification. More information under
+     * @return Returns the List of Identifiers for the property identifications. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Identifiable/identification
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
-    public Identifier getIdentification();
+    public List<Identifier> getIdentifications();
 
     /**
      * "The globally unique identification of the element."@en
      * 
-     * @param identification desired value for the property identification. More information under
+     * @param identifications desired value for the property identifications. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Identifiable/identification
      */
-    public void setIdentification(Identifier identification);
+    public void setIdentifications(List<Identifier> identifications);
 
 }

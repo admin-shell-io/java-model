@@ -17,13 +17,13 @@ public class DefaultPermissionsPerObjectBuilder extends AbstractBuilder<DefaultP
     }
 
     /**
-     * This function allows setting a value for object
+     * This function allows setting a value for objects
      * 
-     * @param object desired value to be set
-     * @return Builder object with new value for object
+     * @param objects desired value to be set
+     * @return Builder object with new value for objects
      */
-    public DefaultPermissionsPerObjectBuilder object(Referable object) {
-        this.map.put("object", object);
+    public DefaultPermissionsPerObjectBuilder objects(List<Referable> objects) {
+        this.map.put("objects", objects);
         return this;
     }
 
@@ -44,7 +44,7 @@ public class DefaultPermissionsPerObjectBuilder extends AbstractBuilder<DefaultP
      * @param targetObjectAttributes desired value to be set
      * @return Builder object with new value for targetObjectAttributes
      */
-    public DefaultPermissionsPerObjectBuilder targetObjectAttributes(ObjectAttributes targetObjectAttributes) {
+    public DefaultPermissionsPerObjectBuilder targetObjectAttributes(List<ObjectAttributes> targetObjectAttributes) {
         this.map.put("targetObjectAttributes", targetObjectAttributes);
         return this;
     }

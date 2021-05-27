@@ -39,13 +39,13 @@ public class DefaultBlobBuilder extends AbstractBuilder<DefaultBlob> {
     }
 
     /**
-     * This function allows setting a value for category
+     * This function allows setting a value for categories
      * 
-     * @param category desired value to be set
-     * @return Builder object with new value for category
+     * @param categories desired value to be set
+     * @return Builder object with new value for categories
      */
-    public DefaultBlobBuilder category(String category) {
-        this.map.put("category", category);
+    public DefaultBlobBuilder categories(List<String> categories) {
+        this.map.put("categories", categories);
         return this;
     }
 
@@ -72,13 +72,13 @@ public class DefaultBlobBuilder extends AbstractBuilder<DefaultBlob> {
     }
 
     /**
-     * This function allows setting a value for idShort
+     * This function allows setting a value for idShorts
      * 
-     * @param idShort desired value to be set
-     * @return Builder object with new value for idShort
+     * @param idShorts desired value to be set
+     * @return Builder object with new value for idShorts
      */
-    public DefaultBlobBuilder idShort(String idShort) {
-        this.map.put("idShort", idShort);
+    public DefaultBlobBuilder idShorts(List<String> idShorts) {
+        this.map.put("idShorts", idShorts);
         return this;
     }
 
@@ -105,24 +105,24 @@ public class DefaultBlobBuilder extends AbstractBuilder<DefaultBlob> {
     }
 
     /**
-     * This function allows setting a value for kind
+     * This function allows setting a value for kinds
      * 
-     * @param kind desired value to be set
-     * @return Builder object with new value for kind
+     * @param kinds desired value to be set
+     * @return Builder object with new value for kinds
      */
-    public DefaultBlobBuilder kind(ModelingKind kind) {
-        this.map.put("kind", kind);
+    public DefaultBlobBuilder kinds(List<ModelingKind> kinds) {
+        this.map.put("kinds", kinds);
         return this;
     }
 
     /**
-     * This function allows setting a value for semanticId
+     * This function allows setting a value for semanticIds
      * 
-     * @param semanticId desired value to be set
-     * @return Builder object with new value for semanticId
+     * @param semanticIds desired value to be set
+     * @return Builder object with new value for semanticIds
      */
-    public DefaultBlobBuilder semanticId(Reference semanticId) {
-        this.map.put("semanticId", semanticId);
+    public DefaultBlobBuilder semanticIds(List<Reference> semanticIds) {
+        this.map.put("semanticIds", semanticIds);
         return this;
     }
 

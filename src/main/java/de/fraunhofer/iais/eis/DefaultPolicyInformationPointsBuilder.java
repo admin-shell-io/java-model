@@ -22,7 +22,7 @@ public class DefaultPolicyInformationPointsBuilder extends AbstractBuilder<Defau
      * @param externalInformationPoints desired value to be set
      * @return Builder object with new value for externalInformationPoints
      */
-    public DefaultPolicyInformationPointsBuilder externalInformationPoints(boolean externalInformationPoints) {
+    public DefaultPolicyInformationPointsBuilder externalInformationPoints(List<Boolean> externalInformationPoints) {
         this.map.put("externalInformationPoints", externalInformationPoints);
         return this;
     }

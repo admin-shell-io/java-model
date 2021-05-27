@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 
 
 
@@ -16,13 +17,13 @@ public class DefaultPolicyEnforcementPointsBuilder extends AbstractBuilder<Defau
     }
 
     /**
-     * This function allows setting a value for externalPolicyEnforcementPoint
+     * This function allows setting a value for externalPolicyEnforcementPoints
      * 
-     * @param externalPolicyEnforcementPoint desired value to be set
-     * @return Builder object with new value for externalPolicyEnforcementPoint
+     * @param externalPolicyEnforcementPoints desired value to be set
+     * @return Builder object with new value for externalPolicyEnforcementPoints
      */
-    public DefaultPolicyEnforcementPointsBuilder externalPolicyEnforcementPoint(boolean externalPolicyEnforcementPoint) {
-        this.map.put("externalPolicyEnforcementPoint", externalPolicyEnforcementPoint);
+    public DefaultPolicyEnforcementPointsBuilder externalPolicyEnforcementPoints(List<Boolean> externalPolicyEnforcementPoints) {
+        this.map.put("externalPolicyEnforcementPoints", externalPolicyEnforcementPoints);
         return this;
     }
 

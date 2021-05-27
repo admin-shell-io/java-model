@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 import java.util.Objects;
 
 
@@ -19,14 +20,14 @@ public class DefaultPolicyEnforcementPoints implements PolicyEnforcementPoints {
      * Endpoint to external available enforcement point taking needs to be configured for the AAS."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyEnforcementPoints/externalPolicyEnforcementPoint")
-    protected boolean externalPolicyEnforcementPoint;
+    protected List<Boolean> externalPolicyEnforcementPoints;
 
     // no manual construction
     protected DefaultPolicyEnforcementPoints() {}
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.externalPolicyEnforcementPoint});
+        return Objects.hash(new Object[] {this.externalPolicyEnforcementPoints});
     }
 
     @Override
@@ -39,25 +40,25 @@ public class DefaultPolicyEnforcementPoints implements PolicyEnforcementPoints {
             return false;
         } else {
             DefaultPolicyEnforcementPoints other = (DefaultPolicyEnforcementPoints) obj;
-            return Objects.equals(this.externalPolicyEnforcementPoint, other.externalPolicyEnforcementPoint);
+            return Objects.equals(this.externalPolicyEnforcementPoints, other.externalPolicyEnforcementPoints);
         }
     }
 
     @Override
     public Object deepCopy() {
         DefaultPolicyEnforcementPoints other = new DefaultPolicyEnforcementPoints();
-        other.externalPolicyEnforcementPoint = (boolean) Util.clone(this.externalPolicyEnforcementPoint);
+        other.externalPolicyEnforcementPoints = (List<Boolean>) Util.clone(this.externalPolicyEnforcementPoints);
         return other;
     }
 
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyEnforcementPoints/externalPolicyEnforcementPoint")
-    final public boolean getExternalPolicyEnforcementPoint() {
-        return externalPolicyEnforcementPoint;
+    final public List<Boolean> getExternalPolicyEnforcementPoints() {
+        return externalPolicyEnforcementPoints;
     }
 
-    final public void setExternalPolicyEnforcementPoint(boolean externalPolicyEnforcementPoint) {
-        this.externalPolicyEnforcementPoint = externalPolicyEnforcementPoint;
+    final public void setExternalPolicyEnforcementPoints(List<Boolean> externalPolicyEnforcementPoints) {
+        this.externalPolicyEnforcementPoints = externalPolicyEnforcementPoints;
     }
 }

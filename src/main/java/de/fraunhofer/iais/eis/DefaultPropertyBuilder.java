@@ -17,46 +17,46 @@ public class DefaultPropertyBuilder extends AbstractBuilder<DefaultProperty> {
     }
 
     /**
-     * This function allows setting a value for valueType
+     * This function allows setting a value for valueTypes
      * 
-     * @param valueType desired value to be set
-     * @return Builder object with new value for valueType
+     * @param valueTypes desired value to be set
+     * @return Builder object with new value for valueTypes
      */
-    public DefaultPropertyBuilder valueType(String valueType) {
-        this.map.put("valueType", valueType);
+    public DefaultPropertyBuilder valueTypes(List<String> valueTypes) {
+        this.map.put("valueTypes", valueTypes);
         return this;
     }
 
     /**
-     * This function allows setting a value for value
+     * This function allows setting a value for values
      * 
-     * @param value desired value to be set
-     * @return Builder object with new value for value
+     * @param values desired value to be set
+     * @return Builder object with new value for values
      */
-    public DefaultPropertyBuilder value(String value) {
-        this.map.put("value", value);
+    public DefaultPropertyBuilder values(List<String> values) {
+        this.map.put("values", values);
         return this;
     }
 
     /**
-     * This function allows setting a value for valueId
+     * This function allows setting a value for valueIds
      * 
-     * @param valueId desired value to be set
-     * @return Builder object with new value for valueId
+     * @param valueIds desired value to be set
+     * @return Builder object with new value for valueIds
      */
-    public DefaultPropertyBuilder valueId(Reference valueId) {
-        this.map.put("valueId", valueId);
+    public DefaultPropertyBuilder valueIds(List<Reference> valueIds) {
+        this.map.put("valueIds", valueIds);
         return this;
     }
 
     /**
-     * This function allows setting a value for category
+     * This function allows setting a value for categories
      * 
-     * @param category desired value to be set
-     * @return Builder object with new value for category
+     * @param categories desired value to be set
+     * @return Builder object with new value for categories
      */
-    public DefaultPropertyBuilder category(String category) {
-        this.map.put("category", category);
+    public DefaultPropertyBuilder categories(List<String> categories) {
+        this.map.put("categories", categories);
         return this;
     }
 
@@ -83,13 +83,13 @@ public class DefaultPropertyBuilder extends AbstractBuilder<DefaultProperty> {
     }
 
     /**
-     * This function allows setting a value for idShort
+     * This function allows setting a value for idShorts
      * 
-     * @param idShort desired value to be set
-     * @return Builder object with new value for idShort
+     * @param idShorts desired value to be set
+     * @return Builder object with new value for idShorts
      */
-    public DefaultPropertyBuilder idShort(String idShort) {
-        this.map.put("idShort", idShort);
+    public DefaultPropertyBuilder idShorts(List<String> idShorts) {
+        this.map.put("idShorts", idShorts);
         return this;
     }
 
@@ -116,24 +116,24 @@ public class DefaultPropertyBuilder extends AbstractBuilder<DefaultProperty> {
     }
 
     /**
-     * This function allows setting a value for kind
+     * This function allows setting a value for kinds
      * 
-     * @param kind desired value to be set
-     * @return Builder object with new value for kind
+     * @param kinds desired value to be set
+     * @return Builder object with new value for kinds
      */
-    public DefaultPropertyBuilder kind(ModelingKind kind) {
-        this.map.put("kind", kind);
+    public DefaultPropertyBuilder kinds(List<ModelingKind> kinds) {
+        this.map.put("kinds", kinds);
         return this;
     }
 
     /**
-     * This function allows setting a value for semanticId
+     * This function allows setting a value for semanticIds
      * 
-     * @param semanticId desired value to be set
-     * @return Builder object with new value for semanticId
+     * @param semanticIds desired value to be set
+     * @return Builder object with new value for semanticIds
      */
-    public DefaultPropertyBuilder semanticId(Reference semanticId) {
-        this.map.put("semanticId", semanticId);
+    public DefaultPropertyBuilder semanticIds(List<Reference> semanticIds) {
+        this.map.put("semanticIds", semanticIds);
         return this;
     }
 

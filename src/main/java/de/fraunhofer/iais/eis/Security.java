@@ -21,11 +21,12 @@ public interface Security extends ModelClass {
     /**
      * "Access control policy points of the AAS."@en
      * 
-     * @return Returns the AccessControlPolicyPoints for the property accessControlPolicyPoints. More
-     *         information under https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints
+     * @return Returns the List of AccessControlPolicyPointss for the property
+     *         accessControlPolicyPoints. More information under
+     *         https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
-    public AccessControlPolicyPoints getAccessControlPolicyPoints();
+    public List<AccessControlPolicyPoints> getAccessControlPolicyPoints();
 
     /**
      * "Access control policy points of the AAS."@en
@@ -33,7 +34,7 @@ public interface Security extends ModelClass {
      * @param accessControlPolicyPoints desired value for the property accessControlPolicyPoints. More
      *        information under https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints
      */
-    public void setAccessControlPolicyPoints(AccessControlPolicyPoints accessControlPolicyPoints);
+    public void setAccessControlPolicyPoints(List<AccessControlPolicyPoints> accessControlPolicyPoints);
 
     /**
      * "Certificates of the AAS."@en

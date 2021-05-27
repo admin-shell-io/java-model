@@ -32,7 +32,7 @@ public class DefaultRange implements Range {
      * "has kind" "ModelingKind of the element: either type or instance."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-    protected ModelingKind kind;
+    protected List<ModelingKind> kinds;
 
     /**
      * "has semantic ID" "Points to the Expression Semantic of the Submodels"@en "The semantic id might
@@ -40,7 +40,7 @@ public class DefaultRange implements Range {
      * example an PDF if a standard)."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    protected Reference semanticId;
+    protected List<Reference> semanticIds;
 
     /**
      * "has qualifier" "Additional qualification of a qualifiable element."@en
@@ -52,19 +52,19 @@ public class DefaultRange implements Range {
      * "has maximum value" "The maximum value of the range."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Range/max")
-    protected String max;
+    protected List<String> maxs;
 
     /**
      * "has minimum value" "The minimum value of the range."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Range/min")
-    protected String min;
+    protected List<String> mins;
 
     /**
      * "has value type of range" "Data type of the min and max."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Range/valueType")
-    protected String valueType;
+    protected List<String> valueTypes;
 
     /**
      * "has referable category" "The category is a value that gives further meta information w.r.t. to
@@ -72,7 +72,7 @@ public class DefaultRange implements Range {
      * of constraints."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    protected String category;
+    protected List<String> categories;
 
     /**
      * "has description" "Description or comments on the element. The description can be provided in
@@ -100,24 +100,24 @@ public class DefaultRange implements Range {
      * UA."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    protected String idShort;
+    protected List<String> idShorts;
 
     // no manual construction
     protected DefaultRange() {}
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.valueType,
-            this.max,
-            this.min,
-            this.category,
+        return Objects.hash(new Object[] {this.valueTypes,
+            this.maxs,
+            this.mins,
+            this.categories,
             this.descriptions,
             this.displayNames,
-            this.idShort,
+            this.idShorts,
             this.qualifiers,
             this.dataSpecifications,
-            this.kind,
-            this.semanticId});
+            this.kinds,
+            this.semanticIds});
     }
 
     @Override
@@ -130,73 +130,73 @@ public class DefaultRange implements Range {
             return false;
         } else {
             DefaultRange other = (DefaultRange) obj;
-            return Objects.equals(this.valueType, other.valueType) &&
-                Objects.equals(this.max, other.max) &&
-                Objects.equals(this.min, other.min) &&
-                Objects.equals(this.category, other.category) &&
+            return Objects.equals(this.valueTypes, other.valueTypes) &&
+                Objects.equals(this.maxs, other.maxs) &&
+                Objects.equals(this.mins, other.mins) &&
+                Objects.equals(this.categories, other.categories) &&
                 Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayNames, other.displayNames) &&
-                Objects.equals(this.idShort, other.idShort) &&
+                Objects.equals(this.idShorts, other.idShorts) &&
                 Objects.equals(this.qualifiers, other.qualifiers) &&
                 Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-                Objects.equals(this.kind, other.kind) &&
-                Objects.equals(this.semanticId, other.semanticId);
+                Objects.equals(this.kinds, other.kinds) &&
+                Objects.equals(this.semanticIds, other.semanticIds);
         }
     }
 
     @Override
     public Object deepCopy() {
         DefaultRange other = new DefaultRange();
-        other.valueType = (String) Util.clone(this.valueType);
-        other.max = (String) Util.clone(this.max);
-        other.min = (String) Util.clone(this.min);
-        other.category = (String) Util.clone(this.category);
+        other.valueTypes = (List<String>) Util.clone(this.valueTypes);
+        other.maxs = (List<String>) Util.clone(this.maxs);
+        other.mins = (List<String>) Util.clone(this.mins);
+        other.categories = (List<String>) Util.clone(this.categories);
         other.descriptions = (List<LangString>) Util.clone(this.descriptions);
         other.displayNames = (List<LangString>) Util.clone(this.displayNames);
-        other.idShort = (String) Util.clone(this.idShort);
+        other.idShorts = (List<String>) Util.clone(this.idShorts);
         other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
         other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
-        other.kind = (ModelingKind) Util.clone(this.kind);
-        other.semanticId = (Reference) Util.clone(this.semanticId);
+        other.kinds = (List<ModelingKind>) Util.clone(this.kinds);
+        other.semanticIds = (List<Reference>) Util.clone(this.semanticIds);
         return other;
     }
 
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Range/valueType")
-    final public String getValueType() {
-        return valueType;
+    final public List<String> getValueTypes() {
+        return valueTypes;
     }
 
-    final public void setValueType(String valueType) {
-        this.valueType = valueType;
+    final public void setValueTypes(List<String> valueTypes) {
+        this.valueTypes = valueTypes;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Range/max")
-    final public String getMax() {
-        return max;
+    final public List<String> getMaxs() {
+        return maxs;
     }
 
-    final public void setMax(String max) {
-        this.max = max;
+    final public void setMaxs(List<String> maxs) {
+        this.maxs = maxs;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Range/min")
-    final public String getMin() {
-        return min;
+    final public List<String> getMins() {
+        return mins;
     }
 
-    final public void setMin(String min) {
-        this.min = min;
+    final public void setMins(List<String> mins) {
+        this.mins = mins;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    final public String getCategory() {
-        return category;
+    final public List<String> getCategories() {
+        return categories;
     }
 
-    final public void setCategory(String category) {
-        this.category = category;
+    final public void setCategories(List<String> categories) {
+        this.categories = categories;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
@@ -218,12 +218,12 @@ public class DefaultRange implements Range {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    final public String getIdShort() {
-        return idShort;
+    final public List<String> getIdShorts() {
+        return idShorts;
     }
 
-    final public void setIdShort(String idShort) {
-        this.idShort = idShort;
+    final public void setIdShorts(List<String> idShorts) {
+        this.idShorts = idShorts;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
@@ -245,20 +245,20 @@ public class DefaultRange implements Range {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-    final public ModelingKind getKind() {
-        return kind;
+    final public List<ModelingKind> getKinds() {
+        return kinds;
     }
 
-    final public void setKind(ModelingKind kind) {
-        this.kind = kind;
+    final public void setKinds(List<ModelingKind> kinds) {
+        this.kinds = kinds;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    final public Reference getSemanticId() {
-        return semanticId;
+    final public List<Reference> getSemanticIds() {
+        return semanticIds;
     }
 
-    final public void setSemanticId(Reference semanticId) {
-        this.semanticId = semanticId;
+    final public void setSemanticIds(List<Reference> semanticIds) {
+        this.semanticIds = semanticIds;
     }
 }

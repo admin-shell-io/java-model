@@ -34,7 +34,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
      * "has kind" "ModelingKind of the element: either type or instance."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-    protected ModelingKind kind;
+    protected List<ModelingKind> kinds;
 
     /**
      * "has semantic ID" "Points to the Expression Semantic of the Submodels"@en "The semantic id might
@@ -42,7 +42,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
      * example an PDF if a standard)."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    protected Reference semanticId;
+    protected List<Reference> semanticIds;
 
     /**
      * "has qualifier" "Additional qualification of a qualifiable element."@en
@@ -56,7 +56,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
      * of constraints."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    protected String category;
+    protected List<String> categories;
 
     /**
      * "has description" "Description or comments on the element. The description can be provided in
@@ -84,7 +84,7 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
      * UA."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    protected String idShort;
+    protected List<String> idShorts;
 
     /**
      * "allow duplicates" "If allowDuplicates=true then it is allowed that the collection contains the
@@ -93,14 +93,14 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
      * (i.e. the same semanticId)."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates")
-    protected boolean allowDuplicates;
+    protected List<Boolean> allowDuplicates;
 
     /**
      * "ordered" "If ordered=false then the elements in the property collection are not ordered. If
      * ordered=true then the elements in the collection are ordered. Default = false"@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered")
-    protected boolean ordered;
+    protected List<Boolean> ordereds;
 
     /**
      * "has value" "Submodel element contained in the collection."@en
@@ -114,16 +114,16 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
     @Override
     public int hashCode() {
         return Objects.hash(new Object[] {this.allowDuplicates,
-            this.ordered,
+            this.ordereds,
             this.values,
-            this.category,
+            this.categories,
             this.descriptions,
             this.displayNames,
-            this.idShort,
+            this.idShorts,
             this.qualifiers,
             this.dataSpecifications,
-            this.kind,
-            this.semanticId});
+            this.kinds,
+            this.semanticIds});
     }
 
     @Override
@@ -137,54 +137,54 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
         } else {
             DefaultSubmodelElementCollection other = (DefaultSubmodelElementCollection) obj;
             return Objects.equals(this.allowDuplicates, other.allowDuplicates) &&
-                Objects.equals(this.ordered, other.ordered) &&
+                Objects.equals(this.ordereds, other.ordereds) &&
                 Objects.equals(this.values, other.values) &&
-                Objects.equals(this.category, other.category) &&
+                Objects.equals(this.categories, other.categories) &&
                 Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayNames, other.displayNames) &&
-                Objects.equals(this.idShort, other.idShort) &&
+                Objects.equals(this.idShorts, other.idShorts) &&
                 Objects.equals(this.qualifiers, other.qualifiers) &&
                 Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-                Objects.equals(this.kind, other.kind) &&
-                Objects.equals(this.semanticId, other.semanticId);
+                Objects.equals(this.kinds, other.kinds) &&
+                Objects.equals(this.semanticIds, other.semanticIds);
         }
     }
 
     @Override
     public Object deepCopy() {
         DefaultSubmodelElementCollection other = new DefaultSubmodelElementCollection();
-        other.allowDuplicates = (boolean) Util.clone(this.allowDuplicates);
-        other.ordered = (boolean) Util.clone(this.ordered);
+        other.allowDuplicates = (List<Boolean>) Util.clone(this.allowDuplicates);
+        other.ordereds = (List<Boolean>) Util.clone(this.ordereds);
         other.values = (Collection<SubmodelElement>) Util.clone(this.values);
-        other.category = (String) Util.clone(this.category);
+        other.categories = (List<String>) Util.clone(this.categories);
         other.descriptions = (List<LangString>) Util.clone(this.descriptions);
         other.displayNames = (List<LangString>) Util.clone(this.displayNames);
-        other.idShort = (String) Util.clone(this.idShort);
+        other.idShorts = (List<String>) Util.clone(this.idShorts);
         other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
         other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
-        other.kind = (ModelingKind) Util.clone(this.kind);
-        other.semanticId = (Reference) Util.clone(this.semanticId);
+        other.kinds = (List<ModelingKind>) Util.clone(this.kinds);
+        other.semanticIds = (List<Reference>) Util.clone(this.semanticIds);
         return other;
     }
 
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates")
-    final public boolean getAllowDuplicates() {
+    final public List<Boolean> getAllowDuplicates() {
         return allowDuplicates;
     }
 
-    final public void setAllowDuplicates(boolean allowDuplicates) {
+    final public void setAllowDuplicates(List<Boolean> allowDuplicates) {
         this.allowDuplicates = allowDuplicates;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered")
-    final public boolean getOrdered() {
-        return ordered;
+    final public List<Boolean> getOrdereds() {
+        return ordereds;
     }
 
-    final public void setOrdered(boolean ordered) {
-        this.ordered = ordered;
+    final public void setOrdereds(List<Boolean> ordereds) {
+        this.ordereds = ordereds;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value")
@@ -197,12 +197,12 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    final public String getCategory() {
-        return category;
+    final public List<String> getCategories() {
+        return categories;
     }
 
-    final public void setCategory(String category) {
-        this.category = category;
+    final public void setCategories(List<String> categories) {
+        this.categories = categories;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
@@ -224,12 +224,12 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    final public String getIdShort() {
-        return idShort;
+    final public List<String> getIdShorts() {
+        return idShorts;
     }
 
-    final public void setIdShort(String idShort) {
-        this.idShort = idShort;
+    final public void setIdShorts(List<String> idShorts) {
+        this.idShorts = idShorts;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
@@ -251,20 +251,20 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-    final public ModelingKind getKind() {
-        return kind;
+    final public List<ModelingKind> getKinds() {
+        return kinds;
     }
 
-    final public void setKind(ModelingKind kind) {
-        this.kind = kind;
+    final public void setKinds(List<ModelingKind> kinds) {
+        this.kinds = kinds;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    final public Reference getSemanticId() {
-        return semanticId;
+    final public List<Reference> getSemanticIds() {
+        return semanticIds;
     }
 
-    final public void setSemanticId(Reference semanticId) {
-        this.semanticId = semanticId;
+    final public void setSemanticIds(List<Reference> semanticIds) {
+        this.semanticIds = semanticIds;
     }
 }

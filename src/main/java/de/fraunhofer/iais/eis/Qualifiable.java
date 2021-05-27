@@ -11,6 +11,7 @@ import de.fraunhofer.iais.eis.util.*;
  * qualifiable can only have one qualifier with the same Qualifier/type."@en
  */
 @KnownSubtypes({
+    @KnownSubtypes.Type(value = DefaultQualifiable.class),
     @KnownSubtypes.Type(value = AccessPermissionRule.class),
     @KnownSubtypes.Type(value = Submodel.class),
     @KnownSubtypes.Type(value = SubmodelElement.class)

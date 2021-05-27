@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 
 
 
@@ -24,19 +25,19 @@ public interface ReferenceElement extends ModelClass, DataElement {
      * "Reference to any other referable element of the same of any other AAS or a reference to an
      * external object or entity."@en
      * 
-     * @return Returns the Reference for the property value. More information under
+     * @return Returns the List of References for the property values. More information under
      *         https://admin-shell.io/aas/3/0/RC01/ReferenceElement/value
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ReferenceElement/value")
-    public Reference getValue();
+    public List<Reference> getValues();
 
     /**
      * "Reference to any other referable element of the same of any other AAS or a reference to an
      * external object or entity."@en
      * 
-     * @param value desired value for the property value. More information under
+     * @param values desired value for the property values. More information under
      *        https://admin-shell.io/aas/3/0/RC01/ReferenceElement/value
      */
-    public void setValue(Reference value);
+    public void setValues(List<Reference> values);
 
 }

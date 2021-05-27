@@ -22,7 +22,7 @@ public class DefaultSecurityBuilder extends AbstractBuilder<DefaultSecurity> {
      * @param accessControlPolicyPoints desired value to be set
      * @return Builder object with new value for accessControlPolicyPoints
      */
-    public DefaultSecurityBuilder accessControlPolicyPoints(AccessControlPolicyPoints accessControlPolicyPoints) {
+    public DefaultSecurityBuilder accessControlPolicyPoints(List<AccessControlPolicyPoints> accessControlPolicyPoints) {
         this.map.put("accessControlPolicyPoints", accessControlPolicyPoints);
         return this;
     }

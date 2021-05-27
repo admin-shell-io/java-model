@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 
 
 
@@ -16,57 +17,57 @@ public class DefaultExtensionBuilder extends AbstractBuilder<DefaultExtension> {
     }
 
     /**
-     * This function allows setting a value for name
+     * This function allows setting a value for names
      * 
-     * @param name desired value to be set
-     * @return Builder object with new value for name
+     * @param names desired value to be set
+     * @return Builder object with new value for names
      */
-    public DefaultExtensionBuilder name(String name) {
-        this.map.put("name", name);
+    public DefaultExtensionBuilder names(List<String> names) {
+        this.map.put("names", names);
         return this;
     }
 
     /**
-     * This function allows setting a value for valueType
+     * This function allows setting a value for valueTypes
      * 
-     * @param valueType desired value to be set
-     * @return Builder object with new value for valueType
+     * @param valueTypes desired value to be set
+     * @return Builder object with new value for valueTypes
      */
-    public DefaultExtensionBuilder valueType(String valueType) {
-        this.map.put("valueType", valueType);
+    public DefaultExtensionBuilder valueTypes(List<String> valueTypes) {
+        this.map.put("valueTypes", valueTypes);
         return this;
     }
 
     /**
-     * This function allows setting a value for value
+     * This function allows setting a value for values
      * 
-     * @param value desired value to be set
-     * @return Builder object with new value for value
+     * @param values desired value to be set
+     * @return Builder object with new value for values
      */
-    public DefaultExtensionBuilder value(String value) {
-        this.map.put("value", value);
+    public DefaultExtensionBuilder values(List<String> values) {
+        this.map.put("values", values);
         return this;
     }
 
     /**
-     * This function allows setting a value for refersTo
+     * This function allows setting a value for refersTos
      * 
-     * @param refersTo desired value to be set
-     * @return Builder object with new value for refersTo
+     * @param refersTos desired value to be set
+     * @return Builder object with new value for refersTos
      */
-    public DefaultExtensionBuilder refersTo(Reference refersTo) {
-        this.map.put("refersTo", refersTo);
+    public DefaultExtensionBuilder refersTos(List<Reference> refersTos) {
+        this.map.put("refersTos", refersTos);
         return this;
     }
 
     /**
-     * This function allows setting a value for semanticId
+     * This function allows setting a value for semanticIds
      * 
-     * @param semanticId desired value to be set
-     * @return Builder object with new value for semanticId
+     * @param semanticIds desired value to be set
+     * @return Builder object with new value for semanticIds
      */
-    public DefaultExtensionBuilder semanticId(Reference semanticId) {
-        this.map.put("semanticId", semanticId);
+    public DefaultExtensionBuilder semanticIds(List<Reference> semanticIds) {
+        this.map.put("semanticIds", semanticIds);
         return this;
     }
 
