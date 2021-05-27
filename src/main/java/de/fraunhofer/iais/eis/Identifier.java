@@ -1,6 +1,5 @@
 package de.fraunhofer.iais.eis;
 
-import java.util.List;
 
 
 
@@ -21,37 +20,37 @@ public interface Identifier extends ModelClass {
     /**
      * "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
      * 
-     * @return Returns the List of Strings for the property identifiers. More information under
+     * @return Returns the String for the property identifier. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Identifier/identifier
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
-    public List<String> getIdentifiers();
+    public String getIdentifier();
 
     /**
      * "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
      * 
-     * @param identifiers desired value for the property identifiers. More information under
+     * @param identifier desired value for the property identifier. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Identifier/identifier
      */
-    public void setIdentifiers(List<String> identifiers);
+    public void setIdentifier(String identifier);
 
     /**
      * "Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the
      * enumeration \'IdentifierType\'."@en
      * 
-     * @return Returns the List of IdentifierTypes for the property idTypes. More information under
+     * @return Returns the IdentifierType for the property idType. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Identifier/idType
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")
-    public List<IdentifierType> getIdTypes();
+    public IdentifierType getIdType();
 
     /**
      * "Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the
      * enumeration \'IdentifierType\'."@en
      * 
-     * @param idTypes desired value for the property idTypes. More information under
+     * @param idType desired value for the property idType. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Identifier/idType
      */
-    public void setIdTypes(List<IdentifierType> idTypes);
+    public void setIdType(IdentifierType idType);
 
 }

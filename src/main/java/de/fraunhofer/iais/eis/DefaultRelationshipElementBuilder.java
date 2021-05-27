@@ -17,35 +17,35 @@ public class DefaultRelationshipElementBuilder extends AbstractBuilder<DefaultRe
     }
 
     /**
-     * This function allows setting a value for firsts
+     * This function allows setting a value for first
      * 
-     * @param firsts desired value to be set
-     * @return Builder object with new value for firsts
+     * @param first desired value to be set
+     * @return Builder object with new value for first
      */
-    public DefaultRelationshipElementBuilder firsts(List<Referable> firsts) {
-        this.map.put("firsts", firsts);
+    public DefaultRelationshipElementBuilder first(Reference first) {
+        this.map.put("first", first);
         return this;
     }
 
     /**
-     * This function allows setting a value for seconds
+     * This function allows setting a value for second
      * 
-     * @param seconds desired value to be set
-     * @return Builder object with new value for seconds
+     * @param second desired value to be set
+     * @return Builder object with new value for second
      */
-    public DefaultRelationshipElementBuilder seconds(List<Referable> seconds) {
-        this.map.put("seconds", seconds);
+    public DefaultRelationshipElementBuilder second(Reference second) {
+        this.map.put("second", second);
         return this;
     }
 
     /**
-     * This function allows setting a value for categories
+     * This function allows setting a value for category
      * 
-     * @param categories desired value to be set
-     * @return Builder object with new value for categories
+     * @param category desired value to be set
+     * @return Builder object with new value for category
      */
-    public DefaultRelationshipElementBuilder categories(List<String> categories) {
-        this.map.put("categories", categories);
+    public DefaultRelationshipElementBuilder category(String category) {
+        this.map.put("category", category);
         return this;
     }
 
@@ -72,13 +72,13 @@ public class DefaultRelationshipElementBuilder extends AbstractBuilder<DefaultRe
     }
 
     /**
-     * This function allows setting a value for idShorts
+     * This function allows setting a value for idShort
      * 
-     * @param idShorts desired value to be set
-     * @return Builder object with new value for idShorts
+     * @param idShort desired value to be set
+     * @return Builder object with new value for idShort
      */
-    public DefaultRelationshipElementBuilder idShorts(List<String> idShorts) {
-        this.map.put("idShorts", idShorts);
+    public DefaultRelationshipElementBuilder idShort(String idShort) {
+        this.map.put("idShort", idShort);
         return this;
     }
 
@@ -105,24 +105,24 @@ public class DefaultRelationshipElementBuilder extends AbstractBuilder<DefaultRe
     }
 
     /**
-     * This function allows setting a value for kinds
+     * This function allows setting a value for kind
      * 
-     * @param kinds desired value to be set
-     * @return Builder object with new value for kinds
+     * @param kind desired value to be set
+     * @return Builder object with new value for kind
      */
-    public DefaultRelationshipElementBuilder kinds(List<ModelingKind> kinds) {
-        this.map.put("kinds", kinds);
+    public DefaultRelationshipElementBuilder kind(ModelingKind kind) {
+        this.map.put("kind", kind);
         return this;
     }
 
     /**
-     * This function allows setting a value for semanticIds
+     * This function allows setting a value for semanticId
      * 
-     * @param semanticIds desired value to be set
-     * @return Builder object with new value for semanticIds
+     * @param semanticId desired value to be set
+     * @return Builder object with new value for semanticId
      */
-    public DefaultRelationshipElementBuilder semanticIds(List<Reference> semanticIds) {
-        this.map.put("semanticIds", semanticIds);
+    public DefaultRelationshipElementBuilder semanticId(Reference semanticId) {
+        this.map.put("semanticId", semanticId);
         return this;
     }
 

@@ -23,7 +23,7 @@ public class DefaultEntity implements Entity {
      * entity."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/entityType")
-    protected List<EntityType> entityTypes;
+    protected EntityType entityType;
 
     /**
      * "has external asset id" "Reference to an identifier key value pair representing an external
@@ -33,7 +33,7 @@ public class DefaultEntity implements Entity {
      * Entity/entityType is set to \'SelfManagedEntity\'. They are not existing otherwise."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId")
-    protected List<IdentifierKeyValuePair> externalAssetIds;
+    protected IdentifierKeyValuePair externalAssetId;
 
     /**
      * "has global asset id" "Reference to the asset the entity is representing."@en "The asset
@@ -42,7 +42,7 @@ public class DefaultEntity implements Entity {
      * set if Entity/entityType is set to \'SelfManagedEntity\'. They are not existing otherwise."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId")
-    protected List<Reference> globalAssetIds;
+    protected Reference globalAssetId;
 
     /**
      * "has statement" "Describes statements applicable to the entity by a set of submodel elements,
@@ -62,7 +62,7 @@ public class DefaultEntity implements Entity {
      * "has kind" "ModelingKind of the element: either type or instance."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-    protected List<ModelingKind> kinds;
+    protected ModelingKind kind;
 
     /**
      * "has semantic ID" "Points to the Expression Semantic of the Submodels"@en "The semantic id might
@@ -70,7 +70,7 @@ public class DefaultEntity implements Entity {
      * example an PDF if a standard)."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    protected List<Reference> semanticIds;
+    protected Reference semanticId;
 
     /**
      * "has qualifier" "Additional qualification of a qualifiable element."@en
@@ -84,7 +84,7 @@ public class DefaultEntity implements Entity {
      * of constraints."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    protected List<String> categories;
+    protected String category;
 
     /**
      * "has description" "Description or comments on the element. The description can be provided in
@@ -112,25 +112,25 @@ public class DefaultEntity implements Entity {
      * UA."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    protected List<String> idShorts;
+    protected String idShort;
 
     // no manual construction
     protected DefaultEntity() {}
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.globalAssetIds,
-            this.externalAssetIds,
-            this.entityTypes,
+        return Objects.hash(new Object[] {this.globalAssetId,
+            this.externalAssetId,
+            this.entityType,
             this.statements,
-            this.categories,
+            this.category,
             this.descriptions,
             this.displayNames,
-            this.idShorts,
+            this.idShort,
             this.qualifiers,
             this.dataSpecifications,
-            this.kinds,
-            this.semanticIds});
+            this.kind,
+            this.semanticId});
     }
 
     @Override
@@ -143,66 +143,66 @@ public class DefaultEntity implements Entity {
             return false;
         } else {
             DefaultEntity other = (DefaultEntity) obj;
-            return Objects.equals(this.globalAssetIds, other.globalAssetIds) &&
-                Objects.equals(this.externalAssetIds, other.externalAssetIds) &&
-                Objects.equals(this.entityTypes, other.entityTypes) &&
+            return Objects.equals(this.globalAssetId, other.globalAssetId) &&
+                Objects.equals(this.externalAssetId, other.externalAssetId) &&
+                Objects.equals(this.entityType, other.entityType) &&
                 Objects.equals(this.statements, other.statements) &&
-                Objects.equals(this.categories, other.categories) &&
+                Objects.equals(this.category, other.category) &&
                 Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayNames, other.displayNames) &&
-                Objects.equals(this.idShorts, other.idShorts) &&
+                Objects.equals(this.idShort, other.idShort) &&
                 Objects.equals(this.qualifiers, other.qualifiers) &&
                 Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-                Objects.equals(this.kinds, other.kinds) &&
-                Objects.equals(this.semanticIds, other.semanticIds);
+                Objects.equals(this.kind, other.kind) &&
+                Objects.equals(this.semanticId, other.semanticId);
         }
     }
 
     @Override
     public Object deepCopy() {
         DefaultEntity other = new DefaultEntity();
-        other.globalAssetIds = (List<Reference>) Util.clone(this.globalAssetIds);
-        other.externalAssetIds = (List<IdentifierKeyValuePair>) Util.clone(this.externalAssetIds);
-        other.entityTypes = (List<EntityType>) Util.clone(this.entityTypes);
+        other.globalAssetId = (Reference) Util.clone(this.globalAssetId);
+        other.externalAssetId = (IdentifierKeyValuePair) Util.clone(this.externalAssetId);
+        other.entityType = (EntityType) Util.clone(this.entityType);
         other.statements = (List<SubmodelElement>) Util.clone(this.statements);
-        other.categories = (List<String>) Util.clone(this.categories);
+        other.category = (String) Util.clone(this.category);
         other.descriptions = (List<LangString>) Util.clone(this.descriptions);
         other.displayNames = (List<LangString>) Util.clone(this.displayNames);
-        other.idShorts = (List<String>) Util.clone(this.idShorts);
+        other.idShort = (String) Util.clone(this.idShort);
         other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
         other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
-        other.kinds = (List<ModelingKind>) Util.clone(this.kinds);
-        other.semanticIds = (List<Reference>) Util.clone(this.semanticIds);
+        other.kind = (ModelingKind) Util.clone(this.kind);
+        other.semanticId = (Reference) Util.clone(this.semanticId);
         return other;
     }
 
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId")
-    final public List<Reference> getGlobalAssetIds() {
-        return globalAssetIds;
+    final public Reference getGlobalAssetId() {
+        return globalAssetId;
     }
 
-    final public void setGlobalAssetIds(List<Reference> globalAssetIds) {
-        this.globalAssetIds = globalAssetIds;
+    final public void setGlobalAssetId(Reference globalAssetId) {
+        this.globalAssetId = globalAssetId;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId")
-    final public List<IdentifierKeyValuePair> getExternalAssetIds() {
-        return externalAssetIds;
+    final public IdentifierKeyValuePair getExternalAssetId() {
+        return externalAssetId;
     }
 
-    final public void setExternalAssetIds(List<IdentifierKeyValuePair> externalAssetIds) {
-        this.externalAssetIds = externalAssetIds;
+    final public void setExternalAssetId(IdentifierKeyValuePair externalAssetId) {
+        this.externalAssetId = externalAssetId;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/entityType")
-    final public List<EntityType> getEntityTypes() {
-        return entityTypes;
+    final public EntityType getEntityType() {
+        return entityType;
     }
 
-    final public void setEntityTypes(List<EntityType> entityTypes) {
-        this.entityTypes = entityTypes;
+    final public void setEntityType(EntityType entityType) {
+        this.entityType = entityType;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/statement")
@@ -215,12 +215,12 @@ public class DefaultEntity implements Entity {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    final public List<String> getCategories() {
-        return categories;
+    final public String getCategory() {
+        return category;
     }
 
-    final public void setCategories(List<String> categories) {
-        this.categories = categories;
+    final public void setCategory(String category) {
+        this.category = category;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
@@ -242,12 +242,12 @@ public class DefaultEntity implements Entity {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    final public List<String> getIdShorts() {
-        return idShorts;
+    final public String getIdShort() {
+        return idShort;
     }
 
-    final public void setIdShorts(List<String> idShorts) {
-        this.idShorts = idShorts;
+    final public void setIdShort(String idShort) {
+        this.idShort = idShort;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
@@ -269,20 +269,20 @@ public class DefaultEntity implements Entity {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-    final public List<ModelingKind> getKinds() {
-        return kinds;
+    final public ModelingKind getKind() {
+        return kind;
     }
 
-    final public void setKinds(List<ModelingKind> kinds) {
-        this.kinds = kinds;
+    final public void setKind(ModelingKind kind) {
+        this.kind = kind;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    final public List<Reference> getSemanticIds() {
-        return semanticIds;
+    final public Reference getSemanticId() {
+        return semanticId;
     }
 
-    final public void setSemanticIds(List<Reference> semanticIds) {
-        this.semanticIds = semanticIds;
+    final public void setSemanticId(Reference semanticId) {
+        this.semanticId = semanticId;
     }
 }

@@ -19,7 +19,7 @@ public class DefaultSecurity implements Security {
      * "has access control policy points" "Access control policy points of the AAS."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
-    protected List<AccessControlPolicyPoints> accessControlPolicyPoints;
+    protected AccessControlPolicyPoints accessControlPolicyPoints;
 
     /**
      * "has certificate" "Certificates of the AAS."@en
@@ -62,7 +62,7 @@ public class DefaultSecurity implements Security {
     @Override
     public Object deepCopy() {
         DefaultSecurity other = new DefaultSecurity();
-        other.accessControlPolicyPoints = (List<AccessControlPolicyPoints>) Util.clone(this.accessControlPolicyPoints);
+        other.accessControlPolicyPoints = (AccessControlPolicyPoints) Util.clone(this.accessControlPolicyPoints);
         other.certificates = (List<Certificate>) Util.clone(this.certificates);
         other.requiredCertificateExtensions = (List<Reference>) Util.clone(this.requiredCertificateExtensions);
         return other;
@@ -71,11 +71,11 @@ public class DefaultSecurity implements Security {
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
-    final public List<AccessControlPolicyPoints> getAccessControlPolicyPoints() {
+    final public AccessControlPolicyPoints getAccessControlPolicyPoints() {
         return accessControlPolicyPoints;
     }
 
-    final public void setAccessControlPolicyPoints(List<AccessControlPolicyPoints> accessControlPolicyPoints) {
+    final public void setAccessControlPolicyPoints(AccessControlPolicyPoints accessControlPolicyPoints) {
         this.accessControlPolicyPoints = accessControlPolicyPoints;
     }
 

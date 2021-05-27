@@ -27,11 +27,11 @@ public interface Entity extends ModelClass, SubmodelElement {
      * Either the attribute globalAssetId or externalAssetId of an Entity must be set if
      * Entity/entityType is set to \'SelfManagedEntity\'. They are not existing otherwise."@en
      * 
-     * @return Returns the List of References for the property globalAssetIds. More information under
+     * @return Returns the Reference for the property globalAssetId. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId")
-    public List<Reference> getGlobalAssetIds();
+    public Reference getGlobalAssetId();
 
     /**
      * "Reference to the asset the entity is representing."@en "The asset attribute must be set if
@@ -39,10 +39,10 @@ public interface Entity extends ModelClass, SubmodelElement {
      * Either the attribute globalAssetId or externalAssetId of an Entity must be set if
      * Entity/entityType is set to \'SelfManagedEntity\'. They are not existing otherwise."@en
      * 
-     * @param globalAssetIds desired value for the property globalAssetIds. More information under
+     * @param globalAssetId desired value for the property globalAssetId. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId
      */
-    public void setGlobalAssetIds(List<Reference> globalAssetIds);
+    public void setGlobalAssetId(Reference globalAssetId);
 
     /**
      * "Reference to an identifier key value pair representing an external identifier of the asset
@@ -51,11 +51,11 @@ public interface Entity extends ModelClass, SubmodelElement {
      * Either the attribute globalAssetId or externalAssetId of an Entity must be set if
      * Entity/entityType is set to \'SelfManagedEntity\'. They are not existing otherwise."@en
      * 
-     * @return Returns the List of IdentifierKeyValuePairs for the property externalAssetIds. More
-     *         information under https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId
+     * @return Returns the IdentifierKeyValuePair for the property externalAssetId. More information
+     *         under https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId")
-    public List<IdentifierKeyValuePair> getExternalAssetIds();
+    public IdentifierKeyValuePair getExternalAssetId();
 
     /**
      * "Reference to an identifier key value pair representing an external identifier of the asset
@@ -64,27 +64,27 @@ public interface Entity extends ModelClass, SubmodelElement {
      * Either the attribute globalAssetId or externalAssetId of an Entity must be set if
      * Entity/entityType is set to \'SelfManagedEntity\'. They are not existing otherwise."@en
      * 
-     * @param externalAssetIds desired value for the property externalAssetIds. More information under
+     * @param externalAssetId desired value for the property externalAssetId. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId
      */
-    public void setExternalAssetIds(List<IdentifierKeyValuePair> externalAssetIds);
+    public void setExternalAssetId(IdentifierKeyValuePair externalAssetId);
 
     /**
      * "Describes whether the entity is a co-managed entity or a self-managed entity."@en
      * 
-     * @return Returns the List of EntityTypes for the property entityTypes. More information under
+     * @return Returns the EntityType for the property entityType. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Entity/entityType
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/entityType")
-    public List<EntityType> getEntityTypes();
+    public EntityType getEntityType();
 
     /**
      * "Describes whether the entity is a co-managed entity or a self-managed entity."@en
      * 
-     * @param entityTypes desired value for the property entityTypes. More information under
+     * @param entityType desired value for the property entityType. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Entity/entityType
      */
-    public void setEntityTypes(List<EntityType> entityTypes);
+    public void setEntityType(EntityType entityType);
 
     /**
      * "Describes statements applicable to the entity by a set of submodel elements, typically with a

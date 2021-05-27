@@ -1,6 +1,5 @@
 package de.fraunhofer.iais.eis;
 
-import java.util.List;
 
 
 
@@ -14,7 +13,6 @@ import de.fraunhofer.iais.eis.util.*;
  * short name within the semantic definition as referenced vi aits semantic id."@en
  */
 @KnownSubtypes({
-    @KnownSubtypes.Type(value = DefaultHasSemantics.class),
     @KnownSubtypes.Type(value = Submodel.class),
     @KnownSubtypes.Type(value = IdentifierKeyValuePair.class),
     @KnownSubtypes.Type(value = View.class),
@@ -33,20 +31,20 @@ public interface HasSemantics extends ModelClass {
      * external information source, which explains the formulation of the submodel (for example an PDF
      * if a standard)."@en
      * 
-     * @return Returns the List of References for the property semanticIds. More information under
+     * @return Returns the Reference for the property semanticId. More information under
      *         https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    public List<Reference> getSemanticIds();
+    public Reference getSemanticId();
 
     /**
      * "Points to the Expression Semantic of the Submodels"@en "The semantic id might refer to an
      * external information source, which explains the formulation of the submodel (for example an PDF
      * if a standard)."@en
      * 
-     * @param semanticIds desired value for the property semanticIds. More information under
+     * @param semanticId desired value for the property semanticId. More information under
      *        https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
      */
-    public void setSemanticIds(List<Reference> semanticIds);
+    public void setSemanticId(Reference semanticId);
 
 }

@@ -1,6 +1,5 @@
 package de.fraunhofer.iais.eis;
 
-import java.util.List;
 import java.util.Objects;
 
 
@@ -21,21 +20,21 @@ public class DefaultValueReferencePair implements ValueReferencePair {
      * valueId."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value")
-    protected List<String> values;
+    protected String value;
 
     /**
      * "Value id of value reference pair" "Global unique id of the value."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/valueId")
-    protected List<Reference> valueIds;
+    protected Reference valueId;
 
     // no manual construction
     protected DefaultValueReferencePair() {}
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.values,
-            this.valueIds});
+        return Objects.hash(new Object[] {this.value,
+            this.valueId});
     }
 
     @Override
@@ -48,36 +47,36 @@ public class DefaultValueReferencePair implements ValueReferencePair {
             return false;
         } else {
             DefaultValueReferencePair other = (DefaultValueReferencePair) obj;
-            return Objects.equals(this.values, other.values) &&
-                Objects.equals(this.valueIds, other.valueIds);
+            return Objects.equals(this.value, other.value) &&
+                Objects.equals(this.valueId, other.valueId);
         }
     }
 
     @Override
     public Object deepCopy() {
         DefaultValueReferencePair other = new DefaultValueReferencePair();
-        other.values = (List<String>) Util.clone(this.values);
-        other.valueIds = (List<Reference>) Util.clone(this.valueIds);
+        other.value = (String) Util.clone(this.value);
+        other.valueId = (Reference) Util.clone(this.valueId);
         return other;
     }
 
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value")
-    final public List<String> getValues() {
-        return values;
+    final public String getValue() {
+        return value;
     }
 
-    final public void setValues(List<String> values) {
-        this.values = values;
+    final public void setValue(String value) {
+        this.value = value;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/valueId")
-    final public List<Reference> getValueIds() {
-        return valueIds;
+    final public Reference getValueId() {
+        return valueId;
     }
 
-    final public void setValueIds(List<Reference> valueIds) {
-        this.valueIds = valueIds;
+    final public void setValueId(Reference valueId) {
+        this.valueId = valueId;
     }
 }

@@ -17,24 +17,24 @@ public class DefaultReferenceElementBuilder extends AbstractBuilder<DefaultRefer
     }
 
     /**
-     * This function allows setting a value for values
+     * This function allows setting a value for value
      * 
-     * @param values desired value to be set
-     * @return Builder object with new value for values
+     * @param value desired value to be set
+     * @return Builder object with new value for value
      */
-    public DefaultReferenceElementBuilder values(List<Reference> values) {
-        this.map.put("values", values);
+    public DefaultReferenceElementBuilder value(Reference value) {
+        this.map.put("value", value);
         return this;
     }
 
     /**
-     * This function allows setting a value for categories
+     * This function allows setting a value for category
      * 
-     * @param categories desired value to be set
-     * @return Builder object with new value for categories
+     * @param category desired value to be set
+     * @return Builder object with new value for category
      */
-    public DefaultReferenceElementBuilder categories(List<String> categories) {
-        this.map.put("categories", categories);
+    public DefaultReferenceElementBuilder category(String category) {
+        this.map.put("category", category);
         return this;
     }
 
@@ -61,13 +61,13 @@ public class DefaultReferenceElementBuilder extends AbstractBuilder<DefaultRefer
     }
 
     /**
-     * This function allows setting a value for idShorts
+     * This function allows setting a value for idShort
      * 
-     * @param idShorts desired value to be set
-     * @return Builder object with new value for idShorts
+     * @param idShort desired value to be set
+     * @return Builder object with new value for idShort
      */
-    public DefaultReferenceElementBuilder idShorts(List<String> idShorts) {
-        this.map.put("idShorts", idShorts);
+    public DefaultReferenceElementBuilder idShort(String idShort) {
+        this.map.put("idShort", idShort);
         return this;
     }
 
@@ -94,24 +94,24 @@ public class DefaultReferenceElementBuilder extends AbstractBuilder<DefaultRefer
     }
 
     /**
-     * This function allows setting a value for kinds
+     * This function allows setting a value for kind
      * 
-     * @param kinds desired value to be set
-     * @return Builder object with new value for kinds
+     * @param kind desired value to be set
+     * @return Builder object with new value for kind
      */
-    public DefaultReferenceElementBuilder kinds(List<ModelingKind> kinds) {
-        this.map.put("kinds", kinds);
+    public DefaultReferenceElementBuilder kind(ModelingKind kind) {
+        this.map.put("kind", kind);
         return this;
     }
 
     /**
-     * This function allows setting a value for semanticIds
+     * This function allows setting a value for semanticId
      * 
-     * @param semanticIds desired value to be set
-     * @return Builder object with new value for semanticIds
+     * @param semanticId desired value to be set
+     * @return Builder object with new value for semanticId
      */
-    public DefaultReferenceElementBuilder semanticIds(List<Reference> semanticIds) {
-        this.map.put("semanticIds", semanticIds);
+    public DefaultReferenceElementBuilder semanticId(Reference semanticId) {
+        this.map.put("semanticId", semanticId);
         return this;
     }
 

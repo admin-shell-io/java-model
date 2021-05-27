@@ -1,6 +1,5 @@
 package de.fraunhofer.iais.eis;
 
-import java.util.List;
 
 
 
@@ -22,20 +21,20 @@ public interface Permission extends ModelClass {
      * "Description of the kind of permission. Possible kind of permission also include the denial of
      * the permission."@en
      * 
-     * @return Returns the List of PermissionKinds for the property kindOfPermissions. More information
-     *         under https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission
+     * @return Returns the PermissionKind for the property kindOfPermission. More information under
+     *         https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
-    public List<PermissionKind> getKindOfPermissions();
+    public PermissionKind getKindOfPermission();
 
     /**
      * "Description of the kind of permission. Possible kind of permission also include the denial of
      * the permission."@en
      * 
-     * @param kindOfPermissions desired value for the property kindOfPermissions. More information under
+     * @param kindOfPermission desired value for the property kindOfPermission. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission
      */
-    public void setKindOfPermissions(List<PermissionKind> kindOfPermissions);
+    public void setKindOfPermission(PermissionKind kindOfPermission);
 
     /**
      * "Reference to a property that defines the semantics of the permission."@en "Constraint AASs-010:
@@ -44,11 +43,11 @@ public interface Permission extends ModelClass {
      * submodel that is referenced within the \'selectablePermissions\' attribute of
      * \'AccessControl\'."@en
      * 
-     * @return Returns the List of Propertys for the property permissions. More information under
+     * @return Returns the Reference for the property permission. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Permission/permission
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Permission/permission")
-    public List<Property> getPermissions();
+    public Reference getPermission();
 
     /**
      * "Reference to a property that defines the semantics of the permission."@en "Constraint AASs-010:
@@ -57,9 +56,9 @@ public interface Permission extends ModelClass {
      * submodel that is referenced within the \'selectablePermissions\' attribute of
      * \'AccessControl\'."@en
      * 
-     * @param permissions desired value for the property permissions. More information under
+     * @param permission desired value for the property permission. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Permission/permission
      */
-    public void setPermissions(List<Property> permissions);
+    public void setPermission(Reference permission);
 
 }

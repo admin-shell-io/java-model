@@ -24,12 +24,11 @@ public interface PolicyInformationPoints extends ModelClass {
      * "If externalInformationPoints True then at least one Endpoint to external available information
      * needs to be configured for the AAS."@en
      * 
-     * @return Returns the List of Booleans for the property externalInformationPoints. More information
-     *         under
+     * @return Returns the boolean for the property externalInformationPoints. More information under
      *         https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints")
-    public List<Boolean> getExternalInformationPoints();
+    public boolean getExternalInformationPoints();
 
     /**
      * "If externalInformationPoints True then at least one Endpoint to external available information
@@ -39,7 +38,7 @@ public interface PolicyInformationPoints extends ModelClass {
      *        information under
      *        https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints
      */
-    public void setExternalInformationPoints(List<Boolean> externalInformationPoints);
+    public void setExternalInformationPoints(boolean externalInformationPoints);
 
     /**
      * "References to submodels defining information used by security access permission rules."@en

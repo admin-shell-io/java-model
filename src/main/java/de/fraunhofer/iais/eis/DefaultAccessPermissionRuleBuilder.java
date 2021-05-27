@@ -39,13 +39,13 @@ public class DefaultAccessPermissionRuleBuilder extends AbstractBuilder<DefaultA
     }
 
     /**
-     * This function allows setting a value for categories
+     * This function allows setting a value for category
      * 
-     * @param categories desired value to be set
-     * @return Builder object with new value for categories
+     * @param category desired value to be set
+     * @return Builder object with new value for category
      */
-    public DefaultAccessPermissionRuleBuilder categories(List<String> categories) {
-        this.map.put("categories", categories);
+    public DefaultAccessPermissionRuleBuilder category(String category) {
+        this.map.put("category", category);
         return this;
     }
 
@@ -72,13 +72,13 @@ public class DefaultAccessPermissionRuleBuilder extends AbstractBuilder<DefaultA
     }
 
     /**
-     * This function allows setting a value for idShorts
+     * This function allows setting a value for idShort
      * 
-     * @param idShorts desired value to be set
-     * @return Builder object with new value for idShorts
+     * @param idShort desired value to be set
+     * @return Builder object with new value for idShort
      */
-    public DefaultAccessPermissionRuleBuilder idShorts(List<String> idShorts) {
-        this.map.put("idShorts", idShorts);
+    public DefaultAccessPermissionRuleBuilder idShort(String idShort) {
+        this.map.put("idShort", idShort);
         return this;
     }
 

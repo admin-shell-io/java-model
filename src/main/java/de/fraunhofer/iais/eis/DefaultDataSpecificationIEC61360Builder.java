@@ -138,13 +138,13 @@ public class DefaultDataSpecificationIEC61360Builder extends AbstractBuilder<Def
     }
 
     /**
-     * This function allows setting a value for valueLists
+     * This function allows setting a value for valueList
      * 
-     * @param valueLists desired value to be set
-     * @return Builder object with new value for valueLists
+     * @param valueList desired value to be set
+     * @return Builder object with new value for valueList
      */
-    public DefaultDataSpecificationIEC61360Builder valueLists(List<ValueList> valueLists) {
-        this.map.put("valueLists", valueLists);
+    public DefaultDataSpecificationIEC61360Builder valueList(ValueList valueList) {
+        this.map.put("valueList", valueList);
         return this;
     }
 

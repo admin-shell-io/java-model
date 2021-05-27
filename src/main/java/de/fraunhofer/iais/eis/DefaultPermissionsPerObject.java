@@ -21,7 +21,7 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
      * "has object" "Element to which permission shall be assigned."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")
-    protected List<Referable> objects;
+    protected Referable object;
 
     /**
      * "has object permission" "Permissions assigned to the object. The permissions hold for all
@@ -35,14 +35,14 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
      * access permissions apply to the accessing subject."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes")
-    protected List<ObjectAttributes> targetObjectAttributes;
+    protected ObjectAttributes targetObjectAttributes;
 
     // no manual construction
     protected DefaultPermissionsPerObject() {}
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.objects,
+        return Objects.hash(new Object[] {this.object,
             this.permissions,
             this.targetObjectAttributes});
     }
@@ -57,7 +57,7 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
             return false;
         } else {
             DefaultPermissionsPerObject other = (DefaultPermissionsPerObject) obj;
-            return Objects.equals(this.objects, other.objects) &&
+            return Objects.equals(this.object, other.object) &&
                 Objects.equals(this.permissions, other.permissions) &&
                 Objects.equals(this.targetObjectAttributes, other.targetObjectAttributes);
         }
@@ -66,21 +66,21 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
     @Override
     public Object deepCopy() {
         DefaultPermissionsPerObject other = new DefaultPermissionsPerObject();
-        other.objects = (List<Referable>) Util.clone(this.objects);
+        other.object = (Referable) Util.clone(this.object);
         other.permissions = (List<Permission>) Util.clone(this.permissions);
-        other.targetObjectAttributes = (List<ObjectAttributes>) Util.clone(this.targetObjectAttributes);
+        other.targetObjectAttributes = (ObjectAttributes) Util.clone(this.targetObjectAttributes);
         return other;
     }
 
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")
-    final public List<Referable> getObjects() {
-        return objects;
+    final public Referable getObject() {
+        return object;
     }
 
-    final public void setObjects(List<Referable> objects) {
-        this.objects = objects;
+    final public void setObject(Referable object) {
+        this.object = object;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission")
@@ -93,11 +93,11 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes")
-    final public List<ObjectAttributes> getTargetObjectAttributes() {
+    final public ObjectAttributes getTargetObjectAttributes() {
         return targetObjectAttributes;
     }
 
-    final public void setTargetObjectAttributes(List<ObjectAttributes> targetObjectAttributes) {
+    final public void setTargetObjectAttributes(ObjectAttributes targetObjectAttributes) {
         this.targetObjectAttributes = targetObjectAttributes;
     }
 }

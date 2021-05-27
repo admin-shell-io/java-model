@@ -1,6 +1,5 @@
 package de.fraunhofer.iais.eis;
 
-import java.util.List;
 
 
 
@@ -17,24 +16,24 @@ public class DefaultPolicyAdministrationPointBuilder extends AbstractBuilder<Def
     }
 
     /**
-     * This function allows setting a value for localAccessControls
+     * This function allows setting a value for localAccessControl
      * 
-     * @param localAccessControls desired value to be set
-     * @return Builder object with new value for localAccessControls
+     * @param localAccessControl desired value to be set
+     * @return Builder object with new value for localAccessControl
      */
-    public DefaultPolicyAdministrationPointBuilder localAccessControls(List<AccessControl> localAccessControls) {
-        this.map.put("localAccessControls", localAccessControls);
+    public DefaultPolicyAdministrationPointBuilder localAccessControl(AccessControl localAccessControl) {
+        this.map.put("localAccessControl", localAccessControl);
         return this;
     }
 
     /**
-     * This function allows setting a value for externalAccessControls
+     * This function allows setting a value for externalAccessControl
      * 
-     * @param externalAccessControls desired value to be set
-     * @return Builder object with new value for externalAccessControls
+     * @param externalAccessControl desired value to be set
+     * @return Builder object with new value for externalAccessControl
      */
-    public DefaultPolicyAdministrationPointBuilder externalAccessControls(List<Boolean> externalAccessControls) {
-        this.map.put("externalAccessControls", externalAccessControls);
+    public DefaultPolicyAdministrationPointBuilder externalAccessControl(boolean externalAccessControl) {
+        this.map.put("externalAccessControl", externalAccessControl);
         return this;
     }
 

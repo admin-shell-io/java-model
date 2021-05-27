@@ -1,6 +1,5 @@
 package de.fraunhofer.iais.eis;
 
-import java.util.List;
 
 
 
@@ -25,11 +24,11 @@ public interface Key extends ModelClass {
      * AASd-081: In case Key/type==AssetAdministrationShell Key/idType shall not be any LocalKeyType
      * (IdShort, FragmentId)."@en
      * 
-     * @return Returns the List of KeyTypes for the property idTypes. More information under
+     * @return Returns the KeyType for the property idType. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Key/idType
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Key/idType")
-    public List<KeyType> getIdTypes();
+    public KeyType getIdType();
 
     /**
      * "Type of the key value. In case of idType = idShort local shall be true. In case
@@ -38,47 +37,47 @@ public interface Key extends ModelClass {
      * AASd-081: In case Key/type==AssetAdministrationShell Key/idType shall not be any LocalKeyType
      * (IdShort, FragmentId)."@en
      * 
-     * @param idTypes desired value for the property idTypes. More information under
+     * @param idType desired value for the property idType. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Key/idType
      */
-    public void setIdTypes(List<KeyType> idTypes);
+    public void setIdType(KeyType idType);
 
     /**
      * "Denote which kind of entity is referenced. In case type = GlobalReference then the element is a
      * global unique id. In all other cases the key references a model element of the same or of another
      * AAS. The name of the model element is explicitly listed."@en
      * 
-     * @return Returns the List of KeyElementss for the property types. More information under
+     * @return Returns the KeyElements for the property type. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Key/type
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Key/type")
-    public List<KeyElements> getTypes();
+    public KeyElements getType();
 
     /**
      * "Denote which kind of entity is referenced. In case type = GlobalReference then the element is a
      * global unique id. In all other cases the key references a model element of the same or of another
      * AAS. The name of the model element is explicitly listed."@en
      * 
-     * @param types desired value for the property types. More information under
+     * @param type desired value for the property type. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Key/type
      */
-    public void setTypes(List<KeyElements> types);
+    public void setType(KeyElements type);
 
     /**
      * "The key value, for example an IRDI if the idType=IRDI."@en
      * 
-     * @return Returns the List of Strings for the property values. More information under
+     * @return Returns the String for the property value. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Key/value
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Key/value")
-    public List<String> getValues();
+    public String getValue();
 
     /**
      * "The key value, for example an IRDI if the idType=IRDI."@en
      * 
-     * @param values desired value for the property values. More information under
+     * @param value desired value for the property value. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Key/value
      */
-    public void setValues(List<String> values);
+    public void setValue(String value);
 
 }

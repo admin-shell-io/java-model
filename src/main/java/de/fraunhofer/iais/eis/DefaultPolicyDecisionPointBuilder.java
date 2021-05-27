@@ -1,6 +1,5 @@
 package de.fraunhofer.iais.eis;
 
-import java.util.List;
 
 
 
@@ -22,7 +21,7 @@ public class DefaultPolicyDecisionPointBuilder extends AbstractBuilder<DefaultPo
      * @param externalPolicyDecisionPoints desired value to be set
      * @return Builder object with new value for externalPolicyDecisionPoints
      */
-    public DefaultPolicyDecisionPointBuilder externalPolicyDecisionPoints(List<Boolean> externalPolicyDecisionPoints) {
+    public DefaultPolicyDecisionPointBuilder externalPolicyDecisionPoints(boolean externalPolicyDecisionPoints) {
         this.map.put("externalPolicyDecisionPoints", externalPolicyDecisionPoints);
         return this;
     }

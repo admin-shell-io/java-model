@@ -20,7 +20,7 @@ public class DefaultObjectAttributes implements ObjectAttributes {
      * "has object attribute" "A data elements that further classifies an object."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
-    protected List<DataElement> objectAttributes;
+    protected List<Reference> objectAttributes;
 
     // no manual construction
     protected DefaultObjectAttributes() {}
@@ -47,18 +47,18 @@ public class DefaultObjectAttributes implements ObjectAttributes {
     @Override
     public Object deepCopy() {
         DefaultObjectAttributes other = new DefaultObjectAttributes();
-        other.objectAttributes = (List<DataElement>) Util.clone(this.objectAttributes);
+        other.objectAttributes = (List<Reference>) Util.clone(this.objectAttributes);
         return other;
     }
 
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
-    final public List<DataElement> getObjectAttributes() {
+    final public List<Reference> getObjectAttributes() {
         return objectAttributes;
     }
 
-    final public void setObjectAttributes(List<DataElement> objectAttributes) {
+    final public void setObjectAttributes(List<Reference> objectAttributes) {
         this.objectAttributes = objectAttributes;
     }
 }

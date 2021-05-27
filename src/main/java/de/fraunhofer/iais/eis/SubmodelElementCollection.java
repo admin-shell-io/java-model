@@ -1,7 +1,6 @@
 package de.fraunhofer.iais.eis;
 
 import java.util.Collection;
-import java.util.List;
 
 
 
@@ -32,11 +31,11 @@ public interface SubmodelElementCollection extends ModelClass, SubmodelElement {
      * that the collection contains several elements with the same semantics (i.e. the same
      * semanticId)."@en
      * 
-     * @return Returns the List of Booleans for the property allowDuplicates. More information under
+     * @return Returns the boolean for the property allowDuplicates. More information under
      *         https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates")
-    public List<Boolean> getAllowDuplicates();
+    public boolean getAllowDuplicates();
 
     /**
      * "If allowDuplicates=true then it is allowed that the collection contains the same element several
@@ -47,26 +46,26 @@ public interface SubmodelElementCollection extends ModelClass, SubmodelElement {
      * @param allowDuplicates desired value for the property allowDuplicates. More information under
      *        https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates
      */
-    public void setAllowDuplicates(List<Boolean> allowDuplicates);
+    public void setAllowDuplicates(boolean allowDuplicates);
 
     /**
      * "If ordered=false then the elements in the property collection are not ordered. If ordered=true
      * then the elements in the collection are ordered. Default = false"@en
      * 
-     * @return Returns the List of Booleans for the property ordereds. More information under
+     * @return Returns the boolean for the property ordered. More information under
      *         https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered")
-    public List<Boolean> getOrdereds();
+    public boolean getOrdered();
 
     /**
      * "If ordered=false then the elements in the property collection are not ordered. If ordered=true
      * then the elements in the collection are ordered. Default = false"@en
      * 
-     * @param ordereds desired value for the property ordereds. More information under
+     * @param ordered desired value for the property ordered. More information under
      *        https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered
      */
-    public void setOrdereds(List<Boolean> ordereds);
+    public void setOrdered(boolean ordered);
 
     /**
      * "Submodel element contained in the collection."@en

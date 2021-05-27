@@ -1,6 +1,5 @@
 package de.fraunhofer.iais.eis;
 
-import java.util.List;
 
 
 
@@ -30,56 +29,56 @@ public interface Property extends ModelClass, DataElement {
     /**
      * "Data type pf the value."@en
      * 
-     * @return Returns the List of Strings for the property valueTypes. More information under
+     * @return Returns the String for the property valueType. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Property/valueType
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueType")
-    public List<String> getValueTypes();
+    public String getValueType();
 
     /**
      * "Data type pf the value."@en
      * 
-     * @param valueTypes desired value for the property valueTypes. More information under
+     * @param valueType desired value for the property valueType. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Property/valueType
      */
-    public void setValueTypes(List<String> valueTypes);
+    public void setValueType(String valueType);
 
     /**
      * "The value of the property instance."@en
      * 
-     * @return Returns the List of Strings for the property values. More information under
+     * @return Returns the String for the property value. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Property/value
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/value")
-    public List<String> getValues();
+    public String getValue();
 
     /**
      * "The value of the property instance."@en
      * 
-     * @param values desired value for the property values. More information under
+     * @param value desired value for the property value. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Property/value
      */
-    public void setValues(List<String> values);
+    public void setValue(String value);
 
     /**
      * "Reference to the global unique id of a coded value."@en "Constraint AASd-007: if both, the value
      * and the valueId are present then the value needs to be identical to the value of the referenced
      * coded value in valueId."@en
      * 
-     * @return Returns the List of References for the property valueIds. More information under
+     * @return Returns the Reference for the property valueId. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Property/valueId
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueId")
-    public List<Reference> getValueIds();
+    public Reference getValueId();
 
     /**
      * "Reference to the global unique id of a coded value."@en "Constraint AASd-007: if both, the value
      * and the valueId are present then the value needs to be identical to the value of the referenced
      * coded value in valueId."@en
      * 
-     * @param valueIds desired value for the property valueIds. More information under
+     * @param valueId desired value for the property valueId. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Property/valueId
      */
-    public void setValueIds(List<Reference> valueIds);
+    public void setValueId(Reference valueId);
 
 }

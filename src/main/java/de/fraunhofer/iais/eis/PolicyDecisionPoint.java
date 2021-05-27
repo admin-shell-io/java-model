@@ -1,6 +1,5 @@
 package de.fraunhofer.iais.eis;
 
-import java.util.List;
 
 
 
@@ -22,12 +21,11 @@ public interface PolicyDecisionPoint extends ModelClass {
      * "If externalPolicyDecisionPoints True then Endpoints to external available decision points taking
      * into consideration for access control for the AAS need to be configured."@en
      * 
-     * @return Returns the List of Booleans for the property externalPolicyDecisionPoints. More
-     *         information under
+     * @return Returns the boolean for the property externalPolicyDecisionPoints. More information under
      *         https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
-    public List<Boolean> getExternalPolicyDecisionPoints();
+    public boolean getExternalPolicyDecisionPoints();
 
     /**
      * "If externalPolicyDecisionPoints True then Endpoints to external available decision points taking
@@ -37,6 +35,6 @@ public interface PolicyDecisionPoint extends ModelClass {
      *        More information under
      *        https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints
      */
-    public void setExternalPolicyDecisionPoints(List<Boolean> externalPolicyDecisionPoints);
+    public void setExternalPolicyDecisionPoints(boolean externalPolicyDecisionPoints);
 
 }

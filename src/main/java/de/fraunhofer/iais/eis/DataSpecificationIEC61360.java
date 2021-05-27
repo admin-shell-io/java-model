@@ -212,21 +212,21 @@ public interface DataSpecificationIEC61360 extends ModelClass, DataSpecification
      * allowed values are listed in an enumeration. The value list is a set of value reference
      * pairs."@en
      * 
-     * @return Returns the List of ValueLists for the property valueLists. More information under
+     * @return Returns the ValueList for the property valueList. More information under
      *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList")
-    public List<ValueList> getValueLists();
+    public ValueList getValueList();
 
     /**
      * "The Type \'ValueList\' lists all the allowed values for a concept description for which the
      * allowed values are listed in an enumeration. The value list is a set of value reference
      * pairs."@en
      * 
-     * @param valueLists desired value for the property valueLists. More information under
+     * @param valueList desired value for the property valueList. More information under
      *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList
      */
-    public void setValueLists(List<ValueList> valueLists);
+    public void setValueList(ValueList valueList);
 
     /**
      * @return Returns the Reference for the property valueId. More information under

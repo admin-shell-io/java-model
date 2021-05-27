@@ -17,46 +17,46 @@ public class DefaultRangeBuilder extends AbstractBuilder<DefaultRange> {
     }
 
     /**
-     * This function allows setting a value for valueTypes
+     * This function allows setting a value for valueType
      * 
-     * @param valueTypes desired value to be set
-     * @return Builder object with new value for valueTypes
+     * @param valueType desired value to be set
+     * @return Builder object with new value for valueType
      */
-    public DefaultRangeBuilder valueTypes(List<String> valueTypes) {
-        this.map.put("valueTypes", valueTypes);
+    public DefaultRangeBuilder valueType(String valueType) {
+        this.map.put("valueType", valueType);
         return this;
     }
 
     /**
-     * This function allows setting a value for maxs
+     * This function allows setting a value for max
      * 
-     * @param maxs desired value to be set
-     * @return Builder object with new value for maxs
+     * @param max desired value to be set
+     * @return Builder object with new value for max
      */
-    public DefaultRangeBuilder maxs(List<String> maxs) {
-        this.map.put("maxs", maxs);
+    public DefaultRangeBuilder max(String max) {
+        this.map.put("max", max);
         return this;
     }
 
     /**
-     * This function allows setting a value for mins
+     * This function allows setting a value for min
      * 
-     * @param mins desired value to be set
-     * @return Builder object with new value for mins
+     * @param min desired value to be set
+     * @return Builder object with new value for min
      */
-    public DefaultRangeBuilder mins(List<String> mins) {
-        this.map.put("mins", mins);
+    public DefaultRangeBuilder min(String min) {
+        this.map.put("min", min);
         return this;
     }
 
     /**
-     * This function allows setting a value for categories
+     * This function allows setting a value for category
      * 
-     * @param categories desired value to be set
-     * @return Builder object with new value for categories
+     * @param category desired value to be set
+     * @return Builder object with new value for category
      */
-    public DefaultRangeBuilder categories(List<String> categories) {
-        this.map.put("categories", categories);
+    public DefaultRangeBuilder category(String category) {
+        this.map.put("category", category);
         return this;
     }
 
@@ -83,13 +83,13 @@ public class DefaultRangeBuilder extends AbstractBuilder<DefaultRange> {
     }
 
     /**
-     * This function allows setting a value for idShorts
+     * This function allows setting a value for idShort
      * 
-     * @param idShorts desired value to be set
-     * @return Builder object with new value for idShorts
+     * @param idShort desired value to be set
+     * @return Builder object with new value for idShort
      */
-    public DefaultRangeBuilder idShorts(List<String> idShorts) {
-        this.map.put("idShorts", idShorts);
+    public DefaultRangeBuilder idShort(String idShort) {
+        this.map.put("idShort", idShort);
         return this;
     }
 
@@ -116,24 +116,24 @@ public class DefaultRangeBuilder extends AbstractBuilder<DefaultRange> {
     }
 
     /**
-     * This function allows setting a value for kinds
+     * This function allows setting a value for kind
      * 
-     * @param kinds desired value to be set
-     * @return Builder object with new value for kinds
+     * @param kind desired value to be set
+     * @return Builder object with new value for kind
      */
-    public DefaultRangeBuilder kinds(List<ModelingKind> kinds) {
-        this.map.put("kinds", kinds);
+    public DefaultRangeBuilder kind(ModelingKind kind) {
+        this.map.put("kind", kind);
         return this;
     }
 
     /**
-     * This function allows setting a value for semanticIds
+     * This function allows setting a value for semanticId
      * 
-     * @param semanticIds desired value to be set
-     * @return Builder object with new value for semanticIds
+     * @param semanticId desired value to be set
+     * @return Builder object with new value for semanticId
      */
-    public DefaultRangeBuilder semanticIds(List<Reference> semanticIds) {
-        this.map.put("semanticIds", semanticIds);
+    public DefaultRangeBuilder semanticId(Reference semanticId) {
+        this.map.put("semanticId", semanticId);
         return this;
     }
 

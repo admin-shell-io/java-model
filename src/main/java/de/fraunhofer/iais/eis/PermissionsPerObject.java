@@ -23,19 +23,19 @@ public interface PermissionsPerObject extends ModelClass {
     /**
      * "Element to which permission shall be assigned."@en
      * 
-     * @return Returns the List of Referables for the property objects. More information under
+     * @return Returns the Referable for the property object. More information under
      *         https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")
-    public List<Referable> getObjects();
+    public Referable getObject();
 
     /**
      * "Element to which permission shall be assigned."@en
      * 
-     * @param objects desired value for the property objects. More information under
+     * @param object desired value for the property object. More information under
      *        https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object
      */
-    public void setObjects(List<Referable> objects);
+    public void setObject(Referable object);
 
     /**
      * "Permissions assigned to the object. The permissions hold for all subjects as specified in the
@@ -60,12 +60,11 @@ public interface PermissionsPerObject extends ModelClass {
      * "Target object attributes that need to be fulfilled so that the access permissions apply to the
      * accessing subject."@en
      * 
-     * @return Returns the List of ObjectAttributess for the property targetObjectAttributes. More
-     *         information under
-     *         https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes
+     * @return Returns the ObjectAttributes for the property targetObjectAttributes. More information
+     *         under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes")
-    public List<ObjectAttributes> getTargetObjectAttributes();
+    public ObjectAttributes getTargetObjectAttributes();
 
     /**
      * "Target object attributes that need to be fulfilled so that the access permissions apply to the
@@ -75,6 +74,6 @@ public interface PermissionsPerObject extends ModelClass {
      *        information under
      *        https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes
      */
-    public void setTargetObjectAttributes(List<ObjectAttributes> targetObjectAttributes);
+    public void setTargetObjectAttributes(ObjectAttributes targetObjectAttributes);
 
 }

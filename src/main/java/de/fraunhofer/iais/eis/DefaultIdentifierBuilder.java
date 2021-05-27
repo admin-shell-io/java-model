@@ -1,6 +1,5 @@
 package de.fraunhofer.iais.eis;
 
-import java.util.List;
 
 
 
@@ -17,24 +16,24 @@ public class DefaultIdentifierBuilder extends AbstractBuilder<DefaultIdentifier>
     }
 
     /**
-     * This function allows setting a value for identifiers
+     * This function allows setting a value for identifier
      * 
-     * @param identifiers desired value to be set
-     * @return Builder object with new value for identifiers
+     * @param identifier desired value to be set
+     * @return Builder object with new value for identifier
      */
-    public DefaultIdentifierBuilder identifiers(List<String> identifiers) {
-        this.map.put("identifiers", identifiers);
+    public DefaultIdentifierBuilder identifier(String identifier) {
+        this.map.put("identifier", identifier);
         return this;
     }
 
     /**
-     * This function allows setting a value for idTypes
+     * This function allows setting a value for idType
      * 
-     * @param idTypes desired value to be set
-     * @return Builder object with new value for idTypes
+     * @param idType desired value to be set
+     * @return Builder object with new value for idType
      */
-    public DefaultIdentifierBuilder idTypes(List<IdentifierType> idTypes) {
-        this.map.put("idTypes", idTypes);
+    public DefaultIdentifierBuilder idType(IdentifierType idType) {
+        this.map.put("idType", idType);
         return this;
     }
 

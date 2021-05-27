@@ -26,7 +26,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
      * "has kind" "ModelingKind of the element: either type or instance."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-    protected List<ModelingKind> kinds;
+    protected ModelingKind kind;
 
     /**
      * "has semantic ID" "Points to the Expression Semantic of the Submodels"@en "The semantic id might
@@ -34,7 +34,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
      * example an PDF if a standard)."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    protected List<Reference> semanticIds;
+    protected Reference semanticId;
 
     /**
      * "has value" "The value of the property instance."@en "Constraint AASd-052b: If the semanticId of
@@ -53,7 +53,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
      * "has value Id" "Reference to the global unqiue id of a coded value."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId")
-    protected List<Reference> valueIds;
+    protected Reference valueId;
 
     /**
      * "has qualifier" "Additional qualification of a qualifiable element."@en
@@ -67,7 +67,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
      * of constraints."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    protected List<String> categories;
+    protected String category;
 
     /**
      * "has description" "Description or comments on the element. The description can be provided in
@@ -95,7 +95,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
      * UA."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    protected List<String> idShorts;
+    protected String idShort;
 
     // no manual construction
     protected DefaultMultiLanguageProperty() {}
@@ -103,15 +103,15 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
     @Override
     public int hashCode() {
         return Objects.hash(new Object[] {this.values,
-            this.valueIds,
-            this.categories,
+            this.valueId,
+            this.category,
             this.descriptions,
             this.displayNames,
-            this.idShorts,
+            this.idShort,
             this.qualifiers,
             this.dataSpecifications,
-            this.kinds,
-            this.semanticIds});
+            this.kind,
+            this.semanticId});
     }
 
     @Override
@@ -125,15 +125,15 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
         } else {
             DefaultMultiLanguageProperty other = (DefaultMultiLanguageProperty) obj;
             return Objects.equals(this.values, other.values) &&
-                Objects.equals(this.valueIds, other.valueIds) &&
-                Objects.equals(this.categories, other.categories) &&
+                Objects.equals(this.valueId, other.valueId) &&
+                Objects.equals(this.category, other.category) &&
                 Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayNames, other.displayNames) &&
-                Objects.equals(this.idShorts, other.idShorts) &&
+                Objects.equals(this.idShort, other.idShort) &&
                 Objects.equals(this.qualifiers, other.qualifiers) &&
                 Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-                Objects.equals(this.kinds, other.kinds) &&
-                Objects.equals(this.semanticIds, other.semanticIds);
+                Objects.equals(this.kind, other.kind) &&
+                Objects.equals(this.semanticId, other.semanticId);
         }
     }
 
@@ -141,15 +141,15 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
     public Object deepCopy() {
         DefaultMultiLanguageProperty other = new DefaultMultiLanguageProperty();
         other.values = (List<LangString>) Util.clone(this.values);
-        other.valueIds = (List<Reference>) Util.clone(this.valueIds);
-        other.categories = (List<String>) Util.clone(this.categories);
+        other.valueId = (Reference) Util.clone(this.valueId);
+        other.category = (String) Util.clone(this.category);
         other.descriptions = (List<LangString>) Util.clone(this.descriptions);
         other.displayNames = (List<LangString>) Util.clone(this.displayNames);
-        other.idShorts = (List<String>) Util.clone(this.idShorts);
+        other.idShort = (String) Util.clone(this.idShort);
         other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
         other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
-        other.kinds = (List<ModelingKind>) Util.clone(this.kinds);
-        other.semanticIds = (List<Reference>) Util.clone(this.semanticIds);
+        other.kind = (ModelingKind) Util.clone(this.kind);
+        other.semanticId = (Reference) Util.clone(this.semanticId);
         return other;
     }
 
@@ -165,21 +165,21 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId")
-    final public List<Reference> getValueIds() {
-        return valueIds;
+    final public Reference getValueId() {
+        return valueId;
     }
 
-    final public void setValueIds(List<Reference> valueIds) {
-        this.valueIds = valueIds;
+    final public void setValueId(Reference valueId) {
+        this.valueId = valueId;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    final public List<String> getCategories() {
-        return categories;
+    final public String getCategory() {
+        return category;
     }
 
-    final public void setCategories(List<String> categories) {
-        this.categories = categories;
+    final public void setCategory(String category) {
+        this.category = category;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
@@ -201,12 +201,12 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    final public List<String> getIdShorts() {
-        return idShorts;
+    final public String getIdShort() {
+        return idShort;
     }
 
-    final public void setIdShorts(List<String> idShorts) {
-        this.idShorts = idShorts;
+    final public void setIdShort(String idShort) {
+        this.idShort = idShort;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
@@ -228,20 +228,20 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-    final public List<ModelingKind> getKinds() {
-        return kinds;
+    final public ModelingKind getKind() {
+        return kind;
     }
 
-    final public void setKinds(List<ModelingKind> kinds) {
-        this.kinds = kinds;
+    final public void setKind(ModelingKind kind) {
+        this.kind = kind;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    final public List<Reference> getSemanticIds() {
-        return semanticIds;
+    final public Reference getSemanticId() {
+        return semanticId;
     }
 
-    final public void setSemanticIds(List<Reference> semanticIds) {
-        this.semanticIds = semanticIds;
+    final public void setSemanticId(Reference semanticId) {
+        this.semanticId = semanticId;
     }
 }

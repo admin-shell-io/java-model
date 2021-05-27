@@ -1,6 +1,5 @@
 package de.fraunhofer.iais.eis;
 
-import java.util.List;
 
 
 
@@ -17,24 +16,24 @@ public class DefaultPermissionBuilder extends AbstractBuilder<DefaultPermission>
     }
 
     /**
-     * This function allows setting a value for kindOfPermissions
+     * This function allows setting a value for kindOfPermission
      * 
-     * @param kindOfPermissions desired value to be set
-     * @return Builder object with new value for kindOfPermissions
+     * @param kindOfPermission desired value to be set
+     * @return Builder object with new value for kindOfPermission
      */
-    public DefaultPermissionBuilder kindOfPermissions(List<PermissionKind> kindOfPermissions) {
-        this.map.put("kindOfPermissions", kindOfPermissions);
+    public DefaultPermissionBuilder kindOfPermission(PermissionKind kindOfPermission) {
+        this.map.put("kindOfPermission", kindOfPermission);
         return this;
     }
 
     /**
-     * This function allows setting a value for permissions
+     * This function allows setting a value for permission
      * 
-     * @param permissions desired value to be set
-     * @return Builder object with new value for permissions
+     * @param permission desired value to be set
+     * @return Builder object with new value for permission
      */
-    public DefaultPermissionBuilder permissions(List<Property> permissions) {
-        this.map.put("permissions", permissions);
+    public DefaultPermissionBuilder permission(Reference permission) {
+        this.map.put("permission", permission);
         return this;
     }
 

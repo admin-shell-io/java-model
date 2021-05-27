@@ -1,6 +1,5 @@
 package de.fraunhofer.iais.eis;
 
-import java.util.List;
 import java.util.Objects;
 
 
@@ -20,22 +19,22 @@ public class DefaultIdentifier implements Identifier {
      * defined in the enumeration \'IdentifierType\'."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")
-    protected List<IdentifierType> idTypes;
+    protected IdentifierType idType;
 
     /**
      * "has identification" "A globally unique identifier which might not be a URI. Its type is defined
      * in idType."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
-    protected List<String> identifiers;
+    protected String identifier;
 
     // no manual construction
     protected DefaultIdentifier() {}
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.identifiers,
-            this.idTypes});
+        return Objects.hash(new Object[] {this.identifier,
+            this.idType});
     }
 
     @Override
@@ -48,36 +47,36 @@ public class DefaultIdentifier implements Identifier {
             return false;
         } else {
             DefaultIdentifier other = (DefaultIdentifier) obj;
-            return Objects.equals(this.identifiers, other.identifiers) &&
-                Objects.equals(this.idTypes, other.idTypes);
+            return Objects.equals(this.identifier, other.identifier) &&
+                Objects.equals(this.idType, other.idType);
         }
     }
 
     @Override
     public Object deepCopy() {
         DefaultIdentifier other = new DefaultIdentifier();
-        other.identifiers = (List<String>) Util.clone(this.identifiers);
-        other.idTypes = (List<IdentifierType>) Util.clone(this.idTypes);
+        other.identifier = (String) Util.clone(this.identifier);
+        other.idType = (IdentifierType) Util.clone(this.idType);
         return other;
     }
 
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
-    final public List<String> getIdentifiers() {
-        return identifiers;
+    final public String getIdentifier() {
+        return identifier;
     }
 
-    final public void setIdentifiers(List<String> identifiers) {
-        this.identifiers = identifiers;
+    final public void setIdentifier(String identifier) {
+        this.identifier = identifier;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")
-    final public List<IdentifierType> getIdTypes() {
-        return idTypes;
+    final public IdentifierType getIdType() {
+        return idType;
     }
 
-    final public void setIdTypes(List<IdentifierType> idTypes) {
-        this.idTypes = idTypes;
+    final public void setIdType(IdentifierType idType) {
+        this.idType = idType;
     }
 }

@@ -1,6 +1,5 @@
 package de.fraunhofer.iais.eis;
 
-import java.util.List;
 
 
 
@@ -22,35 +21,35 @@ public interface ValueReferencePair extends ModelClass {
     /**
      * "the value of the referenced concept definition of the value in valueId."@en
      * 
-     * @return Returns the List of Strings for the property values. More information under
+     * @return Returns the String for the property value. More information under
      *         https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value")
-    public List<String> getValues();
+    public String getValue();
 
     /**
      * "the value of the referenced concept definition of the value in valueId."@en
      * 
-     * @param values desired value for the property values. More information under
+     * @param value desired value for the property value. More information under
      *        https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value
      */
-    public void setValues(List<String> values);
+    public void setValue(String value);
 
     /**
      * "Global unique id of the value."@en
      * 
-     * @return Returns the List of References for the property valueIds. More information under
+     * @return Returns the Reference for the property valueId. More information under
      *         https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/valueId
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/valueId")
-    public List<Reference> getValueIds();
+    public Reference getValueId();
 
     /**
      * "Global unique id of the value."@en
      * 
-     * @param valueIds desired value for the property valueIds. More information under
+     * @param valueId desired value for the property valueId. More information under
      *        https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/valueId
      */
-    public void setValueIds(List<Reference> valueIds);
+    public void setValueId(Reference valueId);
 
 }

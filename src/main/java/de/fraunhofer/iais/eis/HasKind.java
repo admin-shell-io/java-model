@@ -1,6 +1,5 @@
 package de.fraunhofer.iais.eis;
 
-import java.util.List;
 
 
 
@@ -11,7 +10,6 @@ import de.fraunhofer.iais.eis.util.*;
  * Default for an element is that it is representing an instance."@en
  */
 @KnownSubtypes({
-    @KnownSubtypes.Type(value = DefaultHasKind.class),
     @KnownSubtypes.Type(value = Submodel.class),
     @KnownSubtypes.Type(value = SubmodelElement.class)
 })
@@ -24,18 +22,18 @@ public interface HasKind extends ModelClass {
     /**
      * "ModelingKind of the element: either type or instance."@en
      * 
-     * @return Returns the List of ModelingKinds for the property kinds. More information under
+     * @return Returns the ModelingKind for the property kind. More information under
      *         https://admin-shell.io/aas/3/0/RC01/HasKind/kind
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-    public List<ModelingKind> getKinds();
+    public ModelingKind getKind();
 
     /**
      * "ModelingKind of the element: either type or instance."@en
      * 
-     * @param kinds desired value for the property kinds. More information under
+     * @param kind desired value for the property kind. More information under
      *        https://admin-shell.io/aas/3/0/RC01/HasKind/kind
      */
-    public void setKinds(List<ModelingKind> kinds);
+    public void setKind(ModelingKind kind);
 
 }

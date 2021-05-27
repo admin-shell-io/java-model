@@ -15,7 +15,6 @@ import de.fraunhofer.iais.eis.util.*;
  * certain standards."@en
  */
 @KnownSubtypes({
-    @KnownSubtypes.Type(value = DefaultSubmodelElement.class),
     @KnownSubtypes.Type(value = RelationshipElement.class),
     @KnownSubtypes.Type(value = DataElement.class),
     @KnownSubtypes.Type(value = File.class),

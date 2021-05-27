@@ -114,7 +114,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
      * reference pairs."@en
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList")
-    protected List<ValueList> valueLists;
+    protected ValueList valueList;
 
     // no manual construction
     protected DefaultDataSpecificationIEC61360() {}
@@ -132,7 +132,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
             this.unitId,
             this.valueFormat,
             this.value,
-            this.valueLists,
+            this.valueList,
             this.valueId});
     }
 
@@ -157,7 +157,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
                 Objects.equals(this.unitId, other.unitId) &&
                 Objects.equals(this.valueFormat, other.valueFormat) &&
                 Objects.equals(this.value, other.value) &&
-                Objects.equals(this.valueLists, other.valueLists) &&
+                Objects.equals(this.valueList, other.valueList) &&
                 Objects.equals(this.valueId, other.valueId);
         }
     }
@@ -176,7 +176,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
         other.unitId = (Reference) Util.clone(this.unitId);
         other.valueFormat = (String) Util.clone(this.valueFormat);
         other.value = (String) Util.clone(this.value);
-        other.valueLists = (List<ValueList>) Util.clone(this.valueLists);
+        other.valueList = (ValueList) Util.clone(this.valueList);
         other.valueId = (Reference) Util.clone(this.valueId);
         return other;
     }
@@ -283,12 +283,12 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
     }
 
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList")
-    final public List<ValueList> getValueLists() {
-        return valueLists;
+    final public ValueList getValueList() {
+        return valueList;
     }
 
-    final public void setValueLists(List<ValueList> valueLists) {
-        this.valueLists = valueLists;
+    final public void setValueList(ValueList valueList) {
+        this.valueList = valueList;
     }
 
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueId")

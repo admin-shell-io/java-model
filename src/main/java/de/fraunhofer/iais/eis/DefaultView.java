@@ -30,7 +30,7 @@ public class DefaultView implements View {
      * example an PDF if a standard)."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    protected List<Reference> semanticIds;
+    protected Reference semanticId;
 
     /**
      * "has referable category" "The category is a value that gives further meta information w.r.t. to
@@ -38,7 +38,7 @@ public class DefaultView implements View {
      * of constraints."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    protected List<String> categories;
+    protected String category;
 
     /**
      * "has description" "Description or comments on the element. The description can be provided in
@@ -66,7 +66,7 @@ public class DefaultView implements View {
      * UA."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    protected List<String> idShorts;
+    protected String idShort;
 
     /**
      * "contains element" "Referable elements that are contained in the view."@en
@@ -80,12 +80,12 @@ public class DefaultView implements View {
     @Override
     public int hashCode() {
         return Objects.hash(new Object[] {this.containedElements,
-            this.categories,
+            this.category,
             this.descriptions,
             this.displayNames,
-            this.idShorts,
+            this.idShort,
             this.dataSpecifications,
-            this.semanticIds});
+            this.semanticId});
     }
 
     @Override
@@ -99,12 +99,12 @@ public class DefaultView implements View {
         } else {
             DefaultView other = (DefaultView) obj;
             return Objects.equals(this.containedElements, other.containedElements) &&
-                Objects.equals(this.categories, other.categories) &&
+                Objects.equals(this.category, other.category) &&
                 Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayNames, other.displayNames) &&
-                Objects.equals(this.idShorts, other.idShorts) &&
+                Objects.equals(this.idShort, other.idShort) &&
                 Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-                Objects.equals(this.semanticIds, other.semanticIds);
+                Objects.equals(this.semanticId, other.semanticId);
         }
     }
 
@@ -112,12 +112,12 @@ public class DefaultView implements View {
     public Object deepCopy() {
         DefaultView other = new DefaultView();
         other.containedElements = (List<Reference>) Util.clone(this.containedElements);
-        other.categories = (List<String>) Util.clone(this.categories);
+        other.category = (String) Util.clone(this.category);
         other.descriptions = (List<LangString>) Util.clone(this.descriptions);
         other.displayNames = (List<LangString>) Util.clone(this.displayNames);
-        other.idShorts = (List<String>) Util.clone(this.idShorts);
+        other.idShort = (String) Util.clone(this.idShort);
         other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
-        other.semanticIds = (List<Reference>) Util.clone(this.semanticIds);
+        other.semanticId = (Reference) Util.clone(this.semanticId);
         return other;
     }
 
@@ -133,12 +133,12 @@ public class DefaultView implements View {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    final public List<String> getCategories() {
-        return categories;
+    final public String getCategory() {
+        return category;
     }
 
-    final public void setCategories(List<String> categories) {
-        this.categories = categories;
+    final public void setCategory(String category) {
+        this.category = category;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
@@ -160,12 +160,12 @@ public class DefaultView implements View {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    final public List<String> getIdShorts() {
-        return idShorts;
+    final public String getIdShort() {
+        return idShort;
     }
 
-    final public void setIdShorts(List<String> idShorts) {
-        this.idShorts = idShorts;
+    final public void setIdShort(String idShort) {
+        this.idShort = idShort;
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
@@ -178,11 +178,11 @@ public class DefaultView implements View {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    final public List<Reference> getSemanticIds() {
-        return semanticIds;
+    final public Reference getSemanticId() {
+        return semanticId;
     }
 
-    final public void setSemanticIds(List<Reference> semanticIds) {
-        this.semanticIds = semanticIds;
+    final public void setSemanticId(Reference semanticId) {
+        this.semanticId = semanticId;
     }
 }

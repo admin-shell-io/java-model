@@ -1,6 +1,5 @@
 package de.fraunhofer.iais.eis;
 
-import java.util.List;
 
 
 
@@ -17,13 +16,13 @@ public class DefaultOperationVariableBuilder extends AbstractBuilder<DefaultOper
     }
 
     /**
-     * This function allows setting a value for values
+     * This function allows setting a value for value
      * 
-     * @param values desired value to be set
-     * @return Builder object with new value for values
+     * @param value desired value to be set
+     * @return Builder object with new value for value
      */
-    public DefaultOperationVariableBuilder values(List<SubmodelElement> values) {
-        this.map.put("values", values);
+    public DefaultOperationVariableBuilder value(SubmodelElement value) {
+        this.map.put("value", value);
         return this;
     }
 

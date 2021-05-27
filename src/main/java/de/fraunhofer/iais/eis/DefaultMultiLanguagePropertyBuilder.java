@@ -28,24 +28,24 @@ public class DefaultMultiLanguagePropertyBuilder extends AbstractBuilder<Default
     }
 
     /**
-     * This function allows setting a value for valueIds
+     * This function allows setting a value for valueId
      * 
-     * @param valueIds desired value to be set
-     * @return Builder object with new value for valueIds
+     * @param valueId desired value to be set
+     * @return Builder object with new value for valueId
      */
-    public DefaultMultiLanguagePropertyBuilder valueIds(List<Reference> valueIds) {
-        this.map.put("valueIds", valueIds);
+    public DefaultMultiLanguagePropertyBuilder valueId(Reference valueId) {
+        this.map.put("valueId", valueId);
         return this;
     }
 
     /**
-     * This function allows setting a value for categories
+     * This function allows setting a value for category
      * 
-     * @param categories desired value to be set
-     * @return Builder object with new value for categories
+     * @param category desired value to be set
+     * @return Builder object with new value for category
      */
-    public DefaultMultiLanguagePropertyBuilder categories(List<String> categories) {
-        this.map.put("categories", categories);
+    public DefaultMultiLanguagePropertyBuilder category(String category) {
+        this.map.put("category", category);
         return this;
     }
 
@@ -72,13 +72,13 @@ public class DefaultMultiLanguagePropertyBuilder extends AbstractBuilder<Default
     }
 
     /**
-     * This function allows setting a value for idShorts
+     * This function allows setting a value for idShort
      * 
-     * @param idShorts desired value to be set
-     * @return Builder object with new value for idShorts
+     * @param idShort desired value to be set
+     * @return Builder object with new value for idShort
      */
-    public DefaultMultiLanguagePropertyBuilder idShorts(List<String> idShorts) {
-        this.map.put("idShorts", idShorts);
+    public DefaultMultiLanguagePropertyBuilder idShort(String idShort) {
+        this.map.put("idShort", idShort);
         return this;
     }
 
@@ -105,24 +105,24 @@ public class DefaultMultiLanguagePropertyBuilder extends AbstractBuilder<Default
     }
 
     /**
-     * This function allows setting a value for kinds
+     * This function allows setting a value for kind
      * 
-     * @param kinds desired value to be set
-     * @return Builder object with new value for kinds
+     * @param kind desired value to be set
+     * @return Builder object with new value for kind
      */
-    public DefaultMultiLanguagePropertyBuilder kinds(List<ModelingKind> kinds) {
-        this.map.put("kinds", kinds);
+    public DefaultMultiLanguagePropertyBuilder kind(ModelingKind kind) {
+        this.map.put("kind", kind);
         return this;
     }
 
     /**
-     * This function allows setting a value for semanticIds
+     * This function allows setting a value for semanticId
      * 
-     * @param semanticIds desired value to be set
-     * @return Builder object with new value for semanticIds
+     * @param semanticId desired value to be set
+     * @return Builder object with new value for semanticId
      */
-    public DefaultMultiLanguagePropertyBuilder semanticIds(List<Reference> semanticIds) {
-        this.map.put("semanticIds", semanticIds);
+    public DefaultMultiLanguagePropertyBuilder semanticId(Reference semanticId) {
+        this.map.put("semanticId", semanticId);
         return this;
     }
 

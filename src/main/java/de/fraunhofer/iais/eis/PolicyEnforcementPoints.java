@@ -1,6 +1,5 @@
 package de.fraunhofer.iais.eis;
 
-import java.util.List;
 
 
 
@@ -22,21 +21,21 @@ public interface PolicyEnforcementPoints extends ModelClass {
      * "If externalPolicyEnforcementPoint True then an Endpoint to external available enforcement point
      * taking needs to be configured for the AAS."@en
      * 
-     * @return Returns the List of Booleans for the property externalPolicyEnforcementPoints. More
-     *         information under
+     * @return Returns the boolean for the property externalPolicyEnforcementPoint. More information
+     *         under
      *         https://admin-shell.io/aas/3/0/RC01/PolicyEnforcementPoints/externalPolicyEnforcementPoint
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyEnforcementPoints/externalPolicyEnforcementPoint")
-    public List<Boolean> getExternalPolicyEnforcementPoints();
+    public boolean getExternalPolicyEnforcementPoint();
 
     /**
      * "If externalPolicyEnforcementPoint True then an Endpoint to external available enforcement point
      * taking needs to be configured for the AAS."@en
      * 
-     * @param externalPolicyEnforcementPoints desired value for the property
-     *        externalPolicyEnforcementPoints. More information under
+     * @param externalPolicyEnforcementPoint desired value for the property
+     *        externalPolicyEnforcementPoint. More information under
      *        https://admin-shell.io/aas/3/0/RC01/PolicyEnforcementPoints/externalPolicyEnforcementPoint
      */
-    public void setExternalPolicyEnforcementPoints(List<Boolean> externalPolicyEnforcementPoints);
+    public void setExternalPolicyEnforcementPoint(boolean externalPolicyEnforcementPoint);
 
 }
