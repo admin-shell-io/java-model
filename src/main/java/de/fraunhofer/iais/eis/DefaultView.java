@@ -72,7 +72,7 @@ public class DefaultView implements View {
      * "contains element" "Referable elements that are contained in the view."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
-    protected List<Referable> containedElements;
+    protected List<Reference> containedElements;
 
     // no manual construction
     protected DefaultView() {}
@@ -111,7 +111,7 @@ public class DefaultView implements View {
     @Override
     public Object deepCopy() {
         DefaultView other = new DefaultView();
-        other.containedElements = (List<Referable>) Util.clone(this.containedElements);
+        other.containedElements = (List<Reference>) Util.clone(this.containedElements);
         other.category = (String) Util.clone(this.category);
         other.descriptions = (List<LangString>) Util.clone(this.descriptions);
         other.displayNames = (List<LangString>) Util.clone(this.displayNames);
@@ -124,11 +124,11 @@ public class DefaultView implements View {
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
-    final public List<Referable> getContainedElements() {
+    final public List<Reference> getContainedElements() {
         return containedElements;
     }
 
-    final public void setContainedElements(List<Referable> containedElements) {
+    final public void setContainedElements(List<Reference> containedElements) {
         this.containedElements = containedElements;
     }
 

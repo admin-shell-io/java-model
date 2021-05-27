@@ -22,7 +22,7 @@ public class DefaultViewBuilder extends AbstractBuilder<DefaultView> {
      * @param containedElements desired value to be set
      * @return Builder object with new value for containedElements
      */
-    public DefaultViewBuilder containedElements(List<Referable> containedElements) {
+    public DefaultViewBuilder containedElements(List<Reference> containedElements) {
         this.map.put("containedElements", containedElements);
         return this;
     }
