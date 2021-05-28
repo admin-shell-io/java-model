@@ -24,6 +24,11 @@ public enum LevelType {
     /**
      * "NOM" "NOM according to IEC 61360 as an Identifier scheme for nominal levels."@en
      */
-    NOM;
+    NOM,
+
+    /**
+     * "TYP" "TYP according to IEC 61360 as an Identifier scheme for typical levels."@en
+     */
+    TYP;
 
 }
