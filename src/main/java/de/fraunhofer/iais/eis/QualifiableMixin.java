@@ -1,7 +1,9 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.List;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -16,5 +18,9 @@ import de.fraunhofer.iais.eis.util.*;
     @JsonSubTypes.Type(value = SubmodelElement.class)
 })
 public interface QualifiableMixin {
+    @JsonProperty("qualifier")
+    public List<Constraint> getQualifiers();
 
+    @JsonProperty("qualifier")
+    public void setQualifiers(List<Constraint> qualifiers);
 }
