@@ -9,6 +9,6 @@ import de.fraunhofer.iais.eis.util.*;
 
 @JsonTypeName("ValueList")
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "modelType")
-public abstract class ValueListMixin {
+public interface ValueListMixin {
 
 }

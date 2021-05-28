@@ -9,6 +9,6 @@ import de.fraunhofer.iais.eis.util.*;
 
 @JsonTypeName("Key")
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "modelType")
-public abstract class KeyMixin {
+public interface KeyMixin {
 
 }

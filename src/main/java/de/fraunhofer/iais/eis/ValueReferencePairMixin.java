@@ -9,6 +9,6 @@ import de.fraunhofer.iais.eis.util.*;
 
 @JsonTypeName("ValueReferencePair")
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "modelType")
-public abstract class ValueReferencePairMixin {
+public interface ValueReferencePairMixin {
 
 }

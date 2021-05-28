@@ -9,6 +9,6 @@ import de.fraunhofer.iais.eis.util.*;
 
 @JsonTypeName("AnnotatedRelationshipElement")
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "modelType")
-public abstract class AnnotatedRelationshipElementMixin {
+public interface AnnotatedRelationshipElementMixin {
 
 }

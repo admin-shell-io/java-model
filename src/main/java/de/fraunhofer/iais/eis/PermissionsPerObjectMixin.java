@@ -9,6 +9,6 @@ import de.fraunhofer.iais.eis.util.*;
 
 @JsonTypeName("PermissionsPerObject")
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "modelType")
-public abstract class PermissionsPerObjectMixin {
+public interface PermissionsPerObjectMixin {
 
 }

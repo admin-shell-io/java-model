@@ -9,6 +9,6 @@ import de.fraunhofer.iais.eis.util.*;
 
 @JsonTypeName("AccessPermissionRule")
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "modelType")
-public abstract class AccessPermissionRuleMixin {
+public interface AccessPermissionRuleMixin {
 
 }

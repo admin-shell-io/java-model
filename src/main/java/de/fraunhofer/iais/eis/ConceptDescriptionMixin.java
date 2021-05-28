@@ -9,6 +9,6 @@ import de.fraunhofer.iais.eis.util.*;
 
 @JsonTypeName("ConceptDescription")
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "modelType")
-public abstract class ConceptDescriptionMixin {
+public interface ConceptDescriptionMixin {
 
 }

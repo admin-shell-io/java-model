@@ -9,6 +9,6 @@ import de.fraunhofer.iais.eis.util.*;
 
 @JsonTypeName("AccessControlPolicyPoints")
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "modelType")
-public abstract class AccessControlPolicyPointsMixin {
+public interface AccessControlPolicyPointsMixin {
 
 }

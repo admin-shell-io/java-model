@@ -9,6 +9,6 @@ import de.fraunhofer.iais.eis.util.*;
 
 @JsonTypeName("IdentifierKeyValuePair")
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "modelType")
-public abstract class IdentifierKeyValuePairMixin {
+public interface IdentifierKeyValuePairMixin {
 
 }

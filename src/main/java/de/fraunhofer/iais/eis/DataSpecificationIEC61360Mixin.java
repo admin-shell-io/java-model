@@ -9,6 +9,6 @@ import de.fraunhofer.iais.eis.util.*;
 
 @JsonTypeName("DataSpecificationIEC61360")
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "modelType")
-public abstract class DataSpecificationIEC61360Mixin {
+public interface DataSpecificationIEC61360Mixin {
 
 }

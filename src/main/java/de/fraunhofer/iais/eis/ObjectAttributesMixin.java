@@ -9,6 +9,6 @@ import de.fraunhofer.iais.eis.util.*;
 
 @JsonTypeName("ObjectAttributes")
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "modelType")
-public abstract class ObjectAttributesMixin {
+public interface ObjectAttributesMixin {
 
 }

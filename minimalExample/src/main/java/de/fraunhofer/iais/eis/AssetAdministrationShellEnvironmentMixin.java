@@ -9,6 +9,6 @@ import de.fraunhofer.iais.eis.util.*;
 
 @JsonTypeName("AssetAdministrationShellEnvironment")
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "modelType")
-public abstract class AssetAdministrationShellEnvironmentMixin {
+public interface AssetAdministrationShellEnvironmentMixin {
 
 }
