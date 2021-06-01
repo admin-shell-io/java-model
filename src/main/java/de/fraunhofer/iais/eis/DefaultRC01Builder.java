@@ -17,13 +17,13 @@ public class DefaultRC01Builder extends AbstractBuilder<DefaultRC01> {
     }
 
     /**
-     * This function allows setting a value for conversionFactors
+     * This function allows setting a value for conversionFactor
      * 
-     * @param conversionFactors desired value to be set
-     * @return Builder object with new value for conversionFactors
+     * @param conversionFactor desired value to be set
+     * @return Builder object with new value for conversionFactor
      */
-    public DefaultRC01Builder conversionFactors(List<String> conversionFactors) {
-        this.map.put("conversionFactors", conversionFactors);
+    public DefaultRC01Builder conversionFactor(String conversionFactor) {
+        this.map.put("conversionFactor", conversionFactor);
         return this;
     }
 
@@ -39,112 +39,112 @@ public class DefaultRC01Builder extends AbstractBuilder<DefaultRC01> {
     }
 
     /**
-     * This function allows setting a value for dinNotations
+     * This function allows setting a value for dinNotation
      * 
-     * @param dinNotations desired value to be set
-     * @return Builder object with new value for dinNotations
+     * @param dinNotation desired value to be set
+     * @return Builder object with new value for dinNotation
      */
-    public DefaultRC01Builder dinNotations(List<String> dinNotations) {
-        this.map.put("dinNotations", dinNotations);
+    public DefaultRC01Builder dinNotation(String dinNotation) {
+        this.map.put("dinNotation", dinNotation);
         return this;
     }
 
     /**
-     * This function allows setting a value for eceCodes
+     * This function allows setting a value for eceCode
      * 
-     * @param eceCodes desired value to be set
-     * @return Builder object with new value for eceCodes
+     * @param eceCode desired value to be set
+     * @return Builder object with new value for eceCode
      */
-    public DefaultRC01Builder eceCodes(List<String> eceCodes) {
-        this.map.put("eceCodes", eceCodes);
+    public DefaultRC01Builder eceCode(String eceCode) {
+        this.map.put("eceCode", eceCode);
         return this;
     }
 
     /**
-     * This function allows setting a value for eceNames
+     * This function allows setting a value for eceName
      * 
-     * @param eceNames desired value to be set
-     * @return Builder object with new value for eceNames
+     * @param eceName desired value to be set
+     * @return Builder object with new value for eceName
      */
-    public DefaultRC01Builder eceNames(List<String> eceNames) {
-        this.map.put("eceNames", eceNames);
+    public DefaultRC01Builder eceName(String eceName) {
+        this.map.put("eceName", eceName);
         return this;
     }
 
     /**
-     * This function allows setting a value for nistNames
+     * This function allows setting a value for nistName
      * 
-     * @param nistNames desired value to be set
-     * @return Builder object with new value for nistNames
+     * @param nistName desired value to be set
+     * @return Builder object with new value for nistName
      */
-    public DefaultRC01Builder nistNames(List<String> nistNames) {
-        this.map.put("nistNames", nistNames);
+    public DefaultRC01Builder nistName(String nistName) {
+        this.map.put("nistName", nistName);
         return this;
     }
 
     /**
-     * This function allows setting a value for siNames
+     * This function allows setting a value for siName
      * 
-     * @param siNames desired value to be set
-     * @return Builder object with new value for siNames
+     * @param siName desired value to be set
+     * @return Builder object with new value for siName
      */
-    public DefaultRC01Builder siNames(List<String> siNames) {
-        this.map.put("siNames", siNames);
+    public DefaultRC01Builder siName(String siName) {
+        this.map.put("siName", siName);
         return this;
     }
 
     /**
-     * This function allows setting a value for siNotations
+     * This function allows setting a value for siNotation
      * 
-     * @param siNotations desired value to be set
-     * @return Builder object with new value for siNotations
+     * @param siNotation desired value to be set
+     * @return Builder object with new value for siNotation
      */
-    public DefaultRC01Builder siNotations(List<String> siNotations) {
-        this.map.put("siNotations", siNotations);
+    public DefaultRC01Builder siNotation(String siNotation) {
+        this.map.put("siNotation", siNotation);
         return this;
     }
 
     /**
-     * This function allows setting a value for registrationAuthorityIds
+     * This function allows setting a value for registrationAuthorityId
      * 
-     * @param registrationAuthorityIds desired value to be set
-     * @return Builder object with new value for registrationAuthorityIds
+     * @param registrationAuthorityId desired value to be set
+     * @return Builder object with new value for registrationAuthorityId
      */
-    public DefaultRC01Builder registrationAuthorityIds(List<String> registrationAuthorityIds) {
-        this.map.put("registrationAuthorityIds", registrationAuthorityIds);
+    public DefaultRC01Builder registrationAuthorityId(String registrationAuthorityId) {
+        this.map.put("registrationAuthorityId", registrationAuthorityId);
         return this;
     }
 
     /**
-     * This function allows setting a value for suppliers
+     * This function allows setting a value for supplier
      * 
-     * @param suppliers desired value to be set
-     * @return Builder object with new value for suppliers
+     * @param supplier desired value to be set
+     * @return Builder object with new value for supplier
      */
-    public DefaultRC01Builder suppliers(List<String> suppliers) {
-        this.map.put("suppliers", suppliers);
+    public DefaultRC01Builder supplier(String supplier) {
+        this.map.put("supplier", supplier);
         return this;
     }
 
     /**
-     * This function allows setting a value for unitNames
+     * This function allows setting a value for unitName
      * 
-     * @param unitNames desired value to be set
-     * @return Builder object with new value for unitNames
+     * @param unitName desired value to be set
+     * @return Builder object with new value for unitName
      */
-    public DefaultRC01Builder unitNames(List<String> unitNames) {
-        this.map.put("unitNames", unitNames);
+    public DefaultRC01Builder unitName(String unitName) {
+        this.map.put("unitName", unitName);
         return this;
     }
 
     /**
-     * This function allows setting a value for unitSymbols
+     * This function allows setting a value for unitSymbol
      * 
-     * @param unitSymbols desired value to be set
-     * @return Builder object with new value for unitSymbols
+     * @param unitSymbol desired value to be set
+     * @return Builder object with new value for unitSymbol
      */
-    public DefaultRC01Builder unitSymbols(List<String> unitSymbols) {
-        this.map.put("unitSymbols", unitSymbols);
+    public DefaultRC01Builder unitSymbol(String unitSymbol) {
+        this.map.put("unitSymbol", unitSymbol);
         return this;
     }
 
