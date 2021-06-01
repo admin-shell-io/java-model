@@ -13,8 +13,8 @@ import de.fraunhofer.iais.eis.util.*;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "modelType")
 public interface AnnotatedRelationshipElementMixin {
     @JsonProperty("annotation")
-    public List<DataElement> getAnnotations();
+    public List<Reference> getAnnotations();
 
     @JsonProperty("annotation")
-    public void setAnnotations(List<DataElement> annotations);
+    public void setAnnotations(List<Reference> annotations);
 }

@@ -22,11 +22,11 @@ public interface AnnotatedRelationshipElement extends ModelClass, RelationshipEl
     /**
      * "Annotations that hold for the relationships between the two elements."@en
      * 
-     * @return Returns the List of DataElements for the property annotations. More information under
+     * @return Returns the List of References for the property annotations. More information under
      *         https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation")
-    public List<DataElement> getAnnotations();
+    public List<Reference> getAnnotations();
 
     /**
      * "Annotations that hold for the relationships between the two elements."@en
@@ -34,6 +34,6 @@ public interface AnnotatedRelationshipElement extends ModelClass, RelationshipEl
      * @param annotations desired value for the property annotations. More information under
      *        https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation
      */
-    public void setAnnotations(List<DataElement> annotations);
+    public void setAnnotations(List<Reference> annotations);
 
 }
