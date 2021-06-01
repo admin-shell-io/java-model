@@ -16,13 +16,15 @@ public interface Serializer {
 
     public static final Charset DEFAULT_CHARSET = StandardCharsets.UTF_8;
 
-    public String write(AssetAdministrationShellEnvironment aasEnvironment) throws IOException;
+    public String write(AssetAdministrationShellEnvironment aasEnvironment) throws IOException, SerializationException;
 
-    public default void write(OutputStream out, AssetAdministrationShellEnvironment aasEnvironment) throws IOException {
+    public default void write(OutputStream out, AssetAdministrationShellEnvironment aasEnvironment)
+        throws IOException, SerializationException {
         write(out, DEFAULT_CHARSET, aasEnvironment);
     }
 
-    public default void write(OutputStream out, Charset charset, AssetAdministrationShellEnvironment aasEnvironment) throws IOException {
+    public default void write(OutputStream out, Charset charset, AssetAdministrationShellEnvironment aasEnvironment)
+        throws IOException, SerializationException {
         try (OutputStreamWriter writer = new OutputStreamWriter(out, charset)) {
             writer.write(write(aasEnvironment));
         }
@@ -31,14 +33,14 @@ public interface Serializer {
     // Note that the AAS also defines a file class
 
     public default void write(java.io.File file, Charset charset, AssetAdministrationShellEnvironment aasEnvironment)
-        throws FileNotFoundException, IOException {
+        throws FileNotFoundException, IOException, SerializationException {
         try (OutputStream out = new FileOutputStream(file)) {
             write(out, charset, aasEnvironment);
         }
     }
 
     public default void write(java.io.File file, AssetAdministrationShellEnvironment aasEnvironment)
-        throws FileNotFoundException, IOException {
+        throws FileNotFoundException, IOException, SerializationException {
         write(file, DEFAULT_CHARSET, aasEnvironment);
     }
 
