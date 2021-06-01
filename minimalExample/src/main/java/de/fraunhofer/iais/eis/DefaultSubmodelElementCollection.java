@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
@@ -30,20 +31,20 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
      * (i.e. the same semanticId)."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates")
-    protected List<Boolean> allowDuplicates;
+    protected List<Boolean> allowDuplicates = new ArrayList<>();
 
     /**
      * "ordered" "If ordered=false then the elements in the property collection are not ordered. If
      * ordered=true then the elements in the collection are ordered. Default = false"@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered")
-    protected List<Boolean> ordereds;
+    protected List<Boolean> ordereds = new ArrayList<>();
 
     /**
      * "has value" "Submodel element contained in the collection."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value")
-    protected Collection<SubmodelElement> values;
+    protected Collection<SubmodelElement> values = new ArrayList<>();
 
     // no manual construction
     protected DefaultSubmodelElementCollection() {}

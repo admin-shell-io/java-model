@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -22,7 +23,7 @@ public class DefaultView implements View {
      * element."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
-    protected List<Reference> dataSpecifications;
+    protected List<Reference> dataSpecifications = new ArrayList<>();
 
     /**
      * "has semantic ID" "Points to the Expression Semantic of the Submodels"@en "The semantic id might
@@ -45,13 +46,13 @@ public class DefaultView implements View {
      * several languages."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-    protected List<LangString> descriptions;
+    protected List<LangString> descriptions = new ArrayList<>();
 
     /**
      * "has display name" "Display name. Can be provided in several languages."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-    protected List<LangString> displayNames;
+    protected List<LangString> displayNames = new ArrayList<>();
 
     /**
      * "has short id" "Identifying string of the element within its name space."@en "Constraint
@@ -72,7 +73,7 @@ public class DefaultView implements View {
      * "contains element" "Referable elements that are contained in the view."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
-    protected List<Reference> containedElements;
+    protected List<Reference> containedElements = new ArrayList<>();
 
     // no manual construction
     protected DefaultView() {}

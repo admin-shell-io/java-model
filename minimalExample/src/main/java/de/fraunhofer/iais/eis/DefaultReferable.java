@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -22,20 +23,20 @@ public class DefaultReferable implements Referable {
      * of constraints."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    protected List<String> categories;
+    protected List<String> categories = new ArrayList<>();
 
     /**
      * "has description" "Description or comments on the element. The description can be provided in
      * several languages."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-    protected List<LangStringSet> descriptions;
+    protected List<LangStringSet> descriptions = new ArrayList<>();
 
     /**
      * "has display name" "Display name. Can be provided in several languages."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-    protected List<LangStringSet> displayNames;
+    protected List<LangStringSet> displayNames = new ArrayList<>();
 
     /**
      * "has short id" "Identifying string of the element within its name space."@en "Constraint
@@ -50,7 +51,7 @@ public class DefaultReferable implements Referable {
      * UA."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    protected List<String> idShorts;
+    protected List<String> idShorts = new ArrayList<>();
 
     // no manual construction
     protected DefaultReferable() {}

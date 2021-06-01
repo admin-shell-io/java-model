@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -21,7 +22,7 @@ public class DefaultDataSpecification implements DataSpecification {
      * information about the template itself."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/DataSpecification/dataSpecificationContent")
-    protected List<DataSpecificationContent> dataSpecificationContents;
+    protected List<DataSpecificationContent> dataSpecificationContents = new ArrayList<>();
 
     // no manual construction
     protected DefaultDataSpecification() {}

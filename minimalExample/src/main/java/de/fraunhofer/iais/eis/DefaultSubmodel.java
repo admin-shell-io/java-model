@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,7 +26,7 @@ public class DefaultSubmodel implements Submodel {
      * "has Submodel Element" "A submodel consists of zero or more submodel elements."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement")
-    protected List<SubmodelElement> submodelElements;
+    protected List<SubmodelElement> submodelElements = new ArrayList<>();
 
     // no manual construction
     protected DefaultSubmodel() {}

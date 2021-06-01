@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,14 +21,14 @@ public class DefaultFile implements File {
      * "has mimetype" "Mime type of the content of the File."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/File/mimeType")
-    protected List<String> mimeTypes;
+    protected List<String> mimeTypes = new ArrayList<>();
 
     /**
      * "has value" "Path and name of the referenced file (with file extension). The path can be absolute
      * or relative."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/File/value")
-    protected List<String> values;
+    protected List<String> values = new ArrayList<>();
 
     // no manual construction
     protected DefaultFile() {}

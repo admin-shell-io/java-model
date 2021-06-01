@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,14 +21,14 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
      * "has assetInformation" "Meta information about the asset the AAS is representing."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation")
-    protected List<AssetInformation> assetInformations;
+    protected List<AssetInformation> assetInformations = new ArrayList<>();
 
     /**
      * "has Submodel" "Points from the Admin Shell to the Submodels that describe the Admin Shell of a
      * given Asset"@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
-    protected List<Submodel> submodels;
+    protected List<Submodel> submodels = new ArrayList<>();
 
     // no manual construction
     protected DefaultAssetAdministrationShell() {}

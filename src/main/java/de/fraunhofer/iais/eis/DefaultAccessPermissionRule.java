@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -21,7 +22,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
      * object within the access permission rule."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject")
-    protected List<PermissionsPerObject> permissionsPerObjects;
+    protected List<PermissionsPerObject> permissionsPerObjects = new ArrayList<>();
 
     /**
      * "has target subject attributes" "Target subject attributes that need to be fulfilled by the
@@ -34,7 +35,7 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
      * "has qualifier" "Additional qualification of a qualifiable element."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
-    protected List<Constraint> qualifiers;
+    protected List<Constraint> qualifiers = new ArrayList<>();
 
     /**
      * "has referable category" "The category is a value that gives further meta information w.r.t. to
@@ -49,13 +50,13 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
      * several languages."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-    protected List<LangString> descriptions;
+    protected List<LangString> descriptions = new ArrayList<>();
 
     /**
      * "has display name" "Display name. Can be provided in several languages."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-    protected List<LangString> displayNames;
+    protected List<LangString> displayNames = new ArrayList<>();
 
     /**
      * "has short id" "Identifying string of the element within its name space."@en "Constraint

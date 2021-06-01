@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -21,7 +22,7 @@ public class DefaultAccessControl implements AccessControl {
      * to (already authenticated) subjects to access elements of the AAS."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule")
-    protected List<AccessPermissionRule> accessPermissionRules;
+    protected List<AccessPermissionRule> accessPermissionRules = new ArrayList<>();
 
     /**
      * "has default environment attributes" "Reference to a submodel defining default environment

@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -19,73 +20,73 @@ public class DefaultRC01 implements RC01 {
      * "has conversion factor"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor")
-    protected List<String> conversionFactors;
+    protected List<String> conversionFactors = new ArrayList<>();
 
     /**
      * "has definition"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/definition")
-    protected List<LangString> definitions;
+    protected List<LangString> definitions = new ArrayList<>();
 
     /**
      * "has DIN notation"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation")
-    protected List<String> dinNotations;
+    protected List<String> dinNotations = new ArrayList<>();
 
     /**
      * "has ECE code"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode")
-    protected List<String> eceCodes;
+    protected List<String> eceCodes = new ArrayList<>();
 
     /**
      * "has ECE name"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName")
-    protected List<String> eceNames;
+    protected List<String> eceNames = new ArrayList<>();
 
     /**
      * "has NIST name"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName")
-    protected List<String> nistNames;
+    protected List<String> nistNames = new ArrayList<>();
 
     /**
      * "has registration authority"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/registrationAuthorityId")
-    protected List<String> registrationAuthorityIds;
+    protected List<String> registrationAuthorityIds = new ArrayList<>();
 
     /**
      * "has SI name"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siName")
-    protected List<String> siNames;
+    protected List<String> siNames = new ArrayList<>();
 
     /**
      * "has SI notation"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation")
-    protected List<String> siNotations;
+    protected List<String> siNotations = new ArrayList<>();
 
     /**
      * "has supplier"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/supplier")
-    protected List<String> suppliers;
+    protected List<String> suppliers = new ArrayList<>();
 
     /**
      * "unit has name"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName")
-    protected List<String> unitNames;
+    protected List<String> unitNames = new ArrayList<>();
 
     /**
      * "unit has symbol"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol")
-    protected List<String> unitSymbols;
+    protected List<String> unitSymbols = new ArrayList<>();
 
     // no manual construction
     protected DefaultRC01() {}

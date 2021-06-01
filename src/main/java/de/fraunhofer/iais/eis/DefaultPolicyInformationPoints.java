@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -29,7 +30,7 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
      * access permission rules."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint")
-    protected List<Submodel> internalInformationPoints;
+    protected List<Submodel> internalInformationPoints = new ArrayList<>();
 
     // no manual construction
     protected DefaultPolicyInformationPoints() {}

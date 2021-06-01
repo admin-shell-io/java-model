@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -46,25 +47,25 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
      * DataSpecificationIEC61360/definition is mandatory and shall be defined at least in English."@en
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
-    protected List<LangString> definitions;
+    protected List<LangString> definitions = new ArrayList<>();
 
     /**
      * "has level type"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/levelType")
-    protected List<LevelType> levelTypes;
+    protected List<LevelType> levelTypes = new ArrayList<>();
 
     /**
      * "has preferred name"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
-    protected List<LangString> preferredNames;
+    protected List<LangString> preferredNames = new ArrayList<>();
 
     /**
      * "has short name"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
-    protected List<LangString> shortNames;
+    protected List<LangString> shortNames = new ArrayList<>();
 
     /**
      * "has source of definition"

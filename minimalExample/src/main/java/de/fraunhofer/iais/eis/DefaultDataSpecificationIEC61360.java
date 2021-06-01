@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -37,7 +38,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
      * DataSpecificationIEC61360/dataType is mandatory and shall be defined."@en
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
-    protected List<DataTypeIEC61360> dataTypes;
+    protected List<DataTypeIEC61360> dataTypes = new ArrayList<>();
 
     /**
      * "has definition" "Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions
@@ -46,37 +47,37 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
      * DataSpecificationIEC61360/definition is mandatory and shall be defined at least in English."@en
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
-    protected List<LangStringSet> definitions;
+    protected List<LangStringSet> definitions = new ArrayList<>();
 
     /**
      * "has preferred name"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
-    protected List<LangStringSet> preferredNames;
+    protected List<LangStringSet> preferredNames = new ArrayList<>();
 
     /**
      * "has short name"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
-    protected List<LangStringSet> shortNames;
+    protected List<LangStringSet> shortNames = new ArrayList<>();
 
     /**
      * "has source of definition"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition")
-    protected List<String> sourceOfDefinitions;
+    protected List<String> sourceOfDefinitions = new ArrayList<>();
 
     /**
      * "has unit"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit")
-    protected List<String> units;
+    protected List<String> units = new ArrayList<>();
 
     /**
      * "has unit id"
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId")
-    protected List<Reference> unitIds;
+    protected List<Reference> unitIds = new ArrayList<>();
 
     // no manual construction
     protected DefaultDataSpecificationIEC61360() {}

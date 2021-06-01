@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -22,7 +23,7 @@ public class DefaultOperation implements Operation {
      * element."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
-    protected List<Reference> dataSpecifications;
+    protected List<Reference> dataSpecifications = new ArrayList<>();
 
     /**
      * "has kind" "ModelingKind of the element: either type or instance."@en
@@ -42,25 +43,25 @@ public class DefaultOperation implements Operation {
      * "has input/output variable" "Parameter that is input and output of the operation."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable")
-    protected List<OperationVariable> inoutputVariables;
+    protected List<OperationVariable> inoutputVariables = new ArrayList<>();
 
     /**
      * "has input variable" "Input parameter of the operation."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Operation/inputVariable")
-    protected List<OperationVariable> inputVariables;
+    protected List<OperationVariable> inputVariables = new ArrayList<>();
 
     /**
      * "has output variable" "Output parameter of the operation."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Operation/outputVariable")
-    protected List<OperationVariable> outputVariables;
+    protected List<OperationVariable> outputVariables = new ArrayList<>();
 
     /**
      * "has qualifier" "Additional qualification of a qualifiable element."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
-    protected List<Constraint> qualifiers;
+    protected List<Constraint> qualifiers = new ArrayList<>();
 
     /**
      * "has referable category" "The category is a value that gives further meta information w.r.t. to
@@ -75,13 +76,13 @@ public class DefaultOperation implements Operation {
      * several languages."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-    protected List<LangString> descriptions;
+    protected List<LangString> descriptions = new ArrayList<>();
 
     /**
      * "has display name" "Display name. Can be provided in several languages."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-    protected List<LangString> displayNames;
+    protected List<LangString> displayNames = new ArrayList<>();
 
     /**
      * "has short id" "Identifying string of the element within its name space."@en "Constraint

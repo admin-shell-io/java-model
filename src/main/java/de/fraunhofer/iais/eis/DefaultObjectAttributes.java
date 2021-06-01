@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,7 +21,7 @@ public class DefaultObjectAttributes implements ObjectAttributes {
      * "has object attribute" "A data elements that further classifies an object."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
-    protected List<Reference> objectAttributes;
+    protected List<Reference> objectAttributes = new ArrayList<>();
 
     // no manual construction
     protected DefaultObjectAttributes() {}

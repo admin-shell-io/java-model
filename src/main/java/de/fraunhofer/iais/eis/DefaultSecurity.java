@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,13 +26,13 @@ public class DefaultSecurity implements Security {
      * "has certificate" "Certificates of the AAS."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/certificate")
-    protected List<Certificate> certificates;
+    protected List<Certificate> certificates = new ArrayList<>();
 
     /**
      * "has required certificate extension" "Certificate extensions as required by the AAS."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension")
-    protected List<Reference> requiredCertificateExtensions;
+    protected List<Reference> requiredCertificateExtensions = new ArrayList<>();
 
     // no manual construction
     protected DefaultSecurity() {}

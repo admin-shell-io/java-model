@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,7 +26,7 @@ public class DefaultBlobCertificate implements BlobCertificate {
      * "contains extension" "Extensions contained in the certificate."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension")
-    protected List<Reference> containedExtensions;
+    protected List<Reference> containedExtensions = new ArrayList<>();
 
     /**
      * "is last certificate" "Denotes whether this certificate is the certificated that fast added

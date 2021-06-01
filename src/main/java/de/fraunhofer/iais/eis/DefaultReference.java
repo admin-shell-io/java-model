@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -22,7 +23,7 @@ public class DefaultReference implements Reference {
      * "has key" "Unique reference in its name space."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Reference/key")
-    protected List<Key> keys;
+    protected List<Key> keys = new ArrayList<>();
 
     // no manual construction
     protected DefaultReference() {}

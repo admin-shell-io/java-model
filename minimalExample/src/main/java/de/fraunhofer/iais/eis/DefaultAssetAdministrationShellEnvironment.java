@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,28 +21,28 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
      * AssetAdministrationShellEnvironment graph."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShells")
-    protected List<AssetAdministrationShell> assetAdministrationShells;
+    protected List<AssetAdministrationShell> assetAdministrationShells = new ArrayList<>();
 
     /**
      * "has Assets" "Points to the differents Assets in one AssetAdministrationShellEnvironment
      * graph."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assets")
-    protected List<Asset> assets;
+    protected List<Asset> assets = new ArrayList<>();
 
     /**
      * "has Concept Descriptions" "Points to the differents Concept Descriptions in one
      * AssetAdministrationShellEnvironment graph."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/conceptDescriptions")
-    protected List<ConceptDescription> conceptDescriptions;
+    protected List<ConceptDescription> conceptDescriptions = new ArrayList<>();
 
     /**
      * "has submodels" "Points to the differents Submodels in one AssetAdministrationShellEnvironment
      * graph."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/submodels")
-    protected List<Submodel> submodels;
+    protected List<Submodel> submodels = new ArrayList<>();
 
     // no manual construction
     protected DefaultAssetAdministrationShellEnvironment() {}

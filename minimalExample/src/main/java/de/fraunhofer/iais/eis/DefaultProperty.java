@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -28,7 +29,7 @@ public class DefaultProperty implements Property {
      * "has property value" "The value of the property instance."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/value")
-    protected List<String> values;
+    protected List<String> values = new ArrayList<>();
 
     /**
      * "has property value id" "Reference to the global unique id of a coded value."@en "Constraint
@@ -36,13 +37,13 @@ public class DefaultProperty implements Property {
      * the value of the referenced coded value in valueId."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueId")
-    protected List<Reference> valueIds;
+    protected List<Reference> valueIds = new ArrayList<>();
 
     /**
      * "has property value type" "Data type pf the value."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueType")
-    protected List<String> valueTypes;
+    protected List<String> valueTypes = new ArrayList<>();
 
     // no manual construction
     protected DefaultProperty() {}

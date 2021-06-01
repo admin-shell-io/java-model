@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -23,14 +24,14 @@ public class DefaultAssetInformation implements AssetInformation {
      * "has asset kind" "Denotes whether the Asset of kind \'Type\' or \'Instance\'."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
-    protected List<AssetKind> assetKinds;
+    protected List<AssetKind> assetKinds = new ArrayList<>();
 
     /**
      * "has default Thumbnail" "Thumbnail of the asset represented by the asset administration
      * shell."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail")
-    protected List<File> defaultThumbnails;
+    protected List<File> defaultThumbnails = new ArrayList<>();
 
     /**
      * "has global asset id" "Reference to either an Asset object or a global reference to the asset the
@@ -41,14 +42,14 @@ public class DefaultAssetInformation implements AssetInformation {
      * reference to an Asset object or a global reference."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId")
-    protected List<Reference> globalAssetIds;
+    protected List<Reference> globalAssetIds = new ArrayList<>();
 
     /**
      * "has specific asset id" "Additional domain-specific, typically proprietary Identifier for the
      * asset like e.g. serial number etc."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId")
-    protected List<IdentifierKeyValuePair> specificAssetIds;
+    protected List<IdentifierKeyValuePair> specificAssetIds = new ArrayList<>();
 
     // no manual construction
     protected DefaultAssetInformation() {}

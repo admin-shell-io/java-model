@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -39,7 +40,7 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
      * element."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
-    protected List<Reference> dataSpecifications;
+    protected List<Reference> dataSpecifications = new ArrayList<>();
 
     // no manual construction
     protected DefaultAdministrativeInformation() {}

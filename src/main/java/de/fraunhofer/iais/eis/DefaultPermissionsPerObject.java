@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -28,7 +29,7 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
      * subjects as specified in the access permission rule."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission")
-    protected List<Permission> permissions;
+    protected List<Permission> permissions = new ArrayList<>();
 
     /**
      * "has target object attributes" "Target object attributes that need to be fulfilled so that the

@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,14 +21,14 @@ public class DefaultIdentifier implements Identifier {
      * defined in the enumeration \'IdentifierType\'."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")
-    protected List<IdentifierType> idTypes;
+    protected List<IdentifierType> idTypes = new ArrayList<>();
 
     /**
      * "has identification" "A globally unique identifier which might not be a URI. Its type is defined
      * in idType."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
-    protected List<String> identifiers;
+    protected List<String> identifiers = new ArrayList<>();
 
     // no manual construction
     protected DefaultIdentifier() {}

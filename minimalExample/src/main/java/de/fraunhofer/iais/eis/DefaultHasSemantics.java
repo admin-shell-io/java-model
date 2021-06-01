@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,7 +26,7 @@ public class DefaultHasSemantics implements HasSemantics {
      * example an PDF if a standard)."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    protected List<Reference> semanticIds;
+    protected List<Reference> semanticIds = new ArrayList<>();
 
     // no manual construction
     protected DefaultHasSemantics() {}

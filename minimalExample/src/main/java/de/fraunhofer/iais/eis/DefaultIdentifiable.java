@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -21,13 +22,13 @@ public class DefaultIdentifiable implements Identifiable {
      * identification."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
-    protected List<AdministrativeInformation> administrations;
+    protected List<AdministrativeInformation> administrations = new ArrayList<>();
 
     /**
      * "has identification" "The globally unique identification of the element."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
-    protected List<Identifier> identifications;
+    protected List<Identifier> identifications = new ArrayList<>();
 
     // no manual construction
     protected DefaultIdentifiable() {}

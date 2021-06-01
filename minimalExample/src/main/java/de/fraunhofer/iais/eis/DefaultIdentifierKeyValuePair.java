@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -22,19 +23,19 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
      * example an PDF if a standard)."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    protected List<Reference> semanticIds;
+    protected List<Reference> semanticIds = new ArrayList<>();
 
     /**
      * "has IdentifierKeyValuePair.key" "Key of the identifier."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
-    protected List<String> keys;
+    protected List<String> keys = new ArrayList<>();
 
     /**
      * "has IdentifierKeyValuePair.value" "The value of the identifier with the corresponding key."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
-    protected List<String> values;
+    protected List<String> values = new ArrayList<>();
 
     // no manual construction
     protected DefaultIdentifierKeyValuePair() {}

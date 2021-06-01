@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -23,7 +24,7 @@ public class DefaultKey implements Key {
      * (IdShort, FragmentId)."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Key/idType")
-    protected List<KeyType> idTypes;
+    protected List<KeyType> idTypes = new ArrayList<>();
 
     /**
      * "has type" "Denote which kind of entity is referenced. In case type = GlobalReference then the
@@ -31,13 +32,13 @@ public class DefaultKey implements Key {
      * or of another AAS. The name of the model element is explicitly listed."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Key/type")
-    protected List<KeyElements> types;
+    protected List<KeyElements> types = new ArrayList<>();
 
     /**
      * "has value" "The key value, for example an IRDI if the idType=IRDI."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Key/value")
-    protected List<String> values;
+    protected List<String> values = new ArrayList<>();
 
     // no manual construction
     protected DefaultKey() {}

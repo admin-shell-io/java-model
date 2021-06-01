@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -31,7 +32,7 @@ public class DefaultAssetInformation implements AssetInformation {
      * compose the composite I4.0 Component."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial")
-    protected List<Submodel> billOfMaterials;
+    protected List<Submodel> billOfMaterials = new ArrayList<>();
 
     /**
      * "has default Thumbnail" "Thumbnail of the asset represented by the asset administration
@@ -56,7 +57,7 @@ public class DefaultAssetInformation implements AssetInformation {
      * asset like e.g. serial number etc."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId")
-    protected List<IdentifierKeyValuePair> specificAssetIds;
+    protected List<IdentifierKeyValuePair> specificAssetIds = new ArrayList<>();
 
     // no manual construction
     protected DefaultAssetInformation() {}

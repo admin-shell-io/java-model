@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,14 +26,14 @@ public class DefaultConceptDescription implements ConceptDescription {
      * the concept."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification")
-    protected List<DataSpecification> embeddedDataSpecifications;
+    protected List<DataSpecification> embeddedDataSpecifications = new ArrayList<>();
 
     /**
      * "is case of" "Reference to an external definition the concept is compatible to or was derived
      * from."@en "Compare to is-case-of relationship in ISO 13584-32 and IEC EN 61360."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf")
-    protected List<Reference> isCaseOfs;
+    protected List<Reference> isCaseOfs = new ArrayList<>();
 
     // no manual construction
     protected DefaultConceptDescription() {}

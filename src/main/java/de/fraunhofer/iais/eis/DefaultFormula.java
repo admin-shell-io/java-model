@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,7 +21,7 @@ public class DefaultFormula implements Formula {
      * can be referenced and their value may be evaluated - that are used in the logical expression."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn")
-    protected List<Reference> dependsOns;
+    protected List<Reference> dependsOns = new ArrayList<>();
 
     // no manual construction
     protected DefaultFormula() {}

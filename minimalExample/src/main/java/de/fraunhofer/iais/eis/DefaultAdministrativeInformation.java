@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -26,13 +27,13 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
      * This means, if there is no version there is no revision neither."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
-    protected List<String> revisions;
+    protected List<String> revisions = new ArrayList<>();
 
     /**
      * "has version" "Version of the element."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
-    protected List<String> versions;
+    protected List<String> versions = new ArrayList<>();
 
     // no manual construction
     protected DefaultAdministrativeInformation() {}

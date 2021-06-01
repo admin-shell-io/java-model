@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -37,7 +38,7 @@ public class DefaultBlob implements Blob {
      * element."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
-    protected List<Reference> dataSpecifications;
+    protected List<Reference> dataSpecifications = new ArrayList<>();
 
     /**
      * "has kind" "ModelingKind of the element: either type or instance."@en
@@ -57,7 +58,7 @@ public class DefaultBlob implements Blob {
      * "has qualifier" "Additional qualification of a qualifiable element."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
-    protected List<Constraint> qualifiers;
+    protected List<Constraint> qualifiers = new ArrayList<>();
 
     /**
      * "has referable category" "The category is a value that gives further meta information w.r.t. to
@@ -72,13 +73,13 @@ public class DefaultBlob implements Blob {
      * several languages."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-    protected List<LangString> descriptions;
+    protected List<LangString> descriptions = new ArrayList<>();
 
     /**
      * "has display name" "Display name. Can be provided in several languages."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-    protected List<LangString> displayNames;
+    protected List<LangString> displayNames = new ArrayList<>();
 
     /**
      * "has short id" "Identifying string of the element within its name space."@en "Constraint

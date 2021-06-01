@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -19,7 +20,7 @@ public class DefaultValueList implements ValueList {
      * "Value reference pair types" "A pair of a value together with its global unique id.."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueList/valueReferencePairTypes")
-    protected List<ValueReferencePair> valueReferencePairTypes;
+    protected List<ValueReferencePair> valueReferencePairTypes = new ArrayList<>();
 
     // no manual construction
     protected DefaultValueList() {}

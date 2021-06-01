@@ -1,5 +1,6 @@
 package de.fraunhofer.iais.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,7 +21,7 @@ public class DefaultLangStringSet implements LangStringSet {
      * "Lang String" "A string in a specified language."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/LangStringSet/langString")
-    protected List<LangString> langStrings;
+    protected List<LangString> langStrings = new ArrayList<>();
 
     // no manual construction
     protected DefaultLangStringSet() {}
