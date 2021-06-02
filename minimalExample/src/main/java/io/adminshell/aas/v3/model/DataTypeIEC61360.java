@@ -1,0 +1,22 @@
+package io.adminshell.aas.v3.model;
+
+
+
+
+import de.fraunhofer.iais.eis.util.*;
+import io.adminshell.aas.v3.dataformat.*;
+import io.adminshell.aas.v3.dataformat.json.mixins.*;
+import io.adminshell.aas.v3.model.impl.*;
+import io.adminshell.aas.v3.model.impl.builder.*;
+
+/**
+ * "Data Type IEC61360" "Enumeration of all IEC 61360 defined data types."@en
+ */
+@KnownSubtypes({
+    @KnownSubtypes.Type(value = DefaultDataTypeIEC61360.class)
+})
+public interface DataTypeIEC61360 extends ModelClass {
+
+    // standard methods
+
+}

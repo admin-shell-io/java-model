@@ -1,0 +1,51 @@
+package io.adminshell.aas.v3.dataformat;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+
+
+
+import de.fraunhofer.iais.eis.util.*;
+import io.adminshell.aas.v3.dataformat.json.mixins.*;
+import io.adminshell.aas.v3.model.*;
+import io.adminshell.aas.v3.model.impl.*;
+import io.adminshell.aas.v3.model.impl.builder.*;
+
+public interface Serializer {
+
+    public static final Charset DEFAULT_CHARSET = StandardCharsets.UTF_8;
+
+    public String write(AssetAdministrationShellEnvironment aasEnvironment) throws IOException, SerializationException;
+
+    public default void write(OutputStream out, AssetAdministrationShellEnvironment aasEnvironment)
+        throws IOException, SerializationException {
+        write(out, DEFAULT_CHARSET, aasEnvironment);
+    }
+
+    public default void write(OutputStream out, Charset charset, AssetAdministrationShellEnvironment aasEnvironment)
+        throws IOException, SerializationException {
+        try (OutputStreamWriter writer = new OutputStreamWriter(out, charset)) {
+            writer.write(write(aasEnvironment));
+        }
+    }
+
+    // Note that the AAS also defines a file class
+
+    public default void write(java.io.File file, Charset charset, AssetAdministrationShellEnvironment aasEnvironment)
+        throws FileNotFoundException, IOException, SerializationException {
+        try (OutputStream out = new FileOutputStream(file)) {
+            write(out, charset, aasEnvironment);
+        }
+    }
+
+    public default void write(java.io.File file, AssetAdministrationShellEnvironment aasEnvironment)
+        throws FileNotFoundException, IOException, SerializationException {
+        write(file, DEFAULT_CHARSET, aasEnvironment);
+    }
+
+}
