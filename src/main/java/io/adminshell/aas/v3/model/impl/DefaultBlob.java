@@ -1,6 +1,7 @@
 package io.adminshell.aas.v3.model.impl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -127,7 +128,7 @@ public class DefaultBlob implements Blob {
         } else {
             DefaultBlob other = (DefaultBlob) obj;
             return Objects.equals(this.mimeType, other.mimeType) &&
-                Objects.equals(this.value, other.value) &&
+                Arrays.equals(this.value, other.value) &&
                 Objects.equals(this.category, other.category) &&
                 Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayNames, other.displayNames) &&

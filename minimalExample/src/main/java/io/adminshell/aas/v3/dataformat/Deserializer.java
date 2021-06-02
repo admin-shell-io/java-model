@@ -24,7 +24,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 public interface Deserializer {
 
     /*** Default charset that will be used when no charset is specified */
-    public static final Charset DEFAULT_CHARSET = StandardCharsets.UTF_8;
+    Charset DEFAULT_CHARSET = StandardCharsets.UTF_8;
 
     /***
      * Deserializes a given string into an instance of AssetAdministrationShellEnvironment
@@ -33,7 +33,7 @@ public interface Deserializer {
      * @return an instance of AssetAdministrationShellEnvironment
      * @throws DeserializationException if deserialization fails
      */
-    public AssetAdministrationShellEnvironment read(String value) throws DeserializationException;
+    AssetAdministrationShellEnvironment read(String value) throws DeserializationException;
 
     /***
      * Deserializes a given InputStream into an instance of AssetAdministrationShellEnvironment using
@@ -44,7 +44,7 @@ public interface Deserializer {
      * @return an instance of AssetAdministrationShellEnvironment
      * @throws DeserializationException if deserialization fails
      */
-    public default AssetAdministrationShellEnvironment read(InputStream src) throws DeserializationException {
+    default AssetAdministrationShellEnvironment read(InputStream src) throws DeserializationException {
         return read(src, DEFAULT_CHARSET);
     }
 
@@ -58,7 +58,7 @@ public interface Deserializer {
      * @return an instance of AssetAdministrationShellEnvironment
      * @throws DeserializationException if deserialization fails
      */
-    public default AssetAdministrationShellEnvironment read(InputStream src, Charset charset) throws DeserializationException {
+    default AssetAdministrationShellEnvironment read(InputStream src, Charset charset) throws DeserializationException {
         return read(new BufferedReader(
             new InputStreamReader(src, charset))
                 .lines()
@@ -78,7 +78,7 @@ public interface Deserializer {
      * @throws FileNotFoundException if file is not present
      * @throws DeserializationException if deserialization fails
      */
-    public default AssetAdministrationShellEnvironment read(java.io.File file, Charset charset)
+    default AssetAdministrationShellEnvironment read(java.io.File file, Charset charset)
         throws FileNotFoundException, DeserializationException {
         return read(new FileInputStream(file), charset);
     }
@@ -93,7 +93,7 @@ public interface Deserializer {
      * @throws FileNotFoundException if the file is not present
      * @throws DeserializationException if deserialization fails
      */
-    public default AssetAdministrationShellEnvironment read(java.io.File file) throws FileNotFoundException, DeserializationException {
+    default AssetAdministrationShellEnvironment read(java.io.File file) throws FileNotFoundException, DeserializationException {
         return read(file, DEFAULT_CHARSET);
     }
 
@@ -110,6 +110,6 @@ public interface Deserializer {
      * @param implementation the class implementing the interface that should be used for
      *        deserialization.
      */
-    public <T> void useImplementation(Class<T> aasInterface, Class<? extends T> implementation);
+    <T> void useImplementation(Class<T> aasInterface, Class<? extends T> implementation);
 
 }
