@@ -17,8 +17,8 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "modelType")
 public interface AnnotatedRelationshipElementMixin {
     @JsonProperty("annotation")
-    public List<Reference> getAnnotations();
+    public List<DataElement> getAnnotations();
 
     @JsonProperty("annotation")
-    public void setAnnotations(List<Reference> annotations);
+    public void setAnnotations(List<DataElement> annotations);
 }

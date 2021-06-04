@@ -26,7 +26,7 @@ public class DefaultAnnotatedRelationshipElementBuilder extends AbstractBuilder<
      * @param annotations desired value to be set
      * @return Builder object with new value for annotations
      */
-    public DefaultAnnotatedRelationshipElementBuilder annotations(List<Reference> annotations) {
+    public DefaultAnnotatedRelationshipElementBuilder annotations(List<DataElement> annotations) {
         this.map.put("annotations", annotations);
         return this;
     }

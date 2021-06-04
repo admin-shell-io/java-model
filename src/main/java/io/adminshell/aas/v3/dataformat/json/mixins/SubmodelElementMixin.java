@@ -16,9 +16,9 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "modelType")
 @JsonSubTypes({
     @JsonSubTypes.Type(value = RelationshipElement.class),
+    @JsonSubTypes.Type(value = DataElement.class),
     @JsonSubTypes.Type(value = File.class),
     @JsonSubTypes.Type(value = Event.class),
-    @JsonSubTypes.Type(value = DataElement.class),
     @JsonSubTypes.Type(value = Capability.class),
     @JsonSubTypes.Type(value = Entity.class),
     @JsonSubTypes.Type(value = EventElement.class),
