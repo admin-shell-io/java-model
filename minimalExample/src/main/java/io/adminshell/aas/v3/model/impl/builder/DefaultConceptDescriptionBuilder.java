@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultConceptDescriptionBuilder extends AbstractBuilder<DefaultConceptDescription> {
-
-    public DefaultConceptDescriptionBuilder() {
-        super();
-    }
-
-    public DefaultConceptDescriptionBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultConceptDescriptionBuilder<T extends ConceptDescription, B extends DefaultConceptDescriptionBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for isCaseOfs
@@ -26,9 +19,20 @@ public class DefaultConceptDescriptionBuilder extends AbstractBuilder<DefaultCon
      * @param isCaseOfs desired value to be set
      * @return Builder object with new value for isCaseOfs
      */
-    public DefaultConceptDescriptionBuilder isCaseOfs(List<Reference> isCaseOfs) {
-        this.map.put("isCaseOfs", isCaseOfs);
-        return this;
+    public B isCaseOfs(List<Reference> isCaseOfs) {
+        getBuildingInstance().setIsCaseOfs(isCaseOfs);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List isCaseOfs
+     * 
+     * @param isCaseOf desired value to be added
+     * @return Builder object with new value for isCaseOfs
+     */
+    public B isCaseOf(Reference isCaseOf) {
+        getBuildingInstance().getIsCaseOfs().add(isCaseOf);
+        return getSelf();
     }
 
     /**
@@ -37,19 +41,19 @@ public class DefaultConceptDescriptionBuilder extends AbstractBuilder<DefaultCon
      * @param embeddedDataSpecifications desired value to be set
      * @return Builder object with new value for embeddedDataSpecifications
      */
-    public DefaultConceptDescriptionBuilder embeddedDataSpecifications(List<DataSpecification> embeddedDataSpecifications) {
-        this.map.put("embeddedDataSpecifications", embeddedDataSpecifications);
-        return this;
+    public B embeddedDataSpecifications(List<DataSpecification> embeddedDataSpecifications) {
+        getBuildingInstance().setEmbeddedDataSpecifications(embeddedDataSpecifications);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List embeddedDataSpecifications
      * 
-     * @return Bean with specified values
+     * @param embeddedDataSpecification desired value to be added
+     * @return Builder object with new value for embeddedDataSpecifications
      */
-    final public DefaultConceptDescription build() {
-        DefaultConceptDescription defaultConceptDescription = Util.fillInstanceFromMap(new DefaultConceptDescription(), this.map);
-        return defaultConceptDescription;
+    public B embeddedDataSpecification(DataSpecification embeddedDataSpecification) {
+        getBuildingInstance().getEmbeddedDataSpecifications().add(embeddedDataSpecification);
+        return getSelf();
     }
 }

@@ -18,7 +18,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultOperation.class)
 })
-public interface Operation extends ModelClass, SubmodelElement {
+public interface Operation extends SubmodelElement {
 
     // standard methods
 

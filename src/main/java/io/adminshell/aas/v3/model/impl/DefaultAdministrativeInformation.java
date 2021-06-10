@@ -71,15 +71,6 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultAdministrativeInformation other = new DefaultAdministrativeInformation();
-        other.version = (String) Util.clone(this.version);
-        other.revision = (String) Util.clone(this.revision);
-        other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
@@ -107,5 +98,18 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
 
     final public void setDataSpecifications(List<Reference> dataSpecifications) {
         this.dataSpecifications = dataSpecifications;
+    }
+
+    public static class Builder extends DefaultAdministrativeInformationBuilder<DefaultAdministrativeInformation, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAdministrativeInformation newBuildingInstance() {
+            return new DefaultAdministrativeInformation();
+        }
     }
 }

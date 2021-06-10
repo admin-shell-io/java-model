@@ -53,13 +53,6 @@ public class DefaultHasSemantics implements HasSemantics {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultHasSemantics other = new DefaultHasSemantics();
-        other.semanticIds = (List<Reference>) Util.clone(this.semanticIds);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
@@ -69,5 +62,18 @@ public class DefaultHasSemantics implements HasSemantics {
 
     final public void setSemanticIds(List<Reference> semanticIds) {
         this.semanticIds = semanticIds;
+    }
+
+    public static class Builder extends DefaultHasSemanticsBuilder<DefaultHasSemantics, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultHasSemantics newBuildingInstance() {
+            return new DefaultHasSemantics();
+        }
     }
 }

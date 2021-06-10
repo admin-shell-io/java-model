@@ -80,17 +80,6 @@ public class DefaultExtension implements Extension {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultExtension other = new DefaultExtension();
-        other.name = (String) Util.clone(this.name);
-        other.valueType = (String) Util.clone(this.valueType);
-        other.value = (String) Util.clone(this.value);
-        other.refersTo = (Reference) Util.clone(this.refersTo);
-        other.semanticId = (Reference) Util.clone(this.semanticId);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/name")
@@ -136,5 +125,18 @@ public class DefaultExtension implements Extension {
 
     final public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
+    }
+
+    public static class Builder extends DefaultExtensionBuilder<DefaultExtension, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultExtension newBuildingInstance() {
+            return new DefaultExtension();
+        }
     }
 }

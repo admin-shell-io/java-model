@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultLangStringSetBuilder extends AbstractBuilder<DefaultLangStringSet> {
-
-    public DefaultLangStringSetBuilder() {
-        super();
-    }
-
-    public DefaultLangStringSetBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultLangStringSetBuilder<T extends LangStringSet, B extends DefaultLangStringSetBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for langStrings
@@ -26,19 +19,19 @@ public class DefaultLangStringSetBuilder extends AbstractBuilder<DefaultLangStri
      * @param langStrings desired value to be set
      * @return Builder object with new value for langStrings
      */
-    public DefaultLangStringSetBuilder langStrings(List<LangString> langStrings) {
-        this.map.put("langStrings", langStrings);
-        return this;
+    public B langStrings(List<LangString> langStrings) {
+        getBuildingInstance().setLangStrings(langStrings);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List langStrings
      * 
-     * @return Bean with specified values
+     * @param langString desired value to be added
+     * @return Builder object with new value for langStrings
      */
-    final public DefaultLangStringSet build() {
-        DefaultLangStringSet defaultLangStringSet = Util.fillInstanceFromMap(new DefaultLangStringSet(), this.map);
-        return defaultLangStringSet;
+    public B langString(LangString langString) {
+        getBuildingInstance().getLangStrings().add(langString);
+        return getSelf();
     }
 }

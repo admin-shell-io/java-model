@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultAccessPermissionRuleBuilder extends AbstractBuilder<DefaultAccessPermissionRule> {
-
-    public DefaultAccessPermissionRuleBuilder() {
-        super();
-    }
-
-    public DefaultAccessPermissionRuleBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultAccessPermissionRuleBuilder<T extends AccessPermissionRule, B extends DefaultAccessPermissionRuleBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for permissionsPerObjects
@@ -26,9 +19,20 @@ public class DefaultAccessPermissionRuleBuilder extends AbstractBuilder<DefaultA
      * @param permissionsPerObjects desired value to be set
      * @return Builder object with new value for permissionsPerObjects
      */
-    public DefaultAccessPermissionRuleBuilder permissionsPerObjects(List<PermissionsPerObject> permissionsPerObjects) {
-        this.map.put("permissionsPerObjects", permissionsPerObjects);
-        return this;
+    public B permissionsPerObjects(List<PermissionsPerObject> permissionsPerObjects) {
+        getBuildingInstance().setPermissionsPerObjects(permissionsPerObjects);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List permissionsPerObjects
+     * 
+     * @param permissionsPerObject desired value to be added
+     * @return Builder object with new value for permissionsPerObjects
+     */
+    public B permissionsPerObject(PermissionsPerObject permissionsPerObject) {
+        getBuildingInstance().getPermissionsPerObjects().add(permissionsPerObject);
+        return getSelf();
     }
 
     /**
@@ -37,9 +41,9 @@ public class DefaultAccessPermissionRuleBuilder extends AbstractBuilder<DefaultA
      * @param targetSubjectAttributes desired value to be set
      * @return Builder object with new value for targetSubjectAttributes
      */
-    public DefaultAccessPermissionRuleBuilder targetSubjectAttributes(SubjectAttributes targetSubjectAttributes) {
-        this.map.put("targetSubjectAttributes", targetSubjectAttributes);
-        return this;
+    public B targetSubjectAttributes(SubjectAttributes targetSubjectAttributes) {
+        getBuildingInstance().setTargetSubjectAttributes(targetSubjectAttributes);
+        return getSelf();
     }
 
     /**
@@ -48,9 +52,9 @@ public class DefaultAccessPermissionRuleBuilder extends AbstractBuilder<DefaultA
      * @param category desired value to be set
      * @return Builder object with new value for category
      */
-    public DefaultAccessPermissionRuleBuilder category(String category) {
-        this.map.put("category", category);
-        return this;
+    public B category(String category) {
+        getBuildingInstance().setCategory(category);
+        return getSelf();
     }
 
     /**
@@ -59,9 +63,20 @@ public class DefaultAccessPermissionRuleBuilder extends AbstractBuilder<DefaultA
      * @param descriptions desired value to be set
      * @return Builder object with new value for descriptions
      */
-    public DefaultAccessPermissionRuleBuilder descriptions(List<LangString> descriptions) {
-        this.map.put("descriptions", descriptions);
-        return this;
+    public B descriptions(List<LangString> descriptions) {
+        getBuildingInstance().setDescriptions(descriptions);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List descriptions
+     * 
+     * @param description desired value to be added
+     * @return Builder object with new value for descriptions
+     */
+    public B description(LangString description) {
+        getBuildingInstance().getDescriptions().add(description);
+        return getSelf();
     }
 
     /**
@@ -70,9 +85,20 @@ public class DefaultAccessPermissionRuleBuilder extends AbstractBuilder<DefaultA
      * @param displayNames desired value to be set
      * @return Builder object with new value for displayNames
      */
-    public DefaultAccessPermissionRuleBuilder displayNames(List<LangString> displayNames) {
-        this.map.put("displayNames", displayNames);
-        return this;
+    public B displayNames(List<LangString> displayNames) {
+        getBuildingInstance().setDisplayNames(displayNames);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List displayNames
+     * 
+     * @param displayName desired value to be added
+     * @return Builder object with new value for displayNames
+     */
+    public B displayName(LangString displayName) {
+        getBuildingInstance().getDisplayNames().add(displayName);
+        return getSelf();
     }
 
     /**
@@ -81,9 +107,9 @@ public class DefaultAccessPermissionRuleBuilder extends AbstractBuilder<DefaultA
      * @param idShort desired value to be set
      * @return Builder object with new value for idShort
      */
-    public DefaultAccessPermissionRuleBuilder idShort(String idShort) {
-        this.map.put("idShort", idShort);
-        return this;
+    public B idShort(String idShort) {
+        getBuildingInstance().setIdShort(idShort);
+        return getSelf();
     }
 
     /**
@@ -92,19 +118,19 @@ public class DefaultAccessPermissionRuleBuilder extends AbstractBuilder<DefaultA
      * @param qualifiers desired value to be set
      * @return Builder object with new value for qualifiers
      */
-    public DefaultAccessPermissionRuleBuilder qualifiers(List<Constraint> qualifiers) {
-        this.map.put("qualifiers", qualifiers);
-        return this;
+    public B qualifiers(List<Constraint> qualifiers) {
+        getBuildingInstance().setQualifiers(qualifiers);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List qualifiers
      * 
-     * @return Bean with specified values
+     * @param qualifier desired value to be added
+     * @return Builder object with new value for qualifiers
      */
-    final public DefaultAccessPermissionRule build() {
-        DefaultAccessPermissionRule defaultAccessPermissionRule = Util.fillInstanceFromMap(new DefaultAccessPermissionRule(), this.map);
-        return defaultAccessPermissionRule;
+    public B qualifier(Constraint qualifier) {
+        getBuildingInstance().getQualifiers().add(qualifier);
+        return getSelf();
     }
 }

@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultPermissionsPerObjectBuilder extends AbstractBuilder<DefaultPermissionsPerObject> {
-
-    public DefaultPermissionsPerObjectBuilder() {
-        super();
-    }
-
-    public DefaultPermissionsPerObjectBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultPermissionsPerObjectBuilder<T extends PermissionsPerObject, B extends DefaultPermissionsPerObjectBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for object
@@ -26,9 +19,9 @@ public class DefaultPermissionsPerObjectBuilder extends AbstractBuilder<DefaultP
      * @param object desired value to be set
      * @return Builder object with new value for object
      */
-    public DefaultPermissionsPerObjectBuilder object(Referable object) {
-        this.map.put("object", object);
-        return this;
+    public B object(Referable object) {
+        getBuildingInstance().setObject(object);
+        return getSelf();
     }
 
     /**
@@ -37,9 +30,20 @@ public class DefaultPermissionsPerObjectBuilder extends AbstractBuilder<DefaultP
      * @param permissions desired value to be set
      * @return Builder object with new value for permissions
      */
-    public DefaultPermissionsPerObjectBuilder permissions(List<Permission> permissions) {
-        this.map.put("permissions", permissions);
-        return this;
+    public B permissions(List<Permission> permissions) {
+        getBuildingInstance().setPermissions(permissions);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List permissions
+     * 
+     * @param permission desired value to be added
+     * @return Builder object with new value for permissions
+     */
+    public B permission(Permission permission) {
+        getBuildingInstance().getPermissions().add(permission);
+        return getSelf();
     }
 
     /**
@@ -48,19 +52,8 @@ public class DefaultPermissionsPerObjectBuilder extends AbstractBuilder<DefaultP
      * @param targetObjectAttributes desired value to be set
      * @return Builder object with new value for targetObjectAttributes
      */
-    public DefaultPermissionsPerObjectBuilder targetObjectAttributes(ObjectAttributes targetObjectAttributes) {
-        this.map.put("targetObjectAttributes", targetObjectAttributes);
-        return this;
-    }
-
-    /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
-     * 
-     * @return Bean with specified values
-     */
-    final public DefaultPermissionsPerObject build() {
-        DefaultPermissionsPerObject defaultPermissionsPerObject = Util.fillInstanceFromMap(new DefaultPermissionsPerObject(), this.map);
-        return defaultPermissionsPerObject;
+    public B targetObjectAttributes(ObjectAttributes targetObjectAttributes) {
+        getBuildingInstance().setTargetObjectAttributes(targetObjectAttributes);
+        return getSelf();
     }
 }

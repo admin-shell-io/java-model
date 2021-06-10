@@ -17,7 +17,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultReferable.class)
 })
-public interface Referable extends ModelClass {
+public interface Referable {
 
     // standard methods
 

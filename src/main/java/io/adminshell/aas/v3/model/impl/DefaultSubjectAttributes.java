@@ -50,13 +50,6 @@ public class DefaultSubjectAttributes implements SubjectAttributes {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultSubjectAttributes other = new DefaultSubjectAttributes();
-        other.subjectAttributes = (List<DataElement>) Util.clone(this.subjectAttributes);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute")
@@ -66,5 +59,18 @@ public class DefaultSubjectAttributes implements SubjectAttributes {
 
     final public void setSubjectAttributes(List<DataElement> subjectAttributes) {
         this.subjectAttributes = subjectAttributes;
+    }
+
+    public static class Builder extends DefaultSubjectAttributesBuilder<DefaultSubjectAttributes, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultSubjectAttributes newBuildingInstance() {
+            return new DefaultSubjectAttributes();
+        }
     }
 }

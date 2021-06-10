@@ -16,7 +16,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultDataSpecification.class)
 })
-public interface DataSpecification extends ModelClass {
+public interface DataSpecification {
 
     // standard methods
 

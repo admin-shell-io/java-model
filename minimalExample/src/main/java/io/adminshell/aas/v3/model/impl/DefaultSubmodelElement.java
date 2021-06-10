@@ -43,11 +43,16 @@ public class DefaultSubmodelElement implements SubmodelElement {
         return true;
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultSubmodelElement other = new DefaultSubmodelElement();
+    public static class Builder extends DefaultSubmodelElementBuilder<DefaultSubmodelElement, Builder> {
 
-        return other;
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultSubmodelElement newBuildingInstance() {
+            return new DefaultSubmodelElement();
+        }
     }
-
 }

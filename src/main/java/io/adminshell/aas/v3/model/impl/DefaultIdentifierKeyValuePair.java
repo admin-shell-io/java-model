@@ -73,16 +73,6 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultIdentifierKeyValuePair other = new DefaultIdentifierKeyValuePair();
-        other.key = (String) Util.clone(this.key);
-        other.value = (String) Util.clone(this.value);
-        other.externalSubjectId = (Reference) Util.clone(this.externalSubjectId);
-        other.semanticId = (Reference) Util.clone(this.semanticId);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
@@ -119,5 +109,18 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 
     final public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
+    }
+
+    public static class Builder extends DefaultIdentifierKeyValuePairBuilder<DefaultIdentifierKeyValuePair, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultIdentifierKeyValuePair newBuildingInstance() {
+            return new DefaultIdentifierKeyValuePair();
+        }
     }
 }

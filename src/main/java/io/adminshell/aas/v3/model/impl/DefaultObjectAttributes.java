@@ -48,13 +48,6 @@ public class DefaultObjectAttributes implements ObjectAttributes {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultObjectAttributes other = new DefaultObjectAttributes();
-        other.objectAttributes = (List<Reference>) Util.clone(this.objectAttributes);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
@@ -64,5 +57,18 @@ public class DefaultObjectAttributes implements ObjectAttributes {
 
     final public void setObjectAttributes(List<Reference> objectAttributes) {
         this.objectAttributes = objectAttributes;
+    }
+
+    public static class Builder extends DefaultObjectAttributesBuilder<DefaultObjectAttributes, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultObjectAttributes newBuildingInstance() {
+            return new DefaultObjectAttributes();
+        }
     }
 }

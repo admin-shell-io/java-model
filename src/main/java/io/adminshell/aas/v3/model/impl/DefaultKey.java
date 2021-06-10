@@ -67,15 +67,6 @@ public class DefaultKey implements Key {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultKey other = new DefaultKey();
-        other.idType = (KeyType) Util.clone(this.idType);
-        other.type = (KeyElements) Util.clone(this.type);
-        other.value = (String) Util.clone(this.value);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Key/idType")
@@ -103,5 +94,18 @@ public class DefaultKey implements Key {
 
     final public void setValue(String value) {
         this.value = value;
+    }
+
+    public static class Builder extends DefaultKeyBuilder<DefaultKey, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultKey newBuildingInstance() {
+            return new DefaultKey();
+        }
     }
 }

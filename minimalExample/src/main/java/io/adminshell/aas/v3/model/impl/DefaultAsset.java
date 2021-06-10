@@ -41,11 +41,16 @@ public class DefaultAsset implements Asset {
         return true;
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultAsset other = new DefaultAsset();
+    public static class Builder extends DefaultAssetBuilder<DefaultAsset, Builder> {
 
-        return other;
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAsset newBuildingInstance() {
+            return new DefaultAsset();
+        }
     }
-
 }

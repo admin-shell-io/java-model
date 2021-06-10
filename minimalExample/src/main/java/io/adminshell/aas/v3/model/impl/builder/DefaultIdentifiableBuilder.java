@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultIdentifiableBuilder extends AbstractBuilder<DefaultIdentifiable> {
-
-    public DefaultIdentifiableBuilder() {
-        super();
-    }
-
-    public DefaultIdentifiableBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultIdentifiableBuilder<T extends Identifiable, B extends DefaultIdentifiableBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for administrations
@@ -26,9 +19,20 @@ public class DefaultIdentifiableBuilder extends AbstractBuilder<DefaultIdentifia
      * @param administrations desired value to be set
      * @return Builder object with new value for administrations
      */
-    public DefaultIdentifiableBuilder administrations(List<AdministrativeInformation> administrations) {
-        this.map.put("administrations", administrations);
-        return this;
+    public B administrations(List<AdministrativeInformation> administrations) {
+        getBuildingInstance().setAdministrations(administrations);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List administrations
+     * 
+     * @param administration desired value to be added
+     * @return Builder object with new value for administrations
+     */
+    public B administration(AdministrativeInformation administration) {
+        getBuildingInstance().getAdministrations().add(administration);
+        return getSelf();
     }
 
     /**
@@ -37,19 +41,19 @@ public class DefaultIdentifiableBuilder extends AbstractBuilder<DefaultIdentifia
      * @param identifications desired value to be set
      * @return Builder object with new value for identifications
      */
-    public DefaultIdentifiableBuilder identifications(List<Identifier> identifications) {
-        this.map.put("identifications", identifications);
-        return this;
+    public B identifications(List<Identifier> identifications) {
+        getBuildingInstance().setIdentifications(identifications);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List identifications
      * 
-     * @return Bean with specified values
+     * @param identification desired value to be added
+     * @return Builder object with new value for identifications
      */
-    final public DefaultIdentifiable build() {
-        DefaultIdentifiable defaultIdentifiable = Util.fillInstanceFromMap(new DefaultIdentifiable(), this.map);
-        return defaultIdentifiable;
+    public B identification(Identifier identification) {
+        getBuildingInstance().getIdentifications().add(identification);
+        return getSelf();
     }
 }

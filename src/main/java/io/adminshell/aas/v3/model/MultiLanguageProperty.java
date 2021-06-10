@@ -16,7 +16,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultMultiLanguageProperty.class)
 })
-public interface MultiLanguageProperty extends ModelClass, DataElement {
+public interface MultiLanguageProperty extends DataElement {
 
     // standard methods
 

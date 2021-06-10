@@ -38,11 +38,16 @@ public class DefaultKeyElements implements KeyElements {
         return true;
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultKeyElements other = new DefaultKeyElements();
+    public static class Builder extends DefaultKeyElementsBuilder<DefaultKeyElements, Builder> {
 
-        return other;
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultKeyElements newBuildingInstance() {
+            return new DefaultKeyElements();
+        }
     }
-
 }

@@ -16,7 +16,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultIdentifier.class)
 })
-public interface Identifier extends ModelClass {
+public interface Identifier {
 
     // standard methods
 

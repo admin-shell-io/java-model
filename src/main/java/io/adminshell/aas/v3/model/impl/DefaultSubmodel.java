@@ -150,23 +150,6 @@ public class DefaultSubmodel implements Submodel {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultSubmodel other = new DefaultSubmodel();
-        other.submodelElements = (List<SubmodelElement>) Util.clone(this.submodelElements);
-        other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
-        other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
-        other.administration = (AdministrativeInformation) Util.clone(this.administration);
-        other.identification = (Identifier) Util.clone(this.identification);
-        other.category = (String) Util.clone(this.category);
-        other.descriptions = (List<LangString>) Util.clone(this.descriptions);
-        other.displayNames = (List<LangString>) Util.clone(this.displayNames);
-        other.idShort = (String) Util.clone(this.idShort);
-        other.kind = (ModelingKind) Util.clone(this.kind);
-        other.semanticId = (Reference) Util.clone(this.semanticId);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement")
@@ -266,5 +249,18 @@ public class DefaultSubmodel implements Submodel {
 
     final public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
+    }
+
+    public static class Builder extends DefaultSubmodelBuilder<DefaultSubmodel, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultSubmodel newBuildingInstance() {
+            return new DefaultSubmodel();
+        }
     }
 }

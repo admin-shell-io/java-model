@@ -17,7 +17,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultFile.class)
 })
-public interface File extends ModelClass, SubmodelElement {
+public interface File extends SubmodelElement {
 
     // standard methods
 

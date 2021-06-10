@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultIdentifierKeyValuePairBuilder extends AbstractBuilder<DefaultIdentifierKeyValuePair> {
-
-    public DefaultIdentifierKeyValuePairBuilder() {
-        super();
-    }
-
-    public DefaultIdentifierKeyValuePairBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultIdentifierKeyValuePairBuilder<T extends IdentifierKeyValuePair, B extends DefaultIdentifierKeyValuePairBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for keys
@@ -26,9 +19,20 @@ public class DefaultIdentifierKeyValuePairBuilder extends AbstractBuilder<Defaul
      * @param keys desired value to be set
      * @return Builder object with new value for keys
      */
-    public DefaultIdentifierKeyValuePairBuilder keys(List<String> keys) {
-        this.map.put("keys", keys);
-        return this;
+    public B keys(List<String> keys) {
+        getBuildingInstance().setKeys(keys);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List keys
+     * 
+     * @param key desired value to be added
+     * @return Builder object with new value for keys
+     */
+    public B key(String key) {
+        getBuildingInstance().getKeys().add(key);
+        return getSelf();
     }
 
     /**
@@ -37,9 +41,20 @@ public class DefaultIdentifierKeyValuePairBuilder extends AbstractBuilder<Defaul
      * @param values desired value to be set
      * @return Builder object with new value for values
      */
-    public DefaultIdentifierKeyValuePairBuilder values(List<String> values) {
-        this.map.put("values", values);
-        return this;
+    public B values(List<String> values) {
+        getBuildingInstance().setValues(values);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List values
+     * 
+     * @param value desired value to be added
+     * @return Builder object with new value for values
+     */
+    public B value(String value) {
+        getBuildingInstance().getValues().add(value);
+        return getSelf();
     }
 
     /**
@@ -48,20 +63,19 @@ public class DefaultIdentifierKeyValuePairBuilder extends AbstractBuilder<Defaul
      * @param semanticIds desired value to be set
      * @return Builder object with new value for semanticIds
      */
-    public DefaultIdentifierKeyValuePairBuilder semanticIds(List<Reference> semanticIds) {
-        this.map.put("semanticIds", semanticIds);
-        return this;
+    public B semanticIds(List<Reference> semanticIds) {
+        getBuildingInstance().setSemanticIds(semanticIds);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List semanticIds
      * 
-     * @return Bean with specified values
+     * @param semanticId desired value to be added
+     * @return Builder object with new value for semanticIds
      */
-    final public DefaultIdentifierKeyValuePair build() {
-        DefaultIdentifierKeyValuePair defaultIdentifierKeyValuePair =
-            Util.fillInstanceFromMap(new DefaultIdentifierKeyValuePair(), this.map);
-        return defaultIdentifierKeyValuePair;
+    public B semanticId(Reference semanticId) {
+        getBuildingInstance().getSemanticIds().add(semanticId);
+        return getSelf();
     }
 }

@@ -16,7 +16,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultOperationVariable.class)
 })
-public interface OperationVariable extends ModelClass {
+public interface OperationVariable {
 
     // standard methods
 

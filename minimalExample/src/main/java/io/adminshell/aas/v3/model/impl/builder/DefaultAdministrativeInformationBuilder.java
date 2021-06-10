@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultAdministrativeInformationBuilder extends AbstractBuilder<DefaultAdministrativeInformation> {
-
-    public DefaultAdministrativeInformationBuilder() {
-        super();
-    }
-
-    public DefaultAdministrativeInformationBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultAdministrativeInformationBuilder<T extends AdministrativeInformation, B extends DefaultAdministrativeInformationBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for versions
@@ -26,9 +19,20 @@ public class DefaultAdministrativeInformationBuilder extends AbstractBuilder<Def
      * @param versions desired value to be set
      * @return Builder object with new value for versions
      */
-    public DefaultAdministrativeInformationBuilder versions(List<String> versions) {
-        this.map.put("versions", versions);
-        return this;
+    public B versions(List<String> versions) {
+        getBuildingInstance().setVersions(versions);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List versions
+     * 
+     * @param version desired value to be added
+     * @return Builder object with new value for versions
+     */
+    public B version(String version) {
+        getBuildingInstance().getVersions().add(version);
+        return getSelf();
     }
 
     /**
@@ -37,20 +41,19 @@ public class DefaultAdministrativeInformationBuilder extends AbstractBuilder<Def
      * @param revisions desired value to be set
      * @return Builder object with new value for revisions
      */
-    public DefaultAdministrativeInformationBuilder revisions(List<String> revisions) {
-        this.map.put("revisions", revisions);
-        return this;
+    public B revisions(List<String> revisions) {
+        getBuildingInstance().setRevisions(revisions);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List revisions
      * 
-     * @return Bean with specified values
+     * @param revision desired value to be added
+     * @return Builder object with new value for revisions
      */
-    final public DefaultAdministrativeInformation build() {
-        DefaultAdministrativeInformation defaultAdministrativeInformation =
-            Util.fillInstanceFromMap(new DefaultAdministrativeInformation(), this.map);
-        return defaultAdministrativeInformation;
+    public B revision(String revision) {
+        getBuildingInstance().getRevisions().add(revision);
+        return getSelf();
     }
 }

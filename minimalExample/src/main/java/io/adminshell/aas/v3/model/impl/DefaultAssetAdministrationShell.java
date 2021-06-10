@@ -57,14 +57,6 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultAssetAdministrationShell other = new DefaultAssetAdministrationShell();
-        other.assetInformations = (List<AssetInformation>) Util.clone(this.assetInformations);
-        other.submodels = (List<Submodel>) Util.clone(this.submodels);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation")
@@ -83,5 +75,18 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 
     final public void setSubmodels(List<Submodel> submodels) {
         this.submodels = submodels;
+    }
+
+    public static class Builder extends DefaultAssetAdministrationShellBuilder<DefaultAssetAdministrationShell, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAssetAdministrationShell newBuildingInstance() {
+            return new DefaultAssetAdministrationShell();
+        }
     }
 }

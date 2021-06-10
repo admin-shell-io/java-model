@@ -67,15 +67,6 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultPermissionsPerObject other = new DefaultPermissionsPerObject();
-        other.object = (Referable) Util.clone(this.object);
-        other.permissions = (List<Permission>) Util.clone(this.permissions);
-        other.targetObjectAttributes = (ObjectAttributes) Util.clone(this.targetObjectAttributes);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")
@@ -103,5 +94,18 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
 
     final public void setTargetObjectAttributes(ObjectAttributes targetObjectAttributes) {
         this.targetObjectAttributes = targetObjectAttributes;
+    }
+
+    public static class Builder extends DefaultPermissionsPerObjectBuilder<DefaultPermissionsPerObject, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultPermissionsPerObject newBuildingInstance() {
+            return new DefaultPermissionsPerObject();
+        }
     }
 }

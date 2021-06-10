@@ -116,19 +116,6 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultDataSpecificationIEC61360 other = new DefaultDataSpecificationIEC61360();
-        other.dataTypes = (List<DataTypeIEC61360>) Util.clone(this.dataTypes);
-        other.definitions = (List<LangStringSet>) Util.clone(this.definitions);
-        other.shortNames = (List<LangStringSet>) Util.clone(this.shortNames);
-        other.preferredNames = (List<LangStringSet>) Util.clone(this.preferredNames);
-        other.sourceOfDefinitions = (List<String>) Util.clone(this.sourceOfDefinitions);
-        other.units = (List<String>) Util.clone(this.units);
-        other.unitIds = (List<Reference>) Util.clone(this.unitIds);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
@@ -194,4 +181,16 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
         this.unitIds = unitIds;
     }
 
+    public static class Builder extends DefaultDataSpecificationIEC61360Builder<DefaultDataSpecificationIEC61360, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultDataSpecificationIEC61360 newBuildingInstance() {
+            return new DefaultDataSpecificationIEC61360();
+        }
+    }
 }

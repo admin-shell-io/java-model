@@ -47,13 +47,6 @@ public class DefaultDataSpecification implements DataSpecification {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultDataSpecification other = new DefaultDataSpecification();
-        other.dataSpecificationContent = (DataSpecificationContent) Util.clone(this.dataSpecificationContent);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/DataSpecification/dataSpecificationContent")
@@ -63,5 +56,18 @@ public class DefaultDataSpecification implements DataSpecification {
 
     final public void setDataSpecificationContent(DataSpecificationContent dataSpecificationContent) {
         this.dataSpecificationContent = dataSpecificationContent;
+    }
+
+    public static class Builder extends DefaultDataSpecificationBuilder<DefaultDataSpecification, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultDataSpecification newBuildingInstance() {
+            return new DefaultDataSpecification();
+        }
     }
 }

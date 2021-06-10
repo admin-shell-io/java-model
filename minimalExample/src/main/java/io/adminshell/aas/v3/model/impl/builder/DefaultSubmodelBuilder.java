@@ -10,15 +10,7 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultSubmodelBuilder extends AbstractBuilder<DefaultSubmodel> {
-
-    public DefaultSubmodelBuilder() {
-        super();
-    }
-
-    public DefaultSubmodelBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultSubmodelBuilder<T extends Submodel, B extends DefaultSubmodelBuilder<T, B>> extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for submodelElements
@@ -26,19 +18,19 @@ public class DefaultSubmodelBuilder extends AbstractBuilder<DefaultSubmodel> {
      * @param submodelElements desired value to be set
      * @return Builder object with new value for submodelElements
      */
-    public DefaultSubmodelBuilder submodelElements(List<SubmodelElement> submodelElements) {
-        this.map.put("submodelElements", submodelElements);
-        return this;
+    public B submodelElements(List<SubmodelElement> submodelElements) {
+        getBuildingInstance().setSubmodelElements(submodelElements);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List submodelElements
      * 
-     * @return Bean with specified values
+     * @param submodelElement desired value to be added
+     * @return Builder object with new value for submodelElements
      */
-    final public DefaultSubmodel build() {
-        DefaultSubmodel defaultSubmodel = Util.fillInstanceFromMap(new DefaultSubmodel(), this.map);
-        return defaultSubmodel;
+    public B submodelElement(SubmodelElement submodelElement) {
+        getBuildingInstance().getSubmodelElements().add(submodelElement);
+        return getSelf();
     }
 }

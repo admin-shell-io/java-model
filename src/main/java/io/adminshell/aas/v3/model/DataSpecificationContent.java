@@ -16,7 +16,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
  */
 @KnownSubtypes({
 })
-public interface DataSpecificationContent extends ModelClass {
+public interface DataSpecificationContent {
 
     // standard methods
 

@@ -110,19 +110,6 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultAccessPermissionRule other = new DefaultAccessPermissionRule();
-        other.permissionsPerObjects = (List<PermissionsPerObject>) Util.clone(this.permissionsPerObjects);
-        other.targetSubjectAttributes = (SubjectAttributes) Util.clone(this.targetSubjectAttributes);
-        other.category = (String) Util.clone(this.category);
-        other.descriptions = (List<LangString>) Util.clone(this.descriptions);
-        other.displayNames = (List<LangString>) Util.clone(this.displayNames);
-        other.idShort = (String) Util.clone(this.idShort);
-        other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject")
@@ -186,5 +173,18 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 
     final public void setQualifiers(List<Constraint> qualifiers) {
         this.qualifiers = qualifiers;
+    }
+
+    public static class Builder extends DefaultAccessPermissionRuleBuilder<DefaultAccessPermissionRule, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAccessPermissionRule newBuildingInstance() {
+            return new DefaultAccessPermissionRule();
+        }
     }
 }

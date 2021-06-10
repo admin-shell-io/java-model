@@ -62,14 +62,6 @@ public class DefaultConceptDescription implements ConceptDescription {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultConceptDescription other = new DefaultConceptDescription();
-        other.isCaseOfs = (List<Reference>) Util.clone(this.isCaseOfs);
-        other.embeddedDataSpecifications = (List<DataSpecification>) Util.clone(this.embeddedDataSpecifications);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf")
@@ -88,5 +80,18 @@ public class DefaultConceptDescription implements ConceptDescription {
 
     final public void setEmbeddedDataSpecifications(List<DataSpecification> embeddedDataSpecifications) {
         this.embeddedDataSpecifications = embeddedDataSpecifications;
+    }
+
+    public static class Builder extends DefaultConceptDescriptionBuilder<DefaultConceptDescription, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultConceptDescription newBuildingInstance() {
+            return new DefaultConceptDescription();
+        }
     }
 }

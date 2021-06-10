@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultAdministrativeInformationBuilder extends AbstractBuilder<DefaultAdministrativeInformation> {
-
-    public DefaultAdministrativeInformationBuilder() {
-        super();
-    }
-
-    public DefaultAdministrativeInformationBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultAdministrativeInformationBuilder<T extends AdministrativeInformation, B extends DefaultAdministrativeInformationBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for version
@@ -26,9 +19,9 @@ public class DefaultAdministrativeInformationBuilder extends AbstractBuilder<Def
      * @param version desired value to be set
      * @return Builder object with new value for version
      */
-    public DefaultAdministrativeInformationBuilder version(String version) {
-        this.map.put("version", version);
-        return this;
+    public B version(String version) {
+        getBuildingInstance().setVersion(version);
+        return getSelf();
     }
 
     /**
@@ -37,9 +30,9 @@ public class DefaultAdministrativeInformationBuilder extends AbstractBuilder<Def
      * @param revision desired value to be set
      * @return Builder object with new value for revision
      */
-    public DefaultAdministrativeInformationBuilder revision(String revision) {
-        this.map.put("revision", revision);
-        return this;
+    public B revision(String revision) {
+        getBuildingInstance().setRevision(revision);
+        return getSelf();
     }
 
     /**
@@ -48,20 +41,19 @@ public class DefaultAdministrativeInformationBuilder extends AbstractBuilder<Def
      * @param dataSpecifications desired value to be set
      * @return Builder object with new value for dataSpecifications
      */
-    public DefaultAdministrativeInformationBuilder dataSpecifications(List<Reference> dataSpecifications) {
-        this.map.put("dataSpecifications", dataSpecifications);
-        return this;
+    public B dataSpecifications(List<Reference> dataSpecifications) {
+        getBuildingInstance().setDataSpecifications(dataSpecifications);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List dataSpecifications
      * 
-     * @return Bean with specified values
+     * @param dataSpecification desired value to be added
+     * @return Builder object with new value for dataSpecifications
      */
-    final public DefaultAdministrativeInformation build() {
-        DefaultAdministrativeInformation defaultAdministrativeInformation =
-            Util.fillInstanceFromMap(new DefaultAdministrativeInformation(), this.map);
-        return defaultAdministrativeInformation;
+    public B dataSpecification(Reference dataSpecification) {
+        getBuildingInstance().getDataSpecifications().add(dataSpecification);
+        return getSelf();
     }
 }

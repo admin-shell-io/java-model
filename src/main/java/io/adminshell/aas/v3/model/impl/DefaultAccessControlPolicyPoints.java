@@ -69,16 +69,6 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultAccessControlPolicyPoints other = new DefaultAccessControlPolicyPoints();
-        other.policyAdministrationPoint = (PolicyAdministrationPoint) Util.clone(this.policyAdministrationPoint);
-        other.policyDecisionPoint = (PolicyDecisionPoint) Util.clone(this.policyDecisionPoint);
-        other.policyEnforcementPoint = (PolicyEnforcementPoints) Util.clone(this.policyEnforcementPoint);
-        other.policyInformationPoints = (PolicyInformationPoints) Util.clone(this.policyInformationPoints);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint")
@@ -115,5 +105,18 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
 
     final public void setPolicyInformationPoints(PolicyInformationPoints policyInformationPoints) {
         this.policyInformationPoints = policyInformationPoints;
+    }
+
+    public static class Builder extends DefaultAccessControlPolicyPointsBuilder<DefaultAccessControlPolicyPoints, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAccessControlPolicyPoints newBuildingInstance() {
+            return new DefaultAccessControlPolicyPoints();
+        }
     }
 }

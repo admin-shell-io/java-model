@@ -17,7 +17,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultQualifier.class)
 })
-public interface Qualifier extends ModelClass, Constraint, HasSemantics {
+public interface Qualifier extends Constraint, HasSemantics {
 
     // standard methods
 

@@ -144,23 +144,6 @@ public class DefaultOperation implements Operation {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultOperation other = new DefaultOperation();
-        other.inputVariables = (List<OperationVariable>) Util.clone(this.inputVariables);
-        other.inoutputVariables = (List<OperationVariable>) Util.clone(this.inoutputVariables);
-        other.outputVariables = (List<OperationVariable>) Util.clone(this.outputVariables);
-        other.category = (String) Util.clone(this.category);
-        other.descriptions = (List<LangString>) Util.clone(this.descriptions);
-        other.displayNames = (List<LangString>) Util.clone(this.displayNames);
-        other.idShort = (String) Util.clone(this.idShort);
-        other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
-        other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
-        other.kind = (ModelingKind) Util.clone(this.kind);
-        other.semanticId = (Reference) Util.clone(this.semanticId);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Operation/inputVariable")
@@ -260,5 +243,18 @@ public class DefaultOperation implements Operation {
 
     final public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
+    }
+
+    public static class Builder extends DefaultOperationBuilder<DefaultOperation, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultOperation newBuildingInstance() {
+            return new DefaultOperation();
+        }
     }
 }

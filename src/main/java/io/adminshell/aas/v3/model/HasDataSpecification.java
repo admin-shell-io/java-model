@@ -28,7 +28,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
     @KnownSubtypes.Type(value = ConceptDescription.class),
     @KnownSubtypes.Type(value = SubmodelElement.class)
 })
-public interface HasDataSpecification extends ModelClass {
+public interface HasDataSpecification {
 
     // standard methods
 

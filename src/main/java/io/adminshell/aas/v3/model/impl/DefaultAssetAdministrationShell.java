@@ -154,24 +154,6 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultAssetAdministrationShell other = new DefaultAssetAdministrationShell();
-        other.assetInformation = (AssetInformation) Util.clone(this.assetInformation);
-        other.derivedFrom = (Reference) Util.clone(this.derivedFrom);
-        other.security = (Security) Util.clone(this.security);
-        other.submodels = (List<Reference>) Util.clone(this.submodels);
-        other.views = (List<View>) Util.clone(this.views);
-        other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
-        other.administration = (AdministrativeInformation) Util.clone(this.administration);
-        other.identification = (Identifier) Util.clone(this.identification);
-        other.category = (String) Util.clone(this.category);
-        other.descriptions = (List<LangString>) Util.clone(this.descriptions);
-        other.displayNames = (List<LangString>) Util.clone(this.displayNames);
-        other.idShort = (String) Util.clone(this.idShort);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation")
@@ -280,5 +262,18 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 
     final public void setIdShort(String idShort) {
         this.idShort = idShort;
+    }
+
+    public static class Builder extends DefaultAssetAdministrationShellBuilder<DefaultAssetAdministrationShell, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAssetAdministrationShell newBuildingInstance() {
+            return new DefaultAssetAdministrationShell();
+        }
     }
 }

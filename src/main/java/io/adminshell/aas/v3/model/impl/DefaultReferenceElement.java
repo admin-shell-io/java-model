@@ -130,21 +130,6 @@ public class DefaultReferenceElement implements ReferenceElement {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultReferenceElement other = new DefaultReferenceElement();
-        other.value = (Reference) Util.clone(this.value);
-        other.category = (String) Util.clone(this.category);
-        other.descriptions = (List<LangString>) Util.clone(this.descriptions);
-        other.displayNames = (List<LangString>) Util.clone(this.displayNames);
-        other.idShort = (String) Util.clone(this.idShort);
-        other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
-        other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
-        other.kind = (ModelingKind) Util.clone(this.kind);
-        other.semanticId = (Reference) Util.clone(this.semanticId);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/ReferenceElement/value")
@@ -226,5 +211,18 @@ public class DefaultReferenceElement implements ReferenceElement {
 
     final public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
+    }
+
+    public static class Builder extends DefaultReferenceElementBuilder<DefaultReferenceElement, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultReferenceElement newBuildingInstance() {
+            return new DefaultReferenceElement();
+        }
     }
 }

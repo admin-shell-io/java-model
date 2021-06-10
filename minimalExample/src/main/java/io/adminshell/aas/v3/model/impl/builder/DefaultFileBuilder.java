@@ -10,15 +10,7 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultFileBuilder extends AbstractBuilder<DefaultFile> {
-
-    public DefaultFileBuilder() {
-        super();
-    }
-
-    public DefaultFileBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultFileBuilder<T extends File, B extends DefaultFileBuilder<T, B>> extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for mimeTypes
@@ -26,9 +18,20 @@ public class DefaultFileBuilder extends AbstractBuilder<DefaultFile> {
      * @param mimeTypes desired value to be set
      * @return Builder object with new value for mimeTypes
      */
-    public DefaultFileBuilder mimeTypes(List<String> mimeTypes) {
-        this.map.put("mimeTypes", mimeTypes);
-        return this;
+    public B mimeTypes(List<String> mimeTypes) {
+        getBuildingInstance().setMimeTypes(mimeTypes);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List mimeTypes
+     * 
+     * @param mimeType desired value to be added
+     * @return Builder object with new value for mimeTypes
+     */
+    public B mimeType(String mimeType) {
+        getBuildingInstance().getMimeTypes().add(mimeType);
+        return getSelf();
     }
 
     /**
@@ -37,19 +40,20 @@ public class DefaultFileBuilder extends AbstractBuilder<DefaultFile> {
      * @param values desired value to be set
      * @return Builder object with new value for values
      */
-    public DefaultFileBuilder values(List<String> values) {
-        this.map.put("values", values);
-        return this;
+    public B values(List<String> values) {
+        getBuildingInstance().setValues(values);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List values
      * 
-     * @return Bean with specified values
+     * @param value desired value to be added
+     * @return Builder object with new value for values
      */
-    final public DefaultFile build() {
-        DefaultFile defaultFile = Util.fillInstanceFromMap(new DefaultFile(), this.map);
-        return defaultFile;
+    public B value(String value) {
+        getBuildingInstance().getValues().add(value);
+        return getSelf();
     }
+
 }

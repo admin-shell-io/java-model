@@ -21,7 +21,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
     @KnownSubtypes.Type(value = DefaultHasSemantics.class),
     @KnownSubtypes.Type(value = IdentifierKeyValuePair.class)
 })
-public interface HasSemantics extends ModelClass {
+public interface HasSemantics {
 
     // standard methods
 

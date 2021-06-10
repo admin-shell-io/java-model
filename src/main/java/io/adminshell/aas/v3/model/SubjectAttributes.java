@@ -16,7 +16,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultSubjectAttributes.class)
 })
-public interface SubjectAttributes extends ModelClass {
+public interface SubjectAttributes {
 
     // standard methods
 

@@ -10,15 +10,7 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultSecurityBuilder extends AbstractBuilder<DefaultSecurity> {
-
-    public DefaultSecurityBuilder() {
-        super();
-    }
-
-    public DefaultSecurityBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultSecurityBuilder<T extends Security, B extends DefaultSecurityBuilder<T, B>> extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for accessControlPolicyPoints
@@ -26,9 +18,9 @@ public class DefaultSecurityBuilder extends AbstractBuilder<DefaultSecurity> {
      * @param accessControlPolicyPoints desired value to be set
      * @return Builder object with new value for accessControlPolicyPoints
      */
-    public DefaultSecurityBuilder accessControlPolicyPoints(AccessControlPolicyPoints accessControlPolicyPoints) {
-        this.map.put("accessControlPolicyPoints", accessControlPolicyPoints);
-        return this;
+    public B accessControlPolicyPoints(AccessControlPolicyPoints accessControlPolicyPoints) {
+        getBuildingInstance().setAccessControlPolicyPoints(accessControlPolicyPoints);
+        return getSelf();
     }
 
     /**
@@ -37,9 +29,20 @@ public class DefaultSecurityBuilder extends AbstractBuilder<DefaultSecurity> {
      * @param certificates desired value to be set
      * @return Builder object with new value for certificates
      */
-    public DefaultSecurityBuilder certificates(List<Certificate> certificates) {
-        this.map.put("certificates", certificates);
-        return this;
+    public B certificates(List<Certificate> certificates) {
+        getBuildingInstance().setCertificates(certificates);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List certificates
+     * 
+     * @param certificate desired value to be added
+     * @return Builder object with new value for certificates
+     */
+    public B certificate(Certificate certificate) {
+        getBuildingInstance().getCertificates().add(certificate);
+        return getSelf();
     }
 
     /**
@@ -48,19 +51,19 @@ public class DefaultSecurityBuilder extends AbstractBuilder<DefaultSecurity> {
      * @param requiredCertificateExtensions desired value to be set
      * @return Builder object with new value for requiredCertificateExtensions
      */
-    public DefaultSecurityBuilder requiredCertificateExtensions(List<Reference> requiredCertificateExtensions) {
-        this.map.put("requiredCertificateExtensions", requiredCertificateExtensions);
-        return this;
+    public B requiredCertificateExtensions(List<Reference> requiredCertificateExtensions) {
+        getBuildingInstance().setRequiredCertificateExtensions(requiredCertificateExtensions);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List requiredCertificateExtensions
      * 
-     * @return Bean with specified values
+     * @param requiredCertificateExtension desired value to be added
+     * @return Builder object with new value for requiredCertificateExtensions
      */
-    final public DefaultSecurity build() {
-        DefaultSecurity defaultSecurity = Util.fillInstanceFromMap(new DefaultSecurity(), this.map);
-        return defaultSecurity;
+    public B requiredCertificateExtension(Reference requiredCertificateExtension) {
+        getBuildingInstance().getRequiredCertificateExtensions().add(requiredCertificateExtension);
+        return getSelf();
     }
 }

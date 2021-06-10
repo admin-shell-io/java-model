@@ -10,15 +10,7 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultSubmodelBuilder extends AbstractBuilder<DefaultSubmodel> {
-
-    public DefaultSubmodelBuilder() {
-        super();
-    }
-
-    public DefaultSubmodelBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultSubmodelBuilder<T extends Submodel, B extends DefaultSubmodelBuilder<T, B>> extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for submodelElements
@@ -26,9 +18,20 @@ public class DefaultSubmodelBuilder extends AbstractBuilder<DefaultSubmodel> {
      * @param submodelElements desired value to be set
      * @return Builder object with new value for submodelElements
      */
-    public DefaultSubmodelBuilder submodelElements(List<SubmodelElement> submodelElements) {
-        this.map.put("submodelElements", submodelElements);
-        return this;
+    public B submodelElements(List<SubmodelElement> submodelElements) {
+        getBuildingInstance().setSubmodelElements(submodelElements);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List submodelElements
+     * 
+     * @param submodelElement desired value to be added
+     * @return Builder object with new value for submodelElements
+     */
+    public B submodelElement(SubmodelElement submodelElement) {
+        getBuildingInstance().getSubmodelElements().add(submodelElement);
+        return getSelf();
     }
 
     /**
@@ -37,9 +40,20 @@ public class DefaultSubmodelBuilder extends AbstractBuilder<DefaultSubmodel> {
      * @param qualifiers desired value to be set
      * @return Builder object with new value for qualifiers
      */
-    public DefaultSubmodelBuilder qualifiers(List<Constraint> qualifiers) {
-        this.map.put("qualifiers", qualifiers);
-        return this;
+    public B qualifiers(List<Constraint> qualifiers) {
+        getBuildingInstance().setQualifiers(qualifiers);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List qualifiers
+     * 
+     * @param qualifier desired value to be added
+     * @return Builder object with new value for qualifiers
+     */
+    public B qualifier(Constraint qualifier) {
+        getBuildingInstance().getQualifiers().add(qualifier);
+        return getSelf();
     }
 
     /**
@@ -48,9 +62,20 @@ public class DefaultSubmodelBuilder extends AbstractBuilder<DefaultSubmodel> {
      * @param dataSpecifications desired value to be set
      * @return Builder object with new value for dataSpecifications
      */
-    public DefaultSubmodelBuilder dataSpecifications(List<Reference> dataSpecifications) {
-        this.map.put("dataSpecifications", dataSpecifications);
-        return this;
+    public B dataSpecifications(List<Reference> dataSpecifications) {
+        getBuildingInstance().setDataSpecifications(dataSpecifications);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List dataSpecifications
+     * 
+     * @param dataSpecification desired value to be added
+     * @return Builder object with new value for dataSpecifications
+     */
+    public B dataSpecification(Reference dataSpecification) {
+        getBuildingInstance().getDataSpecifications().add(dataSpecification);
+        return getSelf();
     }
 
     /**
@@ -59,9 +84,9 @@ public class DefaultSubmodelBuilder extends AbstractBuilder<DefaultSubmodel> {
      * @param administration desired value to be set
      * @return Builder object with new value for administration
      */
-    public DefaultSubmodelBuilder administration(AdministrativeInformation administration) {
-        this.map.put("administration", administration);
-        return this;
+    public B administration(AdministrativeInformation administration) {
+        getBuildingInstance().setAdministration(administration);
+        return getSelf();
     }
 
     /**
@@ -70,9 +95,9 @@ public class DefaultSubmodelBuilder extends AbstractBuilder<DefaultSubmodel> {
      * @param identification desired value to be set
      * @return Builder object with new value for identification
      */
-    public DefaultSubmodelBuilder identification(Identifier identification) {
-        this.map.put("identification", identification);
-        return this;
+    public B identification(Identifier identification) {
+        getBuildingInstance().setIdentification(identification);
+        return getSelf();
     }
 
     /**
@@ -81,9 +106,9 @@ public class DefaultSubmodelBuilder extends AbstractBuilder<DefaultSubmodel> {
      * @param category desired value to be set
      * @return Builder object with new value for category
      */
-    public DefaultSubmodelBuilder category(String category) {
-        this.map.put("category", category);
-        return this;
+    public B category(String category) {
+        getBuildingInstance().setCategory(category);
+        return getSelf();
     }
 
     /**
@@ -92,9 +117,20 @@ public class DefaultSubmodelBuilder extends AbstractBuilder<DefaultSubmodel> {
      * @param descriptions desired value to be set
      * @return Builder object with new value for descriptions
      */
-    public DefaultSubmodelBuilder descriptions(List<LangString> descriptions) {
-        this.map.put("descriptions", descriptions);
-        return this;
+    public B descriptions(List<LangString> descriptions) {
+        getBuildingInstance().setDescriptions(descriptions);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List descriptions
+     * 
+     * @param description desired value to be added
+     * @return Builder object with new value for descriptions
+     */
+    public B description(LangString description) {
+        getBuildingInstance().getDescriptions().add(description);
+        return getSelf();
     }
 
     /**
@@ -103,9 +139,20 @@ public class DefaultSubmodelBuilder extends AbstractBuilder<DefaultSubmodel> {
      * @param displayNames desired value to be set
      * @return Builder object with new value for displayNames
      */
-    public DefaultSubmodelBuilder displayNames(List<LangString> displayNames) {
-        this.map.put("displayNames", displayNames);
-        return this;
+    public B displayNames(List<LangString> displayNames) {
+        getBuildingInstance().setDisplayNames(displayNames);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List displayNames
+     * 
+     * @param displayName desired value to be added
+     * @return Builder object with new value for displayNames
+     */
+    public B displayName(LangString displayName) {
+        getBuildingInstance().getDisplayNames().add(displayName);
+        return getSelf();
     }
 
     /**
@@ -114,9 +161,9 @@ public class DefaultSubmodelBuilder extends AbstractBuilder<DefaultSubmodel> {
      * @param idShort desired value to be set
      * @return Builder object with new value for idShort
      */
-    public DefaultSubmodelBuilder idShort(String idShort) {
-        this.map.put("idShort", idShort);
-        return this;
+    public B idShort(String idShort) {
+        getBuildingInstance().setIdShort(idShort);
+        return getSelf();
     }
 
     /**
@@ -125,9 +172,9 @@ public class DefaultSubmodelBuilder extends AbstractBuilder<DefaultSubmodel> {
      * @param kind desired value to be set
      * @return Builder object with new value for kind
      */
-    public DefaultSubmodelBuilder kind(ModelingKind kind) {
-        this.map.put("kind", kind);
-        return this;
+    public B kind(ModelingKind kind) {
+        getBuildingInstance().setKind(kind);
+        return getSelf();
     }
 
     /**
@@ -136,19 +183,8 @@ public class DefaultSubmodelBuilder extends AbstractBuilder<DefaultSubmodel> {
      * @param semanticId desired value to be set
      * @return Builder object with new value for semanticId
      */
-    public DefaultSubmodelBuilder semanticId(Reference semanticId) {
-        this.map.put("semanticId", semanticId);
-        return this;
-    }
-
-    /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
-     * 
-     * @return Bean with specified values
-     */
-    final public DefaultSubmodel build() {
-        DefaultSubmodel defaultSubmodel = Util.fillInstanceFromMap(new DefaultSubmodel(), this.map);
-        return defaultSubmodel;
+    public B semanticId(Reference semanticId) {
+        getBuildingInstance().setSemanticId(semanticId);
+        return getSelf();
     }
 }

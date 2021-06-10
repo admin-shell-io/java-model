@@ -108,19 +108,6 @@ public class DefaultAccessControl implements AccessControl {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultAccessControl other = new DefaultAccessControl();
-        other.accessPermissionRules = (List<AccessPermissionRule>) Util.clone(this.accessPermissionRules);
-        other.selectableSubjectAttributes = (Reference) Util.clone(this.selectableSubjectAttributes);
-        other.defaultSubjectAttributes = (Reference) Util.clone(this.defaultSubjectAttributes);
-        other.selectablePermissions = (Reference) Util.clone(this.selectablePermissions);
-        other.defaultPermissions = (Reference) Util.clone(this.defaultPermissions);
-        other.selectableEnvironmentAttributes = (Reference) Util.clone(this.selectableEnvironmentAttributes);
-        other.defaultEnvironmentAttributes = (Reference) Util.clone(this.defaultEnvironmentAttributes);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule")
@@ -184,5 +171,18 @@ public class DefaultAccessControl implements AccessControl {
 
     final public void setDefaultEnvironmentAttributes(Reference defaultEnvironmentAttributes) {
         this.defaultEnvironmentAttributes = defaultEnvironmentAttributes;
+    }
+
+    public static class Builder extends DefaultAccessControlBuilder<DefaultAccessControl, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAccessControl newBuildingInstance() {
+            return new DefaultAccessControl();
+        }
     }
 }

@@ -10,15 +10,7 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultKeyBuilder extends AbstractBuilder<DefaultKey> {
-
-    public DefaultKeyBuilder() {
-        super();
-    }
-
-    public DefaultKeyBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultKeyBuilder<T extends Key, B extends DefaultKeyBuilder<T, B>> extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for idTypes
@@ -26,9 +18,20 @@ public class DefaultKeyBuilder extends AbstractBuilder<DefaultKey> {
      * @param idTypes desired value to be set
      * @return Builder object with new value for idTypes
      */
-    public DefaultKeyBuilder idTypes(List<KeyType> idTypes) {
-        this.map.put("idTypes", idTypes);
-        return this;
+    public B idTypes(List<KeyType> idTypes) {
+        getBuildingInstance().setIdTypes(idTypes);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List idTypes
+     * 
+     * @param idType desired value to be added
+     * @return Builder object with new value for idTypes
+     */
+    public B idType(KeyType idType) {
+        getBuildingInstance().getIdTypes().add(idType);
+        return getSelf();
     }
 
     /**
@@ -37,9 +40,20 @@ public class DefaultKeyBuilder extends AbstractBuilder<DefaultKey> {
      * @param types desired value to be set
      * @return Builder object with new value for types
      */
-    public DefaultKeyBuilder types(List<KeyElements> types) {
-        this.map.put("types", types);
-        return this;
+    public B types(List<KeyElements> types) {
+        getBuildingInstance().setTypes(types);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List types
+     * 
+     * @param type desired value to be added
+     * @return Builder object with new value for types
+     */
+    public B type(KeyElements type) {
+        getBuildingInstance().getTypes().add(type);
+        return getSelf();
     }
 
     /**
@@ -48,19 +62,19 @@ public class DefaultKeyBuilder extends AbstractBuilder<DefaultKey> {
      * @param values desired value to be set
      * @return Builder object with new value for values
      */
-    public DefaultKeyBuilder values(List<String> values) {
-        this.map.put("values", values);
-        return this;
+    public B values(List<String> values) {
+        getBuildingInstance().setValues(values);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List values
      * 
-     * @return Bean with specified values
+     * @param value desired value to be added
+     * @return Builder object with new value for values
      */
-    final public DefaultKey build() {
-        DefaultKey defaultKey = Util.fillInstanceFromMap(new DefaultKey(), this.map);
-        return defaultKey;
+    public B value(String value) {
+        getBuildingInstance().getValues().add(value);
+        return getSelf();
     }
 }

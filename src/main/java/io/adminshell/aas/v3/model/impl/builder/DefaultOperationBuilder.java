@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultOperationBuilder extends AbstractBuilder<DefaultOperation> {
-
-    public DefaultOperationBuilder() {
-        super();
-    }
-
-    public DefaultOperationBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultOperationBuilder<T extends Operation, B extends DefaultOperationBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for inputVariables
@@ -26,9 +19,20 @@ public class DefaultOperationBuilder extends AbstractBuilder<DefaultOperation> {
      * @param inputVariables desired value to be set
      * @return Builder object with new value for inputVariables
      */
-    public DefaultOperationBuilder inputVariables(List<OperationVariable> inputVariables) {
-        this.map.put("inputVariables", inputVariables);
-        return this;
+    public B inputVariables(List<OperationVariable> inputVariables) {
+        getBuildingInstance().setInputVariables(inputVariables);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List inputVariables
+     * 
+     * @param inputVariable desired value to be added
+     * @return Builder object with new value for inputVariables
+     */
+    public B inputVariable(OperationVariable inputVariable) {
+        getBuildingInstance().getInputVariables().add(inputVariable);
+        return getSelf();
     }
 
     /**
@@ -37,9 +41,20 @@ public class DefaultOperationBuilder extends AbstractBuilder<DefaultOperation> {
      * @param inoutputVariables desired value to be set
      * @return Builder object with new value for inoutputVariables
      */
-    public DefaultOperationBuilder inoutputVariables(List<OperationVariable> inoutputVariables) {
-        this.map.put("inoutputVariables", inoutputVariables);
-        return this;
+    public B inoutputVariables(List<OperationVariable> inoutputVariables) {
+        getBuildingInstance().setInoutputVariables(inoutputVariables);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List inoutputVariables
+     * 
+     * @param inoutputVariable desired value to be added
+     * @return Builder object with new value for inoutputVariables
+     */
+    public B inoutputVariable(OperationVariable inoutputVariable) {
+        getBuildingInstance().getInoutputVariables().add(inoutputVariable);
+        return getSelf();
     }
 
     /**
@@ -48,9 +63,20 @@ public class DefaultOperationBuilder extends AbstractBuilder<DefaultOperation> {
      * @param outputVariables desired value to be set
      * @return Builder object with new value for outputVariables
      */
-    public DefaultOperationBuilder outputVariables(List<OperationVariable> outputVariables) {
-        this.map.put("outputVariables", outputVariables);
-        return this;
+    public B outputVariables(List<OperationVariable> outputVariables) {
+        getBuildingInstance().setOutputVariables(outputVariables);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List outputVariables
+     * 
+     * @param outputVariable desired value to be added
+     * @return Builder object with new value for outputVariables
+     */
+    public B outputVariable(OperationVariable outputVariable) {
+        getBuildingInstance().getOutputVariables().add(outputVariable);
+        return getSelf();
     }
 
     /**
@@ -59,9 +85,9 @@ public class DefaultOperationBuilder extends AbstractBuilder<DefaultOperation> {
      * @param category desired value to be set
      * @return Builder object with new value for category
      */
-    public DefaultOperationBuilder category(String category) {
-        this.map.put("category", category);
-        return this;
+    public B category(String category) {
+        getBuildingInstance().setCategory(category);
+        return getSelf();
     }
 
     /**
@@ -70,9 +96,20 @@ public class DefaultOperationBuilder extends AbstractBuilder<DefaultOperation> {
      * @param descriptions desired value to be set
      * @return Builder object with new value for descriptions
      */
-    public DefaultOperationBuilder descriptions(List<LangString> descriptions) {
-        this.map.put("descriptions", descriptions);
-        return this;
+    public B descriptions(List<LangString> descriptions) {
+        getBuildingInstance().setDescriptions(descriptions);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List descriptions
+     * 
+     * @param description desired value to be added
+     * @return Builder object with new value for descriptions
+     */
+    public B description(LangString description) {
+        getBuildingInstance().getDescriptions().add(description);
+        return getSelf();
     }
 
     /**
@@ -81,9 +118,20 @@ public class DefaultOperationBuilder extends AbstractBuilder<DefaultOperation> {
      * @param displayNames desired value to be set
      * @return Builder object with new value for displayNames
      */
-    public DefaultOperationBuilder displayNames(List<LangString> displayNames) {
-        this.map.put("displayNames", displayNames);
-        return this;
+    public B displayNames(List<LangString> displayNames) {
+        getBuildingInstance().setDisplayNames(displayNames);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List displayNames
+     * 
+     * @param displayName desired value to be added
+     * @return Builder object with new value for displayNames
+     */
+    public B displayName(LangString displayName) {
+        getBuildingInstance().getDisplayNames().add(displayName);
+        return getSelf();
     }
 
     /**
@@ -92,9 +140,9 @@ public class DefaultOperationBuilder extends AbstractBuilder<DefaultOperation> {
      * @param idShort desired value to be set
      * @return Builder object with new value for idShort
      */
-    public DefaultOperationBuilder idShort(String idShort) {
-        this.map.put("idShort", idShort);
-        return this;
+    public B idShort(String idShort) {
+        getBuildingInstance().setIdShort(idShort);
+        return getSelf();
     }
 
     /**
@@ -103,9 +151,20 @@ public class DefaultOperationBuilder extends AbstractBuilder<DefaultOperation> {
      * @param qualifiers desired value to be set
      * @return Builder object with new value for qualifiers
      */
-    public DefaultOperationBuilder qualifiers(List<Constraint> qualifiers) {
-        this.map.put("qualifiers", qualifiers);
-        return this;
+    public B qualifiers(List<Constraint> qualifiers) {
+        getBuildingInstance().setQualifiers(qualifiers);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List qualifiers
+     * 
+     * @param qualifier desired value to be added
+     * @return Builder object with new value for qualifiers
+     */
+    public B qualifier(Constraint qualifier) {
+        getBuildingInstance().getQualifiers().add(qualifier);
+        return getSelf();
     }
 
     /**
@@ -114,9 +173,20 @@ public class DefaultOperationBuilder extends AbstractBuilder<DefaultOperation> {
      * @param dataSpecifications desired value to be set
      * @return Builder object with new value for dataSpecifications
      */
-    public DefaultOperationBuilder dataSpecifications(List<Reference> dataSpecifications) {
-        this.map.put("dataSpecifications", dataSpecifications);
-        return this;
+    public B dataSpecifications(List<Reference> dataSpecifications) {
+        getBuildingInstance().setDataSpecifications(dataSpecifications);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List dataSpecifications
+     * 
+     * @param dataSpecification desired value to be added
+     * @return Builder object with new value for dataSpecifications
+     */
+    public B dataSpecification(Reference dataSpecification) {
+        getBuildingInstance().getDataSpecifications().add(dataSpecification);
+        return getSelf();
     }
 
     /**
@@ -125,9 +195,9 @@ public class DefaultOperationBuilder extends AbstractBuilder<DefaultOperation> {
      * @param kind desired value to be set
      * @return Builder object with new value for kind
      */
-    public DefaultOperationBuilder kind(ModelingKind kind) {
-        this.map.put("kind", kind);
-        return this;
+    public B kind(ModelingKind kind) {
+        getBuildingInstance().setKind(kind);
+        return getSelf();
     }
 
     /**
@@ -136,19 +206,8 @@ public class DefaultOperationBuilder extends AbstractBuilder<DefaultOperation> {
      * @param semanticId desired value to be set
      * @return Builder object with new value for semanticId
      */
-    public DefaultOperationBuilder semanticId(Reference semanticId) {
-        this.map.put("semanticId", semanticId);
-        return this;
-    }
-
-    /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
-     * 
-     * @return Bean with specified values
-     */
-    final public DefaultOperation build() {
-        DefaultOperation defaultOperation = Util.fillInstanceFromMap(new DefaultOperation(), this.map);
-        return defaultOperation;
+    public B semanticId(Reference semanticId) {
+        getBuildingInstance().setSemanticId(semanticId);
+        return getSelf();
     }
 }

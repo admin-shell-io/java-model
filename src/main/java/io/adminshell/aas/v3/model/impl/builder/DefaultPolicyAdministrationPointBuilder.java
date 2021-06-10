@@ -9,15 +9,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultPolicyAdministrationPointBuilder extends AbstractBuilder<DefaultPolicyAdministrationPoint> {
-
-    public DefaultPolicyAdministrationPointBuilder() {
-        super();
-    }
-
-    public DefaultPolicyAdministrationPointBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultPolicyAdministrationPointBuilder<T extends PolicyAdministrationPoint, B extends DefaultPolicyAdministrationPointBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for localAccessControl
@@ -25,9 +18,9 @@ public class DefaultPolicyAdministrationPointBuilder extends AbstractBuilder<Def
      * @param localAccessControl desired value to be set
      * @return Builder object with new value for localAccessControl
      */
-    public DefaultPolicyAdministrationPointBuilder localAccessControl(AccessControl localAccessControl) {
-        this.map.put("localAccessControl", localAccessControl);
-        return this;
+    public B localAccessControl(AccessControl localAccessControl) {
+        getBuildingInstance().setLocalAccessControl(localAccessControl);
+        return getSelf();
     }
 
     /**
@@ -36,20 +29,8 @@ public class DefaultPolicyAdministrationPointBuilder extends AbstractBuilder<Def
      * @param externalAccessControl desired value to be set
      * @return Builder object with new value for externalAccessControl
      */
-    public DefaultPolicyAdministrationPointBuilder externalAccessControl(boolean externalAccessControl) {
-        this.map.put("externalAccessControl", externalAccessControl);
-        return this;
-    }
-
-    /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
-     * 
-     * @return Bean with specified values
-     */
-    final public DefaultPolicyAdministrationPoint build() {
-        DefaultPolicyAdministrationPoint defaultPolicyAdministrationPoint =
-            Util.fillInstanceFromMap(new DefaultPolicyAdministrationPoint(), this.map);
-        return defaultPolicyAdministrationPoint;
+    public B externalAccessControl(boolean externalAccessControl) {
+        getBuildingInstance().setExternalAccessControl(externalAccessControl);
+        return getSelf();
     }
 }

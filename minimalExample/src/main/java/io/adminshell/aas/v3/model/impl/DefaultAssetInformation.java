@@ -82,16 +82,6 @@ public class DefaultAssetInformation implements AssetInformation {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultAssetInformation other = new DefaultAssetInformation();
-        other.assetKinds = (List<AssetKind>) Util.clone(this.assetKinds);
-        other.globalAssetIds = (List<Reference>) Util.clone(this.globalAssetIds);
-        other.specificAssetIds = (List<IdentifierKeyValuePair>) Util.clone(this.specificAssetIds);
-        other.defaultThumbnails = (List<File>) Util.clone(this.defaultThumbnails);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
@@ -128,5 +118,18 @@ public class DefaultAssetInformation implements AssetInformation {
 
     final public void setDefaultThumbnails(List<File> defaultThumbnails) {
         this.defaultThumbnails = defaultThumbnails;
+    }
+
+    public static class Builder extends DefaultAssetInformationBuilder<DefaultAssetInformation, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAssetInformation newBuildingInstance() {
+            return new DefaultAssetInformation();
+        }
     }
 }

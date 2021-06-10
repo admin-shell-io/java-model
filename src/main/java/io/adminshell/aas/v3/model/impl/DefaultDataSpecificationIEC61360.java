@@ -166,25 +166,6 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultDataSpecificationIEC61360 other = new DefaultDataSpecificationIEC61360();
-        other.dataType = (DataTypeIEC61360) Util.clone(this.dataType);
-        other.definitions = (List<LangString>) Util.clone(this.definitions);
-        other.levelTypes = (List<LevelType>) Util.clone(this.levelTypes);
-        other.preferredNames = (List<LangString>) Util.clone(this.preferredNames);
-        other.shortNames = (List<LangString>) Util.clone(this.shortNames);
-        other.sourceOfDefinition = (String) Util.clone(this.sourceOfDefinition);
-        other.symbol = (String) Util.clone(this.symbol);
-        other.unit = (String) Util.clone(this.unit);
-        other.unitId = (Reference) Util.clone(this.unitId);
-        other.valueFormat = (String) Util.clone(this.valueFormat);
-        other.value = (String) Util.clone(this.value);
-        other.valueList = (ValueList) Util.clone(this.valueList);
-        other.valueId = (Reference) Util.clone(this.valueId);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
@@ -304,4 +285,16 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
         this.valueId = valueId;
     }
 
+    public static class Builder extends DefaultDataSpecificationIEC61360Builder<DefaultDataSpecificationIEC61360, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultDataSpecificationIEC61360 newBuildingInstance() {
+            return new DefaultDataSpecificationIEC61360();
+        }
+    }
 }

@@ -17,7 +17,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultAccessPermissionRule.class)
 })
-public interface AccessPermissionRule extends ModelClass, Referable, Qualifiable {
+public interface AccessPermissionRule extends Referable, Qualifiable {
 
     // standard methods
 

@@ -72,16 +72,6 @@ public class DefaultBlobCertificate implements BlobCertificate {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultBlobCertificate other = new DefaultBlobCertificate();
-        other.blobCertificate = (Blob) Util.clone(this.blobCertificate);
-        other.containedExtensions = (List<Reference>) Util.clone(this.containedExtensions);
-        other.lastCertificate = (boolean) Util.clone(this.lastCertificate);
-        other.policyAdministrationPoint = (PolicyAdministrationPoint) Util.clone(this.policyAdministrationPoint);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate")
@@ -118,5 +108,18 @@ public class DefaultBlobCertificate implements BlobCertificate {
 
     final public void setPolicyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint) {
         this.policyAdministrationPoint = policyAdministrationPoint;
+    }
+
+    public static class Builder extends DefaultBlobCertificateBuilder<DefaultBlobCertificate, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultBlobCertificate newBuildingInstance() {
+            return new DefaultBlobCertificate();
+        }
     }
 }

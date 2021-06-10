@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultIdentifierBuilder extends AbstractBuilder<DefaultIdentifier> {
-
-    public DefaultIdentifierBuilder() {
-        super();
-    }
-
-    public DefaultIdentifierBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultIdentifierBuilder<T extends Identifier, B extends DefaultIdentifierBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for identifiers
@@ -26,9 +19,20 @@ public class DefaultIdentifierBuilder extends AbstractBuilder<DefaultIdentifier>
      * @param identifiers desired value to be set
      * @return Builder object with new value for identifiers
      */
-    public DefaultIdentifierBuilder identifiers(List<String> identifiers) {
-        this.map.put("identifiers", identifiers);
-        return this;
+    public B identifiers(List<String> identifiers) {
+        getBuildingInstance().setIdentifiers(identifiers);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List identifiers
+     * 
+     * @param identifier desired value to be added
+     * @return Builder object with new value for identifiers
+     */
+    public B identifier(String identifier) {
+        getBuildingInstance().getIdentifiers().add(identifier);
+        return getSelf();
     }
 
     /**
@@ -37,19 +41,19 @@ public class DefaultIdentifierBuilder extends AbstractBuilder<DefaultIdentifier>
      * @param idTypes desired value to be set
      * @return Builder object with new value for idTypes
      */
-    public DefaultIdentifierBuilder idTypes(List<IdentifierType> idTypes) {
-        this.map.put("idTypes", idTypes);
-        return this;
+    public B idTypes(List<IdentifierType> idTypes) {
+        getBuildingInstance().setIdTypes(idTypes);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List idTypes
      * 
-     * @return Bean with specified values
+     * @param idType desired value to be added
+     * @return Builder object with new value for idTypes
      */
-    final public DefaultIdentifier build() {
-        DefaultIdentifier defaultIdentifier = Util.fillInstanceFromMap(new DefaultIdentifier(), this.map);
-        return defaultIdentifier;
+    public B idType(IdentifierType idType) {
+        getBuildingInstance().getIdTypes().add(idType);
+        return getSelf();
     }
 }

@@ -46,13 +46,6 @@ public class DefaultPolicyEnforcementPoints implements PolicyEnforcementPoints {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultPolicyEnforcementPoints other = new DefaultPolicyEnforcementPoints();
-        other.externalPolicyEnforcementPoint = (boolean) Util.clone(this.externalPolicyEnforcementPoint);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyEnforcementPoints/externalPolicyEnforcementPoint")
@@ -62,5 +55,18 @@ public class DefaultPolicyEnforcementPoints implements PolicyEnforcementPoints {
 
     final public void setExternalPolicyEnforcementPoint(boolean externalPolicyEnforcementPoint) {
         this.externalPolicyEnforcementPoint = externalPolicyEnforcementPoint;
+    }
+
+    public static class Builder extends DefaultPolicyEnforcementPointsBuilder<DefaultPolicyEnforcementPoints, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultPolicyEnforcementPoints newBuildingInstance() {
+            return new DefaultPolicyEnforcementPoints();
+        }
     }
 }

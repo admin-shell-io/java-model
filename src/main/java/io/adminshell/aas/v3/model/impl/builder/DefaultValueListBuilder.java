@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultValueListBuilder extends AbstractBuilder<DefaultValueList> {
-
-    public DefaultValueListBuilder() {
-        super();
-    }
-
-    public DefaultValueListBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultValueListBuilder<T extends ValueList, B extends DefaultValueListBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for valueReferencePairTypes
@@ -26,19 +19,19 @@ public class DefaultValueListBuilder extends AbstractBuilder<DefaultValueList> {
      * @param valueReferencePairTypes desired value to be set
      * @return Builder object with new value for valueReferencePairTypes
      */
-    public DefaultValueListBuilder valueReferencePairTypes(List<ValueReferencePair> valueReferencePairTypes) {
-        this.map.put("valueReferencePairTypes", valueReferencePairTypes);
-        return this;
+    public B valueReferencePairTypes(List<ValueReferencePair> valueReferencePairTypes) {
+        getBuildingInstance().setValueReferencePairTypes(valueReferencePairTypes);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List valueReferencePairTypes
      * 
-     * @return Bean with specified values
+     * @param valueReferencePairTypes desired value to be added
+     * @return Builder object with new value for valueReferencePairTypes
      */
-    final public DefaultValueList build() {
-        DefaultValueList defaultValueList = Util.fillInstanceFromMap(new DefaultValueList(), this.map);
-        return defaultValueList;
+    public B valueReferencePairTypes(ValueReferencePair valueReferencePairTypes) {
+        getBuildingInstance().getValueReferencePairTypes().add(valueReferencePairTypes);
+        return getSelf();
     }
 }

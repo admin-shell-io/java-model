@@ -63,15 +63,6 @@ public class DefaultSecurity implements Security {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultSecurity other = new DefaultSecurity();
-        other.accessControlPolicyPoints = (AccessControlPolicyPoints) Util.clone(this.accessControlPolicyPoints);
-        other.certificates = (List<Certificate>) Util.clone(this.certificates);
-        other.requiredCertificateExtensions = (List<Reference>) Util.clone(this.requiredCertificateExtensions);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
@@ -99,5 +90,18 @@ public class DefaultSecurity implements Security {
 
     final public void setRequiredCertificateExtensions(List<Reference> requiredCertificateExtensions) {
         this.requiredCertificateExtensions = requiredCertificateExtensions;
+    }
+
+    public static class Builder extends DefaultSecurityBuilder<DefaultSecurity, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultSecurity newBuildingInstance() {
+            return new DefaultSecurity();
+        }
     }
 }

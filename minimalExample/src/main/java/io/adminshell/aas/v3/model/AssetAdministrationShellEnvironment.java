@@ -16,7 +16,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultAssetAdministrationShellEnvironment.class)
 })
-public interface AssetAdministrationShellEnvironment extends ModelClass {
+public interface AssetAdministrationShellEnvironment {
 
     // standard methods
 

@@ -16,7 +16,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultBlobCertificate.class)
 })
-public interface BlobCertificate extends ModelClass, Certificate {
+public interface BlobCertificate extends Certificate {
 
     // standard methods
 

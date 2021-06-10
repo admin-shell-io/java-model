@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultDataSpecificationPhysicalUnitBuilder extends AbstractBuilder<DefaultDataSpecificationPhysicalUnit> {
-
-    public DefaultDataSpecificationPhysicalUnitBuilder() {
-        super();
-    }
-
-    public DefaultDataSpecificationPhysicalUnitBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultDataSpecificationPhysicalUnitBuilder<T extends DataSpecificationPhysicalUnit, B extends DefaultDataSpecificationPhysicalUnitBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for conversionFactors
@@ -26,9 +19,20 @@ public class DefaultDataSpecificationPhysicalUnitBuilder extends AbstractBuilder
      * @param conversionFactors desired value to be set
      * @return Builder object with new value for conversionFactors
      */
-    public DefaultDataSpecificationPhysicalUnitBuilder conversionFactors(List<String> conversionFactors) {
-        this.map.put("conversionFactors", conversionFactors);
-        return this;
+    public B conversionFactors(List<String> conversionFactors) {
+        getBuildingInstance().setConversionFactors(conversionFactors);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List conversionFactors
+     * 
+     * @param conversionFactor desired value to be added
+     * @return Builder object with new value for conversionFactors
+     */
+    public B conversionFactor(String conversionFactor) {
+        getBuildingInstance().getConversionFactors().add(conversionFactor);
+        return getSelf();
     }
 
     /**
@@ -37,9 +41,20 @@ public class DefaultDataSpecificationPhysicalUnitBuilder extends AbstractBuilder
      * @param definitions desired value to be set
      * @return Builder object with new value for definitions
      */
-    public DefaultDataSpecificationPhysicalUnitBuilder definitions(List<LangString> definitions) {
-        this.map.put("definitions", definitions);
-        return this;
+    public B definitions(List<LangString> definitions) {
+        getBuildingInstance().setDefinitions(definitions);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List definitions
+     * 
+     * @param definition desired value to be added
+     * @return Builder object with new value for definitions
+     */
+    public B definition(LangString definition) {
+        getBuildingInstance().getDefinitions().add(definition);
+        return getSelf();
     }
 
     /**
@@ -48,9 +63,20 @@ public class DefaultDataSpecificationPhysicalUnitBuilder extends AbstractBuilder
      * @param dinNotations desired value to be set
      * @return Builder object with new value for dinNotations
      */
-    public DefaultDataSpecificationPhysicalUnitBuilder dinNotations(List<String> dinNotations) {
-        this.map.put("dinNotations", dinNotations);
-        return this;
+    public B dinNotations(List<String> dinNotations) {
+        getBuildingInstance().setDinNotations(dinNotations);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List dinNotations
+     * 
+     * @param dinNotation desired value to be added
+     * @return Builder object with new value for dinNotations
+     */
+    public B dinNotation(String dinNotation) {
+        getBuildingInstance().getDinNotations().add(dinNotation);
+        return getSelf();
     }
 
     /**
@@ -59,9 +85,20 @@ public class DefaultDataSpecificationPhysicalUnitBuilder extends AbstractBuilder
      * @param eceCodes desired value to be set
      * @return Builder object with new value for eceCodes
      */
-    public DefaultDataSpecificationPhysicalUnitBuilder eceCodes(List<String> eceCodes) {
-        this.map.put("eceCodes", eceCodes);
-        return this;
+    public B eceCodes(List<String> eceCodes) {
+        getBuildingInstance().setEceCodes(eceCodes);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List eceCodes
+     * 
+     * @param eceCode desired value to be added
+     * @return Builder object with new value for eceCodes
+     */
+    public B eceCode(String eceCode) {
+        getBuildingInstance().getEceCodes().add(eceCode);
+        return getSelf();
     }
 
     /**
@@ -70,9 +107,20 @@ public class DefaultDataSpecificationPhysicalUnitBuilder extends AbstractBuilder
      * @param eceNames desired value to be set
      * @return Builder object with new value for eceNames
      */
-    public DefaultDataSpecificationPhysicalUnitBuilder eceNames(List<String> eceNames) {
-        this.map.put("eceNames", eceNames);
-        return this;
+    public B eceNames(List<String> eceNames) {
+        getBuildingInstance().setEceNames(eceNames);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List eceNames
+     * 
+     * @param eceName desired value to be added
+     * @return Builder object with new value for eceNames
+     */
+    public B eceName(String eceName) {
+        getBuildingInstance().getEceNames().add(eceName);
+        return getSelf();
     }
 
     /**
@@ -81,9 +129,20 @@ public class DefaultDataSpecificationPhysicalUnitBuilder extends AbstractBuilder
      * @param nistNames desired value to be set
      * @return Builder object with new value for nistNames
      */
-    public DefaultDataSpecificationPhysicalUnitBuilder nistNames(List<String> nistNames) {
-        this.map.put("nistNames", nistNames);
-        return this;
+    public B nistNames(List<String> nistNames) {
+        getBuildingInstance().setNistNames(nistNames);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List nistNames
+     * 
+     * @param nistName desired value to be added
+     * @return Builder object with new value for nistNames
+     */
+    public B nistName(String nistName) {
+        getBuildingInstance().getNistNames().add(nistName);
+        return getSelf();
     }
 
     /**
@@ -92,9 +151,20 @@ public class DefaultDataSpecificationPhysicalUnitBuilder extends AbstractBuilder
      * @param siNames desired value to be set
      * @return Builder object with new value for siNames
      */
-    public DefaultDataSpecificationPhysicalUnitBuilder siNames(List<String> siNames) {
-        this.map.put("siNames", siNames);
-        return this;
+    public B siNames(List<String> siNames) {
+        getBuildingInstance().setSiNames(siNames);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List siNames
+     * 
+     * @param siName desired value to be added
+     * @return Builder object with new value for siNames
+     */
+    public B siName(String siName) {
+        getBuildingInstance().getSiNames().add(siName);
+        return getSelf();
     }
 
     /**
@@ -103,9 +173,20 @@ public class DefaultDataSpecificationPhysicalUnitBuilder extends AbstractBuilder
      * @param siNotations desired value to be set
      * @return Builder object with new value for siNotations
      */
-    public DefaultDataSpecificationPhysicalUnitBuilder siNotations(List<String> siNotations) {
-        this.map.put("siNotations", siNotations);
-        return this;
+    public B siNotations(List<String> siNotations) {
+        getBuildingInstance().setSiNotations(siNotations);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List siNotations
+     * 
+     * @param siNotation desired value to be added
+     * @return Builder object with new value for siNotations
+     */
+    public B siNotation(String siNotation) {
+        getBuildingInstance().getSiNotations().add(siNotation);
+        return getSelf();
     }
 
     /**
@@ -114,9 +195,20 @@ public class DefaultDataSpecificationPhysicalUnitBuilder extends AbstractBuilder
      * @param registrationAuthorityIds desired value to be set
      * @return Builder object with new value for registrationAuthorityIds
      */
-    public DefaultDataSpecificationPhysicalUnitBuilder registrationAuthorityIds(List<String> registrationAuthorityIds) {
-        this.map.put("registrationAuthorityIds", registrationAuthorityIds);
-        return this;
+    public B registrationAuthorityIds(List<String> registrationAuthorityIds) {
+        getBuildingInstance().setRegistrationAuthorityIds(registrationAuthorityIds);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List registrationAuthorityIds
+     * 
+     * @param registrationAuthorityId desired value to be added
+     * @return Builder object with new value for registrationAuthorityIds
+     */
+    public B registrationAuthorityId(String registrationAuthorityId) {
+        getBuildingInstance().getRegistrationAuthorityIds().add(registrationAuthorityId);
+        return getSelf();
     }
 
     /**
@@ -125,9 +217,20 @@ public class DefaultDataSpecificationPhysicalUnitBuilder extends AbstractBuilder
      * @param suppliers desired value to be set
      * @return Builder object with new value for suppliers
      */
-    public DefaultDataSpecificationPhysicalUnitBuilder suppliers(List<String> suppliers) {
-        this.map.put("suppliers", suppliers);
-        return this;
+    public B suppliers(List<String> suppliers) {
+        getBuildingInstance().setSuppliers(suppliers);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List suppliers
+     * 
+     * @param supplier desired value to be added
+     * @return Builder object with new value for suppliers
+     */
+    public B supplier(String supplier) {
+        getBuildingInstance().getSuppliers().add(supplier);
+        return getSelf();
     }
 
     /**
@@ -136,9 +239,20 @@ public class DefaultDataSpecificationPhysicalUnitBuilder extends AbstractBuilder
      * @param unitNames desired value to be set
      * @return Builder object with new value for unitNames
      */
-    public DefaultDataSpecificationPhysicalUnitBuilder unitNames(List<String> unitNames) {
-        this.map.put("unitNames", unitNames);
-        return this;
+    public B unitNames(List<String> unitNames) {
+        getBuildingInstance().setUnitNames(unitNames);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List unitNames
+     * 
+     * @param unitName desired value to be added
+     * @return Builder object with new value for unitNames
+     */
+    public B unitName(String unitName) {
+        getBuildingInstance().getUnitNames().add(unitName);
+        return getSelf();
     }
 
     /**
@@ -147,20 +261,20 @@ public class DefaultDataSpecificationPhysicalUnitBuilder extends AbstractBuilder
      * @param unitSymbols desired value to be set
      * @return Builder object with new value for unitSymbols
      */
-    public DefaultDataSpecificationPhysicalUnitBuilder unitSymbols(List<String> unitSymbols) {
-        this.map.put("unitSymbols", unitSymbols);
-        return this;
+    public B unitSymbols(List<String> unitSymbols) {
+        getBuildingInstance().setUnitSymbols(unitSymbols);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List unitSymbols
      * 
-     * @return Bean with specified values
+     * @param unitSymbol desired value to be added
+     * @return Builder object with new value for unitSymbols
      */
-    final public DefaultDataSpecificationPhysicalUnit build() {
-        DefaultDataSpecificationPhysicalUnit defaultDataSpecificationPhysicalUnit =
-            Util.fillInstanceFromMap(new DefaultDataSpecificationPhysicalUnit(), this.map);
-        return defaultDataSpecificationPhysicalUnit;
+    public B unitSymbol(String unitSymbol) {
+        getBuildingInstance().getUnitSymbols().add(unitSymbol);
+        return getSelf();
     }
+
 }

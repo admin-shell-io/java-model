@@ -47,13 +47,6 @@ public class DefaultValueList implements ValueList {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultValueList other = new DefaultValueList();
-        other.valueReferencePairTypes = (List<ValueReferencePair>) Util.clone(this.valueReferencePairTypes);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueList/valueReferencePairTypes")
@@ -63,5 +56,18 @@ public class DefaultValueList implements ValueList {
 
     final public void setValueReferencePairTypes(List<ValueReferencePair> valueReferencePairTypes) {
         this.valueReferencePairTypes = valueReferencePairTypes;
+    }
+
+    public static class Builder extends DefaultValueListBuilder<DefaultValueList, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultValueList newBuildingInstance() {
+            return new DefaultValueList();
+        }
     }
 }

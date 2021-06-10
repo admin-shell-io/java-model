@@ -9,15 +9,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultIdentifierKeyValuePairBuilder extends AbstractBuilder<DefaultIdentifierKeyValuePair> {
-
-    public DefaultIdentifierKeyValuePairBuilder() {
-        super();
-    }
-
-    public DefaultIdentifierKeyValuePairBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultIdentifierKeyValuePairBuilder<T extends IdentifierKeyValuePair, B extends DefaultIdentifierKeyValuePairBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for key
@@ -25,9 +18,9 @@ public class DefaultIdentifierKeyValuePairBuilder extends AbstractBuilder<Defaul
      * @param key desired value to be set
      * @return Builder object with new value for key
      */
-    public DefaultIdentifierKeyValuePairBuilder key(String key) {
-        this.map.put("key", key);
-        return this;
+    public B key(String key) {
+        getBuildingInstance().setKey(key);
+        return getSelf();
     }
 
     /**
@@ -36,9 +29,9 @@ public class DefaultIdentifierKeyValuePairBuilder extends AbstractBuilder<Defaul
      * @param value desired value to be set
      * @return Builder object with new value for value
      */
-    public DefaultIdentifierKeyValuePairBuilder value(String value) {
-        this.map.put("value", value);
-        return this;
+    public B value(String value) {
+        getBuildingInstance().setValue(value);
+        return getSelf();
     }
 
     /**
@@ -47,9 +40,9 @@ public class DefaultIdentifierKeyValuePairBuilder extends AbstractBuilder<Defaul
      * @param externalSubjectId desired value to be set
      * @return Builder object with new value for externalSubjectId
      */
-    public DefaultIdentifierKeyValuePairBuilder externalSubjectId(Reference externalSubjectId) {
-        this.map.put("externalSubjectId", externalSubjectId);
-        return this;
+    public B externalSubjectId(Reference externalSubjectId) {
+        getBuildingInstance().setExternalSubjectId(externalSubjectId);
+        return getSelf();
     }
 
     /**
@@ -58,20 +51,8 @@ public class DefaultIdentifierKeyValuePairBuilder extends AbstractBuilder<Defaul
      * @param semanticId desired value to be set
      * @return Builder object with new value for semanticId
      */
-    public DefaultIdentifierKeyValuePairBuilder semanticId(Reference semanticId) {
-        this.map.put("semanticId", semanticId);
-        return this;
-    }
-
-    /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
-     * 
-     * @return Bean with specified values
-     */
-    final public DefaultIdentifierKeyValuePair build() {
-        DefaultIdentifierKeyValuePair defaultIdentifierKeyValuePair =
-            Util.fillInstanceFromMap(new DefaultIdentifierKeyValuePair(), this.map);
-        return defaultIdentifierKeyValuePair;
+    public B semanticId(Reference semanticId) {
+        getBuildingInstance().setSemanticId(semanticId);
+        return getSelf();
     }
 }

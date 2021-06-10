@@ -57,14 +57,6 @@ public class DefaultIdentifiable implements Identifiable {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultIdentifiable other = new DefaultIdentifiable();
-        other.administrations = (List<AdministrativeInformation>) Util.clone(this.administrations);
-        other.identifications = (List<Identifier>) Util.clone(this.identifications);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
@@ -83,5 +75,18 @@ public class DefaultIdentifiable implements Identifiable {
 
     final public void setIdentifications(List<Identifier> identifications) {
         this.identifications = identifications;
+    }
+
+    public static class Builder extends DefaultIdentifiableBuilder<DefaultIdentifiable, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultIdentifiable newBuildingInstance() {
+            return new DefaultIdentifiable();
+        }
     }
 }

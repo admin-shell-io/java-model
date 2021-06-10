@@ -136,22 +136,6 @@ public class DefaultFile implements File {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultFile other = new DefaultFile();
-        other.mimeType = (String) Util.clone(this.mimeType);
-        other.value = (String) Util.clone(this.value);
-        other.category = (String) Util.clone(this.category);
-        other.descriptions = (List<LangString>) Util.clone(this.descriptions);
-        other.displayNames = (List<LangString>) Util.clone(this.displayNames);
-        other.idShort = (String) Util.clone(this.idShort);
-        other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
-        other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
-        other.kind = (ModelingKind) Util.clone(this.kind);
-        other.semanticId = (Reference) Util.clone(this.semanticId);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/File/mimeType")
@@ -242,5 +226,18 @@ public class DefaultFile implements File {
 
     final public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
+    }
+
+    public static class Builder extends DefaultFileBuilder<DefaultFile, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultFile newBuildingInstance() {
+            return new DefaultFile();
+        }
     }
 }

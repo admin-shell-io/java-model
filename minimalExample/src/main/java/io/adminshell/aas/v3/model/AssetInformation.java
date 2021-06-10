@@ -20,7 +20,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultAssetInformation.class)
 })
-public interface AssetInformation extends ModelClass {
+public interface AssetInformation {
 
     // standard methods
 

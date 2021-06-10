@@ -19,7 +19,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultEntity.class)
 })
-public interface Entity extends ModelClass, SubmodelElement {
+public interface Entity extends SubmodelElement {
 
     // standard methods
 

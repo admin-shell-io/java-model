@@ -48,13 +48,6 @@ public class DefaultOperationVariable implements OperationVariable {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultOperationVariable other = new DefaultOperationVariable();
-        other.value = (SubmodelElement) Util.clone(this.value);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/OperationVariable/value")
@@ -64,5 +57,18 @@ public class DefaultOperationVariable implements OperationVariable {
 
     final public void setValue(SubmodelElement value) {
         this.value = value;
+    }
+
+    public static class Builder extends DefaultOperationVariableBuilder<DefaultOperationVariable, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultOperationVariable newBuildingInstance() {
+            return new DefaultOperationVariable();
+        }
     }
 }

@@ -16,7 +16,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
     @KnownSubtypes.Type(value = Formula.class),
     @KnownSubtypes.Type(value = Qualifier.class)
 })
-public interface Constraint extends ModelClass {
+public interface Constraint {
 
     // standard methods
 

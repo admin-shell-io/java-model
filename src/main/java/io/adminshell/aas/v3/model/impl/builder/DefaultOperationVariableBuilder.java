@@ -9,15 +9,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultOperationVariableBuilder extends AbstractBuilder<DefaultOperationVariable> {
-
-    public DefaultOperationVariableBuilder() {
-        super();
-    }
-
-    public DefaultOperationVariableBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultOperationVariableBuilder<T extends OperationVariable, B extends DefaultOperationVariableBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for value
@@ -25,19 +18,8 @@ public class DefaultOperationVariableBuilder extends AbstractBuilder<DefaultOper
      * @param value desired value to be set
      * @return Builder object with new value for value
      */
-    public DefaultOperationVariableBuilder value(SubmodelElement value) {
-        this.map.put("value", value);
-        return this;
-    }
-
-    /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
-     * 
-     * @return Bean with specified values
-     */
-    final public DefaultOperationVariable build() {
-        DefaultOperationVariable defaultOperationVariable = Util.fillInstanceFromMap(new DefaultOperationVariable(), this.map);
-        return defaultOperationVariable;
+    public B value(SubmodelElement value) {
+        getBuildingInstance().setValue(value);
+        return getSelf();
     }
 }

@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultBasicEventBuilder extends AbstractBuilder<DefaultBasicEvent> {
-
-    public DefaultBasicEventBuilder() {
-        super();
-    }
-
-    public DefaultBasicEventBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultBasicEventBuilder<T extends BasicEvent, B extends DefaultBasicEventBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for observed
@@ -26,9 +19,9 @@ public class DefaultBasicEventBuilder extends AbstractBuilder<DefaultBasicEvent>
      * @param observed desired value to be set
      * @return Builder object with new value for observed
      */
-    public DefaultBasicEventBuilder observed(Reference observed) {
-        this.map.put("observed", observed);
-        return this;
+    public B observed(Reference observed) {
+        getBuildingInstance().setObserved(observed);
+        return getSelf();
     }
 
     /**
@@ -37,9 +30,9 @@ public class DefaultBasicEventBuilder extends AbstractBuilder<DefaultBasicEvent>
      * @param category desired value to be set
      * @return Builder object with new value for category
      */
-    public DefaultBasicEventBuilder category(String category) {
-        this.map.put("category", category);
-        return this;
+    public B category(String category) {
+        getBuildingInstance().setCategory(category);
+        return getSelf();
     }
 
     /**
@@ -48,9 +41,20 @@ public class DefaultBasicEventBuilder extends AbstractBuilder<DefaultBasicEvent>
      * @param descriptions desired value to be set
      * @return Builder object with new value for descriptions
      */
-    public DefaultBasicEventBuilder descriptions(List<LangString> descriptions) {
-        this.map.put("descriptions", descriptions);
-        return this;
+    public B descriptions(List<LangString> descriptions) {
+        getBuildingInstance().setDescriptions(descriptions);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List descriptions
+     * 
+     * @param description desired value to be added
+     * @return Builder object with new value for descriptions
+     */
+    public B description(LangString description) {
+        getBuildingInstance().getDescriptions().add(description);
+        return getSelf();
     }
 
     /**
@@ -59,9 +63,20 @@ public class DefaultBasicEventBuilder extends AbstractBuilder<DefaultBasicEvent>
      * @param displayNames desired value to be set
      * @return Builder object with new value for displayNames
      */
-    public DefaultBasicEventBuilder displayNames(List<LangString> displayNames) {
-        this.map.put("displayNames", displayNames);
-        return this;
+    public B displayNames(List<LangString> displayNames) {
+        getBuildingInstance().setDisplayNames(displayNames);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List displayNames
+     * 
+     * @param displayName desired value to be added
+     * @return Builder object with new value for displayNames
+     */
+    public B displayName(LangString displayName) {
+        getBuildingInstance().getDisplayNames().add(displayName);
+        return getSelf();
     }
 
     /**
@@ -70,9 +85,9 @@ public class DefaultBasicEventBuilder extends AbstractBuilder<DefaultBasicEvent>
      * @param idShort desired value to be set
      * @return Builder object with new value for idShort
      */
-    public DefaultBasicEventBuilder idShort(String idShort) {
-        this.map.put("idShort", idShort);
-        return this;
+    public B idShort(String idShort) {
+        getBuildingInstance().setIdShort(idShort);
+        return getSelf();
     }
 
     /**
@@ -81,9 +96,20 @@ public class DefaultBasicEventBuilder extends AbstractBuilder<DefaultBasicEvent>
      * @param qualifiers desired value to be set
      * @return Builder object with new value for qualifiers
      */
-    public DefaultBasicEventBuilder qualifiers(List<Constraint> qualifiers) {
-        this.map.put("qualifiers", qualifiers);
-        return this;
+    public B qualifiers(List<Constraint> qualifiers) {
+        getBuildingInstance().setQualifiers(qualifiers);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List qualifiers
+     * 
+     * @param qualifier desired value to be added
+     * @return Builder object with new value for qualifiers
+     */
+    public B qualifier(Constraint qualifier) {
+        getBuildingInstance().getQualifiers().add(qualifier);
+        return getSelf();
     }
 
     /**
@@ -92,9 +118,20 @@ public class DefaultBasicEventBuilder extends AbstractBuilder<DefaultBasicEvent>
      * @param dataSpecifications desired value to be set
      * @return Builder object with new value for dataSpecifications
      */
-    public DefaultBasicEventBuilder dataSpecifications(List<Reference> dataSpecifications) {
-        this.map.put("dataSpecifications", dataSpecifications);
-        return this;
+    public B dataSpecifications(List<Reference> dataSpecifications) {
+        getBuildingInstance().setDataSpecifications(dataSpecifications);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List dataSpecifications
+     * 
+     * @param dataSpecification desired value to be added
+     * @return Builder object with new value for dataSpecifications
+     */
+    public B dataSpecification(Reference dataSpecification) {
+        getBuildingInstance().getDataSpecifications().add(dataSpecification);
+        return getSelf();
     }
 
     /**
@@ -103,9 +140,9 @@ public class DefaultBasicEventBuilder extends AbstractBuilder<DefaultBasicEvent>
      * @param kind desired value to be set
      * @return Builder object with new value for kind
      */
-    public DefaultBasicEventBuilder kind(ModelingKind kind) {
-        this.map.put("kind", kind);
-        return this;
+    public B kind(ModelingKind kind) {
+        getBuildingInstance().setKind(kind);
+        return getSelf();
     }
 
     /**
@@ -114,19 +151,8 @@ public class DefaultBasicEventBuilder extends AbstractBuilder<DefaultBasicEvent>
      * @param semanticId desired value to be set
      * @return Builder object with new value for semanticId
      */
-    public DefaultBasicEventBuilder semanticId(Reference semanticId) {
-        this.map.put("semanticId", semanticId);
-        return this;
-    }
-
-    /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
-     * 
-     * @return Bean with specified values
-     */
-    final public DefaultBasicEvent build() {
-        DefaultBasicEvent defaultBasicEvent = Util.fillInstanceFromMap(new DefaultBasicEvent(), this.map);
-        return defaultBasicEvent;
+    public B semanticId(Reference semanticId) {
+        getBuildingInstance().setSemanticId(semanticId);
+        return getSelf();
     }
 }

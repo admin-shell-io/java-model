@@ -148,23 +148,6 @@ public class DefaultRange implements Range {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultRange other = new DefaultRange();
-        other.valueType = (String) Util.clone(this.valueType);
-        other.max = (String) Util.clone(this.max);
-        other.min = (String) Util.clone(this.min);
-        other.category = (String) Util.clone(this.category);
-        other.descriptions = (List<LangString>) Util.clone(this.descriptions);
-        other.displayNames = (List<LangString>) Util.clone(this.displayNames);
-        other.idShort = (String) Util.clone(this.idShort);
-        other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
-        other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
-        other.kind = (ModelingKind) Util.clone(this.kind);
-        other.semanticId = (Reference) Util.clone(this.semanticId);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Range/valueType")
@@ -264,5 +247,18 @@ public class DefaultRange implements Range {
 
     final public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
+    }
+
+    public static class Builder extends DefaultRangeBuilder<DefaultRange, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultRange newBuildingInstance() {
+            return new DefaultRange();
+        }
     }
 }

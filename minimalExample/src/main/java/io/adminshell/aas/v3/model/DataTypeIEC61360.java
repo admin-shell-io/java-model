@@ -15,7 +15,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultDataTypeIEC61360.class)
 })
-public interface DataTypeIEC61360 extends ModelClass {
+public interface DataTypeIEC61360 {
 
     // standard methods
 

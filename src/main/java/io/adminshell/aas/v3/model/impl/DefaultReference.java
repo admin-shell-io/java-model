@@ -50,13 +50,6 @@ public class DefaultReference implements Reference {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultReference other = new DefaultReference();
-        other.keys = (List<Key>) Util.clone(this.keys);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Reference/key")
@@ -66,5 +59,18 @@ public class DefaultReference implements Reference {
 
     final public void setKeys(List<Key> keys) {
         this.keys = keys;
+    }
+
+    public static class Builder extends DefaultReferenceBuilder<DefaultReference, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultReference newBuildingInstance() {
+            return new DefaultReference();
+        }
     }
 }

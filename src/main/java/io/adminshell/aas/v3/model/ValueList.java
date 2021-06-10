@@ -16,7 +16,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultValueList.class)
 })
-public interface ValueList extends ModelClass {
+public interface ValueList {
 
     // standard methods
 

@@ -114,19 +114,6 @@ public class DefaultAsset implements Asset {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultAsset other = new DefaultAsset();
-        other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
-        other.administration = (AdministrativeInformation) Util.clone(this.administration);
-        other.identification = (Identifier) Util.clone(this.identification);
-        other.category = (String) Util.clone(this.category);
-        other.descriptions = (List<LangString>) Util.clone(this.descriptions);
-        other.displayNames = (List<LangString>) Util.clone(this.displayNames);
-        other.idShort = (String) Util.clone(this.idShort);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
@@ -190,5 +177,18 @@ public class DefaultAsset implements Asset {
 
     final public void setIdShort(String idShort) {
         this.idShort = idShort;
+    }
+
+    public static class Builder extends DefaultAssetBuilder<DefaultAsset, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAsset newBuildingInstance() {
+            return new DefaultAsset();
+        }
     }
 }

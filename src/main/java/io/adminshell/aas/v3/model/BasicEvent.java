@@ -15,7 +15,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultBasicEvent.class)
 })
-public interface BasicEvent extends ModelClass, Event {
+public interface BasicEvent extends Event {
 
     // standard methods
 

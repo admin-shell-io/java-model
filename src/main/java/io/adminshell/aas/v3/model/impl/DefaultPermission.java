@@ -58,14 +58,6 @@ public class DefaultPermission implements Permission {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultPermission other = new DefaultPermission();
-        other.kindOfPermission = (PermissionKind) Util.clone(this.kindOfPermission);
-        other.permission = (Reference) Util.clone(this.permission);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
@@ -84,5 +76,18 @@ public class DefaultPermission implements Permission {
 
     final public void setPermission(Reference permission) {
         this.permission = permission;
+    }
+
+    public static class Builder extends DefaultPermissionBuilder<DefaultPermission, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultPermission newBuildingInstance() {
+            return new DefaultPermission();
+        }
     }
 }

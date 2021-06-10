@@ -47,13 +47,6 @@ public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultPolicyDecisionPoint other = new DefaultPolicyDecisionPoint();
-        other.externalPolicyDecisionPoints = (boolean) Util.clone(this.externalPolicyDecisionPoints);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
@@ -63,5 +56,18 @@ public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
 
     final public void setExternalPolicyDecisionPoints(boolean externalPolicyDecisionPoints) {
         this.externalPolicyDecisionPoints = externalPolicyDecisionPoints;
+    }
+
+    public static class Builder extends DefaultPolicyDecisionPointBuilder<DefaultPolicyDecisionPoint, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultPolicyDecisionPoint newBuildingInstance() {
+            return new DefaultPolicyDecisionPoint();
+        }
     }
 }

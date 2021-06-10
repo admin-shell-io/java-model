@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultReferableBuilder extends AbstractBuilder<DefaultReferable> {
-
-    public DefaultReferableBuilder() {
-        super();
-    }
-
-    public DefaultReferableBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultReferableBuilder<T extends Referable, B extends DefaultReferableBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for categories
@@ -26,9 +19,20 @@ public class DefaultReferableBuilder extends AbstractBuilder<DefaultReferable> {
      * @param categories desired value to be set
      * @return Builder object with new value for categories
      */
-    public DefaultReferableBuilder categories(List<String> categories) {
-        this.map.put("categories", categories);
-        return this;
+    public B categories(List<String> categories) {
+        getBuildingInstance().setCategories(categories);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List categories
+     * 
+     * @param category desired value to be added
+     * @return Builder object with new value for categories
+     */
+    public B category(String category) {
+        getBuildingInstance().getCategories().add(category);
+        return getSelf();
     }
 
     /**
@@ -37,9 +41,20 @@ public class DefaultReferableBuilder extends AbstractBuilder<DefaultReferable> {
      * @param descriptions desired value to be set
      * @return Builder object with new value for descriptions
      */
-    public DefaultReferableBuilder descriptions(List<LangStringSet> descriptions) {
-        this.map.put("descriptions", descriptions);
-        return this;
+    public B descriptions(List<LangStringSet> descriptions) {
+        getBuildingInstance().setDescriptions(descriptions);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List descriptions
+     * 
+     * @param description desired value to be added
+     * @return Builder object with new value for descriptions
+     */
+    public B description(LangStringSet description) {
+        getBuildingInstance().getDescriptions().add(description);
+        return getSelf();
     }
 
     /**
@@ -48,9 +63,20 @@ public class DefaultReferableBuilder extends AbstractBuilder<DefaultReferable> {
      * @param displayNames desired value to be set
      * @return Builder object with new value for displayNames
      */
-    public DefaultReferableBuilder displayNames(List<LangStringSet> displayNames) {
-        this.map.put("displayNames", displayNames);
-        return this;
+    public B displayNames(List<LangStringSet> displayNames) {
+        getBuildingInstance().setDisplayNames(displayNames);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List displayNames
+     * 
+     * @param displayName desired value to be added
+     * @return Builder object with new value for displayNames
+     */
+    public B displayName(LangStringSet displayName) {
+        getBuildingInstance().getDisplayNames().add(displayName);
+        return getSelf();
     }
 
     /**
@@ -59,19 +85,19 @@ public class DefaultReferableBuilder extends AbstractBuilder<DefaultReferable> {
      * @param idShorts desired value to be set
      * @return Builder object with new value for idShorts
      */
-    public DefaultReferableBuilder idShorts(List<String> idShorts) {
-        this.map.put("idShorts", idShorts);
-        return this;
+    public B idShorts(List<String> idShorts) {
+        getBuildingInstance().setIdShorts(idShorts);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List idShorts
      * 
-     * @return Bean with specified values
+     * @param idShort desired value to be added
+     * @return Builder object with new value for idShorts
      */
-    final public DefaultReferable build() {
-        DefaultReferable defaultReferable = Util.fillInstanceFromMap(new DefaultReferable(), this.map);
-        return defaultReferable;
+    public B idShort(String idShort) {
+        getBuildingInstance().getIdShorts().add(idShort);
+        return getSelf();
     }
 }

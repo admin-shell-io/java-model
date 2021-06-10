@@ -18,7 +18,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultReferenceElement.class)
 })
-public interface ReferenceElement extends ModelClass, DataElement {
+public interface ReferenceElement extends DataElement {
 
     // standard methods
 

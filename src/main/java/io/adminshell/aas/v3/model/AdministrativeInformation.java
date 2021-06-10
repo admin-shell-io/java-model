@@ -21,7 +21,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultAdministrativeInformation.class)
 })
-public interface AdministrativeInformation extends ModelClass, HasDataSpecification {
+public interface AdministrativeInformation extends HasDataSpecification {
 
     // standard methods
 

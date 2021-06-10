@@ -48,13 +48,6 @@ public class DefaultFormula implements Formula {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultFormula other = new DefaultFormula();
-        other.dependsOns = (List<Reference>) Util.clone(this.dependsOns);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn")
@@ -66,4 +59,16 @@ public class DefaultFormula implements Formula {
         this.dependsOns = dependsOns;
     }
 
+    public static class Builder extends DefaultFormulaBuilder<DefaultFormula, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultFormula newBuildingInstance() {
+            return new DefaultFormula();
+        }
+    }
 }

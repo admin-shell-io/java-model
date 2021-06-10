@@ -39,11 +39,16 @@ public class DefaultDataSpecificationContent implements DataSpecificationContent
         return true;
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultDataSpecificationContent other = new DefaultDataSpecificationContent();
+    public static class Builder extends DefaultDataSpecificationContentBuilder<DefaultDataSpecificationContent, Builder> {
 
-        return other;
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultDataSpecificationContent newBuildingInstance() {
+            return new DefaultDataSpecificationContent();
+        }
     }
-
 }

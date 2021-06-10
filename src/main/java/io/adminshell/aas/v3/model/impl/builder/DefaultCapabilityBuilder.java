@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultCapabilityBuilder extends AbstractBuilder<DefaultCapability> {
-
-    public DefaultCapabilityBuilder() {
-        super();
-    }
-
-    public DefaultCapabilityBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultCapabilityBuilder<T extends Capability, B extends DefaultCapabilityBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for category
@@ -26,9 +19,9 @@ public class DefaultCapabilityBuilder extends AbstractBuilder<DefaultCapability>
      * @param category desired value to be set
      * @return Builder object with new value for category
      */
-    public DefaultCapabilityBuilder category(String category) {
-        this.map.put("category", category);
-        return this;
+    public B category(String category) {
+        getBuildingInstance().setCategory(category);
+        return getSelf();
     }
 
     /**
@@ -37,9 +30,20 @@ public class DefaultCapabilityBuilder extends AbstractBuilder<DefaultCapability>
      * @param descriptions desired value to be set
      * @return Builder object with new value for descriptions
      */
-    public DefaultCapabilityBuilder descriptions(List<LangString> descriptions) {
-        this.map.put("descriptions", descriptions);
-        return this;
+    public B descriptions(List<LangString> descriptions) {
+        getBuildingInstance().setDescriptions(descriptions);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List descriptions
+     * 
+     * @param description desired value to be added
+     * @return Builder object with new value for descriptions
+     */
+    public B description(LangString description) {
+        getBuildingInstance().getDescriptions().add(description);
+        return getSelf();
     }
 
     /**
@@ -48,9 +52,20 @@ public class DefaultCapabilityBuilder extends AbstractBuilder<DefaultCapability>
      * @param displayNames desired value to be set
      * @return Builder object with new value for displayNames
      */
-    public DefaultCapabilityBuilder displayNames(List<LangString> displayNames) {
-        this.map.put("displayNames", displayNames);
-        return this;
+    public B displayNames(List<LangString> displayNames) {
+        getBuildingInstance().setDisplayNames(displayNames);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List displayNames
+     * 
+     * @param displayName desired value to be added
+     * @return Builder object with new value for displayNames
+     */
+    public B displayName(LangString displayName) {
+        getBuildingInstance().getDisplayNames().add(displayName);
+        return getSelf();
     }
 
     /**
@@ -59,9 +74,9 @@ public class DefaultCapabilityBuilder extends AbstractBuilder<DefaultCapability>
      * @param idShort desired value to be set
      * @return Builder object with new value for idShort
      */
-    public DefaultCapabilityBuilder idShort(String idShort) {
-        this.map.put("idShort", idShort);
-        return this;
+    public B idShort(String idShort) {
+        getBuildingInstance().setIdShort(idShort);
+        return getSelf();
     }
 
     /**
@@ -70,9 +85,20 @@ public class DefaultCapabilityBuilder extends AbstractBuilder<DefaultCapability>
      * @param qualifiers desired value to be set
      * @return Builder object with new value for qualifiers
      */
-    public DefaultCapabilityBuilder qualifiers(List<Constraint> qualifiers) {
-        this.map.put("qualifiers", qualifiers);
-        return this;
+    public B qualifiers(List<Constraint> qualifiers) {
+        getBuildingInstance().setQualifiers(qualifiers);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List qualifiers
+     * 
+     * @param qualifier desired value to be added
+     * @return Builder object with new value for qualifiers
+     */
+    public B qualifier(Constraint qualifier) {
+        getBuildingInstance().getQualifiers().add(qualifier);
+        return getSelf();
     }
 
     /**
@@ -81,9 +107,20 @@ public class DefaultCapabilityBuilder extends AbstractBuilder<DefaultCapability>
      * @param dataSpecifications desired value to be set
      * @return Builder object with new value for dataSpecifications
      */
-    public DefaultCapabilityBuilder dataSpecifications(List<Reference> dataSpecifications) {
-        this.map.put("dataSpecifications", dataSpecifications);
-        return this;
+    public B dataSpecifications(List<Reference> dataSpecifications) {
+        getBuildingInstance().setDataSpecifications(dataSpecifications);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List dataSpecifications
+     * 
+     * @param dataSpecification desired value to be added
+     * @return Builder object with new value for dataSpecifications
+     */
+    public B dataSpecification(Reference dataSpecification) {
+        getBuildingInstance().getDataSpecifications().add(dataSpecification);
+        return getSelf();
     }
 
     /**
@@ -92,9 +129,9 @@ public class DefaultCapabilityBuilder extends AbstractBuilder<DefaultCapability>
      * @param kind desired value to be set
      * @return Builder object with new value for kind
      */
-    public DefaultCapabilityBuilder kind(ModelingKind kind) {
-        this.map.put("kind", kind);
-        return this;
+    public B kind(ModelingKind kind) {
+        getBuildingInstance().setKind(kind);
+        return getSelf();
     }
 
     /**
@@ -103,19 +140,8 @@ public class DefaultCapabilityBuilder extends AbstractBuilder<DefaultCapability>
      * @param semanticId desired value to be set
      * @return Builder object with new value for semanticId
      */
-    public DefaultCapabilityBuilder semanticId(Reference semanticId) {
-        this.map.put("semanticId", semanticId);
-        return this;
-    }
-
-    /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
-     * 
-     * @return Bean with specified values
-     */
-    final public DefaultCapability build() {
-        DefaultCapability defaultCapability = Util.fillInstanceFromMap(new DefaultCapability(), this.map);
-        return defaultCapability;
+    public B semanticId(Reference semanticId) {
+        getBuildingInstance().setSemanticId(semanticId);
+        return getSelf();
     }
 }

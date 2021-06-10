@@ -75,15 +75,6 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultSubmodelElementCollection other = new DefaultSubmodelElementCollection();
-        other.allowDuplicates = (List<Boolean>) Util.clone(this.allowDuplicates);
-        other.ordereds = (List<Boolean>) Util.clone(this.ordereds);
-        other.values = (Collection<SubmodelElement>) Util.clone(this.values);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates")
@@ -113,4 +104,16 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
         this.values = values;
     }
 
+    public static class Builder extends DefaultSubmodelElementCollectionBuilder<DefaultSubmodelElementCollection, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultSubmodelElementCollection newBuildingInstance() {
+            return new DefaultSubmodelElementCollection();
+        }
+    }
 }

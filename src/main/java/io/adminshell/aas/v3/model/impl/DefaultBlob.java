@@ -140,22 +140,6 @@ public class DefaultBlob implements Blob {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultBlob other = new DefaultBlob();
-        other.mimeType = (String) Util.clone(this.mimeType);
-        other.value = (byte[]) Util.clone(this.value);
-        other.category = (String) Util.clone(this.category);
-        other.descriptions = (List<LangString>) Util.clone(this.descriptions);
-        other.displayNames = (List<LangString>) Util.clone(this.displayNames);
-        other.idShort = (String) Util.clone(this.idShort);
-        other.qualifiers = (List<Constraint>) Util.clone(this.qualifiers);
-        other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
-        other.kind = (ModelingKind) Util.clone(this.kind);
-        other.semanticId = (Reference) Util.clone(this.semanticId);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Blob/mimeType")
@@ -246,5 +230,18 @@ public class DefaultBlob implements Blob {
 
     final public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
+    }
+
+    public static class Builder extends DefaultBlobBuilder<DefaultBlob, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultBlob newBuildingInstance() {
+            return new DefaultBlob();
+        }
     }
 }

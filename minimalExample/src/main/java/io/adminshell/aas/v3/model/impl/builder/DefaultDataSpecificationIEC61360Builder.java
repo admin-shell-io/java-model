@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultDataSpecificationIEC61360Builder extends AbstractBuilder<DefaultDataSpecificationIEC61360> {
-
-    public DefaultDataSpecificationIEC61360Builder() {
-        super();
-    }
-
-    public DefaultDataSpecificationIEC61360Builder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultDataSpecificationIEC61360Builder<T extends DataSpecificationIEC61360, B extends DefaultDataSpecificationIEC61360Builder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for dataTypes
@@ -26,9 +19,20 @@ public class DefaultDataSpecificationIEC61360Builder extends AbstractBuilder<Def
      * @param dataTypes desired value to be set
      * @return Builder object with new value for dataTypes
      */
-    public DefaultDataSpecificationIEC61360Builder dataTypes(List<DataTypeIEC61360> dataTypes) {
-        this.map.put("dataTypes", dataTypes);
-        return this;
+    public B dataTypes(List<DataTypeIEC61360> dataTypes) {
+        getBuildingInstance().setDataTypes(dataTypes);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List dataTypes
+     * 
+     * @param dataType desired value to be added
+     * @return Builder object with new value for dataTypes
+     */
+    public B dataType(DataTypeIEC61360 dataType) {
+        getBuildingInstance().getDataTypes().add(dataType);
+        return getSelf();
     }
 
     /**
@@ -37,9 +41,20 @@ public class DefaultDataSpecificationIEC61360Builder extends AbstractBuilder<Def
      * @param definitions desired value to be set
      * @return Builder object with new value for definitions
      */
-    public DefaultDataSpecificationIEC61360Builder definitions(List<LangStringSet> definitions) {
-        this.map.put("definitions", definitions);
-        return this;
+    public B definitions(List<LangStringSet> definitions) {
+        getBuildingInstance().setDefinitions(definitions);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List definitions
+     * 
+     * @param definition desired value to be added
+     * @return Builder object with new value for definitions
+     */
+    public B definition(LangStringSet definition) {
+        getBuildingInstance().getDefinitions().add(definition);
+        return getSelf();
     }
 
     /**
@@ -48,9 +63,20 @@ public class DefaultDataSpecificationIEC61360Builder extends AbstractBuilder<Def
      * @param shortNames desired value to be set
      * @return Builder object with new value for shortNames
      */
-    public DefaultDataSpecificationIEC61360Builder shortNames(List<LangStringSet> shortNames) {
-        this.map.put("shortNames", shortNames);
-        return this;
+    public B shortNames(List<LangStringSet> shortNames) {
+        getBuildingInstance().setShortNames(shortNames);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List shortNames
+     * 
+     * @param shortName desired value to be added
+     * @return Builder object with new value for shortNames
+     */
+    public B shortName(LangStringSet shortName) {
+        getBuildingInstance().getShortNames().add(shortName);
+        return getSelf();
     }
 
     /**
@@ -59,9 +85,20 @@ public class DefaultDataSpecificationIEC61360Builder extends AbstractBuilder<Def
      * @param preferredNames desired value to be set
      * @return Builder object with new value for preferredNames
      */
-    public DefaultDataSpecificationIEC61360Builder preferredNames(List<LangStringSet> preferredNames) {
-        this.map.put("preferredNames", preferredNames);
-        return this;
+    public B preferredNames(List<LangStringSet> preferredNames) {
+        getBuildingInstance().setPreferredNames(preferredNames);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List preferredNames
+     * 
+     * @param preferredName desired value to be added
+     * @return Builder object with new value for preferredNames
+     */
+    public B preferredName(LangStringSet preferredName) {
+        getBuildingInstance().getPreferredNames().add(preferredName);
+        return getSelf();
     }
 
     /**
@@ -70,9 +107,20 @@ public class DefaultDataSpecificationIEC61360Builder extends AbstractBuilder<Def
      * @param sourceOfDefinitions desired value to be set
      * @return Builder object with new value for sourceOfDefinitions
      */
-    public DefaultDataSpecificationIEC61360Builder sourceOfDefinitions(List<String> sourceOfDefinitions) {
-        this.map.put("sourceOfDefinitions", sourceOfDefinitions);
-        return this;
+    public B sourceOfDefinitions(List<String> sourceOfDefinitions) {
+        getBuildingInstance().setSourceOfDefinitions(sourceOfDefinitions);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List sourceOfDefinitions
+     * 
+     * @param sourceOfDefinition desired value to be added
+     * @return Builder object with new value for sourceOfDefinitions
+     */
+    public B sourceOfDefinition(String sourceOfDefinition) {
+        getBuildingInstance().getSourceOfDefinitions().add(sourceOfDefinition);
+        return getSelf();
     }
 
     /**
@@ -81,9 +129,20 @@ public class DefaultDataSpecificationIEC61360Builder extends AbstractBuilder<Def
      * @param units desired value to be set
      * @return Builder object with new value for units
      */
-    public DefaultDataSpecificationIEC61360Builder units(List<String> units) {
-        this.map.put("units", units);
-        return this;
+    public B units(List<String> units) {
+        getBuildingInstance().setUnits(units);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List units
+     * 
+     * @param unit desired value to be added
+     * @return Builder object with new value for units
+     */
+    public B unit(String unit) {
+        getBuildingInstance().getUnits().add(unit);
+        return getSelf();
     }
 
     /**
@@ -92,20 +151,20 @@ public class DefaultDataSpecificationIEC61360Builder extends AbstractBuilder<Def
      * @param unitIds desired value to be set
      * @return Builder object with new value for unitIds
      */
-    public DefaultDataSpecificationIEC61360Builder unitIds(List<Reference> unitIds) {
-        this.map.put("unitIds", unitIds);
-        return this;
+    public B unitIds(List<Reference> unitIds) {
+        getBuildingInstance().setUnitIds(unitIds);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List unitIds
      * 
-     * @return Bean with specified values
+     * @param unitId desired value to be added
+     * @return Builder object with new value for unitIds
      */
-    final public DefaultDataSpecificationIEC61360 build() {
-        DefaultDataSpecificationIEC61360 defaultDataSpecificationIEC61360 =
-            Util.fillInstanceFromMap(new DefaultDataSpecificationIEC61360(), this.map);
-        return defaultDataSpecificationIEC61360;
+    public B unitId(Reference unitId) {
+        getBuildingInstance().getUnitIds().add(unitId);
+        return getSelf();
     }
+
 }

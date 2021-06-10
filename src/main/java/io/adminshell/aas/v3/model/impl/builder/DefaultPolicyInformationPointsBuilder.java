@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultPolicyInformationPointsBuilder extends AbstractBuilder<DefaultPolicyInformationPoints> {
-
-    public DefaultPolicyInformationPointsBuilder() {
-        super();
-    }
-
-    public DefaultPolicyInformationPointsBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultPolicyInformationPointsBuilder<T extends PolicyInformationPoints, B extends DefaultPolicyInformationPointsBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for externalInformationPoints
@@ -26,9 +19,9 @@ public class DefaultPolicyInformationPointsBuilder extends AbstractBuilder<Defau
      * @param externalInformationPoints desired value to be set
      * @return Builder object with new value for externalInformationPoints
      */
-    public DefaultPolicyInformationPointsBuilder externalInformationPoints(boolean externalInformationPoints) {
-        this.map.put("externalInformationPoints", externalInformationPoints);
-        return this;
+    public B externalInformationPoints(boolean externalInformationPoints) {
+        getBuildingInstance().setExternalInformationPoints(externalInformationPoints);
+        return getSelf();
     }
 
     /**
@@ -37,20 +30,19 @@ public class DefaultPolicyInformationPointsBuilder extends AbstractBuilder<Defau
      * @param internalInformationPoints desired value to be set
      * @return Builder object with new value for internalInformationPoints
      */
-    public DefaultPolicyInformationPointsBuilder internalInformationPoints(List<Submodel> internalInformationPoints) {
-        this.map.put("internalInformationPoints", internalInformationPoints);
-        return this;
+    public B internalInformationPoints(List<Submodel> internalInformationPoints) {
+        getBuildingInstance().setInternalInformationPoints(internalInformationPoints);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List internalInformationPoints
      * 
-     * @return Bean with specified values
+     * @param internalInformationPoint desired value to be added
+     * @return Builder object with new value for internalInformationPoints
      */
-    final public DefaultPolicyInformationPoints build() {
-        DefaultPolicyInformationPoints defaultPolicyInformationPoints =
-            Util.fillInstanceFromMap(new DefaultPolicyInformationPoints(), this.map);
-        return defaultPolicyInformationPoints;
+    public B internalInformationPoint(Submodel internalInformationPoint) {
+        getBuildingInstance().getInternalInformationPoints().add(internalInformationPoint);
+        return getSelf();
     }
 }

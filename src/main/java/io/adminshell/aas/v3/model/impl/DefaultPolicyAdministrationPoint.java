@@ -56,14 +56,6 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultPolicyAdministrationPoint other = new DefaultPolicyAdministrationPoint();
-        other.localAccessControl = (AccessControl) Util.clone(this.localAccessControl);
-        other.externalAccessControl = (boolean) Util.clone(this.externalAccessControl);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl")
@@ -82,5 +74,18 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
 
     final public void setExternalAccessControl(boolean externalAccessControl) {
         this.externalAccessControl = externalAccessControl;
+    }
+
+    public static class Builder extends DefaultPolicyAdministrationPointBuilder<DefaultPolicyAdministrationPoint, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultPolicyAdministrationPoint newBuildingInstance() {
+            return new DefaultPolicyAdministrationPoint();
+        }
     }
 }

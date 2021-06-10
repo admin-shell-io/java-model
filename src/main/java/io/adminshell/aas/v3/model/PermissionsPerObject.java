@@ -18,7 +18,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultPermissionsPerObject.class)
 })
-public interface PermissionsPerObject extends ModelClass {
+public interface PermissionsPerObject {
 
     // standard methods
 

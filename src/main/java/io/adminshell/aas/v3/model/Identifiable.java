@@ -18,7 +18,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
     @KnownSubtypes.Type(value = AssetAdministrationShell.class),
     @KnownSubtypes.Type(value = ConceptDescription.class)
 })
-public interface Identifiable extends ModelClass, Referable {
+public interface Identifiable extends Referable {
 
     // standard methods
 

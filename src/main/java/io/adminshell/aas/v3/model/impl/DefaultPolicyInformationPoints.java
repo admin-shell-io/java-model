@@ -59,14 +59,6 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultPolicyInformationPoints other = new DefaultPolicyInformationPoints();
-        other.externalInformationPoints = (boolean) Util.clone(this.externalInformationPoints);
-        other.internalInformationPoints = (List<Submodel>) Util.clone(this.internalInformationPoints);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints")
@@ -85,5 +77,18 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
 
     final public void setInternalInformationPoints(List<Submodel> internalInformationPoints) {
         this.internalInformationPoints = internalInformationPoints;
+    }
+
+    public static class Builder extends DefaultPolicyInformationPointsBuilder<DefaultPolicyInformationPoints, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultPolicyInformationPoints newBuildingInstance() {
+            return new DefaultPolicyInformationPoints();
+        }
     }
 }

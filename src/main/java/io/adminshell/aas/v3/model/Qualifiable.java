@@ -19,7 +19,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
     @KnownSubtypes.Type(value = Submodel.class),
     @KnownSubtypes.Type(value = SubmodelElement.class)
 })
-public interface Qualifiable extends ModelClass {
+public interface Qualifiable {
 
     // standard methods
 

@@ -9,15 +9,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultQualifierBuilder extends AbstractBuilder<DefaultQualifier> {
-
-    public DefaultQualifierBuilder() {
-        super();
-    }
-
-    public DefaultQualifierBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultQualifierBuilder<T extends Qualifier, B extends DefaultQualifierBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for type
@@ -25,9 +18,9 @@ public class DefaultQualifierBuilder extends AbstractBuilder<DefaultQualifier> {
      * @param type desired value to be set
      * @return Builder object with new value for type
      */
-    public DefaultQualifierBuilder type(String type) {
-        this.map.put("type", type);
-        return this;
+    public B type(String type) {
+        getBuildingInstance().setType(type);
+        return getSelf();
     }
 
     /**
@@ -36,9 +29,9 @@ public class DefaultQualifierBuilder extends AbstractBuilder<DefaultQualifier> {
      * @param valueType desired value to be set
      * @return Builder object with new value for valueType
      */
-    public DefaultQualifierBuilder valueType(String valueType) {
-        this.map.put("valueType", valueType);
-        return this;
+    public B valueType(String valueType) {
+        getBuildingInstance().setValueType(valueType);
+        return getSelf();
     }
 
     /**
@@ -47,9 +40,9 @@ public class DefaultQualifierBuilder extends AbstractBuilder<DefaultQualifier> {
      * @param value desired value to be set
      * @return Builder object with new value for value
      */
-    public DefaultQualifierBuilder value(String value) {
-        this.map.put("value", value);
-        return this;
+    public B value(String value) {
+        getBuildingInstance().setValue(value);
+        return getSelf();
     }
 
     /**
@@ -58,9 +51,9 @@ public class DefaultQualifierBuilder extends AbstractBuilder<DefaultQualifier> {
      * @param valueId desired value to be set
      * @return Builder object with new value for valueId
      */
-    public DefaultQualifierBuilder valueId(Reference valueId) {
-        this.map.put("valueId", valueId);
-        return this;
+    public B valueId(Reference valueId) {
+        getBuildingInstance().setValueId(valueId);
+        return getSelf();
     }
 
     /**
@@ -69,19 +62,8 @@ public class DefaultQualifierBuilder extends AbstractBuilder<DefaultQualifier> {
      * @param semanticId desired value to be set
      * @return Builder object with new value for semanticId
      */
-    public DefaultQualifierBuilder semanticId(Reference semanticId) {
-        this.map.put("semanticId", semanticId);
-        return this;
-    }
-
-    /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
-     * 
-     * @return Bean with specified values
-     */
-    final public DefaultQualifier build() {
-        DefaultQualifier defaultQualifier = Util.fillInstanceFromMap(new DefaultQualifier(), this.map);
-        return defaultQualifier;
+    public B semanticId(Reference semanticId) {
+        getBuildingInstance().setSemanticId(semanticId);
+        return getSelf();
     }
 }

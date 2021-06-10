@@ -57,14 +57,6 @@ public class DefaultIdentifier implements Identifier {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultIdentifier other = new DefaultIdentifier();
-        other.identifiers = (List<String>) Util.clone(this.identifiers);
-        other.idTypes = (List<IdentifierType>) Util.clone(this.idTypes);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
@@ -83,5 +75,18 @@ public class DefaultIdentifier implements Identifier {
 
     final public void setIdTypes(List<IdentifierType> idTypes) {
         this.idTypes = idTypes;
+    }
+
+    public static class Builder extends DefaultIdentifierBuilder<DefaultIdentifier, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultIdentifier newBuildingInstance() {
+            return new DefaultIdentifier();
+        }
     }
 }

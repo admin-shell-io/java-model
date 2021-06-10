@@ -22,7 +22,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
     @KnownSubtypes.Type(value = Range.class),
     @KnownSubtypes.Type(value = ReferenceElement.class)
 })
-public interface DataElement extends ModelClass, SubmodelElement {
+public interface DataElement extends SubmodelElement {
 
     // standard methods
 

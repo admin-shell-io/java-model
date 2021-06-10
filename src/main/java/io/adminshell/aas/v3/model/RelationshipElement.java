@@ -18,7 +18,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
     @KnownSubtypes.Type(value = DefaultRelationshipElement.class),
     @KnownSubtypes.Type(value = AnnotatedRelationshipElement.class)
 })
-public interface RelationshipElement extends ModelClass, SubmodelElement {
+public interface RelationshipElement extends SubmodelElement {
 
     // standard methods
 

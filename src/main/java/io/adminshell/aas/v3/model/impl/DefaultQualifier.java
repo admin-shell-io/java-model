@@ -85,17 +85,6 @@ public class DefaultQualifier implements Qualifier {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultQualifier other = new DefaultQualifier();
-        other.type = (String) Util.clone(this.type);
-        other.valueType = (String) Util.clone(this.valueType);
-        other.value = (String) Util.clone(this.value);
-        other.valueId = (Reference) Util.clone(this.valueId);
-        other.semanticId = (Reference) Util.clone(this.semanticId);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/type")
@@ -141,5 +130,18 @@ public class DefaultQualifier implements Qualifier {
 
     final public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
+    }
+
+    public static class Builder extends DefaultQualifierBuilder<DefaultQualifier, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultQualifier newBuildingInstance() {
+            return new DefaultQualifier();
+        }
     }
 }

@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultDataSpecificationBuilder extends AbstractBuilder<DefaultDataSpecification> {
-
-    public DefaultDataSpecificationBuilder() {
-        super();
-    }
-
-    public DefaultDataSpecificationBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultDataSpecificationBuilder<T extends DataSpecification, B extends DefaultDataSpecificationBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for dataSpecificationContents
@@ -26,19 +19,19 @@ public class DefaultDataSpecificationBuilder extends AbstractBuilder<DefaultData
      * @param dataSpecificationContents desired value to be set
      * @return Builder object with new value for dataSpecificationContents
      */
-    public DefaultDataSpecificationBuilder dataSpecificationContents(List<DataSpecificationContent> dataSpecificationContents) {
-        this.map.put("dataSpecificationContents", dataSpecificationContents);
-        return this;
+    public B dataSpecificationContents(List<DataSpecificationContent> dataSpecificationContents) {
+        getBuildingInstance().setDataSpecificationContents(dataSpecificationContents);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List dataSpecificationContents
      * 
-     * @return Bean with specified values
+     * @param dataSpecificationContent desired value to be added
+     * @return Builder object with new value for dataSpecificationContents
      */
-    final public DefaultDataSpecification build() {
-        DefaultDataSpecification defaultDataSpecification = Util.fillInstanceFromMap(new DefaultDataSpecification(), this.map);
-        return defaultDataSpecification;
+    public B dataSpecificationContent(DataSpecificationContent dataSpecificationContent) {
+        getBuildingInstance().getDataSpecificationContents().add(dataSpecificationContent);
+        return getSelf();
     }
 }

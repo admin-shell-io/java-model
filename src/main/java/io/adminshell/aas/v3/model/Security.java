@@ -16,7 +16,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultSecurity.class)
 })
-public interface Security extends ModelClass {
+public interface Security {
 
     // standard methods
 

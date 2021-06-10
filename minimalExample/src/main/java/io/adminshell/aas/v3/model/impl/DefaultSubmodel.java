@@ -53,13 +53,6 @@ public class DefaultSubmodel implements Submodel {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultSubmodel other = new DefaultSubmodel();
-        other.submodelElements = (List<SubmodelElement>) Util.clone(this.submodelElements);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement")
@@ -69,5 +62,18 @@ public class DefaultSubmodel implements Submodel {
 
     final public void setSubmodelElements(List<SubmodelElement> submodelElements) {
         this.submodelElements = submodelElements;
+    }
+
+    public static class Builder extends DefaultSubmodelBuilder<DefaultSubmodel, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultSubmodel newBuildingInstance() {
+            return new DefaultSubmodel();
+        }
     }
 }

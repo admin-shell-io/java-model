@@ -48,13 +48,6 @@ public class DefaultLangStringSet implements LangStringSet {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultLangStringSet other = new DefaultLangStringSet();
-        other.langStrings = (List<LangString>) Util.clone(this.langStrings);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/LangStringSet/langString")
@@ -64,5 +57,18 @@ public class DefaultLangStringSet implements LangStringSet {
 
     final public void setLangStrings(List<LangString> langStrings) {
         this.langStrings = langStrings;
+    }
+
+    public static class Builder extends DefaultLangStringSetBuilder<DefaultLangStringSet, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultLangStringSet newBuildingInstance() {
+            return new DefaultLangStringSet();
+        }
     }
 }

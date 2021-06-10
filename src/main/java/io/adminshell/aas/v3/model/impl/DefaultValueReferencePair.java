@@ -55,14 +55,6 @@ public class DefaultValueReferencePair implements ValueReferencePair {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultValueReferencePair other = new DefaultValueReferencePair();
-        other.value = (String) Util.clone(this.value);
-        other.valueId = (Reference) Util.clone(this.valueId);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value")
@@ -81,5 +73,18 @@ public class DefaultValueReferencePair implements ValueReferencePair {
 
     final public void setValueId(Reference valueId) {
         this.valueId = valueId;
+    }
+
+    public static class Builder extends DefaultValueReferencePairBuilder<DefaultValueReferencePair, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultValueReferencePair newBuildingInstance() {
+            return new DefaultValueReferencePair();
+        }
     }
 }

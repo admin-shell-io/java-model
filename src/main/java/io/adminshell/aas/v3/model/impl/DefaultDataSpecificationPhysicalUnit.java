@@ -135,24 +135,6 @@ public class DefaultDataSpecificationPhysicalUnit implements DataSpecificationPh
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultDataSpecificationPhysicalUnit other = new DefaultDataSpecificationPhysicalUnit();
-        other.conversionFactors = (List<String>) Util.clone(this.conversionFactors);
-        other.definitions = (List<LangString>) Util.clone(this.definitions);
-        other.dinNotations = (List<String>) Util.clone(this.dinNotations);
-        other.eceCodes = (List<String>) Util.clone(this.eceCodes);
-        other.eceNames = (List<String>) Util.clone(this.eceNames);
-        other.nistNames = (List<String>) Util.clone(this.nistNames);
-        other.siNames = (List<String>) Util.clone(this.siNames);
-        other.siNotations = (List<String>) Util.clone(this.siNotations);
-        other.registrationAuthorityIds = (List<String>) Util.clone(this.registrationAuthorityIds);
-        other.suppliers = (List<String>) Util.clone(this.suppliers);
-        other.unitNames = (List<String>) Util.clone(this.unitNames);
-        other.unitSymbols = (List<String>) Util.clone(this.unitSymbols);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/conversionFactor")
@@ -263,4 +245,16 @@ public class DefaultDataSpecificationPhysicalUnit implements DataSpecificationPh
         this.unitSymbols = unitSymbols;
     }
 
+    public static class Builder extends DefaultDataSpecificationPhysicalUnitBuilder<DefaultDataSpecificationPhysicalUnit, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultDataSpecificationPhysicalUnit newBuildingInstance() {
+            return new DefaultDataSpecificationPhysicalUnit();
+        }
+    }
 }

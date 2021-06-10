@@ -21,7 +21,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultRange.class)
 })
-public interface Range extends ModelClass, DataElement {
+public interface Range extends DataElement {
 
     // standard methods
 

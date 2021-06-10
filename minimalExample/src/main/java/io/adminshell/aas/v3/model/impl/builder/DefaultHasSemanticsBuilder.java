@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultHasSemanticsBuilder extends AbstractBuilder<DefaultHasSemantics> {
-
-    public DefaultHasSemanticsBuilder() {
-        super();
-    }
-
-    public DefaultHasSemanticsBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultHasSemanticsBuilder<T extends HasSemantics, B extends DefaultHasSemanticsBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for semanticIds
@@ -26,19 +19,19 @@ public class DefaultHasSemanticsBuilder extends AbstractBuilder<DefaultHasSemant
      * @param semanticIds desired value to be set
      * @return Builder object with new value for semanticIds
      */
-    public DefaultHasSemanticsBuilder semanticIds(List<Reference> semanticIds) {
-        this.map.put("semanticIds", semanticIds);
-        return this;
+    public B semanticIds(List<Reference> semanticIds) {
+        getBuildingInstance().setSemanticIds(semanticIds);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List semanticIds
      * 
-     * @return Bean with specified values
+     * @param semanticId desired value to be added
+     * @return Builder object with new value for semanticIds
      */
-    final public DefaultHasSemantics build() {
-        DefaultHasSemantics defaultHasSemantics = Util.fillInstanceFromMap(new DefaultHasSemantics(), this.map);
-        return defaultHasSemantics;
+    public B semanticId(Reference semanticId) {
+        getBuildingInstance().getSemanticIds().add(semanticId);
+        return getSelf();
     }
 }

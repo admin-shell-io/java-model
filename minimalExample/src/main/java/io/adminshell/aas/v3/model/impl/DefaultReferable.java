@@ -84,16 +84,6 @@ public class DefaultReferable implements Referable {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultReferable other = new DefaultReferable();
-        other.categories = (List<String>) Util.clone(this.categories);
-        other.descriptions = (List<LangStringSet>) Util.clone(this.descriptions);
-        other.displayNames = (List<LangStringSet>) Util.clone(this.displayNames);
-        other.idShorts = (List<String>) Util.clone(this.idShorts);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
@@ -130,5 +120,18 @@ public class DefaultReferable implements Referable {
 
     final public void setIdShorts(List<String> idShorts) {
         this.idShorts = idShorts;
+    }
+
+    public static class Builder extends DefaultReferableBuilder<DefaultReferable, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultReferable newBuildingInstance() {
+            return new DefaultReferable();
+        }
     }
 }

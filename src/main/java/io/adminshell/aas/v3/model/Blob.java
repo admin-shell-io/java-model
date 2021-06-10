@@ -17,7 +17,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultBlob.class)
 })
-public interface Blob extends ModelClass, DataElement {
+public interface Blob extends DataElement {
 
     // standard methods
 

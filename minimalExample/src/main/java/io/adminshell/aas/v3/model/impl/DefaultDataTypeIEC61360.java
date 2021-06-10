@@ -37,11 +37,16 @@ public class DefaultDataTypeIEC61360 implements DataTypeIEC61360 {
         return true;
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultDataTypeIEC61360 other = new DefaultDataTypeIEC61360();
+    public static class Builder extends DefaultDataTypeIEC61360Builder<DefaultDataTypeIEC61360, Builder> {
 
-        return other;
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultDataTypeIEC61360 newBuildingInstance() {
+            return new DefaultDataTypeIEC61360();
+        }
     }
-
 }

@@ -74,15 +74,6 @@ public class DefaultProperty implements Property {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultProperty other = new DefaultProperty();
-        other.valueTypes = (List<String>) Util.clone(this.valueTypes);
-        other.values = (List<String>) Util.clone(this.values);
-        other.valueIds = (List<Reference>) Util.clone(this.valueIds);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueType")
@@ -110,5 +101,18 @@ public class DefaultProperty implements Property {
 
     final public void setValueIds(List<Reference> valueIds) {
         this.valueIds = valueIds;
+    }
+
+    public static class Builder extends DefaultPropertyBuilder<DefaultProperty, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultProperty newBuildingInstance() {
+            return new DefaultProperty();
+        }
     }
 }

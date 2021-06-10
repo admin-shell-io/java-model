@@ -17,7 +17,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultLangStringSet.class)
 })
-public interface LangStringSet extends ModelClass {
+public interface LangStringSet {
 
     // standard methods
 

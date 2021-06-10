@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultReferenceBuilder extends AbstractBuilder<DefaultReference> {
-
-    public DefaultReferenceBuilder() {
-        super();
-    }
-
-    public DefaultReferenceBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultReferenceBuilder<T extends Reference, B extends DefaultReferenceBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for keys
@@ -26,19 +19,19 @@ public class DefaultReferenceBuilder extends AbstractBuilder<DefaultReference> {
      * @param keys desired value to be set
      * @return Builder object with new value for keys
      */
-    public DefaultReferenceBuilder keys(List<Key> keys) {
-        this.map.put("keys", keys);
-        return this;
+    public B keys(List<Key> keys) {
+        getBuildingInstance().setKeys(keys);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List keys
      * 
-     * @return Bean with specified values
+     * @param key desired value to be added
+     * @return Builder object with new value for keys
      */
-    final public DefaultReference build() {
-        DefaultReference defaultReference = Util.fillInstanceFromMap(new DefaultReference(), this.map);
-        return defaultReference;
+    public B key(Key key) {
+        getBuildingInstance().getKeys().add(key);
+        return getSelf();
     }
 }

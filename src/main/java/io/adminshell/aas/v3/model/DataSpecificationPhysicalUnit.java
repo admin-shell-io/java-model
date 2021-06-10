@@ -16,7 +16,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultDataSpecificationPhysicalUnit.class)
 })
-public interface DataSpecificationPhysicalUnit extends ModelClass, DataSpecificationContent {
+public interface DataSpecificationPhysicalUnit extends DataSpecificationContent {
 
     // standard methods
 

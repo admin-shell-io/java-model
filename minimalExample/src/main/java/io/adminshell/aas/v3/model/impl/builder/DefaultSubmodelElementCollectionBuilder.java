@@ -11,15 +11,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultSubmodelElementCollectionBuilder extends AbstractBuilder<DefaultSubmodelElementCollection> {
-
-    public DefaultSubmodelElementCollectionBuilder() {
-        super();
-    }
-
-    public DefaultSubmodelElementCollectionBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultSubmodelElementCollectionBuilder<T extends SubmodelElementCollection, B extends DefaultSubmodelElementCollectionBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for allowDuplicates
@@ -27,9 +20,20 @@ public class DefaultSubmodelElementCollectionBuilder extends AbstractBuilder<Def
      * @param allowDuplicates desired value to be set
      * @return Builder object with new value for allowDuplicates
      */
-    public DefaultSubmodelElementCollectionBuilder allowDuplicates(List<Boolean> allowDuplicates) {
-        this.map.put("allowDuplicates", allowDuplicates);
-        return this;
+    public B allowDuplicates(List<Boolean> allowDuplicates) {
+        getBuildingInstance().setAllowDuplicates(allowDuplicates);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List allowDuplicates
+     * 
+     * @param allowDuplicates desired value to be added
+     * @return Builder object with new value for allowDuplicates
+     */
+    public B allowDuplicates(boolean allowDuplicates) {
+        getBuildingInstance().getAllowDuplicates().add(allowDuplicates);
+        return getSelf();
     }
 
     /**
@@ -38,9 +42,20 @@ public class DefaultSubmodelElementCollectionBuilder extends AbstractBuilder<Def
      * @param ordereds desired value to be set
      * @return Builder object with new value for ordereds
      */
-    public DefaultSubmodelElementCollectionBuilder ordereds(List<Boolean> ordereds) {
-        this.map.put("ordereds", ordereds);
-        return this;
+    public B ordereds(List<Boolean> ordereds) {
+        getBuildingInstance().setOrdereds(ordereds);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List ordereds
+     * 
+     * @param ordered desired value to be added
+     * @return Builder object with new value for ordereds
+     */
+    public B ordered(boolean ordered) {
+        getBuildingInstance().getOrdereds().add(ordered);
+        return getSelf();
     }
 
     /**
@@ -49,20 +64,20 @@ public class DefaultSubmodelElementCollectionBuilder extends AbstractBuilder<Def
      * @param values desired value to be set
      * @return Builder object with new value for values
      */
-    public DefaultSubmodelElementCollectionBuilder values(Collection<SubmodelElement> values) {
-        this.map.put("values", values);
-        return this;
+    public B values(Collection<SubmodelElement> values) {
+        getBuildingInstance().setValues(values);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List values
      * 
-     * @return Bean with specified values
+     * @param value desired value to be added
+     * @return Builder object with new value for values
      */
-    final public DefaultSubmodelElementCollection build() {
-        DefaultSubmodelElementCollection defaultSubmodelElementCollection =
-            Util.fillInstanceFromMap(new DefaultSubmodelElementCollection(), this.map);
-        return defaultSubmodelElementCollection;
+    public B value(SubmodelElement value) {
+        getBuildingInstance().getValues().add(value);
+        return getSelf();
     }
+
 }

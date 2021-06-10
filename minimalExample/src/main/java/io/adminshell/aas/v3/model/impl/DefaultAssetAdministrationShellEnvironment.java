@@ -75,16 +75,6 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultAssetAdministrationShellEnvironment other = new DefaultAssetAdministrationShellEnvironment();
-        other.assetAdministrationShells = (List<AssetAdministrationShell>) Util.clone(this.assetAdministrationShells);
-        other.assets = (List<Asset>) Util.clone(this.assets);
-        other.conceptDescriptions = (List<ConceptDescription>) Util.clone(this.conceptDescriptions);
-        other.submodels = (List<Submodel>) Util.clone(this.submodels);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShells")
@@ -121,5 +111,19 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
 
     final public void setSubmodels(List<Submodel> submodels) {
         this.submodels = submodels;
+    }
+
+    public static class Builder
+        extends DefaultAssetAdministrationShellEnvironmentBuilder<DefaultAssetAdministrationShellEnvironment, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAssetAdministrationShellEnvironment newBuildingInstance() {
+            return new DefaultAssetAdministrationShellEnvironment();
+        }
     }
 }

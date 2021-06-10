@@ -112,19 +112,6 @@ public class DefaultView implements View {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultView other = new DefaultView();
-        other.containedElements = (List<Reference>) Util.clone(this.containedElements);
-        other.category = (String) Util.clone(this.category);
-        other.descriptions = (List<LangString>) Util.clone(this.descriptions);
-        other.displayNames = (List<LangString>) Util.clone(this.displayNames);
-        other.idShort = (String) Util.clone(this.idShort);
-        other.dataSpecifications = (List<Reference>) Util.clone(this.dataSpecifications);
-        other.semanticId = (Reference) Util.clone(this.semanticId);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
@@ -188,5 +175,18 @@ public class DefaultView implements View {
 
     final public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
+    }
+
+    public static class Builder extends DefaultViewBuilder<DefaultView, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultView newBuildingInstance() {
+            return new DefaultView();
+        }
     }
 }

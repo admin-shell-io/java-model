@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultAccessControlBuilder extends AbstractBuilder<DefaultAccessControl> {
-
-    public DefaultAccessControlBuilder() {
-        super();
-    }
-
-    public DefaultAccessControlBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultAccessControlBuilder<T extends AccessControl, B extends DefaultAccessControlBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for accessPermissionRules
@@ -26,9 +19,20 @@ public class DefaultAccessControlBuilder extends AbstractBuilder<DefaultAccessCo
      * @param accessPermissionRules desired value to be set
      * @return Builder object with new value for accessPermissionRules
      */
-    public DefaultAccessControlBuilder accessPermissionRules(List<AccessPermissionRule> accessPermissionRules) {
-        this.map.put("accessPermissionRules", accessPermissionRules);
-        return this;
+    public B accessPermissionRules(List<AccessPermissionRule> accessPermissionRules) {
+        getBuildingInstance().setAccessPermissionRules(accessPermissionRules);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List accessPermissionRules
+     * 
+     * @param accessPermissionRule desired value to be added
+     * @return Builder object with new value for accessPermissionRules
+     */
+    public B accessPermissionRule(AccessPermissionRule accessPermissionRule) {
+        getBuildingInstance().getAccessPermissionRules().add(accessPermissionRule);
+        return getSelf();
     }
 
     /**
@@ -37,9 +41,9 @@ public class DefaultAccessControlBuilder extends AbstractBuilder<DefaultAccessCo
      * @param selectableSubjectAttributes desired value to be set
      * @return Builder object with new value for selectableSubjectAttributes
      */
-    public DefaultAccessControlBuilder selectableSubjectAttributes(Reference selectableSubjectAttributes) {
-        this.map.put("selectableSubjectAttributes", selectableSubjectAttributes);
-        return this;
+    public B selectableSubjectAttributes(Reference selectableSubjectAttributes) {
+        getBuildingInstance().setSelectableSubjectAttributes(selectableSubjectAttributes);
+        return getSelf();
     }
 
     /**
@@ -48,9 +52,9 @@ public class DefaultAccessControlBuilder extends AbstractBuilder<DefaultAccessCo
      * @param defaultSubjectAttributes desired value to be set
      * @return Builder object with new value for defaultSubjectAttributes
      */
-    public DefaultAccessControlBuilder defaultSubjectAttributes(Reference defaultSubjectAttributes) {
-        this.map.put("defaultSubjectAttributes", defaultSubjectAttributes);
-        return this;
+    public B defaultSubjectAttributes(Reference defaultSubjectAttributes) {
+        getBuildingInstance().setDefaultSubjectAttributes(defaultSubjectAttributes);
+        return getSelf();
     }
 
     /**
@@ -59,9 +63,9 @@ public class DefaultAccessControlBuilder extends AbstractBuilder<DefaultAccessCo
      * @param selectablePermissions desired value to be set
      * @return Builder object with new value for selectablePermissions
      */
-    public DefaultAccessControlBuilder selectablePermissions(Reference selectablePermissions) {
-        this.map.put("selectablePermissions", selectablePermissions);
-        return this;
+    public B selectablePermissions(Reference selectablePermissions) {
+        getBuildingInstance().setSelectablePermissions(selectablePermissions);
+        return getSelf();
     }
 
     /**
@@ -70,9 +74,9 @@ public class DefaultAccessControlBuilder extends AbstractBuilder<DefaultAccessCo
      * @param defaultPermissions desired value to be set
      * @return Builder object with new value for defaultPermissions
      */
-    public DefaultAccessControlBuilder defaultPermissions(Reference defaultPermissions) {
-        this.map.put("defaultPermissions", defaultPermissions);
-        return this;
+    public B defaultPermissions(Reference defaultPermissions) {
+        getBuildingInstance().setDefaultPermissions(defaultPermissions);
+        return getSelf();
     }
 
     /**
@@ -81,9 +85,9 @@ public class DefaultAccessControlBuilder extends AbstractBuilder<DefaultAccessCo
      * @param selectableEnvironmentAttributes desired value to be set
      * @return Builder object with new value for selectableEnvironmentAttributes
      */
-    public DefaultAccessControlBuilder selectableEnvironmentAttributes(Reference selectableEnvironmentAttributes) {
-        this.map.put("selectableEnvironmentAttributes", selectableEnvironmentAttributes);
-        return this;
+    public B selectableEnvironmentAttributes(Reference selectableEnvironmentAttributes) {
+        getBuildingInstance().setSelectableEnvironmentAttributes(selectableEnvironmentAttributes);
+        return getSelf();
     }
 
     /**
@@ -92,19 +96,8 @@ public class DefaultAccessControlBuilder extends AbstractBuilder<DefaultAccessCo
      * @param defaultEnvironmentAttributes desired value to be set
      * @return Builder object with new value for defaultEnvironmentAttributes
      */
-    public DefaultAccessControlBuilder defaultEnvironmentAttributes(Reference defaultEnvironmentAttributes) {
-        this.map.put("defaultEnvironmentAttributes", defaultEnvironmentAttributes);
-        return this;
-    }
-
-    /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
-     * 
-     * @return Bean with specified values
-     */
-    final public DefaultAccessControl build() {
-        DefaultAccessControl defaultAccessControl = Util.fillInstanceFromMap(new DefaultAccessControl(), this.map);
-        return defaultAccessControl;
+    public B defaultEnvironmentAttributes(Reference defaultEnvironmentAttributes) {
+        getBuildingInstance().setDefaultEnvironmentAttributes(defaultEnvironmentAttributes);
+        return getSelf();
     }
 }

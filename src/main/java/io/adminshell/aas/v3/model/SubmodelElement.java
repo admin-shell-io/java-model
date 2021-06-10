@@ -30,7 +30,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
     @KnownSubtypes.Type(value = Operation.class),
     @KnownSubtypes.Type(value = SubmodelElementCollection.class)
 })
-public interface SubmodelElement extends ModelClass, Referable, Qualifiable, HasDataSpecification, HasKind, HasSemantics {
+public interface SubmodelElement extends Referable, Qualifiable, HasDataSpecification, HasKind, HasSemantics {
 
     // standard methods
 

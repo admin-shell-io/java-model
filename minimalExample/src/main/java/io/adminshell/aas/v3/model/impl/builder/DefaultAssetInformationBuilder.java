@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultAssetInformationBuilder extends AbstractBuilder<DefaultAssetInformation> {
-
-    public DefaultAssetInformationBuilder() {
-        super();
-    }
-
-    public DefaultAssetInformationBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultAssetInformationBuilder<T extends AssetInformation, B extends DefaultAssetInformationBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for assetKinds
@@ -26,9 +19,20 @@ public class DefaultAssetInformationBuilder extends AbstractBuilder<DefaultAsset
      * @param assetKinds desired value to be set
      * @return Builder object with new value for assetKinds
      */
-    public DefaultAssetInformationBuilder assetKinds(List<AssetKind> assetKinds) {
-        this.map.put("assetKinds", assetKinds);
-        return this;
+    public B assetKinds(List<AssetKind> assetKinds) {
+        getBuildingInstance().setAssetKinds(assetKinds);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List assetKinds
+     * 
+     * @param assetKind desired value to be added
+     * @return Builder object with new value for assetKinds
+     */
+    public B assetKind(AssetKind assetKind) {
+        getBuildingInstance().getAssetKinds().add(assetKind);
+        return getSelf();
     }
 
     /**
@@ -37,9 +41,20 @@ public class DefaultAssetInformationBuilder extends AbstractBuilder<DefaultAsset
      * @param globalAssetIds desired value to be set
      * @return Builder object with new value for globalAssetIds
      */
-    public DefaultAssetInformationBuilder globalAssetIds(List<Reference> globalAssetIds) {
-        this.map.put("globalAssetIds", globalAssetIds);
-        return this;
+    public B globalAssetIds(List<Reference> globalAssetIds) {
+        getBuildingInstance().setGlobalAssetIds(globalAssetIds);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List globalAssetIds
+     * 
+     * @param globalAssetId desired value to be added
+     * @return Builder object with new value for globalAssetIds
+     */
+    public B globalAssetId(Reference globalAssetId) {
+        getBuildingInstance().getGlobalAssetIds().add(globalAssetId);
+        return getSelf();
     }
 
     /**
@@ -48,9 +63,20 @@ public class DefaultAssetInformationBuilder extends AbstractBuilder<DefaultAsset
      * @param specificAssetIds desired value to be set
      * @return Builder object with new value for specificAssetIds
      */
-    public DefaultAssetInformationBuilder specificAssetIds(List<IdentifierKeyValuePair> specificAssetIds) {
-        this.map.put("specificAssetIds", specificAssetIds);
-        return this;
+    public B specificAssetIds(List<IdentifierKeyValuePair> specificAssetIds) {
+        getBuildingInstance().setSpecificAssetIds(specificAssetIds);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List specificAssetIds
+     * 
+     * @param specificAssetId desired value to be added
+     * @return Builder object with new value for specificAssetIds
+     */
+    public B specificAssetId(IdentifierKeyValuePair specificAssetId) {
+        getBuildingInstance().getSpecificAssetIds().add(specificAssetId);
+        return getSelf();
     }
 
     /**
@@ -59,19 +85,19 @@ public class DefaultAssetInformationBuilder extends AbstractBuilder<DefaultAsset
      * @param defaultThumbnails desired value to be set
      * @return Builder object with new value for defaultThumbnails
      */
-    public DefaultAssetInformationBuilder defaultThumbnails(List<File> defaultThumbnails) {
-        this.map.put("defaultThumbnails", defaultThumbnails);
-        return this;
+    public B defaultThumbnails(List<File> defaultThumbnails) {
+        getBuildingInstance().setDefaultThumbnails(defaultThumbnails);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List defaultThumbnails
      * 
-     * @return Bean with specified values
+     * @param defaultThumbnail desired value to be added
+     * @return Builder object with new value for defaultThumbnails
      */
-    final public DefaultAssetInformation build() {
-        DefaultAssetInformation defaultAssetInformation = Util.fillInstanceFromMap(new DefaultAssetInformation(), this.map);
-        return defaultAssetInformation;
+    public B defaultThumbnail(File defaultThumbnail) {
+        getBuildingInstance().getDefaultThumbnails().add(defaultThumbnail);
+        return getSelf();
     }
 }

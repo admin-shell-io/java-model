@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultAssetAdministrationShellEnvironmentBuilder extends AbstractBuilder<DefaultAssetAdministrationShellEnvironment> {
-
-    public DefaultAssetAdministrationShellEnvironmentBuilder() {
-        super();
-    }
-
-    public DefaultAssetAdministrationShellEnvironmentBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultAssetAdministrationShellEnvironmentBuilder<T extends AssetAdministrationShellEnvironment, B extends DefaultAssetAdministrationShellEnvironmentBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for assetAdministrationShells
@@ -26,10 +19,20 @@ public class DefaultAssetAdministrationShellEnvironmentBuilder extends AbstractB
      * @param assetAdministrationShells desired value to be set
      * @return Builder object with new value for assetAdministrationShells
      */
-    public DefaultAssetAdministrationShellEnvironmentBuilder assetAdministrationShells(
-        List<AssetAdministrationShell> assetAdministrationShells) {
-        this.map.put("assetAdministrationShells", assetAdministrationShells);
-        return this;
+    public B assetAdministrationShells(List<AssetAdministrationShell> assetAdministrationShells) {
+        getBuildingInstance().setAssetAdministrationShells(assetAdministrationShells);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List assetAdministrationShells
+     * 
+     * @param assetAdministrationShells desired value to be added
+     * @return Builder object with new value for assetAdministrationShells
+     */
+    public B assetAdministrationShells(AssetAdministrationShell assetAdministrationShells) {
+        getBuildingInstance().getAssetAdministrationShells().add(assetAdministrationShells);
+        return getSelf();
     }
 
     /**
@@ -38,9 +41,20 @@ public class DefaultAssetAdministrationShellEnvironmentBuilder extends AbstractB
      * @param assets desired value to be set
      * @return Builder object with new value for assets
      */
-    public DefaultAssetAdministrationShellEnvironmentBuilder assets(List<Asset> assets) {
-        this.map.put("assets", assets);
-        return this;
+    public B assets(List<Asset> assets) {
+        getBuildingInstance().setAssets(assets);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List assets
+     * 
+     * @param assets desired value to be added
+     * @return Builder object with new value for assets
+     */
+    public B assets(Asset assets) {
+        getBuildingInstance().getAssets().add(assets);
+        return getSelf();
     }
 
     /**
@@ -49,9 +63,20 @@ public class DefaultAssetAdministrationShellEnvironmentBuilder extends AbstractB
      * @param conceptDescriptions desired value to be set
      * @return Builder object with new value for conceptDescriptions
      */
-    public DefaultAssetAdministrationShellEnvironmentBuilder conceptDescriptions(List<ConceptDescription> conceptDescriptions) {
-        this.map.put("conceptDescriptions", conceptDescriptions);
-        return this;
+    public B conceptDescriptions(List<ConceptDescription> conceptDescriptions) {
+        getBuildingInstance().setConceptDescriptions(conceptDescriptions);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List conceptDescriptions
+     * 
+     * @param conceptDescriptions desired value to be added
+     * @return Builder object with new value for conceptDescriptions
+     */
+    public B conceptDescriptions(ConceptDescription conceptDescriptions) {
+        getBuildingInstance().getConceptDescriptions().add(conceptDescriptions);
+        return getSelf();
     }
 
     /**
@@ -60,20 +85,19 @@ public class DefaultAssetAdministrationShellEnvironmentBuilder extends AbstractB
      * @param submodels desired value to be set
      * @return Builder object with new value for submodels
      */
-    public DefaultAssetAdministrationShellEnvironmentBuilder submodels(List<Submodel> submodels) {
-        this.map.put("submodels", submodels);
-        return this;
+    public B submodels(List<Submodel> submodels) {
+        getBuildingInstance().setSubmodels(submodels);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List submodels
      * 
-     * @return Bean with specified values
+     * @param submodels desired value to be added
+     * @return Builder object with new value for submodels
      */
-    final public DefaultAssetAdministrationShellEnvironment build() {
-        DefaultAssetAdministrationShellEnvironment defaultAssetAdministrationShellEnvironment =
-            Util.fillInstanceFromMap(new DefaultAssetAdministrationShellEnvironment(), this.map);
-        return defaultAssetAdministrationShellEnvironment;
+    public B submodels(Submodel submodels) {
+        getBuildingInstance().getSubmodels().add(submodels);
+        return getSelf();
     }
 }

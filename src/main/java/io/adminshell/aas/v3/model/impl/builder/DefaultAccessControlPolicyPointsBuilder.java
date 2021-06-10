@@ -9,15 +9,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultAccessControlPolicyPointsBuilder extends AbstractBuilder<DefaultAccessControlPolicyPoints> {
-
-    public DefaultAccessControlPolicyPointsBuilder() {
-        super();
-    }
-
-    public DefaultAccessControlPolicyPointsBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultAccessControlPolicyPointsBuilder<T extends AccessControlPolicyPoints, B extends DefaultAccessControlPolicyPointsBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for policyAdministrationPoint
@@ -25,9 +18,9 @@ public class DefaultAccessControlPolicyPointsBuilder extends AbstractBuilder<Def
      * @param policyAdministrationPoint desired value to be set
      * @return Builder object with new value for policyAdministrationPoint
      */
-    public DefaultAccessControlPolicyPointsBuilder policyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint) {
-        this.map.put("policyAdministrationPoint", policyAdministrationPoint);
-        return this;
+    public B policyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint) {
+        getBuildingInstance().setPolicyAdministrationPoint(policyAdministrationPoint);
+        return getSelf();
     }
 
     /**
@@ -36,9 +29,9 @@ public class DefaultAccessControlPolicyPointsBuilder extends AbstractBuilder<Def
      * @param policyDecisionPoint desired value to be set
      * @return Builder object with new value for policyDecisionPoint
      */
-    public DefaultAccessControlPolicyPointsBuilder policyDecisionPoint(PolicyDecisionPoint policyDecisionPoint) {
-        this.map.put("policyDecisionPoint", policyDecisionPoint);
-        return this;
+    public B policyDecisionPoint(PolicyDecisionPoint policyDecisionPoint) {
+        getBuildingInstance().setPolicyDecisionPoint(policyDecisionPoint);
+        return getSelf();
     }
 
     /**
@@ -47,9 +40,9 @@ public class DefaultAccessControlPolicyPointsBuilder extends AbstractBuilder<Def
      * @param policyEnforcementPoint desired value to be set
      * @return Builder object with new value for policyEnforcementPoint
      */
-    public DefaultAccessControlPolicyPointsBuilder policyEnforcementPoint(PolicyEnforcementPoints policyEnforcementPoint) {
-        this.map.put("policyEnforcementPoint", policyEnforcementPoint);
-        return this;
+    public B policyEnforcementPoint(PolicyEnforcementPoints policyEnforcementPoint) {
+        getBuildingInstance().setPolicyEnforcementPoint(policyEnforcementPoint);
+        return getSelf();
     }
 
     /**
@@ -58,20 +51,8 @@ public class DefaultAccessControlPolicyPointsBuilder extends AbstractBuilder<Def
      * @param policyInformationPoints desired value to be set
      * @return Builder object with new value for policyInformationPoints
      */
-    public DefaultAccessControlPolicyPointsBuilder policyInformationPoints(PolicyInformationPoints policyInformationPoints) {
-        this.map.put("policyInformationPoints", policyInformationPoints);
-        return this;
-    }
-
-    /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
-     * 
-     * @return Bean with specified values
-     */
-    final public DefaultAccessControlPolicyPoints build() {
-        DefaultAccessControlPolicyPoints defaultAccessControlPolicyPoints =
-            Util.fillInstanceFromMap(new DefaultAccessControlPolicyPoints(), this.map);
-        return defaultAccessControlPolicyPoints;
+    public B policyInformationPoints(PolicyInformationPoints policyInformationPoints) {
+        getBuildingInstance().setPolicyInformationPoints(policyInformationPoints);
+        return getSelf();
     }
 }

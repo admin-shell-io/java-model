@@ -10,15 +10,7 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultFormulaBuilder extends AbstractBuilder<DefaultFormula> {
-
-    public DefaultFormulaBuilder() {
-        super();
-    }
-
-    public DefaultFormulaBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultFormulaBuilder<T extends Formula, B extends DefaultFormulaBuilder<T, B>> extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for dependsOns
@@ -26,19 +18,20 @@ public class DefaultFormulaBuilder extends AbstractBuilder<DefaultFormula> {
      * @param dependsOns desired value to be set
      * @return Builder object with new value for dependsOns
      */
-    public DefaultFormulaBuilder dependsOns(List<Reference> dependsOns) {
-        this.map.put("dependsOns", dependsOns);
-        return this;
+    public B dependsOns(List<Reference> dependsOns) {
+        getBuildingInstance().setDependsOns(dependsOns);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List dependsOns
      * 
-     * @return Bean with specified values
+     * @param dependsOn desired value to be added
+     * @return Builder object with new value for dependsOns
      */
-    final public DefaultFormula build() {
-        DefaultFormula defaultFormula = Util.fillInstanceFromMap(new DefaultFormula(), this.map);
-        return defaultFormula;
+    public B dependsOn(Reference dependsOn) {
+        getBuildingInstance().getDependsOns().add(dependsOn);
+        return getSelf();
     }
+
 }

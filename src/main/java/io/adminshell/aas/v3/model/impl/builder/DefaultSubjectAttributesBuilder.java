@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultSubjectAttributesBuilder extends AbstractBuilder<DefaultSubjectAttributes> {
-
-    public DefaultSubjectAttributesBuilder() {
-        super();
-    }
-
-    public DefaultSubjectAttributesBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultSubjectAttributesBuilder<T extends SubjectAttributes, B extends DefaultSubjectAttributesBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for subjectAttributes
@@ -26,19 +19,19 @@ public class DefaultSubjectAttributesBuilder extends AbstractBuilder<DefaultSubj
      * @param subjectAttributes desired value to be set
      * @return Builder object with new value for subjectAttributes
      */
-    public DefaultSubjectAttributesBuilder subjectAttributes(List<DataElement> subjectAttributes) {
-        this.map.put("subjectAttributes", subjectAttributes);
-        return this;
+    public B subjectAttributes(List<DataElement> subjectAttributes) {
+        getBuildingInstance().setSubjectAttributes(subjectAttributes);
+        return getSelf();
     }
 
     /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
+     * This function allows adding a value to the List subjectAttributes
      * 
-     * @return Bean with specified values
+     * @param subjectAttribute desired value to be added
+     * @return Builder object with new value for subjectAttributes
      */
-    final public DefaultSubjectAttributes build() {
-        DefaultSubjectAttributes defaultSubjectAttributes = Util.fillInstanceFromMap(new DefaultSubjectAttributes(), this.map);
-        return defaultSubjectAttributes;
+    public B subjectAttribute(DataElement subjectAttribute) {
+        getBuildingInstance().getSubjectAttributes().add(subjectAttribute);
+        return getSelf();
     }
 }

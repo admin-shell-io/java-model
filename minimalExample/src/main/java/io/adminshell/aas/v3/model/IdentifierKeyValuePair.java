@@ -17,7 +17,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultIdentifierKeyValuePair.class)
 })
-public interface IdentifierKeyValuePair extends ModelClass, HasSemantics {
+public interface IdentifierKeyValuePair extends HasSemantics {
 
     // standard methods
 

@@ -17,7 +17,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultAccessControl.class)
 })
-public interface AccessControl extends ModelClass {
+public interface AccessControl {
 
     // standard methods
 

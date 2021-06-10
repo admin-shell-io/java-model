@@ -18,7 +18,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultPolicyInformationPoints.class)
 })
-public interface PolicyInformationPoints extends ModelClass {
+public interface PolicyInformationPoints {
 
     // standard methods
 

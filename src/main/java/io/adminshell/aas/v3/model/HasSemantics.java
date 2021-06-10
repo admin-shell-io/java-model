@@ -24,7 +24,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
     @KnownSubtypes.Type(value = Qualifier.class),
     @KnownSubtypes.Type(value = Extension.class)
 })
-public interface HasSemantics extends ModelClass {
+public interface HasSemantics {
 
     // standard methods
 

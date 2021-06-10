@@ -57,14 +57,6 @@ public class DefaultFile implements File {
         }
     }
 
-    @Override
-    public Object deepCopy() {
-        DefaultFile other = new DefaultFile();
-        other.mimeTypes = (List<String>) Util.clone(this.mimeTypes);
-        other.values = (List<String>) Util.clone(this.values);
-        return other;
-    }
-
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/File/mimeType")
@@ -85,4 +77,16 @@ public class DefaultFile implements File {
         this.values = values;
     }
 
+    public static class Builder extends DefaultFileBuilder<DefaultFile, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultFile newBuildingInstance() {
+            return new DefaultFile();
+        }
+    }
 }

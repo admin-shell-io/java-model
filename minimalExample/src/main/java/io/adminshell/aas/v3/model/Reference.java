@@ -19,7 +19,7 @@ import io.adminshell.aas.v3.model.impl.builder.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultReference.class)
 })
-public interface Reference extends ModelClass {
+public interface Reference {
 
     // standard methods
 

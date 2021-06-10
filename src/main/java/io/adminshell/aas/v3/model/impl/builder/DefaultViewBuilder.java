@@ -10,15 +10,7 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultViewBuilder extends AbstractBuilder<DefaultView> {
-
-    public DefaultViewBuilder() {
-        super();
-    }
-
-    public DefaultViewBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultViewBuilder<T extends View, B extends DefaultViewBuilder<T, B>> extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for containedElements
@@ -26,9 +18,20 @@ public class DefaultViewBuilder extends AbstractBuilder<DefaultView> {
      * @param containedElements desired value to be set
      * @return Builder object with new value for containedElements
      */
-    public DefaultViewBuilder containedElements(List<Reference> containedElements) {
-        this.map.put("containedElements", containedElements);
-        return this;
+    public B containedElements(List<Reference> containedElements) {
+        getBuildingInstance().setContainedElements(containedElements);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List containedElements
+     * 
+     * @param containedElement desired value to be added
+     * @return Builder object with new value for containedElements
+     */
+    public B containedElement(Reference containedElement) {
+        getBuildingInstance().getContainedElements().add(containedElement);
+        return getSelf();
     }
 
     /**
@@ -37,9 +40,9 @@ public class DefaultViewBuilder extends AbstractBuilder<DefaultView> {
      * @param category desired value to be set
      * @return Builder object with new value for category
      */
-    public DefaultViewBuilder category(String category) {
-        this.map.put("category", category);
-        return this;
+    public B category(String category) {
+        getBuildingInstance().setCategory(category);
+        return getSelf();
     }
 
     /**
@@ -48,9 +51,20 @@ public class DefaultViewBuilder extends AbstractBuilder<DefaultView> {
      * @param descriptions desired value to be set
      * @return Builder object with new value for descriptions
      */
-    public DefaultViewBuilder descriptions(List<LangString> descriptions) {
-        this.map.put("descriptions", descriptions);
-        return this;
+    public B descriptions(List<LangString> descriptions) {
+        getBuildingInstance().setDescriptions(descriptions);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List descriptions
+     * 
+     * @param description desired value to be added
+     * @return Builder object with new value for descriptions
+     */
+    public B description(LangString description) {
+        getBuildingInstance().getDescriptions().add(description);
+        return getSelf();
     }
 
     /**
@@ -59,9 +73,20 @@ public class DefaultViewBuilder extends AbstractBuilder<DefaultView> {
      * @param displayNames desired value to be set
      * @return Builder object with new value for displayNames
      */
-    public DefaultViewBuilder displayNames(List<LangString> displayNames) {
-        this.map.put("displayNames", displayNames);
-        return this;
+    public B displayNames(List<LangString> displayNames) {
+        getBuildingInstance().setDisplayNames(displayNames);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List displayNames
+     * 
+     * @param displayName desired value to be added
+     * @return Builder object with new value for displayNames
+     */
+    public B displayName(LangString displayName) {
+        getBuildingInstance().getDisplayNames().add(displayName);
+        return getSelf();
     }
 
     /**
@@ -70,9 +95,9 @@ public class DefaultViewBuilder extends AbstractBuilder<DefaultView> {
      * @param idShort desired value to be set
      * @return Builder object with new value for idShort
      */
-    public DefaultViewBuilder idShort(String idShort) {
-        this.map.put("idShort", idShort);
-        return this;
+    public B idShort(String idShort) {
+        getBuildingInstance().setIdShort(idShort);
+        return getSelf();
     }
 
     /**
@@ -81,9 +106,20 @@ public class DefaultViewBuilder extends AbstractBuilder<DefaultView> {
      * @param dataSpecifications desired value to be set
      * @return Builder object with new value for dataSpecifications
      */
-    public DefaultViewBuilder dataSpecifications(List<Reference> dataSpecifications) {
-        this.map.put("dataSpecifications", dataSpecifications);
-        return this;
+    public B dataSpecifications(List<Reference> dataSpecifications) {
+        getBuildingInstance().setDataSpecifications(dataSpecifications);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List dataSpecifications
+     * 
+     * @param dataSpecification desired value to be added
+     * @return Builder object with new value for dataSpecifications
+     */
+    public B dataSpecification(Reference dataSpecification) {
+        getBuildingInstance().getDataSpecifications().add(dataSpecification);
+        return getSelf();
     }
 
     /**
@@ -92,19 +128,8 @@ public class DefaultViewBuilder extends AbstractBuilder<DefaultView> {
      * @param semanticId desired value to be set
      * @return Builder object with new value for semanticId
      */
-    public DefaultViewBuilder semanticId(Reference semanticId) {
-        this.map.put("semanticId", semanticId);
-        return this;
-    }
-
-    /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
-     * 
-     * @return Bean with specified values
-     */
-    final public DefaultView build() {
-        DefaultView defaultView = Util.fillInstanceFromMap(new DefaultView(), this.map);
-        return defaultView;
+    public B semanticId(Reference semanticId) {
+        getBuildingInstance().setSemanticId(semanticId);
+        return getSelf();
     }
 }

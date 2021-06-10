@@ -9,25 +9,6 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultDataSpecificationContentBuilder extends AbstractBuilder<DefaultDataSpecificationContent> {
-
-    public DefaultDataSpecificationContentBuilder() {
-        super();
-    }
-
-    public DefaultDataSpecificationContentBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
-
-    /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
-     * 
-     * @return Bean with specified values
-     */
-    final public DefaultDataSpecificationContent build() {
-        DefaultDataSpecificationContent defaultDataSpecificationContent =
-            Util.fillInstanceFromMap(new DefaultDataSpecificationContent(), this.map);
-        return defaultDataSpecificationContent;
-    }
+public abstract class DefaultDataSpecificationContentBuilder<T extends DataSpecificationContent, B extends DefaultDataSpecificationContentBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 }

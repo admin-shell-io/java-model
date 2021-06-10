@@ -10,15 +10,8 @@ import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
-public class DefaultAssetAdministrationShellBuilder extends AbstractBuilder<DefaultAssetAdministrationShell> {
-
-    public DefaultAssetAdministrationShellBuilder() {
-        super();
-    }
-
-    public DefaultAssetAdministrationShellBuilder(Builder<? extends ModelClass> builder) {
-        super(builder);
-    }
+public abstract class DefaultAssetAdministrationShellBuilder<T extends AssetAdministrationShell, B extends DefaultAssetAdministrationShellBuilder<T, B>>
+    extends ExtendableBuilder<T, B> {
 
     /**
      * This function allows setting a value for assetInformation
@@ -26,9 +19,9 @@ public class DefaultAssetAdministrationShellBuilder extends AbstractBuilder<Defa
      * @param assetInformation desired value to be set
      * @return Builder object with new value for assetInformation
      */
-    public DefaultAssetAdministrationShellBuilder assetInformation(AssetInformation assetInformation) {
-        this.map.put("assetInformation", assetInformation);
-        return this;
+    public B assetInformation(AssetInformation assetInformation) {
+        getBuildingInstance().setAssetInformation(assetInformation);
+        return getSelf();
     }
 
     /**
@@ -37,9 +30,9 @@ public class DefaultAssetAdministrationShellBuilder extends AbstractBuilder<Defa
      * @param derivedFrom desired value to be set
      * @return Builder object with new value for derivedFrom
      */
-    public DefaultAssetAdministrationShellBuilder derivedFrom(Reference derivedFrom) {
-        this.map.put("derivedFrom", derivedFrom);
-        return this;
+    public B derivedFrom(Reference derivedFrom) {
+        getBuildingInstance().setDerivedFrom(derivedFrom);
+        return getSelf();
     }
 
     /**
@@ -48,9 +41,9 @@ public class DefaultAssetAdministrationShellBuilder extends AbstractBuilder<Defa
      * @param security desired value to be set
      * @return Builder object with new value for security
      */
-    public DefaultAssetAdministrationShellBuilder security(Security security) {
-        this.map.put("security", security);
-        return this;
+    public B security(Security security) {
+        getBuildingInstance().setSecurity(security);
+        return getSelf();
     }
 
     /**
@@ -59,9 +52,20 @@ public class DefaultAssetAdministrationShellBuilder extends AbstractBuilder<Defa
      * @param submodels desired value to be set
      * @return Builder object with new value for submodels
      */
-    public DefaultAssetAdministrationShellBuilder submodels(List<Reference> submodels) {
-        this.map.put("submodels", submodels);
-        return this;
+    public B submodels(List<Reference> submodels) {
+        getBuildingInstance().setSubmodels(submodels);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List submodels
+     * 
+     * @param submodel desired value to be added
+     * @return Builder object with new value for submodels
+     */
+    public B submodel(Reference submodel) {
+        getBuildingInstance().getSubmodels().add(submodel);
+        return getSelf();
     }
 
     /**
@@ -70,9 +74,20 @@ public class DefaultAssetAdministrationShellBuilder extends AbstractBuilder<Defa
      * @param views desired value to be set
      * @return Builder object with new value for views
      */
-    public DefaultAssetAdministrationShellBuilder views(List<View> views) {
-        this.map.put("views", views);
-        return this;
+    public B views(List<View> views) {
+        getBuildingInstance().setViews(views);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List views
+     * 
+     * @param view desired value to be added
+     * @return Builder object with new value for views
+     */
+    public B view(View view) {
+        getBuildingInstance().getViews().add(view);
+        return getSelf();
     }
 
     /**
@@ -81,9 +96,20 @@ public class DefaultAssetAdministrationShellBuilder extends AbstractBuilder<Defa
      * @param dataSpecifications desired value to be set
      * @return Builder object with new value for dataSpecifications
      */
-    public DefaultAssetAdministrationShellBuilder dataSpecifications(List<Reference> dataSpecifications) {
-        this.map.put("dataSpecifications", dataSpecifications);
-        return this;
+    public B dataSpecifications(List<Reference> dataSpecifications) {
+        getBuildingInstance().setDataSpecifications(dataSpecifications);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List dataSpecifications
+     * 
+     * @param dataSpecification desired value to be added
+     * @return Builder object with new value for dataSpecifications
+     */
+    public B dataSpecification(Reference dataSpecification) {
+        getBuildingInstance().getDataSpecifications().add(dataSpecification);
+        return getSelf();
     }
 
     /**
@@ -92,9 +118,9 @@ public class DefaultAssetAdministrationShellBuilder extends AbstractBuilder<Defa
      * @param administration desired value to be set
      * @return Builder object with new value for administration
      */
-    public DefaultAssetAdministrationShellBuilder administration(AdministrativeInformation administration) {
-        this.map.put("administration", administration);
-        return this;
+    public B administration(AdministrativeInformation administration) {
+        getBuildingInstance().setAdministration(administration);
+        return getSelf();
     }
 
     /**
@@ -103,9 +129,9 @@ public class DefaultAssetAdministrationShellBuilder extends AbstractBuilder<Defa
      * @param identification desired value to be set
      * @return Builder object with new value for identification
      */
-    public DefaultAssetAdministrationShellBuilder identification(Identifier identification) {
-        this.map.put("identification", identification);
-        return this;
+    public B identification(Identifier identification) {
+        getBuildingInstance().setIdentification(identification);
+        return getSelf();
     }
 
     /**
@@ -114,9 +140,9 @@ public class DefaultAssetAdministrationShellBuilder extends AbstractBuilder<Defa
      * @param category desired value to be set
      * @return Builder object with new value for category
      */
-    public DefaultAssetAdministrationShellBuilder category(String category) {
-        this.map.put("category", category);
-        return this;
+    public B category(String category) {
+        getBuildingInstance().setCategory(category);
+        return getSelf();
     }
 
     /**
@@ -125,9 +151,20 @@ public class DefaultAssetAdministrationShellBuilder extends AbstractBuilder<Defa
      * @param descriptions desired value to be set
      * @return Builder object with new value for descriptions
      */
-    public DefaultAssetAdministrationShellBuilder descriptions(List<LangString> descriptions) {
-        this.map.put("descriptions", descriptions);
-        return this;
+    public B descriptions(List<LangString> descriptions) {
+        getBuildingInstance().setDescriptions(descriptions);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List descriptions
+     * 
+     * @param description desired value to be added
+     * @return Builder object with new value for descriptions
+     */
+    public B description(LangString description) {
+        getBuildingInstance().getDescriptions().add(description);
+        return getSelf();
     }
 
     /**
@@ -136,9 +173,20 @@ public class DefaultAssetAdministrationShellBuilder extends AbstractBuilder<Defa
      * @param displayNames desired value to be set
      * @return Builder object with new value for displayNames
      */
-    public DefaultAssetAdministrationShellBuilder displayNames(List<LangString> displayNames) {
-        this.map.put("displayNames", displayNames);
-        return this;
+    public B displayNames(List<LangString> displayNames) {
+        getBuildingInstance().setDisplayNames(displayNames);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List displayNames
+     * 
+     * @param displayName desired value to be added
+     * @return Builder object with new value for displayNames
+     */
+    public B displayName(LangString displayName) {
+        getBuildingInstance().getDisplayNames().add(displayName);
+        return getSelf();
     }
 
     /**
@@ -147,20 +195,8 @@ public class DefaultAssetAdministrationShellBuilder extends AbstractBuilder<Defa
      * @param idShort desired value to be set
      * @return Builder object with new value for idShort
      */
-    public DefaultAssetAdministrationShellBuilder idShort(String idShort) {
-        this.map.put("idShort", idShort);
-        return this;
-    }
-
-    /**
-     * This function takes the values that were set previously via the other functions of this class and
-     * turns them into a Java bean.
-     * 
-     * @return Bean with specified values
-     */
-    final public DefaultAssetAdministrationShell build() {
-        DefaultAssetAdministrationShell defaultAssetAdministrationShell =
-            Util.fillInstanceFromMap(new DefaultAssetAdministrationShell(), this.map);
-        return defaultAssetAdministrationShell;
+    public B idShort(String idShort) {
+        getBuildingInstance().setIdShort(idShort);
+        return getSelf();
     }
 }
