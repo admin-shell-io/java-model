@@ -24,7 +24,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
      * "has annotation" "Annotations that hold for the relationships between the two elements."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation")
-    protected List<DataElement> annotations = new ArrayList<>();
+    protected List<Reference> annotations = new ArrayList<>();
 
     /**
      * "has Data Specification" "Global reference to the data specification template used by the
@@ -145,11 +145,11 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
     // accessor method implementations as derived from the Asset Administration Shell ontology
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation")
-    final public List<DataElement> getAnnotations() {
+    final public List<Reference> getAnnotations() {
         return annotations;
     }
 
-    final public void setAnnotations(List<DataElement> annotations) {
+    final public void setAnnotations(List<Reference> annotations) {
         this.annotations = annotations;
     }
 

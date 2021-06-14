@@ -18,7 +18,7 @@ public abstract class AnnotatedRelationshipElementBuilder<T extends AnnotatedRel
      * @param annotations desired value to be set
      * @return Builder object with new value for annotations
      */
-    public B annotations(List<DataElement> annotations) {
+    public B annotations(List<Reference> annotations) {
         getBuildingInstance().setAnnotations(annotations);
         return getSelf();
     }
@@ -29,7 +29,7 @@ public abstract class AnnotatedRelationshipElementBuilder<T extends AnnotatedRel
      * @param annotation desired value to be added
      * @return Builder object with new value for annotations
      */
-    public B annotation(DataElement annotation) {
+    public B annotation(Reference annotation) {
         getBuildingInstance().getAnnotations().add(annotation);
         return getSelf();
     }
