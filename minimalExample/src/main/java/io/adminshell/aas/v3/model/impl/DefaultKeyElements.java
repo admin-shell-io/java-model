@@ -6,9 +6,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Key Elements" "Enumeration of different key value types within a key. Contains KeyElements,
@@ -38,7 +37,7 @@ public class DefaultKeyElements implements KeyElements {
         return true;
     }
 
-    public static class Builder extends DefaultKeyElementsBuilder<DefaultKeyElements, Builder> {
+    public static class Builder extends KeyElementsBuilder<DefaultKeyElements, Builder> {
 
         @Override
         protected Builder getSelf() {

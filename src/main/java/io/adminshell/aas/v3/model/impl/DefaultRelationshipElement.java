@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Relationship Element" "Constraint AASd-055: The semanticId of a RelationshipElement or a
@@ -228,7 +227,7 @@ public class DefaultRelationshipElement implements RelationshipElement {
         this.semanticId = semanticId;
     }
 
-    public static class Builder extends DefaultRelationshipElementBuilder<DefaultRelationshipElement, Builder> {
+    public static class Builder extends RelationshipElementBuilder<DefaultRelationshipElement, Builder> {
 
         @Override
         protected Builder getSelf() {

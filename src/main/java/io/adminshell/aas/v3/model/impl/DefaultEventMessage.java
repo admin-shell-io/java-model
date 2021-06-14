@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Event Message" "Defines the necessary information of an event instance sent out or received."@en
@@ -193,7 +192,7 @@ public class DefaultEventMessage implements EventMessage {
         this.semanticId = semanticId;
     }
 
-    public static class Builder extends DefaultEventMessageBuilder<DefaultEventMessage, Builder> {
+    public static class Builder extends EventMessageBuilder<DefaultEventMessage, Builder> {
 
         @Override
         protected Builder getSelf() {

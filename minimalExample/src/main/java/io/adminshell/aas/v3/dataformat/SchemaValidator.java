@@ -5,10 +5,9 @@ import java.util.Set;
 
 
 import de.fraunhofer.iais.eis.util.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
+import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
 
 /**
  * Validator that can validate a serialized AASEnvironment according to a specific schema.

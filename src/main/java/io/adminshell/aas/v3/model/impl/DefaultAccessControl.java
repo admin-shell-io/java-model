@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Access Control" "Access Control defines the local access control policy administration point.
@@ -173,7 +172,7 @@ public class DefaultAccessControl implements AccessControl {
         this.defaultEnvironmentAttributes = defaultEnvironmentAttributes;
     }
 
-    public static class Builder extends DefaultAccessControlBuilder<DefaultAccessControl, Builder> {
+    public static class Builder extends AccessControlBuilder<DefaultAccessControl, Builder> {
 
         @Override
         protected Builder getSelf() {

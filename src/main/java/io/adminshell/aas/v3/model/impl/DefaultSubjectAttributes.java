@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Subject Attributes" "A set of data elements that further classifies a specific subject."@en
@@ -61,7 +60,7 @@ public class DefaultSubjectAttributes implements SubjectAttributes {
         this.subjectAttributes = subjectAttributes;
     }
 
-    public static class Builder extends DefaultSubjectAttributesBuilder<DefaultSubjectAttributes, Builder> {
+    public static class Builder extends SubjectAttributesBuilder<DefaultSubjectAttributes, Builder> {
 
         @Override
         protected Builder getSelf() {

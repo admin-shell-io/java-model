@@ -5,9 +5,8 @@ package io.adminshell.aas.v3.model;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
+import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
 
 /**
  * "Blob Data Element" "A BLOB is a data element that represents a file that is contained with its

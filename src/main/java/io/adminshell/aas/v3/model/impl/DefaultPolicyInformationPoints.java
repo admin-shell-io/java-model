@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Policy Information Points" "Defines the security policy information points (PIP). Serves as the
@@ -34,7 +33,7 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
      * access permission rules."@en
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint")
-    protected List<Submodel> internalInformationPoints = new ArrayList<>();
+    protected List<Reference> internalInformationPoints = new ArrayList<>();
 
     public DefaultPolicyInformationPoints() {}
 
@@ -71,15 +70,15 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
     }
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint")
-    final public List<Submodel> getInternalInformationPoints() {
+    final public List<Reference> getInternalInformationPoints() {
         return internalInformationPoints;
     }
 
-    final public void setInternalInformationPoints(List<Submodel> internalInformationPoints) {
+    final public void setInternalInformationPoints(List<Reference> internalInformationPoints) {
         this.internalInformationPoints = internalInformationPoints;
     }
 
-    public static class Builder extends DefaultPolicyInformationPointsBuilder<DefaultPolicyInformationPoints, Builder> {
+    public static class Builder extends PolicyInformationPointsBuilder<DefaultPolicyInformationPoints, Builder> {
 
         @Override
         protected Builder getSelf() {

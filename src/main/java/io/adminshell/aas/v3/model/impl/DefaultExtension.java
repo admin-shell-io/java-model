@@ -6,9 +6,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Extensions" "Single extension of an element."@en "Constraint AASd-077: The name of an extension
@@ -127,7 +126,7 @@ public class DefaultExtension implements Extension {
         this.semanticId = semanticId;
     }
 
-    public static class Builder extends DefaultExtensionBuilder<DefaultExtension, Builder> {
+    public static class Builder extends ExtensionBuilder<DefaultExtension, Builder> {
 
         @Override
         protected Builder getSelf() {

@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Permission Per Object" "Table that defines access permissions for a specified object. The object
@@ -96,7 +95,7 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
         this.targetObjectAttributes = targetObjectAttributes;
     }
 
-    public static class Builder extends DefaultPermissionsPerObjectBuilder<DefaultPermissionsPerObject, Builder> {
+    public static class Builder extends PermissionsPerObjectBuilder<DefaultPermissionsPerObject, Builder> {
 
         @Override
         protected Builder getSelf() {

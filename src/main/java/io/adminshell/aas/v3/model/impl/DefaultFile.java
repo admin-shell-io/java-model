@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "File Submodel Element" "A File is a data element that represents a file via its path
@@ -228,7 +227,7 @@ public class DefaultFile implements File {
         this.semanticId = semanticId;
     }
 
-    public static class Builder extends DefaultFileBuilder<DefaultFile, Builder> {
+    public static class Builder extends FileBuilder<DefaultFile, Builder> {
 
         @Override
         protected Builder getSelf() {

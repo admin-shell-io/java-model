@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Annotated Relationship Element" "An annotated relationship element is an relationship element
@@ -244,7 +243,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
         this.semanticId = semanticId;
     }
 
-    public static class Builder extends DefaultAnnotatedRelationshipElementBuilder<DefaultAnnotatedRelationshipElement, Builder> {
+    public static class Builder extends AnnotatedRelationshipElementBuilder<DefaultAnnotatedRelationshipElement, Builder> {
 
         @Override
         protected Builder getSelf() {

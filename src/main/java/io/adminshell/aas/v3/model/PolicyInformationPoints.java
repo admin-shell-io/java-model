@@ -6,9 +6,8 @@ import java.util.List;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
+import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
 
 /**
  * "Policy Information Points" "Defines the security policy information points (PIP). Serves as the
@@ -47,12 +46,12 @@ public interface PolicyInformationPoints {
     /**
      * "References to submodels defining information used by security access permission rules."@en
      * 
-     * @return Returns the List of Submodels for the property internalInformationPoints. More
+     * @return Returns the List of References for the property internalInformationPoints. More
      *         information under
      *         https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint")
-    public List<Submodel> getInternalInformationPoints();
+    public List<Reference> getInternalInformationPoints();
 
     /**
      * "References to submodels defining information used by security access permission rules."@en
@@ -61,6 +60,6 @@ public interface PolicyInformationPoints {
      *        information under
      *        https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint
      */
-    public void setInternalInformationPoints(List<Submodel> internalInformationPoints);
+    public void setInternalInformationPoints(List<Reference> internalInformationPoints);
 
 }

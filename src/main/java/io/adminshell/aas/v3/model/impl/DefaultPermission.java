@@ -6,9 +6,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Permission" "Description of a single permission."@en
@@ -78,7 +77,7 @@ public class DefaultPermission implements Permission {
         this.permission = permission;
     }
 
-    public static class Builder extends DefaultPermissionBuilder<DefaultPermission, Builder> {
+    public static class Builder extends PermissionBuilder<DefaultPermission, Builder> {
 
         @Override
         protected Builder getSelf() {

@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Concept Description" "The semantics of a property or other elements that may have a semantic
@@ -216,7 +215,7 @@ public class DefaultConceptDescription implements ConceptDescription {
         this.idShort = idShort;
     }
 
-    public static class Builder extends DefaultConceptDescriptionBuilder<DefaultConceptDescription, Builder> {
+    public static class Builder extends ConceptDescriptionBuilder<DefaultConceptDescription, Builder> {
 
         @Override
         protected Builder getSelf() {

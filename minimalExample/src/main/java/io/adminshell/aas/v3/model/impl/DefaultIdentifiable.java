@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Identifiable" "An element that has a globally unique identifier."@en
@@ -77,7 +76,7 @@ public class DefaultIdentifiable implements Identifiable {
         this.identifications = identifications;
     }
 
-    public static class Builder extends DefaultIdentifiableBuilder<DefaultIdentifiable, Builder> {
+    public static class Builder extends IdentifiableBuilder<DefaultIdentifiable, Builder> {
 
         @Override
         protected Builder getSelf() {

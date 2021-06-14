@@ -6,9 +6,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Key" "A key is a reference to an element by its id."@en
@@ -96,7 +95,7 @@ public class DefaultKey implements Key {
         this.value = value;
     }
 
-    public static class Builder extends DefaultKeyBuilder<DefaultKey, Builder> {
+    public static class Builder extends KeyBuilder<DefaultKey, Builder> {
 
         @Override
         protected Builder getSelf() {

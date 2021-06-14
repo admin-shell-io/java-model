@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Reference" "Reference to either a model element of the same or another AAs or to an external
@@ -61,7 +60,7 @@ public class DefaultReference implements Reference {
         this.keys = keys;
     }
 
-    public static class Builder extends DefaultReferenceBuilder<DefaultReference, Builder> {
+    public static class Builder extends ReferenceBuilder<DefaultReference, Builder> {
 
         @Override
         protected Builder getSelf() {

@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Property" "A property is a data element that has a single value."@en "Constraint AASd-052a: If
@@ -103,7 +102,7 @@ public class DefaultProperty implements Property {
         this.valueIds = valueIds;
     }
 
-    public static class Builder extends DefaultPropertyBuilder<DefaultProperty, Builder> {
+    public static class Builder extends PropertyBuilder<DefaultProperty, Builder> {
 
         @Override
         protected Builder getSelf() {

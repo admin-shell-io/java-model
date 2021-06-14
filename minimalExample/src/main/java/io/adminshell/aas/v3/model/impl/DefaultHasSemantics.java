@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Has Semantics" "Element that can have a semantic definition. Identifier of the semantic
@@ -64,7 +63,7 @@ public class DefaultHasSemantics implements HasSemantics {
         this.semanticIds = semanticIds;
     }
 
-    public static class Builder extends DefaultHasSemanticsBuilder<DefaultHasSemantics, Builder> {
+    public static class Builder extends HasSemanticsBuilder<DefaultHasSemantics, Builder> {
 
         @Override
         protected Builder getSelf() {

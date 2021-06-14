@@ -6,9 +6,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Qualifier" "A qualifier is a type-value pair that makes additional statements w.r.t. the value
@@ -132,7 +131,7 @@ public class DefaultQualifier implements Qualifier {
         this.semanticId = semanticId;
     }
 
-    public static class Builder extends DefaultQualifierBuilder<DefaultQualifier, Builder> {
+    public static class Builder extends QualifierBuilder<DefaultQualifier, Builder> {
 
         @Override
         protected Builder getSelf() {

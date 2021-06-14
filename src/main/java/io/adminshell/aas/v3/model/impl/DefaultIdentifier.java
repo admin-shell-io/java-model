@@ -6,9 +6,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Identifier" "Used to uniquely identify an entity by using an identifier."@en
@@ -75,7 +74,7 @@ public class DefaultIdentifier implements Identifier {
         this.idType = idType;
     }
 
-    public static class Builder extends DefaultIdentifierBuilder<DefaultIdentifier, Builder> {
+    public static class Builder extends IdentifierBuilder<DefaultIdentifier, Builder> {
 
         @Override
         protected Builder getSelf() {

@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Capability" "A capability is the implementation-independent description of the potential of an
@@ -195,7 +194,7 @@ public class DefaultCapability implements Capability {
         this.semanticId = semanticId;
     }
 
-    public static class Builder extends DefaultCapabilityBuilder<DefaultCapability, Builder> {
+    public static class Builder extends CapabilityBuilder<DefaultCapability, Builder> {
 
         @Override
         protected Builder getSelf() {

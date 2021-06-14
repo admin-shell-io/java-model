@@ -6,9 +6,8 @@ import java.util.List;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
+import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
 
 /**
  * "Entity" "An entity is a submodel element that is used to model entities."@en "Constraint

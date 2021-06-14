@@ -6,9 +6,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Access ControlPolicy Points" "Container for access control policy points."@en
@@ -107,7 +106,7 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
         this.policyInformationPoints = policyInformationPoints;
     }
 
-    public static class Builder extends DefaultAccessControlPolicyPointsBuilder<DefaultAccessControlPolicyPoints, Builder> {
+    public static class Builder extends AccessControlPolicyPointsBuilder<DefaultAccessControlPolicyPoints, Builder> {
 
         @Override
         protected Builder getSelf() {

@@ -6,9 +6,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Value Reference Pair" "A value reference pair within a value list. Each value has a global
@@ -75,7 +74,7 @@ public class DefaultValueReferencePair implements ValueReferencePair {
         this.valueId = valueId;
     }
 
-    public static class Builder extends DefaultValueReferencePairBuilder<DefaultValueReferencePair, Builder> {
+    public static class Builder extends ValueReferencePairBuilder<DefaultValueReferencePair, Builder> {
 
         @Override
         protected Builder getSelf() {

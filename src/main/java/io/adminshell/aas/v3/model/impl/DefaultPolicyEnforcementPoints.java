@@ -6,9 +6,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Policy Enforcement Point" "Defines the security policy enforcement points (PEP)."@en
@@ -57,7 +56,7 @@ public class DefaultPolicyEnforcementPoints implements PolicyEnforcementPoints {
         this.externalPolicyEnforcementPoint = externalPolicyEnforcementPoint;
     }
 
-    public static class Builder extends DefaultPolicyEnforcementPointsBuilder<DefaultPolicyEnforcementPoints, Builder> {
+    public static class Builder extends PolicyEnforcementPointsBuilder<DefaultPolicyEnforcementPoints, Builder> {
 
         @Override
         protected Builder getSelf() {

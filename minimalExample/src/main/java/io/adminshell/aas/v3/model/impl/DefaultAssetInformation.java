@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Asset Information" "The asset may either represent an asset type or an asset instance. The asset
@@ -120,7 +119,7 @@ public class DefaultAssetInformation implements AssetInformation {
         this.defaultThumbnails = defaultThumbnails;
     }
 
-    public static class Builder extends DefaultAssetInformationBuilder<DefaultAssetInformation, Builder> {
+    public static class Builder extends AssetInformationBuilder<DefaultAssetInformation, Builder> {
 
         @Override
         protected Builder getSelf() {

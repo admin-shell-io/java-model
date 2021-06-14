@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Submodel" "A Submodel defines a specific aspect of the asset represented by the AAS. A submodel
@@ -64,7 +63,7 @@ public class DefaultSubmodel implements Submodel {
         this.submodelElements = submodelElements;
     }
 
-    public static class Builder extends DefaultSubmodelBuilder<DefaultSubmodel, Builder> {
+    public static class Builder extends SubmodelBuilder<DefaultSubmodel, Builder> {
 
         @Override
         protected Builder getSelf() {

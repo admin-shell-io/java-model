@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Asset" "An Asset describes meta data of an asset that is represented by an AAS. The asset may
@@ -179,7 +178,7 @@ public class DefaultAsset implements Asset {
         this.idShort = idShort;
     }
 
-    public static class Builder extends DefaultAssetBuilder<DefaultAsset, Builder> {
+    public static class Builder extends AssetBuilder<DefaultAsset, Builder> {
 
         @Override
         protected Builder getSelf() {

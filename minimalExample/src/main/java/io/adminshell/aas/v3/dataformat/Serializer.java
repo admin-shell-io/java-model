@@ -11,10 +11,9 @@ import java.nio.charset.StandardCharsets;
 
 
 import de.fraunhofer.iais.eis.util.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
+import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
 
 /**
  * Generic serializer interface to serialize an instance of AssetAdministrationShellEnvironment to a

@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Object Attributes" "A set of data elements that describe object attributes. These attributes
@@ -59,7 +58,7 @@ public class DefaultObjectAttributes implements ObjectAttributes {
         this.objectAttributes = objectAttributes;
     }
 
-    public static class Builder extends DefaultObjectAttributesBuilder<DefaultObjectAttributes, Builder> {
+    public static class Builder extends ObjectAttributesBuilder<DefaultObjectAttributes, Builder> {
 
         @Override
         protected Builder getSelf() {

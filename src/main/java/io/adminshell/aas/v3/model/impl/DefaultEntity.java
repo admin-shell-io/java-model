@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Entity" "An entity is a submodel element that is used to model entities."@en "Constraint
@@ -272,7 +271,7 @@ public class DefaultEntity implements Entity {
         this.semanticId = semanticId;
     }
 
-    public static class Builder extends DefaultEntityBuilder<DefaultEntity, Builder> {
+    public static class Builder extends EntityBuilder<DefaultEntity, Builder> {
 
         @Override
         protected Builder getSelf() {

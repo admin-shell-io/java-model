@@ -6,9 +6,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Data Type IEC61360" "Enumeration of all IEC 61360 defined data types."@en
@@ -37,7 +36,7 @@ public class DefaultDataTypeIEC61360 implements DataTypeIEC61360 {
         return true;
     }
 
-    public static class Builder extends DefaultDataTypeIEC61360Builder<DefaultDataTypeIEC61360, Builder> {
+    public static class Builder extends DataTypeIEC61360Builder<DefaultDataTypeIEC61360, Builder> {
 
         @Override
         protected Builder getSelf() {

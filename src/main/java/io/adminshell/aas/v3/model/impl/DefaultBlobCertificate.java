@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Blob Certificate" "Certificate provided as BLOB."@en
@@ -110,7 +109,7 @@ public class DefaultBlobCertificate implements BlobCertificate {
         this.policyAdministrationPoint = policyAdministrationPoint;
     }
 
-    public static class Builder extends DefaultBlobCertificateBuilder<DefaultBlobCertificate, Builder> {
+    public static class Builder extends BlobCertificateBuilder<DefaultBlobCertificate, Builder> {
 
         @Override
         protected Builder getSelf() {

@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Administrative Information" "Every Identifiable may have administrative information.
@@ -100,7 +99,7 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
         this.dataSpecifications = dataSpecifications;
     }
 
-    public static class Builder extends DefaultAdministrativeInformationBuilder<DefaultAdministrativeInformation, Builder> {
+    public static class Builder extends AdministrativeInformationBuilder<DefaultAdministrativeInformation, Builder> {
 
         @Override
         protected Builder getSelf() {

@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Referable" "An element that is referable by its idShort. This id is not globally unique. This id
@@ -122,7 +121,7 @@ public class DefaultReferable implements Referable {
         this.idShorts = idShorts;
     }
 
-    public static class Builder extends DefaultReferableBuilder<DefaultReferable, Builder> {
+    public static class Builder extends ReferableBuilder<DefaultReferable, Builder> {
 
         @Override
         protected Builder getSelf() {

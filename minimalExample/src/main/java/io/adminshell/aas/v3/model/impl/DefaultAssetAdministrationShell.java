@@ -8,9 +8,8 @@ import java.util.Objects;
 
 import de.fraunhofer.iais.eis.util.*;
 import io.adminshell.aas.v3.dataformat.*;
-import io.adminshell.aas.v3.dataformat.json.mixins.*;
 import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.builder.*;
+import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * "Asset Administration Shell" "Describes the Administration Shell for Assets, Products,
@@ -77,7 +76,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
         this.submodels = submodels;
     }
 
-    public static class Builder extends DefaultAssetAdministrationShellBuilder<DefaultAssetAdministrationShell, Builder> {
+    public static class Builder extends AssetAdministrationShellBuilder<DefaultAssetAdministrationShell, Builder> {
 
         @Override
         protected Builder getSelf() {
