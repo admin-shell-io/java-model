@@ -10,13 +10,13 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Has Data Specification" "Element that can have be extended by using data specification
- * templates. A data specification template defines the additional attributes an element may or
- * shall have. The data specifications used are explicitly specified with their id."@en "Constraint
- * AASd-050: If the DataSpecificationContent DataSpecificationIEC61360 is used for an element then
- * the value of hasDataSpecification/dataSpecification shall contain the global reference to the IRI
- * of the corresponding data specification template
- * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0."@en
+ * Element that can have be extended by using data specification templates. A data specification
+ * template defines the additional attributes an element may or shall have. The data specifications
+ * used are explicitly specified with their id. Constraint AASd-050: If the DataSpecificationContent
+ * DataSpecificationIEC61360 is used for an element then the value of
+ * hasDataSpecification/dataSpecification shall contain the global reference to the IRI of the
+ * corresponding data specification template
+ * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = Submodel.class),
@@ -34,7 +34,7 @@ public interface HasDataSpecification {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "Global reference to the data specification template used by the element."@en
+     * Global reference to the data specification template used by the element.
      * 
      * @return Returns the List of References for the property dataSpecifications. More information
      *         under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
@@ -43,7 +43,7 @@ public interface HasDataSpecification {
     public List<Reference> getDataSpecifications();
 
     /**
-     * "Global reference to the data specification template used by the element."@en
+     * Global reference to the data specification template used by the element.
      * 
      * @param dataSpecifications desired value for the property dataSpecifications. More information
      *        under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification

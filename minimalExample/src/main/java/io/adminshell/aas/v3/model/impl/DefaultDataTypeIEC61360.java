@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Data Type IEC61360" "Enumeration of all IEC 61360 defined data types."@en
+ * Enumeration of all IEC 61360 defined data types.
  */
 
 public class DefaultDataTypeIEC61360 implements DataTypeIEC61360 {

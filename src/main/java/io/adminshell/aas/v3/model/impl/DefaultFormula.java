@@ -11,17 +11,16 @@ import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
-/**
- * "Formula"
- */
+/**  
+*/
 
 public class DefaultFormula implements Formula {
 
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "depends on" "A formula may depend on referable or even external global elements - assumed that
-     * can be referenced and their value may be evaluated - that are used in the logical expression."@en
+     * A formula may depend on referable or even external global elements - assumed that can be
+     * referenced and their value may be evaluated - that are used in the logical expression.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn")
     protected List<Reference> dependsOns = new ArrayList<>();

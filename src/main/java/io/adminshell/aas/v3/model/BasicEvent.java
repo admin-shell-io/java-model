@@ -9,7 +9,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Basic Event" "A basic event."@en
+ * A basic event.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultBasicEvent.class)
@@ -21,7 +21,7 @@ public interface BasicEvent extends Event {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "Reference to the data or other elements that are being observed."@en
+     * Reference to the data or other elements that are being observed.
      * 
      * @return Returns the Reference for the property observed. More information under
      *         https://admin-shell.io/aas/3/0/RC01/BasicEvent/observed
@@ -30,7 +30,7 @@ public interface BasicEvent extends Event {
     public Reference getObserved();
 
     /**
-     * "Reference to the data or other elements that are being observed."@en
+     * Reference to the data or other elements that are being observed.
      * 
      * @param observed desired value for the property observed. More information under
      *        https://admin-shell.io/aas/3/0/RC01/BasicEvent/observed

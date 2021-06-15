@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Subject Attributes" "A set of data elements that further classifies a specific subject."@en
+ * A set of data elements that further classifies a specific subject.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultSubjectAttributes.class)
@@ -22,9 +22,9 @@ public interface SubjectAttributes {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "A data element that further classifies a specific subject. "@en "Constraint AASs-015: The data
-     * element SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced
-     * within the \'selectableSubjectAttributes\' attribute of \'AccessControl\'."@en
+     * A data element that further classifies a specific subject. Constraint AASs-015: The data element
+     * SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the
+     * 'selectableSubjectAttributes' attribute of 'AccessControl'.
      * 
      * @return Returns the List of DataElements for the property subjectAttributes. More information
      *         under https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute
@@ -33,9 +33,9 @@ public interface SubjectAttributes {
     public List<DataElement> getSubjectAttributes();
 
     /**
-     * "A data element that further classifies a specific subject. "@en "Constraint AASs-015: The data
-     * element SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced
-     * within the \'selectableSubjectAttributes\' attribute of \'AccessControl\'."@en
+     * A data element that further classifies a specific subject. Constraint AASs-015: The data element
+     * SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the
+     * 'selectableSubjectAttributes' attribute of 'AccessControl'.
      * 
      * @param subjectAttributes desired value for the property subjectAttributes. More information under
      *        https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute

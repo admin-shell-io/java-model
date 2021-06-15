@@ -12,8 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Access Control" "Access Control defines the local access control policy administration point.
- * Access Control has the major task to define the access permission rules."@en
+ * Access Control defines the local access control policy administration point. Access Control has
+ * the major task to define the access permission rules.
  */
 
 public class DefaultAccessControl implements AccessControl {
@@ -21,55 +21,52 @@ public class DefaultAccessControl implements AccessControl {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has access permission rule" "Access permission rules of the AAS describing the rights assigned
-     * to (already authenticated) subjects to access elements of the AAS."@en
+     * Access permission rules of the AAS describing the rights assigned to (already authenticated)
+     * subjects to access elements of the AAS.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule")
     protected List<AccessPermissionRule> accessPermissionRules = new ArrayList<>();
 
     /**
-     * "has default environment attributes" "Reference to a submodel defining default environment
-     * attributes, i.e. attributes that are not describing the asset itself. The submodel is of
-     * kind=Type. At the same type the values of these environment attributes need to be accessible when
-     * evaluating the access permission rules. This is realized as a policy information point."@en
+     * Reference to a submodel defining default environment attributes, i.e. attributes that are not
+     * describing the asset itself. The submodel is of kind=Type. At the same type the values of these
+     * environment attributes need to be accessible when evaluating the access permission rules. This is
+     * realized as a policy information point.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultEnvironmentAttributes")
     protected Reference defaultEnvironmentAttributes;
 
     /**
-     * "has default permissions" "Reference to a submodel defining the default permissions for the
-     * AAS."@en
+     * Reference to a submodel defining the default permissions for the AAS.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultPermissions")
     protected Reference defaultPermissions;
 
     /**
-     * "has default subject attributes" "Reference to a submodel defining the default subjects
-     * attributes for the AAS that can be used to describe access permission rules."@en "The submodel is
-     * of kind=Type."@en
+     * Reference to a submodel defining the default subjects attributes for the AAS that can be used to
+     * describe access permission rules. The submodel is of kind=Type.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultSubjectAttributes")
     protected Reference defaultSubjectAttributes;
 
     /**
-     * "has selectable environment attributes" "Reference to a submodel defining which environment
-     * attributes can be accessed via the permission rules."@en
+     * Reference to a submodel defining which environment attributes can be accessed via the permission
+     * rules.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableEnvironmentAttributes")
     protected Reference selectableEnvironmentAttributes;
 
     /**
-     * "has selectable permissions" "Reference to a submodel defining which permissions can be assigned
-     * to the subjects."@en "Default: reference to the submodel referenced via defaultPermissions"@en
+     * Reference to a submodel defining which permissions can be assigned to the subjects. Default:
+     * reference to the submodel referenced via defaultPermissions
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectablePermissions")
     protected Reference selectablePermissions;
 
     /**
-     * "has selectable subject attributes" "Reference to a submodel defining the authenticated subjects
-     * that are configured for the AAS. They are selectable by the access permission rules to assign
-     * permissions to the subjects."@en "Default: reference to the submodel referenced via
-     * defaultSubjectAttributes."@en
+     * Reference to a submodel defining the authenticated subjects that are configured for the AAS. They
+     * are selectable by the access permission rules to assign permissions to the subjects. Default:
+     * reference to the submodel referenced via defaultSubjectAttributes.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableSubjectAttributes")
     protected Reference selectableSubjectAttributes;

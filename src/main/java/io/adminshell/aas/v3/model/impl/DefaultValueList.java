@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Value list" "A set of value reference pairs."@en
+ * A set of value reference pairs.
  */
 
 public class DefaultValueList implements ValueList {
@@ -20,7 +20,7 @@ public class DefaultValueList implements ValueList {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "Value reference pair types" "A pair of a value together with its global unique id.."@en
+     * A pair of a value together with its global unique id..
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueList/valueReferencePairTypes")
     protected List<ValueReferencePair> valueReferencePairTypes = new ArrayList<>();

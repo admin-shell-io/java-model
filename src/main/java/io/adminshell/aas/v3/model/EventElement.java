@@ -9,8 +9,8 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Event Element" "Defines the necessary information for sending or receiving events."@en
- * "non-normative, just only for discussion (as of November 2019)."@en
+ * Defines the necessary information for sending or receiving events. non-normative, just only for
+ * discussion (as of November 2019).
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultEventElement.class)

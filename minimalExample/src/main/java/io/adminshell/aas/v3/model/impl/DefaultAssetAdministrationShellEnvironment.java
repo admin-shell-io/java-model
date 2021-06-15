@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Asset Administration Shell Environment" "A graph of Asset Administration Shells."@en
+ * A graph of Asset Administration Shells.
  */
 
 public class DefaultAssetAdministrationShellEnvironment implements AssetAdministrationShellEnvironment {
@@ -20,29 +20,25 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has Asset Administration Shells" "Points to the differents Administration Shells in one
-     * AssetAdministrationShellEnvironment graph."@en
+     * Points to the differents Administration Shells in one AssetAdministrationShellEnvironment graph.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShells")
     protected List<AssetAdministrationShell> assetAdministrationShells = new ArrayList<>();
 
     /**
-     * "has Assets" "Points to the differents Assets in one AssetAdministrationShellEnvironment
-     * graph."@en
+     * Points to the differents Assets in one AssetAdministrationShellEnvironment graph.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assets")
     protected List<Asset> assets = new ArrayList<>();
 
     /**
-     * "has Concept Descriptions" "Points to the differents Concept Descriptions in one
-     * AssetAdministrationShellEnvironment graph."@en
+     * Points to the differents Concept Descriptions in one AssetAdministrationShellEnvironment graph.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/conceptDescriptions")
     protected List<ConceptDescription> conceptDescriptions = new ArrayList<>();
 
     /**
-     * "has submodels" "Points to the differents Submodels in one AssetAdministrationShellEnvironment
-     * graph."@en
+     * Points to the differents Submodels in one AssetAdministrationShellEnvironment graph.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/submodels")
     protected List<Submodel> submodels = new ArrayList<>();

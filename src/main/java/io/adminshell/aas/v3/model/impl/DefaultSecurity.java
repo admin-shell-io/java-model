@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Security" "Container for security relevant information of the AAS."@en
+ * Container for security relevant information of the AAS.
  */
 
 public class DefaultSecurity implements Security {
@@ -20,19 +20,19 @@ public class DefaultSecurity implements Security {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has access control policy points" "Access control policy points of the AAS."@en
+     * Access control policy points of the AAS.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
     protected AccessControlPolicyPoints accessControlPolicyPoints;
 
     /**
-     * "has certificate" "Certificates of the AAS."@en
+     * Certificates of the AAS.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/certificate")
     protected List<Certificate> certificates = new ArrayList<>();
 
     /**
-     * "has required certificate extension" "Certificate extensions as required by the AAS."@en
+     * Certificate extensions as required by the AAS.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension")
     protected List<Reference> requiredCertificateExtensions = new ArrayList<>();

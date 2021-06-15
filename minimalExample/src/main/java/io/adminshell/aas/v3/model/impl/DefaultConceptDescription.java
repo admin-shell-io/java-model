@@ -12,12 +12,11 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Concept Description" "The semantics of a property or other elements that may have a semantic
- * description is defined by a concept description. The description of the concept should follow a
- * standardized schema (realized as data specification template)."@en "Constraint AASd-051: A
- * ConceptDescription shall have one of the following categories: VALUE, PROPERTY, REFERENCE,
- * DOCUMENT, CAPABILITY, RELATIONSHIP, COLLECTION, FUNCTION, EVENT, ENTITY, APPLICATION_CLASS,
- * QUALIFIER, VIEW. Default: PROPERTY."@en
+ * The semantics of a property or other elements that may have a semantic description is defined by
+ * a concept description. The description of the concept should follow a standardized schema
+ * (realized as data specification template). Constraint AASd-051: A ConceptDescription shall have
+ * one of the following categories: VALUE, PROPERTY, REFERENCE, DOCUMENT, CAPABILITY, RELATIONSHIP,
+ * COLLECTION, FUNCTION, EVENT, ENTITY, APPLICATION_CLASS, QUALIFIER, VIEW. Default: PROPERTY.
  */
 
 public class DefaultConceptDescription implements ConceptDescription {
@@ -25,15 +24,14 @@ public class DefaultConceptDescription implements ConceptDescription {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "embedded data speciification" "The embedded data specification template of the description of
-     * the concept."@en
+     * The embedded data specification template of the description of the concept.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification")
     protected List<DataSpecification> embeddedDataSpecifications = new ArrayList<>();
 
     /**
-     * "is case of" "Reference to an external definition the concept is compatible to or was derived
-     * from."@en "Compare to is-case-of relationship in ISO 13584-32 and IEC EN 61360."@en
+     * Reference to an external definition the concept is compatible to or was derived from. Compare to
+     * is-case-of relationship in ISO 13584-32 and IEC EN 61360.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf")
     protected List<Reference> isCaseOfs = new ArrayList<>();

@@ -9,8 +9,8 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Has Kind" "An element with a kind is an element that can either represent a type or an instance.
- * Default for an element is that it is representing an instance."@en
+ * An element with a kind is an element that can either represent a type or an instance. Default for
+ * an element is that it is representing an instance.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = Submodel.class),
@@ -23,7 +23,7 @@ public interface HasKind {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "ModelingKind of the element: either type or instance."@en
+     * ModelingKind of the element: either type or instance.
      * 
      * @return Returns the ModelingKind for the property kind. More information under
      *         https://admin-shell.io/aas/3/0/RC01/HasKind/kind
@@ -32,7 +32,7 @@ public interface HasKind {
     public ModelingKind getKind();
 
     /**
-     * "ModelingKind of the element: either type or instance."@en
+     * ModelingKind of the element: either type or instance.
      * 
      * @param kind desired value for the property kind. More information under
      *        https://admin-shell.io/aas/3/0/RC01/HasKind/kind

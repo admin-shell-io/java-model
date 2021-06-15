@@ -12,8 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Object Attributes" "A set of data elements that describe object attributes. These attributes
- * need to refer to a data element within an existing submodel."@en
+ * A set of data elements that describe object attributes. These attributes need to refer to a data
+ * element within an existing submodel.
  */
 
 public class DefaultObjectAttributes implements ObjectAttributes {
@@ -21,7 +21,7 @@ public class DefaultObjectAttributes implements ObjectAttributes {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has object attribute" "A data elements that further classifies an object."@en
+     * A data elements that further classifies an object.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
     protected List<Reference> objectAttributes = new ArrayList<>();

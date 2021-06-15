@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Policy Administration Point" "Definition of a security administration point (PDP)."@en
+ * Definition of a security administration point (PDP).
  */
 
 public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoint {
@@ -18,16 +18,16 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has external access control" "Endpoint to an external access control defining a policy
-     * administration point to be used by the AAS."@en
+     * Endpoint to an external access control defining a policy administration point to be used by the
+     * AAS.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl")
     protected boolean externalAccessControl;
 
     /**
-     * "has local access control" "The policy administration point of access control as realized by the
-     * AAS itself."@en "Constraint AASd-009: Either there is an external policy administration point
-     * endpoint defined or the AAS has its own access control."@en
+     * The policy administration point of access control as realized by the AAS itself. Constraint
+     * AASd-009: Either there is an external policy administration point endpoint defined or the AAS has
+     * its own access control.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl")
     protected AccessControl localAccessControl;

@@ -12,8 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Asset Administration Shell" "Describes the Administration Shell for Assets, Products,
- * Components, e.g. Machines"@en
+ * Describes the Administration Shell for Assets, Products, Components, e.g. Machines
  */
 
 public class DefaultAssetAdministrationShell implements AssetAdministrationShell {
@@ -21,14 +20,13 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has assetInformation" "Meta information about the asset the AAS is representing."@en
+     * Meta information about the asset the AAS is representing.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation")
     protected List<AssetInformation> assetInformations = new ArrayList<>();
 
     /**
-     * "has Submodel" "Points from the Admin Shell to the Submodels that describe the Admin Shell of a
-     * given Asset"@en
+     * Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
     protected List<Submodel> submodels = new ArrayList<>();

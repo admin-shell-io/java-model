@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Policy Enforcement Point" "Defines the security policy enforcement points (PEP)."@en
+ * Defines the security policy enforcement points (PEP).
  */
 
 public class DefaultPolicyEnforcementPoints implements PolicyEnforcementPoints {
@@ -18,8 +18,8 @@ public class DefaultPolicyEnforcementPoints implements PolicyEnforcementPoints {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "is external policy enforcement point defined" "If externalPolicyEnforcementPoint True then an
-     * Endpoint to external available enforcement point taking needs to be configured for the AAS."@en
+     * If externalPolicyEnforcementPoint True then an Endpoint to external available enforcement point
+     * taking needs to be configured for the AAS.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyEnforcementPoints/externalPolicyEnforcementPoint")
     protected boolean externalPolicyEnforcementPoint;

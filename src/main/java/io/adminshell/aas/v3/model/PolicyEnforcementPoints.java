@@ -9,7 +9,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Policy Enforcement Point" "Defines the security policy enforcement points (PEP)."@en
+ * Defines the security policy enforcement points (PEP).
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultPolicyEnforcementPoints.class)
@@ -21,8 +21,8 @@ public interface PolicyEnforcementPoints {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "If externalPolicyEnforcementPoint True then an Endpoint to external available enforcement point
-     * taking needs to be configured for the AAS."@en
+     * If externalPolicyEnforcementPoint True then an Endpoint to external available enforcement point
+     * taking needs to be configured for the AAS.
      * 
      * @return Returns the boolean for the property externalPolicyEnforcementPoint. More information
      *         under
@@ -32,8 +32,8 @@ public interface PolicyEnforcementPoints {
     public boolean getExternalPolicyEnforcementPoint();
 
     /**
-     * "If externalPolicyEnforcementPoint True then an Endpoint to external available enforcement point
-     * taking needs to be configured for the AAS."@en
+     * If externalPolicyEnforcementPoint True then an Endpoint to external available enforcement point
+     * taking needs to be configured for the AAS.
      * 
      * @param externalPolicyEnforcementPoint desired value for the property
      *        externalPolicyEnforcementPoint. More information under

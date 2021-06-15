@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Identifier" "Used to uniquely identify an entity by using an identifier."@en
+ * Used to uniquely identify an entity by using an identifier.
  */
 
 public class DefaultIdentifier implements Identifier {
@@ -20,15 +20,14 @@ public class DefaultIdentifier implements Identifier {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has idType" "Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are
-     * defined in the enumeration \'IdentifierType\'."@en
+     * Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the
+     * enumeration 'IdentifierType'.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")
     protected List<IdentifierType> idTypes = new ArrayList<>();
 
     /**
-     * "has identification" "A globally unique identifier which might not be a URI. Its type is defined
-     * in idType."@en
+     * A globally unique identifier which might not be a URI. Its type is defined in idType.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
     protected List<String> identifiers = new ArrayList<>();

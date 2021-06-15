@@ -9,28 +9,28 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Level Type" "Enumeration of different level types within a DataSpecificationIEC61360. Contains
- * Min, Max, Nom, and Typ."@en
+ * Enumeration of different level types within a DataSpecificationIEC61360. Contains Min, Max, Nom,
+ * and Typ.
  */
 public enum LevelType {
 
     /**
-     * "MAX" "MAX according to IEC 61360 as an Identifier scheme for maximal levels."@en
+     * MAX according to IEC 61360 as an Identifier scheme for maximal levels.
      */
     MAX,
 
     /**
-     * "MIN" "MIN according to IEC 61360 as an Identifier scheme for minimal levels."@en
+     * MIN according to IEC 61360 as an Identifier scheme for minimal levels.
      */
     MIN,
 
     /**
-     * "NOM" "NOM according to IEC 61360 as an Identifier scheme for nominal levels."@en
+     * NOM according to IEC 61360 as an Identifier scheme for nominal levels.
      */
     NOM,
 
     /**
-     * "TYP" "TYP according to IEC 61360 as an Identifier scheme for typical levels."@en
+     * TYP according to IEC 61360 as an Identifier scheme for typical levels.
      */
     TYP;
 

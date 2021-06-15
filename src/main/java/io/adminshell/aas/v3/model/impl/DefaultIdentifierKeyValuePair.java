@@ -10,8 +10,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "identifier key value pair" "An IdentifierKeyValuePair describes a generic identifier as
- * key-value pair."@en
+ * An IdentifierKeyValuePair describes a generic identifier as key-value pair.
  */
 
 public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
@@ -19,28 +18,27 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has semantic ID" "Points to the Expression Semantic of the Submodels"@en "The semantic id might
-     * refer to an external information source, which explains the formulation of the submodel (for
-     * example an PDF if a standard)."@en
+     * Points to the Expression Semantic of the Submodels The semantic id might refer to an external
+     * information source, which explains the formulation of the submodel (for example an PDF if a
+     * standard).
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
     protected Reference semanticId;
 
     /**
-     * "has IdentifierKeyValuePair.externalSubjectId" "The (external) subject the key belongs to or has
-     * meaning to."@en
+     * The (external) subject the key belongs to or has meaning to.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId")
     protected Reference externalSubjectId;
 
     /**
-     * "has IdentifierKeyValuePair.key" "Key of the identifier."@en
+     * Key of the identifier.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
     protected String key;
 
     /**
-     * "has IdentifierKeyValuePair.value" "The value of the identifier with the corresponding key."@en
+     * The value of the identifier with the corresponding key.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
     protected String value;

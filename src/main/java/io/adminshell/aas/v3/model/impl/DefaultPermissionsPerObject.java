@@ -12,9 +12,9 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Permission Per Object" "Table that defines access permissions for a specified object. The object
- * is any referable element in the AAS. Additionally object attributes can be defined that further
- * specify the kind of object the permissions apply to."@en
+ * Table that defines access permissions for a specified object. The object is any referable element
+ * in the AAS. Additionally object attributes can be defined that further specify the kind of object
+ * the permissions apply to.
  */
 
 public class DefaultPermissionsPerObject implements PermissionsPerObject {
@@ -22,21 +22,21 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has object" "Element to which permission shall be assigned."@en
+     * Element to which permission shall be assigned.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")
     protected Referable object;
 
     /**
-     * "has object permission" "Permissions assigned to the object. The permissions hold for all
-     * subjects as specified in the access permission rule."@en
+     * Permissions assigned to the object. The permissions hold for all subjects as specified in the
+     * access permission rule.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission")
     protected List<Permission> permissions = new ArrayList<>();
 
     /**
-     * "has target object attributes" "Target object attributes that need to be fulfilled so that the
-     * access permissions apply to the accessing subject."@en
+     * Target object attributes that need to be fulfilled so that the access permissions apply to the
+     * accessing subject.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes")
     protected ObjectAttributes targetObjectAttributes;

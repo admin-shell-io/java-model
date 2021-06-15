@@ -9,7 +9,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Certificate" "A technical certificate proofing the identity through cryptographic measures."@en
+ * A technical certificate proofing the identity through cryptographic measures.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = BlobCertificate.class)
@@ -21,7 +21,7 @@ public interface Certificate {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "The access control administration policy point of the AAS."@en
+     * The access control administration policy point of the AAS.
      * 
      * @return Returns the PolicyAdministrationPoint for the property policyAdministrationPoint. More
      *         information under
@@ -31,7 +31,7 @@ public interface Certificate {
     public PolicyAdministrationPoint getPolicyAdministrationPoint();
 
     /**
-     * "The access control administration policy point of the AAS."@en
+     * The access control administration policy point of the AAS.
      * 
      * @param policyAdministrationPoint desired value for the property policyAdministrationPoint. More
      *        information under

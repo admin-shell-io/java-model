@@ -10,9 +10,9 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Permission Per Object" "Table that defines access permissions for a specified object. The object
- * is any referable element in the AAS. Additionally object attributes can be defined that further
- * specify the kind of object the permissions apply to."@en
+ * Table that defines access permissions for a specified object. The object is any referable element
+ * in the AAS. Additionally object attributes can be defined that further specify the kind of object
+ * the permissions apply to.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultPermissionsPerObject.class)
@@ -24,7 +24,7 @@ public interface PermissionsPerObject {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "Element to which permission shall be assigned."@en
+     * Element to which permission shall be assigned.
      * 
      * @return Returns the Referable for the property object. More information under
      *         https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object
@@ -33,7 +33,7 @@ public interface PermissionsPerObject {
     public Referable getObject();
 
     /**
-     * "Element to which permission shall be assigned."@en
+     * Element to which permission shall be assigned.
      * 
      * @param object desired value for the property object. More information under
      *        https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object
@@ -41,8 +41,8 @@ public interface PermissionsPerObject {
     public void setObject(Referable object);
 
     /**
-     * "Permissions assigned to the object. The permissions hold for all subjects as specified in the
-     * access permission rule."@en
+     * Permissions assigned to the object. The permissions hold for all subjects as specified in the
+     * access permission rule.
      * 
      * @return Returns the List of Permissions for the property permissions. More information under
      *         https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission
@@ -51,8 +51,8 @@ public interface PermissionsPerObject {
     public List<Permission> getPermissions();
 
     /**
-     * "Permissions assigned to the object. The permissions hold for all subjects as specified in the
-     * access permission rule."@en
+     * Permissions assigned to the object. The permissions hold for all subjects as specified in the
+     * access permission rule.
      * 
      * @param permissions desired value for the property permissions. More information under
      *        https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission
@@ -60,8 +60,8 @@ public interface PermissionsPerObject {
     public void setPermissions(List<Permission> permissions);
 
     /**
-     * "Target object attributes that need to be fulfilled so that the access permissions apply to the
-     * accessing subject."@en
+     * Target object attributes that need to be fulfilled so that the access permissions apply to the
+     * accessing subject.
      * 
      * @return Returns the ObjectAttributes for the property targetObjectAttributes. More information
      *         under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes
@@ -70,8 +70,8 @@ public interface PermissionsPerObject {
     public ObjectAttributes getTargetObjectAttributes();
 
     /**
-     * "Target object attributes that need to be fulfilled so that the access permissions apply to the
-     * accessing subject."@en
+     * Target object attributes that need to be fulfilled so that the access permissions apply to the
+     * accessing subject.
      * 
      * @param targetObjectAttributes desired value for the property targetObjectAttributes. More
      *        information under

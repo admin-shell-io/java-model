@@ -9,8 +9,8 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Key Elements" "Enumeration of different key value types within a key. Contains KeyElements,
- * ReferableElements, and IdentifiableElements."@en
+ * Enumeration of different key value types within a key. Contains KeyElements, ReferableElements,
+ * and IdentifiableElements.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultKeyElements.class)

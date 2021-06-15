@@ -12,10 +12,9 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Reference" "Reference to either a model element of the same or another AAs or to an external
- * entity. A reference is an ordered list of keys, each key referencing an element. The complete
- * list of keys may for example be concatenated to a path that then gives unique access to an
- * element or entity."@en
+ * Reference to either a model element of the same or another AAs or to an external entity. A
+ * reference is an ordered list of keys, each key referencing an element. The complete list of keys
+ * may for example be concatenated to a path that then gives unique access to an element or entity.
  */
 
 public class DefaultReference implements Reference {
@@ -23,7 +22,7 @@ public class DefaultReference implements Reference {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has key" "Unique reference in its name space."@en
+     * Unique reference in its name space.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Reference/key")
     protected List<Key> keys = new ArrayList<>();

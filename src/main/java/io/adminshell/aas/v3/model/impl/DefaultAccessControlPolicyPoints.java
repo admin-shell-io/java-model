@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Access ControlPolicy Points" "Container for access control policy points."@en
+ * Container for access control policy points.
  */
 
 public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoints {
@@ -18,25 +18,25 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has policy administration point" "The access control administration policy point of the AAS."@en
+     * The access control administration policy point of the AAS.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint")
     protected PolicyAdministrationPoint policyAdministrationPoint;
 
     /**
-     * "has policy decision point" "The access control policy decision point of the AAS."@en
+     * The access control policy decision point of the AAS.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint")
     protected PolicyDecisionPoint policyDecisionPoint;
 
     /**
-     * "has policy enforcement point" "The access control policy enforcement point of the AAS."@en
+     * The access control policy enforcement point of the AAS.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint")
     protected PolicyEnforcementPoints policyEnforcementPoint;
 
     /**
-     * "has policy information points" "The access control policy information points of the AAS."@en
+     * The access control policy information points of the AAS.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints")
     protected PolicyInformationPoints policyInformationPoints;

@@ -10,8 +10,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Formula"
- */
+*/
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultFormula.class)
 })
@@ -22,8 +21,8 @@ public interface Formula extends Constraint {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "A formula may depend on referable or even external global elements - assumed that can be
-     * referenced and their value may be evaluated - that are used in the logical expression."@en
+     * A formula may depend on referable or even external global elements - assumed that can be
+     * referenced and their value may be evaluated - that are used in the logical expression.
      * 
      * @return Returns the List of References for the property dependsOns. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn
@@ -32,8 +31,8 @@ public interface Formula extends Constraint {
     public List<Reference> getDependsOns();
 
     /**
-     * "A formula may depend on referable or even external global elements - assumed that can be
-     * referenced and their value may be evaluated - that are used in the logical expression."@en
+     * A formula may depend on referable or even external global elements - assumed that can be
+     * referenced and their value may be evaluated - that are used in the logical expression.
      * 
      * @param dependsOns desired value for the property dependsOns. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn

@@ -9,8 +9,8 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Extensions" "Single extension of an element."@en "Constraint AASd-077: The name of an extension
- * within HasExtensions needs to be unique."@en
+ * Single extension of an element. Constraint AASd-077: The name of an extension within
+ * HasExtensions needs to be unique.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultExtension.class)
@@ -22,7 +22,7 @@ public interface Extension extends HasSemantics {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "An extension of the element."@en
+     * An extension of the element.
      * 
      * @return Returns the String for the property name. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Extension/name
@@ -31,7 +31,7 @@ public interface Extension extends HasSemantics {
     public String getName();
 
     /**
-     * "An extension of the element."@en
+     * An extension of the element.
      * 
      * @param name desired value for the property name. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Extension/name
@@ -39,7 +39,7 @@ public interface Extension extends HasSemantics {
     public void setName(String name);
 
     /**
-     * "Type of the value of the extension."@en
+     * Type of the value of the extension.
      * 
      * @return Returns the String for the property valueType. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Extension/valueType
@@ -48,7 +48,7 @@ public interface Extension extends HasSemantics {
     public String getValueType();
 
     /**
-     * "Type of the value of the extension."@en
+     * Type of the value of the extension.
      * 
      * @param valueType desired value for the property valueType. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Extension/valueType
@@ -56,7 +56,7 @@ public interface Extension extends HasSemantics {
     public void setValueType(String valueType);
 
     /**
-     * "Value of the extension."@en
+     * Value of the extension.
      * 
      * @return Returns the String for the property value. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Extension/value
@@ -65,7 +65,7 @@ public interface Extension extends HasSemantics {
     public String getValue();
 
     /**
-     * "Value of the extension."@en
+     * Value of the extension.
      * 
      * @param value desired value for the property value. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Extension/value
@@ -73,7 +73,7 @@ public interface Extension extends HasSemantics {
     public void setValue(String value);
 
     /**
-     * "Reference to an element the extension refers to."@en
+     * Reference to an element the extension refers to.
      * 
      * @return Returns the Reference for the property refersTo. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Extension/refersTo
@@ -82,7 +82,7 @@ public interface Extension extends HasSemantics {
     public Reference getRefersTo();
 
     /**
-     * "Reference to an element the extension refers to."@en
+     * Reference to an element the extension refers to.
      * 
      * @param refersTo desired value for the property refersTo. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Extension/refersTo

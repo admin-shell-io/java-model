@@ -10,9 +10,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Data Specification Content" "DataSpecificationContent contains the additional attributes to be
- * added to the element instance that references the data specification template and meta
- * information about the template itself."@en
+ * DataSpecificationContent contains the additional attributes to be added to the element instance
+ * that references the data specification template and meta information about the template itself.
  */
 
 public class DefaultDataSpecificationContent implements DataSpecificationContent {

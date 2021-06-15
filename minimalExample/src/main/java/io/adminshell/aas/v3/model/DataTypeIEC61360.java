@@ -9,7 +9,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Data Type IEC61360" "Enumeration of all IEC 61360 defined data types."@en
+ * Enumeration of all IEC 61360 defined data types.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultDataTypeIEC61360.class)

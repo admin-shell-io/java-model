@@ -9,8 +9,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "identifier key value pair" "An IdentifierKeyValuePair describes a generic identifier as
- * key-value pair."@en
+ * An IdentifierKeyValuePair describes a generic identifier as key-value pair.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultIdentifierKeyValuePair.class)
@@ -22,7 +21,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "Key of the identifier."@en
+     * Key of the identifier.
      * 
      * @return Returns the String for the property key. More information under
      *         https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key
@@ -31,7 +30,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
     public String getKey();
 
     /**
-     * "Key of the identifier."@en
+     * Key of the identifier.
      * 
      * @param key desired value for the property key. More information under
      *        https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key
@@ -39,7 +38,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
     public void setKey(String key);
 
     /**
-     * "The value of the identifier with the corresponding key."@en
+     * The value of the identifier with the corresponding key.
      * 
      * @return Returns the String for the property value. More information under
      *         https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value
@@ -48,7 +47,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
     public String getValue();
 
     /**
-     * "The value of the identifier with the corresponding key."@en
+     * The value of the identifier with the corresponding key.
      * 
      * @param value desired value for the property value. More information under
      *        https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value
@@ -56,7 +55,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
     public void setValue(String value);
 
     /**
-     * "The (external) subject the key belongs to or has meaning to."@en
+     * The (external) subject the key belongs to or has meaning to.
      * 
      * @return Returns the Reference for the property externalSubjectId. More information under
      *         https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId
@@ -65,7 +64,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
     public Reference getExternalSubjectId();
 
     /**
-     * "The (external) subject the key belongs to or has meaning to."@en
+     * The (external) subject the key belongs to or has meaning to.
      * 
      * @param externalSubjectId desired value for the property externalSubjectId. More information under
      *        https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId

@@ -12,12 +12,11 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Data Specification IEC 61360" "Data Specification Template for defining Property Descriptions
- * conformant to IEC 61360."@en "Constraint AASd-075: For all ConceptDescriptions using data
- * specification template IEC61360
+ * Data Specification Template for defining Property Descriptions conformant to IEC 61360.
+ * Constraint AASd-075: For all ConceptDescriptions using data specification template IEC61360
  * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) values for the
  * attributes not being marked as mandatory or optional in tables Table 9, Table 10, Table 11 and
- * Table 12.depending on its category are ignored and handled as undefined."@en
+ * Table 12.depending on its category are ignored and handled as undefined.
  */
 
 public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC61360 {
@@ -25,97 +24,86 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has datatype" "Constraint AASd-070: For a ConceptDescription with category PROPERTY or VALUE
-     * using data specification template IEC61360
+     * Constraint AASd-070: For a ConceptDescription with category PROPERTY or VALUE using data
+     * specification template IEC61360
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is mandatory and shall be defined."@en "Constraint AASd-071:
-     * For a ConceptDescription with category REFERENCE using data specification template IEC61360
+     * DataSpecificationIEC61360/dataType is mandatory and shall be defined. Constraint AASd-071: For a
+     * ConceptDescription with category REFERENCE using data specification template IEC61360
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is STRING by default."@en "Constraint AASd-072: For a
+     * DataSpecificationIEC61360/dataType is STRING by default. Constraint AASd-072: For a
      * ConceptDescription with category DOCUMENT using data specification template IEC61360
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType shall be one of the following values: STRING or URL."@en
-     * "Constraint AASd-073: For a ConceptDescription with category QUALIFIER using data specification
+     * DataSpecificationIEC61360/dataType shall be one of the following values: STRING or URL.
+     * Constraint AASd-073: For a ConceptDescription with category QUALIFIER using data specification
      * template IEC61360
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is mandatory and shall be defined."@en
+     * DataSpecificationIEC61360/dataType is mandatory and shall be defined.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
     protected DataTypeIEC61360 dataType;
 
     /**
-     * "has definition" "Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions
-     * of category VALUE using data specification template IEC61360
+     * Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions of category VALUE
+     * using data specification template IEC61360
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/definition is mandatory and shall be defined at least in English."@en
+     * DataSpecificationIEC61360/definition is mandatory and shall be defined at least in English.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
     protected List<LangString> definitions = new ArrayList<>();
 
     /**
-     * "has level type"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/levelType")
     protected List<LevelType> levelTypes = new ArrayList<>();
 
     /**
-     * "has preferred name"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
     protected List<LangString> preferredNames = new ArrayList<>();
 
     /**
-     * "has short name"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
     protected List<LangString> shortNames = new ArrayList<>();
 
     /**
-     * "has source of definition"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition")
     protected String sourceOfDefinition;
 
     /**
-     * "has symbol"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/symbol")
     protected String symbol;
 
     /**
-     * "has unit"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit")
     protected String unit;
 
     /**
-     * "has unit id"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId")
     protected Reference unitId;
 
     /**
-     * "has value"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/value")
     protected String value;
 
     /**
-     * "has value format"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueFormat")
     protected String valueFormat;
 
     /**
-     * "has value id"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueId")
     protected Reference valueId;
 
     /**
-     * "has value list" "The Type \'ValueList\' lists all the allowed values for a concept description
-     * for which the allowed values are listed in an enumeration. The value list is a set of value
-     * reference pairs."@en
+     * The Type 'ValueList' lists all the allowed values for a concept description for which the allowed
+     * values are listed in an enumeration. The value list is a set of value reference pairs.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList")
     protected ValueList valueList;

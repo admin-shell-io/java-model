@@ -10,8 +10,8 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Access Control" "Access Control defines the local access control policy administration point.
- * Access Control has the major task to define the access permission rules."@en
+ * Access Control defines the local access control policy administration point. Access Control has
+ * the major task to define the access permission rules.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultAccessControl.class)
@@ -23,8 +23,8 @@ public interface AccessControl {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "Access permission rules of the AAS describing the rights assigned to (already authenticated)
-     * subjects to access elements of the AAS."@en
+     * Access permission rules of the AAS describing the rights assigned to (already authenticated)
+     * subjects to access elements of the AAS.
      * 
      * @return Returns the List of AccessPermissionRules for the property accessPermissionRules. More
      *         information under https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule
@@ -33,8 +33,8 @@ public interface AccessControl {
     public List<AccessPermissionRule> getAccessPermissionRules();
 
     /**
-     * "Access permission rules of the AAS describing the rights assigned to (already authenticated)
-     * subjects to access elements of the AAS."@en
+     * Access permission rules of the AAS describing the rights assigned to (already authenticated)
+     * subjects to access elements of the AAS.
      * 
      * @param accessPermissionRules desired value for the property accessPermissionRules. More
      *        information under https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule
@@ -42,9 +42,9 @@ public interface AccessControl {
     public void setAccessPermissionRules(List<AccessPermissionRule> accessPermissionRules);
 
     /**
-     * "Reference to a submodel defining the authenticated subjects that are configured for the AAS.
-     * They are selectable by the access permission rules to assign permissions to the subjects."@en
-     * "Default: reference to the submodel referenced via defaultSubjectAttributes."@en
+     * Reference to a submodel defining the authenticated subjects that are configured for the AAS. They
+     * are selectable by the access permission rules to assign permissions to the subjects. Default:
+     * reference to the submodel referenced via defaultSubjectAttributes.
      * 
      * @return Returns the Reference for the property selectableSubjectAttributes. More information
      *         under https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableSubjectAttributes
@@ -53,9 +53,9 @@ public interface AccessControl {
     public Reference getSelectableSubjectAttributes();
 
     /**
-     * "Reference to a submodel defining the authenticated subjects that are configured for the AAS.
-     * They are selectable by the access permission rules to assign permissions to the subjects."@en
-     * "Default: reference to the submodel referenced via defaultSubjectAttributes."@en
+     * Reference to a submodel defining the authenticated subjects that are configured for the AAS. They
+     * are selectable by the access permission rules to assign permissions to the subjects. Default:
+     * reference to the submodel referenced via defaultSubjectAttributes.
      * 
      * @param selectableSubjectAttributes desired value for the property selectableSubjectAttributes.
      *        More information under
@@ -64,8 +64,8 @@ public interface AccessControl {
     public void setSelectableSubjectAttributes(Reference selectableSubjectAttributes);
 
     /**
-     * "Reference to a submodel defining the default subjects attributes for the AAS that can be used to
-     * describe access permission rules."@en "The submodel is of kind=Type."@en
+     * Reference to a submodel defining the default subjects attributes for the AAS that can be used to
+     * describe access permission rules. The submodel is of kind=Type.
      * 
      * @return Returns the Reference for the property defaultSubjectAttributes. More information under
      *         https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultSubjectAttributes
@@ -74,8 +74,8 @@ public interface AccessControl {
     public Reference getDefaultSubjectAttributes();
 
     /**
-     * "Reference to a submodel defining the default subjects attributes for the AAS that can be used to
-     * describe access permission rules."@en "The submodel is of kind=Type."@en
+     * Reference to a submodel defining the default subjects attributes for the AAS that can be used to
+     * describe access permission rules. The submodel is of kind=Type.
      * 
      * @param defaultSubjectAttributes desired value for the property defaultSubjectAttributes. More
      *        information under
@@ -84,8 +84,8 @@ public interface AccessControl {
     public void setDefaultSubjectAttributes(Reference defaultSubjectAttributes);
 
     /**
-     * "Reference to a submodel defining which permissions can be assigned to the subjects."@en
-     * "Default: reference to the submodel referenced via defaultPermissions"@en
+     * Reference to a submodel defining which permissions can be assigned to the subjects. Default:
+     * reference to the submodel referenced via defaultPermissions
      * 
      * @return Returns the Reference for the property selectablePermissions. More information under
      *         https://admin-shell.io/aas/3/0/RC01/AccessControl/selectablePermissions
@@ -94,8 +94,8 @@ public interface AccessControl {
     public Reference getSelectablePermissions();
 
     /**
-     * "Reference to a submodel defining which permissions can be assigned to the subjects."@en
-     * "Default: reference to the submodel referenced via defaultPermissions"@en
+     * Reference to a submodel defining which permissions can be assigned to the subjects. Default:
+     * reference to the submodel referenced via defaultPermissions
      * 
      * @param selectablePermissions desired value for the property selectablePermissions. More
      *        information under https://admin-shell.io/aas/3/0/RC01/AccessControl/selectablePermissions
@@ -103,7 +103,7 @@ public interface AccessControl {
     public void setSelectablePermissions(Reference selectablePermissions);
 
     /**
-     * "Reference to a submodel defining the default permissions for the AAS."@en
+     * Reference to a submodel defining the default permissions for the AAS.
      * 
      * @return Returns the Reference for the property defaultPermissions. More information under
      *         https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultPermissions
@@ -112,7 +112,7 @@ public interface AccessControl {
     public Reference getDefaultPermissions();
 
     /**
-     * "Reference to a submodel defining the default permissions for the AAS."@en
+     * Reference to a submodel defining the default permissions for the AAS.
      * 
      * @param defaultPermissions desired value for the property defaultPermissions. More information
      *        under https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultPermissions
@@ -120,8 +120,8 @@ public interface AccessControl {
     public void setDefaultPermissions(Reference defaultPermissions);
 
     /**
-     * "Reference to a submodel defining which environment attributes can be accessed via the permission
-     * rules."@en
+     * Reference to a submodel defining which environment attributes can be accessed via the permission
+     * rules.
      * 
      * @return Returns the Reference for the property selectableEnvironmentAttributes. More information
      *         under https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableEnvironmentAttributes
@@ -130,8 +130,8 @@ public interface AccessControl {
     public Reference getSelectableEnvironmentAttributes();
 
     /**
-     * "Reference to a submodel defining which environment attributes can be accessed via the permission
-     * rules."@en
+     * Reference to a submodel defining which environment attributes can be accessed via the permission
+     * rules.
      * 
      * @param selectableEnvironmentAttributes desired value for the property
      *        selectableEnvironmentAttributes. More information under
@@ -140,10 +140,10 @@ public interface AccessControl {
     public void setSelectableEnvironmentAttributes(Reference selectableEnvironmentAttributes);
 
     /**
-     * "Reference to a submodel defining default environment attributes, i.e. attributes that are not
+     * Reference to a submodel defining default environment attributes, i.e. attributes that are not
      * describing the asset itself. The submodel is of kind=Type. At the same type the values of these
      * environment attributes need to be accessible when evaluating the access permission rules. This is
-     * realized as a policy information point."@en
+     * realized as a policy information point.
      * 
      * @return Returns the Reference for the property defaultEnvironmentAttributes. More information
      *         under https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultEnvironmentAttributes
@@ -152,10 +152,10 @@ public interface AccessControl {
     public Reference getDefaultEnvironmentAttributes();
 
     /**
-     * "Reference to a submodel defining default environment attributes, i.e. attributes that are not
+     * Reference to a submodel defining default environment attributes, i.e. attributes that are not
      * describing the asset itself. The submodel is of kind=Type. At the same type the values of these
      * environment attributes need to be accessible when evaluating the access permission rules. This is
-     * realized as a policy information point."@en
+     * realized as a policy information point.
      * 
      * @param defaultEnvironmentAttributes desired value for the property defaultEnvironmentAttributes.
      *        More information under

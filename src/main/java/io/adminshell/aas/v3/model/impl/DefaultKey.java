@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Key" "A key is a reference to an element by its id."@en
+ * A key is a reference to an element by its id.
  */
 
 public class DefaultKey implements Key {
@@ -18,25 +18,25 @@ public class DefaultKey implements Key {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has key type" "Type of the key value. In case of idType = idShort local shall be true. In case
-     * type=GlobalReference idType shall not be IdShort."@en "Constraint AASd-080: In case Key/type ==
-     * GlobalReference idType shall not be any LocalKeyType (IdShort, FragmentId)."@en "Constraint
-     * AASd-081: In case Key/type==AssetAdministrationShell Key/idType shall not be any LocalKeyType
-     * (IdShort, FragmentId)."@en
+     * Type of the key value. In case of idType = idShort local shall be true. In case
+     * type=GlobalReference idType shall not be IdShort. Constraint AASd-080: In case Key/type ==
+     * GlobalReference idType shall not be any LocalKeyType (IdShort, FragmentId). Constraint AASd-081:
+     * In case Key/type==AssetAdministrationShell Key/idType shall not be any LocalKeyType (IdShort,
+     * FragmentId).
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Key/idType")
     protected KeyType idType;
 
     /**
-     * "has type" "Denote which kind of entity is referenced. In case type = GlobalReference then the
-     * element is a global unique id. In all other cases the key references a model element of the same
-     * or of another AAS. The name of the model element is explicitly listed."@en
+     * Denote which kind of entity is referenced. In case type = GlobalReference then the element is a
+     * global unique id. In all other cases the key references a model element of the same or of another
+     * AAS. The name of the model element is explicitly listed.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Key/type")
     protected KeyElements type;
 
     /**
-     * "has value" "The key value, for example an IRDI if the idType=IRDI."@en
+     * The key value, for example an IRDI if the idType=IRDI.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Key/value")
     protected String value;

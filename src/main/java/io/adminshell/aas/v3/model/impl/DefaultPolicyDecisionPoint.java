@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Policy Decision Point" "Defines a security policy decision point (PDP). "@en
+ * Defines a security policy decision point (PDP).
  */
 
 public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
@@ -18,9 +18,8 @@ public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "is external policy decision point defined" "If externalPolicyDecisionPoints True then Endpoints
-     * to external available decision points taking into consideration for access control for the AAS
-     * need to be configured."@en
+     * If externalPolicyDecisionPoints True then Endpoints to external available decision points taking
+     * into consideration for access control for the AAS need to be configured.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
     protected boolean externalPolicyDecisionPoints;

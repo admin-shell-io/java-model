@@ -9,18 +9,18 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Asset Kind" "Enumeration for denoting whether an element is a type or an instance."@en
+ * Enumeration for denoting whether an element is a type or an instance.
  */
 public enum AssetKind {
 
     /**
-     * "Asset Instance" "Concrete, clearly identifiable component of a certain type."@en
+     * Concrete, clearly identifiable component of a certain type.
      */
     INSTANCE,
 
     /**
-     * "Asset Type" "hardware or software element which specifies the common attributes shared by all
-     * instances of the type."@en
+     * hardware or software element which specifies the common attributes shared by all instances of the
+     * type.
      */
     TYPE;
 

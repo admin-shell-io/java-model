@@ -9,7 +9,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Data Specification" "Data specification template of the description of the concept."@en
+ * Data specification template of the description of the concept.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultDataSpecification.class)
@@ -21,9 +21,8 @@ public interface DataSpecification {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "DataSpecificationContent contains the additional attributes to be added to the element instance
-     * that references the data specification template and meta information about the template
-     * itself."@en
+     * DataSpecificationContent contains the additional attributes to be added to the element instance
+     * that references the data specification template and meta information about the template itself.
      * 
      * @return Returns the DataSpecificationContent for the property dataSpecificationContent. More
      *         information under
@@ -33,9 +32,8 @@ public interface DataSpecification {
     public DataSpecificationContent getDataSpecificationContent();
 
     /**
-     * "DataSpecificationContent contains the additional attributes to be added to the element instance
-     * that references the data specification template and meta information about the template
-     * itself."@en
+     * DataSpecificationContent contains the additional attributes to be added to the element instance
+     * that references the data specification template and meta information about the template itself.
      * 
      * @param dataSpecificationContent desired value for the property dataSpecificationContent. More
      *        information under

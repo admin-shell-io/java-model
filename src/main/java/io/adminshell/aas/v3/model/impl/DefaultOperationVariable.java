@@ -10,8 +10,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Operation Variable" "An operation variable is a submodel element that is used as input or output
- * variable of an operation."@en
+ * An operation variable is a submodel element that is used as input or output variable of an
+ * operation.
  */
 
 public class DefaultOperationVariable implements OperationVariable {
@@ -19,9 +19,8 @@ public class DefaultOperationVariable implements OperationVariable {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "value" "Describes the needed argument for an operation via a submodel element of
-     * kind=Template."@en "The submodel element value of an operation variable shall be of
-     * kind=Template."@en
+     * Describes the needed argument for an operation via a submodel element of kind=Template. The
+     * submodel element value of an operation variable shall be of kind=Template.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/OperationVariable/value")
     protected SubmodelElement value;

@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Security" "Container for security relevant information of the AAS."@en
+ * Container for security relevant information of the AAS.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultSecurity.class)
@@ -22,7 +22,7 @@ public interface Security {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "Access control policy points of the AAS."@en
+     * Access control policy points of the AAS.
      * 
      * @return Returns the AccessControlPolicyPoints for the property accessControlPolicyPoints. More
      *         information under https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints
@@ -31,7 +31,7 @@ public interface Security {
     public AccessControlPolicyPoints getAccessControlPolicyPoints();
 
     /**
-     * "Access control policy points of the AAS."@en
+     * Access control policy points of the AAS.
      * 
      * @param accessControlPolicyPoints desired value for the property accessControlPolicyPoints. More
      *        information under https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints
@@ -39,7 +39,7 @@ public interface Security {
     public void setAccessControlPolicyPoints(AccessControlPolicyPoints accessControlPolicyPoints);
 
     /**
-     * "Certificates of the AAS."@en
+     * Certificates of the AAS.
      * 
      * @return Returns the List of Certificates for the property certificates. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Security/certificate
@@ -48,7 +48,7 @@ public interface Security {
     public List<Certificate> getCertificates();
 
     /**
-     * "Certificates of the AAS."@en
+     * Certificates of the AAS.
      * 
      * @param certificates desired value for the property certificates. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Security/certificate
@@ -56,7 +56,7 @@ public interface Security {
     public void setCertificates(List<Certificate> certificates);
 
     /**
-     * "Certificate extensions as required by the AAS."@en
+     * Certificate extensions as required by the AAS.
      * 
      * @return Returns the List of References for the property requiredCertificateExtensions. More
      *         information under
@@ -66,7 +66,7 @@ public interface Security {
     public List<Reference> getRequiredCertificateExtensions();
 
     /**
-     * "Certificate extensions as required by the AAS."@en
+     * Certificate extensions as required by the AAS.
      * 
      * @param requiredCertificateExtensions desired value for the property
      *        requiredCertificateExtensions. More information under

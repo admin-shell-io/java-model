@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Blob Certificate" "Certificate provided as BLOB."@en
+ * Certificate provided as BLOB.
  */
 
 public class DefaultBlobCertificate implements BlobCertificate {
@@ -20,26 +20,25 @@ public class DefaultBlobCertificate implements BlobCertificate {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "Blob Certificate" "Certificate as BLOB."@en
+     * Certificate as BLOB.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate")
     protected Blob blobCertificate;
 
     /**
-     * "contains extension" "Extensions contained in the certificate."@en
+     * Extensions contained in the certificate.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension")
     protected List<Reference> containedExtensions = new ArrayList<>();
 
     /**
-     * "is last certificate" "Denotes whether this certificate is the certificated that fast added
-     * last."@en
+     * Denotes whether this certificate is the certificated that fast added last.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate")
     protected boolean lastCertificate;
 
     /**
-     * "has policy administration point" "The access control administration policy point of the AAS."@en
+     * The access control administration policy point of the AAS.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint")
     protected PolicyAdministrationPoint policyAdministrationPoint;

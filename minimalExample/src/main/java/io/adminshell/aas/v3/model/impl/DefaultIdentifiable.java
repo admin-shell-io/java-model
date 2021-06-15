@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Identifiable" "An element that has a globally unique identifier."@en
+ * An element that has a globally unique identifier.
  */
 
 public class DefaultIdentifiable implements Identifiable {
@@ -20,15 +20,14 @@ public class DefaultIdentifiable implements Identifiable {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has administration" "Administrative information of an identifiable element."@en "Some of the
-     * administrative information like the version number might need to be part of the
-     * identification."@en
+     * Administrative information of an identifiable element. Some of the administrative information
+     * like the version number might need to be part of the identification.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
     protected List<AdministrativeInformation> administrations = new ArrayList<>();
 
     /**
-     * "has identification" "The globally unique identification of the element."@en
+     * The globally unique identification of the element.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
     protected List<Identifier> identifications = new ArrayList<>();

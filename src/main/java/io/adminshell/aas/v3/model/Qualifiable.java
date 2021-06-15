@@ -10,8 +10,8 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Qualifiable" "Additional qualification of a qualifiable element."@en "Constraint AASd-021: Every
- * qualifiable can only have one qualifier with the same Qualifier/type."@en
+ * Additional qualification of a qualifiable element. Constraint AASd-021: Every qualifiable can
+ * only have one qualifier with the same Qualifier/type.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = AccessPermissionRule.class),
@@ -25,7 +25,7 @@ public interface Qualifiable {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "Additional qualification of a qualifiable element."@en
+     * Additional qualification of a qualifiable element.
      * 
      * @return Returns the List of Constraints for the property qualifiers. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier
@@ -34,7 +34,7 @@ public interface Qualifiable {
     public List<Constraint> getQualifiers();
 
     /**
-     * "Additional qualification of a qualifiable element."@en
+     * Additional qualification of a qualifiable element.
      * 
      * @param qualifiers desired value for the property qualifiers. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier

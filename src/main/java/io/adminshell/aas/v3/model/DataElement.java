@@ -9,9 +9,9 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Data Element" "A data element is a submodel element that is not further composed out of other
- * submodel elements. A data element is a submodel element that has a value. The type of value
- * differs for different subtypes of data elements."@en
+ * A data element is a submodel element that is not further composed out of other submodel elements.
+ * A data element is a submodel element that has a value. The type of value differs for different
+ * subtypes of data elements.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = File.class),

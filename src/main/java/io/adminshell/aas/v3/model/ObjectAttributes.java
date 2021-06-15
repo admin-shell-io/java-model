@@ -10,8 +10,8 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Object Attributes" "A set of data elements that describe object attributes. These attributes
- * need to refer to a data element within an existing submodel."@en
+ * A set of data elements that describe object attributes. These attributes need to refer to a data
+ * element within an existing submodel.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultObjectAttributes.class)
@@ -23,7 +23,7 @@ public interface ObjectAttributes {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "A data elements that further classifies an object."@en
+     * A data elements that further classifies an object.
      * 
      * @return Returns the List of References for the property objectAttributes. More information under
      *         https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute
@@ -32,7 +32,7 @@ public interface ObjectAttributes {
     public List<Reference> getObjectAttributes();
 
     /**
-     * "A data elements that further classifies an object."@en
+     * A data elements that further classifies an object.
      * 
      * @param objectAttributes desired value for the property objectAttributes. More information under
      *        https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute

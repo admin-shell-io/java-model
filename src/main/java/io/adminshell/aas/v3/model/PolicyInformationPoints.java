@@ -10,9 +10,9 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Policy Information Points" "Defines the security policy information points (PIP). Serves as the
- * retrieval source of attributes, or the data required for policy evaluation to provide the
- * information needed by the policy decision point to make the decisions."@en
+ * Defines the security policy information points (PIP). Serves as the retrieval source of
+ * attributes, or the data required for policy evaluation to provide the information needed by the
+ * policy decision point to make the decisions.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultPolicyInformationPoints.class)
@@ -24,8 +24,8 @@ public interface PolicyInformationPoints {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "If externalInformationPoints True then at least one Endpoint to external available information
-     * needs to be configured for the AAS."@en
+     * If externalInformationPoints True then at least one Endpoint to external available information
+     * needs to be configured for the AAS.
      * 
      * @return Returns the boolean for the property externalInformationPoints. More information under
      *         https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints
@@ -34,8 +34,8 @@ public interface PolicyInformationPoints {
     public boolean getExternalInformationPoints();
 
     /**
-     * "If externalInformationPoints True then at least one Endpoint to external available information
-     * needs to be configured for the AAS."@en
+     * If externalInformationPoints True then at least one Endpoint to external available information
+     * needs to be configured for the AAS.
      * 
      * @param externalInformationPoints desired value for the property externalInformationPoints. More
      *        information under
@@ -44,7 +44,7 @@ public interface PolicyInformationPoints {
     public void setExternalInformationPoints(boolean externalInformationPoints);
 
     /**
-     * "References to submodels defining information used by security access permission rules."@en
+     * References to submodels defining information used by security access permission rules.
      * 
      * @return Returns the List of References for the property internalInformationPoints. More
      *         information under
@@ -54,7 +54,7 @@ public interface PolicyInformationPoints {
     public List<Reference> getInternalInformationPoints();
 
     /**
-     * "References to submodels defining information used by security access permission rules."@en
+     * References to submodels defining information used by security access permission rules.
      * 
      * @param internalInformationPoints desired value for the property internalInformationPoints. More
      *        information under

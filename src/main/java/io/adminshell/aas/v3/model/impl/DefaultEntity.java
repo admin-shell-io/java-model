@@ -12,10 +12,10 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Entity" "An entity is a submodel element that is used to model entities."@en "Constraint
- * AASd-056: The semanticId of a Entity submodel element shall only reference a ConceptDescription
- * with the category ENTITY. The ConceptDescription describes the elements assigned to the entity
- * via Entity/statement."@en
+ * An entity is a submodel element that is used to model entities. Constraint AASd-056: The
+ * semanticId of a Entity submodel element shall only reference a ConceptDescription with the
+ * category ENTITY. The ConceptDescription describes the elements assigned to the entity via
+ * Entity/statement.
  */
 
 public class DefaultEntity implements Entity {
@@ -23,97 +23,92 @@ public class DefaultEntity implements Entity {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has entity type" "Describes whether the entity is a co-managed entity or a self-managed
-     * entity."@en
+     * Describes whether the entity is a co-managed entity or a self-managed entity.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/entityType")
     protected EntityType entityType;
 
     /**
-     * "has external asset id" "Reference to an identifier key value pair representing an external
-     * identifier of the asset represented by the asset administration shell. "@en "The asset attribute
-     * must be set if entityType is set to \'SelfManagedEntity\'. It is empty otherwise."@en "Constraint
-     * AASd-014: Either the attribute globalAssetId or externalAssetId of an Entity must be set if
-     * Entity/entityType is set to \'SelfManagedEntity\'. They are not existing otherwise."@en
+     * Reference to an identifier key value pair representing an external identifier of the asset
+     * represented by the asset administration shell. The asset attribute must be set if entityType is
+     * set to 'SelfManagedEntity'. It is empty otherwise. Constraint AASd-014: Either the attribute
+     * globalAssetId or externalAssetId of an Entity must be set if Entity/entityType is set to
+     * 'SelfManagedEntity'. They are not existing otherwise.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId")
     protected IdentifierKeyValuePair externalAssetId;
 
     /**
-     * "has global asset id" "Reference to the asset the entity is representing."@en "The asset
-     * attribute must be set if entityType is set to \'SelfManagedEntity\'. It is empty otherwise."@en
-     * "Constraint AASd-014: Either the attribute globalAssetId or externalAssetId of an Entity must be
-     * set if Entity/entityType is set to \'SelfManagedEntity\'. They are not existing otherwise."@en
+     * Reference to the asset the entity is representing. The asset attribute must be set if entityType
+     * is set to 'SelfManagedEntity'. It is empty otherwise. Constraint AASd-014: Either the attribute
+     * globalAssetId or externalAssetId of an Entity must be set if Entity/entityType is set to
+     * 'SelfManagedEntity'. They are not existing otherwise.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId")
     protected Reference globalAssetId;
 
     /**
-     * "has statement" "Describes statements applicable to the entity by a set of submodel elements,
-     * typically with a qualified value."@en
+     * Describes statements applicable to the entity by a set of submodel elements, typically with a
+     * qualified value.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/statement")
     protected List<SubmodelElement> statements = new ArrayList<>();
 
     /**
-     * "has Data Specification" "Global reference to the data specification template used by the
-     * element."@en
+     * Global reference to the data specification template used by the element.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
     protected List<Reference> dataSpecifications = new ArrayList<>();
 
     /**
-     * "has kind" "ModelingKind of the element: either type or instance."@en
+     * ModelingKind of the element: either type or instance.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
     protected ModelingKind kind;
 
     /**
-     * "has semantic ID" "Points to the Expression Semantic of the Submodels"@en "The semantic id might
-     * refer to an external information source, which explains the formulation of the submodel (for
-     * example an PDF if a standard)."@en
+     * Points to the Expression Semantic of the Submodels The semantic id might refer to an external
+     * information source, which explains the formulation of the submodel (for example an PDF if a
+     * standard).
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
     protected Reference semanticId;
 
     /**
-     * "has qualifier" "Additional qualification of a qualifiable element."@en
+     * Additional qualification of a qualifiable element.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
     protected List<Constraint> qualifiers = new ArrayList<>();
 
     /**
-     * "has referable category" "The category is a value that gives further meta information w.r.t. to
-     * the class of the element. It affects the expected existence of attributes and the applicability
-     * of constraints."@en
+     * The category is a value that gives further meta information w.r.t. to the class of the element.
+     * It affects the expected existence of attributes and the applicability of constraints.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
     protected String category;
 
     /**
-     * "has description" "Description or comments on the element. The description can be provided in
-     * several languages."@en
+     * Description or comments on the element. The description can be provided in several languages.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
     protected List<LangString> descriptions = new ArrayList<>();
 
     /**
-     * "has display name" "Display name. Can be provided in several languages."@en
+     * Display name. Can be provided in several languages.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
     protected List<LangString> displayNames = new ArrayList<>();
 
     /**
-     * "has short id" "Identifying string of the element within its name space."@en "Constraint
-     * AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small
-     * letter. I.e. [a-z][a-zA-Z0-9_]+."@en "Constraint AASd-003: idShort shall be matched
-     * case-insensitive."@en "Constraint AASd-022: idShort of non-identifiable referables shall be
-     * unqiue in its namespace."@en "Note: In case the element is a property and the property has a
-     * semantic definition (HasSemantics) the idShort is typically identical to the short name in
-     * English. "@en "Note: In case of an identifiable element idShort is optional but recommended to be
-     * defined. It can be used for unique reference in its name space and thus allows better usability
-     * and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC
-     * UA."@en
+     * Identifying string of the element within its name space. Constraint AASd-002: idShort shall only
+     * feature letters, digits, underscore ('_'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+.
+     * Constraint AASd-003: idShort shall be matched case-insensitive. Constraint AASd-022: idShort of
+     * non-identifiable referables shall be unqiue in its namespace. Note: In case the element is a
+     * property and the property has a semantic definition (HasSemantics) the idShort is typically
+     * identical to the short name in English. Note: In case of an identifiable element idShort is
+     * optional but recommended to be defined. It can be used for unique reference in its name space and
+     * thus allows better usability and a more performant implementation. In this case it is similar to
+     * the 'BrowserPath' in OPC UA.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
     protected String idShort;

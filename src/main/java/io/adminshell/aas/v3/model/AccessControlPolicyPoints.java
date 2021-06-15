@@ -9,7 +9,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Access ControlPolicy Points" "Container for access control policy points."@en
+ * Container for access control policy points.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultAccessControlPolicyPoints.class)
@@ -21,7 +21,7 @@ public interface AccessControlPolicyPoints {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "The access control administration policy point of the AAS."@en
+     * The access control administration policy point of the AAS.
      * 
      * @return Returns the PolicyAdministrationPoint for the property policyAdministrationPoint. More
      *         information under
@@ -31,7 +31,7 @@ public interface AccessControlPolicyPoints {
     public PolicyAdministrationPoint getPolicyAdministrationPoint();
 
     /**
-     * "The access control administration policy point of the AAS."@en
+     * The access control administration policy point of the AAS.
      * 
      * @param policyAdministrationPoint desired value for the property policyAdministrationPoint. More
      *        information under
@@ -40,7 +40,7 @@ public interface AccessControlPolicyPoints {
     public void setPolicyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint);
 
     /**
-     * "The access control policy decision point of the AAS."@en
+     * The access control policy decision point of the AAS.
      * 
      * @return Returns the PolicyDecisionPoint for the property policyDecisionPoint. More information
      *         under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint
@@ -49,7 +49,7 @@ public interface AccessControlPolicyPoints {
     public PolicyDecisionPoint getPolicyDecisionPoint();
 
     /**
-     * "The access control policy decision point of the AAS."@en
+     * The access control policy decision point of the AAS.
      * 
      * @param policyDecisionPoint desired value for the property policyDecisionPoint. More information
      *        under https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint
@@ -57,7 +57,7 @@ public interface AccessControlPolicyPoints {
     public void setPolicyDecisionPoint(PolicyDecisionPoint policyDecisionPoint);
 
     /**
-     * "The access control policy enforcement point of the AAS."@en
+     * The access control policy enforcement point of the AAS.
      * 
      * @return Returns the PolicyEnforcementPoints for the property policyEnforcementPoint. More
      *         information under
@@ -67,7 +67,7 @@ public interface AccessControlPolicyPoints {
     public PolicyEnforcementPoints getPolicyEnforcementPoint();
 
     /**
-     * "The access control policy enforcement point of the AAS."@en
+     * The access control policy enforcement point of the AAS.
      * 
      * @param policyEnforcementPoint desired value for the property policyEnforcementPoint. More
      *        information under
@@ -76,7 +76,7 @@ public interface AccessControlPolicyPoints {
     public void setPolicyEnforcementPoint(PolicyEnforcementPoints policyEnforcementPoint);
 
     /**
-     * "The access control policy information points of the AAS."@en
+     * The access control policy information points of the AAS.
      * 
      * @return Returns the PolicyInformationPoints for the property policyInformationPoints. More
      *         information under
@@ -86,7 +86,7 @@ public interface AccessControlPolicyPoints {
     public PolicyInformationPoints getPolicyInformationPoints();
 
     /**
-     * "The access control policy information points of the AAS."@en
+     * The access control policy information points of the AAS.
      * 
      * @param policyInformationPoints desired value for the property policyInformationPoints. More
      *        information under

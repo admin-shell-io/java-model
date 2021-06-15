@@ -12,8 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "File Submodel Element" "A File is a data element that represents a file via its path
- * description."@en
+ * A File is a data element that represents a file via its path description.
  */
 
 public class DefaultFile implements File {
@@ -21,14 +20,13 @@ public class DefaultFile implements File {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has mimetype" "Mime type of the content of the File."@en
+     * Mime type of the content of the File.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/File/mimeType")
     protected List<String> mimeTypes = new ArrayList<>();
 
     /**
-     * "has value" "Path and name of the referenced file (with file extension). The path can be absolute
-     * or relative."@en
+     * Path and name of the referenced file (with file extension). The path can be absolute or relative.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/File/value")
     protected List<String> values = new ArrayList<>();

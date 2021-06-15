@@ -12,13 +12,12 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Administrative Information" "Every Identifiable may have administrative information.
- * Administrative information includes for example 1) Information about the version of the element
- * 2) Information about who created or who made the last change to the element 3) Information about
- * the languages available in case the element contains text, for translating purposed also
- * themmaster or default language may be definedIn the first version of the AAS metamodel only
- * version information as defined by IEC 61360 is defined. In later versions additional attributes
- * may be added."@en
+ * Every Identifiable may have administrative information. Administrative information includes for
+ * example 1) Information about the version of the element 2) Information about who created or who
+ * made the last change to the element 3) Information about the languages available in case the
+ * element contains text, for translating purposed also themmaster or default language may be
+ * definedIn the first version of the AAS metamodel only version information as defined by IEC 61360
+ * is defined. In later versions additional attributes may be added.
  */
 
 public class DefaultAdministrativeInformation implements AdministrativeInformation {
@@ -26,21 +25,20 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has revision" "Revision of the element."@en "Constraint AASd-005: A revision requires a version.
-     * This means, if there is no version there is no revision neither."@en
+     * Revision of the element. Constraint AASd-005: A revision requires a version. This means, if there
+     * is no version there is no revision neither.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
     protected String revision;
 
     /**
-     * "has version" "Version of the element."@en
+     * Version of the element.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
     protected String version;
 
     /**
-     * "has Data Specification" "Global reference to the data specification template used by the
-     * element."@en
+     * Global reference to the data specification template used by the element.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
     protected List<Reference> dataSpecifications = new ArrayList<>();

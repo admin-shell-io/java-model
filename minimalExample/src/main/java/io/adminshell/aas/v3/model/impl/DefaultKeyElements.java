@@ -10,8 +10,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Key Elements" "Enumeration of different key value types within a key. Contains KeyElements,
- * ReferableElements, and IdentifiableElements."@en
+ * Enumeration of different key value types within a key. Contains KeyElements, ReferableElements,
+ * and IdentifiableElements.
  */
 
 public class DefaultKeyElements implements KeyElements {

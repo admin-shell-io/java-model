@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Subject Attributes" "A set of data elements that further classifies a specific subject."@en
+ * A set of data elements that further classifies a specific subject.
  */
 
 public class DefaultSubjectAttributes implements SubjectAttributes {
@@ -20,10 +20,9 @@ public class DefaultSubjectAttributes implements SubjectAttributes {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has subject attribute" "A data element that further classifies a specific subject. "@en
-     * "Constraint AASs-015: The data element SubjectAttributes/subjectAttribute shall be part of the
-     * submodel that is referenced within the \'selectableSubjectAttributes\' attribute of
-     * \'AccessControl\'."@en
+     * A data element that further classifies a specific subject. Constraint AASs-015: The data element
+     * SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the
+     * 'selectableSubjectAttributes' attribute of 'AccessControl'.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute")
     protected List<DataElement> subjectAttributes = new ArrayList<>();

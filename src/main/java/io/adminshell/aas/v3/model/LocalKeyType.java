@@ -9,17 +9,17 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Local Key Type" "Enumeration of different key value types within a key."@en
+ * Enumeration of different key value types within a key.
  */
 public enum LocalKeyType {
 
     /**
-     * "FragementId" "Identifier of a fragment within a file"@en
+     * Identifier of a fragment within a file
      */
     FRAGMENT_ID,
 
     /**
-     * "IdShort" "idShort of a referable element"@en
+     * idShort of a referable element
      */
     IDSHORT;
 

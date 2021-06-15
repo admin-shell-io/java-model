@@ -10,8 +10,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "identifier key value pair" "An IdentifierKeyValuePair describes a generic identifier as
- * key-value pair."@en
+ * An IdentifierKeyValuePair describes a generic identifier as key-value pair.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultIdentifierKeyValuePair.class)
@@ -23,7 +22,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "Key of the identifier."@en
+     * Key of the identifier.
      * 
      * @return Returns the List of Strings for the property keys. More information under
      *         https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key
@@ -32,7 +31,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
     public List<String> getKeys();
 
     /**
-     * "Key of the identifier."@en
+     * Key of the identifier.
      * 
      * @param keys desired value for the property keys. More information under
      *        https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key
@@ -40,7 +39,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
     public void setKeys(List<String> keys);
 
     /**
-     * "The value of the identifier with the corresponding key."@en
+     * The value of the identifier with the corresponding key.
      * 
      * @return Returns the List of Strings for the property values. More information under
      *         https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value
@@ -49,7 +48,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
     public List<String> getValues();
 
     /**
-     * "The value of the identifier with the corresponding key."@en
+     * The value of the identifier with the corresponding key.
      * 
      * @param values desired value for the property values. More information under
      *        https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value

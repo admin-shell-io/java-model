@@ -9,8 +9,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "File Submodel Element" "A File is a data element that represents a file via its path
- * description."@en
+ * A File is a data element that represents a file via its path description.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultFile.class)
@@ -22,7 +21,7 @@ public interface File extends DataElement, SubmodelElement {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "Mime type of the content of the File."@en
+     * Mime type of the content of the File.
      * 
      * @return Returns the String for the property mimeType. More information under
      *         https://admin-shell.io/aas/3/0/RC01/File/mimeType
@@ -31,7 +30,7 @@ public interface File extends DataElement, SubmodelElement {
     public String getMimeType();
 
     /**
-     * "Mime type of the content of the File."@en
+     * Mime type of the content of the File.
      * 
      * @param mimeType desired value for the property mimeType. More information under
      *        https://admin-shell.io/aas/3/0/RC01/File/mimeType
@@ -39,8 +38,7 @@ public interface File extends DataElement, SubmodelElement {
     public void setMimeType(String mimeType);
 
     /**
-     * "Path and name of the referenced file (with file extension). The path can be absolute or
-     * relative."@en
+     * Path and name of the referenced file (with file extension). The path can be absolute or relative.
      * 
      * @return Returns the String for the property value. More information under
      *         https://admin-shell.io/aas/3/0/RC01/File/value
@@ -49,8 +47,7 @@ public interface File extends DataElement, SubmodelElement {
     public String getValue();
 
     /**
-     * "Path and name of the referenced file (with file extension). The path can be absolute or
-     * relative."@en
+     * Path and name of the referenced file (with file extension). The path can be absolute or relative.
      * 
      * @param value desired value for the property value. More information under
      *        https://admin-shell.io/aas/3/0/RC01/File/value

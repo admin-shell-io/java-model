@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Permission" "Description of a single permission."@en
+ * Description of a single permission.
  */
 
 public class DefaultPermission implements Permission {
@@ -18,18 +18,17 @@ public class DefaultPermission implements Permission {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has kind of permission" "Description of the kind of permission. Possible kind of permission also
-     * include the denial of the permission."@en
+     * Description of the kind of permission. Possible kind of permission also include the denial of the
+     * permission.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
     protected PermissionKind kindOfPermission;
 
     /**
-     * "has permission" "Reference to a property that defines the semantics of the permission."@en
-     * "Constraint AASs-010: The property referenced in Permission/permission shall have the category
-     * \'CONSTANT\'."@en "Constraint AASs-011: The property referenced in Permission/permission shall be
-     * part of the submodel that is referenced within the \'selectablePermissions\' attribute of
-     * \'AccessControl\'."@en
+     * Reference to a property that defines the semantics of the permission. Constraint AASs-010: The
+     * property referenced in Permission/permission shall have the category 'CONSTANT'. Constraint
+     * AASs-011: The property referenced in Permission/permission shall be part of the submodel that is
+     * referenced within the 'selectablePermissions' attribute of 'AccessControl'.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Permission/permission")
     protected Reference permission;

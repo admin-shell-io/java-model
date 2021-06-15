@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Blob Certificate" "Certificate provided as BLOB."@en
+ * Certificate provided as BLOB.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultBlobCertificate.class)
@@ -22,7 +22,7 @@ public interface BlobCertificate extends Certificate {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "Certificate as BLOB."@en
+     * Certificate as BLOB.
      * 
      * @return Returns the Blob for the property blobCertificate. More information under
      *         https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate
@@ -31,7 +31,7 @@ public interface BlobCertificate extends Certificate {
     public Blob getBlobCertificate();
 
     /**
-     * "Certificate as BLOB."@en
+     * Certificate as BLOB.
      * 
      * @param blobCertificate desired value for the property blobCertificate. More information under
      *        https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate
@@ -39,7 +39,7 @@ public interface BlobCertificate extends Certificate {
     public void setBlobCertificate(Blob blobCertificate);
 
     /**
-     * "Extensions contained in the certificate."@en
+     * Extensions contained in the certificate.
      * 
      * @return Returns the List of References for the property containedExtensions. More information
      *         under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension
@@ -48,7 +48,7 @@ public interface BlobCertificate extends Certificate {
     public List<Reference> getContainedExtensions();
 
     /**
-     * "Extensions contained in the certificate."@en
+     * Extensions contained in the certificate.
      * 
      * @param containedExtensions desired value for the property containedExtensions. More information
      *        under https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension
@@ -56,7 +56,7 @@ public interface BlobCertificate extends Certificate {
     public void setContainedExtensions(List<Reference> containedExtensions);
 
     /**
-     * "Denotes whether this certificate is the certificated that fast added last."@en
+     * Denotes whether this certificate is the certificated that fast added last.
      * 
      * @return Returns the boolean for the property lastCertificate. More information under
      *         https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate
@@ -65,7 +65,7 @@ public interface BlobCertificate extends Certificate {
     public boolean getLastCertificate();
 
     /**
-     * "Denotes whether this certificate is the certificated that fast added last."@en
+     * Denotes whether this certificate is the certificated that fast added last.
      * 
      * @param lastCertificate desired value for the property lastCertificate. More information under
      *        https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate

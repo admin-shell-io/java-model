@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Identifier" "Used to uniquely identify an entity by using an identifier."@en
+ * Used to uniquely identify an entity by using an identifier.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultIdentifier.class)
@@ -22,7 +22,7 @@ public interface Identifier {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
+     * A globally unique identifier which might not be a URI. Its type is defined in idType.
      * 
      * @return Returns the List of Strings for the property identifiers. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Identifier/identifier
@@ -31,7 +31,7 @@ public interface Identifier {
     public List<String> getIdentifiers();
 
     /**
-     * "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
+     * A globally unique identifier which might not be a URI. Its type is defined in idType.
      * 
      * @param identifiers desired value for the property identifiers. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Identifier/identifier
@@ -39,8 +39,8 @@ public interface Identifier {
     public void setIdentifiers(List<String> identifiers);
 
     /**
-     * "Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the
-     * enumeration \'IdentifierType\'."@en
+     * Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the
+     * enumeration 'IdentifierType'.
      * 
      * @return Returns the List of IdentifierTypes for the property idTypes. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Identifier/idType
@@ -49,8 +49,8 @@ public interface Identifier {
     public List<IdentifierType> getIdTypes();
 
     /**
-     * "Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the
-     * enumeration \'IdentifierType\'."@en
+     * Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the
+     * enumeration 'IdentifierType'.
      * 
      * @param idTypes desired value for the property idTypes. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Identifier/idType

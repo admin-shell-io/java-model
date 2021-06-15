@@ -9,29 +9,28 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Permission Kind" "Enumeration of the kind of permissions that is given to the assignment of a
- * permission to a subject."@en
+ * Enumeration of the kind of permissions that is given to the assignment of a permission to a
+ * subject.
  */
 public enum PermissionKind {
 
     /**
-     * "allow" "Allow the permission given to the subject."@en
+     * Allow the permission given to the subject.
      */
     ALLOW,
 
     /**
-     * "deny" "Explicitly deny the permission given to the subject."@en
+     * Explicitly deny the permission given to the subject.
      */
     DENY,
 
     /**
-     * "not applicable" "The permission is not applicable to the subject."@en
+     * The permission is not applicable to the subject.
      */
     NOT_APPLICABLE,
 
     /**
-     * "undefined" "It is undefined whether the permission is allowed, not applicable or denied to the
-     * subject."@en
+     * It is undefined whether the permission is allowed, not applicable or denied to the subject.
      */
     UNDEFINED;
 

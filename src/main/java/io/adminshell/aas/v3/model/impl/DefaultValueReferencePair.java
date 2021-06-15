@@ -10,8 +10,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Value Reference Pair" "A value reference pair within a value list. Each value has a global
- * unique id defining its semantic."@en
+ * A value reference pair within a value list. Each value has a global unique id defining its
+ * semantic.
  */
 
 public class DefaultValueReferencePair implements ValueReferencePair {
@@ -19,14 +19,13 @@ public class DefaultValueReferencePair implements ValueReferencePair {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "Value of value reference pair" "the value of the referenced concept definition of the value in
-     * valueId."@en
+     * the value of the referenced concept definition of the value in valueId.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value")
     protected String value;
 
     /**
-     * "Value id of value reference pair" "Global unique id of the value."@en
+     * Global unique id of the value.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/valueId")
     protected Reference valueId;

@@ -13,14 +13,13 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Submodel Element Collection" "A submodel element collection is a set or list of submodel
- * elements."@en "Constraint AASd-059: If the semanticId of a SubmodelElementCollection references a
- * ConceptDescription then the category of the ConceptDescription shall be COLLECTION or ENTITY."@en
- * "Constraint AASd-092: If the semanticId of a SubmodelElementCollection with
- * SubmodelElementCollection/allowDuplicates == false references a ConceptDescription then the
- * ConceptDescription/category shall be ENTITY."@en "Constraint AASd-093: If the semanticId of a
- * SubmodelElementCollection with SubmodelElementCollection/allowDuplicates == true references a
- * ConceptDescription then the ConceptDescription/category shall be COLLECTION."@en
+ * A submodel element collection is a set or list of submodel elements. Constraint AASd-059: If the
+ * semanticId of a SubmodelElementCollection references a ConceptDescription then the category of
+ * the ConceptDescription shall be COLLECTION or ENTITY. Constraint AASd-092: If the semanticId of a
+ * SubmodelElementCollection with SubmodelElementCollection/allowDuplicates == false references a
+ * ConceptDescription then the ConceptDescription/category shall be ENTITY. Constraint AASd-093: If
+ * the semanticId of a SubmodelElementCollection with SubmodelElementCollection/allowDuplicates ==
+ * true references a ConceptDescription then the ConceptDescription/category shall be COLLECTION.
  */
 
 public class DefaultSubmodelElementCollection implements SubmodelElementCollection {
@@ -28,23 +27,22 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "allow duplicates" "If allowDuplicates=true then it is allowed that the collection contains the
-     * same element several times. Default = false"@en "Constraint AASd-026: If allowDuplicates==false
-     * then it is not allowed that the collection contains several elements with the same semantics
-     * (i.e. the same semanticId)."@en
+     * If allowDuplicates=true then it is allowed that the collection contains the same element several
+     * times. Default = false Constraint AASd-026: If allowDuplicates==false then it is not allowed that
+     * the collection contains several elements with the same semantics (i.e. the same semanticId).
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates")
     protected List<Boolean> allowDuplicates = new ArrayList<>();
 
     /**
-     * "ordered" "If ordered=false then the elements in the property collection are not ordered. If
-     * ordered=true then the elements in the collection are ordered. Default = false"@en
+     * If ordered=false then the elements in the property collection are not ordered. If ordered=true
+     * then the elements in the collection are ordered. Default = false
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered")
     protected List<Boolean> ordereds = new ArrayList<>();
 
     /**
-     * "has value" "Submodel element contained in the collection."@en
+     * Submodel element contained in the collection.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value")
     protected Collection<SubmodelElement> values = new ArrayList<>();

@@ -10,10 +10,9 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Reference" "Reference to either a model element of the same or another AAs or to an external
- * entity. A reference is an ordered list of keys, each key referencing an element. The complete
- * list of keys may for example be concatenated to a path that then gives unique access to an
- * element or entity."@en
+ * Reference to either a model element of the same or another AAs or to an external entity. A
+ * reference is an ordered list of keys, each key referencing an element. The complete list of keys
+ * may for example be concatenated to a path that then gives unique access to an element or entity.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultReference.class)
@@ -25,7 +24,7 @@ public interface Reference {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "Unique reference in its name space."@en
+     * Unique reference in its name space.
      * 
      * @return Returns the List of Keys for the property keys. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Reference/key
@@ -34,7 +33,7 @@ public interface Reference {
     public List<Key> getKeys();
 
     /**
-     * "Unique reference in its name space."@en
+     * Unique reference in its name space.
      * 
      * @param keys desired value for the property keys. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Reference/key

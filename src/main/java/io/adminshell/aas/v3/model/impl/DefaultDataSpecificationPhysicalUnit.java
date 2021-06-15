@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Data Specification Physical Unit" "Data Specification Template for Physical Units."@en
+ * Data Specification Template for Physical Units.
  */
 
 public class DefaultDataSpecificationPhysicalUnit implements DataSpecificationPhysicalUnit {
@@ -20,74 +20,62 @@ public class DefaultDataSpecificationPhysicalUnit implements DataSpecificationPh
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has conversion factor"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/conversionFactor")
     protected String conversionFactor;
 
     /**
-     * "has definition"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/definition")
     protected List<LangString> definitions = new ArrayList<>();
 
     /**
-     * "has DIN notation"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/dinNotation")
     protected String dinNotation;
 
     /**
-     * "has ECE code"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/eceCode")
     protected String eceCode;
 
     /**
-     * "has ECE name"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/eceName")
     protected String eceName;
 
     /**
-     * "has NIST name"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/nistName")
     protected String nistName;
 
     /**
-     * "has registration authority"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/registrationAuthorityId")
     protected String registrationAuthorityId;
 
     /**
-     * "has SI name"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/siName")
     protected String siName;
 
     /**
-     * "has SI notation"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/siNotation")
     protected String siNotation;
 
     /**
-     * "has supplier"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/supplier")
     protected String supplier;
 
     /**
-     * "unit has name"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/unitName")
     protected String unitName;
 
     /**
-     * "unit has symbol"
-     */
+    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/unitSymbol")
     protected String unitSymbol;
 

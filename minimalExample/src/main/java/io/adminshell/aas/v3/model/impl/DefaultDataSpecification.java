@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Data Specification" "Data specification template of the description of the concept."@en
+ * Data specification template of the description of the concept.
  */
 
 public class DefaultDataSpecification implements DataSpecification {
@@ -20,9 +20,8 @@ public class DefaultDataSpecification implements DataSpecification {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "Data Specification Content" "DataSpecificationContent contains the additional attributes to be
-     * added to the element instance that references the data specification template and meta
-     * information about the template itself."@en
+     * DataSpecificationContent contains the additional attributes to be added to the element instance
+     * that references the data specification template and meta information about the template itself.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/DataSpecification/dataSpecificationContent")
     protected List<DataSpecificationContent> dataSpecificationContents = new ArrayList<>();

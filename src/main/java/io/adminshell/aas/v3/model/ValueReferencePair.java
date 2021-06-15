@@ -9,8 +9,8 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Value Reference Pair" "A value reference pair within a value list. Each value has a global
- * unique id defining its semantic."@en
+ * A value reference pair within a value list. Each value has a global unique id defining its
+ * semantic.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultValueReferencePair.class)
@@ -22,7 +22,7 @@ public interface ValueReferencePair {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "the value of the referenced concept definition of the value in valueId."@en
+     * the value of the referenced concept definition of the value in valueId.
      * 
      * @return Returns the String for the property value. More information under
      *         https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value
@@ -31,7 +31,7 @@ public interface ValueReferencePair {
     public String getValue();
 
     /**
-     * "the value of the referenced concept definition of the value in valueId."@en
+     * the value of the referenced concept definition of the value in valueId.
      * 
      * @param value desired value for the property value. More information under
      *        https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value
@@ -39,7 +39,7 @@ public interface ValueReferencePair {
     public void setValue(String value);
 
     /**
-     * "Global unique id of the value."@en
+     * Global unique id of the value.
      * 
      * @return Returns the Reference for the property valueId. More information under
      *         https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/valueId
@@ -48,7 +48,7 @@ public interface ValueReferencePair {
     public Reference getValueId();
 
     /**
-     * "Global unique id of the value."@en
+     * Global unique id of the value.
      * 
      * @param valueId desired value for the property valueId. More information under
      *        https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/valueId

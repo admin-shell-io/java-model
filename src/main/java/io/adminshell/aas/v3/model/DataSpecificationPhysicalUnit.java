@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Data Specification Physical Unit" "Data Specification Template for Physical Units."@en
+ * Data Specification Template for Physical Units.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultDataSpecificationPhysicalUnit.class)

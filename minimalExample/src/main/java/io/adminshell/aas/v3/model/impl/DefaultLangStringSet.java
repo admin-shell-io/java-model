@@ -12,8 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Lang String Set" "A set of strings, each annotated by the language of the string. The meaning of
- * the string in each language shall be the same."@en
+ * A set of strings, each annotated by the language of the string. The meaning of the string in each
+ * language shall be the same.
  */
 
 public class DefaultLangStringSet implements LangStringSet {
@@ -21,7 +21,7 @@ public class DefaultLangStringSet implements LangStringSet {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "Lang String" "A string in a specified language."@en
+     * A string in a specified language.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/LangStringSet/langString")
     protected List<LangString> langStrings = new ArrayList<>();

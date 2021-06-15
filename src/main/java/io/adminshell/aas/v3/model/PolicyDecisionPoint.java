@@ -9,7 +9,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Policy Decision Point" "Defines a security policy decision point (PDP). "@en
+ * Defines a security policy decision point (PDP).
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultPolicyDecisionPoint.class)
@@ -21,8 +21,8 @@ public interface PolicyDecisionPoint {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "If externalPolicyDecisionPoints True then Endpoints to external available decision points taking
-     * into consideration for access control for the AAS need to be configured."@en
+     * If externalPolicyDecisionPoints True then Endpoints to external available decision points taking
+     * into consideration for access control for the AAS need to be configured.
      * 
      * @return Returns the boolean for the property externalPolicyDecisionPoints. More information under
      *         https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints
@@ -31,8 +31,8 @@ public interface PolicyDecisionPoint {
     public boolean getExternalPolicyDecisionPoints();
 
     /**
-     * "If externalPolicyDecisionPoints True then Endpoints to external available decision points taking
-     * into consideration for access control for the AAS need to be configured."@en
+     * If externalPolicyDecisionPoints True then Endpoints to external available decision points taking
+     * into consideration for access control for the AAS need to be configured.
      * 
      * @param externalPolicyDecisionPoints desired value for the property externalPolicyDecisionPoints.
      *        More information under

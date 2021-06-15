@@ -9,7 +9,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Identifier" "Used to uniquely identify an entity by using an identifier."@en
+ * Used to uniquely identify an entity by using an identifier.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultIdentifier.class)
@@ -21,7 +21,7 @@ public interface Identifier {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
+     * A globally unique identifier which might not be a URI. Its type is defined in idType.
      * 
      * @return Returns the String for the property identifier. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Identifier/identifier
@@ -30,7 +30,7 @@ public interface Identifier {
     public String getIdentifier();
 
     /**
-     * "A globally unique identifier which might not be a URI. Its type is defined in idType."@en
+     * A globally unique identifier which might not be a URI. Its type is defined in idType.
      * 
      * @param identifier desired value for the property identifier. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Identifier/identifier
@@ -38,8 +38,8 @@ public interface Identifier {
     public void setIdentifier(String identifier);
 
     /**
-     * "Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the
-     * enumeration \'IdentifierType\'."@en
+     * Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the
+     * enumeration 'IdentifierType'.
      * 
      * @return Returns the IdentifierType for the property idType. More information under
      *         https://admin-shell.io/aas/3/0/RC01/Identifier/idType
@@ -48,8 +48,8 @@ public interface Identifier {
     public IdentifierType getIdType();
 
     /**
-     * "Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the
-     * enumeration \'IdentifierType\'."@en
+     * Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the
+     * enumeration 'IdentifierType'.
      * 
      * @param idType desired value for the property idType. More information under
      *        https://admin-shell.io/aas/3/0/RC01/Identifier/idType

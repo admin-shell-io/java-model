@@ -9,8 +9,8 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Event" "An event."@en "Constraint AASd-061: The semanticId of a Event submodel element shall
- * only reference a ConceptDescription with the category EVENT."@en
+ * An event. Constraint AASd-061: The semanticId of a Event submodel element shall only reference a
+ * ConceptDescription with the category EVENT.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = BasicEvent.class)

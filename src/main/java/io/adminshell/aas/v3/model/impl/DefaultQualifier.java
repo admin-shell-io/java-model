@@ -10,9 +10,9 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Qualifier" "A qualifier is a type-value pair that makes additional statements w.r.t. the value
- * of the element."@en "Constraint AASd-063: The semanticId of a Qualifier shall only reference a
- * ConceptDescription with the category QUALIFIER."@en
+ * A qualifier is a type-value pair that makes additional statements w.r.t. the value of the
+ * element. Constraint AASd-063: The semanticId of a Qualifier shall only reference a
+ * ConceptDescription with the category QUALIFIER.
  */
 
 public class DefaultQualifier implements Qualifier {
@@ -20,37 +20,36 @@ public class DefaultQualifier implements Qualifier {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has semantic ID" "Points to the Expression Semantic of the Submodels"@en "The semantic id might
-     * refer to an external information source, which explains the formulation of the submodel (for
-     * example an PDF if a standard)."@en
+     * Points to the Expression Semantic of the Submodels The semantic id might refer to an external
+     * information source, which explains the formulation of the submodel (for example an PDF if a
+     * standard).
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
     protected Reference semanticId;
 
     /**
-     * "has qualifier type" "The qualifier type describes the type of the qualifier that is applied to
-     * the element."@en
+     * The qualifier type describes the type of the qualifier that is applied to the element.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/type")
     protected String type;
 
     /**
-     * "The qualifier value is the value of the qualifier."@en "Constraint AASd-006: if both, the value
-     * and the valueId are present then the value needs to be identical to the short name of the
-     * referenced coded value in qualifierValueId."@en "Constraint AASd-020: The value of
-     * Qualifier/value shall be consistent to the data type as defined in Qualifier/valueType."@en
+     * The qualifier value is the value of the qualifier. Constraint AASd-006: if both, the value and
+     * the valueId are present then the value needs to be identical to the short name of the referenced
+     * coded value in qualifierValueId. Constraint AASd-020: The value of Qualifier/value shall be
+     * consistent to the data type as defined in Qualifier/valueType.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/value")
     protected String value;
 
     /**
-     * "Reference to the global unqiue id of a coded value."@en
+     * Reference to the global unqiue id of a coded value.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId")
     protected Reference valueId;
 
     /**
-     * "Data type of the qualifier value."@en
+     * Data type of the qualifier value.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType")
     protected String valueType;

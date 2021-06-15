@@ -9,7 +9,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "Constraint" "A constraint is used to further qualify an element."@en
+ * A constraint is used to further qualify an element.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = Formula.class),

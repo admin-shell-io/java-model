@@ -12,9 +12,9 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Policy Information Points" "Defines the security policy information points (PIP). Serves as the
- * retrieval source of attributes, or the data required for policy evaluation to provide the
- * information needed by the policy decision point to make the decisions."@en
+ * Defines the security policy information points (PIP). Serves as the retrieval source of
+ * attributes, or the data required for policy evaluation to provide the information needed by the
+ * policy decision point to make the decisions.
  */
 
 public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
@@ -22,15 +22,14 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has external information point" "If externalInformationPoints True then at least one Endpoint to
-     * external available information needs to be configured for the AAS."@en
+     * If externalInformationPoints True then at least one Endpoint to external available information
+     * needs to be configured for the AAS.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints")
     protected boolean externalInformationPoints;
 
     /**
-     * "has internal information point" "References to submodels defining information used by security
-     * access permission rules."@en
+     * References to submodels defining information used by security access permission rules.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint")
     protected List<Reference> internalInformationPoints = new ArrayList<>();

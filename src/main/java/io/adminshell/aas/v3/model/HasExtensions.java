@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * "HasExtensions" "Element that can be extended by proprietary extensions."@en
+ * Element that can be extended by proprietary extensions.
  */
 @KnownSubtypes({
 })
@@ -21,7 +21,7 @@ public interface HasExtensions {
     // accessor methods as derived from the Asset Administration Shell ontology
 
     /**
-     * "An extension of the element."@en
+     * An extension of the element.
      * 
      * @return Returns the List of Extensions for the property extensions. More information under
      *         https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension
@@ -30,7 +30,7 @@ public interface HasExtensions {
     public List<Extension> getExtensions();
 
     /**
-     * "An extension of the element."@en
+     * An extension of the element.
      * 
      * @param extensions desired value for the property extensions. More information under
      *        https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension

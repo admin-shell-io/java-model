@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Multi Language Property" "A property is a data element that has a multi language value."@en
+ * A property is a data element that has a multi language value.
  */
 
 public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
@@ -20,83 +20,79 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has Data Specification" "Global reference to the data specification template used by the
-     * element."@en
+     * Global reference to the data specification template used by the element.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
     protected List<Reference> dataSpecifications = new ArrayList<>();
 
     /**
-     * "has kind" "ModelingKind of the element: either type or instance."@en
+     * ModelingKind of the element: either type or instance.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
     protected ModelingKind kind;
 
     /**
-     * "has semantic ID" "Points to the Expression Semantic of the Submodels"@en "The semantic id might
-     * refer to an external information source, which explains the formulation of the submodel (for
-     * example an PDF if a standard)."@en
+     * Points to the Expression Semantic of the Submodels The semantic id might refer to an external
+     * information source, which explains the formulation of the submodel (for example an PDF if a
+     * standard).
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
     protected Reference semanticId;
 
     /**
-     * "has value" "The value of the property instance."@en "Constraint AASd-052b: If the semanticId of
-     * a MultiLanguageProperty references a ConceptDescription then the ConceptDescription/category
-     * shall be one of following values: PROPERTY."@en "Constraint AASd-012: If both, the
+     * The value of the property instance. Constraint AASd-052b: If the semanticId of a
+     * MultiLanguageProperty references a ConceptDescription then the ConceptDescription/category shall
+     * be one of following values: PROPERTY. Constraint AASd-012: If both, the
      * MultiLanguageProperty/value and the MultiLanguageProperty/valueId are present then for each
      * string in a specific language the meaning must be the same as specified in
-     * MultiLanguageProperty/valueId."@en "Constraint AASd-067: If the semanticId of a
-     * MultiLanguageProperty references a ConceptDescription then DataSpecificationIEC61360/dataType
-     * shall be STRING_TRANSLATABLE."@en
+     * MultiLanguageProperty/valueId. Constraint AASd-067: If the semanticId of a MultiLanguageProperty
+     * references a ConceptDescription then DataSpecificationIEC61360/dataType shall be
+     * STRING_TRANSLATABLE.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value")
     protected List<LangString> values = new ArrayList<>();
 
     /**
-     * "has value Id" "Reference to the global unqiue id of a coded value."@en
+     * Reference to the global unqiue id of a coded value.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId")
     protected Reference valueId;
 
     /**
-     * "has qualifier" "Additional qualification of a qualifiable element."@en
+     * Additional qualification of a qualifiable element.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
     protected List<Constraint> qualifiers = new ArrayList<>();
 
     /**
-     * "has referable category" "The category is a value that gives further meta information w.r.t. to
-     * the class of the element. It affects the expected existence of attributes and the applicability
-     * of constraints."@en
+     * The category is a value that gives further meta information w.r.t. to the class of the element.
+     * It affects the expected existence of attributes and the applicability of constraints.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
     protected String category;
 
     /**
-     * "has description" "Description or comments on the element. The description can be provided in
-     * several languages."@en
+     * Description or comments on the element. The description can be provided in several languages.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
     protected List<LangString> descriptions = new ArrayList<>();
 
     /**
-     * "has display name" "Display name. Can be provided in several languages."@en
+     * Display name. Can be provided in several languages.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
     protected List<LangString> displayNames = new ArrayList<>();
 
     /**
-     * "has short id" "Identifying string of the element within its name space."@en "Constraint
-     * AASd-002: idShort shall only feature letters, digits, underscore (\'_\'); starting with a small
-     * letter. I.e. [a-z][a-zA-Z0-9_]+."@en "Constraint AASd-003: idShort shall be matched
-     * case-insensitive."@en "Constraint AASd-022: idShort of non-identifiable referables shall be
-     * unqiue in its namespace."@en "Note: In case the element is a property and the property has a
-     * semantic definition (HasSemantics) the idShort is typically identical to the short name in
-     * English. "@en "Note: In case of an identifiable element idShort is optional but recommended to be
-     * defined. It can be used for unique reference in its name space and thus allows better usability
-     * and a more performant implementation. In this case it is similar to the \'BrowserPath\' in OPC
-     * UA."@en
+     * Identifying string of the element within its name space. Constraint AASd-002: idShort shall only
+     * feature letters, digits, underscore ('_'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+.
+     * Constraint AASd-003: idShort shall be matched case-insensitive. Constraint AASd-022: idShort of
+     * non-identifiable referables shall be unqiue in its namespace. Note: In case the element is a
+     * property and the property has a semantic definition (HasSemantics) the idShort is typically
+     * identical to the short name in English. Note: In case of an identifiable element idShort is
+     * optional but recommended to be defined. It can be used for unique reference in its name space and
+     * thus allows better usability and a more performant implementation. In this case it is similar to
+     * the 'BrowserPath' in OPC UA.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
     protected String idShort;

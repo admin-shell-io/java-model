@@ -12,11 +12,11 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Asset Information" "The asset may either represent an asset type or an asset instance. The asset
- * has a globally unique identifier plus - if needed - additional domain specific (proprietary)
- * identifiers. However, to support the corner case of very first phase of lifecycle where a
- * stabilised/constant global asset identifier does not already exist, the corresponding attribute
- * \'globalAssetId\' is optional."@en
+ * The asset may either represent an asset type or an asset instance. The asset has a globally
+ * unique identifier plus - if needed - additional domain specific (proprietary) identifiers.
+ * However, to support the corner case of very first phase of lifecycle where a stabilised/constant
+ * global asset identifier does not already exist, the corresponding attribute 'globalAssetId' is
+ * optional.
  */
 
 public class DefaultAssetInformation implements AssetInformation {
@@ -24,32 +24,31 @@ public class DefaultAssetInformation implements AssetInformation {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has asset kind" "Denotes whether the Asset of kind \'Type\' or \'Instance\'."@en
+     * Denotes whether the Asset of kind 'Type' or 'Instance'.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
     protected List<AssetKind> assetKinds = new ArrayList<>();
 
     /**
-     * "has default Thumbnail" "Thumbnail of the asset represented by the asset administration
-     * shell."@en
+     * Thumbnail of the asset represented by the asset administration shell.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail")
     protected List<File> defaultThumbnails = new ArrayList<>();
 
     /**
-     * "has global asset id" "Reference to either an Asset object or a global reference to the asset the
-     * AAS is representing. This attribute is required as soon as the AAS is exchanged via partners in
-     * the life cycle of the asset. In a first phase of the life cycle the asset might not yet have a
-     * global id but already an internal identifier. The internal identifier would be modelled via
-     * \'externalAssetId\'."@en "Constraint AASd-023: AssetInformation/globalAssetId either is a
-     * reference to an Asset object or a global reference."@en
+     * Reference to either an Asset object or a global reference to the asset the AAS is representing.
+     * This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the
+     * asset. In a first phase of the life cycle the asset might not yet have a global id but already an
+     * internal identifier. The internal identifier would be modelled via 'externalAssetId'. Constraint
+     * AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global
+     * reference.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId")
     protected List<Reference> globalAssetIds = new ArrayList<>();
 
     /**
-     * "has specific asset id" "Additional domain-specific, typically proprietary Identifier for the
-     * asset like e.g. serial number etc."@en
+     * Additional domain-specific, typically proprietary Identifier for the asset like e.g. serial
+     * number etc.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId")
     protected List<IdentifierKeyValuePair> specificAssetIds = new ArrayList<>();

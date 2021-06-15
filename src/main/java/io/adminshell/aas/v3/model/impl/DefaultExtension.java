@@ -10,8 +10,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * "Extensions" "Single extension of an element."@en "Constraint AASd-077: The name of an extension
- * within HasExtensions needs to be unique."@en
+ * Single extension of an element. Constraint AASd-077: The name of an extension within
+ * HasExtensions needs to be unique.
  */
 
 public class DefaultExtension implements Extension {
@@ -19,33 +19,33 @@ public class DefaultExtension implements Extension {
     // instance fields as derived from the Asset Administration Shell ontology
 
     /**
-     * "has extension name" "An extension of the element."@en
+     * An extension of the element.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/name")
     protected String name;
 
     /**
-     * "has extension reference to" "Reference to an element the extension refers to."@en
+     * Reference to an element the extension refers to.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/refersTo")
     protected Reference refersTo;
 
     /**
-     * "has extension value" "Value of the extension."@en
+     * Value of the extension.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/value")
     protected String value;
 
     /**
-     * "has extension value type" "Type of the value of the extension."@en
+     * Type of the value of the extension.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/valueType")
     protected String valueType;
 
     /**
-     * "has semantic ID" "Points to the Expression Semantic of the Submodels"@en "The semantic id might
-     * refer to an external information source, which explains the formulation of the submodel (for
-     * example an PDF if a standard)."@en
+     * Points to the Expression Semantic of the Submodels The semantic id might refer to an external
+     * information source, which explains the formulation of the submodel (for example an PDF if a
+     * standard).
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
     protected Reference semanticId;
