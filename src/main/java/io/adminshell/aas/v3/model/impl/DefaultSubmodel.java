@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of Submodel
+ * Default implementation of package io.adminshell.aas.v3.model.Submodel
  * 
  * A Submodel defines a specific aspect of the asset represented by the AAS. A submodel is used to
  * structure the virtual representation and technical functionality of an Administration Shell into

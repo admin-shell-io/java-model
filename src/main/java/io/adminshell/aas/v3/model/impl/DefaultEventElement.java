@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of EventElement
+ * Default implementation of package io.adminshell.aas.v3.model.EventElement
  * 
  * Defines the necessary information for sending or receiving events. non-normative, just only for
  * discussion (as of November 2019).

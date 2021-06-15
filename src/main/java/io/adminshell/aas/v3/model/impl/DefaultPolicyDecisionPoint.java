@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of PolicyDecisionPoint
+ * Default implementation of package io.adminshell.aas.v3.model.PolicyDecisionPoint
  * 
  * Defines a security policy decision point (PDP).
  */

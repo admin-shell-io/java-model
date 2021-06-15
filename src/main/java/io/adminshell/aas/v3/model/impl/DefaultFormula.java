@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of Formula
+ * Default implementation of package io.adminshell.aas.v3.model.Formula
  * 
  */
 

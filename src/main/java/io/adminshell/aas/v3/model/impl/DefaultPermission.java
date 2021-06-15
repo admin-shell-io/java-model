@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of Permission
+ * Default implementation of package io.adminshell.aas.v3.model.Permission
  * 
  * Description of a single permission.
  */

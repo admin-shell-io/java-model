@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of View
+ * Default implementation of package io.adminshell.aas.v3.model.View
  * 
  * A view is a collection of referable elements w.r.t. to a specific viewpoint of one or more
  * stakeholders. Constraint AASd-064: If the semanticId of a View references a ConceptDescription

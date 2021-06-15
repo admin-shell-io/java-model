@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of DataTypeIEC61360
+ * Default implementation of package io.adminshell.aas.v3.model.DataTypeIEC61360
  * 
  * Enumeration of all IEC 61360 defined data types.
  */

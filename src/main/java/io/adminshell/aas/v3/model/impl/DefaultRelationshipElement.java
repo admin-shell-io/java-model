@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of RelationshipElement
+ * Default implementation of package io.adminshell.aas.v3.model.RelationshipElement
  * 
  * Constraint AASd-055: The semanticId of a RelationshipElement or a AnnotatedRelationshipElement
  * shall only reference a ConceptDescription with the category RELATIONSHIP.

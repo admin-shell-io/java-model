@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of ObjectAttributes
+ * Default implementation of package io.adminshell.aas.v3.model.ObjectAttributes
  * 
  * A set of data elements that describe object attributes. These attributes need to refer to a data
  * element within an existing submodel.

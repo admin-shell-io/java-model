@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of ValueList
+ * Default implementation of package io.adminshell.aas.v3.model.ValueList
  * 
  * A set of value reference pairs.
  */

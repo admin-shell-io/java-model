@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of HasSemantics
+ * Default implementation of package io.adminshell.aas.v3.model.HasSemantics
  * 
  * Element that can have a semantic definition. Identifier of the semantic definition of the
  * element. It is called semantic id of the element. The semantic id may either reference an

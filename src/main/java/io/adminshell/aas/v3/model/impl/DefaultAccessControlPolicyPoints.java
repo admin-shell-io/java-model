@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of AccessControlPolicyPoints
+ * Default implementation of package io.adminshell.aas.v3.model.AccessControlPolicyPoints
  * 
  * Container for access control policy points.
  */

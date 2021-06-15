@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of ReferenceElement
+ * Default implementation of package io.adminshell.aas.v3.model.ReferenceElement
  * 
  * A reference element is a data element that defines a logical reference to another element within
  * the same or another AAS or a reference to an external object or entity. Constraint AASd-054: The

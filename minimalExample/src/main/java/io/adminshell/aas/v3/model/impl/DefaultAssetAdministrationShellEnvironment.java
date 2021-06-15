@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of AssetAdministrationShellEnvironment
+ * Default implementation of package io.adminshell.aas.v3.model.AssetAdministrationShellEnvironment
  * 
  * A graph of Asset Administration Shells.
  */

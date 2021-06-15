@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of SubjectAttributes
+ * Default implementation of package io.adminshell.aas.v3.model.SubjectAttributes
  * 
  * A set of data elements that further classifies a specific subject.
  */

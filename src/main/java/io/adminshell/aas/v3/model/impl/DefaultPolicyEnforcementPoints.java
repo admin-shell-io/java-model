@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of PolicyEnforcementPoints
+ * Default implementation of package io.adminshell.aas.v3.model.PolicyEnforcementPoints
  * 
  * Defines the security policy enforcement points (PEP).
  */

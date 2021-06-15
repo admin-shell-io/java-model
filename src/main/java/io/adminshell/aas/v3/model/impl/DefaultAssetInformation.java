@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of AssetInformation
+ * Default implementation of package io.adminshell.aas.v3.model.AssetInformation
  * 
  * The asset may either represent an asset type or an asset instance. The asset has a globally
  * unique identifier plus - if needed - additional domain specific (proprietary) identifiers.

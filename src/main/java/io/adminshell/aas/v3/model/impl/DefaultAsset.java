@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of Asset
+ * Default implementation of package io.adminshell.aas.v3.model.Asset
  * 
  * An Asset describes meta data of an asset that is represented by an AAS. The asset may either
  * represent an asset type or an asset instance. The asset has a globally unique identifier plus -

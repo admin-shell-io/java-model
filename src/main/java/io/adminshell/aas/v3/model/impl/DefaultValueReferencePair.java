@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of ValueReferencePair
+ * Default implementation of package io.adminshell.aas.v3.model.ValueReferencePair
  * 
  * A value reference pair within a value list. Each value has a global unique id defining its
  * semantic.

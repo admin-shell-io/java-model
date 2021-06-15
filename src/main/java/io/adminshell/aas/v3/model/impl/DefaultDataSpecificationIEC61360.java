@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of DataSpecificationIEC61360
+ * Default implementation of package io.adminshell.aas.v3.model.DataSpecificationIEC61360
  * 
  * Data Specification Template for defining Property Descriptions conformant to IEC 61360.
  * Constraint AASd-075: For all ConceptDescriptions using data specification template IEC61360

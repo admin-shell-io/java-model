@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of KeyElements
+ * Default implementation of package io.adminshell.aas.v3.model.KeyElements
  * 
  * Enumeration of different key value types within a key. Contains KeyElements, ReferableElements,
  * and IdentifiableElements.

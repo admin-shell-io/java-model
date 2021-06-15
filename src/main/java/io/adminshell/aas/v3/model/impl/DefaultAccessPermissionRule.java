@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of AccessPermissionRule
+ * Default implementation of package io.adminshell.aas.v3.model.AccessPermissionRule
  * 
  * Table that defines access permissions per authenticated subject for a set of objects (referable
  * elements).

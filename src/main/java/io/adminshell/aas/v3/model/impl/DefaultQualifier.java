@@ -10,7 +10,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of Qualifier
+ * Default implementation of package io.adminshell.aas.v3.model.Qualifier
  * 
  * A qualifier is a type-value pair that makes additional statements w.r.t. the value of the
  * element. Constraint AASd-063: The semanticId of a Qualifier shall only reference a

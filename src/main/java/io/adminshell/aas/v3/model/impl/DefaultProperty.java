@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of Property
+ * Default implementation of package io.adminshell.aas.v3.model.Property
  * 
  * A property is a data element that has a single value. Constraint AASd-052a: If the semanticId of
  * a Property references a ConceptDescription then the ConceptDescription/category shall be one of

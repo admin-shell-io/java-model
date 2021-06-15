@@ -12,7 +12,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of DataSpecificationPhysicalUnit
+ * Default implementation of package io.adminshell.aas.v3.model.DataSpecificationPhysicalUnit
  * 
  * Data Specification Template for Physical Units.
  */
