@@ -13,6 +13,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of SubmodelElementCollection
+ * 
  * A submodel element collection is a set or list of submodel elements. Constraint AASd-059: If the
  * semanticId of a SubmodelElementCollection references a ConceptDescription then the category of
  * the ConceptDescription shall be COLLECTION or ENTITY. Constraint AASd-092: If the semanticId of a

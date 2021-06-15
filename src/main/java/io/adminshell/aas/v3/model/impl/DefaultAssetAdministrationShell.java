@@ -12,6 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of AssetAdministrationShell
+ * 
  * Describes the Administration Shell for Assets, Products, Components, e.g. Machines
  */
 

@@ -12,6 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of File
+ * 
  * A File is a data element that represents a file via its path description.
  */
 

@@ -12,6 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of LangStringSet
+ * 
  * A set of strings, each annotated by the language of the string. The meaning of the string in each
  * language shall be the same.
  */

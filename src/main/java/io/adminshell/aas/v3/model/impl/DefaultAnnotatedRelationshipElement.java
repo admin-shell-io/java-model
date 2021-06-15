@@ -12,6 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of AnnotatedRelationshipElement
+ * 
  * An annotated relationship element is an relationship element that can be annotated with
  * additional data elements.
  */

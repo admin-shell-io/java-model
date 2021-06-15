@@ -13,6 +13,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of Blob
+ * 
  * A BLOB is a data element that represents a file that is contained with its source code in the
  * value attribute. Constraint AASd-057: The semanticId of a File or Blob submodel element shall
  * only reference a ConceptDescription with the category DOCUMENT.

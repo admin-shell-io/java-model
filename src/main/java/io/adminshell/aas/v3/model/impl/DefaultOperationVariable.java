@@ -10,6 +10,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of OperationVariable
+ * 
  * An operation variable is a submodel element that is used as input or output variable of an
  * operation.
  */

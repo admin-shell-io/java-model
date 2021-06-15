@@ -10,6 +10,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of SubmodelElement
+ * 
  * A submodel element is an element suitable for the description and differentiation of assets. The
  * concept of type and instance applies to submodel elements. Properties are special submodel
  * elements. The property types are defined in dictionaries (like the IEC Common Data Dictionary or

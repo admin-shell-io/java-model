@@ -10,6 +10,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of DataSpecification
+ * 
  * Data specification template of the description of the concept.
  */
 

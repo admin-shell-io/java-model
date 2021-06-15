@@ -12,6 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of Referable
+ * 
  * An element that is referable by its idShort. This id is not globally unique. This id is unique
  * within the name space of the element.
  */

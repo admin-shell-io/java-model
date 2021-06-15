@@ -10,6 +10,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of Extension
+ * 
  * Single extension of an element. Constraint AASd-077: The name of an extension within
  * HasExtensions needs to be unique.
  */

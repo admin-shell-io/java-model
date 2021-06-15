@@ -12,6 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of Range
+ * 
  * An element that is referable by its idShort. This id is not globally unique. This id is unique
  * within the name space of the element. Constraint AASd-053: The semanticId of a Range submodel
  * element shall only reference a ConceptDescription with the category PROPERTY. Constraint

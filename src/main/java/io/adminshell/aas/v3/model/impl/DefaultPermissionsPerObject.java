@@ -12,6 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of PermissionsPerObject
+ * 
  * Table that defines access permissions for a specified object. The object is any referable element
  * in the AAS. Additionally object attributes can be defined that further specify the kind of object
  * the permissions apply to.

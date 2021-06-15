@@ -12,6 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of Entity
+ * 
  * An entity is a submodel element that is used to model entities. Constraint AASd-056: The
  * semanticId of a Entity submodel element shall only reference a ConceptDescription with the
  * category ENTITY. The ConceptDescription describes the elements assigned to the entity via

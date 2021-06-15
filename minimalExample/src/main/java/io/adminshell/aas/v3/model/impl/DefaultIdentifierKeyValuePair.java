@@ -12,6 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of IdentifierKeyValuePair
+ * 
  * An IdentifierKeyValuePair describes a generic identifier as key-value pair.
  */
 

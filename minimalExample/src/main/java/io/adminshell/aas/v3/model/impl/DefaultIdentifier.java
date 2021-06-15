@@ -12,6 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of Identifier
+ * 
  * Used to uniquely identify an entity by using an identifier.
  */
 

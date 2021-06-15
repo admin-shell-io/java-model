@@ -12,6 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of AdministrativeInformation
+ * 
  * Every Identifiable may have administrative information. Administrative information includes for
  * example 1) Information about the version of the element 2) Information about who created or who
  * made the last change to the element 3) Information about the languages available in case the

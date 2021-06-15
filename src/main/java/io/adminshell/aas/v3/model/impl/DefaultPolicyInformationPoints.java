@@ -12,6 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of PolicyInformationPoints
+ * 
  * Defines the security policy information points (PIP). Serves as the retrieval source of
  * attributes, or the data required for policy evaluation to provide the information needed by the
  * policy decision point to make the decisions.

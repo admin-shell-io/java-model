@@ -12,6 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of Capability
+ * 
  * A capability is the implementation-independent description of the potential of an asset to
  * achieve a certain effect in the physical or virtual world. Constraint AASd-058: If the semanticId
  * of a Capability submodel element references a ConceptDescription then the

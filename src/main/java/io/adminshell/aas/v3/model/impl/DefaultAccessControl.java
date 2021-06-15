@@ -12,6 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of AccessControl
+ * 
  * Access Control defines the local access control policy administration point. Access Control has
  * the major task to define the access permission rules.
  */

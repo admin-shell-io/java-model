@@ -12,6 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of ConceptDescription
+ * 
  * The semantics of a property or other elements that may have a semantic description is defined by
  * a concept description. The description of the concept should follow a standardized schema
  * (realized as data specification template). Constraint AASd-051: A ConceptDescription shall have

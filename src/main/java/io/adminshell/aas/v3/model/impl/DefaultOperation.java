@@ -12,6 +12,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of Operation
+ * 
  * An operation is a submodel element with input and output variables. Constraint AASd-060: The
  * semanticId of a Operation submodel element shall only reference a ConceptDescription with the
  * category FUNCTION.

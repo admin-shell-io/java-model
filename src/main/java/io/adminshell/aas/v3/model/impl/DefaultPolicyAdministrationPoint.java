@@ -10,6 +10,8 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
+ * Default implementation of PolicyAdministrationPoint
+ * 
  * Definition of a security administration point (PDP).
  */
 

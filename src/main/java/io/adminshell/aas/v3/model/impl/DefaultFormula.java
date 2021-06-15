@@ -11,8 +11,10 @@ import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
-/**  
-*/
+/**
+ * Default implementation of Formula
+ * 
+ */
 
 public class DefaultFormula implements Formula {
 
