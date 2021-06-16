@@ -37,4 +37,19 @@ public class DefaultDataSpecificationContent implements DataSpecificationContent
         return true;
     }
 
+    /**
+     * This builder class can be used to construct a DefaultDataSpecificationContent bean.
+     */
+    public static class Builder extends DataSpecificationContentBuilder<DefaultDataSpecificationContent, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultDataSpecificationContent newBuildingInstance() {
+            return new DefaultDataSpecificationContent();
+        }
+    }
 }

@@ -28,7 +28,7 @@ public interface ReferenceElement extends DataElement {
      * @return Returns the Reference for the property value.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ReferenceElement/value")
-    public Reference getValue();
+    Reference getValue();
 
     /**
      * Reference to any other referable element of the same of any other AAS or a reference to an
@@ -38,6 +38,6 @@ public interface ReferenceElement extends DataElement {
      *
      * @param value desired value for the property value.
      */
-    public void setValue(Reference value);
+    void setValue(Reference value);
 
 }

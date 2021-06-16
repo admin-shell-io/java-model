@@ -25,7 +25,7 @@ public interface Formula extends Constraint {
      * @return Returns the List of References for the property dependsOns.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn")
-    public List<Reference> getDependsOns();
+    List<Reference> getDependsOns();
 
     /**
      * A formula may depend on referable or even external global elements - assumed that can be
@@ -35,6 +35,6 @@ public interface Formula extends Constraint {
      *
      * @param dependsOns desired value for the property dependsOns.
      */
-    public void setDependsOns(List<Reference> dependsOns);
+    void setDependsOns(List<Reference> dependsOns);
 
 }

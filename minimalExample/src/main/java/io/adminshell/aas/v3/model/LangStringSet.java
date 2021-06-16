@@ -26,7 +26,7 @@ public interface LangStringSet {
      * @return Returns the List of LangStrings for the property langStrings.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/LangStringSet/langString")
-    public List<LangString> getLangStrings();
+    List<LangString> getLangStrings();
 
     /**
      * A string in a specified language.
@@ -35,6 +35,6 @@ public interface LangStringSet {
      *
      * @param langStrings desired value for the property langStrings.
      */
-    public void setLangStrings(List<LangString> langStrings);
+    void setLangStrings(List<LangString> langStrings);
 
 }

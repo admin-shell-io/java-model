@@ -26,7 +26,7 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
      * @return Returns the AssetInformation for the property assetInformation.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation")
-    public AssetInformation getAssetInformation();
+    AssetInformation getAssetInformation();
 
     /**
      * Meta information about the asset the AAS is representing.
@@ -36,7 +36,7 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
      *
      * @param assetInformation desired value for the property assetInformation.
      */
-    public void setAssetInformation(AssetInformation assetInformation);
+    void setAssetInformation(AssetInformation assetInformation);
 
     /**
      * This relation connects instances of AAS with their respective types. Refer to Asset Kind for
@@ -47,7 +47,7 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
      * @return Returns the Reference for the property derivedFrom.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom")
-    public Reference getDerivedFrom();
+    Reference getDerivedFrom();
 
     /**
      * This relation connects instances of AAS with their respective types. Refer to Asset Kind for
@@ -57,7 +57,7 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
      *
      * @param derivedFrom desired value for the property derivedFrom.
      */
-    public void setDerivedFrom(Reference derivedFrom);
+    void setDerivedFrom(Reference derivedFrom);
 
     /**
      * Definition of the security relevant aspects of the AAS.
@@ -67,7 +67,7 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
      * @return Returns the Security for the property security.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security")
-    public Security getSecurity();
+    Security getSecurity();
 
     /**
      * Definition of the security relevant aspects of the AAS.
@@ -76,7 +76,7 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
      *
      * @param security desired value for the property security.
      */
-    public void setSecurity(Security security);
+    void setSecurity(Security security);
 
     /**
      * Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset
@@ -86,7 +86,7 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
      * @return Returns the List of References for the property submodels.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
-    public List<Reference> getSubmodels();
+    List<Reference> getSubmodels();
 
     /**
      * Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset
@@ -95,7 +95,7 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
      *
      * @param submodels desired value for the property submodels.
      */
-    public void setSubmodels(List<Reference> submodels);
+    void setSubmodels(List<Reference> submodels);
 
     /**
      * Points to the differents views associated to the Administration Shell via the Submodels.
@@ -105,7 +105,7 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
      * @return Returns the List of Views for the property views.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view")
-    public List<View> getViews();
+    List<View> getViews();
 
     /**
      * Points to the differents views associated to the Administration Shell via the Submodels.
@@ -114,6 +114,6 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
      *
      * @param views desired value for the property views.
      */
-    public void setViews(List<View> views);
+    void setViews(List<View> views);
 
 }

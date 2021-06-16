@@ -65,4 +65,20 @@ public class DefaultIdentifier implements Identifier {
     public void setIdType(IdentifierType idType) {
         this.idType = idType;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultIdentifier bean.
+     */
+    public static class Builder extends IdentifierBuilder<DefaultIdentifier, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultIdentifier newBuildingInstance() {
+            return new DefaultIdentifier();
+        }
+    }
 }

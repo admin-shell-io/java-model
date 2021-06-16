@@ -87,4 +87,20 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
     public void setDataSpecifications(List<Reference> dataSpecifications) {
         this.dataSpecifications = dataSpecifications;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultAdministrativeInformation bean.
+     */
+    public static class Builder extends AdministrativeInformationBuilder<DefaultAdministrativeInformation, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAdministrativeInformation newBuildingInstance() {
+            return new DefaultAdministrativeInformation();
+        }
+    }
 }

@@ -25,13 +25,18 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * Constraint AASd-070: For a ConceptDescription with category PROPERTY or VALUE using data
      * specification template IEC61360
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is mandatory and shall be defined. Constraint AASd-071: For a
-     * ConceptDescription with category REFERENCE using data specification template IEC61360
+     * DataSpecificationIEC61360/dataType is mandatory and shall be defined.
+     *
+     * Constraint AASd-071: For a ConceptDescription with category REFERENCE using data specification
+     * template IEC61360
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is STRING by default. Constraint AASd-072: For a
-     * ConceptDescription with category DOCUMENT using data specification template IEC61360
+     * DataSpecificationIEC61360/dataType is STRING by default.
+     *
+     * Constraint AASd-072: For a ConceptDescription with category DOCUMENT using data specification
+     * template IEC61360
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
      * DataSpecificationIEC61360/dataType shall be one of the following values: STRING or URL.
+     *
      * Constraint AASd-073: For a ConceptDescription with category QUALIFIER using data specification
      * template IEC61360
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
@@ -43,19 +48,24 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * @return Returns the List of DataTypeIEC61360s for the property dataTypes.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
-    public List<DataTypeIEC61360> getDataTypes();
+    List<DataTypeIEC61360> getDataTypes();
 
     /**
      * Constraint AASd-070: For a ConceptDescription with category PROPERTY or VALUE using data
      * specification template IEC61360
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is mandatory and shall be defined. Constraint AASd-071: For a
-     * ConceptDescription with category REFERENCE using data specification template IEC61360
+     * DataSpecificationIEC61360/dataType is mandatory and shall be defined.
+     *
+     * Constraint AASd-071: For a ConceptDescription with category REFERENCE using data specification
+     * template IEC61360
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is STRING by default. Constraint AASd-072: For a
-     * ConceptDescription with category DOCUMENT using data specification template IEC61360
+     * DataSpecificationIEC61360/dataType is STRING by default.
+     *
+     * Constraint AASd-072: For a ConceptDescription with category DOCUMENT using data specification
+     * template IEC61360
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
      * DataSpecificationIEC61360/dataType shall be one of the following values: STRING or URL.
+     *
      * Constraint AASd-073: For a ConceptDescription with category QUALIFIER using data specification
      * template IEC61360
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
@@ -66,7 +76,7 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      *
      * @param dataTypes desired value for the property dataTypes.
      */
-    public void setDataTypes(List<DataTypeIEC61360> dataTypes);
+    void setDataTypes(List<DataTypeIEC61360> dataTypes);
 
     /**
      * Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions of category VALUE
@@ -80,7 +90,7 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * @return Returns the List of LangStringSets for the property definitions.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
-    public List<LangStringSet> getDefinitions();
+    List<LangStringSet> getDefinitions();
 
     /**
      * Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions of category VALUE
@@ -93,7 +103,7 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      *
      * @param definitions desired value for the property definitions.
      */
-    public void setDefinitions(List<LangStringSet> definitions);
+    void setDefinitions(List<LangStringSet> definitions);
 
     /**
      *
@@ -103,7 +113,7 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * @return Returns the List of LangStringSets for the property shortNames.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
-    public List<LangStringSet> getShortNames();
+    List<LangStringSet> getShortNames();
 
     /**
      *
@@ -112,7 +122,7 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      *
      * @param shortNames desired value for the property shortNames.
      */
-    public void setShortNames(List<LangStringSet> shortNames);
+    void setShortNames(List<LangStringSet> shortNames);
 
     /**
      *
@@ -122,7 +132,7 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * @return Returns the List of LangStringSets for the property preferredNames.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
-    public List<LangStringSet> getPreferredNames();
+    List<LangStringSet> getPreferredNames();
 
     /**
      *
@@ -131,7 +141,7 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      *
      * @param preferredNames desired value for the property preferredNames.
      */
-    public void setPreferredNames(List<LangStringSet> preferredNames);
+    void setPreferredNames(List<LangStringSet> preferredNames);
 
     /**
      *
@@ -141,7 +151,7 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * @return Returns the List of Strings for the property sourceOfDefinitions.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition")
-    public List<String> getSourceOfDefinitions();
+    List<String> getSourceOfDefinitions();
 
     /**
      *
@@ -150,7 +160,7 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      *
      * @param sourceOfDefinitions desired value for the property sourceOfDefinitions.
      */
-    public void setSourceOfDefinitions(List<String> sourceOfDefinitions);
+    void setSourceOfDefinitions(List<String> sourceOfDefinitions);
 
     /**
      *
@@ -160,7 +170,7 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * @return Returns the List of Strings for the property units.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit")
-    public List<String> getUnits();
+    List<String> getUnits();
 
     /**
      *
@@ -169,7 +179,7 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      *
      * @param units desired value for the property units.
      */
-    public void setUnits(List<String> units);
+    void setUnits(List<String> units);
 
     /**
      *
@@ -179,7 +189,7 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * @return Returns the List of References for the property unitIds.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId")
-    public List<Reference> getUnitIds();
+    List<Reference> getUnitIds();
 
     /**
      *
@@ -188,6 +198,6 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      *
      * @param unitIds desired value for the property unitIds.
      */
-    public void setUnitIds(List<Reference> unitIds);
+    void setUnitIds(List<Reference> unitIds);
 
 }

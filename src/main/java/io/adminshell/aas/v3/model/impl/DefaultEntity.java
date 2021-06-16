@@ -220,4 +220,20 @@ public class DefaultEntity implements Entity {
     public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultEntity bean.
+     */
+    public static class Builder extends EntityBuilder<DefaultEntity, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultEntity newBuildingInstance() {
+            return new DefaultEntity();
+        }
+    }
 }

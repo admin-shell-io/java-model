@@ -25,7 +25,7 @@ public interface BlobCertificate extends Certificate {
      * @return Returns the Blob for the property blobCertificate.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate")
-    public Blob getBlobCertificate();
+    Blob getBlobCertificate();
 
     /**
      * Certificate as BLOB.
@@ -34,7 +34,7 @@ public interface BlobCertificate extends Certificate {
      *
      * @param blobCertificate desired value for the property blobCertificate.
      */
-    public void setBlobCertificate(Blob blobCertificate);
+    void setBlobCertificate(Blob blobCertificate);
 
     /**
      * Extensions contained in the certificate.
@@ -44,7 +44,7 @@ public interface BlobCertificate extends Certificate {
      * @return Returns the List of References for the property containedExtensions.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/containedExtension")
-    public List<Reference> getContainedExtensions();
+    List<Reference> getContainedExtensions();
 
     /**
      * Extensions contained in the certificate.
@@ -53,7 +53,7 @@ public interface BlobCertificate extends Certificate {
      *
      * @param containedExtensions desired value for the property containedExtensions.
      */
-    public void setContainedExtensions(List<Reference> containedExtensions);
+    void setContainedExtensions(List<Reference> containedExtensions);
 
     /**
      * Denotes whether this certificate is the certificated that fast added last.
@@ -63,7 +63,7 @@ public interface BlobCertificate extends Certificate {
      * @return Returns the boolean for the property lastCertificate.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/lastCertificate")
-    public boolean getLastCertificate();
+    boolean getLastCertificate();
 
     /**
      * Denotes whether this certificate is the certificated that fast added last.
@@ -72,6 +72,6 @@ public interface BlobCertificate extends Certificate {
      *
      * @param lastCertificate desired value for the property lastCertificate.
      */
-    public void setLastCertificate(boolean lastCertificate);
+    void setLastCertificate(boolean lastCertificate);
 
 }

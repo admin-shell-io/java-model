@@ -53,4 +53,20 @@ public class DefaultObjectAttributes implements ObjectAttributes {
     public void setObjectAttributes(List<Reference> objectAttributes) {
         this.objectAttributes = objectAttributes;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultObjectAttributes bean.
+     */
+    public static class Builder extends ObjectAttributesBuilder<DefaultObjectAttributes, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultObjectAttributes newBuildingInstance() {
+            return new DefaultObjectAttributes();
+        }
+    }
 }

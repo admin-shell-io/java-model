@@ -67,4 +67,20 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
     public void setSubmodels(List<Submodel> submodels) {
         this.submodels = submodels;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultAssetAdministrationShell bean.
+     */
+    public static class Builder extends AssetAdministrationShellBuilder<DefaultAssetAdministrationShell, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAssetAdministrationShell newBuildingInstance() {
+            return new DefaultAssetAdministrationShell();
+        }
+    }
 }

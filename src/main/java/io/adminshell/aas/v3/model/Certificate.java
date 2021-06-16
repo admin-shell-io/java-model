@@ -24,7 +24,7 @@ public interface Certificate {
      * @return Returns the PolicyAdministrationPoint for the property policyAdministrationPoint.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint")
-    public PolicyAdministrationPoint getPolicyAdministrationPoint();
+    PolicyAdministrationPoint getPolicyAdministrationPoint();
 
     /**
      * The access control administration policy point of the AAS.
@@ -33,6 +33,6 @@ public interface Certificate {
      *
      * @param policyAdministrationPoint desired value for the property policyAdministrationPoint.
      */
-    public void setPolicyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint);
+    void setPolicyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint);
 
 }

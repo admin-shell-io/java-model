@@ -190,4 +190,20 @@ public class DefaultBlob implements Blob {
     public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultBlob bean.
+     */
+    public static class Builder extends BlobBuilder<DefaultBlob, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultBlob newBuildingInstance() {
+            return new DefaultBlob();
+        }
+    }
 }

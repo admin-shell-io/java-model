@@ -112,4 +112,20 @@ public class DefaultQualifier implements Qualifier {
     public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultQualifier bean.
+     */
+    public static class Builder extends QualifierBuilder<DefaultQualifier, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultQualifier newBuildingInstance() {
+            return new DefaultQualifier();
+        }
+    }
 }

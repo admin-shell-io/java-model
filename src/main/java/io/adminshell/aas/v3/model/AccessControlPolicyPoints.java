@@ -25,7 +25,7 @@ public interface AccessControlPolicyPoints {
      * @return Returns the PolicyAdministrationPoint for the property policyAdministrationPoint.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint")
-    public PolicyAdministrationPoint getPolicyAdministrationPoint();
+    PolicyAdministrationPoint getPolicyAdministrationPoint();
 
     /**
      * The access control administration policy point of the AAS.
@@ -35,7 +35,7 @@ public interface AccessControlPolicyPoints {
      *
      * @param policyAdministrationPoint desired value for the property policyAdministrationPoint.
      */
-    public void setPolicyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint);
+    void setPolicyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint);
 
     /**
      * The access control policy decision point of the AAS.
@@ -46,7 +46,7 @@ public interface AccessControlPolicyPoints {
      * @return Returns the PolicyDecisionPoint for the property policyDecisionPoint.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint")
-    public PolicyDecisionPoint getPolicyDecisionPoint();
+    PolicyDecisionPoint getPolicyDecisionPoint();
 
     /**
      * The access control policy decision point of the AAS.
@@ -56,7 +56,7 @@ public interface AccessControlPolicyPoints {
      *
      * @param policyDecisionPoint desired value for the property policyDecisionPoint.
      */
-    public void setPolicyDecisionPoint(PolicyDecisionPoint policyDecisionPoint);
+    void setPolicyDecisionPoint(PolicyDecisionPoint policyDecisionPoint);
 
     /**
      * The access control policy enforcement point of the AAS.
@@ -67,7 +67,7 @@ public interface AccessControlPolicyPoints {
      * @return Returns the PolicyEnforcementPoints for the property policyEnforcementPoint.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint")
-    public PolicyEnforcementPoints getPolicyEnforcementPoint();
+    PolicyEnforcementPoints getPolicyEnforcementPoint();
 
     /**
      * The access control policy enforcement point of the AAS.
@@ -77,7 +77,7 @@ public interface AccessControlPolicyPoints {
      *
      * @param policyEnforcementPoint desired value for the property policyEnforcementPoint.
      */
-    public void setPolicyEnforcementPoint(PolicyEnforcementPoints policyEnforcementPoint);
+    void setPolicyEnforcementPoint(PolicyEnforcementPoints policyEnforcementPoint);
 
     /**
      * The access control policy information points of the AAS.
@@ -88,7 +88,7 @@ public interface AccessControlPolicyPoints {
      * @return Returns the PolicyInformationPoints for the property policyInformationPoints.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints")
-    public PolicyInformationPoints getPolicyInformationPoints();
+    PolicyInformationPoints getPolicyInformationPoints();
 
     /**
      * The access control policy information points of the AAS.
@@ -98,6 +98,6 @@ public interface AccessControlPolicyPoints {
      *
      * @param policyInformationPoints desired value for the property policyInformationPoints.
      */
-    public void setPolicyInformationPoints(PolicyInformationPoints policyInformationPoints);
+    void setPolicyInformationPoints(PolicyInformationPoints policyInformationPoints);
 
 }

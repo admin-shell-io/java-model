@@ -147,4 +147,19 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
         this.unitIds = unitIds;
     }
 
+    /**
+     * This builder class can be used to construct a DefaultDataSpecificationIEC61360 bean.
+     */
+    public static class Builder extends DataSpecificationIEC61360Builder<DefaultDataSpecificationIEC61360, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultDataSpecificationIEC61360 newBuildingInstance() {
+            return new DefaultDataSpecificationIEC61360();
+        }
+    }
 }

@@ -26,7 +26,7 @@ public interface PolicyEnforcementPoints {
      * @return Returns the boolean for the property externalPolicyEnforcementPoint.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyEnforcementPoints/externalPolicyEnforcementPoint")
-    public boolean getExternalPolicyEnforcementPoint();
+    boolean getExternalPolicyEnforcementPoint();
 
     /**
      * If externalPolicyEnforcementPoint True then an Endpoint to external available enforcement point
@@ -38,6 +38,6 @@ public interface PolicyEnforcementPoints {
      * @param externalPolicyEnforcementPoint desired value for the property
      *        externalPolicyEnforcementPoint.
      */
-    public void setExternalPolicyEnforcementPoint(boolean externalPolicyEnforcementPoint);
+    void setExternalPolicyEnforcementPoint(boolean externalPolicyEnforcementPoint);
 
 }

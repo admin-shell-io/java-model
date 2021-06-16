@@ -175,4 +175,20 @@ public class DefaultReferenceElement implements ReferenceElement {
     public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultReferenceElement bean.
+     */
+    public static class Builder extends ReferenceElementBuilder<DefaultReferenceElement, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultReferenceElement newBuildingInstance() {
+            return new DefaultReferenceElement();
+        }
+    }
 }

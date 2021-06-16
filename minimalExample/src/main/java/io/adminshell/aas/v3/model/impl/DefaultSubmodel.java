@@ -58,4 +58,20 @@ public class DefaultSubmodel implements Submodel {
     public void setSubmodelElements(List<SubmodelElement> submodelElements) {
         this.submodelElements = submodelElements;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultSubmodel bean.
+     */
+    public static class Builder extends SubmodelBuilder<DefaultSubmodel, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultSubmodel newBuildingInstance() {
+            return new DefaultSubmodel();
+        }
+    }
 }

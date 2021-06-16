@@ -21,56 +21,68 @@ import io.adminshell.aas.v3.model.impl.*;
 public interface Entity extends SubmodelElement {
 
     /**
-     * Reference to the asset the entity is representing. The asset attribute must be set if entityType
-     * is set to 'SelfManagedEntity'. It is empty otherwise. Constraint AASd-014: Either the attribute
-     * globalAssetId or externalAssetId of an Entity must be set if Entity/entityType is set to
-     * 'SelfManagedEntity'. They are not existing otherwise.
+     * Reference to the asset the entity is representing.
+     *
+     * The asset attribute must be set if entityType is set to 'SelfManagedEntity'. It is empty
+     * otherwise.
+     *
+     * Constraint AASd-014: Either the attribute globalAssetId or externalAssetId of an Entity must be
+     * set if Entity/entityType is set to 'SelfManagedEntity'. They are not existing otherwise.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId
      *
      * @return Returns the Reference for the property globalAssetId.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId")
-    public Reference getGlobalAssetId();
+    Reference getGlobalAssetId();
 
     /**
-     * Reference to the asset the entity is representing. The asset attribute must be set if entityType
-     * is set to 'SelfManagedEntity'. It is empty otherwise. Constraint AASd-014: Either the attribute
-     * globalAssetId or externalAssetId of an Entity must be set if Entity/entityType is set to
-     * 'SelfManagedEntity'. They are not existing otherwise.
+     * Reference to the asset the entity is representing.
+     *
+     * The asset attribute must be set if entityType is set to 'SelfManagedEntity'. It is empty
+     * otherwise.
+     *
+     * Constraint AASd-014: Either the attribute globalAssetId or externalAssetId of an Entity must be
+     * set if Entity/entityType is set to 'SelfManagedEntity'. They are not existing otherwise.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId
      *
      * @param globalAssetId desired value for the property globalAssetId.
      */
-    public void setGlobalAssetId(Reference globalAssetId);
+    void setGlobalAssetId(Reference globalAssetId);
 
     /**
      * Reference to an identifier key value pair representing an external identifier of the asset
-     * represented by the asset administration shell. The asset attribute must be set if entityType is
-     * set to 'SelfManagedEntity'. It is empty otherwise. Constraint AASd-014: Either the attribute
-     * globalAssetId or externalAssetId of an Entity must be set if Entity/entityType is set to
-     * 'SelfManagedEntity'. They are not existing otherwise.
+     * represented by the asset administration shell.
+     *
+     * The asset attribute must be set if entityType is set to 'SelfManagedEntity'. It is empty
+     * otherwise.
+     *
+     * Constraint AASd-014: Either the attribute globalAssetId or externalAssetId of an Entity must be
+     * set if Entity/entityType is set to 'SelfManagedEntity'. They are not existing otherwise.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId
      *
      * @return Returns the IdentifierKeyValuePair for the property externalAssetId.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId")
-    public IdentifierKeyValuePair getExternalAssetId();
+    IdentifierKeyValuePair getExternalAssetId();
 
     /**
      * Reference to an identifier key value pair representing an external identifier of the asset
-     * represented by the asset administration shell. The asset attribute must be set if entityType is
-     * set to 'SelfManagedEntity'. It is empty otherwise. Constraint AASd-014: Either the attribute
-     * globalAssetId or externalAssetId of an Entity must be set if Entity/entityType is set to
-     * 'SelfManagedEntity'. They are not existing otherwise.
+     * represented by the asset administration shell.
+     *
+     * The asset attribute must be set if entityType is set to 'SelfManagedEntity'. It is empty
+     * otherwise.
+     *
+     * Constraint AASd-014: Either the attribute globalAssetId or externalAssetId of an Entity must be
+     * set if Entity/entityType is set to 'SelfManagedEntity'. They are not existing otherwise.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId
      *
      * @param externalAssetId desired value for the property externalAssetId.
      */
-    public void setExternalAssetId(IdentifierKeyValuePair externalAssetId);
+    void setExternalAssetId(IdentifierKeyValuePair externalAssetId);
 
     /**
      * Describes whether the entity is a co-managed entity or a self-managed entity.
@@ -80,7 +92,7 @@ public interface Entity extends SubmodelElement {
      * @return Returns the EntityType for the property entityType.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/entityType")
-    public EntityType getEntityType();
+    EntityType getEntityType();
 
     /**
      * Describes whether the entity is a co-managed entity or a self-managed entity.
@@ -89,7 +101,7 @@ public interface Entity extends SubmodelElement {
      *
      * @param entityType desired value for the property entityType.
      */
-    public void setEntityType(EntityType entityType);
+    void setEntityType(EntityType entityType);
 
     /**
      * Describes statements applicable to the entity by a set of submodel elements, typically with a
@@ -100,7 +112,7 @@ public interface Entity extends SubmodelElement {
      * @return Returns the List of SubmodelElements for the property statements.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/statement")
-    public List<SubmodelElement> getStatements();
+    List<SubmodelElement> getStatements();
 
     /**
      * Describes statements applicable to the entity by a set of submodel elements, typically with a
@@ -110,6 +122,6 @@ public interface Entity extends SubmodelElement {
      *
      * @param statements desired value for the property statements.
      */
-    public void setStatements(List<SubmodelElement> statements);
+    void setStatements(List<SubmodelElement> statements);
 
 }

@@ -24,7 +24,7 @@ public interface HasExtensions {
      * @return Returns the List of Extensions for the property extensions.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension")
-    public List<Extension> getExtensions();
+    List<Extension> getExtensions();
 
     /**
      * An extension of the element.
@@ -33,6 +33,6 @@ public interface HasExtensions {
      *
      * @param extensions desired value for the property extensions.
      */
-    public void setExtensions(List<Extension> extensions);
+    void setExtensions(List<Extension> extensions);
 
 }

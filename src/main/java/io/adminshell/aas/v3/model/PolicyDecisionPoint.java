@@ -26,7 +26,7 @@ public interface PolicyDecisionPoint {
      * @return Returns the boolean for the property externalPolicyDecisionPoints.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
-    public boolean getExternalPolicyDecisionPoints();
+    boolean getExternalPolicyDecisionPoints();
 
     /**
      * If externalPolicyDecisionPoints True then Endpoints to external available decision points taking
@@ -37,6 +37,6 @@ public interface PolicyDecisionPoint {
      *
      * @param externalPolicyDecisionPoints desired value for the property externalPolicyDecisionPoints.
      */
-    public void setExternalPolicyDecisionPoints(boolean externalPolicyDecisionPoints);
+    void setExternalPolicyDecisionPoints(boolean externalPolicyDecisionPoints);
 
 }

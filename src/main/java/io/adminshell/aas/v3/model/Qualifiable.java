@@ -28,7 +28,7 @@ public interface Qualifiable {
      * @return Returns the List of Constraints for the property qualifiers.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
-    public List<Constraint> getQualifiers();
+    List<Constraint> getQualifiers();
 
     /**
      * Additional qualification of a qualifiable element.
@@ -37,6 +37,6 @@ public interface Qualifiable {
      *
      * @param qualifiers desired value for the property qualifiers.
      */
-    public void setQualifiers(List<Constraint> qualifiers);
+    void setQualifiers(List<Constraint> qualifiers);
 
 }

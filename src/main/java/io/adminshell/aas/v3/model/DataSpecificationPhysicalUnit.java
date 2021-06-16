@@ -25,7 +25,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      * @return Returns the String for the property conversionFactor.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/conversionFactor")
-    public String getConversionFactor();
+    String getConversionFactor();
 
     /**
      *
@@ -34,7 +34,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      *
      * @param conversionFactor desired value for the property conversionFactor.
      */
-    public void setConversionFactor(String conversionFactor);
+    void setConversionFactor(String conversionFactor);
 
     /**
      *
@@ -44,7 +44,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      * @return Returns the List of LangStrings for the property definitions.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/definition")
-    public List<LangString> getDefinitions();
+    List<LangString> getDefinitions();
 
     /**
      *
@@ -53,7 +53,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      *
      * @param definitions desired value for the property definitions.
      */
-    public void setDefinitions(List<LangString> definitions);
+    void setDefinitions(List<LangString> definitions);
 
     /**
      *
@@ -63,7 +63,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      * @return Returns the String for the property dinNotation.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/dinNotation")
-    public String getDinNotation();
+    String getDinNotation();
 
     /**
      *
@@ -72,7 +72,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      *
      * @param dinNotation desired value for the property dinNotation.
      */
-    public void setDinNotation(String dinNotation);
+    void setDinNotation(String dinNotation);
 
     /**
      *
@@ -82,7 +82,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      * @return Returns the String for the property eceCode.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/eceCode")
-    public String getEceCode();
+    String getEceCode();
 
     /**
      *
@@ -91,7 +91,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      *
      * @param eceCode desired value for the property eceCode.
      */
-    public void setEceCode(String eceCode);
+    void setEceCode(String eceCode);
 
     /**
      *
@@ -101,7 +101,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      * @return Returns the String for the property eceName.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/eceName")
-    public String getEceName();
+    String getEceName();
 
     /**
      *
@@ -110,7 +110,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      *
      * @param eceName desired value for the property eceName.
      */
-    public void setEceName(String eceName);
+    void setEceName(String eceName);
 
     /**
      *
@@ -120,7 +120,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      * @return Returns the String for the property nistName.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/nistName")
-    public String getNistName();
+    String getNistName();
 
     /**
      *
@@ -129,7 +129,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      *
      * @param nistName desired value for the property nistName.
      */
-    public void setNistName(String nistName);
+    void setNistName(String nistName);
 
     /**
      *
@@ -139,7 +139,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      * @return Returns the String for the property siName.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/siName")
-    public String getSiName();
+    String getSiName();
 
     /**
      *
@@ -148,7 +148,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      *
      * @param siName desired value for the property siName.
      */
-    public void setSiName(String siName);
+    void setSiName(String siName);
 
     /**
      *
@@ -158,7 +158,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      * @return Returns the String for the property siNotation.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/siNotation")
-    public String getSiNotation();
+    String getSiNotation();
 
     /**
      *
@@ -167,7 +167,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      *
      * @param siNotation desired value for the property siNotation.
      */
-    public void setSiNotation(String siNotation);
+    void setSiNotation(String siNotation);
 
     /**
      *
@@ -177,7 +177,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      * @return Returns the String for the property registrationAuthorityId.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/registrationAuthorityId")
-    public String getRegistrationAuthorityId();
+    String getRegistrationAuthorityId();
 
     /**
      *
@@ -186,7 +186,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      *
      * @param registrationAuthorityId desired value for the property registrationAuthorityId.
      */
-    public void setRegistrationAuthorityId(String registrationAuthorityId);
+    void setRegistrationAuthorityId(String registrationAuthorityId);
 
     /**
      *
@@ -196,7 +196,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      * @return Returns the String for the property supplier.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/supplier")
-    public String getSupplier();
+    String getSupplier();
 
     /**
      *
@@ -205,7 +205,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      *
      * @param supplier desired value for the property supplier.
      */
-    public void setSupplier(String supplier);
+    void setSupplier(String supplier);
 
     /**
      *
@@ -215,7 +215,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      * @return Returns the String for the property unitName.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/unitName")
-    public String getUnitName();
+    String getUnitName();
 
     /**
      *
@@ -224,7 +224,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      *
      * @param unitName desired value for the property unitName.
      */
-    public void setUnitName(String unitName);
+    void setUnitName(String unitName);
 
     /**
      *
@@ -234,7 +234,7 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      * @return Returns the String for the property unitSymbol.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/unitSymbol")
-    public String getUnitSymbol();
+    String getUnitSymbol();
 
     /**
      *
@@ -243,6 +243,6 @@ public interface DataSpecificationPhysicalUnit extends DataSpecificationContent 
      *
      * @param unitSymbol desired value for the property unitSymbol.
      */
-    public void setUnitSymbol(String unitSymbol);
+    void setUnitSymbol(String unitSymbol);
 
 }

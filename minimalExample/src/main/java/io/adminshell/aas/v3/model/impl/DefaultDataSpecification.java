@@ -52,4 +52,20 @@ public class DefaultDataSpecification implements DataSpecification {
     public void setDataSpecificationContents(List<DataSpecificationContent> dataSpecificationContents) {
         this.dataSpecificationContents = dataSpecificationContents;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultDataSpecification bean.
+     */
+    public static class Builder extends DataSpecificationBuilder<DefaultDataSpecification, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultDataSpecification newBuildingInstance() {
+            return new DefaultDataSpecification();
+        }
+    }
 }

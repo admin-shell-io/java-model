@@ -18,30 +18,36 @@ public interface Key {
 
     /**
      * Type of the key value. In case of idType = idShort local shall be true. In case
-     * type=GlobalReference idType shall not be IdShort. Constraint AASd-080: In case Key/type ==
-     * GlobalReference idType shall not be any LocalKeyType (IdShort, FragmentId). Constraint AASd-081:
-     * In case Key/type==AssetAdministrationShell Key/idType shall not be any LocalKeyType (IdShort,
-     * FragmentId).
+     * type=GlobalReference idType shall not be IdShort.
+     *
+     * Constraint AASd-080: In case Key/type == GlobalReference idType shall not be any LocalKeyType
+     * (IdShort, FragmentId).
+     *
+     * Constraint AASd-081: In case Key/type==AssetAdministrationShell Key/idType shall not be any
+     * LocalKeyType (IdShort, FragmentId).
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Key/idType
      *
      * @return Returns the KeyType for the property idType.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Key/idType")
-    public KeyType getIdType();
+    KeyType getIdType();
 
     /**
      * Type of the key value. In case of idType = idShort local shall be true. In case
-     * type=GlobalReference idType shall not be IdShort. Constraint AASd-080: In case Key/type ==
-     * GlobalReference idType shall not be any LocalKeyType (IdShort, FragmentId). Constraint AASd-081:
-     * In case Key/type==AssetAdministrationShell Key/idType shall not be any LocalKeyType (IdShort,
-     * FragmentId).
+     * type=GlobalReference idType shall not be IdShort.
+     *
+     * Constraint AASd-080: In case Key/type == GlobalReference idType shall not be any LocalKeyType
+     * (IdShort, FragmentId).
+     *
+     * Constraint AASd-081: In case Key/type==AssetAdministrationShell Key/idType shall not be any
+     * LocalKeyType (IdShort, FragmentId).
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Key/idType
      *
      * @param idType desired value for the property idType.
      */
-    public void setIdType(KeyType idType);
+    void setIdType(KeyType idType);
 
     /**
      * Denote which kind of entity is referenced. In case type = GlobalReference then the element is a
@@ -53,7 +59,7 @@ public interface Key {
      * @return Returns the KeyElements for the property type.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Key/type")
-    public KeyElements getType();
+    KeyElements getType();
 
     /**
      * Denote which kind of entity is referenced. In case type = GlobalReference then the element is a
@@ -64,7 +70,7 @@ public interface Key {
      *
      * @param type desired value for the property type.
      */
-    public void setType(KeyElements type);
+    void setType(KeyElements type);
 
     /**
      * The key value, for example an IRDI if the idType=IRDI.
@@ -74,7 +80,7 @@ public interface Key {
      * @return Returns the String for the property value.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Key/value")
-    public String getValue();
+    String getValue();
 
     /**
      * The key value, for example an IRDI if the idType=IRDI.
@@ -83,6 +89,6 @@ public interface Key {
      *
      * @param value desired value for the property value.
      */
-    public void setValue(String value);
+    void setValue(String value);
 
 }

@@ -29,7 +29,7 @@ public interface PolicyInformationPoints {
      * @return Returns the boolean for the property externalInformationPoints.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints")
-    public boolean getExternalInformationPoints();
+    boolean getExternalInformationPoints();
 
     /**
      * If externalInformationPoints True then at least one Endpoint to external available information
@@ -40,7 +40,7 @@ public interface PolicyInformationPoints {
      *
      * @param externalInformationPoints desired value for the property externalInformationPoints.
      */
-    public void setExternalInformationPoints(boolean externalInformationPoints);
+    void setExternalInformationPoints(boolean externalInformationPoints);
 
     /**
      * References to submodels defining information used by security access permission rules.
@@ -51,7 +51,7 @@ public interface PolicyInformationPoints {
      * @return Returns the List of References for the property internalInformationPoints.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint")
-    public List<Reference> getInternalInformationPoints();
+    List<Reference> getInternalInformationPoints();
 
     /**
      * References to submodels defining information used by security access permission rules.
@@ -61,6 +61,6 @@ public interface PolicyInformationPoints {
      *
      * @param internalInformationPoints desired value for the property internalInformationPoints.
      */
-    public void setInternalInformationPoints(List<Reference> internalInformationPoints);
+    void setInternalInformationPoints(List<Reference> internalInformationPoints);
 
 }

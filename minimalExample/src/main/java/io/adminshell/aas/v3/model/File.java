@@ -25,7 +25,7 @@ public interface File extends SubmodelElement {
      * @return Returns the List of Strings for the property mimeTypes.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/File/mimeType")
-    public List<String> getMimeTypes();
+    List<String> getMimeTypes();
 
     /**
      * Mime type of the content of the File.
@@ -34,7 +34,7 @@ public interface File extends SubmodelElement {
      *
      * @param mimeTypes desired value for the property mimeTypes.
      */
-    public void setMimeTypes(List<String> mimeTypes);
+    void setMimeTypes(List<String> mimeTypes);
 
     /**
      * Path and name of the referenced file (with file extension). The path can be absolute or relative.
@@ -44,7 +44,7 @@ public interface File extends SubmodelElement {
      * @return Returns the List of Strings for the property values.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/File/value")
-    public List<String> getValues();
+    List<String> getValues();
 
     /**
      * Path and name of the referenced file (with file extension). The path can be absolute or relative.
@@ -53,6 +53,6 @@ public interface File extends SubmodelElement {
      *
      * @param values desired value for the property values.
      */
-    public void setValues(List<String> values);
+    void setValues(List<String> values);
 
 }

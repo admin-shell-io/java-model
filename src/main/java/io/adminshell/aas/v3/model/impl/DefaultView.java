@@ -144,4 +144,20 @@ public class DefaultView implements View {
     public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultView bean.
+     */
+    public static class Builder extends ViewBuilder<DefaultView, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultView newBuildingInstance() {
+            return new DefaultView();
+        }
+    }
 }

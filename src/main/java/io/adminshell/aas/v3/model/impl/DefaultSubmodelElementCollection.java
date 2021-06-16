@@ -209,4 +209,20 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
     public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultSubmodelElementCollection bean.
+     */
+    public static class Builder extends SubmodelElementCollectionBuilder<DefaultSubmodelElementCollection, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultSubmodelElementCollection newBuildingInstance() {
+            return new DefaultSubmodelElementCollection();
+        }
+    }
 }

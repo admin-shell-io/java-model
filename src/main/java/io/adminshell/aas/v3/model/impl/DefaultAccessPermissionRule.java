@@ -143,4 +143,20 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
     public void setQualifiers(List<Constraint> qualifiers) {
         this.qualifiers = qualifiers;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultAccessPermissionRule bean.
+     */
+    public static class Builder extends AccessPermissionRuleBuilder<DefaultAccessPermissionRule, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAccessPermissionRule newBuildingInstance() {
+            return new DefaultAccessPermissionRule();
+        }
+    }
 }

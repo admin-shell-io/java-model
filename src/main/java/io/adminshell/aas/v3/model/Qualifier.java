@@ -26,7 +26,7 @@ public interface Qualifier extends Constraint, HasSemantics {
      * @return Returns the String for the property type.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/type")
-    public String getType();
+    String getType();
 
     /**
      * The qualifier type describes the type of the qualifier that is applied to the element.
@@ -35,7 +35,7 @@ public interface Qualifier extends Constraint, HasSemantics {
      *
      * @param type desired value for the property type.
      */
-    public void setType(String type);
+    void setType(String type);
 
     /**
      * Data type of the qualifier value.
@@ -45,7 +45,7 @@ public interface Qualifier extends Constraint, HasSemantics {
      * @return Returns the String for the property valueType.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType")
-    public String getValueType();
+    String getValueType();
 
     /**
      * Data type of the qualifier value.
@@ -54,32 +54,38 @@ public interface Qualifier extends Constraint, HasSemantics {
      *
      * @param valueType desired value for the property valueType.
      */
-    public void setValueType(String valueType);
+    void setValueType(String valueType);
 
     /**
-     * The qualifier value is the value of the qualifier. Constraint AASd-006: if both, the value and
-     * the valueId are present then the value needs to be identical to the short name of the referenced
-     * coded value in qualifierValueId. Constraint AASd-020: The value of Qualifier/value shall be
-     * consistent to the data type as defined in Qualifier/valueType.
+     * The qualifier value is the value of the qualifier.
+     *
+     * Constraint AASd-006: if both, the value and the valueId are present then the value needs to be
+     * identical to the short name of the referenced coded value in qualifierValueId.
+     *
+     * Constraint AASd-020: The value of Qualifier/value shall be consistent to the data type as defined
+     * in Qualifier/valueType.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/value
      *
      * @return Returns the String for the property value.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/value")
-    public String getValue();
+    String getValue();
 
     /**
-     * The qualifier value is the value of the qualifier. Constraint AASd-006: if both, the value and
-     * the valueId are present then the value needs to be identical to the short name of the referenced
-     * coded value in qualifierValueId. Constraint AASd-020: The value of Qualifier/value shall be
-     * consistent to the data type as defined in Qualifier/valueType.
+     * The qualifier value is the value of the qualifier.
+     *
+     * Constraint AASd-006: if both, the value and the valueId are present then the value needs to be
+     * identical to the short name of the referenced coded value in qualifierValueId.
+     *
+     * Constraint AASd-020: The value of Qualifier/value shall be consistent to the data type as defined
+     * in Qualifier/valueType.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/value
      *
      * @param value desired value for the property value.
      */
-    public void setValue(String value);
+    void setValue(String value);
 
     /**
      * Reference to the global unqiue id of a coded value.
@@ -89,7 +95,7 @@ public interface Qualifier extends Constraint, HasSemantics {
      * @return Returns the Reference for the property valueId.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId")
-    public Reference getValueId();
+    Reference getValueId();
 
     /**
      * Reference to the global unqiue id of a coded value.
@@ -98,6 +104,6 @@ public interface Qualifier extends Constraint, HasSemantics {
      *
      * @param valueId desired value for the property valueId.
      */
-    public void setValueId(Reference valueId);
+    void setValueId(Reference valueId);
 
 }

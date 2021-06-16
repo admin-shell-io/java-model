@@ -71,4 +71,20 @@ public class DefaultConceptDescription implements ConceptDescription {
     public void setEmbeddedDataSpecifications(List<DataSpecification> embeddedDataSpecifications) {
         this.embeddedDataSpecifications = embeddedDataSpecifications;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultConceptDescription bean.
+     */
+    public static class Builder extends ConceptDescriptionBuilder<DefaultConceptDescription, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultConceptDescription newBuildingInstance() {
+            return new DefaultConceptDescription();
+        }
+    }
 }

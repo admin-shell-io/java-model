@@ -52,4 +52,20 @@ public class DefaultValueList implements ValueList {
     public void setValueReferencePairTypes(List<ValueReferencePair> valueReferencePairTypes) {
         this.valueReferencePairTypes = valueReferencePairTypes;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultValueList bean.
+     */
+    public static class Builder extends ValueListBuilder<DefaultValueList, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultValueList newBuildingInstance() {
+            return new DefaultValueList();
+        }
+    }
 }

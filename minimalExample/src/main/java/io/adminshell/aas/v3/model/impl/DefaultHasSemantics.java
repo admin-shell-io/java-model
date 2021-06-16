@@ -56,4 +56,20 @@ public class DefaultHasSemantics implements HasSemantics {
     public void setSemanticIds(List<Reference> semanticIds) {
         this.semanticIds = semanticIds;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultHasSemantics bean.
+     */
+    public static class Builder extends HasSemanticsBuilder<DefaultHasSemantics, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultHasSemantics newBuildingInstance() {
+            return new DefaultHasSemantics();
+        }
+    }
 }

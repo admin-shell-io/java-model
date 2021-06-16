@@ -29,7 +29,7 @@ public interface AssetInformation {
      * @return Returns the AssetKind for the property assetKind.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
-    public AssetKind getAssetKind();
+    AssetKind getAssetKind();
 
     /**
      * Denotes whether the Asset of kind 'Type' or 'Instance'.
@@ -38,36 +38,38 @@ public interface AssetInformation {
      *
      * @param assetKind desired value for the property assetKind.
      */
-    public void setAssetKind(AssetKind assetKind);
+    void setAssetKind(AssetKind assetKind);
 
     /**
      * Reference to either an Asset object or a global reference to the asset the AAS is representing.
      * This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the
      * asset. In a first phase of the life cycle the asset might not yet have a global id but already an
-     * internal identifier. The internal identifier would be modelled via 'externalAssetId'. Constraint
-     * AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global
-     * reference.
+     * internal identifier. The internal identifier would be modelled via 'externalAssetId'.
+     *
+     * Constraint AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a
+     * global reference.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId
      *
      * @return Returns the Reference for the property globalAssetId.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId")
-    public Reference getGlobalAssetId();
+    Reference getGlobalAssetId();
 
     /**
      * Reference to either an Asset object or a global reference to the asset the AAS is representing.
      * This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the
      * asset. In a first phase of the life cycle the asset might not yet have a global id but already an
-     * internal identifier. The internal identifier would be modelled via 'externalAssetId'. Constraint
-     * AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global
-     * reference.
+     * internal identifier. The internal identifier would be modelled via 'externalAssetId'.
+     *
+     * Constraint AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a
+     * global reference.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId
      *
      * @param globalAssetId desired value for the property globalAssetId.
      */
-    public void setGlobalAssetId(Reference globalAssetId);
+    void setGlobalAssetId(Reference globalAssetId);
 
     /**
      * Additional domain-specific, typically proprietary Identifier for the asset like e.g. serial
@@ -78,7 +80,7 @@ public interface AssetInformation {
      * @return Returns the List of IdentifierKeyValuePairs for the property specificAssetIds.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId")
-    public List<IdentifierKeyValuePair> getSpecificAssetIds();
+    List<IdentifierKeyValuePair> getSpecificAssetIds();
 
     /**
      * Additional domain-specific, typically proprietary Identifier for the asset like e.g. serial
@@ -88,7 +90,7 @@ public interface AssetInformation {
      *
      * @param specificAssetIds desired value for the property specificAssetIds.
      */
-    public void setSpecificAssetIds(List<IdentifierKeyValuePair> specificAssetIds);
+    void setSpecificAssetIds(List<IdentifierKeyValuePair> specificAssetIds);
 
     /**
      * A reference to a Submodel that defines the bill of material of the asset represented by the AAS.
@@ -100,7 +102,7 @@ public interface AssetInformation {
      * @return Returns the List of Submodels for the property billOfMaterials.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial")
-    public List<Submodel> getBillOfMaterials();
+    List<Submodel> getBillOfMaterials();
 
     /**
      * A reference to a Submodel that defines the bill of material of the asset represented by the AAS.
@@ -111,7 +113,7 @@ public interface AssetInformation {
      *
      * @param billOfMaterials desired value for the property billOfMaterials.
      */
-    public void setBillOfMaterials(List<Submodel> billOfMaterials);
+    void setBillOfMaterials(List<Submodel> billOfMaterials);
 
     /**
      * Thumbnail of the asset represented by the asset administration shell.
@@ -121,7 +123,7 @@ public interface AssetInformation {
      * @return Returns the File for the property defaultThumbnail.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail")
-    public File getDefaultThumbnail();
+    File getDefaultThumbnail();
 
     /**
      * Thumbnail of the asset represented by the asset administration shell.
@@ -130,6 +132,6 @@ public interface AssetInformation {
      *
      * @param defaultThumbnail desired value for the property defaultThumbnail.
      */
-    public void setDefaultThumbnail(File defaultThumbnail);
+    void setDefaultThumbnail(File defaultThumbnail);
 
 }

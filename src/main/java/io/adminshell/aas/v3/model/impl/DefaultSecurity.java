@@ -82,4 +82,20 @@ public class DefaultSecurity implements Security {
     public void setRequiredCertificateExtensions(List<Reference> requiredCertificateExtensions) {
         this.requiredCertificateExtensions = requiredCertificateExtensions;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultSecurity bean.
+     */
+    public static class Builder extends SecurityBuilder<DefaultSecurity, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultSecurity newBuildingInstance() {
+            return new DefaultSecurity();
+        }
+    }
 }

@@ -160,4 +160,20 @@ public class DefaultCapability implements Capability {
     public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultCapability bean.
+     */
+    public static class Builder extends CapabilityBuilder<DefaultCapability, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultCapability newBuildingInstance() {
+            return new DefaultCapability();
+        }
+    }
 }

@@ -50,4 +50,20 @@ public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
     public void setExternalPolicyDecisionPoints(boolean externalPolicyDecisionPoints) {
         this.externalPolicyDecisionPoints = externalPolicyDecisionPoints;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultPolicyDecisionPoint bean.
+     */
+    public static class Builder extends PolicyDecisionPointBuilder<DefaultPolicyDecisionPoint, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultPolicyDecisionPoint newBuildingInstance() {
+            return new DefaultPolicyDecisionPoint();
+        }
+    }
 }

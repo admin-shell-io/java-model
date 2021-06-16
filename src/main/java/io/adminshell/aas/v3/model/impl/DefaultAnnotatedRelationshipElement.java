@@ -203,4 +203,20 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
     public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultAnnotatedRelationshipElement bean.
+     */
+    public static class Builder extends AnnotatedRelationshipElementBuilder<DefaultAnnotatedRelationshipElement, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAnnotatedRelationshipElement newBuildingInstance() {
+            return new DefaultAnnotatedRelationshipElement();
+        }
+    }
 }

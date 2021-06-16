@@ -111,4 +111,20 @@ public class DefaultExtension implements Extension {
     public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultExtension bean.
+     */
+    public static class Builder extends ExtensionBuilder<DefaultExtension, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultExtension newBuildingInstance() {
+            return new DefaultExtension();
+        }
+    }
 }

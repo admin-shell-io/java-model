@@ -30,7 +30,7 @@ public interface Referable {
      * @return Returns the String for the property category.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    public String getCategory();
+    String getCategory();
 
     /**
      * The category is a value that gives further meta information w.r.t. to the class of the element.
@@ -40,7 +40,7 @@ public interface Referable {
      *
      * @param category desired value for the property category.
      */
-    public void setCategory(String category);
+    void setCategory(String category);
 
     /**
      * Description or comments on the element. The description can be provided in several languages.
@@ -50,7 +50,7 @@ public interface Referable {
      * @return Returns the List of LangStrings for the property descriptions.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-    public List<LangString> getDescriptions();
+    List<LangString> getDescriptions();
 
     /**
      * Description or comments on the element. The description can be provided in several languages.
@@ -59,7 +59,7 @@ public interface Referable {
      *
      * @param descriptions desired value for the property descriptions.
      */
-    public void setDescriptions(List<LangString> descriptions);
+    void setDescriptions(List<LangString> descriptions);
 
     /**
      * Display name. Can be provided in several languages.
@@ -69,7 +69,7 @@ public interface Referable {
      * @return Returns the List of LangStrings for the property displayNames.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-    public List<LangString> getDisplayNames();
+    List<LangString> getDisplayNames();
 
     /**
      * Display name. Can be provided in several languages.
@@ -78,41 +78,53 @@ public interface Referable {
      *
      * @param displayNames desired value for the property displayNames.
      */
-    public void setDisplayNames(List<LangString> displayNames);
+    void setDisplayNames(List<LangString> displayNames);
 
     /**
-     * Identifying string of the element within its name space. Constraint AASd-002: idShort shall only
-     * feature letters, digits, underscore ('_'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+.
-     * Constraint AASd-003: idShort shall be matched case-insensitive. Constraint AASd-022: idShort of
-     * non-identifiable referables shall be unqiue in its namespace. Note: In case the element is a
-     * property and the property has a semantic definition (HasSemantics) the idShort is typically
-     * identical to the short name in English. Note: In case of an identifiable element idShort is
-     * optional but recommended to be defined. It can be used for unique reference in its name space and
-     * thus allows better usability and a more performant implementation. In this case it is similar to
-     * the 'BrowserPath' in OPC UA.
+     * Identifying string of the element within its name space.
+     *
+     * Constraint AASd-002: idShort shall only feature letters, digits, underscore ('_'); starting with
+     * a small letter. I.e. [a-z][a-zA-Z0-9_]+.
+     *
+     * Constraint AASd-003: idShort shall be matched case-insensitive.
+     *
+     * Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace.
+     *
+     * Note: In case the element is a property and the property has a semantic definition (HasSemantics)
+     * the idShort is typically identical to the short name in English.
+     *
+     * Note: In case of an identifiable element idShort is optional but recommended to be defined. It
+     * can be used for unique reference in its name space and thus allows better usability and a more
+     * performant implementation. In this case it is similar to the 'BrowserPath' in OPC UA.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Referable/idShort
      *
      * @return Returns the String for the property idShort.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    public String getIdShort();
+    String getIdShort();
 
     /**
-     * Identifying string of the element within its name space. Constraint AASd-002: idShort shall only
-     * feature letters, digits, underscore ('_'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+.
-     * Constraint AASd-003: idShort shall be matched case-insensitive. Constraint AASd-022: idShort of
-     * non-identifiable referables shall be unqiue in its namespace. Note: In case the element is a
-     * property and the property has a semantic definition (HasSemantics) the idShort is typically
-     * identical to the short name in English. Note: In case of an identifiable element idShort is
-     * optional but recommended to be defined. It can be used for unique reference in its name space and
-     * thus allows better usability and a more performant implementation. In this case it is similar to
-     * the 'BrowserPath' in OPC UA.
+     * Identifying string of the element within its name space.
+     *
+     * Constraint AASd-002: idShort shall only feature letters, digits, underscore ('_'); starting with
+     * a small letter. I.e. [a-z][a-zA-Z0-9_]+.
+     *
+     * Constraint AASd-003: idShort shall be matched case-insensitive.
+     *
+     * Constraint AASd-022: idShort of non-identifiable referables shall be unqiue in its namespace.
+     *
+     * Note: In case the element is a property and the property has a semantic definition (HasSemantics)
+     * the idShort is typically identical to the short name in English.
+     *
+     * Note: In case of an identifiable element idShort is optional but recommended to be defined. It
+     * can be used for unique reference in its name space and thus allows better usability and a more
+     * performant implementation. In this case it is similar to the 'BrowserPath' in OPC UA.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Referable/idShort
      *
      * @param idShort desired value for the property idShort.
      */
-    public void setIdShort(String idShort);
+    void setIdShort(String idShort);
 
 }

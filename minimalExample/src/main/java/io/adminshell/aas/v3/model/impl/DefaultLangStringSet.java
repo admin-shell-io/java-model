@@ -53,4 +53,20 @@ public class DefaultLangStringSet implements LangStringSet {
     public void setLangStrings(List<LangString> langStrings) {
         this.langStrings = langStrings;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultLangStringSet bean.
+     */
+    public static class Builder extends LangStringSetBuilder<DefaultLangStringSet, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultLangStringSet newBuildingInstance() {
+            return new DefaultLangStringSet();
+        }
+    }
 }

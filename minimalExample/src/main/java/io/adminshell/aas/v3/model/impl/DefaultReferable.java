@@ -98,4 +98,20 @@ public class DefaultReferable implements Referable {
     public void setIdShorts(List<String> idShorts) {
         this.idShorts = idShorts;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultReferable bean.
+     */
+    public static class Builder extends ReferableBuilder<DefaultReferable, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultReferable newBuildingInstance() {
+            return new DefaultReferable();
+        }
+    }
 }

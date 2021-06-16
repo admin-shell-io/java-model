@@ -97,4 +97,20 @@ public class DefaultBlobCertificate implements BlobCertificate {
     public void setPolicyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint) {
         this.policyAdministrationPoint = policyAdministrationPoint;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultBlobCertificate bean.
+     */
+    public static class Builder extends BlobCertificateBuilder<DefaultBlobCertificate, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultBlobCertificate newBuildingInstance() {
+            return new DefaultBlobCertificate();
+        }
+    }
 }

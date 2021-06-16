@@ -52,4 +52,20 @@ public class DefaultSubjectAttributes implements SubjectAttributes {
     public void setSubjectAttributes(List<DataElement> subjectAttributes) {
         this.subjectAttributes = subjectAttributes;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultSubjectAttributes bean.
+     */
+    public static class Builder extends SubjectAttributesBuilder<DefaultSubjectAttributes, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultSubjectAttributes newBuildingInstance() {
+            return new DefaultSubjectAttributes();
+        }
+    }
 }

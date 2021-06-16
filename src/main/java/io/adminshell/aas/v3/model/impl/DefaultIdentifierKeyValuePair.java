@@ -95,4 +95,20 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
     public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultIdentifierKeyValuePair bean.
+     */
+    public static class Builder extends IdentifierKeyValuePairBuilder<DefaultIdentifierKeyValuePair, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultIdentifierKeyValuePair newBuildingInstance() {
+            return new DefaultIdentifierKeyValuePair();
+        }
+    }
 }

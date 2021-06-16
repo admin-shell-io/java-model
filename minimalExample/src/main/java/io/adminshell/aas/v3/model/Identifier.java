@@ -25,7 +25,7 @@ public interface Identifier {
      * @return Returns the List of Strings for the property identifiers.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
-    public List<String> getIdentifiers();
+    List<String> getIdentifiers();
 
     /**
      * A globally unique identifier which might not be a URI. Its type is defined in idType.
@@ -34,7 +34,7 @@ public interface Identifier {
      *
      * @param identifiers desired value for the property identifiers.
      */
-    public void setIdentifiers(List<String> identifiers);
+    void setIdentifiers(List<String> identifiers);
 
     /**
      * Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the
@@ -45,7 +45,7 @@ public interface Identifier {
      * @return Returns the List of IdentifierTypes for the property idTypes.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")
-    public List<IdentifierType> getIdTypes();
+    List<IdentifierType> getIdTypes();
 
     /**
      * Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the
@@ -55,6 +55,6 @@ public interface Identifier {
      *
      * @param idTypes desired value for the property idTypes.
      */
-    public void setIdTypes(List<IdentifierType> idTypes);
+    void setIdTypes(List<IdentifierType> idTypes);
 
 }

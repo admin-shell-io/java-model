@@ -82,4 +82,20 @@ public class DefaultKey implements Key {
     public void setValues(List<String> values) {
         this.values = values;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultKey bean.
+     */
+    public static class Builder extends KeyBuilder<DefaultKey, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultKey newBuildingInstance() {
+            return new DefaultKey();
+        }
+    }
 }

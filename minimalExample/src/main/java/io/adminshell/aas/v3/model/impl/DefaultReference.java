@@ -54,4 +54,20 @@ public class DefaultReference implements Reference {
     public void setKeys(List<Key> keys) {
         this.keys = keys;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultReference bean.
+     */
+    public static class Builder extends ReferenceBuilder<DefaultReference, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultReference newBuildingInstance() {
+            return new DefaultReference();
+        }
+    }
 }

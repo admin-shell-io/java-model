@@ -26,7 +26,7 @@ public interface RelationshipElement extends SubmodelElement {
      * @return Returns the Reference for the property first.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first")
-    public Reference getFirst();
+    Reference getFirst();
 
     /**
      * First element in the relationship taking the role of the subject.
@@ -35,7 +35,7 @@ public interface RelationshipElement extends SubmodelElement {
      *
      * @param first desired value for the property first.
      */
-    public void setFirst(Reference first);
+    void setFirst(Reference first);
 
     /**
      * Second element in the relationship taking the role of the object.
@@ -45,7 +45,7 @@ public interface RelationshipElement extends SubmodelElement {
      * @return Returns the Reference for the property second.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second")
-    public Reference getSecond();
+    Reference getSecond();
 
     /**
      * Second element in the relationship taking the role of the object.
@@ -54,6 +54,6 @@ public interface RelationshipElement extends SubmodelElement {
      *
      * @param second desired value for the property second.
      */
-    public void setSecond(Reference second);
+    void setSecond(Reference second);
 
 }

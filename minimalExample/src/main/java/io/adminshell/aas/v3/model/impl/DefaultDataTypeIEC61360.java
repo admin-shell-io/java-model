@@ -36,4 +36,19 @@ public class DefaultDataTypeIEC61360 implements DataTypeIEC61360 {
         return true;
     }
 
+    /**
+     * This builder class can be used to construct a DefaultDataTypeIEC61360 bean.
+     */
+    public static class Builder extends DataTypeIEC61360Builder<DefaultDataTypeIEC61360, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultDataTypeIEC61360 newBuildingInstance() {
+            return new DefaultDataTypeIEC61360();
+        }
+    }
 }

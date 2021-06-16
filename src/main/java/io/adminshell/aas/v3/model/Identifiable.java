@@ -20,25 +20,29 @@ import io.adminshell.aas.v3.model.impl.*;
 public interface Identifiable extends Referable {
 
     /**
-     * Administrative information of an identifiable element. Some of the administrative information
-     * like the version number might need to be part of the identification.
+     * Administrative information of an identifiable element.
+     *
+     * Some of the administrative information like the version number might need to be part of the
+     * identification.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Identifiable/administration
      *
      * @return Returns the AdministrativeInformation for the property administration.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
-    public AdministrativeInformation getAdministration();
+    AdministrativeInformation getAdministration();
 
     /**
-     * Administrative information of an identifiable element. Some of the administrative information
-     * like the version number might need to be part of the identification.
+     * Administrative information of an identifiable element.
+     *
+     * Some of the administrative information like the version number might need to be part of the
+     * identification.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Identifiable/administration
      *
      * @param administration desired value for the property administration.
      */
-    public void setAdministration(AdministrativeInformation administration);
+    void setAdministration(AdministrativeInformation administration);
 
     /**
      * The globally unique identification of the element.
@@ -48,7 +52,7 @@ public interface Identifiable extends Referable {
      * @return Returns the Identifier for the property identification.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
-    public Identifier getIdentification();
+    Identifier getIdentification();
 
     /**
      * The globally unique identification of the element.
@@ -57,6 +61,6 @@ public interface Identifiable extends Referable {
      *
      * @param identification desired value for the property identification.
      */
-    public void setIdentification(Identifier identification);
+    void setIdentification(Identifier identification);
 
 }

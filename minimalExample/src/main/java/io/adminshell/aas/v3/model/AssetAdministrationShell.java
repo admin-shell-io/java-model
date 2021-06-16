@@ -26,7 +26,7 @@ public interface AssetAdministrationShell {
      * @return Returns the List of AssetInformations for the property assetInformations.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation")
-    public List<AssetInformation> getAssetInformations();
+    List<AssetInformation> getAssetInformations();
 
     /**
      * Meta information about the asset the AAS is representing.
@@ -36,7 +36,7 @@ public interface AssetAdministrationShell {
      *
      * @param assetInformations desired value for the property assetInformations.
      */
-    public void setAssetInformations(List<AssetInformation> assetInformations);
+    void setAssetInformations(List<AssetInformation> assetInformations);
 
     /**
      * Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset
@@ -46,7 +46,7 @@ public interface AssetAdministrationShell {
      * @return Returns the List of Submodels for the property submodels.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
-    public List<Submodel> getSubmodels();
+    List<Submodel> getSubmodels();
 
     /**
      * Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset
@@ -55,6 +55,6 @@ public interface AssetAdministrationShell {
      *
      * @param submodels desired value for the property submodels.
      */
-    public void setSubmodels(List<Submodel> submodels);
+    void setSubmodels(List<Submodel> submodels);
 
 }

@@ -28,7 +28,7 @@ public interface AccessPermissionRule extends Referable, Qualifiable {
      * @return Returns the List of PermissionsPerObjects for the property permissionsPerObjects.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject")
-    public List<PermissionsPerObject> getPermissionsPerObjects();
+    List<PermissionsPerObject> getPermissionsPerObjects();
 
     /**
      * Set of object-permission pairs that define the permissions per object within the access
@@ -39,7 +39,7 @@ public interface AccessPermissionRule extends Referable, Qualifiable {
      *
      * @param permissionsPerObjects desired value for the property permissionsPerObjects.
      */
-    public void setPermissionsPerObjects(List<PermissionsPerObject> permissionsPerObjects);
+    void setPermissionsPerObjects(List<PermissionsPerObject> permissionsPerObjects);
 
     /**
      * Target subject attributes that need to be fulfilled by the accessing subject to get the
@@ -51,7 +51,7 @@ public interface AccessPermissionRule extends Referable, Qualifiable {
      * @return Returns the SubjectAttributes for the property targetSubjectAttributes.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes")
-    public SubjectAttributes getTargetSubjectAttributes();
+    SubjectAttributes getTargetSubjectAttributes();
 
     /**
      * Target subject attributes that need to be fulfilled by the accessing subject to get the
@@ -62,6 +62,6 @@ public interface AccessPermissionRule extends Referable, Qualifiable {
      *
      * @param targetSubjectAttributes desired value for the property targetSubjectAttributes.
      */
-    public void setTargetSubjectAttributes(SubjectAttributes targetSubjectAttributes);
+    void setTargetSubjectAttributes(SubjectAttributes targetSubjectAttributes);
 
 }

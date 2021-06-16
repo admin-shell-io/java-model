@@ -27,7 +27,7 @@ public interface PermissionsPerObject {
      * @return Returns the Referable for the property object.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")
-    public Referable getObject();
+    Referable getObject();
 
     /**
      * Element to which permission shall be assigned.
@@ -36,7 +36,7 @@ public interface PermissionsPerObject {
      *
      * @param object desired value for the property object.
      */
-    public void setObject(Referable object);
+    void setObject(Referable object);
 
     /**
      * Permissions assigned to the object. The permissions hold for all subjects as specified in the
@@ -47,7 +47,7 @@ public interface PermissionsPerObject {
      * @return Returns the List of Permissions for the property permissions.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission")
-    public List<Permission> getPermissions();
+    List<Permission> getPermissions();
 
     /**
      * Permissions assigned to the object. The permissions hold for all subjects as specified in the
@@ -57,7 +57,7 @@ public interface PermissionsPerObject {
      *
      * @param permissions desired value for the property permissions.
      */
-    public void setPermissions(List<Permission> permissions);
+    void setPermissions(List<Permission> permissions);
 
     /**
      * Target object attributes that need to be fulfilled so that the access permissions apply to the
@@ -69,7 +69,7 @@ public interface PermissionsPerObject {
      * @return Returns the ObjectAttributes for the property targetObjectAttributes.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes")
-    public ObjectAttributes getTargetObjectAttributes();
+    ObjectAttributes getTargetObjectAttributes();
 
     /**
      * Target object attributes that need to be fulfilled so that the access permissions apply to the
@@ -80,6 +80,6 @@ public interface PermissionsPerObject {
      *
      * @param targetObjectAttributes desired value for the property targetObjectAttributes.
      */
-    public void setTargetObjectAttributes(ObjectAttributes targetObjectAttributes);
+    void setTargetObjectAttributes(ObjectAttributes targetObjectAttributes);
 
 }

@@ -188,4 +188,20 @@ public class DefaultRelationshipElement implements RelationshipElement {
     public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultRelationshipElement bean.
+     */
+    public static class Builder extends RelationshipElementBuilder<DefaultRelationshipElement, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultRelationshipElement newBuildingInstance() {
+            return new DefaultRelationshipElement();
+        }
+    }
 }

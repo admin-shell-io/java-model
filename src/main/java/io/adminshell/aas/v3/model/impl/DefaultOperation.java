@@ -204,4 +204,20 @@ public class DefaultOperation implements Operation {
     public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultOperation bean.
+     */
+    public static class Builder extends OperationBuilder<DefaultOperation, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultOperation newBuildingInstance() {
+            return new DefaultOperation();
+        }
+    }
 }

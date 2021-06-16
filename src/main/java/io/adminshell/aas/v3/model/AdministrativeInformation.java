@@ -29,7 +29,7 @@ public interface AdministrativeInformation extends HasDataSpecification {
      * @return Returns the String for the property version.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
-    public String getVersion();
+    String getVersion();
 
     /**
      * Version of the element.
@@ -38,27 +38,31 @@ public interface AdministrativeInformation extends HasDataSpecification {
      *
      * @param version desired value for the property version.
      */
-    public void setVersion(String version);
+    void setVersion(String version);
 
     /**
-     * Revision of the element. Constraint AASd-005: A revision requires a version. This means, if there
-     * is no version there is no revision neither.
+     * Revision of the element.
+     *
+     * Constraint AASd-005: A revision requires a version. This means, if there is no version there is
+     * no revision neither.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision
      *
      * @return Returns the String for the property revision.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
-    public String getRevision();
+    String getRevision();
 
     /**
-     * Revision of the element. Constraint AASd-005: A revision requires a version. This means, if there
-     * is no version there is no revision neither.
+     * Revision of the element.
+     *
+     * Constraint AASd-005: A revision requires a version. This means, if there is no version there is
+     * no revision neither.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision
      *
      * @param revision desired value for the property revision.
      */
-    public void setRevision(String revision);
+    void setRevision(String revision);
 
 }

@@ -187,4 +187,20 @@ public class DefaultFile implements File {
     public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultFile bean.
+     */
+    public static class Builder extends FileBuilder<DefaultFile, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultFile newBuildingInstance() {
+            return new DefaultFile();
+        }
+    }
 }

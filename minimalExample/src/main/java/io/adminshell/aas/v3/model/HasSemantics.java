@@ -23,26 +23,28 @@ import io.adminshell.aas.v3.model.impl.*;
 public interface HasSemantics {
 
     /**
-     * Points to the Expression Semantic of the Submodels The semantic id might refer to an external
-     * information source, which explains the formulation of the submodel (for example an PDF if a
-     * standard).
+     * Points to the Expression Semantic of the Submodels
+     *
+     * The semantic id might refer to an external information source, which explains the formulation of
+     * the submodel (for example an PDF if a standard).
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
      *
      * @return Returns the List of References for the property semanticIds.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    public List<Reference> getSemanticIds();
+    List<Reference> getSemanticIds();
 
     /**
-     * Points to the Expression Semantic of the Submodels The semantic id might refer to an external
-     * information source, which explains the formulation of the submodel (for example an PDF if a
-     * standard).
+     * Points to the Expression Semantic of the Submodels
+     *
+     * The semantic id might refer to an external information source, which explains the formulation of
+     * the submodel (for example an PDF if a standard).
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
      *
      * @param semanticIds desired value for the property semanticIds.
      */
-    public void setSemanticIds(List<Reference> semanticIds);
+    void setSemanticIds(List<Reference> semanticIds);
 
 }

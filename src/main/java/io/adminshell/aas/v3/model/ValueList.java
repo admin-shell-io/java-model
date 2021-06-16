@@ -25,7 +25,7 @@ public interface ValueList {
      * @return Returns the List of ValueReferencePairs for the property valueReferencePairTypes.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueList/valueReferencePairTypes")
-    public List<ValueReferencePair> getValueReferencePairTypes();
+    List<ValueReferencePair> getValueReferencePairTypes();
 
     /**
      * A pair of a value together with its global unique id..
@@ -34,6 +34,6 @@ public interface ValueList {
      *
      * @param valueReferencePairTypes desired value for the property valueReferencePairTypes.
      */
-    public void setValueReferencePairTypes(List<ValueReferencePair> valueReferencePairTypes);
+    void setValueReferencePairTypes(List<ValueReferencePair> valueReferencePairTypes);
 
 }

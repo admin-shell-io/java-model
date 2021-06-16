@@ -84,4 +84,20 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
     public void setTargetObjectAttributes(ObjectAttributes targetObjectAttributes) {
         this.targetObjectAttributes = targetObjectAttributes;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultPermissionsPerObject bean.
+     */
+    public static class Builder extends PermissionsPerObjectBuilder<DefaultPermissionsPerObject, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultPermissionsPerObject newBuildingInstance() {
+            return new DefaultPermissionsPerObject();
+        }
+    }
 }

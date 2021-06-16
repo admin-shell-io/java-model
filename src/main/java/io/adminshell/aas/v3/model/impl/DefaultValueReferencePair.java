@@ -66,4 +66,20 @@ public class DefaultValueReferencePair implements ValueReferencePair {
     public void setValueId(Reference valueId) {
         this.valueId = valueId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultValueReferencePair bean.
+     */
+    public static class Builder extends ValueReferencePairBuilder<DefaultValueReferencePair, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultValueReferencePair newBuildingInstance() {
+            return new DefaultValueReferencePair();
+        }
+    }
 }

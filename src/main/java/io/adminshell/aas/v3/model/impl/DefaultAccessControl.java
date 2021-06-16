@@ -143,4 +143,20 @@ public class DefaultAccessControl implements AccessControl {
     public void setDefaultEnvironmentAttributes(Reference defaultEnvironmentAttributes) {
         this.defaultEnvironmentAttributes = defaultEnvironmentAttributes;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultAccessControl bean.
+     */
+    public static class Builder extends AccessControlBuilder<DefaultAccessControl, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAccessControl newBuildingInstance() {
+            return new DefaultAccessControl();
+        }
+    }
 }

@@ -208,4 +208,20 @@ public class DefaultRange implements Range {
     public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultRange bean.
+     */
+    public static class Builder extends RangeBuilder<DefaultRange, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultRange newBuildingInstance() {
+            return new DefaultRange();
+        }
+    }
 }

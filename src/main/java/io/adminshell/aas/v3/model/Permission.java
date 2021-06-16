@@ -25,7 +25,7 @@ public interface Permission {
      * @return Returns the PermissionKind for the property kindOfPermission.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
-    public PermissionKind getKindOfPermission();
+    PermissionKind getKindOfPermission();
 
     /**
      * Description of the kind of permission. Possible kind of permission also include the denial of the
@@ -35,31 +35,37 @@ public interface Permission {
      *
      * @param kindOfPermission desired value for the property kindOfPermission.
      */
-    public void setKindOfPermission(PermissionKind kindOfPermission);
+    void setKindOfPermission(PermissionKind kindOfPermission);
 
     /**
-     * Reference to a property that defines the semantics of the permission. Constraint AASs-010: The
-     * property referenced in Permission/permission shall have the category 'CONSTANT'. Constraint
-     * AASs-011: The property referenced in Permission/permission shall be part of the submodel that is
-     * referenced within the 'selectablePermissions' attribute of 'AccessControl'.
+     * Reference to a property that defines the semantics of the permission.
+     *
+     * Constraint AASs-010: The property referenced in Permission/permission shall have the category
+     * 'CONSTANT'.
+     *
+     * Constraint AASs-011: The property referenced in Permission/permission shall be part of the
+     * submodel that is referenced within the 'selectablePermissions' attribute of 'AccessControl'.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Permission/permission
      *
      * @return Returns the Reference for the property permission.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Permission/permission")
-    public Reference getPermission();
+    Reference getPermission();
 
     /**
-     * Reference to a property that defines the semantics of the permission. Constraint AASs-010: The
-     * property referenced in Permission/permission shall have the category 'CONSTANT'. Constraint
-     * AASs-011: The property referenced in Permission/permission shall be part of the submodel that is
-     * referenced within the 'selectablePermissions' attribute of 'AccessControl'.
+     * Reference to a property that defines the semantics of the permission.
+     *
+     * Constraint AASs-010: The property referenced in Permission/permission shall have the category
+     * 'CONSTANT'.
+     *
+     * Constraint AASs-011: The property referenced in Permission/permission shall be part of the
+     * submodel that is referenced within the 'selectablePermissions' attribute of 'AccessControl'.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Permission/permission
      *
      * @param permission desired value for the property permission.
      */
-    public void setPermission(Reference permission);
+    void setPermission(Reference permission);
 
 }

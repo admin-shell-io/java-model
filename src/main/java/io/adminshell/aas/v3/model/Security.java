@@ -25,7 +25,7 @@ public interface Security {
      * @return Returns the AccessControlPolicyPoints for the property accessControlPolicyPoints.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
-    public AccessControlPolicyPoints getAccessControlPolicyPoints();
+    AccessControlPolicyPoints getAccessControlPolicyPoints();
 
     /**
      * Access control policy points of the AAS.
@@ -34,7 +34,7 @@ public interface Security {
      *
      * @param accessControlPolicyPoints desired value for the property accessControlPolicyPoints.
      */
-    public void setAccessControlPolicyPoints(AccessControlPolicyPoints accessControlPolicyPoints);
+    void setAccessControlPolicyPoints(AccessControlPolicyPoints accessControlPolicyPoints);
 
     /**
      * Certificates of the AAS.
@@ -44,7 +44,7 @@ public interface Security {
      * @return Returns the List of Certificates for the property certificates.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/certificate")
-    public List<Certificate> getCertificates();
+    List<Certificate> getCertificates();
 
     /**
      * Certificates of the AAS.
@@ -53,7 +53,7 @@ public interface Security {
      *
      * @param certificates desired value for the property certificates.
      */
-    public void setCertificates(List<Certificate> certificates);
+    void setCertificates(List<Certificate> certificates);
 
     /**
      * Certificate extensions as required by the AAS.
@@ -63,7 +63,7 @@ public interface Security {
      * @return Returns the List of References for the property requiredCertificateExtensions.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension")
-    public List<Reference> getRequiredCertificateExtensions();
+    List<Reference> getRequiredCertificateExtensions();
 
     /**
      * Certificate extensions as required by the AAS.
@@ -73,6 +73,6 @@ public interface Security {
      * @param requiredCertificateExtensions desired value for the property
      *        requiredCertificateExtensions.
      */
-    public void setRequiredCertificateExtensions(List<Reference> requiredCertificateExtensions);
+    void setRequiredCertificateExtensions(List<Reference> requiredCertificateExtensions);
 
 }

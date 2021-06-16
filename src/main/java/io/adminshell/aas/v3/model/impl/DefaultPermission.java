@@ -65,4 +65,20 @@ public class DefaultPermission implements Permission {
     public void setPermission(Reference permission) {
         this.permission = permission;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultPermission bean.
+     */
+    public static class Builder extends PermissionBuilder<DefaultPermission, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultPermission newBuildingInstance() {
+            return new DefaultPermission();
+        }
+    }
 }

@@ -158,4 +158,20 @@ public class DefaultEventMessage implements EventMessage {
     public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultEventMessage bean.
+     */
+    public static class Builder extends EventMessageBuilder<DefaultEventMessage, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultEventMessage newBuildingInstance() {
+            return new DefaultEventMessage();
+        }
+    }
 }

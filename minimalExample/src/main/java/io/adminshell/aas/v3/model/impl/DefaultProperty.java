@@ -91,4 +91,20 @@ public class DefaultProperty implements Property {
     public void setValueIds(List<Reference> valueIds) {
         this.valueIds = valueIds;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultProperty bean.
+     */
+    public static class Builder extends PropertyBuilder<DefaultProperty, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultProperty newBuildingInstance() {
+            return new DefaultProperty();
+        }
+    }
 }

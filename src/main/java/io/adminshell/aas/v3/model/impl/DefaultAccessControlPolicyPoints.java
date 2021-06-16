@@ -95,4 +95,20 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
     public void setPolicyInformationPoints(PolicyInformationPoints policyInformationPoints) {
         this.policyInformationPoints = policyInformationPoints;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultAccessControlPolicyPoints bean.
+     */
+    public static class Builder extends AccessControlPolicyPointsBuilder<DefaultAccessControlPolicyPoints, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAccessControlPolicyPoints newBuildingInstance() {
+            return new DefaultAccessControlPolicyPoints();
+        }
+    }
 }

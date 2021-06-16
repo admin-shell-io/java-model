@@ -145,4 +145,20 @@ public class DefaultAsset implements Asset {
     public void setIdShort(String idShort) {
         this.idShort = idShort;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultAsset bean.
+     */
+    public static class Builder extends AssetBuilder<DefaultAsset, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAsset newBuildingInstance() {
+            return new DefaultAsset();
+        }
+    }
 }

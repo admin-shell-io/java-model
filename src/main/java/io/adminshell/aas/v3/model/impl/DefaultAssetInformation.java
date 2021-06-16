@@ -116,4 +116,20 @@ public class DefaultAssetInformation implements AssetInformation {
     public void setDefaultThumbnail(File defaultThumbnail) {
         this.defaultThumbnail = defaultThumbnail;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultAssetInformation bean.
+     */
+    public static class Builder extends AssetInformationBuilder<DefaultAssetInformation, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAssetInformation newBuildingInstance() {
+            return new DefaultAssetInformation();
+        }
+    }
 }

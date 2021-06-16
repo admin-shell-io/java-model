@@ -24,7 +24,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
      * @return Returns the String for the property key.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
-    public String getKey();
+    String getKey();
 
     /**
      * Key of the identifier.
@@ -33,7 +33,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
      *
      * @param key desired value for the property key.
      */
-    public void setKey(String key);
+    void setKey(String key);
 
     /**
      * The value of the identifier with the corresponding key.
@@ -43,7 +43,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
      * @return Returns the String for the property value.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
-    public String getValue();
+    String getValue();
 
     /**
      * The value of the identifier with the corresponding key.
@@ -52,7 +52,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
      *
      * @param value desired value for the property value.
      */
-    public void setValue(String value);
+    void setValue(String value);
 
     /**
      * The (external) subject the key belongs to or has meaning to.
@@ -63,7 +63,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
      * @return Returns the Reference for the property externalSubjectId.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId")
-    public Reference getExternalSubjectId();
+    Reference getExternalSubjectId();
 
     /**
      * The (external) subject the key belongs to or has meaning to.
@@ -73,6 +73,6 @@ public interface IdentifierKeyValuePair extends HasSemantics {
      *
      * @param externalSubjectId desired value for the property externalSubjectId.
      */
-    public void setExternalSubjectId(Reference externalSubjectId);
+    void setExternalSubjectId(Reference externalSubjectId);
 
 }

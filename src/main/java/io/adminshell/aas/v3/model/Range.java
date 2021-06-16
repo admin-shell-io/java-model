@@ -30,7 +30,7 @@ public interface Range extends DataElement {
      * @return Returns the String for the property valueType.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Range/valueType")
-    public String getValueType();
+    String getValueType();
 
     /**
      * Data type of the min and max.
@@ -39,7 +39,7 @@ public interface Range extends DataElement {
      *
      * @param valueType desired value for the property valueType.
      */
-    public void setValueType(String valueType);
+    void setValueType(String valueType);
 
     /**
      * The maximum value of the range.
@@ -49,7 +49,7 @@ public interface Range extends DataElement {
      * @return Returns the String for the property max.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Range/max")
-    public String getMax();
+    String getMax();
 
     /**
      * The maximum value of the range.
@@ -58,7 +58,7 @@ public interface Range extends DataElement {
      *
      * @param max desired value for the property max.
      */
-    public void setMax(String max);
+    void setMax(String max);
 
     /**
      * The minimum value of the range.
@@ -68,7 +68,7 @@ public interface Range extends DataElement {
      * @return Returns the String for the property min.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Range/min")
-    public String getMin();
+    String getMin();
 
     /**
      * The minimum value of the range.
@@ -77,6 +77,6 @@ public interface Range extends DataElement {
      *
      * @param min desired value for the property min.
      */
-    public void setMin(String min);
+    void setMin(String min);
 
 }

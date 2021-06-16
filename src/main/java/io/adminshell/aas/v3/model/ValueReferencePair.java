@@ -25,7 +25,7 @@ public interface ValueReferencePair {
      * @return Returns the String for the property value.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value")
-    public String getValue();
+    String getValue();
 
     /**
      * the value of the referenced concept definition of the value in valueId.
@@ -34,7 +34,7 @@ public interface ValueReferencePair {
      *
      * @param value desired value for the property value.
      */
-    public void setValue(String value);
+    void setValue(String value);
 
     /**
      * Global unique id of the value.
@@ -44,7 +44,7 @@ public interface ValueReferencePair {
      * @return Returns the Reference for the property valueId.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/valueId")
-    public Reference getValueId();
+    Reference getValueId();
 
     /**
      * Global unique id of the value.
@@ -53,6 +53,6 @@ public interface ValueReferencePair {
      *
      * @param valueId desired value for the property valueId.
      */
-    public void setValueId(Reference valueId);
+    void setValueId(Reference valueId);
 
 }

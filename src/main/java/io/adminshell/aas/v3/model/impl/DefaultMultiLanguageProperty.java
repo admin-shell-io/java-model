@@ -187,4 +187,20 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
     public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultMultiLanguageProperty bean.
+     */
+    public static class Builder extends MultiLanguagePropertyBuilder<DefaultMultiLanguageProperty, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultMultiLanguageProperty newBuildingInstance() {
+            return new DefaultMultiLanguageProperty();
+        }
+    }
 }

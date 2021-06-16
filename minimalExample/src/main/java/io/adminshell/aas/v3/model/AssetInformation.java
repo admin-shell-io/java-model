@@ -29,7 +29,7 @@ public interface AssetInformation {
      * @return Returns the List of AssetKinds for the property assetKinds.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
-    public List<AssetKind> getAssetKinds();
+    List<AssetKind> getAssetKinds();
 
     /**
      * Denotes whether the Asset of kind 'Type' or 'Instance'.
@@ -38,36 +38,38 @@ public interface AssetInformation {
      *
      * @param assetKinds desired value for the property assetKinds.
      */
-    public void setAssetKinds(List<AssetKind> assetKinds);
+    void setAssetKinds(List<AssetKind> assetKinds);
 
     /**
      * Reference to either an Asset object or a global reference to the asset the AAS is representing.
      * This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the
      * asset. In a first phase of the life cycle the asset might not yet have a global id but already an
-     * internal identifier. The internal identifier would be modelled via 'externalAssetId'. Constraint
-     * AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global
-     * reference.
+     * internal identifier. The internal identifier would be modelled via 'externalAssetId'.
+     *
+     * Constraint AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a
+     * global reference.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId
      *
      * @return Returns the List of References for the property globalAssetIds.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId")
-    public List<Reference> getGlobalAssetIds();
+    List<Reference> getGlobalAssetIds();
 
     /**
      * Reference to either an Asset object or a global reference to the asset the AAS is representing.
      * This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the
      * asset. In a first phase of the life cycle the asset might not yet have a global id but already an
-     * internal identifier. The internal identifier would be modelled via 'externalAssetId'. Constraint
-     * AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global
-     * reference.
+     * internal identifier. The internal identifier would be modelled via 'externalAssetId'.
+     *
+     * Constraint AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a
+     * global reference.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId
      *
      * @param globalAssetIds desired value for the property globalAssetIds.
      */
-    public void setGlobalAssetIds(List<Reference> globalAssetIds);
+    void setGlobalAssetIds(List<Reference> globalAssetIds);
 
     /**
      * Additional domain-specific, typically proprietary Identifier for the asset like e.g. serial
@@ -78,7 +80,7 @@ public interface AssetInformation {
      * @return Returns the List of IdentifierKeyValuePairs for the property specificAssetIds.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId")
-    public List<IdentifierKeyValuePair> getSpecificAssetIds();
+    List<IdentifierKeyValuePair> getSpecificAssetIds();
 
     /**
      * Additional domain-specific, typically proprietary Identifier for the asset like e.g. serial
@@ -88,7 +90,7 @@ public interface AssetInformation {
      *
      * @param specificAssetIds desired value for the property specificAssetIds.
      */
-    public void setSpecificAssetIds(List<IdentifierKeyValuePair> specificAssetIds);
+    void setSpecificAssetIds(List<IdentifierKeyValuePair> specificAssetIds);
 
     /**
      * Thumbnail of the asset represented by the asset administration shell.
@@ -98,7 +100,7 @@ public interface AssetInformation {
      * @return Returns the List of Files for the property defaultThumbnails.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail")
-    public List<File> getDefaultThumbnails();
+    List<File> getDefaultThumbnails();
 
     /**
      * Thumbnail of the asset represented by the asset administration shell.
@@ -107,6 +109,6 @@ public interface AssetInformation {
      *
      * @param defaultThumbnails desired value for the property defaultThumbnails.
      */
-    public void setDefaultThumbnails(List<File> defaultThumbnails);
+    void setDefaultThumbnails(List<File> defaultThumbnails);
 
 }

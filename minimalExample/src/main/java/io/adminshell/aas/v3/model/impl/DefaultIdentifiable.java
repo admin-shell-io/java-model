@@ -67,4 +67,20 @@ public class DefaultIdentifiable implements Identifiable {
     public void setIdentifications(List<Identifier> identifications) {
         this.identifications = identifications;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultIdentifiable bean.
+     */
+    public static class Builder extends IdentifiableBuilder<DefaultIdentifiable, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultIdentifiable newBuildingInstance() {
+            return new DefaultIdentifiable();
+        }
+    }
 }

@@ -218,4 +218,19 @@ public class DefaultDataSpecificationPhysicalUnit implements DataSpecificationPh
         this.unitSymbol = unitSymbol;
     }
 
+    /**
+     * This builder class can be used to construct a DefaultDataSpecificationPhysicalUnit bean.
+     */
+    public static class Builder extends DataSpecificationPhysicalUnitBuilder<DefaultDataSpecificationPhysicalUnit, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultDataSpecificationPhysicalUnit newBuildingInstance() {
+            return new DefaultDataSpecificationPhysicalUnit();
+        }
+    }
 }

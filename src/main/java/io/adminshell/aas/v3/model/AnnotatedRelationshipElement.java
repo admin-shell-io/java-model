@@ -27,7 +27,7 @@ public interface AnnotatedRelationshipElement extends RelationshipElement {
      * @return Returns the List of References for the property annotations.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation")
-    public List<Reference> getAnnotations();
+    List<Reference> getAnnotations();
 
     /**
      * Annotations that hold for the relationships between the two elements.
@@ -37,6 +37,6 @@ public interface AnnotatedRelationshipElement extends RelationshipElement {
      *
      * @param annotations desired value for the property annotations.
      */
-    public void setAnnotations(List<Reference> annotations);
+    void setAnnotations(List<Reference> annotations);
 
 }

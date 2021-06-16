@@ -69,4 +69,20 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
     public void setInternalInformationPoints(List<Reference> internalInformationPoints) {
         this.internalInformationPoints = internalInformationPoints;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultPolicyInformationPoints bean.
+     */
+    public static class Builder extends PolicyInformationPointsBuilder<DefaultPolicyInformationPoints, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultPolicyInformationPoints newBuildingInstance() {
+            return new DefaultPolicyInformationPoints();
+        }
+    }
 }

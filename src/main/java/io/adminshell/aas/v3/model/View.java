@@ -27,7 +27,7 @@ public interface View extends Referable, HasDataSpecification, HasSemantics {
      * @return Returns the List of References for the property containedElements.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
-    public List<Reference> getContainedElements();
+    List<Reference> getContainedElements();
 
     /**
      * Referable elements that are contained in the view.
@@ -36,6 +36,6 @@ public interface View extends Referable, HasDataSpecification, HasSemantics {
      *
      * @param containedElements desired value for the property containedElements.
      */
-    public void setContainedElements(List<Reference> containedElements);
+    void setContainedElements(List<Reference> containedElements);
 
 }

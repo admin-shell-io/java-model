@@ -208,4 +208,20 @@ public class DefaultSubmodel implements Submodel {
     public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultSubmodel bean.
+     */
+    public static class Builder extends SubmodelBuilder<DefaultSubmodel, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultSubmodel newBuildingInstance() {
+            return new DefaultSubmodel();
+        }
+    }
 }

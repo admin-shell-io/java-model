@@ -25,7 +25,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
      * @return Returns the List of Strings for the property keys.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
-    public List<String> getKeys();
+    List<String> getKeys();
 
     /**
      * Key of the identifier.
@@ -34,7 +34,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
      *
      * @param keys desired value for the property keys.
      */
-    public void setKeys(List<String> keys);
+    void setKeys(List<String> keys);
 
     /**
      * The value of the identifier with the corresponding key.
@@ -44,7 +44,7 @@ public interface IdentifierKeyValuePair extends HasSemantics {
      * @return Returns the List of Strings for the property values.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
-    public List<String> getValues();
+    List<String> getValues();
 
     /**
      * The value of the identifier with the corresponding key.
@@ -53,6 +53,6 @@ public interface IdentifierKeyValuePair extends HasSemantics {
      *
      * @param values desired value for the property values.
      */
-    public void setValues(List<String> values);
+    void setValues(List<String> values);
 
 }

@@ -172,4 +172,20 @@ public class DefaultBasicEvent implements BasicEvent {
     public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultBasicEvent bean.
+     */
+    public static class Builder extends BasicEventBuilder<DefaultBasicEvent, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultBasicEvent newBuildingInstance() {
+            return new DefaultBasicEvent();
+        }
+    }
 }

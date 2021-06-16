@@ -26,7 +26,7 @@ public interface ObjectAttributes {
      * @return Returns the List of References for the property objectAttributes.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
-    public List<Reference> getObjectAttributes();
+    List<Reference> getObjectAttributes();
 
     /**
      * A data elements that further classifies an object.
@@ -35,6 +35,6 @@ public interface ObjectAttributes {
      *
      * @param objectAttributes desired value for the property objectAttributes.
      */
-    public void setObjectAttributes(List<Reference> objectAttributes);
+    void setObjectAttributes(List<Reference> objectAttributes);
 
 }

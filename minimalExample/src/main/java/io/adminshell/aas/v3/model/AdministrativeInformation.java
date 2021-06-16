@@ -30,7 +30,7 @@ public interface AdministrativeInformation {
      * @return Returns the List of Strings for the property versions.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
-    public List<String> getVersions();
+    List<String> getVersions();
 
     /**
      * Version of the element.
@@ -39,27 +39,31 @@ public interface AdministrativeInformation {
      *
      * @param versions desired value for the property versions.
      */
-    public void setVersions(List<String> versions);
+    void setVersions(List<String> versions);
 
     /**
-     * Revision of the element. Constraint AASd-005: A revision requires a version. This means, if there
-     * is no version there is no revision neither.
+     * Revision of the element.
+     *
+     * Constraint AASd-005: A revision requires a version. This means, if there is no version there is
+     * no revision neither.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision
      *
      * @return Returns the List of Strings for the property revisions.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
-    public List<String> getRevisions();
+    List<String> getRevisions();
 
     /**
-     * Revision of the element. Constraint AASd-005: A revision requires a version. This means, if there
-     * is no version there is no revision neither.
+     * Revision of the element.
+     *
+     * Constraint AASd-005: A revision requires a version. This means, if there is no version there is
+     * no revision neither.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision
      *
      * @param revisions desired value for the property revisions.
      */
-    public void setRevisions(List<String> revisions);
+    void setRevisions(List<String> revisions);
 
 }

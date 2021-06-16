@@ -27,7 +27,7 @@ public interface Operation extends SubmodelElement {
      * @return Returns the List of OperationVariables for the property inputVariables.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Operation/inputVariable")
-    public List<OperationVariable> getInputVariables();
+    List<OperationVariable> getInputVariables();
 
     /**
      * Input parameter of the operation.
@@ -36,7 +36,7 @@ public interface Operation extends SubmodelElement {
      *
      * @param inputVariables desired value for the property inputVariables.
      */
-    public void setInputVariables(List<OperationVariable> inputVariables);
+    void setInputVariables(List<OperationVariable> inputVariables);
 
     /**
      * Parameter that is input and output of the operation.
@@ -46,7 +46,7 @@ public interface Operation extends SubmodelElement {
      * @return Returns the List of OperationVariables for the property inoutputVariables.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable")
-    public List<OperationVariable> getInoutputVariables();
+    List<OperationVariable> getInoutputVariables();
 
     /**
      * Parameter that is input and output of the operation.
@@ -55,7 +55,7 @@ public interface Operation extends SubmodelElement {
      *
      * @param inoutputVariables desired value for the property inoutputVariables.
      */
-    public void setInoutputVariables(List<OperationVariable> inoutputVariables);
+    void setInoutputVariables(List<OperationVariable> inoutputVariables);
 
     /**
      * Output parameter of the operation.
@@ -65,7 +65,7 @@ public interface Operation extends SubmodelElement {
      * @return Returns the List of OperationVariables for the property outputVariables.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Operation/outputVariable")
-    public List<OperationVariable> getOutputVariables();
+    List<OperationVariable> getOutputVariables();
 
     /**
      * Output parameter of the operation.
@@ -74,6 +74,6 @@ public interface Operation extends SubmodelElement {
      *
      * @param outputVariables desired value for the property outputVariables.
      */
-    public void setOutputVariables(List<OperationVariable> outputVariables);
+    void setOutputVariables(List<OperationVariable> outputVariables);
 
 }

@@ -27,7 +27,7 @@ public interface Reference {
      * @return Returns the List of Keys for the property keys.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Reference/key")
-    public List<Key> getKeys();
+    List<Key> getKeys();
 
     /**
      * Unique reference in its name space.
@@ -36,6 +36,6 @@ public interface Reference {
      *
      * @param keys desired value for the property keys.
      */
-    public void setKeys(List<Key> keys);
+    void setKeys(List<Key> keys);
 
 }

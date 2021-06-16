@@ -28,7 +28,7 @@ public interface Blob extends DataElement {
      * @return Returns the String for the property mimeType.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Blob/mimeType")
-    public String getMimeType();
+    String getMimeType();
 
     /**
      * Mime type of the content of the BLOB. The mime type states which file extension the file has.
@@ -39,27 +39,31 @@ public interface Blob extends DataElement {
      *
      * @param mimeType desired value for the property mimeType.
      */
-    public void setMimeType(String mimeType);
+    void setMimeType(String mimeType);
 
     /**
-     * The value of the BLOB instance of a blob data element. In contrast to the file property the file
-     * content is stored directly as value in the Blob data element.
+     * The value of the BLOB instance of a blob data element.
+     *
+     * In contrast to the file property the file content is stored directly as value in the Blob data
+     * element.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Blob/value
      *
      * @return Returns the byte[] for the property value.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Blob/value")
-    public byte[] getValue();
+    byte[] getValue();
 
     /**
-     * The value of the BLOB instance of a blob data element. In contrast to the file property the file
-     * content is stored directly as value in the Blob data element.
+     * The value of the BLOB instance of a blob data element.
+     *
+     * In contrast to the file property the file content is stored directly as value in the Blob data
+     * element.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Blob/value
      *
      * @param value desired value for the property value.
      */
-    public void setValue(byte[] value);
+    void setValue(byte[] value);
 
 }

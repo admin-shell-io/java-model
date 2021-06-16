@@ -50,4 +50,20 @@ public class DefaultPolicyEnforcementPoints implements PolicyEnforcementPoints {
     public void setExternalPolicyEnforcementPoint(boolean externalPolicyEnforcementPoint) {
         this.externalPolicyEnforcementPoint = externalPolicyEnforcementPoint;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultPolicyEnforcementPoints bean.
+     */
+    public static class Builder extends PolicyEnforcementPointsBuilder<DefaultPolicyEnforcementPoints, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultPolicyEnforcementPoints newBuildingInstance() {
+            return new DefaultPolicyEnforcementPoints();
+        }
+    }
 }

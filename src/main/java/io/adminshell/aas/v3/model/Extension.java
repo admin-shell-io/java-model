@@ -25,7 +25,7 @@ public interface Extension extends HasSemantics {
      * @return Returns the String for the property name.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/name")
-    public String getName();
+    String getName();
 
     /**
      * An extension of the element.
@@ -34,7 +34,7 @@ public interface Extension extends HasSemantics {
      *
      * @param name desired value for the property name.
      */
-    public void setName(String name);
+    void setName(String name);
 
     /**
      * Type of the value of the extension.
@@ -44,7 +44,7 @@ public interface Extension extends HasSemantics {
      * @return Returns the String for the property valueType.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/valueType")
-    public String getValueType();
+    String getValueType();
 
     /**
      * Type of the value of the extension.
@@ -53,7 +53,7 @@ public interface Extension extends HasSemantics {
      *
      * @param valueType desired value for the property valueType.
      */
-    public void setValueType(String valueType);
+    void setValueType(String valueType);
 
     /**
      * Value of the extension.
@@ -63,7 +63,7 @@ public interface Extension extends HasSemantics {
      * @return Returns the String for the property value.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/value")
-    public String getValue();
+    String getValue();
 
     /**
      * Value of the extension.
@@ -72,7 +72,7 @@ public interface Extension extends HasSemantics {
      *
      * @param value desired value for the property value.
      */
-    public void setValue(String value);
+    void setValue(String value);
 
     /**
      * Reference to an element the extension refers to.
@@ -82,7 +82,7 @@ public interface Extension extends HasSemantics {
      * @return Returns the Reference for the property refersTo.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/refersTo")
-    public Reference getRefersTo();
+    Reference getRefersTo();
 
     /**
      * Reference to an element the extension refers to.
@@ -91,6 +91,6 @@ public interface Extension extends HasSemantics {
      *
      * @param refersTo desired value for the property refersTo.
      */
-    public void setRefersTo(Reference refersTo);
+    void setRefersTo(Reference refersTo);
 
 }

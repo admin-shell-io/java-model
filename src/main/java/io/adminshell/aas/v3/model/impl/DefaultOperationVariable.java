@@ -51,4 +51,20 @@ public class DefaultOperationVariable implements OperationVariable {
     public void setValue(SubmodelElement value) {
         this.value = value;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultOperationVariable bean.
+     */
+    public static class Builder extends OperationVariableBuilder<DefaultOperationVariable, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultOperationVariable newBuildingInstance() {
+            return new DefaultOperationVariable();
+        }
+    }
 }

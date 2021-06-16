@@ -26,7 +26,7 @@ public interface HasKind {
      * @return Returns the ModelingKind for the property kind.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-    public ModelingKind getKind();
+    ModelingKind getKind();
 
     /**
      * ModelingKind of the element: either type or instance.
@@ -35,6 +35,6 @@ public interface HasKind {
      *
      * @param kind desired value for the property kind.
      */
-    public void setKind(ModelingKind kind);
+    void setKind(ModelingKind kind);
 
 }

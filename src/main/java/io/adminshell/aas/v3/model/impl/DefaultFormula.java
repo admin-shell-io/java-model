@@ -52,4 +52,19 @@ public class DefaultFormula implements Formula {
         this.dependsOns = dependsOns;
     }
 
+    /**
+     * This builder class can be used to construct a DefaultFormula bean.
+     */
+    public static class Builder extends FormulaBuilder<DefaultFormula, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultFormula newBuildingInstance() {
+            return new DefaultFormula();
+        }
+    }
 }

@@ -37,4 +37,19 @@ public class DefaultKeyElements implements KeyElements {
         return true;
     }
 
+    /**
+     * This builder class can be used to construct a DefaultKeyElements bean.
+     */
+    public static class Builder extends KeyElementsBuilder<DefaultKeyElements, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultKeyElements newBuildingInstance() {
+            return new DefaultKeyElements();
+        }
+    }
 }

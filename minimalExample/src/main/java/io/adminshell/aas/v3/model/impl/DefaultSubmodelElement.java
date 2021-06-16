@@ -41,4 +41,19 @@ public class DefaultSubmodelElement implements SubmodelElement {
         return true;
     }
 
+    /**
+     * This builder class can be used to construct a DefaultSubmodelElement bean.
+     */
+    public static class Builder extends SubmodelElementBuilder<DefaultSubmodelElement, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultSubmodelElement newBuildingInstance() {
+            return new DefaultSubmodelElement();
+        }
+    }
 }

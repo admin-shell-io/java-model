@@ -26,7 +26,7 @@ public interface DataSpecification {
      * @return Returns the DataSpecificationContent for the property dataSpecificationContent.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/DataSpecification/dataSpecificationContent")
-    public DataSpecificationContent getDataSpecificationContent();
+    DataSpecificationContent getDataSpecificationContent();
 
     /**
      * DataSpecificationContent contains the additional attributes to be added to the element instance
@@ -37,6 +37,6 @@ public interface DataSpecification {
      *
      * @param dataSpecificationContent desired value for the property dataSpecificationContent.
      */
-    public void setDataSpecificationContent(DataSpecificationContent dataSpecificationContent);
+    void setDataSpecificationContent(DataSpecificationContent dataSpecificationContent);
 
 }

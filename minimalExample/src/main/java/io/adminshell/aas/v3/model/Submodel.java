@@ -31,7 +31,7 @@ public interface Submodel {
      * @return Returns the List of SubmodelElements for the property submodelElements.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement")
-    public List<SubmodelElement> getSubmodelElements();
+    List<SubmodelElement> getSubmodelElements();
 
     /**
      * A submodel consists of zero or more submodel elements.
@@ -40,6 +40,6 @@ public interface Submodel {
      *
      * @param submodelElements desired value for the property submodelElements.
      */
-    public void setSubmodelElements(List<SubmodelElement> submodelElements);
+    void setSubmodelElements(List<SubmodelElement> submodelElements);
 
 }

@@ -26,8 +26,10 @@ public interface SubmodelElementCollection extends SubmodelElement {
 
     /**
      * If allowDuplicates=true then it is allowed that the collection contains the same element several
-     * times. Default = false Constraint AASd-026: If allowDuplicates==false then it is not allowed that
-     * the collection contains several elements with the same semantics (i.e. the same semanticId).
+     * times. Default = false
+     *
+     * Constraint AASd-026: If allowDuplicates==false then it is not allowed that the collection
+     * contains several elements with the same semantics (i.e. the same semanticId).
      *
      * More information under
      * https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates
@@ -35,19 +37,21 @@ public interface SubmodelElementCollection extends SubmodelElement {
      * @return Returns the List of Booleans for the property allowDuplicates.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates")
-    public List<Boolean> getAllowDuplicates();
+    List<Boolean> getAllowDuplicates();
 
     /**
      * If allowDuplicates=true then it is allowed that the collection contains the same element several
-     * times. Default = false Constraint AASd-026: If allowDuplicates==false then it is not allowed that
-     * the collection contains several elements with the same semantics (i.e. the same semanticId).
+     * times. Default = false
+     *
+     * Constraint AASd-026: If allowDuplicates==false then it is not allowed that the collection
+     * contains several elements with the same semantics (i.e. the same semanticId).
      *
      * More information under
      * https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates
      *
      * @param allowDuplicates desired value for the property allowDuplicates.
      */
-    public void setAllowDuplicates(List<Boolean> allowDuplicates);
+    void setAllowDuplicates(List<Boolean> allowDuplicates);
 
     /**
      * If ordered=false then the elements in the property collection are not ordered. If ordered=true
@@ -58,7 +62,7 @@ public interface SubmodelElementCollection extends SubmodelElement {
      * @return Returns the List of Booleans for the property ordereds.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered")
-    public List<Boolean> getOrdereds();
+    List<Boolean> getOrdereds();
 
     /**
      * If ordered=false then the elements in the property collection are not ordered. If ordered=true
@@ -68,7 +72,7 @@ public interface SubmodelElementCollection extends SubmodelElement {
      *
      * @param ordereds desired value for the property ordereds.
      */
-    public void setOrdereds(List<Boolean> ordereds);
+    void setOrdereds(List<Boolean> ordereds);
 
     /**
      * Submodel element contained in the collection.
@@ -78,7 +82,7 @@ public interface SubmodelElementCollection extends SubmodelElement {
      * @return Returns the Collection of SubmodelElements for the property values.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value")
-    public Collection<SubmodelElement> getValues();
+    Collection<SubmodelElement> getValues();
 
     /**
      * Submodel element contained in the collection.
@@ -87,6 +91,6 @@ public interface SubmodelElementCollection extends SubmodelElement {
      *
      * @param values desired value for the property values.
      */
-    public void setValues(Collection<SubmodelElement> values);
+    void setValues(Collection<SubmodelElement> values);
 
 }

@@ -97,4 +97,20 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
     public void setSubmodels(List<Submodel> submodels) {
         this.submodels = submodels;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultAssetAdministrationShellEnvironment bean.
+     */
+    public static class Builder extends AssetAdministrationShellEnvironmentBuilder<DefaultAssetAdministrationShellEnvironment, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultAssetAdministrationShellEnvironment newBuildingInstance() {
+            return new DefaultAssetAdministrationShellEnvironment();
+        }
+    }
 }

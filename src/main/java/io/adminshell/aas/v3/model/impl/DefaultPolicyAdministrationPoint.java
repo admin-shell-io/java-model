@@ -65,4 +65,20 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
     public void setExternalAccessControl(boolean externalAccessControl) {
         this.externalAccessControl = externalAccessControl;
     }
+
+    /**
+     * This builder class can be used to construct a DefaultPolicyAdministrationPoint bean.
+     */
+    public static class Builder extends PolicyAdministrationPointBuilder<DefaultPolicyAdministrationPoint, Builder> {
+
+        @Override
+        protected Builder getSelf() {
+            return this;
+        }
+
+        @Override
+        protected DefaultPolicyAdministrationPoint newBuildingInstance() {
+            return new DefaultPolicyAdministrationPoint();
+        }
+    }
 }
