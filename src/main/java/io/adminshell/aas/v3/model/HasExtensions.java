@@ -16,24 +16,22 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface HasExtensions {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * An extension of the element.
-     * 
-     * @return Returns the List of Extensions for the property extensions. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension
+     *
+     * @return Returns the List of Extensions for the property extensions.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension")
     public List<Extension> getExtensions();
 
     /**
      * An extension of the element.
-     * 
-     * @param extensions desired value for the property extensions. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension
+     *
+     * @param extensions desired value for the property extensions.
      */
     public void setExtensions(List<Extension> extensions);
 

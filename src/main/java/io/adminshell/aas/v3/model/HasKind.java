@@ -18,24 +18,22 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface HasKind {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * ModelingKind of the element: either type or instance.
-     * 
-     * @return Returns the ModelingKind for the property kind. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/HasKind/kind
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/HasKind/kind
+     *
+     * @return Returns the ModelingKind for the property kind.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
     public ModelingKind getKind();
 
     /**
      * ModelingKind of the element: either type or instance.
-     * 
-     * @param kind desired value for the property kind. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/HasKind/kind
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/HasKind/kind
+     *
+     * @param kind desired value for the property kind.
      */
     public void setKind(ModelingKind kind);
 

@@ -17,31 +17,15 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * Points to the Expression Semantic of the Submodels The semantic id might refer to an external
-     * information source, which explains the formulation of the submodel (for example an PDF if a
-     * standard).
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
     protected Reference semanticId;
 
-    /**
-     * The (external) subject the key belongs to or has meaning to.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId")
     protected Reference externalSubjectId;
 
-    /**
-     * Key of the identifier.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
     protected String key;
 
-    /**
-     * The value of the identifier with the corresponding key.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
     protected String value;
 
@@ -72,54 +56,43 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
-    final public String getKey() {
+    @Override
+    public String getKey() {
         return key;
     }
 
-    final public void setKey(String key) {
+    @Override
+    public void setKey(String key) {
         this.key = key;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
-    final public String getValue() {
+    @Override
+    public String getValue() {
         return value;
     }
 
-    final public void setValue(String value) {
+    @Override
+    public void setValue(String value) {
         this.value = value;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/externalSubjectId")
-    final public Reference getExternalSubjectId() {
+    @Override
+    public Reference getExternalSubjectId() {
         return externalSubjectId;
     }
 
-    final public void setExternalSubjectId(Reference externalSubjectId) {
+    @Override
+    public void setExternalSubjectId(Reference externalSubjectId) {
         this.externalSubjectId = externalSubjectId;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    final public Reference getSemanticId() {
+    @Override
+    public Reference getSemanticId() {
         return semanticId;
     }
 
-    final public void setSemanticId(Reference semanticId) {
+    @Override
+    public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
-    }
-
-    public static class Builder extends IdentifierKeyValuePairBuilder<DefaultIdentifierKeyValuePair, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultIdentifierKeyValuePair newBuildingInstance() {
-            return new DefaultIdentifierKeyValuePair();
-        }
     }
 }

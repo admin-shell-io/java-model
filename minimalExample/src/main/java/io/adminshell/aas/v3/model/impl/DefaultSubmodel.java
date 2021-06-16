@@ -25,11 +25,6 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultSubmodel implements Submodel {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * A submodel consists of zero or more submodel elements.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement")
     protected List<SubmodelElement> submodelElements = new ArrayList<>();
 
@@ -54,27 +49,13 @@ public class DefaultSubmodel implements Submodel {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement")
-    final public List<SubmodelElement> getSubmodelElements() {
+    @Override
+    public List<SubmodelElement> getSubmodelElements() {
         return submodelElements;
     }
 
-    final public void setSubmodelElements(List<SubmodelElement> submodelElements) {
+    @Override
+    public void setSubmodelElements(List<SubmodelElement> submodelElements) {
         this.submodelElements = submodelElements;
-    }
-
-    public static class Builder extends SubmodelBuilder<DefaultSubmodel, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultSubmodel newBuildingInstance() {
-            return new DefaultSubmodel();
-        }
     }
 }

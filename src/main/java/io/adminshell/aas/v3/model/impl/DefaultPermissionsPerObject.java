@@ -21,25 +21,12 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultPermissionsPerObject implements PermissionsPerObject {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * Element to which permission shall be assigned.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")
     protected Referable object;
 
-    /**
-     * Permissions assigned to the object. The permissions hold for all subjects as specified in the
-     * access permission rule.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission")
     protected List<Permission> permissions = new ArrayList<>();
 
-    /**
-     * Target object attributes that need to be fulfilled so that the access permissions apply to the
-     * accessing subject.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes")
     protected ObjectAttributes targetObjectAttributes;
 
@@ -68,45 +55,33 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")
-    final public Referable getObject() {
+    @Override
+    public Referable getObject() {
         return object;
     }
 
-    final public void setObject(Referable object) {
+    @Override
+    public void setObject(Referable object) {
         this.object = object;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission")
-    final public List<Permission> getPermissions() {
+    @Override
+    public List<Permission> getPermissions() {
         return permissions;
     }
 
-    final public void setPermissions(List<Permission> permissions) {
+    @Override
+    public void setPermissions(List<Permission> permissions) {
         this.permissions = permissions;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/targetObjectAttributes")
-    final public ObjectAttributes getTargetObjectAttributes() {
+    @Override
+    public ObjectAttributes getTargetObjectAttributes() {
         return targetObjectAttributes;
     }
 
-    final public void setTargetObjectAttributes(ObjectAttributes targetObjectAttributes) {
+    @Override
+    public void setTargetObjectAttributes(ObjectAttributes targetObjectAttributes) {
         this.targetObjectAttributes = targetObjectAttributes;
-    }
-
-    public static class Builder extends PermissionsPerObjectBuilder<DefaultPermissionsPerObject, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultPermissionsPerObject newBuildingInstance() {
-            return new DefaultPermissionsPerObject();
-        }
     }
 }

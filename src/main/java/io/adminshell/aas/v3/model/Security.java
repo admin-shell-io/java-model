@@ -17,60 +17,61 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface Security {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Access control policy points of the AAS.
-     * 
-     * @return Returns the AccessControlPolicyPoints for the property accessControlPolicyPoints. More
-     *         information under https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints
+     *
+     * @return Returns the AccessControlPolicyPoints for the property accessControlPolicyPoints.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
     public AccessControlPolicyPoints getAccessControlPolicyPoints();
 
     /**
      * Access control policy points of the AAS.
-     * 
-     * @param accessControlPolicyPoints desired value for the property accessControlPolicyPoints. More
-     *        information under https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints
+     *
+     * @param accessControlPolicyPoints desired value for the property accessControlPolicyPoints.
      */
     public void setAccessControlPolicyPoints(AccessControlPolicyPoints accessControlPolicyPoints);
 
     /**
      * Certificates of the AAS.
-     * 
-     * @return Returns the List of Certificates for the property certificates. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Security/certificate
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Security/certificate
+     *
+     * @return Returns the List of Certificates for the property certificates.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/certificate")
     public List<Certificate> getCertificates();
 
     /**
      * Certificates of the AAS.
-     * 
-     * @param certificates desired value for the property certificates. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Security/certificate
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Security/certificate
+     *
+     * @param certificates desired value for the property certificates.
      */
     public void setCertificates(List<Certificate> certificates);
 
     /**
      * Certificate extensions as required by the AAS.
-     * 
-     * @return Returns the List of References for the property requiredCertificateExtensions. More
-     *         information under
-     *         https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension
+     *
+     * @return Returns the List of References for the property requiredCertificateExtensions.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension")
     public List<Reference> getRequiredCertificateExtensions();
 
     /**
      * Certificate extensions as required by the AAS.
-     * 
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension
+     *
      * @param requiredCertificateExtensions desired value for the property
-     *        requiredCertificateExtensions. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension
+     *        requiredCertificateExtensions.
      */
     public void setRequiredCertificateExtensions(List<Reference> requiredCertificateExtensions);
 

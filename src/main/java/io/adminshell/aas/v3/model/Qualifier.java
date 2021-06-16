@@ -18,41 +18,41 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface Qualifier extends Constraint, HasSemantics {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * The qualifier type describes the type of the qualifier that is applied to the element.
-     * 
-     * @return Returns the String for the property type. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Qualifier/type
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/type
+     *
+     * @return Returns the String for the property type.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/type")
     public String getType();
 
     /**
      * The qualifier type describes the type of the qualifier that is applied to the element.
-     * 
-     * @param type desired value for the property type. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Qualifier/type
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/type
+     *
+     * @param type desired value for the property type.
      */
     public void setType(String type);
 
     /**
      * Data type of the qualifier value.
-     * 
-     * @return Returns the String for the property valueType. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType
+     *
+     * @return Returns the String for the property valueType.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType")
     public String getValueType();
 
     /**
      * Data type of the qualifier value.
-     * 
-     * @param valueType desired value for the property valueType. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/valueType
+     *
+     * @param valueType desired value for the property valueType.
      */
     public void setValueType(String valueType);
 
@@ -61,9 +61,10 @@ public interface Qualifier extends Constraint, HasSemantics {
      * the valueId are present then the value needs to be identical to the short name of the referenced
      * coded value in qualifierValueId. Constraint AASd-020: The value of Qualifier/value shall be
      * consistent to the data type as defined in Qualifier/valueType.
-     * 
-     * @return Returns the String for the property value. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Qualifier/value
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/value
+     *
+     * @return Returns the String for the property value.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/value")
     public String getValue();
@@ -73,26 +74,29 @@ public interface Qualifier extends Constraint, HasSemantics {
      * the valueId are present then the value needs to be identical to the short name of the referenced
      * coded value in qualifierValueId. Constraint AASd-020: The value of Qualifier/value shall be
      * consistent to the data type as defined in Qualifier/valueType.
-     * 
-     * @param value desired value for the property value. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Qualifier/value
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/value
+     *
+     * @param value desired value for the property value.
      */
     public void setValue(String value);
 
     /**
      * Reference to the global unqiue id of a coded value.
-     * 
-     * @return Returns the Reference for the property valueId. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId
+     *
+     * @return Returns the Reference for the property valueId.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId")
     public Reference getValueId();
 
     /**
      * Reference to the global unqiue id of a coded value.
-     * 
-     * @param valueId desired value for the property valueId. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Qualifier/valueId
+     *
+     * @param valueId desired value for the property valueId.
      */
     public void setValueId(Reference valueId);
 

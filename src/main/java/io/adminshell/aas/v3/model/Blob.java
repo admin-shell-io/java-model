@@ -18,17 +18,14 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface Blob extends DataElement {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Mime type of the content of the BLOB. The mime type states which file extension the file has.
      * Valid values are e.g. 'application/json', 'application/xls', 'image/jpg' The allowed values are
      * defined as in RFC2046.
-     * 
-     * @return Returns the String for the property mimeType. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Blob/mimeType
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Blob/mimeType
+     *
+     * @return Returns the String for the property mimeType.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Blob/mimeType")
     public String getMimeType();
@@ -37,18 +34,20 @@ public interface Blob extends DataElement {
      * Mime type of the content of the BLOB. The mime type states which file extension the file has.
      * Valid values are e.g. 'application/json', 'application/xls', 'image/jpg' The allowed values are
      * defined as in RFC2046.
-     * 
-     * @param mimeType desired value for the property mimeType. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Blob/mimeType
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Blob/mimeType
+     *
+     * @param mimeType desired value for the property mimeType.
      */
     public void setMimeType(String mimeType);
 
     /**
      * The value of the BLOB instance of a blob data element. In contrast to the file property the file
      * content is stored directly as value in the Blob data element.
-     * 
-     * @return Returns the byte[] for the property value. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Blob/value
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Blob/value
+     *
+     * @return Returns the byte[] for the property value.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Blob/value")
     public byte[] getValue();
@@ -56,9 +55,10 @@ public interface Blob extends DataElement {
     /**
      * The value of the BLOB instance of a blob data element. In contrast to the file property the file
      * content is stored directly as value in the Blob data element.
-     * 
-     * @param value desired value for the property value. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Blob/value
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Blob/value
+     *
+     * @param value desired value for the property value.
      */
     public void setValue(byte[] value);
 

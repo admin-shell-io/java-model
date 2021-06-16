@@ -19,11 +19,6 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultValueList implements ValueList {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * A pair of a value together with its global unique id..
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueList/valueReferencePairTypes")
     protected List<ValueReferencePair> valueReferencePairTypes = new ArrayList<>();
 
@@ -48,27 +43,13 @@ public class DefaultValueList implements ValueList {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ValueList/valueReferencePairTypes")
-    final public List<ValueReferencePair> getValueReferencePairTypes() {
+    @Override
+    public List<ValueReferencePair> getValueReferencePairTypes() {
         return valueReferencePairTypes;
     }
 
-    final public void setValueReferencePairTypes(List<ValueReferencePair> valueReferencePairTypes) {
+    @Override
+    public void setValueReferencePairTypes(List<ValueReferencePair> valueReferencePairTypes) {
         this.valueReferencePairTypes = valueReferencePairTypes;
-    }
-
-    public static class Builder extends ValueListBuilder<DefaultValueList, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultValueList newBuildingInstance() {
-            return new DefaultValueList();
-        }
     }
 }

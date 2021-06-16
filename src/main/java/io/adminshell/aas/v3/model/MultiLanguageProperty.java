@@ -17,10 +17,6 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface MultiLanguageProperty extends DataElement {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * The value of the property instance. Constraint AASd-052b: If the semanticId of a
      * MultiLanguageProperty references a ConceptDescription then the ConceptDescription/category shall
@@ -30,9 +26,10 @@ public interface MultiLanguageProperty extends DataElement {
      * MultiLanguageProperty/valueId. Constraint AASd-067: If the semanticId of a MultiLanguageProperty
      * references a ConceptDescription then DataSpecificationIEC61360/dataType shall be
      * STRING_TRANSLATABLE.
-     * 
-     * @return Returns the List of LangStrings for the property values. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value
+     *
+     * @return Returns the List of LangStrings for the property values.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value")
     public List<LangString> getValues();
@@ -46,26 +43,29 @@ public interface MultiLanguageProperty extends DataElement {
      * MultiLanguageProperty/valueId. Constraint AASd-067: If the semanticId of a MultiLanguageProperty
      * references a ConceptDescription then DataSpecificationIEC61360/dataType shall be
      * STRING_TRANSLATABLE.
-     * 
-     * @param values desired value for the property values. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/value
+     *
+     * @param values desired value for the property values.
      */
     public void setValues(List<LangString> values);
 
     /**
      * Reference to the global unqiue id of a coded value.
-     * 
-     * @return Returns the Reference for the property valueId. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId
+     *
+     * @return Returns the Reference for the property valueId.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId")
     public Reference getValueId();
 
     /**
      * Reference to the global unqiue id of a coded value.
-     * 
-     * @param valueId desired value for the property valueId. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId
+     *
+     * @param valueId desired value for the property valueId.
      */
     public void setValueId(Reference valueId);
 

@@ -18,24 +18,24 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface AnnotatedRelationshipElement extends RelationshipElement {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Annotations that hold for the relationships between the two elements.
-     * 
-     * @return Returns the List of References for the property annotations. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation
+     *
+     * @return Returns the List of References for the property annotations.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation")
     public List<Reference> getAnnotations();
 
     /**
      * Annotations that hold for the relationships between the two elements.
-     * 
-     * @param annotations desired value for the property annotations. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation
+     *
+     * @param annotations desired value for the property annotations.
      */
     public void setAnnotations(List<Reference> annotations);
 

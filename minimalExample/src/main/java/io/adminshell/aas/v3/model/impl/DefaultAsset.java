@@ -20,8 +20,6 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultAsset implements Asset {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
     public DefaultAsset() {}
 
     @Override
@@ -41,16 +39,4 @@ public class DefaultAsset implements Asset {
         return true;
     }
 
-    public static class Builder extends AssetBuilder<DefaultAsset, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultAsset newBuildingInstance() {
-            return new DefaultAsset();
-        }
-    }
 }

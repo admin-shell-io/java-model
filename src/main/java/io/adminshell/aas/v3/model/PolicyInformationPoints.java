@@ -19,16 +19,14 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface PolicyInformationPoints {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * If externalInformationPoints True then at least one Endpoint to external available information
      * needs to be configured for the AAS.
-     * 
-     * @return Returns the boolean for the property externalInformationPoints. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints
+     *
+     * @return Returns the boolean for the property externalInformationPoints.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints")
     public boolean getExternalInformationPoints();
@@ -36,29 +34,32 @@ public interface PolicyInformationPoints {
     /**
      * If externalInformationPoints True then at least one Endpoint to external available information
      * needs to be configured for the AAS.
-     * 
-     * @param externalInformationPoints desired value for the property externalInformationPoints. More
-     *        information under
-     *        https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints
+     *
+     * @param externalInformationPoints desired value for the property externalInformationPoints.
      */
     public void setExternalInformationPoints(boolean externalInformationPoints);
 
     /**
      * References to submodels defining information used by security access permission rules.
-     * 
-     * @return Returns the List of References for the property internalInformationPoints. More
-     *         information under
-     *         https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint
+     *
+     * @return Returns the List of References for the property internalInformationPoints.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint")
     public List<Reference> getInternalInformationPoints();
 
     /**
      * References to submodels defining information used by security access permission rules.
-     * 
-     * @param internalInformationPoints desired value for the property internalInformationPoints. More
-     *        information under
-     *        https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint
+     *
+     * @param internalInformationPoints desired value for the property internalInformationPoints.
      */
     public void setInternalInformationPoints(List<Reference> internalInformationPoints);
 

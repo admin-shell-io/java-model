@@ -19,18 +19,9 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultIdentifier implements Identifier {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the
-     * enumeration 'IdentifierType'.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")
     protected List<IdentifierType> idTypes = new ArrayList<>();
 
-    /**
-     * A globally unique identifier which might not be a URI. Its type is defined in idType.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
     protected List<String> identifiers = new ArrayList<>();
 
@@ -57,36 +48,23 @@ public class DefaultIdentifier implements Identifier {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
-    final public List<String> getIdentifiers() {
+    @Override
+    public List<String> getIdentifiers() {
         return identifiers;
     }
 
-    final public void setIdentifiers(List<String> identifiers) {
+    @Override
+    public void setIdentifiers(List<String> identifiers) {
         this.identifiers = identifiers;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")
-    final public List<IdentifierType> getIdTypes() {
+    @Override
+    public List<IdentifierType> getIdTypes() {
         return idTypes;
     }
 
-    final public void setIdTypes(List<IdentifierType> idTypes) {
+    @Override
+    public void setIdTypes(List<IdentifierType> idTypes) {
         this.idTypes = idTypes;
-    }
-
-    public static class Builder extends IdentifierBuilder<DefaultIdentifier, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultIdentifier newBuildingInstance() {
-            return new DefaultIdentifier();
-        }
     }
 }

@@ -19,6 +19,4 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface Asset extends HasDataSpecification, Identifiable {
 
-    // standard methods
-
 }

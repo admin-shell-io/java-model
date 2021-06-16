@@ -16,16 +16,13 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface Permission {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Description of the kind of permission. Possible kind of permission also include the denial of the
      * permission.
-     * 
-     * @return Returns the PermissionKind for the property kindOfPermission. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission
+     *
+     * @return Returns the PermissionKind for the property kindOfPermission.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
     public PermissionKind getKindOfPermission();
@@ -33,9 +30,10 @@ public interface Permission {
     /**
      * Description of the kind of permission. Possible kind of permission also include the denial of the
      * permission.
-     * 
-     * @param kindOfPermission desired value for the property kindOfPermission. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission
+     *
+     * @param kindOfPermission desired value for the property kindOfPermission.
      */
     public void setKindOfPermission(PermissionKind kindOfPermission);
 
@@ -44,9 +42,10 @@ public interface Permission {
      * property referenced in Permission/permission shall have the category 'CONSTANT'. Constraint
      * AASs-011: The property referenced in Permission/permission shall be part of the submodel that is
      * referenced within the 'selectablePermissions' attribute of 'AccessControl'.
-     * 
-     * @return Returns the Reference for the property permission. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Permission/permission
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Permission/permission
+     *
+     * @return Returns the Reference for the property permission.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Permission/permission")
     public Reference getPermission();
@@ -56,9 +55,10 @@ public interface Permission {
      * property referenced in Permission/permission shall have the category 'CONSTANT'. Constraint
      * AASs-011: The property referenced in Permission/permission shall be part of the submodel that is
      * referenced within the 'selectablePermissions' attribute of 'AccessControl'.
-     * 
-     * @param permission desired value for the property permission. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Permission/permission
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Permission/permission
+     *
+     * @param permission desired value for the property permission.
      */
     public void setPermission(Reference permission);
 

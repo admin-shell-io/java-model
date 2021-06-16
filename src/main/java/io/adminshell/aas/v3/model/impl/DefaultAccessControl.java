@@ -20,56 +20,24 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultAccessControl implements AccessControl {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * Access permission rules of the AAS describing the rights assigned to (already authenticated)
-     * subjects to access elements of the AAS.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule")
     protected List<AccessPermissionRule> accessPermissionRules = new ArrayList<>();
 
-    /**
-     * Reference to a submodel defining default environment attributes, i.e. attributes that are not
-     * describing the asset itself. The submodel is of kind=Type. At the same type the values of these
-     * environment attributes need to be accessible when evaluating the access permission rules. This is
-     * realized as a policy information point.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultEnvironmentAttributes")
     protected Reference defaultEnvironmentAttributes;
 
-    /**
-     * Reference to a submodel defining the default permissions for the AAS.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultPermissions")
     protected Reference defaultPermissions;
 
-    /**
-     * Reference to a submodel defining the default subjects attributes for the AAS that can be used to
-     * describe access permission rules. The submodel is of kind=Type.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultSubjectAttributes")
     protected Reference defaultSubjectAttributes;
 
-    /**
-     * Reference to a submodel defining which environment attributes can be accessed via the permission
-     * rules.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableEnvironmentAttributes")
     protected Reference selectableEnvironmentAttributes;
 
-    /**
-     * Reference to a submodel defining which permissions can be assigned to the subjects. Default:
-     * reference to the submodel referenced via defaultPermissions
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectablePermissions")
     protected Reference selectablePermissions;
 
-    /**
-     * Reference to a submodel defining the authenticated subjects that are configured for the AAS. They
-     * are selectable by the access permission rules to assign permissions to the subjects. Default:
-     * reference to the submodel referenced via defaultSubjectAttributes.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableSubjectAttributes")
     protected Reference selectableSubjectAttributes;
 
@@ -106,81 +74,73 @@ public class DefaultAccessControl implements AccessControl {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule")
-    final public List<AccessPermissionRule> getAccessPermissionRules() {
+    @Override
+    public List<AccessPermissionRule> getAccessPermissionRules() {
         return accessPermissionRules;
     }
 
-    final public void setAccessPermissionRules(List<AccessPermissionRule> accessPermissionRules) {
+    @Override
+    public void setAccessPermissionRules(List<AccessPermissionRule> accessPermissionRules) {
         this.accessPermissionRules = accessPermissionRules;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableSubjectAttributes")
-    final public Reference getSelectableSubjectAttributes() {
+    @Override
+    public Reference getSelectableSubjectAttributes() {
         return selectableSubjectAttributes;
     }
 
-    final public void setSelectableSubjectAttributes(Reference selectableSubjectAttributes) {
+    @Override
+    public void setSelectableSubjectAttributes(Reference selectableSubjectAttributes) {
         this.selectableSubjectAttributes = selectableSubjectAttributes;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultSubjectAttributes")
-    final public Reference getDefaultSubjectAttributes() {
+    @Override
+    public Reference getDefaultSubjectAttributes() {
         return defaultSubjectAttributes;
     }
 
-    final public void setDefaultSubjectAttributes(Reference defaultSubjectAttributes) {
+    @Override
+    public void setDefaultSubjectAttributes(Reference defaultSubjectAttributes) {
         this.defaultSubjectAttributes = defaultSubjectAttributes;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectablePermissions")
-    final public Reference getSelectablePermissions() {
+    @Override
+    public Reference getSelectablePermissions() {
         return selectablePermissions;
     }
 
-    final public void setSelectablePermissions(Reference selectablePermissions) {
+    @Override
+    public void setSelectablePermissions(Reference selectablePermissions) {
         this.selectablePermissions = selectablePermissions;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultPermissions")
-    final public Reference getDefaultPermissions() {
+    @Override
+    public Reference getDefaultPermissions() {
         return defaultPermissions;
     }
 
-    final public void setDefaultPermissions(Reference defaultPermissions) {
+    @Override
+    public void setDefaultPermissions(Reference defaultPermissions) {
         this.defaultPermissions = defaultPermissions;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableEnvironmentAttributes")
-    final public Reference getSelectableEnvironmentAttributes() {
+    @Override
+    public Reference getSelectableEnvironmentAttributes() {
         return selectableEnvironmentAttributes;
     }
 
-    final public void setSelectableEnvironmentAttributes(Reference selectableEnvironmentAttributes) {
+    @Override
+    public void setSelectableEnvironmentAttributes(Reference selectableEnvironmentAttributes) {
         this.selectableEnvironmentAttributes = selectableEnvironmentAttributes;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/defaultEnvironmentAttributes")
-    final public Reference getDefaultEnvironmentAttributes() {
+    @Override
+    public Reference getDefaultEnvironmentAttributes() {
         return defaultEnvironmentAttributes;
     }
 
-    final public void setDefaultEnvironmentAttributes(Reference defaultEnvironmentAttributes) {
+    @Override
+    public void setDefaultEnvironmentAttributes(Reference defaultEnvironmentAttributes) {
         this.defaultEnvironmentAttributes = defaultEnvironmentAttributes;
-    }
-
-    public static class Builder extends AccessControlBuilder<DefaultAccessControl, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultAccessControl newBuildingInstance() {
-            return new DefaultAccessControl();
-        }
     }
 }

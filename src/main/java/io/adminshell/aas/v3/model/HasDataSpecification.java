@@ -29,24 +29,22 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface HasDataSpecification {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Global reference to the data specification template used by the element.
-     * 
-     * @return Returns the List of References for the property dataSpecifications. More information
-     *         under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
+     *
+     * @return Returns the List of References for the property dataSpecifications.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
     public List<Reference> getDataSpecifications();
 
     /**
      * Global reference to the data specification template used by the element.
-     * 
-     * @param dataSpecifications desired value for the property dataSpecifications. More information
-     *        under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
+     *
+     * @param dataSpecifications desired value for the property dataSpecifications.
      */
     public void setDataSpecifications(List<Reference> dataSpecifications);
 

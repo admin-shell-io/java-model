@@ -24,18 +24,9 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultAdministrativeInformation implements AdministrativeInformation {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * Revision of the element. Constraint AASd-005: A revision requires a version. This means, if there
-     * is no version there is no revision neither.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
     protected List<String> revisions = new ArrayList<>();
 
-    /**
-     * Version of the element.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
     protected List<String> versions = new ArrayList<>();
 
@@ -62,36 +53,23 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
-    final public List<String> getVersions() {
+    @Override
+    public List<String> getVersions() {
         return versions;
     }
 
-    final public void setVersions(List<String> versions) {
+    @Override
+    public void setVersions(List<String> versions) {
         this.versions = versions;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
-    final public List<String> getRevisions() {
+    @Override
+    public List<String> getRevisions() {
         return revisions;
     }
 
-    final public void setRevisions(List<String> revisions) {
+    @Override
+    public void setRevisions(List<String> revisions) {
         this.revisions = revisions;
-    }
-
-    public static class Builder extends AdministrativeInformationBuilder<DefaultAdministrativeInformation, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultAdministrativeInformation newBuildingInstance() {
-            return new DefaultAdministrativeInformation();
-        }
     }
 }

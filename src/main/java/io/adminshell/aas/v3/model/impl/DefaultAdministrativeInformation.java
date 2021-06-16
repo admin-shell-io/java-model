@@ -24,24 +24,12 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultAdministrativeInformation implements AdministrativeInformation {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * Revision of the element. Constraint AASd-005: A revision requires a version. This means, if there
-     * is no version there is no revision neither.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
     protected String revision;
 
-    /**
-     * Version of the element.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
     protected String version;
 
-    /**
-     * Global reference to the data specification template used by the element.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
     protected List<Reference> dataSpecifications = new ArrayList<>();
 
@@ -70,45 +58,33 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
-    final public String getVersion() {
+    @Override
+    public String getVersion() {
         return version;
     }
 
-    final public void setVersion(String version) {
+    @Override
+    public void setVersion(String version) {
         this.version = version;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
-    final public String getRevision() {
+    @Override
+    public String getRevision() {
         return revision;
     }
 
-    final public void setRevision(String revision) {
+    @Override
+    public void setRevision(String revision) {
         this.revision = revision;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
-    final public List<Reference> getDataSpecifications() {
+    @Override
+    public List<Reference> getDataSpecifications() {
         return dataSpecifications;
     }
 
-    final public void setDataSpecifications(List<Reference> dataSpecifications) {
+    @Override
+    public void setDataSpecifications(List<Reference> dataSpecifications) {
         this.dataSpecifications = dataSpecifications;
-    }
-
-    public static class Builder extends AdministrativeInformationBuilder<DefaultAdministrativeInformation, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultAdministrativeInformation newBuildingInstance() {
-            return new DefaultAdministrativeInformation();
-        }
     }
 }

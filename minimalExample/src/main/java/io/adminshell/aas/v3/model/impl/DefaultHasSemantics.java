@@ -23,13 +23,6 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultHasSemantics implements HasSemantics {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * Points to the Expression Semantic of the Submodels The semantic id might refer to an external
-     * information source, which explains the formulation of the submodel (for example an PDF if a
-     * standard).
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
     protected List<Reference> semanticIds = new ArrayList<>();
 
@@ -54,27 +47,13 @@ public class DefaultHasSemantics implements HasSemantics {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    final public List<Reference> getSemanticIds() {
+    @Override
+    public List<Reference> getSemanticIds() {
         return semanticIds;
     }
 
-    final public void setSemanticIds(List<Reference> semanticIds) {
+    @Override
+    public void setSemanticIds(List<Reference> semanticIds) {
         this.semanticIds = semanticIds;
-    }
-
-    public static class Builder extends HasSemanticsBuilder<DefaultHasSemantics, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultHasSemantics newBuildingInstance() {
-            return new DefaultHasSemantics();
-        }
     }
 }

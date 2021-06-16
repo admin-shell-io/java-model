@@ -16,6 +16,4 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface DataTypeIEC61360 {
 
-    // standard methods
-
 }

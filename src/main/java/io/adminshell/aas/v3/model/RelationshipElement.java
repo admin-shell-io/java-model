@@ -18,41 +18,41 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface RelationshipElement extends SubmodelElement {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * First element in the relationship taking the role of the subject.
-     * 
-     * @return Returns the Reference for the property first. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first
+     *
+     * @return Returns the Reference for the property first.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first")
     public Reference getFirst();
 
     /**
      * First element in the relationship taking the role of the subject.
-     * 
-     * @param first desired value for the property first. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/RelationshipElement/first
+     *
+     * @param first desired value for the property first.
      */
     public void setFirst(Reference first);
 
     /**
      * Second element in the relationship taking the role of the object.
-     * 
-     * @return Returns the Reference for the property second. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second
+     *
+     * @return Returns the Reference for the property second.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second")
     public Reference getSecond();
 
     /**
      * Second element in the relationship taking the role of the object.
-     * 
-     * @param second desired value for the property second. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/RelationshipElement/second
+     *
+     * @param second desired value for the property second.
      */
     public void setSecond(Reference second);
 

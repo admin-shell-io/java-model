@@ -23,24 +23,22 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface Submodel {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * A submodel consists of zero or more submodel elements.
-     * 
-     * @return Returns the List of SubmodelElements for the property submodelElements. More information
-     *         under https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement
+     *
+     * @return Returns the List of SubmodelElements for the property submodelElements.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement")
     public List<SubmodelElement> getSubmodelElements();
 
     /**
      * A submodel consists of zero or more submodel elements.
-     * 
-     * @param submodelElements desired value for the property submodelElements. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement
+     *
+     * @param submodelElements desired value for the property submodelElements.
      */
     public void setSubmodelElements(List<SubmodelElement> submodelElements);
 

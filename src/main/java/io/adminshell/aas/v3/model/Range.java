@@ -22,58 +22,60 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface Range extends DataElement {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Data type of the min and max.
-     * 
-     * @return Returns the String for the property valueType. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Range/valueType
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Range/valueType
+     *
+     * @return Returns the String for the property valueType.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Range/valueType")
     public String getValueType();
 
     /**
      * Data type of the min and max.
-     * 
-     * @param valueType desired value for the property valueType. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Range/valueType
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Range/valueType
+     *
+     * @param valueType desired value for the property valueType.
      */
     public void setValueType(String valueType);
 
     /**
      * The maximum value of the range.
-     * 
-     * @return Returns the String for the property max. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Range/max
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Range/max
+     *
+     * @return Returns the String for the property max.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Range/max")
     public String getMax();
 
     /**
      * The maximum value of the range.
-     * 
-     * @param max desired value for the property max. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Range/max
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Range/max
+     *
+     * @param max desired value for the property max.
      */
     public void setMax(String max);
 
     /**
      * The minimum value of the range.
-     * 
-     * @return Returns the String for the property min. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Range/min
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Range/min
+     *
+     * @return Returns the String for the property min.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Range/min")
     public String getMin();
 
     /**
      * The minimum value of the range.
-     * 
-     * @param min desired value for the property min. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Range/min
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Range/min
+     *
+     * @param min desired value for the property min.
      */
     public void setMin(String min);
 

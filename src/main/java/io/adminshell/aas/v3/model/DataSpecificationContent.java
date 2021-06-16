@@ -16,6 +16,4 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface DataSpecificationContent {
 
-    // standard methods
-
 }

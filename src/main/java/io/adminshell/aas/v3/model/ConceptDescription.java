@@ -21,16 +21,13 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface ConceptDescription extends HasDataSpecification, Identifiable {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Reference to an external definition the concept is compatible to or was derived from. Compare to
      * is-case-of relationship in ISO 13584-32 and IEC EN 61360.
-     * 
-     * @return Returns the List of References for the property isCaseOfs. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf
+     *
+     * @return Returns the List of References for the property isCaseOfs.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf")
     public List<Reference> getIsCaseOfs();
@@ -38,28 +35,31 @@ public interface ConceptDescription extends HasDataSpecification, Identifiable {
     /**
      * Reference to an external definition the concept is compatible to or was derived from. Compare to
      * is-case-of relationship in ISO 13584-32 and IEC EN 61360.
-     * 
-     * @param isCaseOfs desired value for the property isCaseOfs. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf
+     *
+     * @param isCaseOfs desired value for the property isCaseOfs.
      */
     public void setIsCaseOfs(List<Reference> isCaseOfs);
 
     /**
      * The embedded data specification template of the description of the concept.
-     * 
-     * @return Returns the List of DataSpecifications for the property embeddedDataSpecifications. More
-     *         information under
-     *         https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification
+     *
+     * @return Returns the List of DataSpecifications for the property embeddedDataSpecifications.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification")
     public List<DataSpecification> getEmbeddedDataSpecifications();
 
     /**
      * The embedded data specification template of the description of the concept.
-     * 
-     * @param embeddedDataSpecifications desired value for the property embeddedDataSpecifications. More
-     *        information under
-     *        https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification
+     *
+     * @param embeddedDataSpecifications desired value for the property embeddedDataSpecifications.
      */
     public void setEmbeddedDataSpecifications(List<DataSpecification> embeddedDataSpecifications);
 

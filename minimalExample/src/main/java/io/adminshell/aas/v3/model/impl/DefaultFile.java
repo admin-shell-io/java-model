@@ -19,17 +19,9 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultFile implements File {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * Mime type of the content of the File.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/File/mimeType")
     protected List<String> mimeTypes = new ArrayList<>();
 
-    /**
-     * Path and name of the referenced file (with file extension). The path can be absolute or relative.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/File/value")
     protected List<String> values = new ArrayList<>();
 
@@ -56,36 +48,24 @@ public class DefaultFile implements File {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/File/mimeType")
-    final public List<String> getMimeTypes() {
+    @Override
+    public List<String> getMimeTypes() {
         return mimeTypes;
     }
 
-    final public void setMimeTypes(List<String> mimeTypes) {
+    @Override
+    public void setMimeTypes(List<String> mimeTypes) {
         this.mimeTypes = mimeTypes;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/File/value")
-    final public List<String> getValues() {
+    @Override
+    public List<String> getValues() {
         return values;
     }
 
-    final public void setValues(List<String> values) {
+    @Override
+    public void setValues(List<String> values) {
         this.values = values;
     }
 
-    public static class Builder extends FileBuilder<DefaultFile, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultFile newBuildingInstance() {
-            return new DefaultFile();
-        }
-    }
 }

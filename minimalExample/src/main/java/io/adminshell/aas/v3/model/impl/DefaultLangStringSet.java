@@ -20,11 +20,6 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultLangStringSet implements LangStringSet {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * A string in a specified language.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/LangStringSet/langString")
     protected List<LangString> langStrings = new ArrayList<>();
 
@@ -49,27 +44,13 @@ public class DefaultLangStringSet implements LangStringSet {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/LangStringSet/langString")
-    final public List<LangString> getLangStrings() {
+    @Override
+    public List<LangString> getLangStrings() {
         return langStrings;
     }
 
-    final public void setLangStrings(List<LangString> langStrings) {
+    @Override
+    public void setLangStrings(List<LangString> langStrings) {
         this.langStrings = langStrings;
-    }
-
-    public static class Builder extends LangStringSetBuilder<DefaultLangStringSet, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultLangStringSet newBuildingInstance() {
-            return new DefaultLangStringSet();
-        }
     }
 }

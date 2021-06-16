@@ -24,17 +24,15 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface SubmodelElementCollection extends SubmodelElement {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * If allowDuplicates=true then it is allowed that the collection contains the same element several
      * times. Default = false Constraint AASd-026: If allowDuplicates==false then it is not allowed that
      * the collection contains several elements with the same semantics (i.e. the same semanticId).
-     * 
-     * @return Returns the List of Booleans for the property allowDuplicates. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates
+     *
+     * @return Returns the List of Booleans for the property allowDuplicates.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates")
     public List<Boolean> getAllowDuplicates();
@@ -43,18 +41,21 @@ public interface SubmodelElementCollection extends SubmodelElement {
      * If allowDuplicates=true then it is allowed that the collection contains the same element several
      * times. Default = false Constraint AASd-026: If allowDuplicates==false then it is not allowed that
      * the collection contains several elements with the same semantics (i.e. the same semanticId).
-     * 
-     * @param allowDuplicates desired value for the property allowDuplicates. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates
+     *
+     * @param allowDuplicates desired value for the property allowDuplicates.
      */
     public void setAllowDuplicates(List<Boolean> allowDuplicates);
 
     /**
      * If ordered=false then the elements in the property collection are not ordered. If ordered=true
      * then the elements in the collection are ordered. Default = false
-     * 
-     * @return Returns the List of Booleans for the property ordereds. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered
+     *
+     * @return Returns the List of Booleans for the property ordereds.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered")
     public List<Boolean> getOrdereds();
@@ -62,26 +63,29 @@ public interface SubmodelElementCollection extends SubmodelElement {
     /**
      * If ordered=false then the elements in the property collection are not ordered. If ordered=true
      * then the elements in the collection are ordered. Default = false
-     * 
-     * @param ordereds desired value for the property ordereds. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered
+     *
+     * @param ordereds desired value for the property ordereds.
      */
     public void setOrdereds(List<Boolean> ordereds);
 
     /**
      * Submodel element contained in the collection.
-     * 
-     * @return Returns the Collection of SubmodelElements for the property values. More information
-     *         under https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value
+     *
+     * @return Returns the Collection of SubmodelElements for the property values.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value")
     public Collection<SubmodelElement> getValues();
 
     /**
      * Submodel element contained in the collection.
-     * 
-     * @param values desired value for the property values. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value
+     *
+     * @param values desired value for the property values.
      */
     public void setValues(Collection<SubmodelElement> values);
 

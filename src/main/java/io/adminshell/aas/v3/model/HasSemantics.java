@@ -25,17 +25,14 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface HasSemantics {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Points to the Expression Semantic of the Submodels The semantic id might refer to an external
      * information source, which explains the formulation of the submodel (for example an PDF if a
      * standard).
-     * 
-     * @return Returns the Reference for the property semanticId. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
+     *
+     * @return Returns the Reference for the property semanticId.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
     public Reference getSemanticId();
@@ -44,9 +41,10 @@ public interface HasSemantics {
      * Points to the Expression Semantic of the Submodels The semantic id might refer to an external
      * information source, which explains the formulation of the submodel (for example an PDF if a
      * standard).
-     * 
-     * @param semanticId desired value for the property semanticId. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId
+     *
+     * @param semanticId desired value for the property semanticId.
      */
     public void setSemanticId(Reference semanticId);
 

@@ -22,8 +22,6 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultSubmodelElement implements SubmodelElement {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
     public DefaultSubmodelElement() {}
 
     @Override
@@ -43,16 +41,4 @@ public class DefaultSubmodelElement implements SubmodelElement {
         return true;
     }
 
-    public static class Builder extends SubmodelElementBuilder<DefaultSubmodelElement, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultSubmodelElement newBuildingInstance() {
-            return new DefaultSubmodelElement();
-        }
-    }
 }

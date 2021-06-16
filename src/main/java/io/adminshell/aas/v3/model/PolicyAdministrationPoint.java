@@ -16,17 +16,15 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface PolicyAdministrationPoint {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * The policy administration point of access control as realized by the AAS itself. Constraint
      * AASd-009: Either there is an external policy administration point endpoint defined or the AAS has
      * its own access control.
-     * 
-     * @return Returns the AccessControl for the property localAccessControl. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl
+     *
+     * @return Returns the AccessControl for the property localAccessControl.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl")
     public AccessControl getLocalAccessControl();
@@ -35,18 +33,22 @@ public interface PolicyAdministrationPoint {
      * The policy administration point of access control as realized by the AAS itself. Constraint
      * AASd-009: Either there is an external policy administration point endpoint defined or the AAS has
      * its own access control.
-     * 
-     * @param localAccessControl desired value for the property localAccessControl. More information
-     *        under https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl
+     *
+     * @param localAccessControl desired value for the property localAccessControl.
      */
     public void setLocalAccessControl(AccessControl localAccessControl);
 
     /**
      * Endpoint to an external access control defining a policy administration point to be used by the
      * AAS.
-     * 
-     * @return Returns the boolean for the property externalAccessControl. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl
+     *
+     * @return Returns the boolean for the property externalAccessControl.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl")
     public boolean getExternalAccessControl();
@@ -54,10 +56,11 @@ public interface PolicyAdministrationPoint {
     /**
      * Endpoint to an external access control defining a policy administration point to be used by the
      * AAS.
-     * 
-     * @param externalAccessControl desired value for the property externalAccessControl. More
-     *        information under
-     *        https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl
+     *
+     * @param externalAccessControl desired value for the property externalAccessControl.
      */
     public void setExternalAccessControl(boolean externalAccessControl);
 

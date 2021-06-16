@@ -17,41 +17,41 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface ValueReferencePair {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * the value of the referenced concept definition of the value in valueId.
-     * 
-     * @return Returns the String for the property value. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value
+     *
+     * @return Returns the String for the property value.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value")
     public String getValue();
 
     /**
      * the value of the referenced concept definition of the value in valueId.
-     * 
-     * @param value desired value for the property value. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value
+     *
+     * @param value desired value for the property value.
      */
     public void setValue(String value);
 
     /**
      * Global unique id of the value.
-     * 
-     * @return Returns the Reference for the property valueId. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/valueId
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/valueId
+     *
+     * @return Returns the Reference for the property valueId.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/valueId")
     public Reference getValueId();
 
     /**
      * Global unique id of the value.
-     * 
-     * @param valueId desired value for the property valueId. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/valueId
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/valueId
+     *
+     * @param valueId desired value for the property valueId.
      */
     public void setValueId(Reference valueId);
 

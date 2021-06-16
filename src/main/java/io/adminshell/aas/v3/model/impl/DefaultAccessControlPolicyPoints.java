@@ -17,29 +17,15 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoints {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * The access control administration policy point of the AAS.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint")
     protected PolicyAdministrationPoint policyAdministrationPoint;
 
-    /**
-     * The access control policy decision point of the AAS.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint")
     protected PolicyDecisionPoint policyDecisionPoint;
 
-    /**
-     * The access control policy enforcement point of the AAS.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint")
     protected PolicyEnforcementPoints policyEnforcementPoint;
 
-    /**
-     * The access control policy information points of the AAS.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints")
     protected PolicyInformationPoints policyInformationPoints;
 
@@ -70,54 +56,43 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint")
-    final public PolicyAdministrationPoint getPolicyAdministrationPoint() {
+    @Override
+    public PolicyAdministrationPoint getPolicyAdministrationPoint() {
         return policyAdministrationPoint;
     }
 
-    final public void setPolicyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint) {
+    @Override
+    public void setPolicyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint) {
         this.policyAdministrationPoint = policyAdministrationPoint;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint")
-    final public PolicyDecisionPoint getPolicyDecisionPoint() {
+    @Override
+    public PolicyDecisionPoint getPolicyDecisionPoint() {
         return policyDecisionPoint;
     }
 
-    final public void setPolicyDecisionPoint(PolicyDecisionPoint policyDecisionPoint) {
+    @Override
+    public void setPolicyDecisionPoint(PolicyDecisionPoint policyDecisionPoint) {
         this.policyDecisionPoint = policyDecisionPoint;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint")
-    final public PolicyEnforcementPoints getPolicyEnforcementPoint() {
+    @Override
+    public PolicyEnforcementPoints getPolicyEnforcementPoint() {
         return policyEnforcementPoint;
     }
 
-    final public void setPolicyEnforcementPoint(PolicyEnforcementPoints policyEnforcementPoint) {
+    @Override
+    public void setPolicyEnforcementPoint(PolicyEnforcementPoints policyEnforcementPoint) {
         this.policyEnforcementPoint = policyEnforcementPoint;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints")
-    final public PolicyInformationPoints getPolicyInformationPoints() {
+    @Override
+    public PolicyInformationPoints getPolicyInformationPoints() {
         return policyInformationPoints;
     }
 
-    final public void setPolicyInformationPoints(PolicyInformationPoints policyInformationPoints) {
+    @Override
+    public void setPolicyInformationPoints(PolicyInformationPoints policyInformationPoints) {
         this.policyInformationPoints = policyInformationPoints;
-    }
-
-    public static class Builder extends AccessControlPolicyPointsBuilder<DefaultAccessControlPolicyPoints, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultAccessControlPolicyPoints newBuildingInstance() {
-            return new DefaultAccessControlPolicyPoints();
-        }
     }
 }

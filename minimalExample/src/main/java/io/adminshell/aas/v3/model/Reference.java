@@ -19,24 +19,22 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface Reference {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Unique reference in its name space.
-     * 
-     * @return Returns the List of Keys for the property keys. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Reference/key
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Reference/key
+     *
+     * @return Returns the List of Keys for the property keys.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Reference/key")
     public List<Key> getKeys();
 
     /**
      * Unique reference in its name space.
-     * 
-     * @param keys desired value for the property keys. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Reference/key
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Reference/key
+     *
+     * @param keys desired value for the property keys.
      */
     public void setKeys(List<Key> keys);
 

@@ -17,17 +17,14 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface SubjectAttributes {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * A data element that further classifies a specific subject. Constraint AASs-015: The data element
      * SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the
      * 'selectableSubjectAttributes' attribute of 'AccessControl'.
-     * 
-     * @return Returns the List of DataElements for the property subjectAttributes. More information
-     *         under https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute
+     *
+     * @return Returns the List of DataElements for the property subjectAttributes.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute")
     public List<DataElement> getSubjectAttributes();
@@ -36,9 +33,10 @@ public interface SubjectAttributes {
      * A data element that further classifies a specific subject. Constraint AASs-015: The data element
      * SubjectAttributes/subjectAttribute shall be part of the submodel that is referenced within the
      * 'selectableSubjectAttributes' attribute of 'AccessControl'.
-     * 
-     * @param subjectAttributes desired value for the property subjectAttributes. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute
+     *
+     * @param subjectAttributes desired value for the property subjectAttributes.
      */
     public void setSubjectAttributes(List<DataElement> subjectAttributes);
 

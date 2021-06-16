@@ -17,164 +17,231 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface DataSpecificationPhysicalUnit extends DataSpecificationContent {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
-     * @return Returns the String for the property conversionFactor. More information under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/conversionFactor
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/conversionFactor
+     *
+     * @return Returns the String for the property conversionFactor.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/conversionFactor")
     public String getConversionFactor();
 
     /**
-     * @param conversionFactor desired value for the property conversionFactor. More information under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/conversionFactor
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/conversionFactor
+     *
+     * @param conversionFactor desired value for the property conversionFactor.
      */
     public void setConversionFactor(String conversionFactor);
 
     /**
-     * @return Returns the List of LangStrings for the property definitions. More information under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/definition
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/definition
+     *
+     * @return Returns the List of LangStrings for the property definitions.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/definition")
     public List<LangString> getDefinitions();
 
     /**
-     * @param definitions desired value for the property definitions. More information under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/definition
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/definition
+     *
+     * @param definitions desired value for the property definitions.
      */
     public void setDefinitions(List<LangString> definitions);
 
     /**
-     * @return Returns the String for the property dinNotation. More information under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/dinNotation
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/dinNotation
+     *
+     * @return Returns the String for the property dinNotation.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/dinNotation")
     public String getDinNotation();
 
     /**
-     * @param dinNotation desired value for the property dinNotation. More information under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/dinNotation
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/dinNotation
+     *
+     * @param dinNotation desired value for the property dinNotation.
      */
     public void setDinNotation(String dinNotation);
 
     /**
-     * @return Returns the String for the property eceCode. More information under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/eceCode
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/eceCode
+     *
+     * @return Returns the String for the property eceCode.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/eceCode")
     public String getEceCode();
 
     /**
-     * @param eceCode desired value for the property eceCode. More information under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/eceCode
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/eceCode
+     *
+     * @param eceCode desired value for the property eceCode.
      */
     public void setEceCode(String eceCode);
 
     /**
-     * @return Returns the String for the property eceName. More information under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/eceName
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/eceName
+     *
+     * @return Returns the String for the property eceName.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/eceName")
     public String getEceName();
 
     /**
-     * @param eceName desired value for the property eceName. More information under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/eceName
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/eceName
+     *
+     * @param eceName desired value for the property eceName.
      */
     public void setEceName(String eceName);
 
     /**
-     * @return Returns the String for the property nistName. More information under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/nistName
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/nistName
+     *
+     * @return Returns the String for the property nistName.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/nistName")
     public String getNistName();
 
     /**
-     * @param nistName desired value for the property nistName. More information under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/nistName
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/nistName
+     *
+     * @param nistName desired value for the property nistName.
      */
     public void setNistName(String nistName);
 
     /**
-     * @return Returns the String for the property siName. More information under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/siName
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/siName
+     *
+     * @return Returns the String for the property siName.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/siName")
     public String getSiName();
 
     /**
-     * @param siName desired value for the property siName. More information under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/siName
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/siName
+     *
+     * @param siName desired value for the property siName.
      */
     public void setSiName(String siName);
 
     /**
-     * @return Returns the String for the property siNotation. More information under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/siNotation
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/siNotation
+     *
+     * @return Returns the String for the property siNotation.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/siNotation")
     public String getSiNotation();
 
     /**
-     * @param siNotation desired value for the property siNotation. More information under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/siNotation
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/siNotation
+     *
+     * @param siNotation desired value for the property siNotation.
      */
     public void setSiNotation(String siNotation);
 
     /**
-     * @return Returns the String for the property registrationAuthorityId. More information under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/registrationAuthorityId
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/registrationAuthorityId
+     *
+     * @return Returns the String for the property registrationAuthorityId.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/registrationAuthorityId")
     public String getRegistrationAuthorityId();
 
     /**
-     * @param registrationAuthorityId desired value for the property registrationAuthorityId. More
-     *        information under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/registrationAuthorityId
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/registrationAuthorityId
+     *
+     * @param registrationAuthorityId desired value for the property registrationAuthorityId.
      */
     public void setRegistrationAuthorityId(String registrationAuthorityId);
 
     /**
-     * @return Returns the String for the property supplier. More information under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/supplier
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/supplier
+     *
+     * @return Returns the String for the property supplier.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/supplier")
     public String getSupplier();
 
     /**
-     * @param supplier desired value for the property supplier. More information under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/supplier
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/supplier
+     *
+     * @param supplier desired value for the property supplier.
      */
     public void setSupplier(String supplier);
 
     /**
-     * @return Returns the String for the property unitName. More information under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/unitName
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/unitName
+     *
+     * @return Returns the String for the property unitName.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/unitName")
     public String getUnitName();
 
     /**
-     * @param unitName desired value for the property unitName. More information under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/unitName
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/unitName
+     *
+     * @param unitName desired value for the property unitName.
      */
     public void setUnitName(String unitName);
 
     /**
-     * @return Returns the String for the property unitSymbol. More information under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/unitSymbol
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/unitSymbol
+     *
+     * @return Returns the String for the property unitSymbol.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/unitSymbol")
     public String getUnitSymbol();
 
     /**
-     * @param unitSymbol desired value for the property unitSymbol. More information under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/unitSymbol
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/unitSymbol
+     *
+     * @param unitSymbol desired value for the property unitSymbol.
      */
     public void setUnitSymbol(String unitSymbol);
 

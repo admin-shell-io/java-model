@@ -26,85 +26,36 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultSubmodelElementCollection implements SubmodelElementCollection {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * Global reference to the data specification template used by the element.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
     protected List<Reference> dataSpecifications = new ArrayList<>();
 
-    /**
-     * ModelingKind of the element: either type or instance.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
     protected ModelingKind kind;
 
-    /**
-     * Points to the Expression Semantic of the Submodels The semantic id might refer to an external
-     * information source, which explains the formulation of the submodel (for example an PDF if a
-     * standard).
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
     protected Reference semanticId;
 
-    /**
-     * Additional qualification of a qualifiable element.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
     protected List<Constraint> qualifiers = new ArrayList<>();
 
-    /**
-     * The category is a value that gives further meta information w.r.t. to the class of the element.
-     * It affects the expected existence of attributes and the applicability of constraints.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
     protected String category;
 
-    /**
-     * Description or comments on the element. The description can be provided in several languages.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
     protected List<LangString> descriptions = new ArrayList<>();
 
-    /**
-     * Display name. Can be provided in several languages.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
     protected List<LangString> displayNames = new ArrayList<>();
 
-    /**
-     * Identifying string of the element within its name space. Constraint AASd-002: idShort shall only
-     * feature letters, digits, underscore ('_'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+.
-     * Constraint AASd-003: idShort shall be matched case-insensitive. Constraint AASd-022: idShort of
-     * non-identifiable referables shall be unqiue in its namespace. Note: In case the element is a
-     * property and the property has a semantic definition (HasSemantics) the idShort is typically
-     * identical to the short name in English. Note: In case of an identifiable element idShort is
-     * optional but recommended to be defined. It can be used for unique reference in its name space and
-     * thus allows better usability and a more performant implementation. In this case it is similar to
-     * the 'BrowserPath' in OPC UA.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
     protected String idShort;
 
-    /**
-     * If allowDuplicates=true then it is allowed that the collection contains the same element several
-     * times. Default = false Constraint AASd-026: If allowDuplicates==false then it is not allowed that
-     * the collection contains several elements with the same semantics (i.e. the same semanticId).
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates")
     protected boolean allowDuplicates;
 
-    /**
-     * If ordered=false then the elements in the property collection are not ordered. If ordered=true
-     * then the elements in the collection are ordered. Default = false
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered")
     protected boolean ordered;
 
-    /**
-     * Submodel element contained in the collection.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value")
     protected Collection<SubmodelElement> values = new ArrayList<>();
 
@@ -149,117 +100,113 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates")
-    final public boolean getAllowDuplicates() {
+    @Override
+    public boolean getAllowDuplicates() {
         return allowDuplicates;
     }
 
-    final public void setAllowDuplicates(boolean allowDuplicates) {
+    @Override
+    public void setAllowDuplicates(boolean allowDuplicates) {
         this.allowDuplicates = allowDuplicates;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered")
-    final public boolean getOrdered() {
+    @Override
+    public boolean getOrdered() {
         return ordered;
     }
 
-    final public void setOrdered(boolean ordered) {
+    @Override
+    public void setOrdered(boolean ordered) {
         this.ordered = ordered;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value")
-    final public Collection<SubmodelElement> getValues() {
+    @Override
+    public Collection<SubmodelElement> getValues() {
         return values;
     }
 
-    final public void setValues(Collection<SubmodelElement> values) {
+    @Override
+    public void setValues(Collection<SubmodelElement> values) {
         this.values = values;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    final public String getCategory() {
+    @Override
+    public String getCategory() {
         return category;
     }
 
-    final public void setCategory(String category) {
+    @Override
+    public void setCategory(String category) {
         this.category = category;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-    final public List<LangString> getDescriptions() {
+    @Override
+    public List<LangString> getDescriptions() {
         return descriptions;
     }
 
-    final public void setDescriptions(List<LangString> descriptions) {
+    @Override
+    public void setDescriptions(List<LangString> descriptions) {
         this.descriptions = descriptions;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-    final public List<LangString> getDisplayNames() {
+    @Override
+    public List<LangString> getDisplayNames() {
         return displayNames;
     }
 
-    final public void setDisplayNames(List<LangString> displayNames) {
+    @Override
+    public void setDisplayNames(List<LangString> displayNames) {
         this.displayNames = displayNames;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    final public String getIdShort() {
+    @Override
+    public String getIdShort() {
         return idShort;
     }
 
-    final public void setIdShort(String idShort) {
+    @Override
+    public void setIdShort(String idShort) {
         this.idShort = idShort;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
-    final public List<Constraint> getQualifiers() {
+    @Override
+    public List<Constraint> getQualifiers() {
         return qualifiers;
     }
 
-    final public void setQualifiers(List<Constraint> qualifiers) {
+    @Override
+    public void setQualifiers(List<Constraint> qualifiers) {
         this.qualifiers = qualifiers;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
-    final public List<Reference> getDataSpecifications() {
+    @Override
+    public List<Reference> getDataSpecifications() {
         return dataSpecifications;
     }
 
-    final public void setDataSpecifications(List<Reference> dataSpecifications) {
+    @Override
+    public void setDataSpecifications(List<Reference> dataSpecifications) {
         this.dataSpecifications = dataSpecifications;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
-    final public ModelingKind getKind() {
+    @Override
+    public ModelingKind getKind() {
         return kind;
     }
 
-    final public void setKind(ModelingKind kind) {
+    @Override
+    public void setKind(ModelingKind kind) {
         this.kind = kind;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    final public Reference getSemanticId() {
+    @Override
+    public Reference getSemanticId() {
         return semanticId;
     }
 
-    final public void setSemanticId(Reference semanticId) {
+    @Override
+    public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
-    }
-
-    public static class Builder extends SubmodelElementCollectionBuilder<DefaultSubmodelElementCollection, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultSubmodelElementCollection newBuildingInstance() {
-            return new DefaultSubmodelElementCollection();
-        }
     }
 }

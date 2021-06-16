@@ -28,25 +28,12 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultProperty implements Property {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * The value of the property instance.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/value")
     protected List<String> values = new ArrayList<>();
 
-    /**
-     * Reference to the global unique id of a coded value. Constraint AASd-007: if both, the value and
-     * the valueId are present then the value needs to be identical to the value of the referenced coded
-     * value in valueId.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueId")
     protected List<Reference> valueIds = new ArrayList<>();
 
-    /**
-     * Data type pf the value.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueType")
     protected List<String> valueTypes = new ArrayList<>();
 
@@ -75,45 +62,33 @@ public class DefaultProperty implements Property {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueType")
-    final public List<String> getValueTypes() {
+    @Override
+    public List<String> getValueTypes() {
         return valueTypes;
     }
 
-    final public void setValueTypes(List<String> valueTypes) {
+    @Override
+    public void setValueTypes(List<String> valueTypes) {
         this.valueTypes = valueTypes;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Property/value")
-    final public List<String> getValues() {
+    @Override
+    public List<String> getValues() {
         return values;
     }
 
-    final public void setValues(List<String> values) {
+    @Override
+    public void setValues(List<String> values) {
         this.values = values;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueId")
-    final public List<Reference> getValueIds() {
+    @Override
+    public List<Reference> getValueIds() {
         return valueIds;
     }
 
-    final public void setValueIds(List<Reference> valueIds) {
+    @Override
+    public void setValueIds(List<Reference> valueIds) {
         this.valueIds = valueIds;
-    }
-
-    public static class Builder extends PropertyBuilder<DefaultProperty, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultProperty newBuildingInstance() {
-            return new DefaultProperty();
-        }
     }
 }

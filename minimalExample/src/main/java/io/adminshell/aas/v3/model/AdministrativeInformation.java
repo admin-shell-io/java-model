@@ -22,33 +22,32 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface AdministrativeInformation {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Version of the element.
-     * 
-     * @return Returns the List of Strings for the property versions. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version
+     *
+     * @return Returns the List of Strings for the property versions.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
     public List<String> getVersions();
 
     /**
      * Version of the element.
-     * 
-     * @param versions desired value for the property versions. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version
+     *
+     * @param versions desired value for the property versions.
      */
     public void setVersions(List<String> versions);
 
     /**
      * Revision of the element. Constraint AASd-005: A revision requires a version. This means, if there
      * is no version there is no revision neither.
-     * 
-     * @return Returns the List of Strings for the property revisions. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision
+     *
+     * @return Returns the List of Strings for the property revisions.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
     public List<String> getRevisions();
@@ -56,9 +55,10 @@ public interface AdministrativeInformation {
     /**
      * Revision of the element. Constraint AASd-005: A revision requires a version. This means, if there
      * is no version there is no revision neither.
-     * 
-     * @param revisions desired value for the property revisions. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision
+     *
+     * @param revisions desired value for the property revisions.
      */
     public void setRevisions(List<String> revisions);
 

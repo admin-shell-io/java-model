@@ -19,58 +19,60 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface Operation extends SubmodelElement {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Input parameter of the operation.
-     * 
-     * @return Returns the List of OperationVariables for the property inputVariables. More information
-     *         under https://admin-shell.io/aas/3/0/RC01/Operation/inputVariable
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Operation/inputVariable
+     *
+     * @return Returns the List of OperationVariables for the property inputVariables.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Operation/inputVariable")
     public List<OperationVariable> getInputVariables();
 
     /**
      * Input parameter of the operation.
-     * 
-     * @param inputVariables desired value for the property inputVariables. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Operation/inputVariable
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Operation/inputVariable
+     *
+     * @param inputVariables desired value for the property inputVariables.
      */
     public void setInputVariables(List<OperationVariable> inputVariables);
 
     /**
      * Parameter that is input and output of the operation.
-     * 
-     * @return Returns the List of OperationVariables for the property inoutputVariables. More
-     *         information under https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable
+     *
+     * @return Returns the List of OperationVariables for the property inoutputVariables.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable")
     public List<OperationVariable> getInoutputVariables();
 
     /**
      * Parameter that is input and output of the operation.
-     * 
-     * @param inoutputVariables desired value for the property inoutputVariables. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable
+     *
+     * @param inoutputVariables desired value for the property inoutputVariables.
      */
     public void setInoutputVariables(List<OperationVariable> inoutputVariables);
 
     /**
      * Output parameter of the operation.
-     * 
-     * @return Returns the List of OperationVariables for the property outputVariables. More information
-     *         under https://admin-shell.io/aas/3/0/RC01/Operation/outputVariable
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Operation/outputVariable
+     *
+     * @return Returns the List of OperationVariables for the property outputVariables.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Operation/outputVariable")
     public List<OperationVariable> getOutputVariables();
 
     /**
      * Output parameter of the operation.
-     * 
-     * @param outputVariables desired value for the property outputVariables. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Operation/outputVariable
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Operation/outputVariable
+     *
+     * @param outputVariables desired value for the property outputVariables.
      */
     public void setOutputVariables(List<OperationVariable> outputVariables);
 

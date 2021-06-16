@@ -18,12 +18,6 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultOperationVariable implements OperationVariable {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * Describes the needed argument for an operation via a submodel element of kind=Template. The
-     * submodel element value of an operation variable shall be of kind=Template.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/OperationVariable/value")
     protected SubmodelElement value;
 
@@ -48,27 +42,13 @@ public class DefaultOperationVariable implements OperationVariable {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/OperationVariable/value")
-    final public SubmodelElement getValue() {
+    @Override
+    public SubmodelElement getValue() {
         return value;
     }
 
-    final public void setValue(SubmodelElement value) {
+    @Override
+    public void setValue(SubmodelElement value) {
         this.value = value;
-    }
-
-    public static class Builder extends OperationVariableBuilder<DefaultOperationVariable, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultOperationVariable newBuildingInstance() {
-            return new DefaultOperationVariable();
-        }
     }
 }

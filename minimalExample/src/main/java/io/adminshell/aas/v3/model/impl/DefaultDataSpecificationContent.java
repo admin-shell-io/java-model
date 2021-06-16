@@ -18,8 +18,6 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultDataSpecificationContent implements DataSpecificationContent {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
     public DefaultDataSpecificationContent() {}
 
     @Override
@@ -39,16 +37,4 @@ public class DefaultDataSpecificationContent implements DataSpecificationContent
         return true;
     }
 
-    public static class Builder extends DataSpecificationContentBuilder<DefaultDataSpecificationContent, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultDataSpecificationContent newBuildingInstance() {
-            return new DefaultDataSpecificationContent();
-        }
-    }
 }

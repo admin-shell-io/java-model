@@ -20,11 +20,6 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultObjectAttributes implements ObjectAttributes {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * A data elements that further classifies an object.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
     protected List<Reference> objectAttributes = new ArrayList<>();
 
@@ -49,27 +44,13 @@ public class DefaultObjectAttributes implements ObjectAttributes {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
-    final public List<Reference> getObjectAttributes() {
+    @Override
+    public List<Reference> getObjectAttributes() {
         return objectAttributes;
     }
 
-    final public void setObjectAttributes(List<Reference> objectAttributes) {
+    @Override
+    public void setObjectAttributes(List<Reference> objectAttributes) {
         this.objectAttributes = objectAttributes;
-    }
-
-    public static class Builder extends ObjectAttributesBuilder<DefaultObjectAttributes, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultObjectAttributes newBuildingInstance() {
-            return new DefaultObjectAttributes();
-        }
     }
 }

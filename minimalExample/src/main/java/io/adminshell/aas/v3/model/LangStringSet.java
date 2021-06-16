@@ -18,24 +18,22 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface LangStringSet {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * A string in a specified language.
-     * 
-     * @return Returns the List of LangStrings for the property langStrings. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/LangStringSet/langString
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/LangStringSet/langString
+     *
+     * @return Returns the List of LangStrings for the property langStrings.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/LangStringSet/langString")
     public List<LangString> getLangStrings();
 
     /**
      * A string in a specified language.
-     * 
-     * @param langStrings desired value for the property langStrings. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/LangStringSet/langString
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/LangStringSet/langString
+     *
+     * @param langStrings desired value for the property langStrings.
      */
     public void setLangStrings(List<LangString> langStrings);
 

@@ -17,6 +17,4 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface KeyElements {
 
-    // standard methods
-
 }

@@ -19,23 +19,12 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultSecurity implements Security {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * Access control policy points of the AAS.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
     protected AccessControlPolicyPoints accessControlPolicyPoints;
 
-    /**
-     * Certificates of the AAS.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/certificate")
     protected List<Certificate> certificates = new ArrayList<>();
 
-    /**
-     * Certificate extensions as required by the AAS.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension")
     protected List<Reference> requiredCertificateExtensions = new ArrayList<>();
 
@@ -64,45 +53,33 @@ public class DefaultSecurity implements Security {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
-    final public AccessControlPolicyPoints getAccessControlPolicyPoints() {
+    @Override
+    public AccessControlPolicyPoints getAccessControlPolicyPoints() {
         return accessControlPolicyPoints;
     }
 
-    final public void setAccessControlPolicyPoints(AccessControlPolicyPoints accessControlPolicyPoints) {
+    @Override
+    public void setAccessControlPolicyPoints(AccessControlPolicyPoints accessControlPolicyPoints) {
         this.accessControlPolicyPoints = accessControlPolicyPoints;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Security/certificate")
-    final public List<Certificate> getCertificates() {
+    @Override
+    public List<Certificate> getCertificates() {
         return certificates;
     }
 
-    final public void setCertificates(List<Certificate> certificates) {
+    @Override
+    public void setCertificates(List<Certificate> certificates) {
         this.certificates = certificates;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension")
-    final public List<Reference> getRequiredCertificateExtensions() {
+    @Override
+    public List<Reference> getRequiredCertificateExtensions() {
         return requiredCertificateExtensions;
     }
 
-    final public void setRequiredCertificateExtensions(List<Reference> requiredCertificateExtensions) {
+    @Override
+    public void setRequiredCertificateExtensions(List<Reference> requiredCertificateExtensions) {
         this.requiredCertificateExtensions = requiredCertificateExtensions;
-    }
-
-    public static class Builder extends SecurityBuilder<DefaultSecurity, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultSecurity newBuildingInstance() {
-            return new DefaultSecurity();
-        }
     }
 }

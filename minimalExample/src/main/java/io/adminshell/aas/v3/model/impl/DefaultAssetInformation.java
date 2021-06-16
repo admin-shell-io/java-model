@@ -23,35 +23,15 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultAssetInformation implements AssetInformation {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * Denotes whether the Asset of kind 'Type' or 'Instance'.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
     protected List<AssetKind> assetKinds = new ArrayList<>();
 
-    /**
-     * Thumbnail of the asset represented by the asset administration shell.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail")
     protected List<File> defaultThumbnails = new ArrayList<>();
 
-    /**
-     * Reference to either an Asset object or a global reference to the asset the AAS is representing.
-     * This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the
-     * asset. In a first phase of the life cycle the asset might not yet have a global id but already an
-     * internal identifier. The internal identifier would be modelled via 'externalAssetId'. Constraint
-     * AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global
-     * reference.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId")
     protected List<Reference> globalAssetIds = new ArrayList<>();
 
-    /**
-     * Additional domain-specific, typically proprietary Identifier for the asset like e.g. serial
-     * number etc.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId")
     protected List<IdentifierKeyValuePair> specificAssetIds = new ArrayList<>();
 
@@ -82,54 +62,43 @@ public class DefaultAssetInformation implements AssetInformation {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
-    final public List<AssetKind> getAssetKinds() {
+    @Override
+    public List<AssetKind> getAssetKinds() {
         return assetKinds;
     }
 
-    final public void setAssetKinds(List<AssetKind> assetKinds) {
+    @Override
+    public void setAssetKinds(List<AssetKind> assetKinds) {
         this.assetKinds = assetKinds;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId")
-    final public List<Reference> getGlobalAssetIds() {
+    @Override
+    public List<Reference> getGlobalAssetIds() {
         return globalAssetIds;
     }
 
-    final public void setGlobalAssetIds(List<Reference> globalAssetIds) {
+    @Override
+    public void setGlobalAssetIds(List<Reference> globalAssetIds) {
         this.globalAssetIds = globalAssetIds;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId")
-    final public List<IdentifierKeyValuePair> getSpecificAssetIds() {
+    @Override
+    public List<IdentifierKeyValuePair> getSpecificAssetIds() {
         return specificAssetIds;
     }
 
-    final public void setSpecificAssetIds(List<IdentifierKeyValuePair> specificAssetIds) {
+    @Override
+    public void setSpecificAssetIds(List<IdentifierKeyValuePair> specificAssetIds) {
         this.specificAssetIds = specificAssetIds;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail")
-    final public List<File> getDefaultThumbnails() {
+    @Override
+    public List<File> getDefaultThumbnails() {
         return defaultThumbnails;
     }
 
-    final public void setDefaultThumbnails(List<File> defaultThumbnails) {
+    @Override
+    public void setDefaultThumbnails(List<File> defaultThumbnails) {
         this.defaultThumbnails = defaultThumbnails;
-    }
-
-    public static class Builder extends AssetInformationBuilder<DefaultAssetInformation, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultAssetInformation newBuildingInstance() {
-            return new DefaultAssetInformation();
-        }
     }
 }

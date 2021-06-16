@@ -26,26 +26,12 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultSubmodelElementCollection implements SubmodelElementCollection {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * If allowDuplicates=true then it is allowed that the collection contains the same element several
-     * times. Default = false Constraint AASd-026: If allowDuplicates==false then it is not allowed that
-     * the collection contains several elements with the same semantics (i.e. the same semanticId).
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates")
     protected List<Boolean> allowDuplicates = new ArrayList<>();
 
-    /**
-     * If ordered=false then the elements in the property collection are not ordered. If ordered=true
-     * then the elements in the collection are ordered. Default = false
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered")
     protected List<Boolean> ordereds = new ArrayList<>();
 
-    /**
-     * Submodel element contained in the collection.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value")
     protected Collection<SubmodelElement> values = new ArrayList<>();
 
@@ -74,45 +60,34 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/allowDuplicates")
-    final public List<Boolean> getAllowDuplicates() {
+    @Override
+    public List<Boolean> getAllowDuplicates() {
         return allowDuplicates;
     }
 
-    final public void setAllowDuplicates(List<Boolean> allowDuplicates) {
+    @Override
+    public void setAllowDuplicates(List<Boolean> allowDuplicates) {
         this.allowDuplicates = allowDuplicates;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/ordered")
-    final public List<Boolean> getOrdereds() {
+    @Override
+    public List<Boolean> getOrdereds() {
         return ordereds;
     }
 
-    final public void setOrdereds(List<Boolean> ordereds) {
+    @Override
+    public void setOrdereds(List<Boolean> ordereds) {
         this.ordereds = ordereds;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/SubmodelElementCollection/value")
-    final public Collection<SubmodelElement> getValues() {
+    @Override
+    public Collection<SubmodelElement> getValues() {
         return values;
     }
 
-    final public void setValues(Collection<SubmodelElement> values) {
+    @Override
+    public void setValues(Collection<SubmodelElement> values) {
         this.values = values;
     }
 
-    public static class Builder extends SubmodelElementCollectionBuilder<DefaultSubmodelElementCollection, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultSubmodelElementCollection newBuildingInstance() {
-            return new DefaultSubmodelElementCollection();
-        }
-    }
 }

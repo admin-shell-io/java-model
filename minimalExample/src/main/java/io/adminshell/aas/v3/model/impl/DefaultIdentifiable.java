@@ -19,18 +19,9 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultIdentifiable implements Identifiable {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * Administrative information of an identifiable element. Some of the administrative information
-     * like the version number might need to be part of the identification.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
     protected List<AdministrativeInformation> administrations = new ArrayList<>();
 
-    /**
-     * The globally unique identification of the element.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
     protected List<Identifier> identifications = new ArrayList<>();
 
@@ -57,36 +48,23 @@ public class DefaultIdentifiable implements Identifiable {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
-    final public List<AdministrativeInformation> getAdministrations() {
+    @Override
+    public List<AdministrativeInformation> getAdministrations() {
         return administrations;
     }
 
-    final public void setAdministrations(List<AdministrativeInformation> administrations) {
+    @Override
+    public void setAdministrations(List<AdministrativeInformation> administrations) {
         this.administrations = administrations;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/identification")
-    final public List<Identifier> getIdentifications() {
+    @Override
+    public List<Identifier> getIdentifications() {
         return identifications;
     }
 
-    final public void setIdentifications(List<Identifier> identifications) {
+    @Override
+    public void setIdentifications(List<Identifier> identifications) {
         this.identifications = identifications;
-    }
-
-    public static class Builder extends IdentifiableBuilder<DefaultIdentifiable, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultIdentifiable newBuildingInstance() {
-            return new DefaultIdentifiable();
-        }
     }
 }

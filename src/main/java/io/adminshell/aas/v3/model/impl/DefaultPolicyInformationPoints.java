@@ -21,18 +21,9 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * If externalInformationPoints True then at least one Endpoint to external available information
-     * needs to be configured for the AAS.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints")
     protected boolean externalInformationPoints;
 
-    /**
-     * References to submodels defining information used by security access permission rules.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint")
     protected List<Reference> internalInformationPoints = new ArrayList<>();
 
@@ -59,36 +50,23 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints")
-    final public boolean getExternalInformationPoints() {
+    @Override
+    public boolean getExternalInformationPoints() {
         return externalInformationPoints;
     }
 
-    final public void setExternalInformationPoints(boolean externalInformationPoints) {
+    @Override
+    public void setExternalInformationPoints(boolean externalInformationPoints) {
         this.externalInformationPoints = externalInformationPoints;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint")
-    final public List<Reference> getInternalInformationPoints() {
+    @Override
+    public List<Reference> getInternalInformationPoints() {
         return internalInformationPoints;
     }
 
-    final public void setInternalInformationPoints(List<Reference> internalInformationPoints) {
+    @Override
+    public void setInternalInformationPoints(List<Reference> internalInformationPoints) {
         this.internalInformationPoints = internalInformationPoints;
-    }
-
-    public static class Builder extends PolicyInformationPointsBuilder<DefaultPolicyInformationPoints, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultPolicyInformationPoints newBuildingInstance() {
-            return new DefaultPolicyInformationPoints();
-        }
     }
 }

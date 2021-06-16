@@ -30,6 +30,4 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface SubmodelElement extends Referable, Qualifiable, HasDataSpecification, HasKind, HasSemantics {
 
-    // standard methods
-
 }

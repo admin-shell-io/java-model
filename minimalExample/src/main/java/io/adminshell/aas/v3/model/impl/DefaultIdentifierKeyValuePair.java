@@ -19,25 +19,12 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * Points to the Expression Semantic of the Submodels The semantic id might refer to an external
-     * information source, which explains the formulation of the submodel (for example an PDF if a
-     * standard).
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
     protected List<Reference> semanticIds = new ArrayList<>();
 
-    /**
-     * Key of the identifier.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
     protected List<String> keys = new ArrayList<>();
 
-    /**
-     * The value of the identifier with the corresponding key.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
     protected List<String> values = new ArrayList<>();
 
@@ -66,45 +53,33 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/key")
-    final public List<String> getKeys() {
+    @Override
+    public List<String> getKeys() {
         return keys;
     }
 
-    final public void setKeys(List<String> keys) {
+    @Override
+    public void setKeys(List<String> keys) {
         this.keys = keys;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
-    final public List<String> getValues() {
+    @Override
+    public List<String> getValues() {
         return values;
     }
 
-    final public void setValues(List<String> values) {
+    @Override
+    public void setValues(List<String> values) {
         this.values = values;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    final public List<Reference> getSemanticIds() {
+    @Override
+    public List<Reference> getSemanticIds() {
         return semanticIds;
     }
 
-    final public void setSemanticIds(List<Reference> semanticIds) {
+    @Override
+    public void setSemanticIds(List<Reference> semanticIds) {
         this.semanticIds = semanticIds;
-    }
-
-    public static class Builder extends IdentifierKeyValuePairBuilder<DefaultIdentifierKeyValuePair, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultIdentifierKeyValuePair newBuildingInstance() {
-            return new DefaultIdentifierKeyValuePair();
-        }
     }
 }

@@ -17,12 +17,6 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultPolicyEnforcementPoints implements PolicyEnforcementPoints {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * If externalPolicyEnforcementPoint True then an Endpoint to external available enforcement point
-     * taking needs to be configured for the AAS.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyEnforcementPoints/externalPolicyEnforcementPoint")
     protected boolean externalPolicyEnforcementPoint;
 
@@ -47,27 +41,13 @@ public class DefaultPolicyEnforcementPoints implements PolicyEnforcementPoints {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyEnforcementPoints/externalPolicyEnforcementPoint")
-    final public boolean getExternalPolicyEnforcementPoint() {
+    @Override
+    public boolean getExternalPolicyEnforcementPoint() {
         return externalPolicyEnforcementPoint;
     }
 
-    final public void setExternalPolicyEnforcementPoint(boolean externalPolicyEnforcementPoint) {
+    @Override
+    public void setExternalPolicyEnforcementPoint(boolean externalPolicyEnforcementPoint) {
         this.externalPolicyEnforcementPoint = externalPolicyEnforcementPoint;
-    }
-
-    public static class Builder extends PolicyEnforcementPointsBuilder<DefaultPolicyEnforcementPoints, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultPolicyEnforcementPoints newBuildingInstance() {
-            return new DefaultPolicyEnforcementPoints();
-        }
     }
 }

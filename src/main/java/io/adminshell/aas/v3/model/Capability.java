@@ -19,6 +19,4 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface Capability extends SubmodelElement {
 
-    // standard methods
-
 }

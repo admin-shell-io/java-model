@@ -21,16 +21,13 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface Referable {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * The category is a value that gives further meta information w.r.t. to the class of the element.
      * It affects the expected existence of attributes and the applicability of constraints.
-     * 
-     * @return Returns the String for the property category. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Referable/category
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Referable/category
+     *
+     * @return Returns the String for the property category.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
     public String getCategory();
@@ -38,43 +35,48 @@ public interface Referable {
     /**
      * The category is a value that gives further meta information w.r.t. to the class of the element.
      * It affects the expected existence of attributes and the applicability of constraints.
-     * 
-     * @param category desired value for the property category. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Referable/category
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Referable/category
+     *
+     * @param category desired value for the property category.
      */
     public void setCategory(String category);
 
     /**
      * Description or comments on the element. The description can be provided in several languages.
-     * 
-     * @return Returns the List of LangStrings for the property descriptions. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Referable/description
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Referable/description
+     *
+     * @return Returns the List of LangStrings for the property descriptions.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
     public List<LangString> getDescriptions();
 
     /**
      * Description or comments on the element. The description can be provided in several languages.
-     * 
-     * @param descriptions desired value for the property descriptions. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Referable/description
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Referable/description
+     *
+     * @param descriptions desired value for the property descriptions.
      */
     public void setDescriptions(List<LangString> descriptions);
 
     /**
      * Display name. Can be provided in several languages.
-     * 
-     * @return Returns the List of LangStrings for the property displayNames. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Referable/displayName
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Referable/displayName
+     *
+     * @return Returns the List of LangStrings for the property displayNames.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
     public List<LangString> getDisplayNames();
 
     /**
      * Display name. Can be provided in several languages.
-     * 
-     * @param displayNames desired value for the property displayNames. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Referable/displayName
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Referable/displayName
+     *
+     * @param displayNames desired value for the property displayNames.
      */
     public void setDisplayNames(List<LangString> displayNames);
 
@@ -88,9 +90,10 @@ public interface Referable {
      * optional but recommended to be defined. It can be used for unique reference in its name space and
      * thus allows better usability and a more performant implementation. In this case it is similar to
      * the 'BrowserPath' in OPC UA.
-     * 
-     * @return Returns the String for the property idShort. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Referable/idShort
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Referable/idShort
+     *
+     * @return Returns the String for the property idShort.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
     public String getIdShort();
@@ -105,9 +108,10 @@ public interface Referable {
      * optional but recommended to be defined. It can be used for unique reference in its name space and
      * thus allows better usability and a more performant implementation. In this case it is similar to
      * the 'BrowserPath' in OPC UA.
-     * 
-     * @param idShort desired value for the property idShort. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Referable/idShort
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Referable/idShort
+     *
+     * @param idShort desired value for the property idShort.
      */
     public void setIdShort(String idShort);
 

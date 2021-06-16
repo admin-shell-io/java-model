@@ -19,17 +19,9 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultAssetAdministrationShell implements AssetAdministrationShell {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * Meta information about the asset the AAS is representing.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation")
     protected List<AssetInformation> assetInformations = new ArrayList<>();
 
-    /**
-     * Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
     protected List<Submodel> submodels = new ArrayList<>();
 
@@ -56,36 +48,23 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation")
-    final public List<AssetInformation> getAssetInformations() {
+    @Override
+    public List<AssetInformation> getAssetInformations() {
         return assetInformations;
     }
 
-    final public void setAssetInformations(List<AssetInformation> assetInformations) {
+    @Override
+    public void setAssetInformations(List<AssetInformation> assetInformations) {
         this.assetInformations = assetInformations;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel")
-    final public List<Submodel> getSubmodels() {
+    @Override
+    public List<Submodel> getSubmodels() {
         return submodels;
     }
 
-    final public void setSubmodels(List<Submodel> submodels) {
+    @Override
+    public void setSubmodels(List<Submodel> submodels) {
         this.submodels = submodels;
-    }
-
-    public static class Builder extends AssetAdministrationShellBuilder<DefaultAssetAdministrationShell, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultAssetAdministrationShell newBuildingInstance() {
-            return new DefaultAssetAdministrationShell();
-        }
     }
 }

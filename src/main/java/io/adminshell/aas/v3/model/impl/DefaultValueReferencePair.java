@@ -18,17 +18,9 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultValueReferencePair implements ValueReferencePair {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * the value of the referenced concept definition of the value in valueId.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value")
     protected String value;
 
-    /**
-     * Global unique id of the value.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/valueId")
     protected Reference valueId;
 
@@ -55,36 +47,23 @@ public class DefaultValueReferencePair implements ValueReferencePair {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value")
-    final public String getValue() {
+    @Override
+    public String getValue() {
         return value;
     }
 
-    final public void setValue(String value) {
+    @Override
+    public void setValue(String value) {
         this.value = value;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/valueId")
-    final public Reference getValueId() {
+    @Override
+    public Reference getValueId() {
         return valueId;
     }
 
-    final public void setValueId(Reference valueId) {
+    @Override
+    public void setValueId(Reference valueId) {
         this.valueId = valueId;
-    }
-
-    public static class Builder extends ValueReferencePairBuilder<DefaultValueReferencePair, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultValueReferencePair newBuildingInstance() {
-            return new DefaultValueReferencePair();
-        }
     }
 }

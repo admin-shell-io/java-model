@@ -16,16 +16,13 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface Formula extends Constraint {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * A formula may depend on referable or even external global elements - assumed that can be
      * referenced and their value may be evaluated - that are used in the logical expression.
-     * 
-     * @return Returns the List of References for the property dependsOns. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn
+     *
+     * @return Returns the List of References for the property dependsOns.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn")
     public List<Reference> getDependsOns();
@@ -33,9 +30,10 @@ public interface Formula extends Constraint {
     /**
      * A formula may depend on referable or even external global elements - assumed that can be
      * referenced and their value may be evaluated - that are used in the logical expression.
-     * 
-     * @param dependsOns desired value for the property dependsOns. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn
+     *
+     * @param dependsOns desired value for the property dependsOns.
      */
     public void setDependsOns(List<Reference> dependsOns);
 

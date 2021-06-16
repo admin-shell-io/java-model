@@ -21,33 +21,32 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface AdministrativeInformation extends HasDataSpecification {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Version of the element.
-     * 
-     * @return Returns the String for the property version. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version
+     *
+     * @return Returns the String for the property version.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
     public String getVersion();
 
     /**
      * Version of the element.
-     * 
-     * @param version desired value for the property version. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version
+     *
+     * @param version desired value for the property version.
      */
     public void setVersion(String version);
 
     /**
      * Revision of the element. Constraint AASd-005: A revision requires a version. This means, if there
      * is no version there is no revision neither.
-     * 
-     * @return Returns the String for the property revision. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision
+     *
+     * @return Returns the String for the property revision.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
     public String getRevision();
@@ -55,9 +54,10 @@ public interface AdministrativeInformation extends HasDataSpecification {
     /**
      * Revision of the element. Constraint AASd-005: A revision requires a version. This means, if there
      * is no version there is no revision neither.
-     * 
-     * @param revision desired value for the property revision. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision
+     *
+     * @param revision desired value for the property revision.
      */
     public void setRevision(String revision);
 

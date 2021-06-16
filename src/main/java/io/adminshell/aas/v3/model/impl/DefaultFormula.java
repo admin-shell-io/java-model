@@ -18,12 +18,6 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultFormula implements Formula {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * A formula may depend on referable or even external global elements - assumed that can be
-     * referenced and their value may be evaluated - that are used in the logical expression.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn")
     protected List<Reference> dependsOns = new ArrayList<>();
 
@@ -48,27 +42,14 @@ public class DefaultFormula implements Formula {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn")
-    final public List<Reference> getDependsOns() {
+    @Override
+    public List<Reference> getDependsOns() {
         return dependsOns;
     }
 
-    final public void setDependsOns(List<Reference> dependsOns) {
+    @Override
+    public void setDependsOns(List<Reference> dependsOns) {
         this.dependsOns = dependsOns;
     }
 
-    public static class Builder extends FormulaBuilder<DefaultFormula, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultFormula newBuildingInstance() {
-            return new DefaultFormula();
-        }
-    }
 }

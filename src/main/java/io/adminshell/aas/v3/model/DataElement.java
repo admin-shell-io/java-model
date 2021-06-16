@@ -23,6 +23,4 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface DataElement extends SubmodelElement {
 
-    // standard methods
-
 }

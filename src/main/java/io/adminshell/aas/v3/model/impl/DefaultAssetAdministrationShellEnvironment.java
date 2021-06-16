@@ -19,29 +19,15 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultAssetAdministrationShellEnvironment implements AssetAdministrationShellEnvironment {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * Points to the differents Administration Shells in one AssetAdministrationShellEnvironment graph.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShells")
     protected List<AssetAdministrationShell> assetAdministrationShells = new ArrayList<>();
 
-    /**
-     * Points to the differents Assets in one AssetAdministrationShellEnvironment graph.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assets")
     protected List<Asset> assets = new ArrayList<>();
 
-    /**
-     * Points to the differents Concept Descriptions in one AssetAdministrationShellEnvironment graph.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/conceptDescriptions")
     protected List<ConceptDescription> conceptDescriptions = new ArrayList<>();
 
-    /**
-     * Points to the differents Submodels in one AssetAdministrationShellEnvironment graph.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/submodels")
     protected List<Submodel> submodels = new ArrayList<>();
 
@@ -72,54 +58,43 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShells")
-    final public List<AssetAdministrationShell> getAssetAdministrationShells() {
+    @Override
+    public List<AssetAdministrationShell> getAssetAdministrationShells() {
         return assetAdministrationShells;
     }
 
-    final public void setAssetAdministrationShells(List<AssetAdministrationShell> assetAdministrationShells) {
+    @Override
+    public void setAssetAdministrationShells(List<AssetAdministrationShell> assetAdministrationShells) {
         this.assetAdministrationShells = assetAdministrationShells;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assets")
-    final public List<Asset> getAssets() {
+    @Override
+    public List<Asset> getAssets() {
         return assets;
     }
 
-    final public void setAssets(List<Asset> assets) {
+    @Override
+    public void setAssets(List<Asset> assets) {
         this.assets = assets;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/conceptDescriptions")
-    final public List<ConceptDescription> getConceptDescriptions() {
+    @Override
+    public List<ConceptDescription> getConceptDescriptions() {
         return conceptDescriptions;
     }
 
-    final public void setConceptDescriptions(List<ConceptDescription> conceptDescriptions) {
+    @Override
+    public void setConceptDescriptions(List<ConceptDescription> conceptDescriptions) {
         this.conceptDescriptions = conceptDescriptions;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/submodels")
-    final public List<Submodel> getSubmodels() {
+    @Override
+    public List<Submodel> getSubmodels() {
         return submodels;
     }
 
-    final public void setSubmodels(List<Submodel> submodels) {
+    @Override
+    public void setSubmodels(List<Submodel> submodels) {
         this.submodels = submodels;
-    }
-
-    public static class Builder extends AssetAdministrationShellEnvironmentBuilder<DefaultAssetAdministrationShellEnvironment, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultAssetAdministrationShellEnvironment newBuildingInstance() {
-            return new DefaultAssetAdministrationShellEnvironment();
-        }
     }
 }

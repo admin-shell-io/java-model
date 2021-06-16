@@ -17,12 +17,6 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * If externalPolicyDecisionPoints True then Endpoints to external available decision points taking
-     * into consideration for access control for the AAS need to be configured.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
     protected boolean externalPolicyDecisionPoints;
 
@@ -47,27 +41,13 @@ public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")
-    final public boolean getExternalPolicyDecisionPoints() {
+    @Override
+    public boolean getExternalPolicyDecisionPoints() {
         return externalPolicyDecisionPoints;
     }
 
-    final public void setExternalPolicyDecisionPoints(boolean externalPolicyDecisionPoints) {
+    @Override
+    public void setExternalPolicyDecisionPoints(boolean externalPolicyDecisionPoints) {
         this.externalPolicyDecisionPoints = externalPolicyDecisionPoints;
-    }
-
-    public static class Builder extends PolicyDecisionPointBuilder<DefaultPolicyDecisionPoint, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultPolicyDecisionPoint newBuildingInstance() {
-            return new DefaultPolicyDecisionPoint();
-        }
     }
 }

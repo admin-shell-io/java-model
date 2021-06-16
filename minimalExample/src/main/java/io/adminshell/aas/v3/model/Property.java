@@ -26,41 +26,41 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface Property {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Data type pf the value.
-     * 
-     * @return Returns the List of Strings for the property valueTypes. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Property/valueType
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Property/valueType
+     *
+     * @return Returns the List of Strings for the property valueTypes.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueType")
     public List<String> getValueTypes();
 
     /**
      * Data type pf the value.
-     * 
-     * @param valueTypes desired value for the property valueTypes. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Property/valueType
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Property/valueType
+     *
+     * @param valueTypes desired value for the property valueTypes.
      */
     public void setValueTypes(List<String> valueTypes);
 
     /**
      * The value of the property instance.
-     * 
-     * @return Returns the List of Strings for the property values. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Property/value
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Property/value
+     *
+     * @return Returns the List of Strings for the property values.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/value")
     public List<String> getValues();
 
     /**
      * The value of the property instance.
-     * 
-     * @param values desired value for the property values. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Property/value
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Property/value
+     *
+     * @param values desired value for the property values.
      */
     public void setValues(List<String> values);
 
@@ -68,9 +68,10 @@ public interface Property {
      * Reference to the global unique id of a coded value. Constraint AASd-007: if both, the value and
      * the valueId are present then the value needs to be identical to the value of the referenced coded
      * value in valueId.
-     * 
-     * @return Returns the List of References for the property valueIds. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Property/valueId
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Property/valueId
+     *
+     * @return Returns the List of References for the property valueIds.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueId")
     public List<Reference> getValueIds();
@@ -79,9 +80,10 @@ public interface Property {
      * Reference to the global unique id of a coded value. Constraint AASd-007: if both, the value and
      * the valueId are present then the value needs to be identical to the value of the referenced coded
      * value in valueId.
-     * 
-     * @param valueIds desired value for the property valueIds. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Property/valueId
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Property/valueId
+     *
+     * @param valueIds desired value for the property valueIds.
      */
     public void setValueIds(List<Reference> valueIds);
 

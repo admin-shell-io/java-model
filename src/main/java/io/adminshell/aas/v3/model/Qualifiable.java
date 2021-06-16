@@ -20,24 +20,22 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface Qualifiable {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Additional qualification of a qualifiable element.
-     * 
-     * @return Returns the List of Constraints for the property qualifiers. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier
+     *
+     * @return Returns the List of Constraints for the property qualifiers.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier")
     public List<Constraint> getQualifiers();
 
     /**
      * Additional qualification of a qualifiable element.
-     * 
-     * @param qualifiers desired value for the property qualifiers. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Qualifiable/qualifier
+     *
+     * @param qualifiers desired value for the property qualifiers.
      */
     public void setQualifiers(List<Constraint> qualifiers);
 

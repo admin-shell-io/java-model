@@ -20,38 +20,15 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultReferable implements Referable {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * The category is a value that gives further meta information w.r.t. to the class of the element.
-     * It affects the expected existence of attributes and the applicability of constraints.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
     protected List<String> categories = new ArrayList<>();
 
-    /**
-     * Description or comments on the element. The description can be provided in several languages.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
     protected List<LangStringSet> descriptions = new ArrayList<>();
 
-    /**
-     * Display name. Can be provided in several languages.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
     protected List<LangStringSet> displayNames = new ArrayList<>();
 
-    /**
-     * Identifying string of the element within its name space. Constraint AASd-002: idShort shall only
-     * feature letters, digits, underscore ('_'); starting with a small letter. I.e. [a-z][a-zA-Z0-9_]+.
-     * Constraint AASd-003: idShort shall be matched case-insensitive. Constraint AASd-022: idShort of
-     * non-identifiable referables shall be unqiue in its namespace. Note: In case the element is a
-     * property and the property has a semantic definition (HasSemantics) the idShort is typically
-     * identical to the short name in English. Note: In case of an identifiable element idShort is
-     * optional but recommended to be defined. It can be used for unique reference in its name space and
-     * thus allows better usability and a more performant implementation. In this case it is similar to
-     * the 'BrowserPath' in OPC UA.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
     protected List<String> idShorts = new ArrayList<>();
 
@@ -82,54 +59,43 @@ public class DefaultReferable implements Referable {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    final public List<String> getCategories() {
+    @Override
+    public List<String> getCategories() {
         return categories;
     }
 
-    final public void setCategories(List<String> categories) {
+    @Override
+    public void setCategories(List<String> categories) {
         this.categories = categories;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/description")
-    final public List<LangStringSet> getDescriptions() {
+    @Override
+    public List<LangStringSet> getDescriptions() {
         return descriptions;
     }
 
-    final public void setDescriptions(List<LangStringSet> descriptions) {
+    @Override
+    public void setDescriptions(List<LangStringSet> descriptions) {
         this.descriptions = descriptions;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-    final public List<LangStringSet> getDisplayNames() {
+    @Override
+    public List<LangStringSet> getDisplayNames() {
         return displayNames;
     }
 
-    final public void setDisplayNames(List<LangStringSet> displayNames) {
+    @Override
+    public void setDisplayNames(List<LangStringSet> displayNames) {
         this.displayNames = displayNames;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
-    final public List<String> getIdShorts() {
+    @Override
+    public List<String> getIdShorts() {
         return idShorts;
     }
 
-    final public void setIdShorts(List<String> idShorts) {
+    @Override
+    public void setIdShorts(List<String> idShorts) {
         this.idShorts = idShorts;
-    }
-
-    public static class Builder extends ReferableBuilder<DefaultReferable, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultReferable newBuildingInstance() {
-            return new DefaultReferable();
-        }
     }
 }

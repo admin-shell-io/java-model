@@ -18,17 +18,14 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface AccessPermissionRule extends Referable, Qualifiable {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Set of object-permission pairs that define the permissions per object within the access
      * permission rule.
-     * 
-     * @return Returns the List of PermissionsPerObjects for the property permissionsPerObjects. More
-     *         information under
-     *         https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject
+     *
+     * @return Returns the List of PermissionsPerObjects for the property permissionsPerObjects.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject")
     public List<PermissionsPerObject> getPermissionsPerObjects();
@@ -36,19 +33,22 @@ public interface AccessPermissionRule extends Referable, Qualifiable {
     /**
      * Set of object-permission pairs that define the permissions per object within the access
      * permission rule.
-     * 
-     * @param permissionsPerObjects desired value for the property permissionsPerObjects. More
-     *        information under
-     *        https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject
+     *
+     * @param permissionsPerObjects desired value for the property permissionsPerObjects.
      */
     public void setPermissionsPerObjects(List<PermissionsPerObject> permissionsPerObjects);
 
     /**
      * Target subject attributes that need to be fulfilled by the accessing subject to get the
      * permissions defined by this rule.
-     * 
-     * @return Returns the SubjectAttributes for the property targetSubjectAttributes. More information
-     *         under https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes
+     *
+     * @return Returns the SubjectAttributes for the property targetSubjectAttributes.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes")
     public SubjectAttributes getTargetSubjectAttributes();
@@ -56,10 +56,11 @@ public interface AccessPermissionRule extends Referable, Qualifiable {
     /**
      * Target subject attributes that need to be fulfilled by the accessing subject to get the
      * permissions defined by this rule.
-     * 
-     * @param targetSubjectAttributes desired value for the property targetSubjectAttributes. More
-     *        information under
-     *        https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/targetSubjectAttributes
+     *
+     * @param targetSubjectAttributes desired value for the property targetSubjectAttributes.
      */
     public void setTargetSubjectAttributes(SubjectAttributes targetSubjectAttributes);
 

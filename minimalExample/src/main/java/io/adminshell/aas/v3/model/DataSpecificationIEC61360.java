@@ -21,10 +21,6 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface DataSpecificationIEC61360 extends DataSpecificationContent {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Constraint AASd-070: For a ConceptDescription with category PROPERTY or VALUE using data
      * specification template IEC61360
@@ -40,9 +36,11 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * template IEC61360
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
      * DataSpecificationIEC61360/dataType is mandatory and shall be defined.
-     * 
-     * @return Returns the List of DataTypeIEC61360s for the property dataTypes. More information under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType
+     *
+     * @return Returns the List of DataTypeIEC61360s for the property dataTypes.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
     public List<DataTypeIEC61360> getDataTypes();
@@ -62,9 +60,11 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * template IEC61360
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
      * DataSpecificationIEC61360/dataType is mandatory and shall be defined.
-     * 
-     * @param dataTypes desired value for the property dataTypes. More information under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType
+     *
+     * @param dataTypes desired value for the property dataTypes.
      */
     public void setDataTypes(List<DataTypeIEC61360> dataTypes);
 
@@ -73,9 +73,11 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * using data specification template IEC61360
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
      * DataSpecificationIEC61360/definition is mandatory and shall be defined at least in English.
-     * 
-     * @return Returns the List of LangStringSets for the property definitions. More information under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition
+     *
+     * @return Returns the List of LangStringSets for the property definitions.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
     public List<LangStringSet> getDefinitions();
@@ -85,76 +87,106 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * using data specification template IEC61360
      * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
      * DataSpecificationIEC61360/definition is mandatory and shall be defined at least in English.
-     * 
-     * @param definitions desired value for the property definitions. More information under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition
+     *
+     * @param definitions desired value for the property definitions.
      */
     public void setDefinitions(List<LangStringSet> definitions);
 
     /**
-     * @return Returns the List of LangStringSets for the property shortNames. More information under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName
+     *
+     * @return Returns the List of LangStringSets for the property shortNames.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
     public List<LangStringSet> getShortNames();
 
     /**
-     * @param shortNames desired value for the property shortNames. More information under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName
+     *
+     * @param shortNames desired value for the property shortNames.
      */
     public void setShortNames(List<LangStringSet> shortNames);
 
     /**
-     * @return Returns the List of LangStringSets for the property preferredNames. More information
-     *         under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName
+     *
+     * @return Returns the List of LangStringSets for the property preferredNames.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
     public List<LangStringSet> getPreferredNames();
 
     /**
-     * @param preferredNames desired value for the property preferredNames. More information under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName
+     *
+     * @param preferredNames desired value for the property preferredNames.
      */
     public void setPreferredNames(List<LangStringSet> preferredNames);
 
     /**
-     * @return Returns the List of Strings for the property sourceOfDefinitions. More information under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition
+     *
+     * @return Returns the List of Strings for the property sourceOfDefinitions.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition")
     public List<String> getSourceOfDefinitions();
 
     /**
-     * @param sourceOfDefinitions desired value for the property sourceOfDefinitions. More information
-     *        under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition
+     *
+     * @param sourceOfDefinitions desired value for the property sourceOfDefinitions.
      */
     public void setSourceOfDefinitions(List<String> sourceOfDefinitions);
 
     /**
-     * @return Returns the List of Strings for the property units. More information under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit
+     *
+     * @return Returns the List of Strings for the property units.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit")
     public List<String> getUnits();
 
     /**
-     * @param units desired value for the property units. More information under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit
+     *
+     * @param units desired value for the property units.
      */
     public void setUnits(List<String> units);
 
     /**
-     * @return Returns the List of References for the property unitIds. More information under
-     *         https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId
+     *
+     * @return Returns the List of References for the property unitIds.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId")
     public List<Reference> getUnitIds();
 
     /**
-     * @param unitIds desired value for the property unitIds. More information under
-     *        https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId
+     *
+     * @param unitIds desired value for the property unitIds.
      */
     public void setUnitIds(List<Reference> unitIds);
 

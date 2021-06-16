@@ -18,8 +18,6 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultKeyElements implements KeyElements {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
     public DefaultKeyElements() {}
 
     @Override
@@ -39,16 +37,4 @@ public class DefaultKeyElements implements KeyElements {
         return true;
     }
 
-    public static class Builder extends KeyElementsBuilder<DefaultKeyElements, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultKeyElements newBuildingInstance() {
-            return new DefaultKeyElements();
-        }
-    }
 }

@@ -18,37 +18,18 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultExtension implements Extension {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * An extension of the element.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/name")
     protected String name;
 
-    /**
-     * Reference to an element the extension refers to.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/refersTo")
     protected Reference refersTo;
 
-    /**
-     * Value of the extension.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/value")
     protected String value;
 
-    /**
-     * Type of the value of the extension.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/valueType")
     protected String valueType;
 
-    /**
-     * Points to the Expression Semantic of the Submodels The semantic id might refer to an external
-     * information source, which explains the formulation of the submodel (for example an PDF if a
-     * standard).
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
     protected Reference semanticId;
 
@@ -81,63 +62,53 @@ public class DefaultExtension implements Extension {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/name")
-    final public String getName() {
+    @Override
+    public String getName() {
         return name;
     }
 
-    final public void setName(String name) {
+    @Override
+    public void setName(String name) {
         this.name = name;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/valueType")
-    final public String getValueType() {
+    @Override
+    public String getValueType() {
         return valueType;
     }
 
-    final public void setValueType(String valueType) {
+    @Override
+    public void setValueType(String valueType) {
         this.valueType = valueType;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/value")
-    final public String getValue() {
+    @Override
+    public String getValue() {
         return value;
     }
 
-    final public void setValue(String value) {
+    @Override
+    public void setValue(String value) {
         this.value = value;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/refersTo")
-    final public Reference getRefersTo() {
+    @Override
+    public Reference getRefersTo() {
         return refersTo;
     }
 
-    final public void setRefersTo(Reference refersTo) {
+    @Override
+    public void setRefersTo(Reference refersTo) {
         this.refersTo = refersTo;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
-    final public Reference getSemanticId() {
+    @Override
+    public Reference getSemanticId() {
         return semanticId;
     }
 
-    final public void setSemanticId(Reference semanticId) {
+    @Override
+    public void setSemanticId(Reference semanticId) {
         this.semanticId = semanticId;
-    }
-
-    public static class Builder extends ExtensionBuilder<DefaultExtension, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultExtension newBuildingInstance() {
-            return new DefaultExtension();
-        }
     }
 }

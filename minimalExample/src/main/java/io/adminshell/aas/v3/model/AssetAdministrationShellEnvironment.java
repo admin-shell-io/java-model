@@ -17,79 +17,87 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface AssetAdministrationShellEnvironment {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Points to the differents Administration Shells in one AssetAdministrationShellEnvironment graph.
-     * 
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShells
+     *
      * @return Returns the List of AssetAdministrationShells for the property assetAdministrationShells.
-     *         More information under
-     *         https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShells
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShells")
     public List<AssetAdministrationShell> getAssetAdministrationShells();
 
     /**
      * Points to the differents Administration Shells in one AssetAdministrationShellEnvironment graph.
-     * 
-     * @param assetAdministrationShells desired value for the property assetAdministrationShells. More
-     *        information under
-     *        https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShells
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShells
+     *
+     * @param assetAdministrationShells desired value for the property assetAdministrationShells.
      */
     public void setAssetAdministrationShells(List<AssetAdministrationShell> assetAdministrationShells);
 
     /**
      * Points to the differents Assets in one AssetAdministrationShellEnvironment graph.
-     * 
-     * @return Returns the List of Assets for the property assets. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assets
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assets
+     *
+     * @return Returns the List of Assets for the property assets.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assets")
     public List<Asset> getAssets();
 
     /**
      * Points to the differents Assets in one AssetAdministrationShellEnvironment graph.
-     * 
-     * @param assets desired value for the property assets. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assets
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assets
+     *
+     * @param assets desired value for the property assets.
      */
     public void setAssets(List<Asset> assets);
 
     /**
      * Points to the differents Concept Descriptions in one AssetAdministrationShellEnvironment graph.
-     * 
-     * @return Returns the List of ConceptDescriptions for the property conceptDescriptions. More
-     *         information under
-     *         https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/conceptDescriptions
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/conceptDescriptions
+     *
+     * @return Returns the List of ConceptDescriptions for the property conceptDescriptions.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/conceptDescriptions")
     public List<ConceptDescription> getConceptDescriptions();
 
     /**
      * Points to the differents Concept Descriptions in one AssetAdministrationShellEnvironment graph.
-     * 
-     * @param conceptDescriptions desired value for the property conceptDescriptions. More information
-     *        under
-     *        https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/conceptDescriptions
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/conceptDescriptions
+     *
+     * @param conceptDescriptions desired value for the property conceptDescriptions.
      */
     public void setConceptDescriptions(List<ConceptDescription> conceptDescriptions);
 
     /**
      * Points to the differents Submodels in one AssetAdministrationShellEnvironment graph.
-     * 
-     * @return Returns the List of Submodels for the property submodels. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/submodels
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/submodels
+     *
+     * @return Returns the List of Submodels for the property submodels.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/submodels")
     public List<Submodel> getSubmodels();
 
     /**
      * Points to the differents Submodels in one AssetAdministrationShellEnvironment graph.
-     * 
-     * @param submodels desired value for the property submodels. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/submodels
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/submodels
+     *
+     * @param submodels desired value for the property submodels.
      */
     public void setSubmodels(List<Submodel> submodels);
 

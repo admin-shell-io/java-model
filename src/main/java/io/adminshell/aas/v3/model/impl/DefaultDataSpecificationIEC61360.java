@@ -23,90 +23,42 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC61360 {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * Constraint AASd-070: For a ConceptDescription with category PROPERTY or VALUE using data
-     * specification template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is mandatory and shall be defined. Constraint AASd-071: For a
-     * ConceptDescription with category REFERENCE using data specification template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is STRING by default. Constraint AASd-072: For a
-     * ConceptDescription with category DOCUMENT using data specification template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType shall be one of the following values: STRING or URL.
-     * Constraint AASd-073: For a ConceptDescription with category QUALIFIER using data specification
-     * template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is mandatory and shall be defined.
-     */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
     protected DataTypeIEC61360 dataType;
 
-    /**
-     * Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions of category VALUE
-     * using data specification template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/definition is mandatory and shall be defined at least in English.
-     */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
     protected List<LangString> definitions = new ArrayList<>();
 
-    /**
-    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/levelType")
     protected List<LevelType> levelTypes = new ArrayList<>();
 
-    /**
-    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
     protected List<LangString> preferredNames = new ArrayList<>();
 
-    /**
-    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
     protected List<LangString> shortNames = new ArrayList<>();
 
-    /**
-    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition")
     protected String sourceOfDefinition;
 
-    /**
-    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/symbol")
     protected String symbol;
 
-    /**
-    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit")
     protected String unit;
 
-    /**
-    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId")
     protected Reference unitId;
 
-    /**
-    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/value")
     protected String value;
 
-    /**
-    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueFormat")
     protected String valueFormat;
 
-    /**
-    */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueId")
     protected Reference valueId;
 
-    /**
-     * The Type 'ValueList' lists all the allowed values for a concept description for which the allowed
-     * values are listed in an enumeration. The value list is a set of value reference pairs.
-     */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList")
     protected ValueList valueList;
 
@@ -155,135 +107,134 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
-    final public DataTypeIEC61360 getDataType() {
+    @Override
+    public DataTypeIEC61360 getDataType() {
         return dataType;
     }
 
-    final public void setDataType(DataTypeIEC61360 dataType) {
+    @Override
+    public void setDataType(DataTypeIEC61360 dataType) {
         this.dataType = dataType;
     }
 
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition")
-    final public List<LangString> getDefinitions() {
+    @Override
+    public List<LangString> getDefinitions() {
         return definitions;
     }
 
-    final public void setDefinitions(List<LangString> definitions) {
+    @Override
+    public void setDefinitions(List<LangString> definitions) {
         this.definitions = definitions;
     }
 
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/levelType")
-    final public List<LevelType> getLevelTypes() {
+    @Override
+    public List<LevelType> getLevelTypes() {
         return levelTypes;
     }
 
-    final public void setLevelTypes(List<LevelType> levelTypes) {
+    @Override
+    public void setLevelTypes(List<LevelType> levelTypes) {
         this.levelTypes = levelTypes;
     }
 
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
-    final public List<LangString> getPreferredNames() {
+    @Override
+    public List<LangString> getPreferredNames() {
         return preferredNames;
     }
 
-    final public void setPreferredNames(List<LangString> preferredNames) {
+    @Override
+    public void setPreferredNames(List<LangString> preferredNames) {
         this.preferredNames = preferredNames;
     }
 
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
-    final public List<LangString> getShortNames() {
+    @Override
+    public List<LangString> getShortNames() {
         return shortNames;
     }
 
-    final public void setShortNames(List<LangString> shortNames) {
+    @Override
+    public void setShortNames(List<LangString> shortNames) {
         this.shortNames = shortNames;
     }
 
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition")
-    final public String getSourceOfDefinition() {
+    @Override
+    public String getSourceOfDefinition() {
         return sourceOfDefinition;
     }
 
-    final public void setSourceOfDefinition(String sourceOfDefinition) {
+    @Override
+    public void setSourceOfDefinition(String sourceOfDefinition) {
         this.sourceOfDefinition = sourceOfDefinition;
     }
 
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/symbol")
-    final public String getSymbol() {
+    @Override
+    public String getSymbol() {
         return symbol;
     }
 
-    final public void setSymbol(String symbol) {
+    @Override
+    public void setSymbol(String symbol) {
         this.symbol = symbol;
     }
 
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unit")
-    final public String getUnit() {
+    @Override
+    public String getUnit() {
         return unit;
     }
 
-    final public void setUnit(String unit) {
+    @Override
+    public void setUnit(String unit) {
         this.unit = unit;
     }
 
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/unitId")
-    final public Reference getUnitId() {
+    @Override
+    public Reference getUnitId() {
         return unitId;
     }
 
-    final public void setUnitId(Reference unitId) {
+    @Override
+    public void setUnitId(Reference unitId) {
         this.unitId = unitId;
     }
 
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueFormat")
-    final public String getValueFormat() {
+    @Override
+    public String getValueFormat() {
         return valueFormat;
     }
 
-    final public void setValueFormat(String valueFormat) {
+    @Override
+    public void setValueFormat(String valueFormat) {
         this.valueFormat = valueFormat;
     }
 
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/value")
-    final public String getValue() {
+    @Override
+    public String getValue() {
         return value;
     }
 
-    final public void setValue(String value) {
+    @Override
+    public void setValue(String value) {
         this.value = value;
     }
 
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList")
-    final public ValueList getValueList() {
+    @Override
+    public ValueList getValueList() {
         return valueList;
     }
 
-    final public void setValueList(ValueList valueList) {
+    @Override
+    public void setValueList(ValueList valueList) {
         this.valueList = valueList;
     }
 
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueId")
-    final public Reference getValueId() {
+    @Override
+    public Reference getValueId() {
         return valueId;
     }
 
-    final public void setValueId(Reference valueId) {
+    @Override
+    public void setValueId(Reference valueId) {
         this.valueId = valueId;
     }
 
-    public static class Builder extends DataSpecificationIEC61360Builder<DefaultDataSpecificationIEC61360, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultDataSpecificationIEC61360 newBuildingInstance() {
-            return new DefaultDataSpecificationIEC61360();
-        }
-    }
 }

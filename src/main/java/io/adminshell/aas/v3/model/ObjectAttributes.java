@@ -18,24 +18,22 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface ObjectAttributes {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * A data elements that further classifies an object.
-     * 
-     * @return Returns the List of References for the property objectAttributes. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute
+     *
+     * @return Returns the List of References for the property objectAttributes.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")
     public List<Reference> getObjectAttributes();
 
     /**
      * A data elements that further classifies an object.
-     * 
-     * @param objectAttributes desired value for the property objectAttributes. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute
+     *
+     * @param objectAttributes desired value for the property objectAttributes.
      */
     public void setObjectAttributes(List<Reference> objectAttributes);
 

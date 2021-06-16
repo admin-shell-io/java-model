@@ -25,41 +25,41 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface Property extends DataElement {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Data type pf the value.
-     * 
-     * @return Returns the String for the property valueType. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Property/valueType
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Property/valueType
+     *
+     * @return Returns the String for the property valueType.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueType")
     public String getValueType();
 
     /**
      * Data type pf the value.
-     * 
-     * @param valueType desired value for the property valueType. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Property/valueType
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Property/valueType
+     *
+     * @param valueType desired value for the property valueType.
      */
     public void setValueType(String valueType);
 
     /**
      * The value of the property instance.
-     * 
-     * @return Returns the String for the property value. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Property/value
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Property/value
+     *
+     * @return Returns the String for the property value.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/value")
     public String getValue();
 
     /**
      * The value of the property instance.
-     * 
-     * @param value desired value for the property value. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Property/value
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Property/value
+     *
+     * @param value desired value for the property value.
      */
     public void setValue(String value);
 
@@ -67,9 +67,10 @@ public interface Property extends DataElement {
      * Reference to the global unique id of a coded value. Constraint AASd-007: if both, the value and
      * the valueId are present then the value needs to be identical to the value of the referenced coded
      * value in valueId.
-     * 
-     * @return Returns the Reference for the property valueId. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/Property/valueId
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Property/valueId
+     *
+     * @return Returns the Reference for the property valueId.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Property/valueId")
     public Reference getValueId();
@@ -78,9 +79,10 @@ public interface Property extends DataElement {
      * Reference to the global unique id of a coded value. Constraint AASd-007: if both, the value and
      * the valueId are present then the value needs to be identical to the value of the referenced coded
      * value in valueId.
-     * 
-     * @param valueId desired value for the property valueId. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/Property/valueId
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Property/valueId
+     *
+     * @param valueId desired value for the property valueId.
      */
     public void setValueId(Reference valueId);
 

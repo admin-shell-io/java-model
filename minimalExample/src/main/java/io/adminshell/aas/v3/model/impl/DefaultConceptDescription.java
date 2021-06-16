@@ -23,18 +23,9 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultConceptDescription implements ConceptDescription {
 
-    // instance fields as derived from the Asset Administration Shell ontology
-
-    /**
-     * The embedded data specification template of the description of the concept.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification")
     protected List<DataSpecification> embeddedDataSpecifications = new ArrayList<>();
 
-    /**
-     * Reference to an external definition the concept is compatible to or was derived from. Compare to
-     * is-case-of relationship in ISO 13584-32 and IEC EN 61360.
-     */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf")
     protected List<Reference> isCaseOfs = new ArrayList<>();
 
@@ -61,36 +52,23 @@ public class DefaultConceptDescription implements ConceptDescription {
         }
     }
 
-    // accessor method implementations as derived from the Asset Administration Shell ontology
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf")
-    final public List<Reference> getIsCaseOfs() {
+    @Override
+    public List<Reference> getIsCaseOfs() {
         return isCaseOfs;
     }
 
-    final public void setIsCaseOfs(List<Reference> isCaseOfs) {
+    @Override
+    public void setIsCaseOfs(List<Reference> isCaseOfs) {
         this.isCaseOfs = isCaseOfs;
     }
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification")
-    final public List<DataSpecification> getEmbeddedDataSpecifications() {
+    @Override
+    public List<DataSpecification> getEmbeddedDataSpecifications() {
         return embeddedDataSpecifications;
     }
 
-    final public void setEmbeddedDataSpecifications(List<DataSpecification> embeddedDataSpecifications) {
+    @Override
+    public void setEmbeddedDataSpecifications(List<DataSpecification> embeddedDataSpecifications) {
         this.embeddedDataSpecifications = embeddedDataSpecifications;
-    }
-
-    public static class Builder extends ConceptDescriptionBuilder<DefaultConceptDescription, Builder> {
-
-        @Override
-        protected Builder getSelf() {
-            return this;
-        }
-
-        @Override
-        protected DefaultConceptDescription newBuildingInstance() {
-            return new DefaultConceptDescription();
-        }
     }
 }

@@ -19,24 +19,22 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface View extends Referable, HasDataSpecification, HasSemantics {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Referable elements that are contained in the view.
-     * 
-     * @return Returns the List of References for the property containedElements. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/View/containedElement
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/View/containedElement
+     *
+     * @return Returns the List of References for the property containedElements.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/View/containedElement")
     public List<Reference> getContainedElements();
 
     /**
      * Referable elements that are contained in the view.
-     * 
-     * @param containedElements desired value for the property containedElements. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/View/containedElement
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/View/containedElement
+     *
+     * @param containedElements desired value for the property containedElements.
      */
     public void setContainedElements(List<Reference> containedElements);
 

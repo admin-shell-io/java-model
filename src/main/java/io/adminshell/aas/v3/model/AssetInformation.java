@@ -21,24 +21,22 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface AssetInformation {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Denotes whether the Asset of kind 'Type' or 'Instance'.
-     * 
-     * @return Returns the AssetKind for the property assetKind. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind
+     *
+     * @return Returns the AssetKind for the property assetKind.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
     public AssetKind getAssetKind();
 
     /**
      * Denotes whether the Asset of kind 'Type' or 'Instance'.
-     * 
-     * @param assetKind desired value for the property assetKind. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind
+     *
+     * @param assetKind desired value for the property assetKind.
      */
     public void setAssetKind(AssetKind assetKind);
 
@@ -49,9 +47,10 @@ public interface AssetInformation {
      * internal identifier. The internal identifier would be modelled via 'externalAssetId'. Constraint
      * AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global
      * reference.
-     * 
-     * @return Returns the Reference for the property globalAssetId. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId
+     *
+     * @return Returns the Reference for the property globalAssetId.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId")
     public Reference getGlobalAssetId();
@@ -63,18 +62,20 @@ public interface AssetInformation {
      * internal identifier. The internal identifier would be modelled via 'externalAssetId'. Constraint
      * AASd-023: AssetInformation/globalAssetId either is a reference to an Asset object or a global
      * reference.
-     * 
-     * @param globalAssetId desired value for the property globalAssetId. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/globalAssetId
+     *
+     * @param globalAssetId desired value for the property globalAssetId.
      */
     public void setGlobalAssetId(Reference globalAssetId);
 
     /**
      * Additional domain-specific, typically proprietary Identifier for the asset like e.g. serial
      * number etc.
-     * 
-     * @return Returns the List of IdentifierKeyValuePairs for the property specificAssetIds. More
-     *         information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId
+     *
+     * @return Returns the List of IdentifierKeyValuePairs for the property specificAssetIds.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId")
     public List<IdentifierKeyValuePair> getSpecificAssetIds();
@@ -82,9 +83,10 @@ public interface AssetInformation {
     /**
      * Additional domain-specific, typically proprietary Identifier for the asset like e.g. serial
      * number etc.
-     * 
-     * @param specificAssetIds desired value for the property specificAssetIds. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId
+     *
+     * @param specificAssetIds desired value for the property specificAssetIds.
      */
     public void setSpecificAssetIds(List<IdentifierKeyValuePair> specificAssetIds);
 
@@ -92,9 +94,10 @@ public interface AssetInformation {
      * A reference to a Submodel that defines the bill of material of the asset represented by the AAS.
      * This submodel contains a set of entities describing the material used to compose the composite
      * I4.0 Component.
-     * 
-     * @return Returns the List of Submodels for the property billOfMaterials. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial
+     *
+     * @return Returns the List of Submodels for the property billOfMaterials.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial")
     public List<Submodel> getBillOfMaterials();
@@ -103,26 +106,29 @@ public interface AssetInformation {
      * A reference to a Submodel that defines the bill of material of the asset represented by the AAS.
      * This submodel contains a set of entities describing the material used to compose the composite
      * I4.0 Component.
-     * 
-     * @param billOfMaterials desired value for the property billOfMaterials. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial
+     *
+     * @param billOfMaterials desired value for the property billOfMaterials.
      */
     public void setBillOfMaterials(List<Submodel> billOfMaterials);
 
     /**
      * Thumbnail of the asset represented by the asset administration shell.
-     * 
-     * @return Returns the File for the property defaultThumbnail. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail
+     *
+     * @return Returns the File for the property defaultThumbnail.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail")
     public File getDefaultThumbnail();
 
     /**
      * Thumbnail of the asset represented by the asset administration shell.
-     * 
-     * @param defaultThumbnail desired value for the property defaultThumbnail. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail
+     *
+     * @param defaultThumbnail desired value for the property defaultThumbnail.
      */
     public void setDefaultThumbnail(File defaultThumbnail);
 

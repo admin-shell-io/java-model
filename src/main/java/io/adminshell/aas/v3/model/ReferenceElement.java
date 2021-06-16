@@ -19,16 +19,13 @@ import io.adminshell.aas.v3.model.impl.*;
 })
 public interface ReferenceElement extends DataElement {
 
-    // standard methods
-
-    // accessor methods as derived from the Asset Administration Shell ontology
-
     /**
      * Reference to any other referable element of the same of any other AAS or a reference to an
      * external object or entity.
-     * 
-     * @return Returns the Reference for the property value. More information under
-     *         https://admin-shell.io/aas/3/0/RC01/ReferenceElement/value
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/ReferenceElement/value
+     *
+     * @return Returns the Reference for the property value.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/ReferenceElement/value")
     public Reference getValue();
@@ -36,9 +33,10 @@ public interface ReferenceElement extends DataElement {
     /**
      * Reference to any other referable element of the same of any other AAS or a reference to an
      * external object or entity.
-     * 
-     * @param value desired value for the property value. More information under
-     *        https://admin-shell.io/aas/3/0/RC01/ReferenceElement/value
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/ReferenceElement/value
+     *
+     * @param value desired value for the property value.
      */
     public void setValue(Reference value);
 
