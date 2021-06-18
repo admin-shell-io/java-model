@@ -21,7 +21,7 @@ import io.adminshell.aas.v3.model.builder.*;
 public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshipElement {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation")
-    protected List<Reference> annotations = new ArrayList<>();
+    protected List<DataElement> annotations = new ArrayList<>();
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
     protected List<Reference> dataSpecifications = new ArrayList<>();
@@ -95,12 +95,12 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
     }
 
     @Override
-    public List<Reference> getAnnotations() {
+    public List<DataElement> getAnnotations() {
         return annotations;
     }
 
     @Override
-    public void setAnnotations(List<Reference> annotations) {
+    public void setAnnotations(List<DataElement> annotations) {
         this.annotations = annotations;
     }
 
