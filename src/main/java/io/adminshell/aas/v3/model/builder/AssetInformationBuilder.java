@@ -62,7 +62,7 @@ public abstract class AssetInformationBuilder<T extends AssetInformation, B exte
      * @param billOfMaterials desired value to be set
      * @return Builder object with new value for billOfMaterials
      */
-    public B billOfMaterials(List<Submodel> billOfMaterials) {
+    public B billOfMaterials(List<Reference> billOfMaterials) {
         getBuildingInstance().setBillOfMaterials(billOfMaterials);
         return getSelf();
     }
@@ -73,7 +73,7 @@ public abstract class AssetInformationBuilder<T extends AssetInformation, B exte
      * @param billOfMaterial desired value to be added
      * @return Builder object with new value for billOfMaterials
      */
-    public B billOfMaterial(Submodel billOfMaterial) {
+    public B billOfMaterial(Reference billOfMaterial) {
         getBuildingInstance().getBillOfMaterials().add(billOfMaterial);
         return getSelf();
     }

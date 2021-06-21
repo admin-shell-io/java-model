@@ -27,7 +27,7 @@ public class DefaultAssetInformation implements AssetInformation {
     protected AssetKind assetKind;
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial")
-    protected List<Submodel> billOfMaterials = new ArrayList<>();
+    protected List<Reference> billOfMaterials = new ArrayList<>();
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/defaultThumbnail")
     protected File defaultThumbnail;
@@ -98,12 +98,12 @@ public class DefaultAssetInformation implements AssetInformation {
     }
 
     @Override
-    public List<Submodel> getBillOfMaterials() {
+    public List<Reference> getBillOfMaterials() {
         return billOfMaterials;
     }
 
     @Override
-    public void setBillOfMaterials(List<Submodel> billOfMaterials) {
+    public void setBillOfMaterials(List<Reference> billOfMaterials) {
         this.billOfMaterials = billOfMaterials;
     }
 

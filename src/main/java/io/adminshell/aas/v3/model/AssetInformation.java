@@ -99,10 +99,10 @@ public interface AssetInformation {
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial
      *
-     * @return Returns the List of Submodels for the property billOfMaterials.
+     * @return Returns the List of References for the property billOfMaterials.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/billOfMaterial")
-    List<Submodel> getBillOfMaterials();
+    List<Reference> getBillOfMaterials();
 
     /**
      * A reference to a Submodel that defines the bill of material of the asset represented by the AAS.
@@ -113,7 +113,7 @@ public interface AssetInformation {
      *
      * @param billOfMaterials desired value for the property billOfMaterials.
      */
-    void setBillOfMaterials(List<Submodel> billOfMaterials);
+    void setBillOfMaterials(List<Reference> billOfMaterials);
 
     /**
      * Thumbnail of the asset represented by the asset administration shell.
