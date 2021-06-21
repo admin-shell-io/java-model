@@ -39,27 +39,6 @@ public interface AssetAdministrationShellEnvironment {
     void setAssetAdministrationShells(List<AssetAdministrationShell> assetAdministrationShells);
 
     /**
-     * Points to the differents Assets in one AssetAdministrationShellEnvironment graph.
-     *
-     * More information under
-     * https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assets
-     *
-     * @return Returns the List of Assets for the property assets.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assets")
-    List<Asset> getAssets();
-
-    /**
-     * Points to the differents Assets in one AssetAdministrationShellEnvironment graph.
-     *
-     * More information under
-     * https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assets
-     *
-     * @param assets desired value for the property assets.
-     */
-    void setAssets(List<Asset> assets);
-
-    /**
      * Points to the differents Concept Descriptions in one AssetAdministrationShellEnvironment graph.
      *
      * More information under
