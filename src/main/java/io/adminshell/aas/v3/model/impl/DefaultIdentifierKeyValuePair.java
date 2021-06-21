@@ -33,10 +33,10 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.key,
+        return Objects.hash(this.key,
             this.value,
             this.externalSubjectId,
-            this.semanticId});
+            this.semanticId);
     }
 
     @Override

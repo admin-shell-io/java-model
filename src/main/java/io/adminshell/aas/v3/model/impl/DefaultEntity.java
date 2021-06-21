@@ -62,7 +62,7 @@ public class DefaultEntity implements Entity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.globalAssetId,
+        return Objects.hash(this.globalAssetId,
             this.externalAssetId,
             this.entityType,
             this.statements,
@@ -73,7 +73,7 @@ public class DefaultEntity implements Entity {
             this.qualifiers,
             this.dataSpecifications,
             this.kind,
-            this.semanticId});
+            this.semanticId);
     }
 
     @Override

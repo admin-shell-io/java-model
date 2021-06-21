@@ -38,11 +38,11 @@ public class DefaultQualifier implements Qualifier {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.type,
+        return Objects.hash(this.type,
             this.valueType,
             this.value,
             this.valueId,
-            this.semanticId});
+            this.semanticId);
     }
 
     @Override

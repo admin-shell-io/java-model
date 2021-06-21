@@ -31,8 +31,8 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.externalInformationPoints,
-            this.internalInformationPoints});
+        return Objects.hash(this.externalInformationPoints,
+            this.internalInformationPoints);
     }
 
     @Override

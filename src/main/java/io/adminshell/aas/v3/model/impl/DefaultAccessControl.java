@@ -45,13 +45,13 @@ public class DefaultAccessControl implements AccessControl {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.accessPermissionRules,
+        return Objects.hash(this.accessPermissionRules,
             this.selectableSubjectAttributes,
             this.defaultSubjectAttributes,
             this.selectablePermissions,
             this.defaultPermissions,
             this.selectableEnvironmentAttributes,
-            this.defaultEnvironmentAttributes});
+            this.defaultEnvironmentAttributes);
     }
 
     @Override

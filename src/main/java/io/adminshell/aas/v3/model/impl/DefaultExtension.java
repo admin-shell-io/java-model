@@ -37,11 +37,11 @@ public class DefaultExtension implements Extension {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.name,
+        return Objects.hash(this.name,
             this.valueType,
             this.value,
             this.refersTo,
-            this.semanticId});
+            this.semanticId);
     }
 
     @Override

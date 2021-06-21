@@ -24,7 +24,7 @@ public class DefaultPolicyEnforcementPoints implements PolicyEnforcementPoints {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.externalPolicyEnforcementPoint});
+        return Objects.hash(this.externalPolicyEnforcementPoint);
     }
 
     @Override

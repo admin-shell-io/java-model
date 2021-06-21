@@ -26,7 +26,7 @@ public class DefaultSubjectAttributes implements SubjectAttributes {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.subjectAttributes});
+        return Objects.hash(this.subjectAttributes);
     }
 
     @Override

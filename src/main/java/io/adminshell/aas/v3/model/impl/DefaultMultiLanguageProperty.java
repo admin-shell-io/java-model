@@ -53,7 +53,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.values,
+        return Objects.hash(this.values,
             this.valueId,
             this.category,
             this.descriptions,
@@ -62,7 +62,7 @@ public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
             this.qualifiers,
             this.dataSpecifications,
             this.kind,
-            this.semanticId});
+            this.semanticId);
     }
 
     @Override

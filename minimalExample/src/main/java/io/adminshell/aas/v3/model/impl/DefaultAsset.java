@@ -24,7 +24,7 @@ public class DefaultAsset implements Asset {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {super.hashCode()});
+        return Objects.hash(super.hashCode());
     }
 
     @Override

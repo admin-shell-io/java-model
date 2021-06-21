@@ -29,8 +29,8 @@ public class DefaultIdentifier implements Identifier {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.identifiers,
-            this.idTypes});
+        return Objects.hash(this.identifiers,
+            this.idTypes);
     }
 
     @Override

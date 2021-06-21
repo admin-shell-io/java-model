@@ -29,8 +29,8 @@ public class DefaultFile implements File {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.mimeTypes,
-            this.values});
+        return Objects.hash(this.mimeTypes,
+            this.values);
     }
 
     @Override

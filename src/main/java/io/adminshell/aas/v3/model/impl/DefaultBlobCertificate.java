@@ -35,10 +35,10 @@ public class DefaultBlobCertificate implements BlobCertificate {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.blobCertificate,
+        return Objects.hash(this.blobCertificate,
             this.containedExtensions,
             this.lastCertificate,
-            this.policyAdministrationPoint});
+            this.policyAdministrationPoint);
     }
 
     @Override

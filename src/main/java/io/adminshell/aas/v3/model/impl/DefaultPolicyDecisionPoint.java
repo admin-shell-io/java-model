@@ -24,7 +24,7 @@ public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.externalPolicyDecisionPoints});
+        return Objects.hash(this.externalPolicyDecisionPoints);
     }
 
     @Override

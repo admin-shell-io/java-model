@@ -66,7 +66,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.dataType,
+        return Objects.hash(this.dataType,
             this.definitions,
             this.levelTypes,
             this.preferredNames,
@@ -78,7 +78,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
             this.valueFormat,
             this.value,
             this.valueList,
-            this.valueId});
+            this.valueId);
     }
 
     @Override

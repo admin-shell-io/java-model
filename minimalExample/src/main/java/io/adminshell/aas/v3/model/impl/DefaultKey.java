@@ -32,9 +32,9 @@ public class DefaultKey implements Key {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.idTypes,
+        return Objects.hash(this.idTypes,
             this.types,
-            this.values});
+            this.values);
     }
 
     @Override

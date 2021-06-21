@@ -54,7 +54,7 @@ public class DefaultRelationshipElement implements RelationshipElement {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.first,
+        return Objects.hash(this.first,
             this.second,
             this.category,
             this.descriptions,
@@ -63,7 +63,7 @@ public class DefaultRelationshipElement implements RelationshipElement {
             this.qualifiers,
             this.dataSpecifications,
             this.kind,
-            this.semanticId});
+            this.semanticId);
     }
 
     @Override

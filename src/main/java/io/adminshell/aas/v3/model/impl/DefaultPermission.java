@@ -27,8 +27,8 @@ public class DefaultPermission implements Permission {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.kindOfPermission,
-            this.permission});
+        return Objects.hash(this.kindOfPermission,
+            this.permission);
     }
 
     @Override

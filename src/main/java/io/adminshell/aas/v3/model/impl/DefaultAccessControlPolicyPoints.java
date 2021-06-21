@@ -33,10 +33,10 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.policyAdministrationPoint,
+        return Objects.hash(this.policyAdministrationPoint,
             this.policyDecisionPoint,
             this.policyEnforcementPoint,
-            this.policyInformationPoints});
+            this.policyInformationPoints);
     }
 
     @Override

@@ -29,8 +29,8 @@ public class DefaultIdentifiable implements Identifiable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.administrations,
-            this.identifications});
+        return Objects.hash(this.administrations,
+            this.identifications);
     }
 
     @Override

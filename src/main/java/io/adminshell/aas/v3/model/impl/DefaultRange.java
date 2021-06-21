@@ -62,7 +62,7 @@ public class DefaultRange implements Range {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.valueType,
+        return Objects.hash(this.valueType,
             this.max,
             this.min,
             this.category,
@@ -72,7 +72,7 @@ public class DefaultRange implements Range {
             this.qualifiers,
             this.dataSpecifications,
             this.kind,
-            this.semanticId});
+            this.semanticId);
     }
 
     @Override

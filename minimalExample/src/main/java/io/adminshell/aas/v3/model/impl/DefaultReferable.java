@@ -36,10 +36,10 @@ public class DefaultReferable implements Referable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.categories,
+        return Objects.hash(this.categories,
             this.descriptions,
             this.displayNames,
-            this.idShorts});
+            this.idShorts);
     }
 
     @Override

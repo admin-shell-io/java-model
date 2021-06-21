@@ -46,13 +46,13 @@ public class DefaultView implements View {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.containedElements,
+        return Objects.hash(this.containedElements,
             this.category,
             this.descriptions,
             this.displayNames,
             this.idShort,
             this.dataSpecifications,
-            this.semanticId});
+            this.semanticId);
     }
 
     @Override

@@ -59,7 +59,7 @@ public class DefaultDataSpecificationPhysicalUnit implements DataSpecificationPh
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.conversionFactor,
+        return Objects.hash(this.conversionFactor,
             this.definitions,
             this.dinNotation,
             this.eceCode,
@@ -70,7 +70,7 @@ public class DefaultDataSpecificationPhysicalUnit implements DataSpecificationPh
             this.registrationAuthorityId,
             this.supplier,
             this.unitName,
-            this.unitSymbol});
+            this.unitSymbol);
     }
 
     @Override

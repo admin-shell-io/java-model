@@ -58,7 +58,7 @@ public class DefaultOperation implements Operation {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.inputVariables,
+        return Objects.hash(this.inputVariables,
             this.inoutputVariables,
             this.outputVariables,
             this.category,
@@ -68,7 +68,7 @@ public class DefaultOperation implements Operation {
             this.qualifiers,
             this.dataSpecifications,
             this.kind,
-            this.semanticId});
+            this.semanticId);
     }
 
     @Override

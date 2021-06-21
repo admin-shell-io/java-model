@@ -48,14 +48,14 @@ public class DefaultEventMessage implements EventMessage {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.category,
+        return Objects.hash(this.category,
             this.descriptions,
             this.displayNames,
             this.idShort,
             this.qualifiers,
             this.dataSpecifications,
             this.kind,
-            this.semanticId});
+            this.semanticId);
     }
 
     @Override

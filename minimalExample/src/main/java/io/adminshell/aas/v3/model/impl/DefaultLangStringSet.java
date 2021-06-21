@@ -27,7 +27,7 @@ public class DefaultLangStringSet implements LangStringSet {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.langStrings});
+        return Objects.hash(this.langStrings);
     }
 
     @Override

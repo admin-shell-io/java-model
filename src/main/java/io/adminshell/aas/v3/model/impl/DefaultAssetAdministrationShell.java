@@ -59,7 +59,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.assetInformation,
+        return Objects.hash(this.assetInformation,
             this.derivedFrom,
             this.security,
             this.submodels,
@@ -70,7 +70,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
             this.category,
             this.descriptions,
             this.displayNames,
-            this.idShort});
+            this.idShort);
     }
 
     @Override

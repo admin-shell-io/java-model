@@ -53,7 +53,7 @@ public class DefaultFile implements File {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.mimeType,
+        return Objects.hash(this.mimeType,
             this.value,
             this.category,
             this.descriptions,
@@ -62,7 +62,7 @@ public class DefaultFile implements File {
             this.qualifiers,
             this.dataSpecifications,
             this.kind,
-            this.semanticId});
+            this.semanticId);
     }
 
     @Override

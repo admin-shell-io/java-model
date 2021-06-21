@@ -47,13 +47,13 @@ public class DefaultAsset implements Asset {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.dataSpecifications,
+        return Objects.hash(this.dataSpecifications,
             this.administration,
             this.identification,
             this.category,
             this.descriptions,
             this.displayNames,
-            this.idShort});
+            this.idShort);
     }
 
     @Override

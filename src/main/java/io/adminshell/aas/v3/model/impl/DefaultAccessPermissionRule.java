@@ -45,13 +45,13 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.permissionsPerObjects,
+        return Objects.hash(this.permissionsPerObjects,
             this.targetSubjectAttributes,
             this.category,
             this.descriptions,
             this.displayNames,
             this.idShort,
-            this.qualifiers});
+            this.qualifiers);
     }
 
     @Override

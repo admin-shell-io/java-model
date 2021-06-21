@@ -21,7 +21,7 @@ public class DefaultDataTypeIEC61360 implements DataTypeIEC61360 {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {super.hashCode()});
+        return Objects.hash(super.hashCode());
     }
 
     @Override

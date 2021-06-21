@@ -50,7 +50,7 @@ public class DefaultBasicEvent implements BasicEvent {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.observed,
+        return Objects.hash(this.observed,
             this.category,
             this.descriptions,
             this.displayNames,
@@ -58,7 +58,7 @@ public class DefaultBasicEvent implements BasicEvent {
             this.qualifiers,
             this.dataSpecifications,
             this.kind,
-            this.semanticId});
+            this.semanticId);
     }
 
     @Override

@@ -35,10 +35,10 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.assetAdministrationShells,
+        return Objects.hash(this.assetAdministrationShells,
             this.assets,
             this.conceptDescriptions,
-            this.submodels});
+            this.submodels);
     }
 
     @Override

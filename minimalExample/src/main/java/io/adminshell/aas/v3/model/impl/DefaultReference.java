@@ -28,7 +28,7 @@ public class DefaultReference implements Reference {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.keys});
+        return Objects.hash(this.keys);
     }
 
     @Override

@@ -53,7 +53,7 @@ public class DefaultReferenceElement implements ReferenceElement {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.value,
+        return Objects.hash(this.value,
             this.category,
             this.descriptions,
             this.displayNames,
@@ -61,7 +61,7 @@ public class DefaultReferenceElement implements ReferenceElement {
             this.qualifiers,
             this.dataSpecifications,
             this.kind,
-            this.semanticId});
+            this.semanticId);
     }
 
     @Override

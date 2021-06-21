@@ -25,7 +25,7 @@ public class DefaultFormula implements Formula {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.dependsOns});
+        return Objects.hash(this.dependsOns);
     }
 
     @Override

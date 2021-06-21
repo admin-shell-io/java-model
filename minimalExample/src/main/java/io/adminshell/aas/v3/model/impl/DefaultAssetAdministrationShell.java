@@ -29,8 +29,8 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.assetInformations,
-            this.submodels});
+        return Objects.hash(this.assetInformations,
+            this.submodels);
     }
 
     @Override

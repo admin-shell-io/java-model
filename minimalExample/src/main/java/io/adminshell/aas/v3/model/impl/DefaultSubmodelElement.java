@@ -26,7 +26,7 @@ public class DefaultSubmodelElement implements SubmodelElement {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {super.hashCode()});
+        return Objects.hash(super.hashCode());
     }
 
     @Override

@@ -22,7 +22,7 @@ public class DefaultKeyElements implements KeyElements {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {super.hashCode()});
+        return Objects.hash(super.hashCode());
     }
 
     @Override

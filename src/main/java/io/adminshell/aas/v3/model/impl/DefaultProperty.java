@@ -65,7 +65,7 @@ public class DefaultProperty implements Property {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.valueType,
+        return Objects.hash(this.valueType,
             this.value,
             this.valueId,
             this.category,
@@ -75,7 +75,7 @@ public class DefaultProperty implements Property {
             this.qualifiers,
             this.dataSpecifications,
             this.kind,
-            this.semanticId});
+            this.semanticId);
     }
 
     @Override

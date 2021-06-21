@@ -57,7 +57,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.annotations,
+        return Objects.hash(this.annotations,
             this.first,
             this.second,
             this.category,
@@ -67,7 +67,7 @@ public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshi
             this.qualifiers,
             this.dataSpecifications,
             this.kind,
-            this.semanticId});
+            this.semanticId);
     }
 
     @Override

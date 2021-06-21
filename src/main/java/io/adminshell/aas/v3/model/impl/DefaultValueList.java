@@ -26,7 +26,7 @@ public class DefaultValueList implements ValueList {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.valueReferencePairTypes});
+        return Objects.hash(this.valueReferencePairTypes);
     }
 
     @Override

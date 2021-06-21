@@ -28,8 +28,8 @@ public class DefaultValueReferencePair implements ValueReferencePair {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.value,
-            this.valueId});
+        return Objects.hash(this.value,
+            this.valueId);
     }
 
     @Override

@@ -41,9 +41,9 @@ public class DefaultProperty implements Property {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.valueTypes,
+        return Objects.hash(this.valueTypes,
             this.values,
-            this.valueIds});
+            this.valueIds);
     }
 
     @Override

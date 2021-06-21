@@ -30,7 +30,7 @@ public class DefaultHasSemantics implements HasSemantics {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.semanticIds});
+        return Objects.hash(this.semanticIds);
     }
 
     @Override

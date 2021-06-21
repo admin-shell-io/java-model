@@ -56,7 +56,7 @@ public class DefaultBlob implements Blob {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.mimeType,
+        return Objects.hash(this.mimeType,
             this.value,
             this.category,
             this.descriptions,
@@ -65,7 +65,7 @@ public class DefaultBlob implements Blob {
             this.qualifiers,
             this.dataSpecifications,
             this.kind,
-            this.semanticId});
+            this.semanticId);
     }
 
     @Override

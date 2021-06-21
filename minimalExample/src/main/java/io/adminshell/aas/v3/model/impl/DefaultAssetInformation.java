@@ -39,10 +39,10 @@ public class DefaultAssetInformation implements AssetInformation {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.assetKinds,
+        return Objects.hash(this.assetKinds,
             this.globalAssetIds,
             this.specificAssetIds,
-            this.defaultThumbnails});
+            this.defaultThumbnails);
     }
 
     @Override

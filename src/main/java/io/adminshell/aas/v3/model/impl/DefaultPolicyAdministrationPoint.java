@@ -27,8 +27,8 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.localAccessControl,
-            this.externalAccessControl});
+        return Objects.hash(this.localAccessControl,
+            this.externalAccessControl);
     }
 
     @Override

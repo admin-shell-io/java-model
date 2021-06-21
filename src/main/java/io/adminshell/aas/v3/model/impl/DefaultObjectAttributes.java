@@ -27,7 +27,7 @@ public class DefaultObjectAttributes implements ObjectAttributes {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.objectAttributes});
+        return Objects.hash(this.objectAttributes);
     }
 
     @Override

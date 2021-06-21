@@ -24,7 +24,7 @@ public class DefaultDataSpecification implements DataSpecification {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.dataSpecificationContent});
+        return Objects.hash(this.dataSpecificationContent);
     }
 
     @Override

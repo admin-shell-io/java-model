@@ -32,9 +32,9 @@ public class DefaultSecurity implements Security {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.accessControlPolicyPoints,
+        return Objects.hash(this.accessControlPolicyPoints,
             this.certificates,
-            this.requiredCertificateExtensions});
+            this.requiredCertificateExtensions);
     }
 
     @Override

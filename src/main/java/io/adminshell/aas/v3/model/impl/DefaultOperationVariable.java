@@ -25,7 +25,7 @@ public class DefaultOperationVariable implements OperationVariable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.value});
+        return Objects.hash(this.value);
     }
 
     @Override

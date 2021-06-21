@@ -39,9 +39,9 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.allowDuplicates,
+        return Objects.hash(this.allowDuplicates,
             this.ordereds,
-            this.values});
+            this.values);
     }
 
     @Override

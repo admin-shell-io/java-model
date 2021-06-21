@@ -32,7 +32,7 @@ public class DefaultSubmodel implements Submodel {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.submodelElements});
+        return Objects.hash(this.submodelElements);
     }
 
     @Override

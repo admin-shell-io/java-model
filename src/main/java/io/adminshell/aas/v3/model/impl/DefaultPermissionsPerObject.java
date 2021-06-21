@@ -34,9 +34,9 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.object,
+        return Objects.hash(this.object,
             this.permissions,
-            this.targetObjectAttributes});
+            this.targetObjectAttributes);
     }
 
     @Override

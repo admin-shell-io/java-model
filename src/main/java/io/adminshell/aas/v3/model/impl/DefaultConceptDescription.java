@@ -54,7 +54,7 @@ public class DefaultConceptDescription implements ConceptDescription {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.isCaseOfs,
+        return Objects.hash(this.isCaseOfs,
             this.embeddedDataSpecifications,
             this.dataSpecifications,
             this.administration,
@@ -62,7 +62,7 @@ public class DefaultConceptDescription implements ConceptDescription {
             this.category,
             this.descriptions,
             this.displayNames,
-            this.idShort});
+            this.idShort);
     }
 
     @Override

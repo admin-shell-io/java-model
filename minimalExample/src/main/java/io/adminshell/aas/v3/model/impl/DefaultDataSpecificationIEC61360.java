@@ -48,13 +48,13 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.dataTypes,
+        return Objects.hash(this.dataTypes,
             this.definitions,
             this.shortNames,
             this.preferredNames,
             this.sourceOfDefinitions,
             this.units,
-            this.unitIds});
+            this.unitIds);
     }
 
     @Override

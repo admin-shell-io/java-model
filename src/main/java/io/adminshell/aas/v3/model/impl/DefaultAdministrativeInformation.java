@@ -37,9 +37,9 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.version,
+        return Objects.hash(this.version,
             this.revision,
-            this.dataSpecifications});
+            this.dataSpecifications);
     }
 
     @Override

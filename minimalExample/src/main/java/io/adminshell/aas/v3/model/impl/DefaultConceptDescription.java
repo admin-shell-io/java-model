@@ -33,8 +33,8 @@ public class DefaultConceptDescription implements ConceptDescription {
 
     @Override
     public int hashCode() {
-        return Objects.hash(new Object[] {this.isCaseOfs,
-            this.embeddedDataSpecifications});
+        return Objects.hash(this.isCaseOfs,
+            this.embeddedDataSpecifications);
     }
 
     @Override
