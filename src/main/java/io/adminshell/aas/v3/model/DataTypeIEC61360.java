@@ -19,10 +19,6 @@ public enum DataTypeIEC61360 {
 
     /** 
     */
-    DATE,
-
-    /** 
-    */
     INTEGER_COUNT,
 
     /** 
@@ -48,14 +44,6 @@ public enum DataTypeIEC61360 {
     /** 
     */
     REAL_MEASURE,
-
-    /** 
-    */
-    STRING,
-
-    /** 
-    */
-    STRING_TRANSLATABLE,
 
     /** 
     */
