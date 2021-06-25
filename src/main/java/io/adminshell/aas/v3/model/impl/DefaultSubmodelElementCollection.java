@@ -26,8 +26,14 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultSubmodelElementCollection implements SubmodelElementCollection {
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification")
     protected List<Reference> dataSpecifications = new ArrayList<>();
+
+    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent")
+    protected List<DataSpecificationContent> dataSpecificationContents = new ArrayList<>();
+
+    @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")
+    protected List<EmbeddedDataSpecification> embeddedDataSpecifications = new ArrayList<>();
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasKind/kind")
     protected ModelingKind kind;
@@ -72,6 +78,8 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
             this.idShort,
             this.qualifiers,
             this.dataSpecifications,
+            this.dataSpecificationContents,
+            this.embeddedDataSpecifications,
             this.kind,
             this.semanticId);
     }
@@ -95,6 +103,8 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
                 Objects.equals(this.idShort, other.idShort) &&
                 Objects.equals(this.qualifiers, other.qualifiers) &&
                 Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
+                Objects.equals(this.dataSpecificationContents, other.dataSpecificationContents) &&
+                Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications) &&
                 Objects.equals(this.kind, other.kind) &&
                 Objects.equals(this.semanticId, other.semanticId);
         }
@@ -188,6 +198,26 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
     @Override
     public void setDataSpecifications(List<Reference> dataSpecifications) {
         this.dataSpecifications = dataSpecifications;
+    }
+
+    @Override
+    public List<DataSpecificationContent> getDataSpecificationContents() {
+        return dataSpecificationContents;
+    }
+
+    @Override
+    public void setDataSpecificationContents(List<DataSpecificationContent> dataSpecificationContents) {
+        this.dataSpecificationContents = dataSpecificationContents;
+    }
+
+    @Override
+    public List<EmbeddedDataSpecification> getEmbeddedDataSpecifications() {
+        return embeddedDataSpecifications;
+    }
+
+    @Override
+    public void setEmbeddedDataSpecifications(List<EmbeddedDataSpecification> embeddedDataSpecifications) {
+        this.embeddedDataSpecifications = embeddedDataSpecifications;
     }
 
     @Override

@@ -23,14 +23,17 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultConceptDescription implements ConceptDescription {
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification")
-    protected List<DataSpecification> embeddedDataSpecifications = new ArrayList<>();
-
     @IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf")
     protected List<Reference> isCaseOfs = new ArrayList<>();
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification")
     protected List<Reference> dataSpecifications = new ArrayList<>();
+
+    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent")
+    protected List<DataSpecificationContent> dataSpecificationContents = new ArrayList<>();
+
+    @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")
+    protected List<EmbeddedDataSpecification> embeddedDataSpecifications = new ArrayList<>();
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
     protected AdministrativeInformation administration;
@@ -55,8 +58,9 @@ public class DefaultConceptDescription implements ConceptDescription {
     @Override
     public int hashCode() {
         return Objects.hash(this.isCaseOfs,
-            this.embeddedDataSpecifications,
             this.dataSpecifications,
+            this.dataSpecificationContents,
+            this.embeddedDataSpecifications,
             this.administration,
             this.identification,
             this.category,
@@ -76,8 +80,9 @@ public class DefaultConceptDescription implements ConceptDescription {
         } else {
             DefaultConceptDescription other = (DefaultConceptDescription) obj;
             return Objects.equals(this.isCaseOfs, other.isCaseOfs) &&
-                Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications) &&
                 Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
+                Objects.equals(this.dataSpecificationContents, other.dataSpecificationContents) &&
+                Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications) &&
                 Objects.equals(this.administration, other.administration) &&
                 Objects.equals(this.identification, other.identification) &&
                 Objects.equals(this.category, other.category) &&
@@ -98,16 +103,6 @@ public class DefaultConceptDescription implements ConceptDescription {
     }
 
     @Override
-    public List<DataSpecification> getEmbeddedDataSpecifications() {
-        return embeddedDataSpecifications;
-    }
-
-    @Override
-    public void setEmbeddedDataSpecifications(List<DataSpecification> embeddedDataSpecifications) {
-        this.embeddedDataSpecifications = embeddedDataSpecifications;
-    }
-
-    @Override
     public List<Reference> getDataSpecifications() {
         return dataSpecifications;
     }
@@ -115,6 +110,26 @@ public class DefaultConceptDescription implements ConceptDescription {
     @Override
     public void setDataSpecifications(List<Reference> dataSpecifications) {
         this.dataSpecifications = dataSpecifications;
+    }
+
+    @Override
+    public List<DataSpecificationContent> getDataSpecificationContents() {
+        return dataSpecificationContents;
+    }
+
+    @Override
+    public void setDataSpecificationContents(List<DataSpecificationContent> dataSpecificationContents) {
+        this.dataSpecificationContents = dataSpecificationContents;
+    }
+
+    @Override
+    public List<EmbeddedDataSpecification> getEmbeddedDataSpecifications() {
+        return embeddedDataSpecifications;
+    }
+
+    @Override
+    public void setEmbeddedDataSpecifications(List<EmbeddedDataSpecification> embeddedDataSpecifications) {
+        this.embeddedDataSpecifications = embeddedDataSpecifications;
     }
 
     @Override

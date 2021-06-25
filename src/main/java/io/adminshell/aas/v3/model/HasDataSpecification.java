@@ -30,22 +30,75 @@ import io.adminshell.aas.v3.model.impl.*;
 public interface HasDataSpecification {
 
     /**
-     * Global reference to the data specification template used by the element.
+     * Global reference to the data specification template used by the element. Reference points to a
+     * Data Specification.
      *
-     * More information under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
+     * Reference must point to a Data Specification.
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification
      *
      * @return Returns the List of References for the property dataSpecifications.
      */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification")
     List<Reference> getDataSpecifications();
 
     /**
-     * Global reference to the data specification template used by the element.
+     * Global reference to the data specification template used by the element. Reference points to a
+     * Data Specification.
      *
-     * More information under https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/dataSpecification
+     * Reference must point to a Data Specification.
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification
      *
      * @param dataSpecifications desired value for the property dataSpecifications.
      */
     void setDataSpecifications(List<Reference> dataSpecifications);
+
+    /**
+     * Property links to a Data Specification Content, which contains the formalized definitions
+     * specifying this Data Specification.
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent
+     *
+     * @return Returns the List of DataSpecificationContents for the property dataSpecificationContents.
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent")
+    List<DataSpecificationContent> getDataSpecificationContents();
+
+    /**
+     * Property links to a Data Specification Content, which contains the formalized definitions
+     * specifying this Data Specification.
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent
+     *
+     * @param dataSpecificationContents desired value for the property dataSpecificationContents.
+     */
+    void setDataSpecificationContents(List<DataSpecificationContent> dataSpecificationContents);
+
+    /**
+     * Link to the included description of the Data Specification.
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification
+     *
+     * @return Returns the List of EmbeddedDataSpecifications for the property
+     *         embeddedDataSpecifications.
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")
+    List<EmbeddedDataSpecification> getEmbeddedDataSpecifications();
+
+    /**
+     * Link to the included description of the Data Specification.
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification
+     *
+     * @param embeddedDataSpecifications desired value for the property embeddedDataSpecifications.
+     */
+    void setEmbeddedDataSpecifications(List<EmbeddedDataSpecification> embeddedDataSpecifications);
 
 }

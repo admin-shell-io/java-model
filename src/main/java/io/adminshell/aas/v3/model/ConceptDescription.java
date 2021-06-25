@@ -44,25 +44,4 @@ public interface ConceptDescription extends HasDataSpecification, Identifiable {
      */
     void setIsCaseOfs(List<Reference> isCaseOfs);
 
-    /**
-     * The embedded data specification template of the description of the concept.
-     *
-     * More information under
-     * https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification
-     *
-     * @return Returns the List of DataSpecifications for the property embeddedDataSpecifications.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification")
-    List<DataSpecification> getEmbeddedDataSpecifications();
-
-    /**
-     * The embedded data specification template of the description of the concept.
-     *
-     * More information under
-     * https://admin-shell.io/aas/3/0/RC01/ConceptDescription/embeddedDataSpecification
-     *
-     * @param embeddedDataSpecifications desired value for the property embeddedDataSpecifications.
-     */
-    void setEmbeddedDataSpecifications(List<DataSpecification> embeddedDataSpecifications);
-
 }
