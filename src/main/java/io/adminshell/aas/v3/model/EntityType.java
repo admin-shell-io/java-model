@@ -17,7 +17,7 @@ public enum EntityType {
      * For co-managed entities there is no separate AAS. Co-managed entities need to be part of a
      * self-managed entity.
      */
-    CoManagedEntity,
+    CO_MANAGED_ENTITY,
 
     /**
      * Self-Managed Entities have their own AAS but can be part of the bill of material of a composite

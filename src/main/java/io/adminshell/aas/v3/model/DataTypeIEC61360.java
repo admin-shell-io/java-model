@@ -15,59 +15,59 @@ public enum DataTypeIEC61360 {
 
     /** 
     */
-    Boolean,
+    BOOLEAN,
 
     /** 
     */
-    Date,
+    DATE,
 
     /** 
     */
-    IntegerCount,
+    INTEGER_COUNT,
 
     /** 
     */
-    IntegerCurrency,
+    INTEGER_CURRENCY,
 
     /** 
     */
-    IntegerMeasure,
+    INTEGER_MEASURE,
 
     /** 
     */
-    Rational,
+    RATIONAL,
 
     /** 
     */
-    RationalMeasure,
+    RATIONAL_MEASURE,
 
     /** 
     */
-    RealCount,
+    REAL_COUNT,
 
     /** 
     */
-    RealCurrency,
+    REAL_CURRENCY,
 
     /** 
     */
-    RealMeasure,
+    REAL_MEASURE,
 
     /** 
     */
-    String,
+    STRING,
 
     /** 
     */
-    StringTranslatable,
+    STRING_TRANSLATABLE,
 
     /** 
     */
-    Time,
+    TIME,
 
     /** 
     */
-    Timestamp,
+    TIMESTAMP,
 
     /** 
     */
