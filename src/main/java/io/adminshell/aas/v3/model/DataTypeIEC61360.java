@@ -19,15 +19,19 @@ public enum DataTypeIEC61360 {
 
     /** 
     */
-    INTEGER_COUNT,
+    DATE,
 
     /** 
     */
-    INTEGER_CURRENCY,
+    INTEGERCOUNT,
 
     /** 
     */
-    INTEGER_MEASURE,
+    INTEGERCURRENCY,
+
+    /** 
+    */
+    INTEGERMEASURE,
 
     /** 
     */
@@ -35,15 +39,27 @@ public enum DataTypeIEC61360 {
 
     /** 
     */
-    RATIONAL_MEASURE,
+    RATIONALMEASURE,
 
     /** 
     */
-    REAL_COUNT,
+    REALCOUNT,
 
     /** 
     */
-    REAL_MEASURE,
+    REALCURRENCY,
+
+    /** 
+    */
+    REALMEASURE,
+
+    /** 
+    */
+    STRING,
+
+    /** 
+    */
+    STRINGTRANSLATABLE,
 
     /** 
     */
