@@ -1,6 +1,5 @@
 package io.adminshell.aas.v3.model;
 
-import java.util.List;
 
 
 
@@ -26,10 +25,10 @@ public interface EmbeddedDataSpecification {
      * More information under
      * https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification
      *
-     * @return Returns the List of References for the property dataSpecifications.
+     * @return Returns the Reference for the property dataSpecification.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification")
-    List<Reference> getDataSpecifications();
+    Reference getDataSpecification();
 
     /**
      * Global reference to the data specification template used by the element. Reference points to a
@@ -40,9 +39,9 @@ public interface EmbeddedDataSpecification {
      * More information under
      * https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification
      *
-     * @param dataSpecifications desired value for the property dataSpecifications.
+     * @param dataSpecification desired value for the property dataSpecification.
      */
-    void setDataSpecifications(List<Reference> dataSpecifications);
+    void setDataSpecification(Reference dataSpecification);
 
     /**
      * Property links to a Data Specification Content, which contains the formalized definitions
@@ -51,10 +50,10 @@ public interface EmbeddedDataSpecification {
      * More information under
      * https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent
      *
-     * @return Returns the List of DataSpecificationContents for the property dataSpecificationContents.
+     * @return Returns the DataSpecificationContent for the property dataSpecificationContent.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent")
-    List<DataSpecificationContent> getDataSpecificationContents();
+    DataSpecificationContent getDataSpecificationContent();
 
     /**
      * Property links to a Data Specification Content, which contains the formalized definitions
@@ -63,8 +62,8 @@ public interface EmbeddedDataSpecification {
      * More information under
      * https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent
      *
-     * @param dataSpecificationContents desired value for the property dataSpecificationContents.
+     * @param dataSpecificationContent desired value for the property dataSpecificationContent.
      */
-    void setDataSpecificationContents(List<DataSpecificationContent> dataSpecificationContents);
+    void setDataSpecificationContent(DataSpecificationContent dataSpecificationContent);
 
 }

@@ -1,7 +1,5 @@
 package io.adminshell.aas.v3.model.impl;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 
@@ -20,17 +18,17 @@ import io.adminshell.aas.v3.model.builder.*;
 public class DefaultEmbeddedDataSpecification implements EmbeddedDataSpecification {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification")
-    protected List<Reference> dataSpecifications = new ArrayList<>();
+    protected Reference dataSpecification;
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent")
-    protected List<DataSpecificationContent> dataSpecificationContents = new ArrayList<>();
+    protected DataSpecificationContent dataSpecificationContent;
 
     public DefaultEmbeddedDataSpecification() {}
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.dataSpecifications,
-            this.dataSpecificationContents);
+        return Objects.hash(this.dataSpecification,
+            this.dataSpecificationContent);
     }
 
     @Override
@@ -43,29 +41,29 @@ public class DefaultEmbeddedDataSpecification implements EmbeddedDataSpecificati
             return false;
         } else {
             DefaultEmbeddedDataSpecification other = (DefaultEmbeddedDataSpecification) obj;
-            return Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-                Objects.equals(this.dataSpecificationContents, other.dataSpecificationContents);
+            return Objects.equals(this.dataSpecification, other.dataSpecification) &&
+                Objects.equals(this.dataSpecificationContent, other.dataSpecificationContent);
         }
     }
 
     @Override
-    public List<Reference> getDataSpecifications() {
-        return dataSpecifications;
+    public Reference getDataSpecification() {
+        return dataSpecification;
     }
 
     @Override
-    public void setDataSpecifications(List<Reference> dataSpecifications) {
-        this.dataSpecifications = dataSpecifications;
+    public void setDataSpecification(Reference dataSpecification) {
+        this.dataSpecification = dataSpecification;
     }
 
     @Override
-    public List<DataSpecificationContent> getDataSpecificationContents() {
-        return dataSpecificationContents;
+    public DataSpecificationContent getDataSpecificationContent() {
+        return dataSpecificationContent;
     }
 
     @Override
-    public void setDataSpecificationContents(List<DataSpecificationContent> dataSpecificationContents) {
-        this.dataSpecificationContents = dataSpecificationContents;
+    public void setDataSpecificationContent(DataSpecificationContent dataSpecificationContent) {
+        this.dataSpecificationContent = dataSpecificationContent;
     }
 
     /**
