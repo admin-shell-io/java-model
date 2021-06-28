@@ -145,50 +145,6 @@ public abstract class AnnotatedRelationshipElementBuilder<T extends AnnotatedRel
     }
 
     /**
-     * This function allows setting a value for dataSpecifications
-     * 
-     * @param dataSpecifications desired value to be set
-     * @return Builder object with new value for dataSpecifications
-     */
-    public B dataSpecifications(List<Reference> dataSpecifications) {
-        getBuildingInstance().setDataSpecifications(dataSpecifications);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List dataSpecifications
-     * 
-     * @param dataSpecification desired value to be added
-     * @return Builder object with new value for dataSpecifications
-     */
-    public B dataSpecification(Reference dataSpecification) {
-        getBuildingInstance().getDataSpecifications().add(dataSpecification);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for dataSpecificationContents
-     * 
-     * @param dataSpecificationContents desired value to be set
-     * @return Builder object with new value for dataSpecificationContents
-     */
-    public B dataSpecificationContents(List<DataSpecificationContent> dataSpecificationContents) {
-        getBuildingInstance().setDataSpecificationContents(dataSpecificationContents);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List dataSpecificationContents
-     * 
-     * @param dataSpecificationContent desired value to be added
-     * @return Builder object with new value for dataSpecificationContents
-     */
-    public B dataSpecificationContent(DataSpecificationContent dataSpecificationContent) {
-        getBuildingInstance().getDataSpecificationContents().add(dataSpecificationContent);
-        return getSelf();
-    }
-
-    /**
      * This function allows setting a value for embeddedDataSpecifications
      * 
      * @param embeddedDataSpecifications desired value to be set

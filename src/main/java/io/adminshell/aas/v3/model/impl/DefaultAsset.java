@@ -22,12 +22,6 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultAsset implements Asset {
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification")
-    protected List<Reference> dataSpecifications = new ArrayList<>();
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent")
-    protected List<DataSpecificationContent> dataSpecificationContents = new ArrayList<>();
-
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")
     protected List<EmbeddedDataSpecification> embeddedDataSpecifications = new ArrayList<>();
 
@@ -53,9 +47,7 @@ public class DefaultAsset implements Asset {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.dataSpecifications,
-            this.dataSpecificationContents,
-            this.embeddedDataSpecifications,
+        return Objects.hash(this.embeddedDataSpecifications,
             this.administration,
             this.identification,
             this.category,
@@ -74,9 +66,7 @@ public class DefaultAsset implements Asset {
             return false;
         } else {
             DefaultAsset other = (DefaultAsset) obj;
-            return Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-                Objects.equals(this.dataSpecificationContents, other.dataSpecificationContents) &&
-                Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications) &&
+            return Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications) &&
                 Objects.equals(this.administration, other.administration) &&
                 Objects.equals(this.identification, other.identification) &&
                 Objects.equals(this.category, other.category) &&
@@ -84,26 +74,6 @@ public class DefaultAsset implements Asset {
                 Objects.equals(this.displayNames, other.displayNames) &&
                 Objects.equals(this.idShort, other.idShort);
         }
-    }
-
-    @Override
-    public List<Reference> getDataSpecifications() {
-        return dataSpecifications;
-    }
-
-    @Override
-    public void setDataSpecifications(List<Reference> dataSpecifications) {
-        this.dataSpecifications = dataSpecifications;
-    }
-
-    @Override
-    public List<DataSpecificationContent> getDataSpecificationContents() {
-        return dataSpecificationContents;
-    }
-
-    @Override
-    public void setDataSpecificationContents(List<DataSpecificationContent> dataSpecificationContents) {
-        this.dataSpecificationContents = dataSpecificationContents;
     }
 
     @Override

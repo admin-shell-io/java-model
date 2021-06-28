@@ -26,12 +26,6 @@ public class DefaultConceptDescription implements ConceptDescription {
     @IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf")
     protected List<Reference> isCaseOfs = new ArrayList<>();
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification")
-    protected List<Reference> dataSpecifications = new ArrayList<>();
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent")
-    protected List<DataSpecificationContent> dataSpecificationContents = new ArrayList<>();
-
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")
     protected List<EmbeddedDataSpecification> embeddedDataSpecifications = new ArrayList<>();
 
@@ -58,8 +52,6 @@ public class DefaultConceptDescription implements ConceptDescription {
     @Override
     public int hashCode() {
         return Objects.hash(this.isCaseOfs,
-            this.dataSpecifications,
-            this.dataSpecificationContents,
             this.embeddedDataSpecifications,
             this.administration,
             this.identification,
@@ -80,8 +72,6 @@ public class DefaultConceptDescription implements ConceptDescription {
         } else {
             DefaultConceptDescription other = (DefaultConceptDescription) obj;
             return Objects.equals(this.isCaseOfs, other.isCaseOfs) &&
-                Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-                Objects.equals(this.dataSpecificationContents, other.dataSpecificationContents) &&
                 Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications) &&
                 Objects.equals(this.administration, other.administration) &&
                 Objects.equals(this.identification, other.identification) &&
@@ -100,26 +90,6 @@ public class DefaultConceptDescription implements ConceptDescription {
     @Override
     public void setIsCaseOfs(List<Reference> isCaseOfs) {
         this.isCaseOfs = isCaseOfs;
-    }
-
-    @Override
-    public List<Reference> getDataSpecifications() {
-        return dataSpecifications;
-    }
-
-    @Override
-    public void setDataSpecifications(List<Reference> dataSpecifications) {
-        this.dataSpecifications = dataSpecifications;
-    }
-
-    @Override
-    public List<DataSpecificationContent> getDataSpecificationContents() {
-        return dataSpecificationContents;
-    }
-
-    @Override
-    public void setDataSpecificationContents(List<DataSpecificationContent> dataSpecificationContents) {
-        this.dataSpecificationContents = dataSpecificationContents;
     }
 
     @Override
