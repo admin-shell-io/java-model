@@ -36,7 +36,7 @@ public interface Identifier {
     void setIdentifier(String identifier);
 
     /**
-     * Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the
+     * Type of the Identifier, e.g. Iri, Irdi etc. The supported Identifier types are defined in the
      * enumeration 'IdentifierType'.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Identifier/idType
@@ -47,7 +47,7 @@ public interface Identifier {
     IdentifierType getIdType();
 
     /**
-     * Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the
+     * Type of the Identifier, e.g. Iri, Irdi etc. The supported Identifier types are defined in the
      * enumeration 'IdentifierType'.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Identifier/idType

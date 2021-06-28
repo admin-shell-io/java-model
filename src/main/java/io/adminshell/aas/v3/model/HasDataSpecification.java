@@ -14,7 +14,7 @@ import io.adminshell.aas.v3.model.impl.*;
  * template defines the additional attributes an element may or shall have. The data specifications
  * used are explicitly specified with their id. Constraint AASd-050: If the DataSpecificationContent
  * DataSpecificationIEC61360 is used for an element then the value of
- * hasDataSpecification/dataSpecification shall contain the global reference to the IRI of the
+ * hasDataSpecification/dataSpecification shall contain the global reference to the Iri of the
  * corresponding data specification template
  * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0.
  */
