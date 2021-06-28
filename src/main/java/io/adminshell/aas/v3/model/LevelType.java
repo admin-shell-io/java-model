@@ -15,22 +15,22 @@ import io.adminshell.aas.v3.model.impl.*;
 public enum LevelType {
 
     /**
-     * MAX according to IEC 61360 as an Identifier scheme for maximal levels.
+     * Max according to IEC 61360 as an Identifier scheme for maximal levels.
      */
     MAX,
 
     /**
-     * MIN according to IEC 61360 as an Identifier scheme for minimal levels.
+     * Min according to IEC 61360 as an Identifier scheme for minimal levels.
      */
     MIN,
 
     /**
-     * NOM according to IEC 61360 as an Identifier scheme for nominal levels.
+     * Nom according to IEC 61360 as an Identifier scheme for nominal levels.
      */
     NOM,
 
     /**
-     * TYP according to IEC 61360 as an Identifier scheme for typical levels.
+     * Typ according to IEC 61360 as an Identifier scheme for typical levels.
      */
     TYP;
 
