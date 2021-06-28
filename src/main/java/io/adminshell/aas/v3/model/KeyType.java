@@ -14,6 +14,11 @@ import io.adminshell.aas.v3.model.impl.*;
 public enum KeyType {
 
     /**
+     * Custom identifiers like GUIDs (globally unique Identifiers)
+     */
+    CUSTOM,
+
+    /**
      * IRDI according to ISO29002-5 as an Identifier scheme for properties and classifications.
      */
     IRDI,
