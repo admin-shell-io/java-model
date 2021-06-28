@@ -59,6 +59,10 @@ public enum KeyElements {
     */
     CAPABILITY,
 
+    /** 
+    */
+    CONCEPT_DICTIONARY,
+
     /**
      * Data Element is abstract, i.e. if a key uses 'DataElement' the reference may be a Property, a
      * File etc.
