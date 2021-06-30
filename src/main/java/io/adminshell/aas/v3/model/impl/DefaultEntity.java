@@ -25,11 +25,11 @@ public class DefaultEntity implements Entity {
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/entityType")
     protected EntityType entityType;
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId")
-    protected List<IdentifierKeyValuePair> externalAssetIds = new ArrayList<>();
-
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId")
     protected Reference globalAssetId;
+
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/specificAssetId")
+    protected IdentifierKeyValuePair specificAssetId;
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/statement")
     protected List<SubmodelElement> statements = new ArrayList<>();
@@ -63,7 +63,7 @@ public class DefaultEntity implements Entity {
     @Override
     public int hashCode() {
         return Objects.hash(this.globalAssetId,
-            this.externalAssetIds,
+            this.specificAssetId,
             this.entityType,
             this.statements,
             this.category,
@@ -87,7 +87,7 @@ public class DefaultEntity implements Entity {
         } else {
             DefaultEntity other = (DefaultEntity) obj;
             return Objects.equals(this.globalAssetId, other.globalAssetId) &&
-                Objects.equals(this.externalAssetIds, other.externalAssetIds) &&
+                Objects.equals(this.specificAssetId, other.specificAssetId) &&
                 Objects.equals(this.entityType, other.entityType) &&
                 Objects.equals(this.statements, other.statements) &&
                 Objects.equals(this.category, other.category) &&
@@ -112,13 +112,13 @@ public class DefaultEntity implements Entity {
     }
 
     @Override
-    public List<IdentifierKeyValuePair> getExternalAssetIds() {
-        return externalAssetIds;
+    public IdentifierKeyValuePair getSpecificAssetId() {
+        return specificAssetId;
     }
 
     @Override
-    public void setExternalAssetIds(List<IdentifierKeyValuePair> externalAssetIds) {
-        this.externalAssetIds = externalAssetIds;
+    public void setSpecificAssetId(IdentifierKeyValuePair specificAssetId) {
+        this.specificAssetId = specificAssetId;
     }
 
     @Override

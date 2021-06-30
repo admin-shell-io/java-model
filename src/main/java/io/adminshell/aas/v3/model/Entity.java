@@ -61,12 +61,12 @@ public interface Entity extends SubmodelElement {
      * Constraint AASd-014: Either the attribute globalAssetId or externalAssetId of an Entity must be
      * set if Entity/entityType is set to 'SelfManagedEntity'. They are not existing otherwise.
      *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId
+     * More information under https://admin-shell.io/aas/3/0/RC01/Entity/specificAssetId
      *
-     * @return Returns the List of IdentifierKeyValuePairs for the property externalAssetIds.
+     * @return Returns the IdentifierKeyValuePair for the property specificAssetId.
      */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId")
-    List<IdentifierKeyValuePair> getExternalAssetIds();
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/specificAssetId")
+    IdentifierKeyValuePair getSpecificAssetId();
 
     /**
      * Reference to an identifier key value pair representing an external identifier of the asset
@@ -78,11 +78,11 @@ public interface Entity extends SubmodelElement {
      * Constraint AASd-014: Either the attribute globalAssetId or externalAssetId of an Entity must be
      * set if Entity/entityType is set to 'SelfManagedEntity'. They are not existing otherwise.
      *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId
+     * More information under https://admin-shell.io/aas/3/0/RC01/Entity/specificAssetId
      *
-     * @param externalAssetIds desired value for the property externalAssetIds.
+     * @param specificAssetId desired value for the property specificAssetId.
      */
-    void setExternalAssetIds(List<IdentifierKeyValuePair> externalAssetIds);
+    void setSpecificAssetId(IdentifierKeyValuePair specificAssetId);
 
     /**
      * Describes whether the entity is a co-managed entity or a self-managed entity.
