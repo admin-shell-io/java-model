@@ -63,10 +63,10 @@ public interface Entity extends SubmodelElement {
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId
      *
-     * @return Returns the IdentifierKeyValuePair for the property externalAssetId.
+     * @return Returns the List of IdentifierKeyValuePairs for the property externalAssetIds.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId")
-    IdentifierKeyValuePair getExternalAssetId();
+    List<IdentifierKeyValuePair> getExternalAssetIds();
 
     /**
      * Reference to an identifier key value pair representing an external identifier of the asset
@@ -80,9 +80,9 @@ public interface Entity extends SubmodelElement {
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId
      *
-     * @param externalAssetId desired value for the property externalAssetId.
+     * @param externalAssetIds desired value for the property externalAssetIds.
      */
-    void setExternalAssetId(IdentifierKeyValuePair externalAssetId);
+    void setExternalAssetIds(List<IdentifierKeyValuePair> externalAssetIds);
 
     /**
      * Describes whether the entity is a co-managed entity or a self-managed entity.

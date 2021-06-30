@@ -23,13 +23,24 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
     }
 
     /**
-     * This function allows setting a value for externalAssetId
+     * This function allows setting a value for externalAssetIds
      * 
-     * @param externalAssetId desired value to be set
-     * @return Builder object with new value for externalAssetId
+     * @param externalAssetIds desired value to be set
+     * @return Builder object with new value for externalAssetIds
+     */
+    public B externalAssetIds(List<IdentifierKeyValuePair> externalAssetIds) {
+        getBuildingInstance().setExternalAssetIds(externalAssetIds);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List externalAssetIds
+     * 
+     * @param externalAssetId desired value to be added
+     * @return Builder object with new value for externalAssetIds
      */
     public B externalAssetId(IdentifierKeyValuePair externalAssetId) {
-        getBuildingInstance().setExternalAssetId(externalAssetId);
+        getBuildingInstance().getExternalAssetIds().add(externalAssetId);
         return getSelf();
     }
 
