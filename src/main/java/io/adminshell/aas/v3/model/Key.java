@@ -73,7 +73,7 @@ public interface Key {
     void setType(KeyElements type);
 
     /**
-     * The key value, for example an IRDI if the idType=IRDI.
+     * The key value, for example an IRDI if the idType=Irdi.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Key/value
      *
@@ -83,7 +83,7 @@ public interface Key {
     String getValue();
 
     /**
-     * The key value, for example an IRDI if the idType=IRDI.
+     * The key value, for example an IRDI if the idType=Irdi.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Key/value
      *

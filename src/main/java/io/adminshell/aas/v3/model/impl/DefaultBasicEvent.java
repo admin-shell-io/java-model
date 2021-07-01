@@ -22,12 +22,6 @@ public class DefaultBasicEvent implements BasicEvent {
     @IRI("https://admin-shell.io/aas/3/0/RC01/BasicEvent/observed")
     protected Reference observed;
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification")
-    protected List<Reference> dataSpecifications = new ArrayList<>();
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent")
-    protected List<DataSpecificationContent> dataSpecificationContents = new ArrayList<>();
-
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")
     protected List<EmbeddedDataSpecification> embeddedDataSpecifications = new ArrayList<>();
 
@@ -62,8 +56,6 @@ public class DefaultBasicEvent implements BasicEvent {
             this.displayNames,
             this.idShort,
             this.qualifiers,
-            this.dataSpecifications,
-            this.dataSpecificationContents,
             this.embeddedDataSpecifications,
             this.kind,
             this.semanticId);
@@ -85,8 +77,6 @@ public class DefaultBasicEvent implements BasicEvent {
                 Objects.equals(this.displayNames, other.displayNames) &&
                 Objects.equals(this.idShort, other.idShort) &&
                 Objects.equals(this.qualifiers, other.qualifiers) &&
-                Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-                Objects.equals(this.dataSpecificationContents, other.dataSpecificationContents) &&
                 Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications) &&
                 Objects.equals(this.kind, other.kind) &&
                 Objects.equals(this.semanticId, other.semanticId);
@@ -151,26 +141,6 @@ public class DefaultBasicEvent implements BasicEvent {
     @Override
     public void setQualifiers(List<Constraint> qualifiers) {
         this.qualifiers = qualifiers;
-    }
-
-    @Override
-    public List<Reference> getDataSpecifications() {
-        return dataSpecifications;
-    }
-
-    @Override
-    public void setDataSpecifications(List<Reference> dataSpecifications) {
-        this.dataSpecifications = dataSpecifications;
-    }
-
-    @Override
-    public List<DataSpecificationContent> getDataSpecificationContents() {
-        return dataSpecificationContents;
-    }
-
-    @Override
-    public void setDataSpecificationContents(List<DataSpecificationContent> dataSpecificationContents) {
-        this.dataSpecificationContents = dataSpecificationContents;
     }
 
     @Override

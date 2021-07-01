@@ -34,12 +34,6 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view")
     protected List<View> views = new ArrayList<>();
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification")
-    protected List<Reference> dataSpecifications = new ArrayList<>();
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent")
-    protected List<DataSpecificationContent> dataSpecificationContents = new ArrayList<>();
-
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")
     protected List<EmbeddedDataSpecification> embeddedDataSpecifications = new ArrayList<>();
 
@@ -70,8 +64,6 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
             this.security,
             this.submodels,
             this.views,
-            this.dataSpecifications,
-            this.dataSpecificationContents,
             this.embeddedDataSpecifications,
             this.administration,
             this.identification,
@@ -96,8 +88,6 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
                 Objects.equals(this.security, other.security) &&
                 Objects.equals(this.submodels, other.submodels) &&
                 Objects.equals(this.views, other.views) &&
-                Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-                Objects.equals(this.dataSpecificationContents, other.dataSpecificationContents) &&
                 Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications) &&
                 Objects.equals(this.administration, other.administration) &&
                 Objects.equals(this.identification, other.identification) &&
@@ -156,26 +146,6 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
     @Override
     public void setViews(List<View> views) {
         this.views = views;
-    }
-
-    @Override
-    public List<Reference> getDataSpecifications() {
-        return dataSpecifications;
-    }
-
-    @Override
-    public void setDataSpecifications(List<Reference> dataSpecifications) {
-        this.dataSpecifications = dataSpecifications;
-    }
-
-    @Override
-    public List<DataSpecificationContent> getDataSpecificationContents() {
-        return dataSpecificationContents;
-    }
-
-    @Override
-    public void setDataSpecificationContents(List<DataSpecificationContent> dataSpecificationContents) {
-        this.dataSpecificationContents = dataSpecificationContents;
     }
 
     @Override

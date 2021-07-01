@@ -30,12 +30,6 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
     protected String version;
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification")
-    protected List<Reference> dataSpecifications = new ArrayList<>();
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent")
-    protected List<DataSpecificationContent> dataSpecificationContents = new ArrayList<>();
-
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")
     protected List<EmbeddedDataSpecification> embeddedDataSpecifications = new ArrayList<>();
 
@@ -45,8 +39,6 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
     public int hashCode() {
         return Objects.hash(this.version,
             this.revision,
-            this.dataSpecifications,
-            this.dataSpecificationContents,
             this.embeddedDataSpecifications);
     }
 
@@ -62,8 +54,6 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
             DefaultAdministrativeInformation other = (DefaultAdministrativeInformation) obj;
             return Objects.equals(this.version, other.version) &&
                 Objects.equals(this.revision, other.revision) &&
-                Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-                Objects.equals(this.dataSpecificationContents, other.dataSpecificationContents) &&
                 Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications);
         }
     }
@@ -86,26 +76,6 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
     @Override
     public void setRevision(String revision) {
         this.revision = revision;
-    }
-
-    @Override
-    public List<Reference> getDataSpecifications() {
-        return dataSpecifications;
-    }
-
-    @Override
-    public void setDataSpecifications(List<Reference> dataSpecifications) {
-        this.dataSpecifications = dataSpecifications;
-    }
-
-    @Override
-    public List<DataSpecificationContent> getDataSpecificationContents() {
-        return dataSpecificationContents;
-    }
-
-    @Override
-    public void setDataSpecificationContents(List<DataSpecificationContent> dataSpecificationContents) {
-        this.dataSpecificationContents = dataSpecificationContents;
     }
 
     @Override

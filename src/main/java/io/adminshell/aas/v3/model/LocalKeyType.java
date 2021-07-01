@@ -21,6 +21,6 @@ public enum LocalKeyType {
     /**
      * idShort of a referable element
      */
-    IDSHORT;
+    ID_SHORT;
 
 }

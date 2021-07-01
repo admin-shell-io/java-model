@@ -101,7 +101,7 @@ public enum KeyElements {
 
     /** 
     */
-    RELATIONSHIPT_ELEMENT,
+    RELATIONSHIP_ELEMENT,
 
     /**
      * Submodel Element is abstract, i.e. if a key uses 'SubmodelElement' the reference may be a

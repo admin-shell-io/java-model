@@ -14,11 +14,12 @@ import io.adminshell.aas.v3.model.impl.*;
  * template defines the additional attributes an element may or shall have. The data specifications
  * used are explicitly specified with their id. Constraint AASd-050: If the DataSpecificationContent
  * DataSpecificationIEC61360 is used for an element then the value of
- * hasDataSpecification/dataSpecification shall contain the global reference to the IRI of the
+ * hasDataSpecification/dataSpecification shall contain the global reference to the Iri of the
  * corresponding data specification template
  * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0.
  */
 @KnownSubtypes({
+    @KnownSubtypes.Type(value = DefaultHasDataSpecification.class),
     @KnownSubtypes.Type(value = Submodel.class),
     @KnownSubtypes.Type(value = AdministrativeInformation.class),
     @KnownSubtypes.Type(value = Asset.class),
@@ -28,56 +29,6 @@ import io.adminshell.aas.v3.model.impl.*;
     @KnownSubtypes.Type(value = SubmodelElement.class)
 })
 public interface HasDataSpecification {
-
-    /**
-     * Global reference to the data specification template used by the element. Reference points to a
-     * Data Specification.
-     *
-     * Reference must point to a Data Specification.
-     *
-     * More information under
-     * https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification
-     *
-     * @return Returns the List of References for the property dataSpecifications.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification")
-    List<Reference> getDataSpecifications();
-
-    /**
-     * Global reference to the data specification template used by the element. Reference points to a
-     * Data Specification.
-     *
-     * Reference must point to a Data Specification.
-     *
-     * More information under
-     * https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification
-     *
-     * @param dataSpecifications desired value for the property dataSpecifications.
-     */
-    void setDataSpecifications(List<Reference> dataSpecifications);
-
-    /**
-     * Property links to a Data Specification Content, which contains the formalized definitions
-     * specifying this Data Specification.
-     *
-     * More information under
-     * https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent
-     *
-     * @return Returns the List of DataSpecificationContents for the property dataSpecificationContents.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent")
-    List<DataSpecificationContent> getDataSpecificationContents();
-
-    /**
-     * Property links to a Data Specification Content, which contains the formalized definitions
-     * specifying this Data Specification.
-     *
-     * More information under
-     * https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent
-     *
-     * @param dataSpecificationContents desired value for the property dataSpecificationContents.
-     */
-    void setDataSpecificationContents(List<DataSpecificationContent> dataSpecificationContents);
 
     /**
      * Link to the included description of the Data Specification.

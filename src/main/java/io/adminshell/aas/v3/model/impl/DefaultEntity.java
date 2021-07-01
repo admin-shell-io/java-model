@@ -22,20 +22,14 @@ import io.adminshell.aas.v3.model.builder.*;
 
 public class DefaultEntity implements Entity {
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification")
-    protected List<Reference> dataSpecifications = new ArrayList<>();
-
-    @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent")
-    protected List<DataSpecificationContent> dataSpecificationContents = new ArrayList<>();
-
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/entityType")
     protected EntityType entityType;
 
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId")
-    protected IdentifierKeyValuePair externalAssetId;
-
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/globalAssetId")
     protected Reference globalAssetId;
+
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/specificAssetId")
+    protected IdentifierKeyValuePair specificAssetId;
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/statement")
     protected List<SubmodelElement> statements = new ArrayList<>();
@@ -69,7 +63,7 @@ public class DefaultEntity implements Entity {
     @Override
     public int hashCode() {
         return Objects.hash(this.globalAssetId,
-            this.externalAssetId,
+            this.specificAssetId,
             this.entityType,
             this.statements,
             this.category,
@@ -77,8 +71,6 @@ public class DefaultEntity implements Entity {
             this.displayNames,
             this.idShort,
             this.qualifiers,
-            this.dataSpecifications,
-            this.dataSpecificationContents,
             this.embeddedDataSpecifications,
             this.kind,
             this.semanticId);
@@ -95,7 +87,7 @@ public class DefaultEntity implements Entity {
         } else {
             DefaultEntity other = (DefaultEntity) obj;
             return Objects.equals(this.globalAssetId, other.globalAssetId) &&
-                Objects.equals(this.externalAssetId, other.externalAssetId) &&
+                Objects.equals(this.specificAssetId, other.specificAssetId) &&
                 Objects.equals(this.entityType, other.entityType) &&
                 Objects.equals(this.statements, other.statements) &&
                 Objects.equals(this.category, other.category) &&
@@ -103,8 +95,6 @@ public class DefaultEntity implements Entity {
                 Objects.equals(this.displayNames, other.displayNames) &&
                 Objects.equals(this.idShort, other.idShort) &&
                 Objects.equals(this.qualifiers, other.qualifiers) &&
-                Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-                Objects.equals(this.dataSpecificationContents, other.dataSpecificationContents) &&
                 Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications) &&
                 Objects.equals(this.kind, other.kind) &&
                 Objects.equals(this.semanticId, other.semanticId);
@@ -122,13 +112,13 @@ public class DefaultEntity implements Entity {
     }
 
     @Override
-    public IdentifierKeyValuePair getExternalAssetId() {
-        return externalAssetId;
+    public IdentifierKeyValuePair getSpecificAssetId() {
+        return specificAssetId;
     }
 
     @Override
-    public void setExternalAssetId(IdentifierKeyValuePair externalAssetId) {
-        this.externalAssetId = externalAssetId;
+    public void setSpecificAssetId(IdentifierKeyValuePair specificAssetId) {
+        this.specificAssetId = specificAssetId;
     }
 
     @Override
@@ -199,26 +189,6 @@ public class DefaultEntity implements Entity {
     @Override
     public void setQualifiers(List<Constraint> qualifiers) {
         this.qualifiers = qualifiers;
-    }
-
-    @Override
-    public List<Reference> getDataSpecifications() {
-        return dataSpecifications;
-    }
-
-    @Override
-    public void setDataSpecifications(List<Reference> dataSpecifications) {
-        this.dataSpecifications = dataSpecifications;
-    }
-
-    @Override
-    public List<DataSpecificationContent> getDataSpecificationContents() {
-        return dataSpecificationContents;
-    }
-
-    @Override
-    public void setDataSpecificationContents(List<DataSpecificationContent> dataSpecificationContents) {
-        this.dataSpecificationContents = dataSpecificationContents;
     }
 
     @Override

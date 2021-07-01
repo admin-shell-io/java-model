@@ -36,6 +36,6 @@ public enum KeyType {
     /**
      * idShort of a referable element
      */
-    IDSHORT;
+    ID_SHORT;
 
 }
