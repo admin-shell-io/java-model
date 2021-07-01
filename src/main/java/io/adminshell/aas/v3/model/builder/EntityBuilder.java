@@ -4,7 +4,7 @@ import java.util.List;
 
 
 
-import de.fraunhofer.iais.eis.util.*;
+import io.adminshell.aas.v3.util.*;
 import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
@@ -13,7 +13,7 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
 
     /**
      * This function allows setting a value for globalAssetId
-     * 
+     *
      * @param globalAssetId desired value to be set
      * @return Builder object with new value for globalAssetId
      */
@@ -24,7 +24,7 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
 
     /**
      * This function allows setting a value for specificAssetId
-     * 
+     *
      * @param specificAssetId desired value to be set
      * @return Builder object with new value for specificAssetId
      */
@@ -35,7 +35,7 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
 
     /**
      * This function allows setting a value for entityType
-     * 
+     *
      * @param entityType desired value to be set
      * @return Builder object with new value for entityType
      */
@@ -46,7 +46,7 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
 
     /**
      * This function allows setting a value for statements
-     * 
+     *
      * @param statements desired value to be set
      * @return Builder object with new value for statements
      */
@@ -57,7 +57,7 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
 
     /**
      * This function allows adding a value to the List statements
-     * 
+     *
      * @param statement desired value to be added
      * @return Builder object with new value for statements
      */
@@ -68,7 +68,7 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
 
     /**
      * This function allows setting a value for category
-     * 
+     *
      * @param category desired value to be set
      * @return Builder object with new value for category
      */
@@ -79,7 +79,7 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
 
     /**
      * This function allows setting a value for descriptions
-     * 
+     *
      * @param descriptions desired value to be set
      * @return Builder object with new value for descriptions
      */
@@ -90,7 +90,7 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
 
     /**
      * This function allows adding a value to the List descriptions
-     * 
+     *
      * @param description desired value to be added
      * @return Builder object with new value for descriptions
      */
@@ -101,7 +101,7 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
 
     /**
      * This function allows setting a value for displayNames
-     * 
+     *
      * @param displayNames desired value to be set
      * @return Builder object with new value for displayNames
      */
@@ -112,7 +112,7 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
 
     /**
      * This function allows adding a value to the List displayNames
-     * 
+     *
      * @param displayName desired value to be added
      * @return Builder object with new value for displayNames
      */
@@ -123,7 +123,7 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
 
     /**
      * This function allows setting a value for idShort
-     * 
+     *
      * @param idShort desired value to be set
      * @return Builder object with new value for idShort
      */
@@ -134,7 +134,7 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
 
     /**
      * This function allows setting a value for qualifiers
-     * 
+     *
      * @param qualifiers desired value to be set
      * @return Builder object with new value for qualifiers
      */
@@ -145,7 +145,7 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
 
     /**
      * This function allows adding a value to the List qualifiers
-     * 
+     *
      * @param qualifier desired value to be added
      * @return Builder object with new value for qualifiers
      */
@@ -156,7 +156,7 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
 
     /**
      * This function allows setting a value for embeddedDataSpecifications
-     * 
+     *
      * @param embeddedDataSpecifications desired value to be set
      * @return Builder object with new value for embeddedDataSpecifications
      */
@@ -167,7 +167,7 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
 
     /**
      * This function allows adding a value to the List embeddedDataSpecifications
-     * 
+     *
      * @param embeddedDataSpecification desired value to be added
      * @return Builder object with new value for embeddedDataSpecifications
      */
@@ -178,7 +178,7 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
 
     /**
      * This function allows setting a value for kind
-     * 
+     *
      * @param kind desired value to be set
      * @return Builder object with new value for kind
      */
@@ -189,7 +189,7 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
 
     /**
      * This function allows setting a value for semanticId
-     * 
+     *
      * @param semanticId desired value to be set
      * @return Builder object with new value for semanticId
      */

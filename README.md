@@ -1,2 +1,3 @@
-# java-model
+# Java Model
+
 AAS model implemented in Java
