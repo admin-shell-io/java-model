@@ -1,3 +1,29 @@
+/*
+Copyright (c) 2021 Fraunhofer IOSB-INA Lemgo,
+    eine rechtlich nicht selbstaendige Einrichtung der Fraunhofer-Gesellschaft
+    zur Foerderung der angewandten Forschung e.V.
+
+Copyright (c) 2021 Fraunhofer IOSB-ILT Karlsruhe,
+    eine rechtlich nicht selbstaendige Einrichtung der Fraunhofer-Gesellschaft
+    zur Foerderung der angewandten Forschung e.V.
+
+Copyright (c) 2021 Fraunhofer IAIS,
+    eine rechtlich nicht selbstaendige Einrichtung der Fraunhofer-Gesellschaft
+    zur Foerderung der angewandten Forschung e.V.
+
+Copyright (c) 2021 Fraunhofer IESE,
+    eine rechtlich nicht selbstaendige Einrichtung der Fraunhofer-Gesellschaft
+    zur Foerderung der angewandten Forschung e.V.
+
+Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
+    eine rechtlich nicht selbstaendige Einrichtung der Fraunhofer-Gesellschaft
+    zur Foerderung der angewandten Forschung e.V.
+
+This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
+
+This source code may use other Open Source software components (see LICENSE.txt).
+*/
+
 package io.adminshell.aas.v3.dataformat;
 
 import java.io.FileNotFoundException;
@@ -28,7 +54,7 @@ public interface Serializer {
 
     /**
      * Serializes a given instance of AssetAdministrationShellEnvironment to string
-     * 
+     *
      * @param aasEnvironment the AssetAdministrationShellEnvironment to serialize
      * @return the string representation of the environment
      * @throws SerializationException if serialization fails
@@ -38,7 +64,7 @@ public interface Serializer {
     /**
      * Serializes a given instance of AssetAdministrationShellEnvironment to an OutputStream using
      * DEFAULT_CHARSET
-     * 
+     *
      * @param out the Outputstream to serialize to
      * @param aasEnvironment the AssetAdministrationShellEnvironment to serialize
      * @throws IOException if writing to the stream fails
@@ -51,7 +77,7 @@ public interface Serializer {
     /**
      * Serializes a given instance of AssetAdministrationShellEnvironment to an OutputStream using given
      * charset
-     * 
+     *
      * @param out the Outputstream to serialize to
      * @param charset the Charset to use for serialization
      * @param aasEnvironment the AssetAdministrationShellEnvironment to serialize
@@ -70,7 +96,7 @@ public interface Serializer {
     /**
      * Serializes a given instance of AssetAdministrationShellEnvironment to a java.io.File using
      * DEFAULT_CHARSET
-     * 
+     *
      * @param file the java.io.File to serialize to
      * @param charset the Charset to use for serialization
      * @param aasEnvironment the AssetAdministrationShellEnvironment to serialize
@@ -88,7 +114,7 @@ public interface Serializer {
     /**
      * Serializes a given instance of AssetAdministrationShellEnvironment to a java.io.File using given
      * charset
-     * 
+     *
      * @param file the java.io.File to serialize to
      * @param aasEnvironment the AssetAdministrationShellEnvironment to serialize
      * @throws FileNotFoundException if the fail does not exist
