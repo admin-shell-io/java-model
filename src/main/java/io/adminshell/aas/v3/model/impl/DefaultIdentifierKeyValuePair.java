@@ -22,25 +22,21 @@ Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 
 This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ */
 package io.adminshell.aas.v3.model.impl;
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.Objects;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of package io.adminshell.aas.v3.model.IdentifierKeyValuePair
- * 
+ * Default implementation of package
+ * io.adminshell.aas.v3.model.IdentifierKeyValuePair
+ *
  * An IdentifierKeyValuePair describes a generic identifier as key-value pair.
  */
-
 public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
@@ -55,14 +51,15 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
     @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifierKeyValuePair/value")
     protected String value;
 
-    public DefaultIdentifierKeyValuePair() {}
+    public DefaultIdentifierKeyValuePair() {
+    }
 
     @Override
     public int hashCode() {
         return Objects.hash(this.key,
-            this.value,
-            this.externalSubjectId,
-            this.semanticId);
+                this.value,
+                this.externalSubjectId,
+                this.semanticId);
     }
 
     @Override
@@ -75,10 +72,10 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
             return false;
         } else {
             DefaultIdentifierKeyValuePair other = (DefaultIdentifierKeyValuePair) obj;
-            return Objects.equals(this.key, other.key) &&
-                Objects.equals(this.value, other.value) &&
-                Objects.equals(this.externalSubjectId, other.externalSubjectId) &&
-                Objects.equals(this.semanticId, other.semanticId);
+            return Objects.equals(this.key, other.key)
+                    && Objects.equals(this.value, other.value)
+                    && Objects.equals(this.externalSubjectId, other.externalSubjectId)
+                    && Objects.equals(this.semanticId, other.semanticId);
         }
     }
 
@@ -123,7 +120,8 @@ public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
     }
 
     /**
-     * This builder class can be used to construct a DefaultIdentifierKeyValuePair bean.
+     * This builder class can be used to construct a
+     * DefaultIdentifierKeyValuePair bean.
      */
     public static class Builder extends IdentifierKeyValuePairBuilder<DefaultIdentifierKeyValuePair, Builder> {
 

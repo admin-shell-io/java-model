@@ -22,27 +22,22 @@ Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 
 This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ */
 package io.adminshell.aas.v3.model.impl;
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * Default implementation of package io.adminshell.aas.v3.model.File
- * 
+ *
  * A File is a data element that represents a file via its path description.
  */
-
 public class DefaultFile implements File {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/File/mimeType")
@@ -75,20 +70,21 @@ public class DefaultFile implements File {
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
     protected String idShort;
 
-    public DefaultFile() {}
+    public DefaultFile() {
+    }
 
     @Override
     public int hashCode() {
         return Objects.hash(this.mimeType,
-            this.value,
-            this.category,
-            this.descriptions,
-            this.displayNames,
-            this.idShort,
-            this.qualifiers,
-            this.embeddedDataSpecifications,
-            this.kind,
-            this.semanticId);
+                this.value,
+                this.category,
+                this.descriptions,
+                this.displayNames,
+                this.idShort,
+                this.qualifiers,
+                this.embeddedDataSpecifications,
+                this.kind,
+                this.semanticId);
     }
 
     @Override
@@ -101,16 +97,16 @@ public class DefaultFile implements File {
             return false;
         } else {
             DefaultFile other = (DefaultFile) obj;
-            return Objects.equals(this.mimeType, other.mimeType) &&
-                Objects.equals(this.value, other.value) &&
-                Objects.equals(this.category, other.category) &&
-                Objects.equals(this.descriptions, other.descriptions) &&
-                Objects.equals(this.displayNames, other.displayNames) &&
-                Objects.equals(this.idShort, other.idShort) &&
-                Objects.equals(this.qualifiers, other.qualifiers) &&
-                Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications) &&
-                Objects.equals(this.kind, other.kind) &&
-                Objects.equals(this.semanticId, other.semanticId);
+            return Objects.equals(this.mimeType, other.mimeType)
+                    && Objects.equals(this.value, other.value)
+                    && Objects.equals(this.category, other.category)
+                    && Objects.equals(this.descriptions, other.descriptions)
+                    && Objects.equals(this.displayNames, other.displayNames)
+                    && Objects.equals(this.idShort, other.idShort)
+                    && Objects.equals(this.qualifiers, other.qualifiers)
+                    && Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications)
+                    && Objects.equals(this.kind, other.kind)
+                    && Objects.equals(this.semanticId, other.semanticId);
         }
     }
 

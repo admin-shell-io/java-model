@@ -22,33 +22,30 @@ Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 
 This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ */
 package io.adminshell.aas.v3.model.impl;
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * Default implementation of package io.adminshell.aas.v3.model.Range
- * 
- * An element that is referable by its idShort. This id is not globally unique. This id is unique
- * within the name space of the element. Constraint AASd-053: The semanticId of a Range submodel
- * element shall only reference a ConceptDescription with the category PROPERTY. Constraint
- * AASd-068: If the semanticId of a Range references a ConceptDescription then
- * DataSpecificationIEC61360/dataType shall be a numerical one, i.e. REAL_* or RATIONAL_*.
- * Constraint AASd-069: If the semanticId of a Range references a ConceptDescription then
- * DataSpecificationIEC61360/levelType shall be identical to the set {Min,Max}.
+ *
+ * An element that is referable by its idShort. This id is not globally unique.
+ * This id is unique within the name space of the element. Constraint AASd-053:
+ * The semanticId of a Range submodel element shall only reference a
+ * ConceptDescription with the category PROPERTY. Constraint AASd-068: If the
+ * semanticId of a Range references a ConceptDescription then
+ * DataSpecificationIEC61360/dataType shall be a numerical one, i.e. REAL_* or
+ * RATIONAL_*. Constraint AASd-069: If the semanticId of a Range references a
+ * ConceptDescription then DataSpecificationIEC61360/levelType shall be
+ * identical to the set {Min,Max}.
  */
-
 public class DefaultRange implements Range {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")
@@ -84,21 +81,22 @@ public class DefaultRange implements Range {
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
     protected String idShort;
 
-    public DefaultRange() {}
+    public DefaultRange() {
+    }
 
     @Override
     public int hashCode() {
         return Objects.hash(this.valueType,
-            this.max,
-            this.min,
-            this.category,
-            this.descriptions,
-            this.displayNames,
-            this.idShort,
-            this.qualifiers,
-            this.embeddedDataSpecifications,
-            this.kind,
-            this.semanticId);
+                this.max,
+                this.min,
+                this.category,
+                this.descriptions,
+                this.displayNames,
+                this.idShort,
+                this.qualifiers,
+                this.embeddedDataSpecifications,
+                this.kind,
+                this.semanticId);
     }
 
     @Override
@@ -111,17 +109,17 @@ public class DefaultRange implements Range {
             return false;
         } else {
             DefaultRange other = (DefaultRange) obj;
-            return Objects.equals(this.valueType, other.valueType) &&
-                Objects.equals(this.max, other.max) &&
-                Objects.equals(this.min, other.min) &&
-                Objects.equals(this.category, other.category) &&
-                Objects.equals(this.descriptions, other.descriptions) &&
-                Objects.equals(this.displayNames, other.displayNames) &&
-                Objects.equals(this.idShort, other.idShort) &&
-                Objects.equals(this.qualifiers, other.qualifiers) &&
-                Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications) &&
-                Objects.equals(this.kind, other.kind) &&
-                Objects.equals(this.semanticId, other.semanticId);
+            return Objects.equals(this.valueType, other.valueType)
+                    && Objects.equals(this.max, other.max)
+                    && Objects.equals(this.min, other.min)
+                    && Objects.equals(this.category, other.category)
+                    && Objects.equals(this.descriptions, other.descriptions)
+                    && Objects.equals(this.displayNames, other.displayNames)
+                    && Objects.equals(this.idShort, other.idShort)
+                    && Objects.equals(this.qualifiers, other.qualifiers)
+                    && Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications)
+                    && Objects.equals(this.kind, other.kind)
+                    && Objects.equals(this.semanticId, other.semanticId);
         }
     }
 

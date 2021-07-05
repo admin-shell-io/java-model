@@ -1,36 +1,8 @@
-/*
-Copyright (c) 2021 Fraunhofer IOSB-INA Lemgo,
-    eine rechtlich nicht selbstaendige Einrichtung der Fraunhofer-Gesellschaft
-    zur Foerderung der angewandten Forschung e.V.
-
-Copyright (c) 2021 Fraunhofer IOSB-ILT Karlsruhe,
-    eine rechtlich nicht selbstaendige Einrichtung der Fraunhofer-Gesellschaft
-    zur Foerderung der angewandten Forschung e.V.
-
-Copyright (c) 2021 Fraunhofer IAIS,
-    eine rechtlich nicht selbstaendige Einrichtung der Fraunhofer-Gesellschaft
-    zur Foerderung der angewandten Forschung e.V.
-
-Copyright (c) 2021 Fraunhofer IESE,
-    eine rechtlich nicht selbstaendige Einrichtung der Fraunhofer-Gesellschaft
-    zur Foerderung der angewandten Forschung e.V.
-
-Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
-    eine rechtlich nicht selbstaendige Einrichtung der Fraunhofer-Gesellschaft
-    zur Foerderung der angewandten Forschung e.V.
-
-This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
-
-This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
 package io.adminshell.aas.v3.model;
 
+import io.adminshell.aas.v3.model.annotations.KnownSubtypes;
+import io.adminshell.aas.v3.model.annotations.IRI;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
@@ -48,7 +20,8 @@ public interface AccessControlPolicyPoints {
      * More information under
      * https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint
      *
-     * @return Returns the PolicyAdministrationPoint for the property policyAdministrationPoint.
+     * @return Returns the PolicyAdministrationPoint for the property
+     * policyAdministrationPoint.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint")
     PolicyAdministrationPoint getPolicyAdministrationPoint();
@@ -59,7 +32,8 @@ public interface AccessControlPolicyPoints {
      * More information under
      * https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint
      *
-     * @param policyAdministrationPoint desired value for the property policyAdministrationPoint.
+     * @param policyAdministrationPoint desired value for the property
+     * policyAdministrationPoint.
      */
     void setPolicyAdministrationPoint(PolicyAdministrationPoint policyAdministrationPoint);
 
@@ -69,7 +43,8 @@ public interface AccessControlPolicyPoints {
      * More information under
      * https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint
      *
-     * @return Returns the PolicyDecisionPoint for the property policyDecisionPoint.
+     * @return Returns the PolicyDecisionPoint for the property
+     * policyDecisionPoint.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint")
     PolicyDecisionPoint getPolicyDecisionPoint();
@@ -80,7 +55,8 @@ public interface AccessControlPolicyPoints {
      * More information under
      * https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyDecisionPoint
      *
-     * @param policyDecisionPoint desired value for the property policyDecisionPoint.
+     * @param policyDecisionPoint desired value for the property
+     * policyDecisionPoint.
      */
     void setPolicyDecisionPoint(PolicyDecisionPoint policyDecisionPoint);
 
@@ -90,7 +66,8 @@ public interface AccessControlPolicyPoints {
      * More information under
      * https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint
      *
-     * @return Returns the PolicyEnforcementPoints for the property policyEnforcementPoint.
+     * @return Returns the PolicyEnforcementPoints for the property
+     * policyEnforcementPoint.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint")
     PolicyEnforcementPoints getPolicyEnforcementPoint();
@@ -101,7 +78,8 @@ public interface AccessControlPolicyPoints {
      * More information under
      * https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyEnforcementPoint
      *
-     * @param policyEnforcementPoint desired value for the property policyEnforcementPoint.
+     * @param policyEnforcementPoint desired value for the property
+     * policyEnforcementPoint.
      */
     void setPolicyEnforcementPoint(PolicyEnforcementPoints policyEnforcementPoint);
 
@@ -111,7 +89,8 @@ public interface AccessControlPolicyPoints {
      * More information under
      * https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints
      *
-     * @return Returns the PolicyInformationPoints for the property policyInformationPoints.
+     * @return Returns the PolicyInformationPoints for the property
+     * policyInformationPoints.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints")
     PolicyInformationPoints getPolicyInformationPoints();
@@ -122,7 +101,8 @@ public interface AccessControlPolicyPoints {
      * More information under
      * https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints
      *
-     * @param policyInformationPoints desired value for the property policyInformationPoints.
+     * @param policyInformationPoints desired value for the property
+     * policyInformationPoints.
      */
     void setPolicyInformationPoints(PolicyInformationPoints policyInformationPoints);
 

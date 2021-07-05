@@ -22,26 +22,22 @@ Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 
 This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ */
 package io.adminshell.aas.v3.model.impl;
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.Objects;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of package io.adminshell.aas.v3.model.ValueReferencePair
- * 
- * A value reference pair within a value list. Each value has a global unique id defining its
- * semantic.
+ * Default implementation of package
+ * io.adminshell.aas.v3.model.ValueReferencePair
+ *
+ * A value reference pair within a value list. Each value has a global unique id
+ * defining its semantic.
  */
-
 public class DefaultValueReferencePair implements ValueReferencePair {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value")
@@ -50,12 +46,13 @@ public class DefaultValueReferencePair implements ValueReferencePair {
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/valueId")
     protected Reference valueId;
 
-    public DefaultValueReferencePair() {}
+    public DefaultValueReferencePair() {
+    }
 
     @Override
     public int hashCode() {
         return Objects.hash(this.value,
-            this.valueId);
+                this.valueId);
     }
 
     @Override
@@ -68,8 +65,8 @@ public class DefaultValueReferencePair implements ValueReferencePair {
             return false;
         } else {
             DefaultValueReferencePair other = (DefaultValueReferencePair) obj;
-            return Objects.equals(this.value, other.value) &&
-                Objects.equals(this.valueId, other.valueId);
+            return Objects.equals(this.value, other.value)
+                    && Objects.equals(this.valueId, other.valueId);
         }
     }
 
@@ -94,7 +91,8 @@ public class DefaultValueReferencePair implements ValueReferencePair {
     }
 
     /**
-     * This builder class can be used to construct a DefaultValueReferencePair bean.
+     * This builder class can be used to construct a DefaultValueReferencePair
+     * bean.
      */
     public static class Builder extends ValueReferencePairBuilder<DefaultValueReferencePair, Builder> {
 

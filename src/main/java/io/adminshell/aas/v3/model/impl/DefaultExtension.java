@@ -22,26 +22,21 @@ Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 
 This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ */
 package io.adminshell.aas.v3.model.impl;
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.Objects;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * Default implementation of package io.adminshell.aas.v3.model.Extension
- * 
- * Single extension of an element. Constraint AASd-077: The name of an extension within
- * HasExtensions needs to be unique.
+ *
+ * Single extension of an element. Constraint AASd-077: The name of an extension
+ * within HasExtensions needs to be unique.
  */
-
 public class DefaultExtension implements Extension {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/name")
@@ -59,15 +54,16 @@ public class DefaultExtension implements Extension {
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
     protected Reference semanticId;
 
-    public DefaultExtension() {}
+    public DefaultExtension() {
+    }
 
     @Override
     public int hashCode() {
         return Objects.hash(this.name,
-            this.valueType,
-            this.value,
-            this.refersTo,
-            this.semanticId);
+                this.valueType,
+                this.value,
+                this.refersTo,
+                this.semanticId);
     }
 
     @Override
@@ -80,11 +76,11 @@ public class DefaultExtension implements Extension {
             return false;
         } else {
             DefaultExtension other = (DefaultExtension) obj;
-            return Objects.equals(this.name, other.name) &&
-                Objects.equals(this.valueType, other.valueType) &&
-                Objects.equals(this.value, other.value) &&
-                Objects.equals(this.refersTo, other.refersTo) &&
-                Objects.equals(this.semanticId, other.semanticId);
+            return Objects.equals(this.name, other.name)
+                    && Objects.equals(this.valueType, other.valueType)
+                    && Objects.equals(this.value, other.value)
+                    && Objects.equals(this.refersTo, other.refersTo)
+                    && Objects.equals(this.semanticId, other.semanticId);
         }
     }
 

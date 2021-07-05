@@ -22,25 +22,20 @@ Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 
 This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ */
 package io.adminshell.aas.v3.model.impl;
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.Objects;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * Default implementation of package io.adminshell.aas.v3.model.Key
- * 
+ *
  * A key is a reference to an element by its id.
  */
-
 public class DefaultKey implements Key {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Key/idType")
@@ -52,13 +47,14 @@ public class DefaultKey implements Key {
     @IRI("https://admin-shell.io/aas/3/0/RC01/Key/value")
     protected String value;
 
-    public DefaultKey() {}
+    public DefaultKey() {
+    }
 
     @Override
     public int hashCode() {
         return Objects.hash(this.idType,
-            this.type,
-            this.value);
+                this.type,
+                this.value);
     }
 
     @Override
@@ -71,9 +67,9 @@ public class DefaultKey implements Key {
             return false;
         } else {
             DefaultKey other = (DefaultKey) obj;
-            return Objects.equals(this.idType, other.idType) &&
-                Objects.equals(this.type, other.type) &&
-                Objects.equals(this.value, other.value);
+            return Objects.equals(this.idType, other.idType)
+                    && Objects.equals(this.type, other.type)
+                    && Objects.equals(this.value, other.value);
         }
     }
 

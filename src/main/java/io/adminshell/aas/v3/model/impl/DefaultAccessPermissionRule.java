@@ -22,28 +22,24 @@ Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 
 This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ */
 package io.adminshell.aas.v3.model.impl;
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of package io.adminshell.aas.v3.model.AccessPermissionRule
- * 
- * Table that defines access permissions per authenticated subject for a set of objects (referable
- * elements).
+ * Default implementation of package
+ * io.adminshell.aas.v3.model.AccessPermissionRule
+ *
+ * Table that defines access permissions per authenticated subject for a set of
+ * objects (referable elements).
  */
-
 public class DefaultAccessPermissionRule implements AccessPermissionRule {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject")
@@ -67,17 +63,18 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
     protected String idShort;
 
-    public DefaultAccessPermissionRule() {}
+    public DefaultAccessPermissionRule() {
+    }
 
     @Override
     public int hashCode() {
         return Objects.hash(this.permissionsPerObjects,
-            this.targetSubjectAttributes,
-            this.category,
-            this.descriptions,
-            this.displayNames,
-            this.idShort,
-            this.qualifiers);
+                this.targetSubjectAttributes,
+                this.category,
+                this.descriptions,
+                this.displayNames,
+                this.idShort,
+                this.qualifiers);
     }
 
     @Override
@@ -90,13 +87,13 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
             return false;
         } else {
             DefaultAccessPermissionRule other = (DefaultAccessPermissionRule) obj;
-            return Objects.equals(this.permissionsPerObjects, other.permissionsPerObjects) &&
-                Objects.equals(this.targetSubjectAttributes, other.targetSubjectAttributes) &&
-                Objects.equals(this.category, other.category) &&
-                Objects.equals(this.descriptions, other.descriptions) &&
-                Objects.equals(this.displayNames, other.displayNames) &&
-                Objects.equals(this.idShort, other.idShort) &&
-                Objects.equals(this.qualifiers, other.qualifiers);
+            return Objects.equals(this.permissionsPerObjects, other.permissionsPerObjects)
+                    && Objects.equals(this.targetSubjectAttributes, other.targetSubjectAttributes)
+                    && Objects.equals(this.category, other.category)
+                    && Objects.equals(this.descriptions, other.descriptions)
+                    && Objects.equals(this.displayNames, other.displayNames)
+                    && Objects.equals(this.idShort, other.idShort)
+                    && Objects.equals(this.qualifiers, other.qualifiers);
         }
     }
 
@@ -171,7 +168,8 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
     }
 
     /**
-     * This builder class can be used to construct a DefaultAccessPermissionRule bean.
+     * This builder class can be used to construct a DefaultAccessPermissionRule
+     * bean.
      */
     public static class Builder extends AccessPermissionRuleBuilder<DefaultAccessPermissionRule, Builder> {
 

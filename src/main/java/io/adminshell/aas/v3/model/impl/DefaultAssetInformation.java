@@ -22,31 +22,27 @@ Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 
 This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ */
 package io.adminshell.aas.v3.model.impl;
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * Default implementation of package io.adminshell.aas.v3.model.AssetInformation
- * 
- * The asset may either represent an asset type or an asset instance. The asset has a globally
- * unique identifier plus - if needed - additional domain specific (proprietary) identifiers.
- * However, to support the corner case of very first phase of lifecycle where a stabilised/constant
- * global asset identifier does not already exist, the corresponding attribute 'globalAssetId' is
- * optional.
+ *
+ * The asset may either represent an asset type or an asset instance. The asset
+ * has a globally unique identifier plus - if needed - additional domain
+ * specific (proprietary) identifiers. However, to support the corner case of
+ * very first phase of lifecycle where a stabilised/constant global asset
+ * identifier does not already exist, the corresponding attribute
+ * 'globalAssetId' is optional.
  */
-
 public class DefaultAssetInformation implements AssetInformation {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
@@ -64,15 +60,16 @@ public class DefaultAssetInformation implements AssetInformation {
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/specificAssetId")
     protected List<IdentifierKeyValuePair> specificAssetIds = new ArrayList<>();
 
-    public DefaultAssetInformation() {}
+    public DefaultAssetInformation() {
+    }
 
     @Override
     public int hashCode() {
         return Objects.hash(this.assetKind,
-            this.globalAssetId,
-            this.specificAssetIds,
-            this.billOfMaterials,
-            this.defaultThumbnail);
+                this.globalAssetId,
+                this.specificAssetIds,
+                this.billOfMaterials,
+                this.defaultThumbnail);
     }
 
     @Override
@@ -85,11 +82,11 @@ public class DefaultAssetInformation implements AssetInformation {
             return false;
         } else {
             DefaultAssetInformation other = (DefaultAssetInformation) obj;
-            return Objects.equals(this.assetKind, other.assetKind) &&
-                Objects.equals(this.globalAssetId, other.globalAssetId) &&
-                Objects.equals(this.specificAssetIds, other.specificAssetIds) &&
-                Objects.equals(this.billOfMaterials, other.billOfMaterials) &&
-                Objects.equals(this.defaultThumbnail, other.defaultThumbnail);
+            return Objects.equals(this.assetKind, other.assetKind)
+                    && Objects.equals(this.globalAssetId, other.globalAssetId)
+                    && Objects.equals(this.specificAssetIds, other.specificAssetIds)
+                    && Objects.equals(this.billOfMaterials, other.billOfMaterials)
+                    && Objects.equals(this.defaultThumbnail, other.defaultThumbnail);
         }
     }
 
@@ -144,7 +141,8 @@ public class DefaultAssetInformation implements AssetInformation {
     }
 
     /**
-     * This builder class can be used to construct a DefaultAssetInformation bean.
+     * This builder class can be used to construct a DefaultAssetInformation
+     * bean.
      */
     public static class Builder extends AssetInformationBuilder<DefaultAssetInformation, Builder> {
 

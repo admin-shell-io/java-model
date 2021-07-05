@@ -22,29 +22,25 @@ Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 
 This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ */
 package io.adminshell.aas.v3.model.impl;
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of package io.adminshell.aas.v3.model.PolicyInformationPoints
- * 
- * Defines the security policy information points (PIP). Serves as the retrieval source of
- * attributes, or the data required for policy evaluation to provide the information needed by the
- * policy decision point to make the decisions.
+ * Default implementation of package
+ * io.adminshell.aas.v3.model.PolicyInformationPoints
+ *
+ * Defines the security policy information points (PIP). Serves as the retrieval
+ * source of attributes, or the data required for policy evaluation to provide
+ * the information needed by the policy decision point to make the decisions.
  */
-
 public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints")
@@ -53,12 +49,13 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint")
     protected List<Reference> internalInformationPoints = new ArrayList<>();
 
-    public DefaultPolicyInformationPoints() {}
+    public DefaultPolicyInformationPoints() {
+    }
 
     @Override
     public int hashCode() {
         return Objects.hash(this.externalInformationPoints,
-            this.internalInformationPoints);
+                this.internalInformationPoints);
     }
 
     @Override
@@ -71,8 +68,8 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
             return false;
         } else {
             DefaultPolicyInformationPoints other = (DefaultPolicyInformationPoints) obj;
-            return Objects.equals(this.externalInformationPoints, other.externalInformationPoints) &&
-                Objects.equals(this.internalInformationPoints, other.internalInformationPoints);
+            return Objects.equals(this.externalInformationPoints, other.externalInformationPoints)
+                    && Objects.equals(this.internalInformationPoints, other.internalInformationPoints);
         }
     }
 
@@ -97,7 +94,8 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
     }
 
     /**
-     * This builder class can be used to construct a DefaultPolicyInformationPoints bean.
+     * This builder class can be used to construct a
+     * DefaultPolicyInformationPoints bean.
      */
     public static class Builder extends PolicyInformationPointsBuilder<DefaultPolicyInformationPoints, Builder> {
 

@@ -22,35 +22,32 @@ Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 
 This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ */
 package io.adminshell.aas.v3.model.impl;
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * Default implementation of package io.adminshell.aas.v3.model.Reference
- * 
- * Reference to either a model element of the same or another AAs or to an external entity. A
- * reference is an ordered list of keys, each key referencing an element. The complete list of keys
- * may for example be concatenated to a path that then gives unique access to an element or entity.
+ *
+ * Reference to either a model element of the same or another AAs or to an
+ * external entity. A reference is an ordered list of keys, each key referencing
+ * an element. The complete list of keys may for example be concatenated to a
+ * path that then gives unique access to an element or entity.
  */
-
 public class DefaultReference implements Reference {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Reference/key")
     protected List<Key> keys = new ArrayList<>();
 
-    public DefaultReference() {}
+    public DefaultReference() {
+    }
 
     @Override
     public int hashCode() {

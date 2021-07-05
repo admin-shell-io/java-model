@@ -22,25 +22,20 @@ Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 
 This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ */
 package io.adminshell.aas.v3.model.impl;
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.Objects;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * Default implementation of package io.adminshell.aas.v3.model.Identifier
- * 
+ *
  * Used to uniquely identify an entity by using an identifier.
  */
-
 public class DefaultIdentifier implements Identifier {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")
@@ -49,12 +44,13 @@ public class DefaultIdentifier implements Identifier {
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
     protected String identifier;
 
-    public DefaultIdentifier() {}
+    public DefaultIdentifier() {
+    }
 
     @Override
     public int hashCode() {
         return Objects.hash(this.identifier,
-            this.idType);
+                this.idType);
     }
 
     @Override
@@ -67,8 +63,8 @@ public class DefaultIdentifier implements Identifier {
             return false;
         } else {
             DefaultIdentifier other = (DefaultIdentifier) obj;
-            return Objects.equals(this.identifier, other.identifier) &&
-                Objects.equals(this.idType, other.idType);
+            return Objects.equals(this.identifier, other.identifier)
+                    && Objects.equals(this.idType, other.idType);
         }
     }
 

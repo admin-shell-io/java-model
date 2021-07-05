@@ -22,25 +22,21 @@ Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 
 This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ */
 package io.adminshell.aas.v3.model.impl;
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.Objects;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of package io.adminshell.aas.v3.model.AccessControlPolicyPoints
+ * Default implementation of package
+ * io.adminshell.aas.v3.model.AccessControlPolicyPoints
  *
  * Container for access control policy points.
  */
-
 public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoints {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint")
@@ -55,14 +51,15 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyInformationPoints")
     protected PolicyInformationPoints policyInformationPoints;
 
-    public DefaultAccessControlPolicyPoints() {}
+    public DefaultAccessControlPolicyPoints() {
+    }
 
     @Override
     public int hashCode() {
         return Objects.hash(this.policyAdministrationPoint,
-            this.policyDecisionPoint,
-            this.policyEnforcementPoint,
-            this.policyInformationPoints);
+                this.policyDecisionPoint,
+                this.policyEnforcementPoint,
+                this.policyInformationPoints);
     }
 
     @Override
@@ -75,10 +72,10 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
             return false;
         } else {
             DefaultAccessControlPolicyPoints other = (DefaultAccessControlPolicyPoints) obj;
-            return Objects.equals(this.policyAdministrationPoint, other.policyAdministrationPoint) &&
-                Objects.equals(this.policyDecisionPoint, other.policyDecisionPoint) &&
-                Objects.equals(this.policyEnforcementPoint, other.policyEnforcementPoint) &&
-                Objects.equals(this.policyInformationPoints, other.policyInformationPoints);
+            return Objects.equals(this.policyAdministrationPoint, other.policyAdministrationPoint)
+                    && Objects.equals(this.policyDecisionPoint, other.policyDecisionPoint)
+                    && Objects.equals(this.policyEnforcementPoint, other.policyEnforcementPoint)
+                    && Objects.equals(this.policyInformationPoints, other.policyInformationPoints);
         }
     }
 
@@ -123,7 +120,8 @@ public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoin
     }
 
     /**
-     * This builder class can be used to construct a DefaultAccessControlPolicyPoints bean.
+     * This builder class can be used to construct a
+     * DefaultAccessControlPolicyPoints bean.
      */
     public static class Builder extends AccessControlPolicyPointsBuilder<DefaultAccessControlPolicyPoints, Builder> {
 

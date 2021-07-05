@@ -22,33 +22,29 @@ Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 
 This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ */
 package io.adminshell.aas.v3.model.impl;
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * Default implementation of package io.adminshell.aas.v3.model.Submodel
- * 
- * A Submodel defines a specific aspect of the asset represented by the AAS. A submodel is used to
- * structure the virtual representation and technical functionality of an Administration Shell into
- * distinguishable parts. Each submodel refers to a well-defined domain or subject matter. Submodels
- * can become standardized and thus become submodels types. Submodels can have different
- * life-cycles. Describe the different types of Data related to the I4.0 Asset Constraint AASd-062:
- * The semanticId of a Submodel shall only reference a ConceptDescription with the category
- * APPLICATION_CLASS.
+ *
+ * A Submodel defines a specific aspect of the asset represented by the AAS. A
+ * submodel is used to structure the virtual representation and technical
+ * functionality of an Administration Shell into distinguishable parts. Each
+ * submodel refers to a well-defined domain or subject matter. Submodels can
+ * become standardized and thus become submodels types. Submodels can have
+ * different life-cycles. Describe the different types of Data related to the
+ * I4.0 Asset Constraint AASd-062: The semanticId of a Submodel shall only
+ * reference a ConceptDescription with the category APPLICATION_CLASS.
  */
-
 public class DefaultSubmodel implements Submodel {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")
@@ -84,21 +80,22 @@ public class DefaultSubmodel implements Submodel {
     @IRI("https://admin-shell.io/aas/3/0/RC01/Submodel/submodelElement")
     protected List<SubmodelElement> submodelElements = new ArrayList<>();
 
-    public DefaultSubmodel() {}
+    public DefaultSubmodel() {
+    }
 
     @Override
     public int hashCode() {
         return Objects.hash(this.submodelElements,
-            this.qualifiers,
-            this.embeddedDataSpecifications,
-            this.administration,
-            this.identification,
-            this.category,
-            this.descriptions,
-            this.displayNames,
-            this.idShort,
-            this.kind,
-            this.semanticId);
+                this.qualifiers,
+                this.embeddedDataSpecifications,
+                this.administration,
+                this.identification,
+                this.category,
+                this.descriptions,
+                this.displayNames,
+                this.idShort,
+                this.kind,
+                this.semanticId);
     }
 
     @Override
@@ -111,17 +108,17 @@ public class DefaultSubmodel implements Submodel {
             return false;
         } else {
             DefaultSubmodel other = (DefaultSubmodel) obj;
-            return Objects.equals(this.submodelElements, other.submodelElements) &&
-                Objects.equals(this.qualifiers, other.qualifiers) &&
-                Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications) &&
-                Objects.equals(this.administration, other.administration) &&
-                Objects.equals(this.identification, other.identification) &&
-                Objects.equals(this.category, other.category) &&
-                Objects.equals(this.descriptions, other.descriptions) &&
-                Objects.equals(this.displayNames, other.displayNames) &&
-                Objects.equals(this.idShort, other.idShort) &&
-                Objects.equals(this.kind, other.kind) &&
-                Objects.equals(this.semanticId, other.semanticId);
+            return Objects.equals(this.submodelElements, other.submodelElements)
+                    && Objects.equals(this.qualifiers, other.qualifiers)
+                    && Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications)
+                    && Objects.equals(this.administration, other.administration)
+                    && Objects.equals(this.identification, other.identification)
+                    && Objects.equals(this.category, other.category)
+                    && Objects.equals(this.descriptions, other.descriptions)
+                    && Objects.equals(this.displayNames, other.displayNames)
+                    && Objects.equals(this.idShort, other.idShort)
+                    && Objects.equals(this.kind, other.kind)
+                    && Objects.equals(this.semanticId, other.semanticId);
         }
     }
 

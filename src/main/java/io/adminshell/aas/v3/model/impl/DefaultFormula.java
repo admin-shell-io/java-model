@@ -22,32 +22,28 @@ Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 
 This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ */
 package io.adminshell.aas.v3.model.impl;
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * Default implementation of package io.adminshell.aas.v3.model.Formula
- * 
+ *
  */
-
 public class DefaultFormula implements Formula {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn")
     protected List<Reference> dependsOns = new ArrayList<>();
 
-    public DefaultFormula() {}
+    public DefaultFormula() {
+    }
 
     @Override
     public int hashCode() {

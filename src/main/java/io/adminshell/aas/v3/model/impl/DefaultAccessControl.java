@@ -22,28 +22,23 @@ Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 
 This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ */
 package io.adminshell.aas.v3.model.impl;
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * Default implementation of package io.adminshell.aas.v3.model.AccessControl
  *
- * Access Control defines the local access control policy administration point. Access Control has
- * the major task to define the access permission rules.
+ * Access Control defines the local access control policy administration point.
+ * Access Control has the major task to define the access permission rules.
  */
-
 public class DefaultAccessControl implements AccessControl {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule")
@@ -67,17 +62,18 @@ public class DefaultAccessControl implements AccessControl {
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/selectableSubjectAttributes")
     protected Reference selectableSubjectAttributes;
 
-    public DefaultAccessControl() {}
+    public DefaultAccessControl() {
+    }
 
     @Override
     public int hashCode() {
         return Objects.hash(this.accessPermissionRules,
-            this.selectableSubjectAttributes,
-            this.defaultSubjectAttributes,
-            this.selectablePermissions,
-            this.defaultPermissions,
-            this.selectableEnvironmentAttributes,
-            this.defaultEnvironmentAttributes);
+                this.selectableSubjectAttributes,
+                this.defaultSubjectAttributes,
+                this.selectablePermissions,
+                this.defaultPermissions,
+                this.selectableEnvironmentAttributes,
+                this.defaultEnvironmentAttributes);
     }
 
     @Override
@@ -90,13 +86,13 @@ public class DefaultAccessControl implements AccessControl {
             return false;
         } else {
             DefaultAccessControl other = (DefaultAccessControl) obj;
-            return Objects.equals(this.accessPermissionRules, other.accessPermissionRules) &&
-                Objects.equals(this.selectableSubjectAttributes, other.selectableSubjectAttributes) &&
-                Objects.equals(this.defaultSubjectAttributes, other.defaultSubjectAttributes) &&
-                Objects.equals(this.selectablePermissions, other.selectablePermissions) &&
-                Objects.equals(this.defaultPermissions, other.defaultPermissions) &&
-                Objects.equals(this.selectableEnvironmentAttributes, other.selectableEnvironmentAttributes) &&
-                Objects.equals(this.defaultEnvironmentAttributes, other.defaultEnvironmentAttributes);
+            return Objects.equals(this.accessPermissionRules, other.accessPermissionRules)
+                    && Objects.equals(this.selectableSubjectAttributes, other.selectableSubjectAttributes)
+                    && Objects.equals(this.defaultSubjectAttributes, other.defaultSubjectAttributes)
+                    && Objects.equals(this.selectablePermissions, other.selectablePermissions)
+                    && Objects.equals(this.defaultPermissions, other.defaultPermissions)
+                    && Objects.equals(this.selectableEnvironmentAttributes, other.selectableEnvironmentAttributes)
+                    && Objects.equals(this.defaultEnvironmentAttributes, other.defaultEnvironmentAttributes);
         }
     }
 

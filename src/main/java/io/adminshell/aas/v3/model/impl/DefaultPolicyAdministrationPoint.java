@@ -22,25 +22,21 @@ Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 
 This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ */
 package io.adminshell.aas.v3.model.impl;
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.Objects;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of package io.adminshell.aas.v3.model.PolicyAdministrationPoint
- * 
+ * Default implementation of package
+ * io.adminshell.aas.v3.model.PolicyAdministrationPoint
+ *
  * Definition of a security administration point (PDP).
  */
-
 public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoint {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl")
@@ -49,12 +45,13 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl")
     protected AccessControl localAccessControl;
 
-    public DefaultPolicyAdministrationPoint() {}
+    public DefaultPolicyAdministrationPoint() {
+    }
 
     @Override
     public int hashCode() {
         return Objects.hash(this.localAccessControl,
-            this.externalAccessControl);
+                this.externalAccessControl);
     }
 
     @Override
@@ -67,8 +64,8 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
             return false;
         } else {
             DefaultPolicyAdministrationPoint other = (DefaultPolicyAdministrationPoint) obj;
-            return Objects.equals(this.localAccessControl, other.localAccessControl) &&
-                Objects.equals(this.externalAccessControl, other.externalAccessControl);
+            return Objects.equals(this.localAccessControl, other.localAccessControl)
+                    && Objects.equals(this.externalAccessControl, other.externalAccessControl);
         }
     }
 
@@ -93,7 +90,8 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
     }
 
     /**
-     * This builder class can be used to construct a DefaultPolicyAdministrationPoint bean.
+     * This builder class can be used to construct a
+     * DefaultPolicyAdministrationPoint bean.
      */
     public static class Builder extends PolicyAdministrationPointBuilder<DefaultPolicyAdministrationPoint, Builder> {
 

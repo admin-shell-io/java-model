@@ -22,32 +22,30 @@ Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 
 This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ */
 package io.adminshell.aas.v3.model.impl;
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of package io.adminshell.aas.v3.model.AdministrativeInformation
- * 
- * Every Identifiable may have administrative information. Administrative information includes for
- * example 1) Information about the version of the element 2) Information about who created or who
- * made the last change to the element 3) Information about the languages available in case the
- * element contains text, for translating purposed also themmaster or default language may be
- * definedIn the first version of the AAS metamodel only version information as defined by IEC 61360
- * is defined. In later versions additional attributes may be added.
+ * Default implementation of package
+ * io.adminshell.aas.v3.model.AdministrativeInformation
+ *
+ * Every Identifiable may have administrative information. Administrative
+ * information includes for example 1) Information about the version of the
+ * element 2) Information about who created or who made the last change to the
+ * element 3) Information about the languages available in case the element
+ * contains text, for translating purposed also themmaster or default language
+ * may be definedIn the first version of the AAS metamodel only version
+ * information as defined by IEC 61360 is defined. In later versions additional
+ * attributes may be added.
  */
-
 public class DefaultAdministrativeInformation implements AdministrativeInformation {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
@@ -59,13 +57,14 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")
     protected List<EmbeddedDataSpecification> embeddedDataSpecifications = new ArrayList<>();
 
-    public DefaultAdministrativeInformation() {}
+    public DefaultAdministrativeInformation() {
+    }
 
     @Override
     public int hashCode() {
         return Objects.hash(this.version,
-            this.revision,
-            this.embeddedDataSpecifications);
+                this.revision,
+                this.embeddedDataSpecifications);
     }
 
     @Override
@@ -78,9 +77,9 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
             return false;
         } else {
             DefaultAdministrativeInformation other = (DefaultAdministrativeInformation) obj;
-            return Objects.equals(this.version, other.version) &&
-                Objects.equals(this.revision, other.revision) &&
-                Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications);
+            return Objects.equals(this.version, other.version)
+                    && Objects.equals(this.revision, other.revision)
+                    && Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications);
         }
     }
 
@@ -115,7 +114,8 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
     }
 
     /**
-     * This builder class can be used to construct a DefaultAdministrativeInformation bean.
+     * This builder class can be used to construct a
+     * DefaultAdministrativeInformation bean.
      */
     public static class Builder extends AdministrativeInformationBuilder<DefaultAdministrativeInformation, Builder> {
 

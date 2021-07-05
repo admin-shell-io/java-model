@@ -22,32 +22,29 @@ Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
 This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
 
 This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ */
 package io.adminshell.aas.v3.model.impl;
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.Objects;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of package io.adminshell.aas.v3.model.OperationVariable
- * 
- * An operation variable is a submodel element that is used as input or output variable of an
- * operation.
+ * Default implementation of package
+ * io.adminshell.aas.v3.model.OperationVariable
+ *
+ * An operation variable is a submodel element that is used as input or output
+ * variable of an operation.
  */
-
 public class DefaultOperationVariable implements OperationVariable {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/OperationVariable/value")
     protected SubmodelElement value;
 
-    public DefaultOperationVariable() {}
+    public DefaultOperationVariable() {
+    }
 
     @Override
     public int hashCode() {
@@ -79,7 +76,8 @@ public class DefaultOperationVariable implements OperationVariable {
     }
 
     /**
-     * This builder class can be used to construct a DefaultOperationVariable bean.
+     * This builder class can be used to construct a DefaultOperationVariable
+     * bean.
      */
     public static class Builder extends OperationVariableBuilder<DefaultOperationVariable, Builder> {
 
