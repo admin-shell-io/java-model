@@ -36,7 +36,7 @@ The project contains several packages.
 We always look for contributions, bug reports, feature requests etc. Simply open an [issue](https://github.com/admin-shell-io/java-model/issues) or - even better - directly propose a change through a [pull request](https://github.com/admin-shell-io/java-model/pulls).
 
 
-# Contributers
+# Contributors
 
 | Name | Affiliation | Github Account |
 |:--| -- | -- |
