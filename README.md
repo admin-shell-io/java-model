@@ -44,8 +44,8 @@ We always look for contributions, bug reports, feature requests etc. Simply open
 | Sebastian Bader | Fraunhofer IAIS | [sebbader](https://github.com/sebbader) |
 | Matthias Böckmann | Fraunhofer IAIS | [maboeckmann](https://github.com/maboeckmann) |
 | Daniel Espen | Fraunhofer IESE | [daespen](https://github.com/daespen) |
-| Michael Jacoby | Fraunhofer IOSB (ILT) | [mjacoby](https://github.com/mjacoby) |
+| Michael Jacoby | Fraunhofer IOSB | [mjacoby](https://github.com/mjacoby) |
 | Jens Müller | Fraunhofer IOSB | [JensMueller2709](https://github.com/JensMueller2709) |
 | Chang Qin | Fraunhofer IAIS | [changqin26](https://github.com/changqin26) |
-| Bastian Rössl | Fraunhofer IOSB (INA) | []() |
+| Bastian Rössl | Fraunhofer IOSB-INA | []() |
 | Frank Schnicke | Fraunhofer IESE | [frankschnicke](https://github.com/frankschnicke) |
