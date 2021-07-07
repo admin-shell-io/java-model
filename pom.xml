@@ -81,11 +81,6 @@
                             <includes>
                                 <include>**/*.java</include>
                             </includes>
-                            <excludes>
-                                <exclude>**/README</exclude>
-                                <exclude>src/test/resources/**</exclude>
-                                <exclude>src/main/resources/**</exclude>
-                            </excludes>
                         </licenseSet>
                     </licenseSets>
                 </configuration>
