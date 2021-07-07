@@ -10,25 +10,32 @@
         <revision>1.1.2</revision>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <plugin.flatten.version>1.2.2</plugin.flatten.version>
+        <plugin.javadoc.version>3.2.0</plugin.javadoc.version>
+        <plugin.license.version>4.1</plugin.license.version>
+        <plugin.projectinfo.version>3.1.2</plugin.projectinfo.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>com.mycila</groupId>
+            <artifactId>license-maven-plugin</artifactId>
+            <version>${plugin.license.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
-		    <plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>3.1.2</version>
+                <version>${plugin.projectinfo.version}</version>
             </plugin>
-            <!-- This plugin replaces the revision variable in the version by the actual variable value. Only required if submodules exist -->
             <plugin>
-                <!-- Plugin to activate the generation of javadocs -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>${plugin.javadoc.version}</version>
                 <configuration>
-                  <source>8</source>
-                  <detectJavaApiLink>false</detectJavaApiLink>
+                    <source>8</source>
+                    <detectJavaApiLink>false</detectJavaApiLink>
                 </configuration>
                 <executions>
                     <execution>
@@ -42,7 +49,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>flatten-maven-plugin</artifactId>
-                <version>1.2.2</version>
+                <version>${plugin.flatten.version}</version>
                 <configuration>
                     <updatePomFile>true</updatePomFile>
                 </configuration>
@@ -59,6 +66,33 @@
                         <phase>clean</phase>
                         <goals>
                             <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>${plugin.license.version}</version>
+                <configuration>
+                    <licenseSets>
+                        <licenseSet>
+                            <header>license-header.txt</header>
+                            <includes>
+                                <include>**/*.java</include>
+                            </includes>
+                            <excludes>
+                                <exclude>**/README</exclude>
+                                <exclude>src/test/resources/**</exclude>
+                                <exclude>src/main/resources/**</exclude>
+                            </excludes>
+                        </licenseSet>
+                    </licenseSets>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
                         </goals>
                     </execution>
                 </executions>
