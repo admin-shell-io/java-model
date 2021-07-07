@@ -45,7 +45,7 @@ We always look for contributions, bug reports, feature requests etc. Simply open
 | Matthias Böckmann | Fraunhoder IAIS | [maboeckmann](https://github.com/maboeckmann) |
 | Daniel Espen | Fraunhoder IESE | [daespen](https://github.com/daespen) |
 | Michael Jacoby | Fraunhoder IOSB (ILT) | [mjacoby](https://github.com/mjacoby) |
-| Jens Müller | Fraunhoder IOSB | []() |
+| Jens Müller | Fraunhoder IOSB | [JensMueller2709](https://github.com/JensMueller2709) |
 | Chang Qin | Fraunhoder IAIS | [changqin26](https://github.com/changqin26) |
 | Bastian Rössl | Fraunhoder IOSB (INA) | []() |
 | Frank Schnicke | Fraunhoder IESE | [frankschnicke](https://github.com/frankschnicke) |
