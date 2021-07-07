@@ -48,4 +48,4 @@ We always look for contributions, bug reports, feature requests etc. Simply open
 | Jens Müller | Fraunhoder IOSB | []() |
 | Chang Qin | Fraunhoder IAIS | [changqin26](https://github.com/changqin26) |
 | Bastian Rössl | Fraunhoder IOSB (INA) | []() |
-| Frank Schnicke | Fraunhoder IESE | []() |
+| Frank Schnicke | Fraunhoder IESE | [frankschnicke](https://github.com/frankschnicke) |
