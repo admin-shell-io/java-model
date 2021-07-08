@@ -1,32 +1,33 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model.impl;
 
-import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.Objects;
 
+
+
 import io.adminshell.aas.v3.model.*;
+import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of package
- * io.adminshell.aas.v3.model.EmbeddedDataSpecification
- *
+ * Default implementation of package io.adminshell.aas.v3.model.EmbeddedDataSpecification
+ * 
  * Link to the included description of the Data Specification.
  */
+
 public class DefaultEmbeddedDataSpecification implements EmbeddedDataSpecification {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification")
@@ -35,13 +36,12 @@ public class DefaultEmbeddedDataSpecification implements EmbeddedDataSpecificati
     @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecificationContent")
     protected DataSpecificationContent dataSpecificationContent;
 
-    public DefaultEmbeddedDataSpecification() {
-    }
+    public DefaultEmbeddedDataSpecification() {}
 
     @Override
     public int hashCode() {
         return Objects.hash(this.dataSpecification,
-                this.dataSpecificationContent);
+            this.dataSpecificationContent);
     }
 
     @Override
@@ -54,8 +54,8 @@ public class DefaultEmbeddedDataSpecification implements EmbeddedDataSpecificati
             return false;
         } else {
             DefaultEmbeddedDataSpecification other = (DefaultEmbeddedDataSpecification) obj;
-            return Objects.equals(this.dataSpecification, other.dataSpecification)
-                    && Objects.equals(this.dataSpecificationContent, other.dataSpecificationContent);
+            return Objects.equals(this.dataSpecification, other.dataSpecification) &&
+                Objects.equals(this.dataSpecificationContent, other.dataSpecificationContent);
         }
     }
 
@@ -80,8 +80,7 @@ public class DefaultEmbeddedDataSpecification implements EmbeddedDataSpecificati
     }
 
     /**
-     * This builder class can be used to construct a
-     * DefaultEmbeddedDataSpecification bean.
+     * This builder class can be used to construct a DefaultEmbeddedDataSpecification bean.
      */
     public static class Builder extends EmbeddedDataSpecificationBuilder<DefaultEmbeddedDataSpecification, Builder> {
 

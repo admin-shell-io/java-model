@@ -1,30 +1,30 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model;
 
-import io.adminshell.aas.v3.model.annotations.KnownSubtypes;
-import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.List;
 
+
+
+import io.adminshell.aas.v3.model.annotations.IRI;
+import io.adminshell.aas.v3.model.annotations.KnownSubtypes;
 import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * Describes the Administration Shell for Assets, Products, Components, e.g.
- * Machines
+ * Describes the Administration Shell for Assets, Products, Components, e.g. Machines
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultAssetAdministrationShell.class)
@@ -53,11 +53,10 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
     void setAssetInformation(AssetInformation assetInformation);
 
     /**
-     * This relation connects instances of AAS with their respective types.
-     * Refer to Asset Kind for further information of instance and type kinds.
+     * This relation connects instances of AAS with their respective types. Refer to Asset Kind for
+     * further information of instance and type kinds.
      *
-     * More information under
-     * https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom
      *
      * @return Returns the Reference for the property derivedFrom.
      */
@@ -65,11 +64,10 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
     Reference getDerivedFrom();
 
     /**
-     * This relation connects instances of AAS with their respective types.
-     * Refer to Asset Kind for further information of instance and type kinds.
+     * This relation connects instances of AAS with their respective types. Refer to Asset Kind for
+     * further information of instance and type kinds.
      *
-     * More information under
-     * https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/derivedFrom
      *
      * @param derivedFrom desired value for the property derivedFrom.
      */
@@ -78,8 +76,7 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
     /**
      * Definition of the security relevant aspects of the AAS.
      *
-     * More information under
-     * https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security
      *
      * @return Returns the Security for the property security.
      */
@@ -89,19 +86,16 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
     /**
      * Definition of the security relevant aspects of the AAS.
      *
-     * More information under
-     * https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/security
      *
      * @param security desired value for the property security.
      */
     void setSecurity(Security security);
 
     /**
-     * Points from the Admin Shell to the Submodels that describe the Admin
-     * Shell of a given Asset
+     * Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset
      *
-     * More information under
-     * https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel
      *
      * @return Returns the List of References for the property submodels.
      */
@@ -109,22 +103,18 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
     List<Reference> getSubmodels();
 
     /**
-     * Points from the Admin Shell to the Submodels that describe the Admin
-     * Shell of a given Asset
+     * Points from the Admin Shell to the Submodels that describe the Admin Shell of a given Asset
      *
-     * More information under
-     * https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/submodel
      *
      * @param submodels desired value for the property submodels.
      */
     void setSubmodels(List<Reference> submodels);
 
     /**
-     * Points to the differents views associated to the Administration Shell via
-     * the Submodels.
+     * Points to the differents views associated to the Administration Shell via the Submodels.
      *
-     * More information under
-     * https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view
      *
      * @return Returns the List of Views for the property views.
      */
@@ -132,11 +122,9 @@ public interface AssetAdministrationShell extends HasDataSpecification, Identifi
     List<View> getViews();
 
     /**
-     * Points to the differents views associated to the Administration Shell via
-     * the Submodels.
+     * Points to the differents views associated to the Administration Shell via the Submodels.
      *
-     * More information under
-     * https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/view
      *
      * @param views desired value for the property views.
      */

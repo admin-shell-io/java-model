@@ -1,33 +1,35 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model.impl;
 
-import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+
+
 import io.adminshell.aas.v3.model.*;
+import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * Default implementation of package io.adminshell.aas.v3.model.Security
- *
+ * 
  * Container for security relevant information of the AAS.
  */
+
 public class DefaultSecurity implements Security {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")
@@ -39,14 +41,13 @@ public class DefaultSecurity implements Security {
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/requiredCertificateExtension")
     protected List<Reference> requiredCertificateExtensions = new ArrayList<>();
 
-    public DefaultSecurity() {
-    }
+    public DefaultSecurity() {}
 
     @Override
     public int hashCode() {
         return Objects.hash(this.accessControlPolicyPoints,
-                this.certificates,
-                this.requiredCertificateExtensions);
+            this.certificates,
+            this.requiredCertificateExtensions);
     }
 
     @Override
@@ -59,9 +60,9 @@ public class DefaultSecurity implements Security {
             return false;
         } else {
             DefaultSecurity other = (DefaultSecurity) obj;
-            return Objects.equals(this.accessControlPolicyPoints, other.accessControlPolicyPoints)
-                    && Objects.equals(this.certificates, other.certificates)
-                    && Objects.equals(this.requiredCertificateExtensions, other.requiredCertificateExtensions);
+            return Objects.equals(this.accessControlPolicyPoints, other.accessControlPolicyPoints) &&
+                Objects.equals(this.certificates, other.certificates) &&
+                Objects.equals(this.requiredCertificateExtensions, other.requiredCertificateExtensions);
         }
     }
 

@@ -1,41 +1,40 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model.impl;
 
-import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+
+
 import io.adminshell.aas.v3.model.*;
+import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of package
- * io.adminshell.aas.v3.model.AdministrativeInformation
- *
- * Every Identifiable may have administrative information. Administrative
- * information includes for example 1) Information about the version of the
- * element 2) Information about who created or who made the last change to the
- * element 3) Information about the languages available in case the element
- * contains text, for translating purposed also themmaster or default language
- * may be definedIn the first version of the AAS metamodel only version
- * information as defined by IEC 61360 is defined. In later versions additional
- * attributes may be added.
+ * Default implementation of package io.adminshell.aas.v3.model.AdministrativeInformation
+ * 
+ * Every Identifiable may have administrative information. Administrative information includes for
+ * example 1) Information about the version of the element 2) Information about who created or who
+ * made the last change to the element 3) Information about the languages available in case the
+ * element contains text, for translating purposed also themmaster or default language may be
+ * definedIn the first version of the AAS metamodel only version information as defined by IEC 61360
+ * is defined. In later versions additional attributes may be added.
  */
+
 public class DefaultAdministrativeInformation implements AdministrativeInformation {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
@@ -47,14 +46,13 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")
     protected List<EmbeddedDataSpecification> embeddedDataSpecifications = new ArrayList<>();
 
-    public DefaultAdministrativeInformation() {
-    }
+    public DefaultAdministrativeInformation() {}
 
     @Override
     public int hashCode() {
         return Objects.hash(this.version,
-                this.revision,
-                this.embeddedDataSpecifications);
+            this.revision,
+            this.embeddedDataSpecifications);
     }
 
     @Override
@@ -67,9 +65,9 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
             return false;
         } else {
             DefaultAdministrativeInformation other = (DefaultAdministrativeInformation) obj;
-            return Objects.equals(this.version, other.version)
-                    && Objects.equals(this.revision, other.revision)
-                    && Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications);
+            return Objects.equals(this.version, other.version) &&
+                Objects.equals(this.revision, other.revision) &&
+                Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications);
         }
     }
 
@@ -104,8 +102,7 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
     }
 
     /**
-     * This builder class can be used to construct a
-     * DefaultAdministrativeInformation bean.
+     * This builder class can be used to construct a DefaultAdministrativeInformation bean.
      */
     public static class Builder extends AdministrativeInformationBuilder<DefaultAdministrativeInformation, Builder> {
 

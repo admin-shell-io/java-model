@@ -1,33 +1,35 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model.impl;
 
-import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+
+
 import io.adminshell.aas.v3.model.*;
+import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * Default implementation of package io.adminshell.aas.v3.model.BlobCertificate
- *
+ * 
  * Certificate provided as BLOB.
  */
+
 public class DefaultBlobCertificate implements BlobCertificate {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate")
@@ -42,15 +44,14 @@ public class DefaultBlobCertificate implements BlobCertificate {
     @IRI("https://admin-shell.io/aas/3/0/RC01/Certificate/policyAdministrationPoint")
     protected PolicyAdministrationPoint policyAdministrationPoint;
 
-    public DefaultBlobCertificate() {
-    }
+    public DefaultBlobCertificate() {}
 
     @Override
     public int hashCode() {
         return Objects.hash(this.blobCertificate,
-                this.containedExtensions,
-                this.lastCertificate,
-                this.policyAdministrationPoint);
+            this.containedExtensions,
+            this.lastCertificate,
+            this.policyAdministrationPoint);
     }
 
     @Override
@@ -63,10 +64,10 @@ public class DefaultBlobCertificate implements BlobCertificate {
             return false;
         } else {
             DefaultBlobCertificate other = (DefaultBlobCertificate) obj;
-            return Objects.equals(this.blobCertificate, other.blobCertificate)
-                    && Objects.equals(this.containedExtensions, other.containedExtensions)
-                    && Objects.equals(this.lastCertificate, other.lastCertificate)
-                    && Objects.equals(this.policyAdministrationPoint, other.policyAdministrationPoint);
+            return Objects.equals(this.blobCertificate, other.blobCertificate) &&
+                Objects.equals(this.containedExtensions, other.containedExtensions) &&
+                Objects.equals(this.lastCertificate, other.lastCertificate) &&
+                Objects.equals(this.policyAdministrationPoint, other.policyAdministrationPoint);
         }
     }
 
@@ -111,8 +112,7 @@ public class DefaultBlobCertificate implements BlobCertificate {
     }
 
     /**
-     * This builder class can be used to construct a DefaultBlobCertificate
-     * bean.
+     * This builder class can be used to construct a DefaultBlobCertificate bean.
      */
     public static class Builder extends BlobCertificateBuilder<DefaultBlobCertificate, Builder> {
 

@@ -1,102 +1,124 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model;
+
+
+
 
 import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * Enumeration of all referable elements within an asset administration shell.
- * Contains IdentifiableElements
+ * Enumeration of all referable elements within an asset administration shell. Contains
+ * IdentifiableElements
  */
 public enum ReferableElements {
 
-    /**
-     */
+    /** 
+    */
     ASSET,
-    /**
-     */
+
+    /** 
+    */
     ASSET_ADMINISTRATION_SHELL,
-    /**
-     */
+
+    /** 
+    */
     CONCEPT_DESCRIPTION,
-    /**
-     */
+
+    /** 
+    */
     SUBMODEL,
-    /**
-     */
+
+    /** 
+    */
     ACCESS_PERMISSION_RULE,
-    /**
-     */
+
+    /** 
+    */
     ANNOTATED_RELATIONSHIP_ELEMENT,
-    /**
-     */
+
+    /** 
+    */
     BASIC_EVENT,
-    /**
-     */
+
+    /** 
+    */
     BLOB,
-    /**
-     */
+
+    /** 
+    */
     CAPABILITY,
-    /**
-     */
+
+    /** 
+    */
     CONCEPT_DICTIONARY,
+
     /**
-     * Data Element is abstract, i.e. if a key uses 'DataElement' the reference
-     * may be a Property, a File etc.
+     * Data Element is abstract, i.e. if a key uses 'DataElement' the reference may be a Property, a
+     * File etc.
      */
     DATA_ELEMENT,
-    /**
-     */
+
+    /** 
+    */
     ENTITY,
+
     /**
      * Event is abstract
      */
     EVENT,
+
     /**
      * Property with a value that can be provided in multiple languages.
      */
     MULTI_LANGUAGE_PROPERTY,
-    /**
-     */
+
+    /** 
+    */
     OPERATION,
-    /**
-     */
+
+    /** 
+    */
     PROPERTY,
-    /**
-     */
+
+    /** 
+    */
     RANGE,
-    /**
-     */
+
+    /** 
+    */
     REFERENCE_ELEMENT,
-    /**
-     */
+
+    /** 
+    */
     RELATIONSHIP_ELEMENT,
+
     /**
-     * Submodel Element is abstract, i.e. if a key uses 'SubmodelElement' the
-     * reference may be a Property, a SubmodelElementCollection, an Operation
-     * etc.
+     * Submodel Element is abstract, i.e. if a key uses 'SubmodelElement' the reference may be a
+     * Property, a SubmodelElementCollection, an Operation etc.
      */
     SUBMODEL_ELEMENT,
+
     /**
      * Collection of Submodel Elements
      */
     SUBMODEL_ELEMENT_COLLECTION,
-    /**
-     */
+
+    /** 
+    */
     VIEW;
 
 }
