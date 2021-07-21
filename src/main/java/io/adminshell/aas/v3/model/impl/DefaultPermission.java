@@ -28,6 +28,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * Description of a single permission.
  */
 
+@IRI("aas:Permission")
 public class DefaultPermission implements Permission {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")

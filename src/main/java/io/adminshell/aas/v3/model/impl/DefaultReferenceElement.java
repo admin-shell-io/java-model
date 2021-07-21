@@ -33,6 +33,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * REFERENCE.
  */
 
+@IRI("aas:ReferenceElement")
 public class DefaultReferenceElement implements ReferenceElement {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")

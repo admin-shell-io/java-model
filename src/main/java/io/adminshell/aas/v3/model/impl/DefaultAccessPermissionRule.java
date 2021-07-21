@@ -31,6 +31,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * elements).
  */
 
+@IRI("aas:AccessPermissionRule")
 public class DefaultAccessPermissionRule implements AccessPermissionRule {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessPermissionRule/permissionsPerObject")

@@ -34,6 +34,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * Table 12.depending on its category are ignored and handled as undefined.
  */
 
+@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360")
 public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC61360 {
 
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")

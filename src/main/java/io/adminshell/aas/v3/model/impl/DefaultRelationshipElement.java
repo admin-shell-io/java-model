@@ -31,6 +31,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * shall only reference a ConceptDescription with the category RELATIONSHIP.
  */
 
+@IRI("aas:RelationshipElement")
 public class DefaultRelationshipElement implements RelationshipElement {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")

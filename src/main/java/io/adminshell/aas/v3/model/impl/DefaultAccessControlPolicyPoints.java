@@ -28,6 +28,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * Container for access control policy points.
  */
 
+@IRI("aas:AccessControlPolicyPoints")
 public class DefaultAccessControlPolicyPoints implements AccessControlPolicyPoints {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControlPolicyPoints/policyAdministrationPoint")

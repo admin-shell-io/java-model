@@ -36,6 +36,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * APPLICATION_CLASS.
  */
 
+@IRI("aas:Submodel")
 public class DefaultSubmodel implements Submodel {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")

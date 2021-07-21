@@ -17,12 +17,14 @@ package io.adminshell.aas.v3.model;
 
 
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
  * Enumeration for denoting whether an element is a type or an instance.
  */
+@IRI("aas:ModelingKind")
 public enum ModelingKind {
 
     /**

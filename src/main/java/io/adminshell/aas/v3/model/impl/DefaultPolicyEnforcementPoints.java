@@ -28,6 +28,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * Defines the security policy enforcement points (PEP).
  */
 
+@IRI("aas:PolicyEnforcementPoints")
 public class DefaultPolicyEnforcementPoints implements PolicyEnforcementPoints {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyEnforcementPoints/externalPolicyEnforcementPoint")

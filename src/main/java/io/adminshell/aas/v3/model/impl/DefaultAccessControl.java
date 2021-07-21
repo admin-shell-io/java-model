@@ -31,6 +31,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * the major task to define the access permission rules.
  */
 
+@IRI("aas:AccessControl")
 public class DefaultAccessControl implements AccessControl {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AccessControl/accessPermissionRule")

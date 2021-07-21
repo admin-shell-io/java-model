@@ -29,6 +29,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * semantic.
  */
 
+@IRI("aas:ValueReferencePair")
 public class DefaultValueReferencePair implements ValueReferencePair {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueReferencePair/value")

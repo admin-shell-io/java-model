@@ -37,6 +37,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * true references a ConceptDescription then the ConceptDescription/category shall be COLLECTION.
  */
 
+@IRI("aas:SubmodelElementCollection")
 public class DefaultSubmodelElementCollection implements SubmodelElementCollection {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")

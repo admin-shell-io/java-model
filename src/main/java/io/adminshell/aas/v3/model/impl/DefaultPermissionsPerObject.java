@@ -32,6 +32,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * the permissions apply to.
  */
 
+@IRI("aas:PermissionsPerObject")
 public class DefaultPermissionsPerObject implements PermissionsPerObject {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/object")

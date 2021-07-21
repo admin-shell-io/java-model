@@ -32,6 +32,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * may for example be concatenated to a path that then gives unique access to an element or entity.
  */
 
+@IRI("aas:Reference")
 public class DefaultReference implements Reference {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Reference/key")

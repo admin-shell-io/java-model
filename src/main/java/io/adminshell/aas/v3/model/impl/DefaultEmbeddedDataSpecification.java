@@ -28,6 +28,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * Link to the included description of the Data Specification.
  */
 
+@IRI("aas:EmbeddedDataSpecification")
 public class DefaultEmbeddedDataSpecification implements EmbeddedDataSpecification {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/EmbeddedDataSpecification/dataSpecification")

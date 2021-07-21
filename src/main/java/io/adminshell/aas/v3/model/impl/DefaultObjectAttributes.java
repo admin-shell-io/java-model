@@ -31,6 +31,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * element within an existing submodel.
  */
 
+@IRI("aas:ObjectAttributes")
 public class DefaultObjectAttributes implements ObjectAttributes {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/ObjectAttributes/objectAttribute")

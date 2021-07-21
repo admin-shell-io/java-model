@@ -31,6 +31,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * only for discussion (as of November 2019).
  */
 
+@IRI("aas:EventMessage")
 public class DefaultEventMessage implements EventMessage {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")

@@ -30,6 +30,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * Data Specification Template for Physical Units.
  */
 
+@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit")
 public class DefaultDataSpecificationPhysicalUnit implements DataSpecificationPhysicalUnit {
 
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/DataSpecificationPhysicalUnit/conversionFactor")

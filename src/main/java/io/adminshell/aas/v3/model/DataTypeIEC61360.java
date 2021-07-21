@@ -17,12 +17,14 @@ package io.adminshell.aas.v3.model;
 
 
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
  * Enumeration of all IEC 61360 defined data types.
  */
+@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataTypeIEC61360")
 public enum DataTypeIEC61360 {
 
     /** 

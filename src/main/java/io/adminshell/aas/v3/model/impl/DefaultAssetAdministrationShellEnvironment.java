@@ -30,6 +30,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * A graph of Asset Administration Shells.
  */
 
+@IRI("aas:AssetAdministrationShellEnvironment")
 public class DefaultAssetAdministrationShellEnvironment implements AssetAdministrationShellEnvironment {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShells")

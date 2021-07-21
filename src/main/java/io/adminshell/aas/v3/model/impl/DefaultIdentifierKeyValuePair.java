@@ -28,6 +28,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * An IdentifierKeyValuePair describes a generic identifier as key-value pair.
  */
 
+@IRI("aas:IdentifierKeyValuePair")
 public class DefaultIdentifierKeyValuePair implements IdentifierKeyValuePair {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")

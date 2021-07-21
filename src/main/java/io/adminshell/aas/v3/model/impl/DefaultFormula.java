@@ -29,6 +29,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * 
  */
 
+@IRI("aas:Formula")
 public class DefaultFormula implements Formula {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Formula/dependsOn")

@@ -30,6 +30,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * Describes the Administration Shell for Assets, Products, Components, e.g. Machines
  */
 
+@IRI("aas:AssetAdministrationShell")
 public class DefaultAssetAdministrationShell implements AssetAdministrationShell {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation")

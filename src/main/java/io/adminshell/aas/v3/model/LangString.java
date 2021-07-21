@@ -19,9 +19,11 @@ import java.util.Objects;
 
 
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
+@IRI("rdf:langString")
 public class LangString implements Serializable {
 
     private String language = null;

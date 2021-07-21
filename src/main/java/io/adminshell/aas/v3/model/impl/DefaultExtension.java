@@ -29,6 +29,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * HasExtensions needs to be unique.
  */
 
+@IRI("aas:Extension")
 public class DefaultExtension implements Extension {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/name")

@@ -33,6 +33,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * Entity/statement.
  */
 
+@IRI("aas:Entity")
 public class DefaultEntity implements Entity {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/entityType")

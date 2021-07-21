@@ -34,6 +34,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * optional.
  */
 
+@IRI("aas:AssetInformation")
 public class DefaultAssetInformation implements AssetInformation {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")

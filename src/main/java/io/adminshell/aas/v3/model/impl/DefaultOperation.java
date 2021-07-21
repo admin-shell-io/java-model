@@ -32,6 +32,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * category FUNCTION.
  */
 
+@IRI("aas:Operation")
 public class DefaultOperation implements Operation {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")

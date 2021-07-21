@@ -30,6 +30,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * ConceptDescription with the category QUALIFIER.
  */
 
+@IRI("aas:Qualifier")
 public class DefaultQualifier implements Qualifier {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")

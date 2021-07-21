@@ -26,6 +26,8 @@ import io.adminshell.aas.v3.model.impl.*;
  * that references the data specification template and meta information about the template itself.
  */
 @KnownSubtypes({
+    @KnownSubtypes.Type(value = DataSpecificationIEC61360.class),
+    @KnownSubtypes.Type(value = DataSpecificationPhysicalUnit.class)
 })
 public interface DataSpecificationContent {
 

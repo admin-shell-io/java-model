@@ -30,6 +30,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * A File is a data element that represents a file via its path description.
  */
 
+@IRI("aas:File")
 public class DefaultFile implements File {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/File/mimeType")

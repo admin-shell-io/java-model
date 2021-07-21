@@ -31,6 +31,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * additional data elements.
  */
 
+@IRI("aas:AnnotatedRelationshipElement")
 public class DefaultAnnotatedRelationshipElement implements AnnotatedRelationshipElement {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AnnotatedRelationshipElement/annotation")

@@ -28,6 +28,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * Used to uniquely identify an entity by using an identifier.
  */
 
+@IRI("aas:Identifier")
 public class DefaultIdentifier implements Identifier {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/idType")

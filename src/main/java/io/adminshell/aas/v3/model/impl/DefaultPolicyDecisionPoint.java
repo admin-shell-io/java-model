@@ -28,6 +28,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * Defines a security policy decision point (PDP).
  */
 
+@IRI("aas:PolicyDecisionPoint")
 public class DefaultPolicyDecisionPoint implements PolicyDecisionPoint {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyDecisionPoint/externalPolicyDecisionPoints")

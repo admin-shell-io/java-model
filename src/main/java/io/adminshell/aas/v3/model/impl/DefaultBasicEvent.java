@@ -30,6 +30,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * A basic event.
  */
 
+@IRI("aas:BasicEvent")
 public class DefaultBasicEvent implements BasicEvent {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/BasicEvent/observed")

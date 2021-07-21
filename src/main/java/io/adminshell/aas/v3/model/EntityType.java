@@ -17,12 +17,14 @@ package io.adminshell.aas.v3.model;
 
 
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
  * Enumeration for denoting whether an entity is a self-managed entity or a co-managed entity.
  */
+@IRI("aas:EntityType")
 public enum EntityType {
 
     /**

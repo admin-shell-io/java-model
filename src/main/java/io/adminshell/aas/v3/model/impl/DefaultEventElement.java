@@ -31,6 +31,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * discussion (as of November 2019).
  */
 
+@IRI("aas:EventElement")
 public class DefaultEventElement implements EventElement {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")

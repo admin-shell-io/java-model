@@ -33,6 +33,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * ConceptDescription/category shall be CAPABILITY.
  */
 
+@IRI("aas:Capability")
 public class DefaultCapability implements Capability {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")

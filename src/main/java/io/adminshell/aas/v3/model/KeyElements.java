@@ -17,6 +17,7 @@ package io.adminshell.aas.v3.model;
 
 
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
@@ -24,6 +25,7 @@ import io.adminshell.aas.v3.model.impl.*;
  * Enumeration of different key value types within a key. Contains KeyElements, ReferableElements,
  * and IdentifiableElements.
  */
+@IRI("aas:KeyElements")
 public enum KeyElements {
 
     /** 

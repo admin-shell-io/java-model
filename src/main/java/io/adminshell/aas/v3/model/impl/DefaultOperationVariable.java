@@ -29,6 +29,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * operation.
  */
 
+@IRI("aas:OperationVariable")
 public class DefaultOperationVariable implements OperationVariable {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/OperationVariable/value")

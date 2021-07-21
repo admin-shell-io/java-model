@@ -39,6 +39,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * ValueReferencePairType/value or ValueReferencePairType/valueId, resp.
  */
 
+@IRI("aas:Property")
 public class DefaultProperty implements Property {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")

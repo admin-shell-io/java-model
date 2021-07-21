@@ -33,6 +33,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * form of a type or of an instance. An object in the planning phase is known as a type
  */
 
+@IRI("aas:Asset")
 public class DefaultAsset implements Asset {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")

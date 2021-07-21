@@ -17,6 +17,7 @@ package io.adminshell.aas.v3.model;
 
 
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
@@ -24,6 +25,7 @@ import io.adminshell.aas.v3.model.impl.*;
  * Enumeration of all identifiable elements within an asset administration shell that are not
  * identifiable
  */
+@IRI("aas:IdentifiableElements")
 public enum IdentifiableElements {
 
     /** 

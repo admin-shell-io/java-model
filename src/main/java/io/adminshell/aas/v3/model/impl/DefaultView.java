@@ -32,6 +32,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * then the category of the ConceptDescription shall be VIEW.
  */
 
+@IRI("aas:View")
 public class DefaultView implements View {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")

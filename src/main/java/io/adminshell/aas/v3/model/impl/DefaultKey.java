@@ -28,6 +28,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * A key is a reference to an element by its id.
  */
 
+@IRI("aas:Key")
 public class DefaultKey implements Key {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Key/idType")

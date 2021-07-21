@@ -30,6 +30,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * A property is a data element that has a multi language value.
  */
 
+@IRI("aas:MultiLanguageProperty")
 public class DefaultMultiLanguageProperty implements MultiLanguageProperty {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")

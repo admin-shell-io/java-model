@@ -30,6 +30,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * A set of data elements that further classifies a specific subject.
  */
 
+@IRI("aas:SubjectAttributes")
 public class DefaultSubjectAttributes implements SubjectAttributes {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/SubjectAttributes/subjectAttribute")

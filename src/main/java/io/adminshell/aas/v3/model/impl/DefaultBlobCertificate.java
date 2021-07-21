@@ -30,6 +30,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * Certificate provided as BLOB.
  */
 
+@IRI("aas:BlobCertificate")
 public class DefaultBlobCertificate implements BlobCertificate {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/BlobCertificate/blobCertificate")

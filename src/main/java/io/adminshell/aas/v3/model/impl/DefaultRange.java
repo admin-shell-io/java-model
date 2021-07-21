@@ -36,6 +36,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * DataSpecificationIEC61360/levelType shall be identical to the set {Min,Max}.
  */
 
+@IRI("aas:Range")
 public class DefaultRange implements Range {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")

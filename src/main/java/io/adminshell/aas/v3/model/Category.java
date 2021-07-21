@@ -17,12 +17,14 @@ package io.adminshell.aas.v3.model;
 
 
 
+import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
  * A enumeration for data elements except for files and blobs.
  */
+@IRI("aas:Category")
 public enum Category {
 
     /**

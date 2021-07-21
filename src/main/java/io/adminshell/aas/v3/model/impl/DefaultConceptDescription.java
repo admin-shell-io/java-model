@@ -34,6 +34,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * COLLECTION, FUNCTION, EVENT, ENTITY, APPLICATION_CLASS, QUALIFIER, VIEW. Default: PROPERTY.
  */
 
+@IRI("aas:ConceptDescription")
 public class DefaultConceptDescription implements ConceptDescription {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/ConceptDescription/isCaseOf")

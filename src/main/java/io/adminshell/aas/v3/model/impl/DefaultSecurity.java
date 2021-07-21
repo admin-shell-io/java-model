@@ -30,6 +30,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * Container for security relevant information of the AAS.
  */
 
+@IRI("aas:Security")
 public class DefaultSecurity implements Security {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Security/accessControlPolicyPoints")

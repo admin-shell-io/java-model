@@ -30,6 +30,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * A set of value reference pairs.
  */
 
+@IRI("aas:ValueList")
 public class DefaultValueList implements ValueList {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/ValueList/valueReferencePairTypes")

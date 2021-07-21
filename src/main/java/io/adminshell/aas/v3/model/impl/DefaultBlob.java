@@ -33,6 +33,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * only reference a ConceptDescription with the category DOCUMENT.
  */
 
+@IRI("aas:Blob")
 public class DefaultBlob implements Blob {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Blob/mimeType")

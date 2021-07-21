@@ -32,6 +32,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * policy decision point to make the decisions.
  */
 
+@IRI("aas:PolicyInformationPoints")
 public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/externalInformationPoints")

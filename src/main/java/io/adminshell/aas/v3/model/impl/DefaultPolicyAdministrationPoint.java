@@ -28,6 +28,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * Definition of a security administration point (PDP).
  */
 
+@IRI("aas:PolicyAdministrationPoint")
 public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoint {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl")

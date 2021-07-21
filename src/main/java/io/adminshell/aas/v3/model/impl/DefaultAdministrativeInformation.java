@@ -35,6 +35,7 @@ import io.adminshell.aas.v3.model.builder.*;
  * is defined. In later versions additional attributes may be added.
  */
 
+@IRI("aas:AdministrativeInformation")
 public class DefaultAdministrativeInformation implements AdministrativeInformation {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/revision")
