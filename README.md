@@ -43,9 +43,15 @@ We always look for contributions, bug reports, feature requests etc. Simply open
 |:--| -- | -- |
 | Sebastian Bader | Fraunhofer IAIS | [sebbader](https://github.com/sebbader) |
 | Matthias Böckmann | Fraunhofer IAIS | [maboeckmann](https://github.com/maboeckmann) |
+| Helge Dickel | SAP SE | [heldic](https://github.com/heldic) |
 | Daniel Espen | Fraunhofer IESE | [daespen](https://github.com/daespen) |
 | Michael Jacoby | Fraunhofer IOSB | [mjacoby](https://github.com/mjacoby) |
 | Jens Müller | Fraunhofer IOSB | [JensMueller2709](https://github.com/JensMueller2709) |
+| Orthodoxos Kipouridis | SAP SE | [akiskips](https://github.com/akiskips) |
 | Chang Qin | Fraunhofer IAIS | [changqin26](https://github.com/changqin26) |
 | Bastian Rössl | Fraunhofer IOSB-INA | [br-iosb](https://github.com/br-iosb) |
+| Manuel Sauer | SAP SE | [Manu3756](https://github.com/Manu3756) |
 | Frank Schnicke | Fraunhofer IESE | [frankschnicke](https://github.com/frankschnicke) |
+
+This project was initiated by SAP and Fraunhofer to provide a foundation for the
+AAS development and to foster its dissemination.
