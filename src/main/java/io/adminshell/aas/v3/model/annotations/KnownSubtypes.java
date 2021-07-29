@@ -13,26 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.adminshell.aas.v3.model.builder;
+package io.adminshell.aas.v3.model.annotations;
 
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
-
-
-import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.*;
-
-public abstract class OperationVariableBuilder<T extends OperationVariable, B extends OperationVariableBuilder<T, B>>
-    extends ExtendableBuilder<T, B> {
-
+//Retention policy runtime required for reflective access
+@Retention(RetentionPolicy.RUNTIME)
+public @interface KnownSubtypes {
     /**
-     * This function allows setting a value for value
-     * 
-     * @param value desired value to be set
-     * @return Builder object with new value for value
+     * This element stores the known sub-types, e.g. implementing classes of an interface, or extending classes of a class.
+     * Note that this list can never be expected to be complete, as custom implementations will not be included
+     * @return List of known implementing subtypes
      */
-    public B value(SubmodelElement value) {
-        getBuildingInstance().setValue(value);
-        return getSelf();
+    public KnownSubtypes.Type[] value();
+
+    public @interface Type {
+        Class<?> value();
+
+        String name() default "";
     }
+
 }

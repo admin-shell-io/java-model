@@ -1,46 +1,35 @@
 /*
-Copyright (c) 2021 Fraunhofer IOSB-INA Lemgo,
-    eine rechtlich nicht selbstaendige Einrichtung der Fraunhofer-Gesellschaft
-    zur Foerderung der angewandten Forschung e.V.
-
-Copyright (c) 2021 Fraunhofer IOSB-ILT Karlsruhe,
-    eine rechtlich nicht selbstaendige Einrichtung der Fraunhofer-Gesellschaft
-    zur Foerderung der angewandten Forschung e.V.
-
-Copyright (c) 2021 Fraunhofer IAIS,
-    eine rechtlich nicht selbstaendige Einrichtung der Fraunhofer-Gesellschaft
-    zur Foerderung der angewandten Forschung e.V.
-
-Copyright (c) 2021 Fraunhofer IESE,
-    eine rechtlich nicht selbstaendige Einrichtung der Fraunhofer-Gesellschaft
-    zur Foerderung der angewandten Forschung e.V.
-
-Copyright (c) 2021 Fraunhofer IWU Karlsruhe,
-    eine rechtlich nicht selbstaendige Einrichtung der Fraunhofer-Gesellschaft
-    zur Foerderung der angewandten Forschung e.V.
-
-This source code is licensed under the Apache License 2.0 (see LICENSE.txt).
-
-This source code may use other Open Source software components (see LICENSE.txt).
-*/
-
+ * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package io.adminshell.aas.v3.model;
 
+import io.adminshell.aas.v3.model.annotations.KnownSubtypes;
+import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.List;
 
-
-
-import io.adminshell.aas.v3.util.*;
-import io.adminshell.aas.v3.dataformat.*;
 import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 /**
- * Data Specification Template for defining Property Descriptions conformant to IEC 61360.
- * Constraint AASd-075: For all ConceptDescriptions using data specification template IEC61360
- * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) values for the
- * attributes not being marked as mandatory or optional in tables Table 9, Table 10, Table 11 and
- * Table 12.depending on its category are ignored and handled as undefined.
+ * Data Specification Template for defining Property Descriptions conformant to
+ * IEC 61360. Constraint AASd-075: For all ConceptDescriptions using data
+ * specification template IEC61360
+ * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0)
+ * values for the attributes not being marked as mandatory or optional in tables
+ * Table 9, Table 10, Table 11 and Table 12.depending on its category are
+ * ignored and handled as undefined.
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultDataSpecificationIEC61360.class)
@@ -48,25 +37,26 @@ import io.adminshell.aas.v3.model.impl.*;
 public interface DataSpecificationIEC61360 extends DataSpecificationContent {
 
     /**
-     * Constraint AASd-070: For a ConceptDescription with category PROPERTY or VALUE using data
-     * specification template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is mandatory and shall be defined.
+     * Constraint AASd-070: For a ConceptDescription with category PROPERTY or
+     * VALUE using data specification template IEC61360
+     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0)
+     * - DataSpecificationIEC61360/dataType is mandatory and shall be defined.
      *
-     * Constraint AASd-071: For a ConceptDescription with category REFERENCE using data specification
-     * template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is STRING by default.
+     * Constraint AASd-071: For a ConceptDescription with category REFERENCE
+     * using data specification template IEC61360
+     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0)
+     * - DataSpecificationIEC61360/dataType is STRING by default.
      *
-     * Constraint AASd-072: For a ConceptDescription with category DOCUMENT using data specification
-     * template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType shall be one of the following values: STRING or URL.
+     * Constraint AASd-072: For a ConceptDescription with category DOCUMENT
+     * using data specification template IEC61360
+     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0)
+     * - DataSpecificationIEC61360/dataType shall be one of the following
+     * values: STRING or URL.
      *
-     * Constraint AASd-073: For a ConceptDescription with category QUALIFIER using data specification
-     * template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is mandatory and shall be defined.
+     * Constraint AASd-073: For a ConceptDescription with category QUALIFIER
+     * using data specification template IEC61360
+     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0)
+     * - DataSpecificationIEC61360/dataType is mandatory and shall be defined.
      *
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType
@@ -77,25 +67,26 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
     DataTypeIEC61360 getDataType();
 
     /**
-     * Constraint AASd-070: For a ConceptDescription with category PROPERTY or VALUE using data
-     * specification template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is mandatory and shall be defined.
+     * Constraint AASd-070: For a ConceptDescription with category PROPERTY or
+     * VALUE using data specification template IEC61360
+     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0)
+     * - DataSpecificationIEC61360/dataType is mandatory and shall be defined.
      *
-     * Constraint AASd-071: For a ConceptDescription with category REFERENCE using data specification
-     * template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is STRING by default.
+     * Constraint AASd-071: For a ConceptDescription with category REFERENCE
+     * using data specification template IEC61360
+     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0)
+     * - DataSpecificationIEC61360/dataType is STRING by default.
      *
-     * Constraint AASd-072: For a ConceptDescription with category DOCUMENT using data specification
-     * template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType shall be one of the following values: STRING or URL.
+     * Constraint AASd-072: For a ConceptDescription with category DOCUMENT
+     * using data specification template IEC61360
+     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0)
+     * - DataSpecificationIEC61360/dataType shall be one of the following
+     * values: STRING or URL.
      *
-     * Constraint AASd-073: For a ConceptDescription with category QUALIFIER using data specification
-     * template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is mandatory and shall be defined.
+     * Constraint AASd-073: For a ConceptDescription with category QUALIFIER
+     * using data specification template IEC61360
+     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0)
+     * - DataSpecificationIEC61360/dataType is mandatory and shall be defined.
      *
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType
@@ -105,10 +96,12 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
     void setDataType(DataTypeIEC61360 dataType);
 
     /**
-     * Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions of category VALUE
-     * using data specification template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/definition is mandatory and shall be defined at least in English.
+     * Constraint AASd-074: For all ConceptDescriptions except for
+     * ConceptDescriptions of category VALUE using data specification template
+     * IEC61360
+     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0)
+     * - DataSpecificationIEC61360/definition is mandatory and shall be defined
+     * at least in English.
      *
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition
@@ -119,10 +112,12 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
     List<LangString> getDefinitions();
 
     /**
-     * Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions of category VALUE
-     * using data specification template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/definition is mandatory and shall be defined at least in English.
+     * Constraint AASd-074: For all ConceptDescriptions except for
+     * ConceptDescriptions of category VALUE using data specification template
+     * IEC61360
+     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0)
+     * - DataSpecificationIEC61360/definition is mandatory and shall be defined
+     * at least in English.
      *
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/definition
@@ -203,7 +198,8 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition
      *
-     * @param sourceOfDefinition desired value for the property sourceOfDefinition.
+     * @param sourceOfDefinition desired value for the property
+     * sourceOfDefinition.
      */
     void setSourceOfDefinition(String sourceOfDefinition);
 
@@ -303,8 +299,9 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
     void setValue(String value);
 
     /**
-     * The Type 'ValueList' lists all the allowed values for a concept description for which the allowed
-     * values are listed in an enumeration. The value list is a set of value reference pairs.
+     * The Type 'ValueList' lists all the allowed values for a concept
+     * description for which the allowed values are listed in an enumeration.
+     * The value list is a set of value reference pairs.
      *
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList
@@ -315,8 +312,9 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
     ValueList getValueList();
 
     /**
-     * The Type 'ValueList' lists all the allowed values for a concept description for which the allowed
-     * values are listed in an enumeration. The value list is a set of value reference pairs.
+     * The Type 'ValueList' lists all the allowed values for a concept
+     * description for which the allowed values are listed in an enumeration.
+     * The value list is a set of value reference pairs.
      *
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList

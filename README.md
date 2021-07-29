@@ -21,15 +21,16 @@ or by integrating the library as a dependency:
   <version>latest-version</version>
 <dependency>
 ```
+> **_NOTE:_**  The library is yet not available as dependency but will be deployed via Maven Central in the future.
 
 # Project Structure
 
 The project contains several packages.
 
-- io.adminshell.aas.v3.model: Location of the AAS classes as Java interfaces
-- io.adminshell.aas.v3.model.impl: Default implementations of the AAS classes. Can be replaced with custom implementations if needed.
-- io.adminshell.aas.v3.model.builder: Provided builder classes to create the instances of the AAS classes
-- io.adminshell.aas.v3.dataformat: Interfaces for the serialization formats, for instance JSON, XML, AASX etc. Own serializers can be developed by implementing these interfaces. See also the provided default [serializers](https://github.com/admin-shell-io/java-serializer).
+- `io.adminshell.aas.v3.model` Java interfaces & enums representing the AAS model
+- `io.adminshell.aas.v3.model.annotations` Annotations used on the model
+- `io.adminshell.aas.v3.model.builder` Abstract builder classes for the interfaces
+- `io.adminshell.aas.v3.model.impl` Default implementations of the AAS classes. Can be replaced with custom implementations if needed.
 
 # How to Contribute
 
@@ -40,14 +41,17 @@ We always look for contributions, bug reports, feature requests etc. Simply open
 
 | Name | Affiliation | Github Account |
 |:--| -- | -- |
-| Sebastian Bader | Fraunhoder IAIS | [sebbader](https://github.com/sebbader) |
-| Matthias Böckmann | Fraunhoder IAIS | [maboeckmann](https://github.com/maboeckmann) |
-| Chang Qin | Fraunhoder IAIS | [changqin26](https://github.com/changqin26) |
-| Michael Jacoby | Fraunhoder IOSB | []() |
-| Maximilian Conradi | Fraunhoder IESE | []() |
-| Jan-Wilhelm Blume | Fraunhoder IOSB | []() |
-| Frank Schnicke | Fraunhoder IESE | []() |
-| Jens Müller | Fraunhoder IOSB | []() |
-| Daniel Espen | Fraunhoder IESE | []() |
-| Bastian Espen | Fraunhoder IOSB | []() |
-| Michael Jacoby | Fraunhoder IOSB | []() |
+| Sebastian Bader | Fraunhofer IAIS | [sebbader](https://github.com/sebbader) |
+| Matthias Böckmann | Fraunhofer IAIS | [maboeckmann](https://github.com/maboeckmann) |
+| Helge Dickel | SAP SE | [heldic](https://github.com/heldic) |
+| Daniel Espen | Fraunhofer IESE | [daespen](https://github.com/daespen) |
+| Michael Jacoby | Fraunhofer IOSB | [mjacoby](https://github.com/mjacoby) |
+| Jens Müller | Fraunhofer IOSB | [JensMueller2709](https://github.com/JensMueller2709) |
+| Orthodoxos Kipouridis | SAP SE | [akiskips](https://github.com/akiskips) |
+| Chang Qin | Fraunhofer IAIS | [changqin26](https://github.com/changqin26) |
+| Bastian Rössl | Fraunhofer IOSB-INA | [br-iosb](https://github.com/br-iosb) |
+| Manuel Sauer | SAP SE | [Manu3756](https://github.com/Manu3756) |
+| Frank Schnicke | Fraunhofer IESE | [frankschnicke](https://github.com/frankschnicke) |
+
+This project was initiated by SAP and Fraunhofer to provide a foundation for the
+AAS development and to foster its dissemination.

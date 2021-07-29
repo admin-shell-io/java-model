@@ -13,33 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.adminshell.aas.v3.model;
+package io.adminshell.aas.v3.model.annotations;
 
-import io.adminshell.aas.v3.model.builder.*;
-import io.adminshell.aas.v3.model.impl.*;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
-/**
- * Enumeration of the kind of permissions that is given to the assignment of a
- * permission to a subject.
- */
-public enum PermissionKind {
-
+//Retention policy runtime required for reflective access
+@Retention(RetentionPolicy.RUNTIME)
+public @interface IRI {
     /**
-     * Allow the permission given to the subject.
+     * This annotation stores the IRI under which a certain element of a model is defined.
+     * Expected behaviour when de-referencing the value of this annotation is a definition and further information about this element.
+     * @return IRI defining an element
      */
-    ALLOW,
-    /**
-     * Explicitly deny the permission given to the subject.
-     */
-    DENY,
-    /**
-     * The permission is not applicable to the subject.
-     */
-    NOT_APPLICABLE,
-    /**
-     * It is undefined whether the permission is allowed, not applicable or
-     * denied to the subject.
-     */
-    UNDEFINED;
-
+    public String[] value() default {};
 }
