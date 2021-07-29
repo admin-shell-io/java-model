@@ -47,6 +47,28 @@ public abstract class AssetAdministrationShellEnvironmentBuilder<T extends Asset
     }
 
     /**
+     * This function allows setting a value for assets
+     * 
+     * @param assets desired value to be set
+     * @return Builder object with new value for assets
+     */
+    public B assets(List<Asset> assets) {
+        getBuildingInstance().setAssets(assets);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List assets
+     * 
+     * @param assets desired value to be added
+     * @return Builder object with new value for assets
+     */
+    public B assets(Asset assets) {
+        getBuildingInstance().getAssets().add(assets);
+        return getSelf();
+    }
+
+    /**
      * This function allows setting a value for conceptDescriptions
      * 
      * @param conceptDescriptions desired value to be set

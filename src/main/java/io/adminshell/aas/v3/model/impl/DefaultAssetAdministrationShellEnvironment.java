@@ -36,6 +36,9 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assetAdministrationShells")
     protected List<AssetAdministrationShell> assetAdministrationShells = new ArrayList<>();
 
+    @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/assets")
+    protected List<Asset> assets = new ArrayList<>();
+
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/conceptDescriptions")
     protected List<ConceptDescription> conceptDescriptions = new ArrayList<>();
 
@@ -47,6 +50,7 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
     @Override
     public int hashCode() {
         return Objects.hash(this.assetAdministrationShells,
+            this.assets,
             this.conceptDescriptions,
             this.submodels);
     }
@@ -62,6 +66,7 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
         } else {
             DefaultAssetAdministrationShellEnvironment other = (DefaultAssetAdministrationShellEnvironment) obj;
             return Objects.equals(this.assetAdministrationShells, other.assetAdministrationShells) &&
+                Objects.equals(this.assets, other.assets) &&
                 Objects.equals(this.conceptDescriptions, other.conceptDescriptions) &&
                 Objects.equals(this.submodels, other.submodels);
         }
@@ -75,6 +80,16 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
     @Override
     public void setAssetAdministrationShells(List<AssetAdministrationShell> assetAdministrationShells) {
         this.assetAdministrationShells = assetAdministrationShells;
+    }
+
+    @Override
+    public List<Asset> getAssets() {
+        return assets;
+    }
+
+    @Override
+    public void setAssets(List<Asset> assets) {
+        this.assets = assets;
     }
 
     @Override
