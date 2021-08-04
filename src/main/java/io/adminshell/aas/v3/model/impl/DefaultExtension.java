@@ -1,32 +1,35 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model.impl;
 
-import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.Objects;
 
+
+
 import io.adminshell.aas.v3.model.*;
+import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * Default implementation of package io.adminshell.aas.v3.model.Extension
- *
- * Single extension of an element. Constraint AASd-077: The name of an extension
- * within HasExtensions needs to be unique.
+ * 
+ * Single extension of an element. Constraint AASd-077: The name of an extension within
+ * HasExtensions needs to be unique.
  */
+
+@IRI("aas:Extension")
 public class DefaultExtension implements Extension {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Extension/name")
@@ -44,16 +47,15 @@ public class DefaultExtension implements Extension {
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasSemantics/semanticId")
     protected Reference semanticId;
 
-    public DefaultExtension() {
-    }
+    public DefaultExtension() {}
 
     @Override
     public int hashCode() {
         return Objects.hash(this.name,
-                this.valueType,
-                this.value,
-                this.refersTo,
-                this.semanticId);
+            this.valueType,
+            this.value,
+            this.refersTo,
+            this.semanticId);
     }
 
     @Override
@@ -66,11 +68,11 @@ public class DefaultExtension implements Extension {
             return false;
         } else {
             DefaultExtension other = (DefaultExtension) obj;
-            return Objects.equals(this.name, other.name)
-                    && Objects.equals(this.valueType, other.valueType)
-                    && Objects.equals(this.value, other.value)
-                    && Objects.equals(this.refersTo, other.refersTo)
-                    && Objects.equals(this.semanticId, other.semanticId);
+            return Objects.equals(this.name, other.name) &&
+                Objects.equals(this.valueType, other.valueType) &&
+                Objects.equals(this.value, other.value) &&
+                Objects.equals(this.refersTo, other.refersTo) &&
+                Objects.equals(this.semanticId, other.semanticId);
         }
     }
 

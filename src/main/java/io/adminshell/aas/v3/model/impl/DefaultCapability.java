@@ -1,37 +1,39 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model.impl;
 
-import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+
+
 import io.adminshell.aas.v3.model.*;
+import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
  * Default implementation of package io.adminshell.aas.v3.model.Capability
- *
- * A capability is the implementation-independent description of the potential
- * of an asset to achieve a certain effect in the physical or virtual world.
- * Constraint AASd-058: If the semanticId of a Capability submodel element
- * references a ConceptDescription then the ConceptDescription/category shall be
- * CAPABILITY.
+ * 
+ * A capability is the implementation-independent description of the potential of an asset to
+ * achieve a certain effect in the physical or virtual world. Constraint AASd-058: If the semanticId
+ * of a Capability submodel element references a ConceptDescription then the
+ * ConceptDescription/category shall be CAPABILITY.
  */
+
+@IRI("aas:Capability")
 public class DefaultCapability implements Capability {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")
@@ -58,19 +60,18 @@ public class DefaultCapability implements Capability {
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
     protected String idShort;
 
-    public DefaultCapability() {
-    }
+    public DefaultCapability() {}
 
     @Override
     public int hashCode() {
         return Objects.hash(this.category,
-                this.descriptions,
-                this.displayNames,
-                this.idShort,
-                this.qualifiers,
-                this.embeddedDataSpecifications,
-                this.kind,
-                this.semanticId);
+            this.descriptions,
+            this.displayNames,
+            this.idShort,
+            this.qualifiers,
+            this.embeddedDataSpecifications,
+            this.kind,
+            this.semanticId);
     }
 
     @Override
@@ -83,14 +84,14 @@ public class DefaultCapability implements Capability {
             return false;
         } else {
             DefaultCapability other = (DefaultCapability) obj;
-            return Objects.equals(this.category, other.category)
-                    && Objects.equals(this.descriptions, other.descriptions)
-                    && Objects.equals(this.displayNames, other.displayNames)
-                    && Objects.equals(this.idShort, other.idShort)
-                    && Objects.equals(this.qualifiers, other.qualifiers)
-                    && Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications)
-                    && Objects.equals(this.kind, other.kind)
-                    && Objects.equals(this.semanticId, other.semanticId);
+            return Objects.equals(this.category, other.category) &&
+                Objects.equals(this.descriptions, other.descriptions) &&
+                Objects.equals(this.displayNames, other.displayNames) &&
+                Objects.equals(this.idShort, other.idShort) &&
+                Objects.equals(this.qualifiers, other.qualifiers) &&
+                Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications) &&
+                Objects.equals(this.kind, other.kind) &&
+                Objects.equals(this.semanticId, other.semanticId);
         }
     }
 

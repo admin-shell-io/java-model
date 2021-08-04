@@ -1,35 +1,36 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model.impl;
 
-import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+
+
 import io.adminshell.aas.v3.model.*;
+import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of package
- * io.adminshell.aas.v3.model.AssetAdministrationShell
- *
- * Describes the Administration Shell for Assets, Products, Components, e.g.
- * Machines
+ * Default implementation of package io.adminshell.aas.v3.model.AssetAdministrationShell
+ * 
+ * Describes the Administration Shell for Assets, Products, Components, e.g. Machines
  */
+
+@IRI("aas:AssetAdministrationShell")
 public class DefaultAssetAdministrationShell implements AssetAdministrationShell {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShell/assetInformation")
@@ -68,23 +69,22 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/idShort")
     protected String idShort;
 
-    public DefaultAssetAdministrationShell() {
-    }
+    public DefaultAssetAdministrationShell() {}
 
     @Override
     public int hashCode() {
         return Objects.hash(this.assetInformation,
-                this.derivedFrom,
-                this.security,
-                this.submodels,
-                this.views,
-                this.embeddedDataSpecifications,
-                this.administration,
-                this.identification,
-                this.category,
-                this.descriptions,
-                this.displayNames,
-                this.idShort);
+            this.derivedFrom,
+            this.security,
+            this.submodels,
+            this.views,
+            this.embeddedDataSpecifications,
+            this.administration,
+            this.identification,
+            this.category,
+            this.descriptions,
+            this.displayNames,
+            this.idShort);
     }
 
     @Override
@@ -97,18 +97,18 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
             return false;
         } else {
             DefaultAssetAdministrationShell other = (DefaultAssetAdministrationShell) obj;
-            return Objects.equals(this.assetInformation, other.assetInformation)
-                    && Objects.equals(this.derivedFrom, other.derivedFrom)
-                    && Objects.equals(this.security, other.security)
-                    && Objects.equals(this.submodels, other.submodels)
-                    && Objects.equals(this.views, other.views)
-                    && Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications)
-                    && Objects.equals(this.administration, other.administration)
-                    && Objects.equals(this.identification, other.identification)
-                    && Objects.equals(this.category, other.category)
-                    && Objects.equals(this.descriptions, other.descriptions)
-                    && Objects.equals(this.displayNames, other.displayNames)
-                    && Objects.equals(this.idShort, other.idShort);
+            return Objects.equals(this.assetInformation, other.assetInformation) &&
+                Objects.equals(this.derivedFrom, other.derivedFrom) &&
+                Objects.equals(this.security, other.security) &&
+                Objects.equals(this.submodels, other.submodels) &&
+                Objects.equals(this.views, other.views) &&
+                Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications) &&
+                Objects.equals(this.administration, other.administration) &&
+                Objects.equals(this.identification, other.identification) &&
+                Objects.equals(this.category, other.category) &&
+                Objects.equals(this.descriptions, other.descriptions) &&
+                Objects.equals(this.displayNames, other.displayNames) &&
+                Objects.equals(this.idShort, other.idShort);
         }
     }
 
@@ -233,8 +233,7 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
     }
 
     /**
-     * This builder class can be used to construct a
-     * DefaultAssetAdministrationShell bean.
+     * This builder class can be used to construct a DefaultAssetAdministrationShell bean.
      */
     public static class Builder extends AssetAdministrationShellBuilder<DefaultAssetAdministrationShell, Builder> {
 

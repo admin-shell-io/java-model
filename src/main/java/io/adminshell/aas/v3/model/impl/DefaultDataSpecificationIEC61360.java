@@ -1,40 +1,40 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model.impl;
 
-import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+
+
 import io.adminshell.aas.v3.model.*;
+import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of package
- * io.adminshell.aas.v3.model.DataSpecificationIEC61360
- *
- * Data Specification Template for defining Property Descriptions conformant to
- * IEC 61360. Constraint AASd-075: For all ConceptDescriptions using data
- * specification template IEC61360
- * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0)
- * values for the attributes not being marked as mandatory or optional in tables
- * Table 9, Table 10, Table 11 and Table 12.depending on its category are
- * ignored and handled as undefined.
+ * Default implementation of package io.adminshell.aas.v3.model.DataSpecificationIEC61360
+ * 
+ * Data Specification Template for defining Property Descriptions conformant to IEC 61360.
+ * Constraint AASd-075: For all ConceptDescriptions using data specification template IEC61360
+ * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) values for the
+ * attributes not being marked as mandatory or optional in tables Table 9, Table 10, Table 11 and
+ * Table 12.depending on its category are ignored and handled as undefined.
  */
+
+@IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360")
 public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC61360 {
 
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
@@ -76,24 +76,23 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList")
     protected ValueList valueList;
 
-    public DefaultDataSpecificationIEC61360() {
-    }
+    public DefaultDataSpecificationIEC61360() {}
 
     @Override
     public int hashCode() {
         return Objects.hash(this.dataType,
-                this.definitions,
-                this.levelTypes,
-                this.preferredNames,
-                this.shortNames,
-                this.sourceOfDefinition,
-                this.symbol,
-                this.unit,
-                this.unitId,
-                this.valueFormat,
-                this.value,
-                this.valueList,
-                this.valueId);
+            this.definitions,
+            this.levelTypes,
+            this.preferredNames,
+            this.shortNames,
+            this.sourceOfDefinition,
+            this.symbol,
+            this.unit,
+            this.unitId,
+            this.valueFormat,
+            this.value,
+            this.valueList,
+            this.valueId);
     }
 
     @Override
@@ -106,19 +105,19 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
             return false;
         } else {
             DefaultDataSpecificationIEC61360 other = (DefaultDataSpecificationIEC61360) obj;
-            return Objects.equals(this.dataType, other.dataType)
-                    && Objects.equals(this.definitions, other.definitions)
-                    && Objects.equals(this.levelTypes, other.levelTypes)
-                    && Objects.equals(this.preferredNames, other.preferredNames)
-                    && Objects.equals(this.shortNames, other.shortNames)
-                    && Objects.equals(this.sourceOfDefinition, other.sourceOfDefinition)
-                    && Objects.equals(this.symbol, other.symbol)
-                    && Objects.equals(this.unit, other.unit)
-                    && Objects.equals(this.unitId, other.unitId)
-                    && Objects.equals(this.valueFormat, other.valueFormat)
-                    && Objects.equals(this.value, other.value)
-                    && Objects.equals(this.valueList, other.valueList)
-                    && Objects.equals(this.valueId, other.valueId);
+            return Objects.equals(this.dataType, other.dataType) &&
+                Objects.equals(this.definitions, other.definitions) &&
+                Objects.equals(this.levelTypes, other.levelTypes) &&
+                Objects.equals(this.preferredNames, other.preferredNames) &&
+                Objects.equals(this.shortNames, other.shortNames) &&
+                Objects.equals(this.sourceOfDefinition, other.sourceOfDefinition) &&
+                Objects.equals(this.symbol, other.symbol) &&
+                Objects.equals(this.unit, other.unit) &&
+                Objects.equals(this.unitId, other.unitId) &&
+                Objects.equals(this.valueFormat, other.valueFormat) &&
+                Objects.equals(this.value, other.value) &&
+                Objects.equals(this.valueList, other.valueList) &&
+                Objects.equals(this.valueId, other.valueId);
         }
     }
 
@@ -253,8 +252,7 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
     }
 
     /**
-     * This builder class can be used to construct a
-     * DefaultDataSpecificationIEC61360 bean.
+     * This builder class can be used to construct a DefaultDataSpecificationIEC61360 bean.
      */
     public static class Builder extends DataSpecificationIEC61360Builder<DefaultDataSpecificationIEC61360, Builder> {
 

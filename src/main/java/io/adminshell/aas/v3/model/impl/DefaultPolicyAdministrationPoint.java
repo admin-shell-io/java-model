@@ -1,32 +1,34 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model.impl;
 
-import io.adminshell.aas.v3.model.annotations.IRI;
 import java.util.Objects;
 
+
+
 import io.adminshell.aas.v3.model.*;
+import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
 
 /**
- * Default implementation of package
- * io.adminshell.aas.v3.model.PolicyAdministrationPoint
- *
+ * Default implementation of package io.adminshell.aas.v3.model.PolicyAdministrationPoint
+ * 
  * Definition of a security administration point (PDP).
  */
+
+@IRI("aas:PolicyAdministrationPoint")
 public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoint {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/externalAccessControl")
@@ -35,13 +37,12 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
     @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyAdministrationPoint/localAccessControl")
     protected AccessControl localAccessControl;
 
-    public DefaultPolicyAdministrationPoint() {
-    }
+    public DefaultPolicyAdministrationPoint() {}
 
     @Override
     public int hashCode() {
         return Objects.hash(this.localAccessControl,
-                this.externalAccessControl);
+            this.externalAccessControl);
     }
 
     @Override
@@ -54,8 +55,8 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
             return false;
         } else {
             DefaultPolicyAdministrationPoint other = (DefaultPolicyAdministrationPoint) obj;
-            return Objects.equals(this.localAccessControl, other.localAccessControl)
-                    && Objects.equals(this.externalAccessControl, other.externalAccessControl);
+            return Objects.equals(this.localAccessControl, other.localAccessControl) &&
+                Objects.equals(this.externalAccessControl, other.externalAccessControl);
         }
     }
 
@@ -80,8 +81,7 @@ public class DefaultPolicyAdministrationPoint implements PolicyAdministrationPoi
     }
 
     /**
-     * This builder class can be used to construct a
-     * DefaultPolicyAdministrationPoint bean.
+     * This builder class can be used to construct a DefaultPolicyAdministrationPoint bean.
      */
     public static class Builder extends PolicyAdministrationPointBuilder<DefaultPolicyAdministrationPoint, Builder> {
 
