@@ -96,6 +96,11 @@ public enum ReferableElements {
     @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/Event")
     EVENT,
 
+    /** 
+    */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/File")
+    FILE,
+
     /**
      * Property with a value that can be provided in multiple languages.
      */
