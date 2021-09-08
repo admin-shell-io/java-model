@@ -1,17 +1,18 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
- * 
- * http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 package io.adminshell.aas.v3.model.impl;
 
 import java.util.ArrayList;
@@ -51,6 +52,9 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
     @IRI("https://admin-shell.io/aas/3/0/RC01/HasDataSpecification/embeddedDataSpecification")
     protected List<EmbeddedDataSpecification> embeddedDataSpecifications = new ArrayList<>();
 
+    @IRI("https://admin-shell.io/aas/3/0/RC01/HasExtensions/extension")
+    protected List<Extension> extensions = new ArrayList<>();
+
     @IRI("https://admin-shell.io/aas/3/0/RC01/Identifiable/administration")
     protected AdministrativeInformation administration;
 
@@ -84,7 +88,8 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
             this.category,
             this.descriptions,
             this.displayNames,
-            this.idShort);
+            this.idShort,
+            this.extensions);
     }
 
     @Override
@@ -108,7 +113,8 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
                 Objects.equals(this.category, other.category) &&
                 Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayNames, other.displayNames) &&
-                Objects.equals(this.idShort, other.idShort);
+                Objects.equals(this.idShort, other.idShort) &&
+                Objects.equals(this.extensions, other.extensions);
         }
     }
 
@@ -230,6 +236,16 @@ public class DefaultAssetAdministrationShell implements AssetAdministrationShell
     @Override
     public void setIdShort(String idShort) {
         this.idShort = idShort;
+    }
+
+    @Override
+    public List<Extension> getExtensions() {
+        return extensions;
+    }
+
+    @Override
+    public void setExtensions(List<Extension> extensions) {
+        this.extensions = extensions;
     }
 
     /**
