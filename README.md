@@ -21,7 +21,6 @@ or by integrating the library as a dependency:
   <version>latest-version</version>
 <dependency>
 ```
-> **_NOTE:_**  The library is yet not available as dependency but will be deployed via Maven Central in the future.
 
 # Project Structure
 
