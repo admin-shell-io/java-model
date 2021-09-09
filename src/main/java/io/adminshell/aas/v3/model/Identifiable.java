@@ -32,7 +32,7 @@ import io.adminshell.aas.v3.model.impl.*;
     @KnownSubtypes.Type(value = AssetAdministrationShell.class),
     @KnownSubtypes.Type(value = ConceptDescription.class)
 })
-public interface Identifiable extends Referable {
+public interface Identifiable extends Referable, Comparable<Identifiable>  {
 
     /**
      * Administrative information of an identifiable element.
@@ -77,5 +77,11 @@ public interface Identifiable extends Referable {
      * @param identification desired value for the property identification.
      */
     void setIdentification(Identifier identification);
+    
+	
+	default public int compareTo(Identifiable o) {
+		//no null check, should be present by definition
+		return this.getIdentification().getIdentifier().compareTo(o.getIdentification().getIdentifier());
+	} 
 
 }
