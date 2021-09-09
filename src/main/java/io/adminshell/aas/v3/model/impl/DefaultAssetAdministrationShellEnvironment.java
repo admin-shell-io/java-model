@@ -135,4 +135,9 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
             return new DefaultAssetAdministrationShellEnvironment();
         }
     }
+
+	@Override
+	public Map<String, Submodel> getSubmodelMap() {
+		return submodels;
+	}
 }

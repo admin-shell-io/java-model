@@ -16,8 +16,7 @@
 package io.adminshell.aas.v3.model;
 
 import java.util.List;
-
-
+import java.util.Map;
 
 import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.annotations.KnownSubtypes;
@@ -115,5 +114,7 @@ public interface AssetAdministrationShellEnvironment {
      * @param submodels desired value for the property submodels.
      */
     void setSubmodels(List<Submodel> submodels);
-
+    
+    Map<String, Submodel> getSubmodelMap();
+    //and repeat this for all other lists...
 }
