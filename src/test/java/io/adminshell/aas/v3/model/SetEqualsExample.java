@@ -21,6 +21,8 @@ public class SetEqualsExample {
 		env2.getSubmodels().add(sm_1);
 		env2.getSubmodels().add(sm_2);
 		System.out.println("Environment are equal:" +  Objects.equal(env1, env2));
+		System.out.println("Hashcode 1:" +  env1.hashCode());
+		System.out.println("Hashcode 2:" +  env2.hashCode());
 		
 		DefaultAssetAdministrationShellEnvironment env3 = new DefaultAssetAdministrationShellEnvironment();
 		DefaultAssetAdministrationShellEnvironment env4 = new DefaultAssetAdministrationShellEnvironment();
@@ -29,6 +31,9 @@ public class SetEqualsExample {
 		env4.getSubmodels().add(sm_2);
 		env4.getSubmodels().add(sm_1);
 		System.out.println("Environment are equal:" +  Objects.equal(env3, env4));
+		System.out.println("Hashcode 3:" +  env3.hashCode());
+		System.out.println("Hashcode 4:" +  env4.hashCode());
+
 	}
 
 }
