@@ -18,8 +18,10 @@ package io.adminshell.aas.v3.model.impl;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
+import java.util.TreeSet;
 
-
+import com.google.common.collect.Lists;
 
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.annotations.IRI;
@@ -44,7 +46,7 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
     protected List<ConceptDescription> conceptDescriptions = new ArrayList<>();
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/submodels")
-    protected List<Submodel> submodels = new ArrayList<>();
+    protected Set<Submodel> submodels = new TreeSet<>();
 
     public DefaultAssetAdministrationShellEnvironment() {}
 
@@ -103,15 +105,15 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
         this.conceptDescriptions = conceptDescriptions;
     }
 
-    @Override
-    public List<Submodel> getSubmodels() {
-        return submodels;
-    }
+	@Override
+	public List<Submodel> getSubmodels() {
+		return Lists.newArrayList(submodels);
+	}
 
-    @Override
-    public void setSubmodels(List<Submodel> submodels) {
-        this.submodels = submodels;
-    }
+	@Override
+	public void setSubmodels(List<Submodel> submodels) {
+		this.submodels = new TreeSet<>(submodels);
+	}
 
     /**
      * This builder class can be used to construct a DefaultAssetAdministrationShellEnvironment bean.
