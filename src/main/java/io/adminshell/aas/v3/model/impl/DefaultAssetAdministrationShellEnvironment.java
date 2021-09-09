@@ -17,8 +17,10 @@ package io.adminshell.aas.v3.model.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 import com.google.common.collect.Lists;
@@ -46,7 +48,7 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
     protected List<ConceptDescription> conceptDescriptions = new ArrayList<>();
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/submodels")
-    protected Set<Submodel> submodels = new TreeSet<>();
+    protected Map<String, Submodel> submodels = new TreeMap<>();
 
     public DefaultAssetAdministrationShellEnvironment() {}
 
@@ -107,12 +109,15 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
 
 	@Override
 	public List<Submodel> getSubmodels() {
-		return Lists.newArrayList(submodels);
+		return Lists.newArrayList(submodels.values());
 	}
 
 	@Override
 	public void setSubmodels(List<Submodel> submodels) {
-		this.submodels = new TreeSet<>(submodels);
+		this.submodels = new TreeMap<>();
+		for (Submodel submodel : submodels) {
+			this.submodels.put(submodel.getIdentification().getIdentifier(), submodel);
+		}
 	}
 
     /**
