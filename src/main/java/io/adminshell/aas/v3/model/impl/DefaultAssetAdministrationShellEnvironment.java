@@ -16,11 +16,9 @@
 package io.adminshell.aas.v3.model.impl;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
-
-
+import java.util.TreeSet;
 
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.annotations.IRI;
@@ -51,10 +49,10 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
 
     @Override
     public int hashCode() {
-        return Objects.hash(new HashSet<>(this.assetAdministrationShells),
-            new HashSet<>(this.assets),
-            new HashSet<>(this.conceptDescriptions),
-            new HashSet<>(this.submodels));
+        return Objects.hash(new TreeSet<>(this.assetAdministrationShells),
+            new TreeSet<>(this.assets),
+            new TreeSet<>(this.conceptDescriptions),
+            new TreeSet<>(this.submodels));
     }
 
     @Override
@@ -67,11 +65,10 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
             return false;
         } else {
             DefaultAssetAdministrationShellEnvironment other = (DefaultAssetAdministrationShellEnvironment) obj;
-            new HashSet<>(this.assetAdministrationShells);
-            return Objects.equals(new HashSet<>(this.assetAdministrationShells), new HashSet<>(other.assetAdministrationShells)) &&
-                Objects.equals(new HashSet<>(this.assets), new HashSet<>(other.assets)) &&
-                Objects.equals(new HashSet<>(this.conceptDescriptions), new HashSet<>(other.conceptDescriptions)) &&
-                Objects.equals(new HashSet<>(this.submodels), new HashSet<>(other.submodels));
+            return Objects.equals(new TreeSet<>(this.assetAdministrationShells), new TreeSet<>(other.assetAdministrationShells)) &&
+                Objects.equals(new TreeSet<>(this.assets), new TreeSet<>(other.assets)) &&
+                Objects.equals(new TreeSet<>(this.conceptDescriptions), new TreeSet<>(other.conceptDescriptions)) &&
+                Objects.equals(new TreeSet<>(this.submodels), new TreeSet<>(other.submodels));
         }
     }
 
