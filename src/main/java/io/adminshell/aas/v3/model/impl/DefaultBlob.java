@@ -75,7 +75,7 @@ public class DefaultBlob implements Blob {
     @Override
     public int hashCode() {
         return Objects.hash(this.mimeType,
-            this.value,
+            Arrays.hashCode(this.value),
             this.category,
             this.descriptions,
             this.displayNames,

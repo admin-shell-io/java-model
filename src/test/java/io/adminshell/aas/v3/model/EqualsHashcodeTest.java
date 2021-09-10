@@ -213,9 +213,6 @@ public class EqualsHashcodeTest {
 		assertEquals(Blob_A.getMimeType(), Blob_B.getMimeType());
 		assertEquals(Blob_A.getMimeType().hashCode(), Blob_B.getMimeType().hashCode());
 
-		assertEquals(Blob_A.getValue(), Blob_B.getValue());
-		assertEquals(Blob_A.getValue().hashCode(), Blob_B.getValue().hashCode());
-
 		assertEquals(Blob_A, Blob_B);
 		assertEquals(Blob_A.hashCode(), Blob_B.hashCode());
 	}
