@@ -281,5 +281,27 @@ public class EqualsHashcodeTest {
 		assertEquals(A, B);
 		assertEquals(A.hashCode(), B.hashCode());
 	}
+	
+	@Test
+	public void testFullDifferentOrder() {
+		DefaultAssetAdministrationShellEnvironment env1 = new DefaultAssetAdministrationShellEnvironment.Builder()
+				.assetAdministrationShells(List.of(AAS_1(), AAS_2(), AAS_3(), AAS_4()))
+				.submodels(List.of(SUBMODEL_1(), SUBMODEL_2(), SUBMODEL_3(), SUBMODEL_4(), SUBMODEL_5(), SUBMODEL_6(),
+						SUBMODEL_7()))
+				.conceptDescriptions(List.of(CONCEPT_DESCRIPTION_1(), CONCEPT_DESCRIPTION_2(), CONCEPT_DESCRIPTION_3(),
+						CONCEPT_DESCRIPTION_4()))
+				.build();
+
+		DefaultAssetAdministrationShellEnvironment env2 = new DefaultAssetAdministrationShellEnvironment.Builder()
+				.assetAdministrationShells(List.of(AAS_2(), AAS_1(), AAS_3(), AAS_4()))
+				.submodels(List.of(SUBMODEL_2(), SUBMODEL_1(), SUBMODEL_3(), SUBMODEL_4(), SUBMODEL_5(), SUBMODEL_6(),
+						SUBMODEL_7()))
+				.conceptDescriptions(List.of(CONCEPT_DESCRIPTION_2(), CONCEPT_DESCRIPTION_1(), CONCEPT_DESCRIPTION_3(),
+						CONCEPT_DESCRIPTION_4()))
+				.build();
+
+		assertEquals(env1, env2);
+		assertEquals(env1.hashCode(), env2.hashCode());
+	}
 
 }
