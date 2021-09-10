@@ -16,6 +16,7 @@
 package io.adminshell.aas.v3.model.impl;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 
@@ -50,10 +51,10 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.assetAdministrationShells,
-            this.assets,
-            this.conceptDescriptions,
-            this.submodels);
+        return Objects.hash(new HashSet<>(this.assetAdministrationShells),
+            new HashSet<>(this.assets),
+            new HashSet<>(this.conceptDescriptions),
+            new HashSet<>(this.submodels));
     }
 
     @Override
@@ -66,10 +67,11 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
             return false;
         } else {
             DefaultAssetAdministrationShellEnvironment other = (DefaultAssetAdministrationShellEnvironment) obj;
-            return Objects.equals(this.assetAdministrationShells, other.assetAdministrationShells) &&
-                Objects.equals(this.assets, other.assets) &&
-                Objects.equals(this.conceptDescriptions, other.conceptDescriptions) &&
-                Objects.equals(this.submodels, other.submodels);
+            new HashSet<>(this.assetAdministrationShells);
+            return Objects.equals(new HashSet<>(this.assetAdministrationShells), new HashSet<>(other.assetAdministrationShells)) &&
+                Objects.equals(new HashSet<>(this.assets), new HashSet<>(other.assets)) &&
+                Objects.equals(new HashSet<>(this.conceptDescriptions), new HashSet<>(other.conceptDescriptions)) &&
+                Objects.equals(new HashSet<>(this.submodels), new HashSet<>(other.submodels));
         }
     }
 
