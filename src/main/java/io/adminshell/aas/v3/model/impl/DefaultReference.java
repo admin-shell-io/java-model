@@ -37,7 +37,7 @@ import io.adminshell.aas.v3.model.builder.*;
 public class DefaultReference implements Reference {
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/Reference/key")
-    protected List<Key> keys = new ArrayList<>();
+    protected List<Key> keys = new ArrayList<>(); //this is actually a list, equals and hashcode must use list logic
 
     public DefaultReference() {}
 
