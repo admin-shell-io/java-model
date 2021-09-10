@@ -11,10 +11,24 @@ import java.util.List;
 
 import org.junit.Test;
 
+import io.adminshell.aas.v3.model.impl.DefaultAdministrativeInformation;
+import io.adminshell.aas.v3.model.impl.DefaultAnnotatedRelationshipElement;
 import io.adminshell.aas.v3.model.impl.DefaultAssetAdministrationShellEnvironment;
+import io.adminshell.aas.v3.model.impl.DefaultBasicEvent;
 import io.adminshell.aas.v3.model.impl.DefaultBlob;
+import io.adminshell.aas.v3.model.impl.DefaultCapability;
+import io.adminshell.aas.v3.model.impl.DefaultFile;
+import io.adminshell.aas.v3.model.impl.DefaultIdentifier;
 import io.adminshell.aas.v3.model.impl.DefaultKey;
+import io.adminshell.aas.v3.model.impl.DefaultMultiLanguageProperty;
+import io.adminshell.aas.v3.model.impl.DefaultOperation;
+import io.adminshell.aas.v3.model.impl.DefaultOperationVariable;
+import io.adminshell.aas.v3.model.impl.DefaultProperty;
+import io.adminshell.aas.v3.model.impl.DefaultRange;
 import io.adminshell.aas.v3.model.impl.DefaultReference;
+import io.adminshell.aas.v3.model.impl.DefaultReferenceElement;
+import io.adminshell.aas.v3.model.impl.DefaultRelationshipElement;
+import io.adminshell.aas.v3.model.impl.DefaultSubmodel;
 import io.adminshell.aas.v3.model.impl.DefaultSubmodelElementCollection;
 
 /**
@@ -308,7 +322,7 @@ public class EqualsHashcodeTest {
 	public void testSubmodelDifferentOrder() {
 		Submodel submodel_A = SUBMODEL_3();
 		Submodel submodel_B = SUBMODEL_3();
-		
+
 		assertEquals(submodel_A, submodel_B);
 		assertEquals(submodel_A.hashCode(), submodel_B.hashCode());
 
@@ -317,6 +331,166 @@ public class EqualsHashcodeTest {
 
 		assertEquals(submodel_A, submodel_B);
 		assertEquals(submodel_A.hashCode(), submodel_B.hashCode());
+	}
+
+	@Test
+	public void testSubmodelElementOrderedCollectionDifferentOrder() {
+		Submodel submodel_A = new DefaultSubmodel.Builder().idShort("TestSubmodel")
+				.submodelElement(new DefaultSubmodelElementCollection.Builder()
+						.idShort("ExampleSubmodelCollectionOrdered").category("Parameter")
+						.description(new LangString("Example SubmodelElementCollectionOrdered object", "en-us"))
+						.description(new LangString("Beispiel SubmodelElementCollectionOrdered Element", "de"))
+						.semanticId(new DefaultReference.Builder().key(new DefaultKey.Builder()
+								.type(KeyElements.GLOBAL_REFERENCE)
+								.value("http://acplt.org/SubmodelElementCollections/ExampleSubmodelElementCollectionOrdered")
+								.idType(KeyType.IRI).build()).build())
+						.value(new DefaultProperty.Builder().idShort("ExampleProperty").category("Constant")
+								.description(new LangString("Example Property object", "en-us"))
+								.description(new LangString("Beispiel Property Element", "de"))
+								.semanticId(new DefaultReference.Builder()
+										.key(new DefaultKey.Builder().type(KeyElements.GLOBAL_REFERENCE)
+												.value("http://acplt.org/Properties/ExampleProperty")
+												.idType(KeyType.IRI).build())
+										.build())
+								.value("exampleValue")
+								.valueId(
+										new DefaultReference.Builder()
+												.key(new DefaultKey.Builder().type(KeyElements.GLOBAL_REFERENCE)
+														.idType(KeyType.IRI)
+														.value("http://acplt.org/ValueId/ExampleValueId").build())
+												.build())
+								.valueType("string").build())
+						.value(new DefaultMultiLanguageProperty.Builder().idShort("ExampleMultiLanguageProperty")
+								.category("Constant")
+								.description(new LangString("Example MultiLanguageProperty object", "en-us"))
+								.description(new LangString("Beispiel MulitLanguageProperty Element", "de"))
+								.semanticId(new DefaultReference.Builder().key(new DefaultKey.Builder()
+										.type(KeyElements.GLOBAL_REFERENCE)
+										.value("http://acplt.org/MultiLanguageProperties/ExampleMultiLanguageProperty")
+										.idType(KeyType.IRI).build()).build())
+								.value(new LangString("Example value of a MultiLanguageProperty element", "en-us"))
+								.value(new LangString("Beispielswert für ein MulitLanguageProperty-Element", "de"))
+								.valueId(new DefaultReference.Builder()
+										.key(new DefaultKey.Builder().type(KeyElements.GLOBAL_REFERENCE)
+												.idType(KeyType.IRI)
+												.value("http://acplt.org/ValueId/ExampleMultiLanguageValueId").build())
+										.build())
+								.build())
+						.ordered(true).build())
+				.build();
+
+		Submodel submodel_B = new DefaultSubmodel.Builder().idShort("TestSubmodel")
+				.submodelElement(new DefaultSubmodelElementCollection.Builder()
+						.idShort("ExampleSubmodelCollectionOrdered").category("Parameter")
+						.description(new LangString("Example SubmodelElementCollectionOrdered object", "en-us"))
+						.description(new LangString("Beispiel SubmodelElementCollectionOrdered Element", "de"))
+						.semanticId(new DefaultReference.Builder().key(new DefaultKey.Builder()
+								.type(KeyElements.GLOBAL_REFERENCE)
+								.value("http://acplt.org/SubmodelElementCollections/ExampleSubmodelElementCollectionOrdered")
+								.idType(KeyType.IRI).build()).build())
+						.value(new DefaultMultiLanguageProperty.Builder().idShort("ExampleMultiLanguageProperty")
+								.category("Constant")
+								.description(new LangString("Example MultiLanguageProperty object", "en-us"))
+								.description(new LangString("Beispiel MulitLanguageProperty Element", "de"))
+								.semanticId(new DefaultReference.Builder().key(new DefaultKey.Builder()
+										.type(KeyElements.GLOBAL_REFERENCE)
+										.value("http://acplt.org/MultiLanguageProperties/ExampleMultiLanguageProperty")
+										.idType(KeyType.IRI).build()).build())
+								.value(new LangString("Example value of a MultiLanguageProperty element", "en-us"))
+								.value(new LangString("Beispielswert für ein MulitLanguageProperty-Element", "de"))
+								.valueId(new DefaultReference.Builder()
+										.key(new DefaultKey.Builder().type(KeyElements.GLOBAL_REFERENCE)
+												.idType(KeyType.IRI)
+												.value("http://acplt.org/ValueId/ExampleMultiLanguageValueId").build())
+										.build())
+								.build())
+						.value(new DefaultProperty.Builder().idShort("ExampleProperty").category("Constant")
+								.description(new LangString("Example Property object", "en-us"))
+								.description(new LangString("Beispiel Property Element", "de"))
+								.semanticId(new DefaultReference.Builder()
+										.key(new DefaultKey.Builder().type(KeyElements.GLOBAL_REFERENCE)
+												.value("http://acplt.org/Properties/ExampleProperty")
+												.idType(KeyType.IRI).build())
+										.build())
+								.value("exampleValue")
+								.valueId(
+										new DefaultReference.Builder()
+												.key(new DefaultKey.Builder().type(KeyElements.GLOBAL_REFERENCE)
+														.idType(KeyType.IRI)
+														.value("http://acplt.org/ValueId/ExampleValueId").build())
+												.build())
+								.valueType("string").build())
+						.ordered(true).build())
+				.build();
+		
+		SubmodelElementCollection orderedSMC_A = (SubmodelElementCollection) submodel_A.getSubmodelElements().get(0);
+		SubmodelElementCollection orderedSMC_B = (SubmodelElementCollection) submodel_B.getSubmodelElements().get(0);
+		
+		assertNotEquals(orderedSMC_A, orderedSMC_B);
+		assertNotEquals(orderedSMC_A.hashCode(), orderedSMC_B.hashCode());
+
+	}
+
+	@Test
+	public void testSubmodelElementUnorderedCollectionDifferentOrder() {
+		Submodel submodel_A = new DefaultSubmodel.Builder().idShort("TestSubmodel")
+				.submodelElement(new DefaultSubmodelElementCollection.Builder()
+						.idShort("ExampleSubmodelCollectionUnordered").category("Parameter")
+						.description(new LangString("Example SubmodelElementCollectionUnordered object", "en-us"))
+						.description(new LangString("Beispiel SubmodelElementCollectionUnordered Element", "de"))
+						.semanticId(new DefaultReference.Builder().key(new DefaultKey.Builder()
+								.type(KeyElements.GLOBAL_REFERENCE)
+								.value("http://acplt.org/SubmodelElementCollections/ExampleSubmodelElementCollectionUnordered")
+								.idType(KeyType.IRI).build()).build())
+						.value(new DefaultBlob.Builder().idShort("ExampleBlob").category("Parameter")
+								.description(new LangString("Example Blob object", "en-us"))
+								.description(new LangString("Beispiel Blob Element", "de"))
+								.semanticId(new DefaultReference.Builder().key(new DefaultKey.Builder()
+										.type(KeyElements.GLOBAL_REFERENCE).value("http://acplt.org/Blobs/ExampleBlob")
+										.idType(KeyType.IRI).build()).build())
+								.mimeType("application/pdf").value(Base64.getDecoder().decode("AQIDBAU=")).build())
+						.value(new DefaultFile.Builder().idShort("ExampleFile").category("Parameter")
+								.description(new LangString("Example File object", "en-us"))
+								.description(new LangString("Beispiel File Element", "de"))
+								.semanticId(new DefaultReference.Builder().key(new DefaultKey.Builder()
+										.type(KeyElements.GLOBAL_REFERENCE).value("http://acplt.org/Files/ExampleFile")
+										.idType(KeyType.IRI).build()).build())
+								.value("/TestFile.pdf").mimeType("application/pdf").build())
+						.ordered(false).build())
+				.build();
+
+		Submodel submodel_B = new DefaultSubmodel.Builder().idShort("TestSubmodel")
+				.submodelElement(new DefaultSubmodelElementCollection.Builder()
+						.idShort("ExampleSubmodelCollectionUnordered").category("Parameter")
+						.description(new LangString("Example SubmodelElementCollectionUnordered object", "en-us"))
+						.description(new LangString("Beispiel SubmodelElementCollectionUnordered Element", "de"))
+						.semanticId(new DefaultReference.Builder().key(new DefaultKey.Builder()
+								.type(KeyElements.GLOBAL_REFERENCE)
+								.value("http://acplt.org/SubmodelElementCollections/ExampleSubmodelElementCollectionUnordered")
+								.idType(KeyType.IRI).build()).build())
+						.value(new DefaultFile.Builder().idShort("ExampleFile").category("Parameter")
+								.description(new LangString("Example File object", "en-us"))
+								.description(new LangString("Beispiel File Element", "de"))
+								.semanticId(new DefaultReference.Builder().key(new DefaultKey.Builder()
+										.type(KeyElements.GLOBAL_REFERENCE).value("http://acplt.org/Files/ExampleFile")
+										.idType(KeyType.IRI).build()).build())
+								.value("/TestFile.pdf").mimeType("application/pdf").build())
+						.value(new DefaultBlob.Builder().idShort("ExampleBlob").category("Parameter")
+								.description(new LangString("Example Blob object", "en-us"))
+								.description(new LangString("Beispiel Blob Element", "de"))
+								.semanticId(new DefaultReference.Builder().key(new DefaultKey.Builder()
+										.type(KeyElements.GLOBAL_REFERENCE).value("http://acplt.org/Blobs/ExampleBlob")
+										.idType(KeyType.IRI).build()).build())
+								.mimeType("application/pdf").value(Base64.getDecoder().decode("AQIDBAU=")).build())
+						.ordered(false).build())
+				.build();
+		
+		SubmodelElementCollection unorderedSMC_A = (SubmodelElementCollection) submodel_A.getSubmodelElements().get(0);
+		SubmodelElementCollection unorderedSMC_B = (SubmodelElementCollection) submodel_B.getSubmodelElements().get(0);
+		
+		assertEquals(unorderedSMC_A, unorderedSMC_B);
+		assertEquals(unorderedSMC_A.hashCode(), unorderedSMC_B.hashCode());
+
 	}
 
 }

@@ -19,8 +19,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
-
-
+import java.util.TreeSet;
 
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.annotations.IRI;
@@ -81,9 +80,10 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
 
     @Override
     public int hashCode() {
+    	Object wrappedValues = ordered ? this.values : new TreeSet<>(this.values);
         return Objects.hash(this.allowDuplicates,
             this.ordered,
-            this.values,
+            wrappedValues,
             this.category,
             this.descriptions,
             this.displayNames,
@@ -105,9 +105,10 @@ public class DefaultSubmodelElementCollection implements SubmodelElementCollecti
             return false;
         } else {
             DefaultSubmodelElementCollection other = (DefaultSubmodelElementCollection) obj;
+        	boolean valuesEqual = ordered ? Objects.equals(this.values, other.values) : Objects.equals(new TreeSet<>(this.values), new TreeSet<>(other.values));
             return Objects.equals(this.allowDuplicates, other.allowDuplicates) &&
                 Objects.equals(this.ordered, other.ordered) &&
-                Objects.equals(this.values, other.values) &&
+                valuesEqual &&
                 Objects.equals(this.category, other.category) &&
                 Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayNames, other.displayNames) &&
