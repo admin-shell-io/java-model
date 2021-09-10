@@ -34,7 +34,7 @@ import io.adminshell.aas.v3.model.impl.*;
     @KnownSubtypes.Type(value = View.class),
     @KnownSubtypes.Type(value = SubmodelElement.class)
 })
-public interface Referable extends HasExtensions {
+public interface Referable extends HasExtensions, Comparable<Referable> {
 
     /**
      * The category is a value that gives further meta information w.r.t. to the class of the element.
@@ -141,5 +141,10 @@ public interface Referable extends HasExtensions {
      * @param idShort desired value for the property idShort.
      */
     void setIdShort(String idShort);
+    
+    @Override
+    default int compareTo(Referable o) {
+    	return this.getIdShort().compareTo(o.getIdShort());
+    }
 
 }

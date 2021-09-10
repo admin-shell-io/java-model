@@ -223,7 +223,7 @@ public class EqualsHashcodeTest {
 		byte[] b = new byte[] { 1, 2, 3 };
 		assertNotEquals(a, b);
 		assertNotEquals(a.hashCode(), b.hashCode());
-		
+
 		assertTrue(Arrays.equals(a, b));
 		assertEquals(Arrays.hashCode(a), Arrays.hashCode(b));
 	}
@@ -281,7 +281,7 @@ public class EqualsHashcodeTest {
 		assertEquals(A, B);
 		assertEquals(A.hashCode(), B.hashCode());
 	}
-	
+
 	@Test
 	public void testFullDifferentOrder() {
 		DefaultAssetAdministrationShellEnvironment env1 = new DefaultAssetAdministrationShellEnvironment.Builder()
@@ -302,6 +302,21 @@ public class EqualsHashcodeTest {
 
 		assertEquals(env1, env2);
 		assertEquals(env1.hashCode(), env2.hashCode());
+	}
+
+	@Test
+	public void testSubmodelDifferentOrder() {
+		Submodel submodel_A = SUBMODEL_3();
+		Submodel submodel_B = SUBMODEL_3();
+		
+		assertEquals(submodel_A, submodel_B);
+		assertEquals(submodel_A.hashCode(), submodel_B.hashCode());
+
+		SubmodelElement remove = submodel_B.getSubmodelElements().remove(0);
+		submodel_B.getSubmodelElements().add(remove);
+
+		assertEquals(submodel_A, submodel_B);
+		assertEquals(submodel_A.hashCode(), submodel_B.hashCode());
 	}
 
 }

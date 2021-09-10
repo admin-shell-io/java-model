@@ -18,8 +18,7 @@ package io.adminshell.aas.v3.model.impl;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
-
+import java.util.TreeSet;
 
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.annotations.IRI;
@@ -80,7 +79,7 @@ public class DefaultSubmodel implements Submodel {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.submodelElements,
+        return Objects.hash(new TreeSet<>(this.submodelElements),
             this.qualifiers,
             this.embeddedDataSpecifications,
             this.administration,
@@ -104,7 +103,7 @@ public class DefaultSubmodel implements Submodel {
             return false;
         } else {
             DefaultSubmodel other = (DefaultSubmodel) obj;
-            return Objects.equals(this.submodelElements, other.submodelElements) &&
+            return Objects.equals(new TreeSet<>(this.submodelElements), new TreeSet<>(other.submodelElements)) &&
                 Objects.equals(this.qualifiers, other.qualifiers) &&
                 Objects.equals(this.embeddedDataSpecifications, other.embeddedDataSpecifications) &&
                 Objects.equals(this.administration, other.administration) &&
