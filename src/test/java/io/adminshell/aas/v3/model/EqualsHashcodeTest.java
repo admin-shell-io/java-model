@@ -6,28 +6,20 @@ import static io.adminshell.aas.v3.model.AASFullFactory.*;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Test;
 
-import io.adminshell.aas.v3.model.impl.DefaultAdministrativeInformation;
-import io.adminshell.aas.v3.model.impl.DefaultAnnotatedRelationshipElement;
 import io.adminshell.aas.v3.model.impl.DefaultAssetAdministrationShellEnvironment;
-import io.adminshell.aas.v3.model.impl.DefaultBasicEvent;
 import io.adminshell.aas.v3.model.impl.DefaultBlob;
-import io.adminshell.aas.v3.model.impl.DefaultCapability;
 import io.adminshell.aas.v3.model.impl.DefaultFile;
-import io.adminshell.aas.v3.model.impl.DefaultIdentifier;
 import io.adminshell.aas.v3.model.impl.DefaultKey;
 import io.adminshell.aas.v3.model.impl.DefaultMultiLanguageProperty;
-import io.adminshell.aas.v3.model.impl.DefaultOperation;
-import io.adminshell.aas.v3.model.impl.DefaultOperationVariable;
 import io.adminshell.aas.v3.model.impl.DefaultProperty;
-import io.adminshell.aas.v3.model.impl.DefaultRange;
 import io.adminshell.aas.v3.model.impl.DefaultReference;
-import io.adminshell.aas.v3.model.impl.DefaultReferenceElement;
-import io.adminshell.aas.v3.model.impl.DefaultRelationshipElement;
 import io.adminshell.aas.v3.model.impl.DefaultSubmodel;
 import io.adminshell.aas.v3.model.impl.DefaultSubmodelElementCollection;
 
@@ -422,10 +414,10 @@ public class EqualsHashcodeTest {
 								.valueType("string").build())
 						.ordered(true).build())
 				.build();
-		
+
 		SubmodelElementCollection orderedSMC_A = (SubmodelElementCollection) submodel_A.getSubmodelElements().get(0);
 		SubmodelElementCollection orderedSMC_B = (SubmodelElementCollection) submodel_B.getSubmodelElements().get(0);
-		
+
 		assertNotEquals(orderedSMC_A, orderedSMC_B);
 		assertNotEquals(orderedSMC_A.hashCode(), orderedSMC_B.hashCode());
 
@@ -484,13 +476,62 @@ public class EqualsHashcodeTest {
 								.mimeType("application/pdf").value(Base64.getDecoder().decode("AQIDBAU=")).build())
 						.ordered(false).build())
 				.build();
-		
+
 		SubmodelElementCollection unorderedSMC_A = (SubmodelElementCollection) submodel_A.getSubmodelElements().get(0);
 		SubmodelElementCollection unorderedSMC_B = (SubmodelElementCollection) submodel_B.getSubmodelElements().get(0);
-		
+
 		assertEquals(unorderedSMC_A, unorderedSMC_B);
 		assertEquals(unorderedSMC_A.hashCode(), unorderedSMC_B.hashCode());
 
+	}
+
+	@Test
+	public void testHashSetHashCodeAndEquals() {
+		Set<StaticHashCodeTestObject> hashSet_A = new HashSet<>();
+		Set<StaticHashCodeTestObject> hashSet_B = new HashSet<>();
+		
+		hashSet_A.add(new StaticHashCodeTestObject(1));
+		hashSet_A.add(new StaticHashCodeTestObject(1));
+		hashSet_A.add(new StaticHashCodeTestObject(2));
+		hashSet_A.add(new StaticHashCodeTestObject(3));
+
+		hashSet_B.add(new StaticHashCodeTestObject(3));
+		hashSet_B.add(new StaticHashCodeTestObject(2));
+		hashSet_B.add(new StaticHashCodeTestObject(1));
+		hashSet_B.add(new StaticHashCodeTestObject(1));
+		
+		assertEquals(3, hashSet_A.size());
+		assertEquals(3, hashSet_B.size());
+
+		assertEquals(hashSet_A, hashSet_B);
+		assertEquals(hashSet_A.hashCode(), hashSet_B.hashCode());
+	}
+
+	private class StaticHashCodeTestObject {
+		
+		private int parameter;
+
+		public StaticHashCodeTestObject(int parameter) {
+			this.parameter = parameter;
+		}
+
+		@Override
+		public int hashCode() {
+			return 0;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			StaticHashCodeTestObject other = (StaticHashCodeTestObject) obj;
+			return parameter == other.parameter;
+		}
+		
 	}
 
 }
