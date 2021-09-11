@@ -23,6 +23,7 @@ import java.util.TreeSet;
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
+import io.adminshell.aas.v3.model.util.SetBasedList;
 
 /**
  * Default implementation of package io.adminshell.aas.v3.model.AssetAdministrationShellEnvironment
@@ -43,7 +44,7 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
     protected List<ConceptDescription> conceptDescriptions = new ArrayList<>();
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/submodels")
-    protected List<Submodel> submodels = new ArrayList<>();
+    protected List<Submodel> submodels = new SetBasedList<>();
 
     public DefaultAssetAdministrationShellEnvironment() {}
 
@@ -52,7 +53,7 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
         return Objects.hash(new TreeSet<>(this.assetAdministrationShells),
             new TreeSet<>(this.assets),
             new TreeSet<>(this.conceptDescriptions),
-            new TreeSet<>(this.submodels));
+            this.submodels);
     }
 
     @Override
@@ -68,7 +69,7 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
             return Objects.equals(new TreeSet<>(this.assetAdministrationShells), new TreeSet<>(other.assetAdministrationShells)) &&
                 Objects.equals(new TreeSet<>(this.assets), new TreeSet<>(other.assets)) &&
                 Objects.equals(new TreeSet<>(this.conceptDescriptions), new TreeSet<>(other.conceptDescriptions)) &&
-                Objects.equals(new TreeSet<>(this.submodels), new TreeSet<>(other.submodels));
+                Objects.equals(this.submodels, other.submodels);
         }
     }
 
@@ -109,7 +110,7 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
 
     @Override
     public void setSubmodels(List<Submodel> submodels) {
-        this.submodels = submodels;
+        this.submodels = new SetBasedList<>(submodels);
     }
 
     /**
