@@ -24,6 +24,7 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
 import io.adminshell.aas.v3.model.util.SetBasedList;
+import io.adminshell.aas.v3.model.util.SetEqualListWrapper;
 
 /**
  * Default implementation of package io.adminshell.aas.v3.model.AssetAdministrationShellEnvironment
@@ -44,7 +45,7 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
     protected List<ConceptDescription> conceptDescriptions = new ArrayList<>();
 
     @IRI("https://admin-shell.io/aas/3/0/RC01/AssetAdministrationShellEnvironment/submodels")
-    protected List<Submodel> submodels = new SetBasedList<>();
+    protected List<Submodel> submodels = new SetEqualListWrapper<>(new ArrayList<>());
 
     public DefaultAssetAdministrationShellEnvironment() {}
 
@@ -110,7 +111,7 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
 
     @Override
     public void setSubmodels(List<Submodel> submodels) {
-        this.submodels = new SetBasedList<>(submodels);
+        this.submodels = new SetEqualListWrapper<>(submodels);
     }
 
     /**
