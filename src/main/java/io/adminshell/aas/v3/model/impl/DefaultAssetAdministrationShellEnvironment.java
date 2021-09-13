@@ -18,12 +18,11 @@ package io.adminshell.aas.v3.model.impl;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.TreeSet;
+import java.util.HashSet;
 
 import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.annotations.IRI;
 import io.adminshell.aas.v3.model.builder.*;
-import io.adminshell.aas.v3.model.util.SetBasedList;
 import io.adminshell.aas.v3.model.util.SetEqualListWrapper;
 
 /**
@@ -51,9 +50,9 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
 
     @Override
     public int hashCode() {
-        return Objects.hash(new TreeSet<>(this.assetAdministrationShells),
-            new TreeSet<>(this.assets),
-            new TreeSet<>(this.conceptDescriptions),
+        return Objects.hash(new HashSet<>(this.assetAdministrationShells),
+            new HashSet<>(this.assets),
+            new HashSet<>(this.conceptDescriptions),
             this.submodels);
     }
 
@@ -67,9 +66,9 @@ public class DefaultAssetAdministrationShellEnvironment implements AssetAdminist
             return false;
         } else {
             DefaultAssetAdministrationShellEnvironment other = (DefaultAssetAdministrationShellEnvironment) obj;
-            return Objects.equals(new TreeSet<>(this.assetAdministrationShells), new TreeSet<>(other.assetAdministrationShells)) &&
-                Objects.equals(new TreeSet<>(this.assets), new TreeSet<>(other.assets)) &&
-                Objects.equals(new TreeSet<>(this.conceptDescriptions), new TreeSet<>(other.conceptDescriptions)) &&
+            return Objects.equals(new HashSet<>(this.assetAdministrationShells), new HashSet<>(other.assetAdministrationShells)) &&
+                Objects.equals(new HashSet<>(this.assets), new HashSet<>(other.assets)) &&
+                Objects.equals(new HashSet<>(this.conceptDescriptions), new HashSet<>(other.conceptDescriptions)) &&
                 Objects.equals(this.submodels, other.submodels);
         }
     }

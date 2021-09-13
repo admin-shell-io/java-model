@@ -16,6 +16,7 @@ import java.util.Set;
  * @param <E> the type of elements in this list
  */
 
+@Deprecated
 public class SetBasedList<E> implements List<E> {
 
 	private final class SetBasedListIterator implements ListIterator<E> {
