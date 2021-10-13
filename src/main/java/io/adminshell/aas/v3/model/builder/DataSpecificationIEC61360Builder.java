@@ -53,7 +53,7 @@ public abstract class DataSpecificationIEC61360Builder<T extends DataSpecificati
      * @param definition desired value to be added
      * @return Builder object with new value for definitions
      */
-    public B definition(LangString definition) {
+    public B definitions(LangString definition) {
         getBuildingInstance().getDefinitions().add(definition);
         return getSelf();
     }
@@ -75,7 +75,7 @@ public abstract class DataSpecificationIEC61360Builder<T extends DataSpecificati
      * @param levelType desired value to be added
      * @return Builder object with new value for levelTypes
      */
-    public B levelType(LevelType levelType) {
+    public B levelTypes(LevelType levelType) {
         getBuildingInstance().getLevelTypes().add(levelType);
         return getSelf();
     }
@@ -97,7 +97,7 @@ public abstract class DataSpecificationIEC61360Builder<T extends DataSpecificati
      * @param preferredName desired value to be added
      * @return Builder object with new value for preferredNames
      */
-    public B preferredName(LangString preferredName) {
+    public B preferredNames(LangString preferredName) {
         getBuildingInstance().getPreferredNames().add(preferredName);
         return getSelf();
     }
@@ -119,7 +119,7 @@ public abstract class DataSpecificationIEC61360Builder<T extends DataSpecificati
      * @param shortName desired value to be added
      * @return Builder object with new value for shortNames
      */
-    public B shortName(LangString shortName) {
+    public B shortNames(LangString shortName) {
         getBuildingInstance().getShortNames().add(shortName);
         return getSelf();
     }

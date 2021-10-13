@@ -53,7 +53,7 @@ public abstract class DataSpecificationPhysicalUnitBuilder<T extends DataSpecifi
      * @param definition desired value to be added
      * @return Builder object with new value for definitions
      */
-    public B definition(LangString definition) {
+    public B definitions(LangString definition) {
         getBuildingInstance().getDefinitions().add(definition);
         return getSelf();
     }

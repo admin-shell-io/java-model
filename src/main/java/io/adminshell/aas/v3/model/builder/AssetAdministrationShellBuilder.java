@@ -75,7 +75,7 @@ public abstract class AssetAdministrationShellBuilder<T extends AssetAdministrat
      * @param submodel desired value to be added
      * @return Builder object with new value for submodels
      */
-    public B submodel(Reference submodel) {
+    public B submodels(Reference submodel) {
         getBuildingInstance().getSubmodels().add(submodel);
         return getSelf();
     }
@@ -97,7 +97,7 @@ public abstract class AssetAdministrationShellBuilder<T extends AssetAdministrat
      * @param view desired value to be added
      * @return Builder object with new value for views
      */
-    public B view(View view) {
+    public B views(View view) {
         getBuildingInstance().getViews().add(view);
         return getSelf();
     }
@@ -119,7 +119,7 @@ public abstract class AssetAdministrationShellBuilder<T extends AssetAdministrat
      * @param embeddedDataSpecification desired value to be added
      * @return Builder object with new value for embeddedDataSpecifications
      */
-    public B embeddedDataSpecification(EmbeddedDataSpecification embeddedDataSpecification) {
+    public B embeddedDataSpecifications(EmbeddedDataSpecification embeddedDataSpecification) {
         getBuildingInstance().getEmbeddedDataSpecifications().add(embeddedDataSpecification);
         return getSelf();
     }
@@ -174,7 +174,7 @@ public abstract class AssetAdministrationShellBuilder<T extends AssetAdministrat
      * @param description desired value to be added
      * @return Builder object with new value for descriptions
      */
-    public B description(LangString description) {
+    public B descriptions(LangString description) {
         getBuildingInstance().getDescriptions().add(description);
         return getSelf();
     }
@@ -196,7 +196,7 @@ public abstract class AssetAdministrationShellBuilder<T extends AssetAdministrat
      * @param displayName desired value to be added
      * @return Builder object with new value for displayNames
      */
-    public B displayName(LangString displayName) {
+    public B displayNames(LangString displayName) {
         getBuildingInstance().getDisplayNames().add(displayName);
         return getSelf();
     }
@@ -229,7 +229,7 @@ public abstract class AssetAdministrationShellBuilder<T extends AssetAdministrat
      * @param extension desired value to be added
      * @return Builder object with new value for extensions
      */
-    public B extension(Extension extension) {
+    public B extensions(Extension extension) {
         getBuildingInstance().getExtensions().add(extension);
         return getSelf();
     }

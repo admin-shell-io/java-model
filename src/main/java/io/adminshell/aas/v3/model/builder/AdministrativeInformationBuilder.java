@@ -64,7 +64,7 @@ public abstract class AdministrativeInformationBuilder<T extends AdministrativeI
      * @param embeddedDataSpecification desired value to be added
      * @return Builder object with new value for embeddedDataSpecifications
      */
-    public B embeddedDataSpecification(EmbeddedDataSpecification embeddedDataSpecification) {
+    public B embeddedDataSpecifications(EmbeddedDataSpecification embeddedDataSpecification) {
         getBuildingInstance().getEmbeddedDataSpecifications().add(embeddedDataSpecification);
         return getSelf();
     }

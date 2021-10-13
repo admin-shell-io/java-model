@@ -64,7 +64,7 @@ public abstract class AssetInformationBuilder<T extends AssetInformation, B exte
      * @param specificAssetId desired value to be added
      * @return Builder object with new value for specificAssetIds
      */
-    public B specificAssetId(IdentifierKeyValuePair specificAssetId) {
+    public B specificAssetIds(IdentifierKeyValuePair specificAssetId) {
         getBuildingInstance().getSpecificAssetIds().add(specificAssetId);
         return getSelf();
     }
@@ -86,7 +86,7 @@ public abstract class AssetInformationBuilder<T extends AssetInformation, B exte
      * @param billOfMaterial desired value to be added
      * @return Builder object with new value for billOfMaterials
      */
-    public B billOfMaterial(Reference billOfMaterial) {
+    public B billOfMaterials(Reference billOfMaterial) {
         getBuildingInstance().getBillOfMaterials().add(billOfMaterial);
         return getSelf();
     }

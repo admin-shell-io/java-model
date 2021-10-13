@@ -42,7 +42,7 @@ public abstract class SubjectAttributesBuilder<T extends SubjectAttributes, B ex
      * @param subjectAttribute desired value to be added
      * @return Builder object with new value for subjectAttributes
      */
-    public B subjectAttribute(DataElement subjectAttribute) {
+    public B subjectAttributes(DataElement subjectAttribute) {
         getBuildingInstance().getSubjectAttributes().add(subjectAttribute);
         return getSelf();
     }

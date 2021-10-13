@@ -42,7 +42,7 @@ public abstract class AnnotatedRelationshipElementBuilder<T extends AnnotatedRel
      * @param annotation desired value to be added
      * @return Builder object with new value for annotations
      */
-    public B annotation(DataElement annotation) {
+    public B annotations(DataElement annotation) {
         getBuildingInstance().getAnnotations().add(annotation);
         return getSelf();
     }
@@ -97,7 +97,7 @@ public abstract class AnnotatedRelationshipElementBuilder<T extends AnnotatedRel
      * @param description desired value to be added
      * @return Builder object with new value for descriptions
      */
-    public B description(LangString description) {
+    public B descriptions(LangString description) {
         getBuildingInstance().getDescriptions().add(description);
         return getSelf();
     }
@@ -119,7 +119,7 @@ public abstract class AnnotatedRelationshipElementBuilder<T extends AnnotatedRel
      * @param displayName desired value to be added
      * @return Builder object with new value for displayNames
      */
-    public B displayName(LangString displayName) {
+    public B displayNames(LangString displayName) {
         getBuildingInstance().getDisplayNames().add(displayName);
         return getSelf();
     }
@@ -152,7 +152,7 @@ public abstract class AnnotatedRelationshipElementBuilder<T extends AnnotatedRel
      * @param extension desired value to be added
      * @return Builder object with new value for extensions
      */
-    public B extension(Extension extension) {
+    public B extensions(Extension extension) {
         getBuildingInstance().getExtensions().add(extension);
         return getSelf();
     }
@@ -174,7 +174,7 @@ public abstract class AnnotatedRelationshipElementBuilder<T extends AnnotatedRel
      * @param qualifier desired value to be added
      * @return Builder object with new value for qualifiers
      */
-    public B qualifier(Constraint qualifier) {
+    public B qualifiers(Constraint qualifier) {
         getBuildingInstance().getQualifiers().add(qualifier);
         return getSelf();
     }
@@ -196,7 +196,7 @@ public abstract class AnnotatedRelationshipElementBuilder<T extends AnnotatedRel
      * @param embeddedDataSpecification desired value to be added
      * @return Builder object with new value for embeddedDataSpecifications
      */
-    public B embeddedDataSpecification(EmbeddedDataSpecification embeddedDataSpecification) {
+    public B embeddedDataSpecifications(EmbeddedDataSpecification embeddedDataSpecification) {
         getBuildingInstance().getEmbeddedDataSpecifications().add(embeddedDataSpecification);
         return getSelf();
     }

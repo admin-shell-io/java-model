@@ -41,7 +41,7 @@ public abstract class AccessControlBuilder<T extends AccessControl, B extends Ac
      * @param accessPermissionRule desired value to be added
      * @return Builder object with new value for accessPermissionRules
      */
-    public B accessPermissionRule(AccessPermissionRule accessPermissionRule) {
+    public B accessPermissionRules(AccessPermissionRule accessPermissionRule) {
         getBuildingInstance().getAccessPermissionRules().add(accessPermissionRule);
         return getSelf();
     }

@@ -42,7 +42,7 @@ public abstract class AccessPermissionRuleBuilder<T extends AccessPermissionRule
      * @param permissionsPerObject desired value to be added
      * @return Builder object with new value for permissionsPerObjects
      */
-    public B permissionsPerObject(PermissionsPerObject permissionsPerObject) {
+    public B permissionsPerObjects(PermissionsPerObject permissionsPerObject) {
         getBuildingInstance().getPermissionsPerObjects().add(permissionsPerObject);
         return getSelf();
     }
@@ -86,7 +86,7 @@ public abstract class AccessPermissionRuleBuilder<T extends AccessPermissionRule
      * @param description desired value to be added
      * @return Builder object with new value for descriptions
      */
-    public B description(LangString description) {
+    public B descriptions(LangString description) {
         getBuildingInstance().getDescriptions().add(description);
         return getSelf();
     }
@@ -108,7 +108,7 @@ public abstract class AccessPermissionRuleBuilder<T extends AccessPermissionRule
      * @param displayName desired value to be added
      * @return Builder object with new value for displayNames
      */
-    public B displayName(LangString displayName) {
+    public B displayNames(LangString displayName) {
         getBuildingInstance().getDisplayNames().add(displayName);
         return getSelf();
     }
@@ -141,7 +141,7 @@ public abstract class AccessPermissionRuleBuilder<T extends AccessPermissionRule
      * @param extension desired value to be added
      * @return Builder object with new value for extensions
      */
-    public B extension(Extension extension) {
+    public B extensions(Extension extension) {
         getBuildingInstance().getExtensions().add(extension);
         return getSelf();
     }
@@ -163,7 +163,7 @@ public abstract class AccessPermissionRuleBuilder<T extends AccessPermissionRule
      * @param qualifier desired value to be added
      * @return Builder object with new value for qualifiers
      */
-    public B qualifier(Constraint qualifier) {
+    public B qualifiers(Constraint qualifier) {
         getBuildingInstance().getQualifiers().add(qualifier);
         return getSelf();
     }
