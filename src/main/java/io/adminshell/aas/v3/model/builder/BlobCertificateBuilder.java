@@ -53,7 +53,7 @@ public abstract class BlobCertificateBuilder<T extends BlobCertificate, B extend
      * @param containedExtension desired value to be added
      * @return Builder object with new value for containedExtensions
      */
-    public B containedExtensions(Reference containedExtension) {
+    public B containedExtension(Reference containedExtension) {
         getBuildingInstance().getContainedExtensions().add(containedExtension);
         return getSelf();
     }

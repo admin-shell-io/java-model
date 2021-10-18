@@ -41,7 +41,7 @@ public abstract class ReferenceBuilder<T extends Reference, B extends ReferenceB
      * @param key desired value to be added
      * @return Builder object with new value for keys
      */
-    public B keys(Key key) {
+    public B key(Key key) {
         getBuildingInstance().getKeys().add(key);
         return getSelf();
     }

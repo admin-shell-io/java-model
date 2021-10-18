@@ -52,7 +52,7 @@ public abstract class SecurityBuilder<T extends Security, B extends SecurityBuil
      * @param certificate desired value to be added
      * @return Builder object with new value for certificates
      */
-    public B certificates(Certificate certificate) {
+    public B certificate(Certificate certificate) {
         getBuildingInstance().getCertificates().add(certificate);
         return getSelf();
     }
@@ -74,7 +74,7 @@ public abstract class SecurityBuilder<T extends Security, B extends SecurityBuil
      * @param requiredCertificateExtension desired value to be added
      * @return Builder object with new value for requiredCertificateExtensions
      */
-    public B requiredCertificateExtensions(Reference requiredCertificateExtension) {
+    public B requiredCertificateExtension(Reference requiredCertificateExtension) {
         getBuildingInstance().getRequiredCertificateExtensions().add(requiredCertificateExtension);
         return getSelf();
     }

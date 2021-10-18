@@ -41,7 +41,7 @@ public abstract class AssetBuilder<T extends Asset, B extends AssetBuilder<T, B>
      * @param embeddedDataSpecification desired value to be added
      * @return Builder object with new value for embeddedDataSpecifications
      */
-    public B embeddedDataSpecifications(EmbeddedDataSpecification embeddedDataSpecification) {
+    public B embeddedDataSpecification(EmbeddedDataSpecification embeddedDataSpecification) {
         getBuildingInstance().getEmbeddedDataSpecifications().add(embeddedDataSpecification);
         return getSelf();
     }
@@ -96,7 +96,7 @@ public abstract class AssetBuilder<T extends Asset, B extends AssetBuilder<T, B>
      * @param description desired value to be added
      * @return Builder object with new value for descriptions
      */
-    public B descriptions(LangString description) {
+    public B description(LangString description) {
         getBuildingInstance().getDescriptions().add(description);
         return getSelf();
     }
@@ -118,7 +118,7 @@ public abstract class AssetBuilder<T extends Asset, B extends AssetBuilder<T, B>
      * @param displayName desired value to be added
      * @return Builder object with new value for displayNames
      */
-    public B displayNames(LangString displayName) {
+    public B displayName(LangString displayName) {
         getBuildingInstance().getDisplayNames().add(displayName);
         return getSelf();
     }
@@ -151,7 +151,7 @@ public abstract class AssetBuilder<T extends Asset, B extends AssetBuilder<T, B>
      * @param extension desired value to be added
      * @return Builder object with new value for extensions
      */
-    public B extensions(Extension extension) {
+    public B extension(Extension extension) {
         getBuildingInstance().getExtensions().add(extension);
         return getSelf();
     }

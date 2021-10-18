@@ -41,7 +41,7 @@ public abstract class FormulaBuilder<T extends Formula, B extends FormulaBuilder
      * @param dependsOn desired value to be added
      * @return Builder object with new value for dependsOns
      */
-    public B dependsOns(Reference dependsOn) {
+    public B dependsOn(Reference dependsOn) {
         getBuildingInstance().getDependsOns().add(dependsOn);
         return getSelf();
     }

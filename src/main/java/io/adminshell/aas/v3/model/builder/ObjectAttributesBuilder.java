@@ -42,7 +42,7 @@ public abstract class ObjectAttributesBuilder<T extends ObjectAttributes, B exte
      * @param objectAttribute desired value to be added
      * @return Builder object with new value for objectAttributes
      */
-    public B objectAttributes(Reference objectAttribute) {
+    public B objectAttribute(Reference objectAttribute) {
         getBuildingInstance().getObjectAttributes().add(objectAttribute);
         return getSelf();
     }

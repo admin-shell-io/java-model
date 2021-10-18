@@ -53,7 +53,7 @@ public abstract class PolicyInformationPointsBuilder<T extends PolicyInformation
      * @param internalInformationPoint desired value to be added
      * @return Builder object with new value for internalInformationPoints
      */
-    public B internalInformationPoints(Reference internalInformationPoint) {
+    public B internalInformationPoint(Reference internalInformationPoint) {
         getBuildingInstance().getInternalInformationPoints().add(internalInformationPoint);
         return getSelf();
     }

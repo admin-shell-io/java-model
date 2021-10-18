@@ -53,7 +53,7 @@ public abstract class PermissionsPerObjectBuilder<T extends PermissionsPerObject
      * @param permission desired value to be added
      * @return Builder object with new value for permissions
      */
-    public B permissions(Permission permission) {
+    public B permission(Permission permission) {
         getBuildingInstance().getPermissions().add(permission);
         return getSelf();
     }
