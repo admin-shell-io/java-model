@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.admin-shell.aas</groupId>
     <artifactId>model</artifactId>
-    <version>${revision}</version>
+    <version>1.2.0-SNAPSHOT</version>
 
     <!-- Description, name, URL, developers, and scm are required by Sonatype for the Central Repository release -->
     <description>This project includes a Java representation of the classes defined in the Asset Administration Shell ontology.</description>
@@ -170,5 +170,12 @@
             <id>ossrh</id>
             <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
+        <repository>
+            <id>github</id>
+            <name>GitHub Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/FrankSchnicke/java-model</url>
+        </repository>
+    </distributionManagement>
+             
     </distributionManagement>
 </project>
