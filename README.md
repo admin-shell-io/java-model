@@ -13,7 +13,7 @@ You can build the project using Maven by simply executing:
 `mvn clean install`
 
 or by integrating the library as a dependency:
-
+ 
 ```
 <dependency>
   <groupId>io.admin-shell.aas</groupId>
