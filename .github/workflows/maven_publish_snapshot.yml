@@ -4,7 +4,6 @@
 name: Maven Publish Snapshot
 
 on:
-  workflow_dispatch:
   push:
     branches: 
       - development
