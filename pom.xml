@@ -147,7 +147,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/FrankSchnicke/java-model</url>
+            <url>https://maven.pkg.github.com/admin-shell-io/java-model</url>
         </repository>
     </distributionManagement>
     <profiles>
