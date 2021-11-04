@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.admin-shell.aas</groupId>
     <artifactId>model</artifactId>
-    <version>1.2.0-SNAPSHOT</version>
+    <version>1.3.0-SNAPSHOT</version>
 
     <!-- Description, name, URL, developers, and scm are required by Sonatype for the Central Repository release -->
     <description>This project includes a Java representation of the classes defined in the Asset Administration Shell ontology.</description>
