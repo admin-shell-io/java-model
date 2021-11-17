@@ -1,18 +1,17 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model.builder;
 
 import java.util.List;
@@ -24,6 +23,28 @@ import io.adminshell.aas.v3.model.impl.*;
 
 public abstract class ConceptDescriptionBuilder<T extends ConceptDescription, B extends ConceptDescriptionBuilder<T, B>>
     extends ExtendableBuilder<T, B> {
+
+    /**
+     * This function allows setting a value for contents
+     * 
+     * @param contents desired value to be set
+     * @return Builder object with new value for contents
+     */
+    public B contents(List<DataSpecificationContent> contents) {
+        getBuildingInstance().setContents(contents);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List contents
+     * 
+     * @param content desired value to be added
+     * @return Builder object with new value for contents
+     */
+    public B content(DataSpecificationContent content) {
+        getBuildingInstance().getContents().add(content);
+        return getSelf();
+    }
 
     /**
      * This function allows setting a value for isCaseOfs
@@ -48,24 +69,24 @@ public abstract class ConceptDescriptionBuilder<T extends ConceptDescription, B 
     }
 
     /**
-     * This function allows setting a value for embeddedDataSpecifications
+     * This function allows setting a value for dataSpecifications
      * 
-     * @param embeddedDataSpecifications desired value to be set
-     * @return Builder object with new value for embeddedDataSpecifications
+     * @param dataSpecifications desired value to be set
+     * @return Builder object with new value for dataSpecifications
      */
-    public B embeddedDataSpecifications(List<EmbeddedDataSpecification> embeddedDataSpecifications) {
-        getBuildingInstance().setEmbeddedDataSpecifications(embeddedDataSpecifications);
+    public B dataSpecifications(List<Reference> dataSpecifications) {
+        getBuildingInstance().setDataSpecifications(dataSpecifications);
         return getSelf();
     }
 
     /**
-     * This function allows adding a value to the List embeddedDataSpecifications
+     * This function allows adding a value to the List dataSpecifications
      * 
-     * @param embeddedDataSpecification desired value to be added
-     * @return Builder object with new value for embeddedDataSpecifications
+     * @param dataSpecification desired value to be added
+     * @return Builder object with new value for dataSpecifications
      */
-    public B embeddedDataSpecification(EmbeddedDataSpecification embeddedDataSpecification) {
-        getBuildingInstance().getEmbeddedDataSpecifications().add(embeddedDataSpecification);
+    public B dataSpecification(Reference dataSpecification) {
+        getBuildingInstance().getDataSpecifications().add(dataSpecification);
         return getSelf();
     }
 
@@ -92,17 +113,6 @@ public abstract class ConceptDescriptionBuilder<T extends ConceptDescription, B 
     }
 
     /**
-     * This function allows setting a value for category
-     * 
-     * @param category desired value to be set
-     * @return Builder object with new value for category
-     */
-    public B category(String category) {
-        getBuildingInstance().setCategory(category);
-        return getSelf();
-    }
-
-    /**
      * This function allows setting a value for descriptions
      * 
      * @param descriptions desired value to be set
@@ -125,24 +135,13 @@ public abstract class ConceptDescriptionBuilder<T extends ConceptDescription, B 
     }
 
     /**
-     * This function allows setting a value for displayNames
+     * This function allows setting a value for displayName
      * 
-     * @param displayNames desired value to be set
-     * @return Builder object with new value for displayNames
-     */
-    public B displayNames(List<LangString> displayNames) {
-        getBuildingInstance().setDisplayNames(displayNames);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List displayNames
-     * 
-     * @param displayName desired value to be added
-     * @return Builder object with new value for displayNames
+     * @param displayName desired value to be set
+     * @return Builder object with new value for displayName
      */
     public B displayName(LangString displayName) {
-        getBuildingInstance().getDisplayNames().add(displayName);
+        getBuildingInstance().setDisplayName(displayName);
         return getSelf();
     }
 
@@ -158,24 +157,24 @@ public abstract class ConceptDescriptionBuilder<T extends ConceptDescription, B 
     }
 
     /**
-     * This function allows setting a value for extensions
+     * This function allows setting a value for referableCategories
      * 
-     * @param extensions desired value to be set
-     * @return Builder object with new value for extensions
+     * @param referableCategories desired value to be set
+     * @return Builder object with new value for referableCategories
      */
-    public B extensions(List<Extension> extensions) {
-        getBuildingInstance().setExtensions(extensions);
+    public B referableCategories(List<String> referableCategories) {
+        getBuildingInstance().setReferableCategories(referableCategories);
         return getSelf();
     }
 
     /**
-     * This function allows adding a value to the List extensions
+     * This function allows adding a value to the List referableCategories
      * 
-     * @param extension desired value to be added
-     * @return Builder object with new value for extensions
+     * @param referableCategory desired value to be added
+     * @return Builder object with new value for referableCategories
      */
-    public B extension(Extension extension) {
-        getBuildingInstance().getExtensions().add(extension);
+    public B referableCategory(String referableCategory) {
+        getBuildingInstance().getReferableCategories().add(referableCategory);
         return getSelf();
     }
 }

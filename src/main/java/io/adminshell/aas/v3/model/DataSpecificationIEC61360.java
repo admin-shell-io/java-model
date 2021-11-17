@@ -1,18 +1,17 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model;
 
 import java.util.List;
@@ -35,63 +34,6 @@ import io.adminshell.aas.v3.model.impl.*;
     @KnownSubtypes.Type(value = DefaultDataSpecificationIEC61360.class)
 })
 public interface DataSpecificationIEC61360 extends DataSpecificationContent {
-
-    /**
-     * Constraint AASd-070: For a ConceptDescription with category PROPERTY or VALUE using data
-     * specification template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is mandatory and shall be defined.
-     *
-     * Constraint AASd-071: For a ConceptDescription with category REFERENCE using data specification
-     * template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is STRING by default.
-     *
-     * Constraint AASd-072: For a ConceptDescription with category DOCUMENT using data specification
-     * template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType shall be one of the following values: STRING or URL.
-     *
-     * Constraint AASd-073: For a ConceptDescription with category QUALIFIER using data specification
-     * template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is mandatory and shall be defined.
-     *
-     * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType
-     *
-     * @return Returns the DataTypeIEC61360 for the property dataType.
-     */
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
-    DataTypeIEC61360 getDataType();
-
-    /**
-     * Constraint AASd-070: For a ConceptDescription with category PROPERTY or VALUE using data
-     * specification template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is mandatory and shall be defined.
-     *
-     * Constraint AASd-071: For a ConceptDescription with category REFERENCE using data specification
-     * template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is STRING by default.
-     *
-     * Constraint AASd-072: For a ConceptDescription with category DOCUMENT using data specification
-     * template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType shall be one of the following values: STRING or URL.
-     *
-     * Constraint AASd-073: For a ConceptDescription with category QUALIFIER using data specification
-     * template IEC61360
-     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
-     * DataSpecificationIEC61360/dataType is mandatory and shall be defined.
-     *
-     * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType
-     *
-     * @param dataType desired value for the property dataType.
-     */
-    void setDataType(DataTypeIEC61360 dataType);
 
     /**
      * Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions of category VALUE
@@ -144,57 +86,38 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName
      *
-     * @return Returns the List of LangStrings for the property preferredNames.
+     * @return Returns the LangString for the property preferredName.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
-    List<LangString> getPreferredNames();
+    LangString getPreferredName();
 
     /**
      *
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName
      *
-     * @param preferredNames desired value for the property preferredNames.
+     * @param preferredName desired value for the property preferredName.
      */
-    void setPreferredNames(List<LangString> preferredNames);
+    void setPreferredName(LangString preferredName);
 
     /**
      *
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName
      *
-     * @return Returns the List of LangStrings for the property shortNames.
+     * @return Returns the LangString for the property shortName.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
-    List<LangString> getShortNames();
+    LangString getShortName();
 
     /**
      *
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName
      *
-     * @param shortNames desired value for the property shortNames.
+     * @param shortName desired value for the property shortName.
      */
-    void setShortNames(List<LangString> shortNames);
-
-    /**
-     *
-     * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition
-     *
-     * @return Returns the String for the property sourceOfDefinition.
-     */
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition")
-    String getSourceOfDefinition();
-
-    /**
-     *
-     * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition
-     *
-     * @param sourceOfDefinition desired value for the property sourceOfDefinition.
-     */
-    void setSourceOfDefinition(String sourceOfDefinition);
+    void setShortName(LangString shortName);
 
     /**
      *
@@ -292,29 +215,6 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
     void setValue(String value);
 
     /**
-     * The Type 'ValueList' lists all the allowed values for a concept description for which the allowed
-     * values are listed in an enumeration. The value list is a set of value reference pairs.
-     *
-     * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList
-     *
-     * @return Returns the ValueList for the property valueList.
-     */
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList")
-    ValueList getValueList();
-
-    /**
-     * The Type 'ValueList' lists all the allowed values for a concept description for which the allowed
-     * values are listed in an enumeration. The value list is a set of value reference pairs.
-     *
-     * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList
-     *
-     * @param valueList desired value for the property valueList.
-     */
-    void setValueList(ValueList valueList);
-
-    /**
      *
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueId
@@ -332,5 +232,104 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * @param valueId desired value for the property valueId.
      */
     void setValueId(Reference valueId);
+
+    /**
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition
+     *
+     * @return Returns the String for the property sourceOfDefinition.
+     */
+    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition")
+    String getSourceOfDefinition();
+
+    /**
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/sourceOfDefinition
+     *
+     * @param sourceOfDefinition desired value for the property sourceOfDefinition.
+     */
+    void setSourceOfDefinition(String sourceOfDefinition);
+
+    /**
+     * The Type 'ValueList' lists all the allowed values for a concept description for which the allowed
+     * values are listed in an enumeration. The value list is a set of value reference pairs.
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList
+     *
+     * @return Returns the String for the property valueList.
+     */
+    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList")
+    String getValueList();
+
+    /**
+     * The Type 'ValueList' lists all the allowed values for a concept description for which the allowed
+     * values are listed in an enumeration. The value list is a set of value reference pairs.
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList
+     *
+     * @param valueList desired value for the property valueList.
+     */
+    void setValueList(String valueList);
+
+    /**
+     * Constraint AASd-070: For a ConceptDescription with category PROPERTY or VALUE using data
+     * specification template IEC61360
+     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
+     * DataSpecificationIEC61360/dataType is mandatory and shall be defined.
+     *
+     * Constraint AASd-071: For a ConceptDescription with category REFERENCE using data specification
+     * template IEC61360
+     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
+     * DataSpecificationIEC61360/dataType is STRING by default.
+     *
+     * Constraint AASd-072: For a ConceptDescription with category DOCUMENT using data specification
+     * template IEC61360
+     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
+     * DataSpecificationIEC61360/dataType shall be one of the following values: STRING or URL.
+     *
+     * Constraint AASd-073: For a ConceptDescription with category QUALIFIER using data specification
+     * template IEC61360
+     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
+     * DataSpecificationIEC61360/dataType is mandatory and shall be defined.
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType
+     *
+     * @return Returns the List of DataTypeIEC61360s for the property dataTypes.
+     */
+    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
+    List<DataTypeIEC61360> getDataTypes();
+
+    /**
+     * Constraint AASd-070: For a ConceptDescription with category PROPERTY or VALUE using data
+     * specification template IEC61360
+     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
+     * DataSpecificationIEC61360/dataType is mandatory and shall be defined.
+     *
+     * Constraint AASd-071: For a ConceptDescription with category REFERENCE using data specification
+     * template IEC61360
+     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
+     * DataSpecificationIEC61360/dataType is STRING by default.
+     *
+     * Constraint AASd-072: For a ConceptDescription with category DOCUMENT using data specification
+     * template IEC61360
+     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
+     * DataSpecificationIEC61360/dataType shall be one of the following values: STRING or URL.
+     *
+     * Constraint AASd-073: For a ConceptDescription with category QUALIFIER using data specification
+     * template IEC61360
+     * (http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/2/0) -
+     * DataSpecificationIEC61360/dataType is mandatory and shall be defined.
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType
+     *
+     * @param dataTypes desired value for the property dataTypes.
+     */
+    void setDataTypes(List<DataTypeIEC61360> dataTypes);
 
 }

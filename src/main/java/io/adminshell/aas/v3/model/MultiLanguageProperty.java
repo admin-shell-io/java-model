@@ -1,18 +1,17 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model;
 
 import java.util.List;
@@ -78,18 +77,18 @@ public interface MultiLanguageProperty extends DataElement {
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId
      *
-     * @return Returns the Reference for the property valueId.
+     * @return Returns the List of References for the property valueIds.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId")
-    Reference getValueId();
+    List<Reference> getValueIds();
 
     /**
      * Reference to the global unqiue id of a coded value.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/MultiLanguageProperty/valueId
      *
-     * @param valueId desired value for the property valueId.
+     * @param valueIds desired value for the property valueIds.
      */
-    void setValueId(Reference valueId);
+    void setValueIds(List<Reference> valueIds);
 
 }

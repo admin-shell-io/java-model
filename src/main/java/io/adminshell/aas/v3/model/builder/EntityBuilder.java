@@ -1,18 +1,17 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model.builder;
 
 import java.util.List;
@@ -23,39 +22,6 @@ import io.adminshell.aas.v3.model.*;
 import io.adminshell.aas.v3.model.impl.*;
 
 public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T, B>> extends ExtendableBuilder<T, B> {
-
-    /**
-     * This function allows setting a value for globalAssetId
-     * 
-     * @param globalAssetId desired value to be set
-     * @return Builder object with new value for globalAssetId
-     */
-    public B globalAssetId(Reference globalAssetId) {
-        getBuildingInstance().setGlobalAssetId(globalAssetId);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for specificAssetId
-     * 
-     * @param specificAssetId desired value to be set
-     * @return Builder object with new value for specificAssetId
-     */
-    public B specificAssetId(IdentifierKeyValuePair specificAssetId) {
-        getBuildingInstance().setSpecificAssetId(specificAssetId);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for entityType
-     * 
-     * @param entityType desired value to be set
-     * @return Builder object with new value for entityType
-     */
-    public B entityType(EntityType entityType) {
-        getBuildingInstance().setEntityType(entityType);
-        return getSelf();
-    }
 
     /**
      * This function allows setting a value for statements
@@ -80,13 +46,79 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
     }
 
     /**
-     * This function allows setting a value for category
+     * This function allows setting a value for entityType
      * 
-     * @param category desired value to be set
-     * @return Builder object with new value for category
+     * @param entityType desired value to be set
+     * @return Builder object with new value for entityType
      */
-    public B category(String category) {
-        getBuildingInstance().setCategory(category);
+    public B entityType(EntityType entityType) {
+        getBuildingInstance().setEntityType(entityType);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for globalAssetId
+     * 
+     * @param globalAssetId desired value to be set
+     * @return Builder object with new value for globalAssetId
+     */
+    public B globalAssetId(Reference globalAssetId) {
+        getBuildingInstance().setGlobalAssetId(globalAssetId);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for externalAssetId
+     * 
+     * @param externalAssetId desired value to be set
+     * @return Builder object with new value for externalAssetId
+     */
+    public B externalAssetId(IdentifierKeyValuePair externalAssetId) {
+        getBuildingInstance().setExternalAssetId(externalAssetId);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for dataSpecifications
+     * 
+     * @param dataSpecifications desired value to be set
+     * @return Builder object with new value for dataSpecifications
+     */
+    public B dataSpecifications(List<Reference> dataSpecifications) {
+        getBuildingInstance().setDataSpecifications(dataSpecifications);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List dataSpecifications
+     * 
+     * @param dataSpecification desired value to be added
+     * @return Builder object with new value for dataSpecifications
+     */
+    public B dataSpecification(Reference dataSpecification) {
+        getBuildingInstance().getDataSpecifications().add(dataSpecification);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for kind
+     * 
+     * @param kind desired value to be set
+     * @return Builder object with new value for kind
+     */
+    public B kind(ModelingKind kind) {
+        getBuildingInstance().setKind(kind);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for semanticId
+     * 
+     * @param semanticId desired value to be set
+     * @return Builder object with new value for semanticId
+     */
+    public B semanticId(Reference semanticId) {
+        getBuildingInstance().setSemanticId(semanticId);
         return getSelf();
     }
 
@@ -113,24 +145,13 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
     }
 
     /**
-     * This function allows setting a value for displayNames
+     * This function allows setting a value for displayName
      * 
-     * @param displayNames desired value to be set
-     * @return Builder object with new value for displayNames
-     */
-    public B displayNames(List<LangString> displayNames) {
-        getBuildingInstance().setDisplayNames(displayNames);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List displayNames
-     * 
-     * @param displayName desired value to be added
-     * @return Builder object with new value for displayNames
+     * @param displayName desired value to be set
+     * @return Builder object with new value for displayName
      */
     public B displayName(LangString displayName) {
-        getBuildingInstance().getDisplayNames().add(displayName);
+        getBuildingInstance().setDisplayName(displayName);
         return getSelf();
     }
 
@@ -146,24 +167,24 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
     }
 
     /**
-     * This function allows setting a value for extensions
+     * This function allows setting a value for referableCategories
      * 
-     * @param extensions desired value to be set
-     * @return Builder object with new value for extensions
+     * @param referableCategories desired value to be set
+     * @return Builder object with new value for referableCategories
      */
-    public B extensions(List<Extension> extensions) {
-        getBuildingInstance().setExtensions(extensions);
+    public B referableCategories(List<String> referableCategories) {
+        getBuildingInstance().setReferableCategories(referableCategories);
         return getSelf();
     }
 
     /**
-     * This function allows adding a value to the List extensions
+     * This function allows adding a value to the List referableCategories
      * 
-     * @param extension desired value to be added
-     * @return Builder object with new value for extensions
+     * @param referableCategory desired value to be added
+     * @return Builder object with new value for referableCategories
      */
-    public B extension(Extension extension) {
-        getBuildingInstance().getExtensions().add(extension);
+    public B referableCategory(String referableCategory) {
+        getBuildingInstance().getReferableCategories().add(referableCategory);
         return getSelf();
     }
 
@@ -186,50 +207,6 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
      */
     public B qualifier(Constraint qualifier) {
         getBuildingInstance().getQualifiers().add(qualifier);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for embeddedDataSpecifications
-     * 
-     * @param embeddedDataSpecifications desired value to be set
-     * @return Builder object with new value for embeddedDataSpecifications
-     */
-    public B embeddedDataSpecifications(List<EmbeddedDataSpecification> embeddedDataSpecifications) {
-        getBuildingInstance().setEmbeddedDataSpecifications(embeddedDataSpecifications);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List embeddedDataSpecifications
-     * 
-     * @param embeddedDataSpecification desired value to be added
-     * @return Builder object with new value for embeddedDataSpecifications
-     */
-    public B embeddedDataSpecification(EmbeddedDataSpecification embeddedDataSpecification) {
-        getBuildingInstance().getEmbeddedDataSpecifications().add(embeddedDataSpecification);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for kind
-     * 
-     * @param kind desired value to be set
-     * @return Builder object with new value for kind
-     */
-    public B kind(ModelingKind kind) {
-        getBuildingInstance().setKind(kind);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for semanticId
-     * 
-     * @param semanticId desired value to be set
-     * @return Builder object with new value for semanticId
-     */
-    public B semanticId(Reference semanticId) {
-        getBuildingInstance().setSemanticId(semanticId);
         return getSelf();
     }
 }

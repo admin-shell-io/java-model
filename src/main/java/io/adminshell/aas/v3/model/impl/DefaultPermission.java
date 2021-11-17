@@ -1,18 +1,17 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model.impl;
 
 import java.util.Objects;
@@ -42,8 +41,8 @@ public class DefaultPermission implements Permission {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.kindOfPermission,
-            this.permission);
+        return Objects.hash(this.permission,
+            this.kindOfPermission);
     }
 
     @Override
@@ -56,19 +55,9 @@ public class DefaultPermission implements Permission {
             return false;
         } else {
             DefaultPermission other = (DefaultPermission) obj;
-            return Objects.equals(this.kindOfPermission, other.kindOfPermission) &&
-                Objects.equals(this.permission, other.permission);
+            return Objects.equals(this.permission, other.permission) &&
+                Objects.equals(this.kindOfPermission, other.kindOfPermission);
         }
-    }
-
-    @Override
-    public PermissionKind getKindOfPermission() {
-        return kindOfPermission;
-    }
-
-    @Override
-    public void setKindOfPermission(PermissionKind kindOfPermission) {
-        this.kindOfPermission = kindOfPermission;
     }
 
     @Override
@@ -79,6 +68,16 @@ public class DefaultPermission implements Permission {
     @Override
     public void setPermission(Reference permission) {
         this.permission = permission;
+    }
+
+    @Override
+    public PermissionKind getKindOfPermission() {
+        return kindOfPermission;
+    }
+
+    @Override
+    public void setKindOfPermission(PermissionKind kindOfPermission) {
+        this.kindOfPermission = kindOfPermission;
     }
 
     /**
