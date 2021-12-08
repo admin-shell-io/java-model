@@ -1,17 +1,18 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
- * 
- * http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 package io.adminshell.aas.v3.model.builder;
 
 import java.util.List;
@@ -23,6 +24,17 @@ import io.adminshell.aas.v3.model.impl.*;
 
 public abstract class DataSpecificationIEC61360Builder<T extends DataSpecificationIEC61360, B extends DataSpecificationIEC61360Builder<T, B>>
     extends ExtendableBuilder<T, B> {
+
+    /**
+     * This function allows setting a value for dataType
+     * 
+     * @param dataType desired value to be set
+     * @return Builder object with new value for dataType
+     */
+    public B dataType(DataTypeIEC61360 dataType) {
+        getBuildingInstance().setDataType(dataType);
+        return getSelf();
+    }
 
     /**
      * This function allows setting a value for definitions
@@ -69,24 +81,57 @@ public abstract class DataSpecificationIEC61360Builder<T extends DataSpecificati
     }
 
     /**
-     * This function allows setting a value for preferredName
+     * This function allows setting a value for preferredNames
      * 
-     * @param preferredName desired value to be set
-     * @return Builder object with new value for preferredName
+     * @param preferredNames desired value to be set
+     * @return Builder object with new value for preferredNames
      */
-    public B preferredName(LangString preferredName) {
-        getBuildingInstance().setPreferredName(preferredName);
+    public B preferredNames(List<LangString> preferredNames) {
+        getBuildingInstance().setPreferredNames(preferredNames);
         return getSelf();
     }
 
     /**
-     * This function allows setting a value for shortName
+     * This function allows adding a value to the List preferredNames
      * 
-     * @param shortName desired value to be set
-     * @return Builder object with new value for shortName
+     * @param preferredName desired value to be added
+     * @return Builder object with new value for preferredNames
+     */
+    public B preferredName(LangString preferredName) {
+        getBuildingInstance().getPreferredNames().add(preferredName);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for shortNames
+     * 
+     * @param shortNames desired value to be set
+     * @return Builder object with new value for shortNames
+     */
+    public B shortNames(List<LangString> shortNames) {
+        getBuildingInstance().setShortNames(shortNames);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List shortNames
+     * 
+     * @param shortName desired value to be added
+     * @return Builder object with new value for shortNames
      */
     public B shortName(LangString shortName) {
-        getBuildingInstance().setShortName(shortName);
+        getBuildingInstance().getShortNames().add(shortName);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for sourceOfDefinition
+     * 
+     * @param sourceOfDefinition desired value to be set
+     * @return Builder object with new value for sourceOfDefinition
+     */
+    public B sourceOfDefinition(String sourceOfDefinition) {
+        getBuildingInstance().setSourceOfDefinition(sourceOfDefinition);
         return getSelf();
     }
 
@@ -146,6 +191,17 @@ public abstract class DataSpecificationIEC61360Builder<T extends DataSpecificati
     }
 
     /**
+     * This function allows setting a value for valueList
+     * 
+     * @param valueList desired value to be set
+     * @return Builder object with new value for valueList
+     */
+    public B valueList(ValueList valueList) {
+        getBuildingInstance().setValueList(valueList);
+        return getSelf();
+    }
+
+    /**
      * This function allows setting a value for valueId
      * 
      * @param valueId desired value to be set
@@ -153,50 +209,6 @@ public abstract class DataSpecificationIEC61360Builder<T extends DataSpecificati
      */
     public B valueId(Reference valueId) {
         getBuildingInstance().setValueId(valueId);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for sourceOfDefinition
-     * 
-     * @param sourceOfDefinition desired value to be set
-     * @return Builder object with new value for sourceOfDefinition
-     */
-    public B sourceOfDefinition(String sourceOfDefinition) {
-        getBuildingInstance().setSourceOfDefinition(sourceOfDefinition);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for valueList
-     * 
-     * @param valueList desired value to be set
-     * @return Builder object with new value for valueList
-     */
-    public B valueList(String valueList) {
-        getBuildingInstance().setValueList(valueList);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for dataTypes
-     * 
-     * @param dataTypes desired value to be set
-     * @return Builder object with new value for dataTypes
-     */
-    public B dataTypes(List<DataTypeIEC61360> dataTypes) {
-        getBuildingInstance().setDataTypes(dataTypes);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List dataTypes
-     * 
-     * @param dataType desired value to be added
-     * @return Builder object with new value for dataTypes
-     */
-    public B dataType(DataTypeIEC61360 dataType) {
-        getBuildingInstance().getDataTypes().add(dataType);
         return getSelf();
     }
 
