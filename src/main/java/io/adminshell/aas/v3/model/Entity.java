@@ -1,18 +1,17 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model;
 
 import java.util.List;
@@ -76,12 +75,12 @@ public interface Entity extends SubmodelElement {
      * Constraint AASd-014: Either the attribute globalAssetId or externalAssetId of an Entity must be
      * set if Entity/entityType is set to 'SelfManagedEntity'. They are not existing otherwise.
      *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Entity/specificAssetId
+     * More information under https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId
      *
-     * @return Returns the IdentifierKeyValuePair for the property specificAssetId.
+     * @return Returns the IdentifierKeyValuePair for the property externalAssetId.
      */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/specificAssetId")
-    IdentifierKeyValuePair getSpecificAssetId();
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId")
+    IdentifierKeyValuePair getExternalAssetId();
 
     /**
      * Reference to an identifier key value pair representing an external identifier of the asset
@@ -93,11 +92,11 @@ public interface Entity extends SubmodelElement {
      * Constraint AASd-014: Either the attribute globalAssetId or externalAssetId of an Entity must be
      * set if Entity/entityType is set to 'SelfManagedEntity'. They are not existing otherwise.
      *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Entity/specificAssetId
+     * More information under https://admin-shell.io/aas/3/0/RC01/Entity/externalAssetId
      *
-     * @param specificAssetId desired value for the property specificAssetId.
+     * @param externalAssetId desired value for the property externalAssetId.
      */
-    void setSpecificAssetId(IdentifierKeyValuePair specificAssetId);
+    void setExternalAssetId(IdentifierKeyValuePair externalAssetId);
 
     /**
      * Describes whether the entity is a co-managed entity or a self-managed entity.

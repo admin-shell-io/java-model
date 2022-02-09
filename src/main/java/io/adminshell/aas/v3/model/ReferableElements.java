@@ -1,18 +1,17 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model;
 
 
@@ -31,124 +30,119 @@ public enum ReferableElements {
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/Asset")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/ASSET")
     ASSET,
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/AssetAdministrationShell")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/ASSET_ADMINISTRATION_SHELL")
     ASSET_ADMINISTRATION_SHELL,
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/ConceptDescription")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/CONCEPT_DESCRIPTION")
     CONCEPT_DESCRIPTION,
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/Submodel")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/IdentifiableElements/SUBMODEL")
     SUBMODEL,
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/AccessPermissionRule")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/ACCESS_PERMISSION_RULE")
     ACCESS_PERMISSION_RULE,
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/AnnotatedRelationshipElement")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/ANNOTATED_RELATIONSHIP_ELEMENT")
     ANNOTATED_RELATIONSHIP_ELEMENT,
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/BasicEvent")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/BASIC_EVENT")
     BASIC_EVENT,
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/Blob")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/BLOB")
     BLOB,
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/Capability")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/CAPABILITY")
     CAPABILITY,
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/ConceptDictionary")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/CONCEPT_DICTIONARY")
     CONCEPT_DICTIONARY,
 
     /**
      * Data Element is abstract, i.e. if a key uses 'DataElement' the reference may be a Property, a
      * File etc.
      */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/DataElement")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/DATA_ELEMENT")
     DATA_ELEMENT,
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/Entity")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/ENTITY")
     ENTITY,
 
     /**
      * Event is abstract
      */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/Event")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/EVENT")
     EVENT,
-
-    /** 
-    */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/File")
-    FILE,
 
     /**
      * Property with a value that can be provided in multiple languages.
      */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/MultiLanguageProperty")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/MULTI_LANGUAGE_PROPERTY")
     MULTI_LANGUAGE_PROPERTY,
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/Operation")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/OPERATION")
     OPERATION,
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/Property")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/PROPERTY")
     PROPERTY,
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/Range")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/RANGE")
     RANGE,
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/ReferenceElement")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/REFERENCE_ELEMENT")
     REFERENCE_ELEMENT,
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/RelationshipElement")
-    RELATIONSHIP_ELEMENT,
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/RELATIONSHIPT_ELEMENT")
+    RELATIONSHIPT_ELEMENT,
 
     /**
      * Submodel Element is abstract, i.e. if a key uses 'SubmodelElement' the reference may be a
      * Property, a SubmodelElementCollection, an Operation etc.
      */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/SubmodelElement")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/SUBMODEL_ELEMENT")
     SUBMODEL_ELEMENT,
 
     /**
      * Collection of Submodel Elements
      */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/SubmodelElementCollection")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/SUBMODEL_ELEMENT_COLLECTION")
     SUBMODEL_ELEMENT_COLLECTION,
 
     /** 
     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/View")
+    @IRI("https://admin-shell.io/aas/3/0/RC01/ReferableElements/VIEW")
     VIEW;
 
 }

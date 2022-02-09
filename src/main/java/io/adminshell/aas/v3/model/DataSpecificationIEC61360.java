@@ -1,18 +1,17 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model;
 
 import java.util.List;
@@ -60,10 +59,10 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType
      *
-     * @return Returns the DataTypeIEC61360 for the property dataType.
+     * @return Returns the List of DataTypeIEC61360s for the property dataTypes.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType")
-    DataTypeIEC61360 getDataType();
+    List<DataTypeIEC61360> getDataTypes();
 
     /**
      * Constraint AASd-070: For a ConceptDescription with category PROPERTY or VALUE using data
@@ -89,9 +88,9 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/dataType
      *
-     * @param dataType desired value for the property dataType.
+     * @param dataTypes desired value for the property dataTypes.
      */
-    void setDataType(DataTypeIEC61360 dataType);
+    void setDataTypes(List<DataTypeIEC61360> dataTypes);
 
     /**
      * Constraint AASd-074: For all ConceptDescriptions except for ConceptDescriptions of category VALUE
@@ -144,38 +143,38 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName
      *
-     * @return Returns the List of LangStrings for the property preferredNames.
+     * @return Returns the LangString for the property preferredName.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName")
-    List<LangString> getPreferredNames();
+    LangString getPreferredName();
 
     /**
      *
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/preferredName
      *
-     * @param preferredNames desired value for the property preferredNames.
+     * @param preferredName desired value for the property preferredName.
      */
-    void setPreferredNames(List<LangString> preferredNames);
+    void setPreferredName(LangString preferredName);
 
     /**
      *
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName
      *
-     * @return Returns the List of LangStrings for the property shortNames.
+     * @return Returns the LangString for the property shortName.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName")
-    List<LangString> getShortNames();
+    LangString getShortName();
 
     /**
      *
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/shortName
      *
-     * @param shortNames desired value for the property shortNames.
+     * @param shortName desired value for the property shortName.
      */
-    void setShortNames(List<LangString> shortNames);
+    void setShortName(LangString shortName);
 
     /**
      *
@@ -298,10 +297,10 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      * More information under
      * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList
      *
-     * @return Returns the ValueList for the property valueList.
+     * @return Returns the String for the property valueList.
      */
     @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0/RC01/DataSpecificationIEC61360/valueList")
-    ValueList getValueList();
+    String getValueList();
 
     /**
      * The Type 'ValueList' lists all the allowed values for a concept description for which the allowed
@@ -312,7 +311,7 @@ public interface DataSpecificationIEC61360 extends DataSpecificationContent {
      *
      * @param valueList desired value for the property valueList.
      */
-    void setValueList(ValueList valueList);
+    void setValueList(String valueList);
 
     /**
      *

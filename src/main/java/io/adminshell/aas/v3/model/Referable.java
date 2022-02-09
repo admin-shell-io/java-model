@@ -1,18 +1,17 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model;
 
 import java.util.List;
@@ -29,33 +28,34 @@ import io.adminshell.aas.v3.model.impl.*;
  * within the name space of the element.
  */
 @KnownSubtypes({
+    @KnownSubtypes.Type(value = DefaultReferable.class),
     @KnownSubtypes.Type(value = AccessPermissionRule.class),
     @KnownSubtypes.Type(value = Identifiable.class),
     @KnownSubtypes.Type(value = View.class),
     @KnownSubtypes.Type(value = SubmodelElement.class)
 })
-public interface Referable extends HasExtensions {
+public interface Referable {
 
     /**
      * The category is a value that gives further meta information w.r.t. to the class of the element.
      * It affects the expected existence of attributes and the applicability of constraints.
      *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Referable/category
+     * More information under https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory
      *
-     * @return Returns the String for the property category.
+     * @return Returns the List of Strings for the property referableCategories.
      */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/category")
-    String getCategory();
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+    List<String> getReferableCategories();
 
     /**
      * The category is a value that gives further meta information w.r.t. to the class of the element.
      * It affects the expected existence of attributes and the applicability of constraints.
      *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Referable/category
+     * More information under https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory
      *
-     * @param category desired value for the property category.
+     * @param referableCategories desired value for the property referableCategories.
      */
-    void setCategory(String category);
+    void setReferableCategories(List<String> referableCategories);
 
     /**
      * Description or comments on the element. The description can be provided in several languages.
@@ -81,19 +81,19 @@ public interface Referable extends HasExtensions {
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Referable/displayName
      *
-     * @return Returns the List of LangStrings for the property displayNames.
+     * @return Returns the LangString for the property displayName.
      */
     @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/displayName")
-    List<LangString> getDisplayNames();
+    LangString getDisplayName();
 
     /**
      * Display name. Can be provided in several languages.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Referable/displayName
      *
-     * @param displayNames desired value for the property displayNames.
+     * @param displayName desired value for the property displayName.
      */
-    void setDisplayNames(List<LangString> displayNames);
+    void setDisplayName(LangString displayName);
 
     /**
      * Identifying string of the element within its name space.

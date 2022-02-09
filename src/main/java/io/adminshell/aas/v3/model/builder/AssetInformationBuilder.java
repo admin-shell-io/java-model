@@ -1,18 +1,17 @@
 /*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
+
 package io.adminshell.aas.v3.model.builder;
 
 import java.util.List;
@@ -26,13 +25,24 @@ public abstract class AssetInformationBuilder<T extends AssetInformation, B exte
     extends ExtendableBuilder<T, B> {
 
     /**
-     * This function allows setting a value for assetKind
+     * This function allows setting a value for assetKinds
      * 
-     * @param assetKind desired value to be set
-     * @return Builder object with new value for assetKind
+     * @param assetKinds desired value to be set
+     * @return Builder object with new value for assetKinds
+     */
+    public B assetKinds(List<AssetKind> assetKinds) {
+        getBuildingInstance().setAssetKinds(assetKinds);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List assetKinds
+     * 
+     * @param assetKind desired value to be added
+     * @return Builder object with new value for assetKinds
      */
     public B assetKind(AssetKind assetKind) {
-        getBuildingInstance().setAssetKind(assetKind);
+        getBuildingInstance().getAssetKinds().add(assetKind);
         return getSelf();
     }
 
@@ -48,24 +58,24 @@ public abstract class AssetInformationBuilder<T extends AssetInformation, B exte
     }
 
     /**
-     * This function allows setting a value for specificAssetIds
+     * This function allows setting a value for externalAssetIds
      * 
-     * @param specificAssetIds desired value to be set
-     * @return Builder object with new value for specificAssetIds
+     * @param externalAssetIds desired value to be set
+     * @return Builder object with new value for externalAssetIds
      */
-    public B specificAssetIds(List<IdentifierKeyValuePair> specificAssetIds) {
-        getBuildingInstance().setSpecificAssetIds(specificAssetIds);
+    public B externalAssetIds(List<IdentifierKeyValuePair> externalAssetIds) {
+        getBuildingInstance().setExternalAssetIds(externalAssetIds);
         return getSelf();
     }
 
     /**
-     * This function allows adding a value to the List specificAssetIds
+     * This function allows adding a value to the List externalAssetIds
      * 
-     * @param specificAssetId desired value to be added
-     * @return Builder object with new value for specificAssetIds
+     * @param externalAssetId desired value to be added
+     * @return Builder object with new value for externalAssetIds
      */
-    public B specificAssetId(IdentifierKeyValuePair specificAssetId) {
-        getBuildingInstance().getSpecificAssetIds().add(specificAssetId);
+    public B externalAssetId(IdentifierKeyValuePair externalAssetId) {
+        getBuildingInstance().getExternalAssetIds().add(externalAssetId);
         return getSelf();
     }
 
@@ -92,13 +102,13 @@ public abstract class AssetInformationBuilder<T extends AssetInformation, B exte
     }
 
     /**
-     * This function allows setting a value for defaultThumbnail
+     * This function allows setting a value for thumbnail
      * 
-     * @param defaultThumbnail desired value to be set
-     * @return Builder object with new value for defaultThumbnail
+     * @param thumbnail desired value to be set
+     * @return Builder object with new value for thumbnail
      */
-    public B defaultThumbnail(File defaultThumbnail) {
-        getBuildingInstance().setDefaultThumbnail(defaultThumbnail);
+    public B thumbnail(File thumbnail) {
+        getBuildingInstance().setThumbnail(thumbnail);
         return getSelf();
     }
 }
