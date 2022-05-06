@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.admin-shell.aas</groupId>
     <artifactId>model</artifactId>
-    <version>1.3.0-SNAPSHOT</version>
+    <version>${revision}</version>
 
     <!-- Description, name, URL, developers, and scm are required by Sonatype for the Central Repository release -->
     <description>This project includes a Java representation of the classes defined in the Asset Administration Shell ontology.</description>
@@ -39,7 +39,7 @@
 
 
     <properties>
-        <revision>1.1.1</revision>
+        <revision>1.3.0-SNAPSHOT</revision>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <plugin.flatten.version>1.2.2</plugin.flatten.version>
@@ -48,13 +48,8 @@
         <plugin.projectinfo.version>3.1.2</plugin.projectinfo.version>
         <gpg.keyname>0xDFCC34A6</gpg.keyname>
     </properties>
-    <dependencies>
-        <dependency>
-            <groupId>com.mycila</groupId>
-            <artifactId>license-maven-plugin</artifactId>
-            <version>${plugin.license.version}</version>
-        </dependency>
-    </dependencies>
+
+
     <build>
         <plugins>
             <plugin>
