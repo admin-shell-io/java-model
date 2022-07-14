@@ -1,3 +1,8 @@
+# :warning: Migration to Eclipse Digital Twin Top Level Project
+ **NOTE:** We are hounoured to be part of the [Eclipse Foundation](https://projects.eclipse.org/projects/dt) as [Eclipse AAS Model for Java (AAS4J)](https://projects.eclipse.org/projects/dt.aas4j) and this project will be maintained here ([Eclipse AAS4J GitHub Repository](https://github.com/eclipse-digitaltwin/aas4j)). See you there! 
+ 
+***Please*** :point_right: use our new repository ([Eclipse AAS4J GitHub Repository](https://github.com/eclipse-digitaltwin/aas4j) for contributions and subscribe to our mailing list to interact with our community at the Eclipse Foundation.
+
 # Java Model
 
 The AAS Java Model is an implementation of the Asset Administration Shell
