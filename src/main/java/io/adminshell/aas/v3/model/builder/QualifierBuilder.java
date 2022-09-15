@@ -65,4 +65,5 @@ public abstract class QualifierBuilder<T extends Qualifier, B extends QualifierB
         getBuildingInstance().setSemanticId(semanticId);
         return getSelf();
     }
+
 }

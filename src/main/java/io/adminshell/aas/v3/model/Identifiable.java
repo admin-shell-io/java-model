@@ -27,10 +27,10 @@ import io.adminshell.aas.v3.model.impl.*;
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultIdentifiable.class),
-    @KnownSubtypes.Type(value = Submodel.class),
     @KnownSubtypes.Type(value = Asset.class),
     @KnownSubtypes.Type(value = AssetAdministrationShell.class),
-    @KnownSubtypes.Type(value = ConceptDescription.class)
+    @KnownSubtypes.Type(value = ConceptDescription.class),
+    @KnownSubtypes.Type(value = Submodel.class)
 })
 public interface Identifiable extends Referable {
 

@@ -45,8 +45,8 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.externalInformationPoints,
-            this.internalInformationPoints);
+        return Objects.hash(this.internalInformationPoints,
+            this.externalInformationPoints);
     }
 
     @Override
@@ -59,19 +59,9 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
             return false;
         } else {
             DefaultPolicyInformationPoints other = (DefaultPolicyInformationPoints) obj;
-            return Objects.equals(this.externalInformationPoints, other.externalInformationPoints) &&
-                Objects.equals(this.internalInformationPoints, other.internalInformationPoints);
+            return Objects.equals(this.internalInformationPoints, other.internalInformationPoints) &&
+                Objects.equals(this.externalInformationPoints, other.externalInformationPoints);
         }
-    }
-
-    @Override
-    public boolean getExternalInformationPoints() {
-        return externalInformationPoints;
-    }
-
-    @Override
-    public void setExternalInformationPoints(boolean externalInformationPoints) {
-        this.externalInformationPoints = externalInformationPoints;
     }
 
     @Override
@@ -82,6 +72,16 @@ public class DefaultPolicyInformationPoints implements PolicyInformationPoints {
     @Override
     public void setInternalInformationPoints(List<Submodel> internalInformationPoints) {
         this.internalInformationPoints = internalInformationPoints;
+    }
+
+    @Override
+    public boolean getExternalInformationPoints() {
+        return externalInformationPoints;
+    }
+
+    @Override
+    public void setExternalInformationPoints(boolean externalInformationPoints) {
+        this.externalInformationPoints = externalInformationPoints;
     }
 
     /**

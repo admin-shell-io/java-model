@@ -64,10 +64,10 @@ public class DefaultAsset implements Asset {
         return Objects.hash(this.dataSpecifications,
             this.administration,
             this.identification,
-            this.referableCategories,
             this.descriptions,
             this.displayName,
-            this.idShort);
+            this.idShort,
+            this.referableCategories);
     }
 
     @Override
@@ -83,10 +83,10 @@ public class DefaultAsset implements Asset {
             return Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
                 Objects.equals(this.administration, other.administration) &&
                 Objects.equals(this.identification, other.identification) &&
-                Objects.equals(this.referableCategories, other.referableCategories) &&
                 Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayName, other.displayName) &&
-                Objects.equals(this.idShort, other.idShort);
+                Objects.equals(this.idShort, other.idShort) &&
+                Objects.equals(this.referableCategories, other.referableCategories);
         }
     }
 
@@ -121,16 +121,6 @@ public class DefaultAsset implements Asset {
     }
 
     @Override
-    public List<String> getReferableCategories() {
-        return referableCategories;
-    }
-
-    @Override
-    public void setReferableCategories(List<String> referableCategories) {
-        this.referableCategories = referableCategories;
-    }
-
-    @Override
     public List<LangString> getDescriptions() {
         return descriptions;
     }
@@ -158,6 +148,16 @@ public class DefaultAsset implements Asset {
     @Override
     public void setIdShort(String idShort) {
         this.idShort = idShort;
+    }
+
+    @Override
+    public List<String> getReferableCategories() {
+        return referableCategories;
+    }
+
+    @Override
+    public void setReferableCategories(List<String> referableCategories) {
+        this.referableCategories = referableCategories;
     }
 
     /**

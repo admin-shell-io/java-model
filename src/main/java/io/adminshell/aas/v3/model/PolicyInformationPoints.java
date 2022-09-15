@@ -34,6 +34,27 @@ import io.adminshell.aas.v3.model.impl.*;
 public interface PolicyInformationPoints {
 
     /**
+     * References to submodels defining information used by security access permission rules.
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint
+     *
+     * @return Returns the List of Submodels for the property internalInformationPoints.
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint")
+    List<Submodel> getInternalInformationPoints();
+
+    /**
+     * References to submodels defining information used by security access permission rules.
+     *
+     * More information under
+     * https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint
+     *
+     * @param internalInformationPoints desired value for the property internalInformationPoints.
+     */
+    void setInternalInformationPoints(List<Submodel> internalInformationPoints);
+
+    /**
      * If externalInformationPoints True then at least one Endpoint to external available information
      * needs to be configured for the AAS.
      *
@@ -55,26 +76,5 @@ public interface PolicyInformationPoints {
      * @param externalInformationPoints desired value for the property externalInformationPoints.
      */
     void setExternalInformationPoints(boolean externalInformationPoints);
-
-    /**
-     * References to submodels defining information used by security access permission rules.
-     *
-     * More information under
-     * https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint
-     *
-     * @return Returns the List of Submodels for the property internalInformationPoints.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint")
-    List<Submodel> getInternalInformationPoints();
-
-    /**
-     * References to submodels defining information used by security access permission rules.
-     *
-     * More information under
-     * https://admin-shell.io/aas/3/0/RC01/PolicyInformationPoints/internalInformationPoint
-     *
-     * @param internalInformationPoints desired value for the property internalInformationPoints.
-     */
-    void setInternalInformationPoints(List<Submodel> internalInformationPoints);
 
 }

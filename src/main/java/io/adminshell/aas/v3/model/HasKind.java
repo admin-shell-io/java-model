@@ -28,8 +28,8 @@ import io.adminshell.aas.v3.model.impl.*;
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultHasKind.class),
-    @KnownSubtypes.Type(value = Submodel.class),
-    @KnownSubtypes.Type(value = SubmodelElement.class)
+    @KnownSubtypes.Type(value = SubmodelElement.class),
+    @KnownSubtypes.Type(value = Submodel.class)
 })
 public interface HasKind {
 

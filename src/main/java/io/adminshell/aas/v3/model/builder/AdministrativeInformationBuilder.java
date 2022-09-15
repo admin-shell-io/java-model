@@ -25,17 +25,6 @@ public abstract class AdministrativeInformationBuilder<T extends AdministrativeI
     extends ExtendableBuilder<T, B> {
 
     /**
-     * This function allows setting a value for version
-     * 
-     * @param version desired value to be set
-     * @return Builder object with new value for version
-     */
-    public B version(String version) {
-        getBuildingInstance().setVersion(version);
-        return getSelf();
-    }
-
-    /**
      * This function allows setting a value for revision
      * 
      * @param revision desired value to be set
@@ -43,6 +32,17 @@ public abstract class AdministrativeInformationBuilder<T extends AdministrativeI
      */
     public B revision(String revision) {
         getBuildingInstance().setRevision(revision);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for version
+     * 
+     * @param version desired value to be set
+     * @return Builder object with new value for version
+     */
+    public B version(String version) {
+        getBuildingInstance().setVersion(version);
         return getSelf();
     }
 

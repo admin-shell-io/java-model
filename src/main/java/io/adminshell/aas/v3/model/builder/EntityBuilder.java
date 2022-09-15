@@ -24,39 +24,6 @@ import io.adminshell.aas.v3.model.impl.*;
 public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T, B>> extends ExtendableBuilder<T, B> {
 
     /**
-     * This function allows setting a value for globalAssetId
-     * 
-     * @param globalAssetId desired value to be set
-     * @return Builder object with new value for globalAssetId
-     */
-    public B globalAssetId(Reference globalAssetId) {
-        getBuildingInstance().setGlobalAssetId(globalAssetId);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for externalAssetId
-     * 
-     * @param externalAssetId desired value to be set
-     * @return Builder object with new value for externalAssetId
-     */
-    public B externalAssetId(IdentifierKeyValuePair externalAssetId) {
-        getBuildingInstance().setExternalAssetId(externalAssetId);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for entityType
-     * 
-     * @param entityType desired value to be set
-     * @return Builder object with new value for entityType
-     */
-    public B entityType(EntityType entityType) {
-        getBuildingInstance().setEntityType(entityType);
-        return getSelf();
-    }
-
-    /**
      * This function allows setting a value for statements
      * 
      * @param statements desired value to be set
@@ -79,24 +46,79 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
     }
 
     /**
-     * This function allows setting a value for referableCategories
+     * This function allows setting a value for entityType
      * 
-     * @param referableCategories desired value to be set
-     * @return Builder object with new value for referableCategories
+     * @param entityType desired value to be set
+     * @return Builder object with new value for entityType
      */
-    public B referableCategories(List<String> referableCategories) {
-        getBuildingInstance().setReferableCategories(referableCategories);
+    public B entityType(EntityType entityType) {
+        getBuildingInstance().setEntityType(entityType);
         return getSelf();
     }
 
     /**
-     * This function allows adding a value to the List referableCategories
+     * This function allows setting a value for globalAssetId
      * 
-     * @param referableCategory desired value to be added
-     * @return Builder object with new value for referableCategories
+     * @param globalAssetId desired value to be set
+     * @return Builder object with new value for globalAssetId
      */
-    public B referableCategory(String referableCategory) {
-        getBuildingInstance().getReferableCategories().add(referableCategory);
+    public B globalAssetId(Reference globalAssetId) {
+        getBuildingInstance().setGlobalAssetId(globalAssetId);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for externalAssetId
+     * 
+     * @param externalAssetId desired value to be set
+     * @return Builder object with new value for externalAssetId
+     */
+    public B externalAssetId(IdentifierKeyValuePair externalAssetId) {
+        getBuildingInstance().setExternalAssetId(externalAssetId);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for dataSpecifications
+     * 
+     * @param dataSpecifications desired value to be set
+     * @return Builder object with new value for dataSpecifications
+     */
+    public B dataSpecifications(List<Reference> dataSpecifications) {
+        getBuildingInstance().setDataSpecifications(dataSpecifications);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List dataSpecifications
+     * 
+     * @param dataSpecification desired value to be added
+     * @return Builder object with new value for dataSpecifications
+     */
+    public B dataSpecification(Reference dataSpecification) {
+        getBuildingInstance().getDataSpecifications().add(dataSpecification);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for kind
+     * 
+     * @param kind desired value to be set
+     * @return Builder object with new value for kind
+     */
+    public B kind(ModelingKind kind) {
+        getBuildingInstance().setKind(kind);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for semanticId
+     * 
+     * @param semanticId desired value to be set
+     * @return Builder object with new value for semanticId
+     */
+    public B semanticId(Reference semanticId) {
+        getBuildingInstance().setSemanticId(semanticId);
         return getSelf();
     }
 
@@ -145,6 +167,28 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
     }
 
     /**
+     * This function allows setting a value for referableCategories
+     * 
+     * @param referableCategories desired value to be set
+     * @return Builder object with new value for referableCategories
+     */
+    public B referableCategories(List<String> referableCategories) {
+        getBuildingInstance().setReferableCategories(referableCategories);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List referableCategories
+     * 
+     * @param referableCategory desired value to be added
+     * @return Builder object with new value for referableCategories
+     */
+    public B referableCategory(String referableCategory) {
+        getBuildingInstance().getReferableCategories().add(referableCategory);
+        return getSelf();
+    }
+
+    /**
      * This function allows setting a value for qualifiers
      * 
      * @param qualifiers desired value to be set
@@ -163,50 +207,6 @@ public abstract class EntityBuilder<T extends Entity, B extends EntityBuilder<T,
      */
     public B qualifier(Constraint qualifier) {
         getBuildingInstance().getQualifiers().add(qualifier);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for dataSpecifications
-     * 
-     * @param dataSpecifications desired value to be set
-     * @return Builder object with new value for dataSpecifications
-     */
-    public B dataSpecifications(List<Reference> dataSpecifications) {
-        getBuildingInstance().setDataSpecifications(dataSpecifications);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List dataSpecifications
-     * 
-     * @param dataSpecification desired value to be added
-     * @return Builder object with new value for dataSpecifications
-     */
-    public B dataSpecification(Reference dataSpecification) {
-        getBuildingInstance().getDataSpecifications().add(dataSpecification);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for kind
-     * 
-     * @param kind desired value to be set
-     * @return Builder object with new value for kind
-     */
-    public B kind(ModelingKind kind) {
-        getBuildingInstance().setKind(kind);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for semanticId
-     * 
-     * @param semanticId desired value to be set
-     * @return Builder object with new value for semanticId
-     */
-    public B semanticId(Reference semanticId) {
-        getBuildingInstance().setSemanticId(semanticId);
         return getSelf();
     }
 }

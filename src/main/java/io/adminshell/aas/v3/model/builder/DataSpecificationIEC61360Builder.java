@@ -25,28 +25,6 @@ public abstract class DataSpecificationIEC61360Builder<T extends DataSpecificati
     extends ExtendableBuilder<T, B> {
 
     /**
-     * This function allows setting a value for dataTypes
-     * 
-     * @param dataTypes desired value to be set
-     * @return Builder object with new value for dataTypes
-     */
-    public B dataTypes(List<DataTypeIEC61360> dataTypes) {
-        getBuildingInstance().setDataTypes(dataTypes);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List dataTypes
-     * 
-     * @param dataType desired value to be added
-     * @return Builder object with new value for dataTypes
-     */
-    public B dataType(DataTypeIEC61360 dataType) {
-        getBuildingInstance().getDataTypes().add(dataType);
-        return getSelf();
-    }
-
-    /**
      * This function allows setting a value for definitions
      * 
      * @param definitions desired value to be set
@@ -113,17 +91,6 @@ public abstract class DataSpecificationIEC61360Builder<T extends DataSpecificati
     }
 
     /**
-     * This function allows setting a value for sourceOfDefinition
-     * 
-     * @param sourceOfDefinition desired value to be set
-     * @return Builder object with new value for sourceOfDefinition
-     */
-    public B sourceOfDefinition(String sourceOfDefinition) {
-        getBuildingInstance().setSourceOfDefinition(sourceOfDefinition);
-        return getSelf();
-    }
-
-    /**
      * This function allows setting a value for symbol
      * 
      * @param symbol desired value to be set
@@ -179,6 +146,28 @@ public abstract class DataSpecificationIEC61360Builder<T extends DataSpecificati
     }
 
     /**
+     * This function allows setting a value for valueId
+     * 
+     * @param valueId desired value to be set
+     * @return Builder object with new value for valueId
+     */
+    public B valueId(Reference valueId) {
+        getBuildingInstance().setValueId(valueId);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for sourceOfDefinition
+     * 
+     * @param sourceOfDefinition desired value to be set
+     * @return Builder object with new value for sourceOfDefinition
+     */
+    public B sourceOfDefinition(String sourceOfDefinition) {
+        getBuildingInstance().setSourceOfDefinition(sourceOfDefinition);
+        return getSelf();
+    }
+
+    /**
      * This function allows setting a value for valueList
      * 
      * @param valueList desired value to be set
@@ -190,13 +179,24 @@ public abstract class DataSpecificationIEC61360Builder<T extends DataSpecificati
     }
 
     /**
-     * This function allows setting a value for valueId
+     * This function allows setting a value for dataTypes
      * 
-     * @param valueId desired value to be set
-     * @return Builder object with new value for valueId
+     * @param dataTypes desired value to be set
+     * @return Builder object with new value for dataTypes
      */
-    public B valueId(Reference valueId) {
-        getBuildingInstance().setValueId(valueId);
+    public B dataTypes(List<DataTypeIEC61360> dataTypes) {
+        getBuildingInstance().setDataTypes(dataTypes);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List dataTypes
+     * 
+     * @param dataType desired value to be added
+     * @return Builder object with new value for dataTypes
+     */
+    public B dataType(DataTypeIEC61360 dataType) {
+        getBuildingInstance().getDataTypes().add(dataType);
         return getSelf();
     }
 

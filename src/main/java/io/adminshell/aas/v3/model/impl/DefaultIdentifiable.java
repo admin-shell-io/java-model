@@ -57,10 +57,10 @@ public class DefaultIdentifiable implements Identifiable {
     public int hashCode() {
         return Objects.hash(this.administration,
             this.identification,
-            this.referableCategories,
             this.descriptions,
             this.displayName,
-            this.idShort);
+            this.idShort,
+            this.referableCategories);
     }
 
     @Override
@@ -75,10 +75,10 @@ public class DefaultIdentifiable implements Identifiable {
             DefaultIdentifiable other = (DefaultIdentifiable) obj;
             return Objects.equals(this.administration, other.administration) &&
                 Objects.equals(this.identification, other.identification) &&
-                Objects.equals(this.referableCategories, other.referableCategories) &&
                 Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayName, other.displayName) &&
-                Objects.equals(this.idShort, other.idShort);
+                Objects.equals(this.idShort, other.idShort) &&
+                Objects.equals(this.referableCategories, other.referableCategories);
         }
     }
 
@@ -100,16 +100,6 @@ public class DefaultIdentifiable implements Identifiable {
     @Override
     public void setIdentification(Identifier identification) {
         this.identification = identification;
-    }
-
-    @Override
-    public List<String> getReferableCategories() {
-        return referableCategories;
-    }
-
-    @Override
-    public void setReferableCategories(List<String> referableCategories) {
-        this.referableCategories = referableCategories;
     }
 
     @Override
@@ -140,6 +130,16 @@ public class DefaultIdentifiable implements Identifiable {
     @Override
     public void setIdShort(String idShort) {
         this.idShort = idShort;
+    }
+
+    @Override
+    public List<String> getReferableCategories() {
+        return referableCategories;
+    }
+
+    @Override
+    public void setReferableCategories(List<String> referableCategories) {
+        this.referableCategories = referableCategories;
     }
 
     /**

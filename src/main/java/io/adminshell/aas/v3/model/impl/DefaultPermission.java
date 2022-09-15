@@ -41,8 +41,8 @@ public class DefaultPermission implements Permission {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.kindOfPermission,
-            this.permission);
+        return Objects.hash(this.permission,
+            this.kindOfPermission);
     }
 
     @Override
@@ -55,19 +55,9 @@ public class DefaultPermission implements Permission {
             return false;
         } else {
             DefaultPermission other = (DefaultPermission) obj;
-            return Objects.equals(this.kindOfPermission, other.kindOfPermission) &&
-                Objects.equals(this.permission, other.permission);
+            return Objects.equals(this.permission, other.permission) &&
+                Objects.equals(this.kindOfPermission, other.kindOfPermission);
         }
-    }
-
-    @Override
-    public PermissionKind getKindOfPermission() {
-        return kindOfPermission;
-    }
-
-    @Override
-    public void setKindOfPermission(PermissionKind kindOfPermission) {
-        this.kindOfPermission = kindOfPermission;
     }
 
     @Override
@@ -78,6 +68,16 @@ public class DefaultPermission implements Permission {
     @Override
     public void setPermission(Reference permission) {
         this.permission = permission;
+    }
+
+    @Override
+    public PermissionKind getKindOfPermission() {
+        return kindOfPermission;
+    }
+
+    @Override
+    public void setKindOfPermission(PermissionKind kindOfPermission) {
+        this.kindOfPermission = kindOfPermission;
     }
 
     /**

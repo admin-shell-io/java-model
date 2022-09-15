@@ -35,6 +35,46 @@ import io.adminshell.aas.v3.model.impl.*;
 public interface Entity extends SubmodelElement {
 
     /**
+     * Describes statements applicable to the entity by a set of submodel elements, typically with a
+     * qualified value.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Entity/statement
+     *
+     * @return Returns the List of SubmodelElements for the property statements.
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/statement")
+    List<SubmodelElement> getStatements();
+
+    /**
+     * Describes statements applicable to the entity by a set of submodel elements, typically with a
+     * qualified value.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Entity/statement
+     *
+     * @param statements desired value for the property statements.
+     */
+    void setStatements(List<SubmodelElement> statements);
+
+    /**
+     * Describes whether the entity is a co-managed entity or a self-managed entity.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Entity/entityType
+     *
+     * @return Returns the EntityType for the property entityType.
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/entityType")
+    EntityType getEntityType();
+
+    /**
+     * Describes whether the entity is a co-managed entity or a self-managed entity.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Entity/entityType
+     *
+     * @param entityType desired value for the property entityType.
+     */
+    void setEntityType(EntityType entityType);
+
+    /**
      * Reference to the asset the entity is representing.
      *
      * The asset attribute must be set if entityType is set to 'SelfManagedEntity'. It is empty
@@ -97,45 +137,5 @@ public interface Entity extends SubmodelElement {
      * @param externalAssetId desired value for the property externalAssetId.
      */
     void setExternalAssetId(IdentifierKeyValuePair externalAssetId);
-
-    /**
-     * Describes whether the entity is a co-managed entity or a self-managed entity.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Entity/entityType
-     *
-     * @return Returns the EntityType for the property entityType.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/entityType")
-    EntityType getEntityType();
-
-    /**
-     * Describes whether the entity is a co-managed entity or a self-managed entity.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Entity/entityType
-     *
-     * @param entityType desired value for the property entityType.
-     */
-    void setEntityType(EntityType entityType);
-
-    /**
-     * Describes statements applicable to the entity by a set of submodel elements, typically with a
-     * qualified value.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Entity/statement
-     *
-     * @return Returns the List of SubmodelElements for the property statements.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Entity/statement")
-    List<SubmodelElement> getStatements();
-
-    /**
-     * Describes statements applicable to the entity by a set of submodel elements, typically with a
-     * qualified value.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Entity/statement
-     *
-     * @param statements desired value for the property statements.
-     */
-    void setStatements(List<SubmodelElement> statements);
 
 }

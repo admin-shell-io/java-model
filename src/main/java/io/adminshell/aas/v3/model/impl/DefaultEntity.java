@@ -76,18 +76,18 @@ public class DefaultEntity implements Entity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.globalAssetId,
-            this.externalAssetId,
+        return Objects.hash(this.statements,
             this.entityType,
-            this.statements,
-            this.referableCategories,
+            this.globalAssetId,
+            this.externalAssetId,
+            this.dataSpecifications,
+            this.kind,
+            this.semanticId,
             this.descriptions,
             this.displayName,
             this.idShort,
-            this.qualifiers,
-            this.dataSpecifications,
-            this.kind,
-            this.semanticId);
+            this.referableCategories,
+            this.qualifiers);
     }
 
     @Override
@@ -100,19 +100,39 @@ public class DefaultEntity implements Entity {
             return false;
         } else {
             DefaultEntity other = (DefaultEntity) obj;
-            return Objects.equals(this.globalAssetId, other.globalAssetId) &&
-                Objects.equals(this.externalAssetId, other.externalAssetId) &&
+            return Objects.equals(this.statements, other.statements) &&
                 Objects.equals(this.entityType, other.entityType) &&
-                Objects.equals(this.statements, other.statements) &&
-                Objects.equals(this.referableCategories, other.referableCategories) &&
+                Objects.equals(this.globalAssetId, other.globalAssetId) &&
+                Objects.equals(this.externalAssetId, other.externalAssetId) &&
+                Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
+                Objects.equals(this.kind, other.kind) &&
+                Objects.equals(this.semanticId, other.semanticId) &&
                 Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayName, other.displayName) &&
                 Objects.equals(this.idShort, other.idShort) &&
-                Objects.equals(this.qualifiers, other.qualifiers) &&
-                Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-                Objects.equals(this.kind, other.kind) &&
-                Objects.equals(this.semanticId, other.semanticId);
+                Objects.equals(this.referableCategories, other.referableCategories) &&
+                Objects.equals(this.qualifiers, other.qualifiers);
         }
+    }
+
+    @Override
+    public List<SubmodelElement> getStatements() {
+        return statements;
+    }
+
+    @Override
+    public void setStatements(List<SubmodelElement> statements) {
+        this.statements = statements;
+    }
+
+    @Override
+    public EntityType getEntityType() {
+        return entityType;
+    }
+
+    @Override
+    public void setEntityType(EntityType entityType) {
+        this.entityType = entityType;
     }
 
     @Override
@@ -136,33 +156,33 @@ public class DefaultEntity implements Entity {
     }
 
     @Override
-    public EntityType getEntityType() {
-        return entityType;
+    public List<Reference> getDataSpecifications() {
+        return dataSpecifications;
     }
 
     @Override
-    public void setEntityType(EntityType entityType) {
-        this.entityType = entityType;
+    public void setDataSpecifications(List<Reference> dataSpecifications) {
+        this.dataSpecifications = dataSpecifications;
     }
 
     @Override
-    public List<SubmodelElement> getStatements() {
-        return statements;
+    public ModelingKind getKind() {
+        return kind;
     }
 
     @Override
-    public void setStatements(List<SubmodelElement> statements) {
-        this.statements = statements;
+    public void setKind(ModelingKind kind) {
+        this.kind = kind;
     }
 
     @Override
-    public List<String> getReferableCategories() {
-        return referableCategories;
+    public Reference getSemanticId() {
+        return semanticId;
     }
 
     @Override
-    public void setReferableCategories(List<String> referableCategories) {
-        this.referableCategories = referableCategories;
+    public void setSemanticId(Reference semanticId) {
+        this.semanticId = semanticId;
     }
 
     @Override
@@ -196,6 +216,16 @@ public class DefaultEntity implements Entity {
     }
 
     @Override
+    public List<String> getReferableCategories() {
+        return referableCategories;
+    }
+
+    @Override
+    public void setReferableCategories(List<String> referableCategories) {
+        this.referableCategories = referableCategories;
+    }
+
+    @Override
     public List<Constraint> getQualifiers() {
         return qualifiers;
     }
@@ -203,36 +233,6 @@ public class DefaultEntity implements Entity {
     @Override
     public void setQualifiers(List<Constraint> qualifiers) {
         this.qualifiers = qualifiers;
-    }
-
-    @Override
-    public List<Reference> getDataSpecifications() {
-        return dataSpecifications;
-    }
-
-    @Override
-    public void setDataSpecifications(List<Reference> dataSpecifications) {
-        this.dataSpecifications = dataSpecifications;
-    }
-
-    @Override
-    public ModelingKind getKind() {
-        return kind;
-    }
-
-    @Override
-    public void setKind(ModelingKind kind) {
-        this.kind = kind;
-    }
-
-    @Override
-    public Reference getSemanticId() {
-        return semanticId;
-    }
-
-    @Override
-    public void setSemanticId(Reference semanticId) {
-        this.semanticId = semanticId;
     }
 
     /**

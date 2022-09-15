@@ -37,25 +37,6 @@ import io.adminshell.aas.v3.model.impl.*;
 public interface Range extends DataElement {
 
     /**
-     * The maximum value of the range.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Range/max
-     *
-     * @return Returns the String for the property max.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Range/max")
-    String getMax();
-
-    /**
-     * The maximum value of the range.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Range/max
-     *
-     * @param max desired value for the property max.
-     */
-    void setMax(String max);
-
-    /**
      * The minimum value of the range.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Range/min
@@ -73,5 +54,24 @@ public interface Range extends DataElement {
      * @param min desired value for the property min.
      */
     void setMin(String min);
+
+    /**
+     * The maximum value of the range.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Range/max
+     *
+     * @return Returns the String for the property max.
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Range/max")
+    String getMax();
+
+    /**
+     * The maximum value of the range.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Range/max
+     *
+     * @param max desired value for the property max.
+     */
+    void setMax(String max);
 
 }

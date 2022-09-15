@@ -25,28 +25,6 @@ public abstract class AssetInformationBuilder<T extends AssetInformation, B exte
     extends ExtendableBuilder<T, B> {
 
     /**
-     * This function allows setting a value for assetKinds
-     * 
-     * @param assetKinds desired value to be set
-     * @return Builder object with new value for assetKinds
-     */
-    public B assetKinds(List<AssetKind> assetKinds) {
-        getBuildingInstance().setAssetKinds(assetKinds);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List assetKinds
-     * 
-     * @param assetKind desired value to be added
-     * @return Builder object with new value for assetKinds
-     */
-    public B assetKind(AssetKind assetKind) {
-        getBuildingInstance().getAssetKinds().add(assetKind);
-        return getSelf();
-    }
-
-    /**
      * This function allows setting a value for globalAssetId
      * 
      * @param globalAssetId desired value to be set
@@ -109,6 +87,28 @@ public abstract class AssetInformationBuilder<T extends AssetInformation, B exte
      */
     public B thumbnail(File thumbnail) {
         getBuildingInstance().setThumbnail(thumbnail);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for assetKinds
+     * 
+     * @param assetKinds desired value to be set
+     * @return Builder object with new value for assetKinds
+     */
+    public B assetKinds(List<AssetKind> assetKinds) {
+        getBuildingInstance().setAssetKinds(assetKinds);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List assetKinds
+     * 
+     * @param assetKind desired value to be added
+     * @return Builder object with new value for assetKinds
+     */
+    public B assetKind(AssetKind assetKind) {
+        getBuildingInstance().getAssetKinds().add(assetKind);
         return getSelf();
     }
 }

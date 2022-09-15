@@ -53,25 +53,6 @@ public interface Operation extends SubmodelElement {
     void setInputVariables(List<OperationVariable> inputVariables);
 
     /**
-     * Parameter that is input and output of the operation.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable
-     *
-     * @return Returns the List of OperationVariables for the property inoutputVariables.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable")
-    List<OperationVariable> getInoutputVariables();
-
-    /**
-     * Parameter that is input and output of the operation.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable
-     *
-     * @param inoutputVariables desired value for the property inoutputVariables.
-     */
-    void setInoutputVariables(List<OperationVariable> inoutputVariables);
-
-    /**
      * Output parameter of the operation.
      *
      * More information under https://admin-shell.io/aas/3/0/RC01/Operation/outputVariable
@@ -89,5 +70,24 @@ public interface Operation extends SubmodelElement {
      * @param outputVariables desired value for the property outputVariables.
      */
     void setOutputVariables(List<OperationVariable> outputVariables);
+
+    /**
+     * Parameter that is input and output of the operation.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable
+     *
+     * @return Returns the List of OperationVariables for the property inoutputVariables.
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable")
+    List<OperationVariable> getInoutputVariables();
+
+    /**
+     * Parameter that is input and output of the operation.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Operation/inoutputVariable
+     *
+     * @param inoutputVariables desired value for the property inoutputVariables.
+     */
+    void setInoutputVariables(List<OperationVariable> inoutputVariables);
 
 }

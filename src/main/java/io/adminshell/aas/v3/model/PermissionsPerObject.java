@@ -53,27 +53,6 @@ public interface PermissionsPerObject {
     void setObject(Referable object);
 
     /**
-     * Permissions assigned to the object. The permissions hold for all subjects as specified in the
-     * access permission rule.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission
-     *
-     * @return Returns the List of Permissions for the property permissions.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission")
-    List<Permission> getPermissions();
-
-    /**
-     * Permissions assigned to the object. The permissions hold for all subjects as specified in the
-     * access permission rule.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission
-     *
-     * @param permissions desired value for the property permissions.
-     */
-    void setPermissions(List<Permission> permissions);
-
-    /**
      * Target object attributes that need to be fulfilled so that the access permissions apply to the
      * accessing subject.
      *
@@ -95,5 +74,26 @@ public interface PermissionsPerObject {
      * @param targetObjectAttributes desired value for the property targetObjectAttributes.
      */
     void setTargetObjectAttributes(ObjectAttributes targetObjectAttributes);
+
+    /**
+     * Permissions assigned to the object. The permissions hold for all subjects as specified in the
+     * access permission rule.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission
+     *
+     * @return Returns the List of Permissions for the property permissions.
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission")
+    List<Permission> getPermissions();
+
+    /**
+     * Permissions assigned to the object. The permissions hold for all subjects as specified in the
+     * access permission rule.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/PermissionsPerObject/permission
+     *
+     * @param permissions desired value for the property permissions.
+     */
+    void setPermissions(List<Permission> permissions);
 
 }

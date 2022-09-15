@@ -31,6 +31,25 @@ import io.adminshell.aas.v3.model.impl.*;
 public interface Key {
 
     /**
+     * The key value, for example an IRDI if the idType=IRDI.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Key/value
+     *
+     * @return Returns the String for the property value.
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Key/value")
+    String getValue();
+
+    /**
+     * The key value, for example an IRDI if the idType=IRDI.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Key/value
+     *
+     * @param value desired value for the property value.
+     */
+    void setValue(String value);
+
+    /**
      * Type of the key value. In case of idType = idShort local shall be true. In case
      * type=GlobalReference idType shall not be IdShort.
      *
@@ -85,24 +104,5 @@ public interface Key {
      * @param type desired value for the property type.
      */
     void setType(KeyElements type);
-
-    /**
-     * The key value, for example an IRDI if the idType=IRDI.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Key/value
-     *
-     * @return Returns the String for the property value.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Key/value")
-    String getValue();
-
-    /**
-     * The key value, for example an IRDI if the idType=IRDI.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Key/value
-     *
-     * @param value desired value for the property value.
-     */
-    void setValue(String value);
 
 }

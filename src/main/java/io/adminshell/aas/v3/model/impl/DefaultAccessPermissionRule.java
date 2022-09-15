@@ -61,10 +61,10 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
     public int hashCode() {
         return Objects.hash(this.permissionsPerObjects,
             this.targetSubjectAttributes,
-            this.referableCategories,
             this.descriptions,
             this.displayName,
             this.idShort,
+            this.referableCategories,
             this.qualifiers);
     }
 
@@ -80,10 +80,10 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
             DefaultAccessPermissionRule other = (DefaultAccessPermissionRule) obj;
             return Objects.equals(this.permissionsPerObjects, other.permissionsPerObjects) &&
                 Objects.equals(this.targetSubjectAttributes, other.targetSubjectAttributes) &&
-                Objects.equals(this.referableCategories, other.referableCategories) &&
                 Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayName, other.displayName) &&
                 Objects.equals(this.idShort, other.idShort) &&
+                Objects.equals(this.referableCategories, other.referableCategories) &&
                 Objects.equals(this.qualifiers, other.qualifiers);
         }
     }
@@ -106,16 +106,6 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
     @Override
     public void setTargetSubjectAttributes(SubjectAttributes targetSubjectAttributes) {
         this.targetSubjectAttributes = targetSubjectAttributes;
-    }
-
-    @Override
-    public List<String> getReferableCategories() {
-        return referableCategories;
-    }
-
-    @Override
-    public void setReferableCategories(List<String> referableCategories) {
-        this.referableCategories = referableCategories;
     }
 
     @Override
@@ -146,6 +136,16 @@ public class DefaultAccessPermissionRule implements AccessPermissionRule {
     @Override
     public void setIdShort(String idShort) {
         this.idShort = idShort;
+    }
+
+    @Override
+    public List<String> getReferableCategories() {
+        return referableCategories;
+    }
+
+    @Override
+    public void setReferableCategories(List<String> referableCategories) {
+        this.referableCategories = referableCategories;
     }
 
     @Override

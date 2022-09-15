@@ -46,28 +46,6 @@ public abstract class OperationBuilder<T extends Operation, B extends OperationB
     }
 
     /**
-     * This function allows setting a value for inoutputVariables
-     * 
-     * @param inoutputVariables desired value to be set
-     * @return Builder object with new value for inoutputVariables
-     */
-    public B inoutputVariables(List<OperationVariable> inoutputVariables) {
-        getBuildingInstance().setInoutputVariables(inoutputVariables);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List inoutputVariables
-     * 
-     * @param inoutputVariable desired value to be added
-     * @return Builder object with new value for inoutputVariables
-     */
-    public B inoutputVariable(OperationVariable inoutputVariable) {
-        getBuildingInstance().getInoutputVariables().add(inoutputVariable);
-        return getSelf();
-    }
-
-    /**
      * This function allows setting a value for outputVariables
      * 
      * @param outputVariables desired value to be set
@@ -90,24 +68,68 @@ public abstract class OperationBuilder<T extends Operation, B extends OperationB
     }
 
     /**
-     * This function allows setting a value for referableCategories
+     * This function allows setting a value for inoutputVariables
      * 
-     * @param referableCategories desired value to be set
-     * @return Builder object with new value for referableCategories
+     * @param inoutputVariables desired value to be set
+     * @return Builder object with new value for inoutputVariables
      */
-    public B referableCategories(List<String> referableCategories) {
-        getBuildingInstance().setReferableCategories(referableCategories);
+    public B inoutputVariables(List<OperationVariable> inoutputVariables) {
+        getBuildingInstance().setInoutputVariables(inoutputVariables);
         return getSelf();
     }
 
     /**
-     * This function allows adding a value to the List referableCategories
+     * This function allows adding a value to the List inoutputVariables
      * 
-     * @param referableCategory desired value to be added
-     * @return Builder object with new value for referableCategories
+     * @param inoutputVariable desired value to be added
+     * @return Builder object with new value for inoutputVariables
      */
-    public B referableCategory(String referableCategory) {
-        getBuildingInstance().getReferableCategories().add(referableCategory);
+    public B inoutputVariable(OperationVariable inoutputVariable) {
+        getBuildingInstance().getInoutputVariables().add(inoutputVariable);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for dataSpecifications
+     * 
+     * @param dataSpecifications desired value to be set
+     * @return Builder object with new value for dataSpecifications
+     */
+    public B dataSpecifications(List<Reference> dataSpecifications) {
+        getBuildingInstance().setDataSpecifications(dataSpecifications);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List dataSpecifications
+     * 
+     * @param dataSpecification desired value to be added
+     * @return Builder object with new value for dataSpecifications
+     */
+    public B dataSpecification(Reference dataSpecification) {
+        getBuildingInstance().getDataSpecifications().add(dataSpecification);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for kind
+     * 
+     * @param kind desired value to be set
+     * @return Builder object with new value for kind
+     */
+    public B kind(ModelingKind kind) {
+        getBuildingInstance().setKind(kind);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for semanticId
+     * 
+     * @param semanticId desired value to be set
+     * @return Builder object with new value for semanticId
+     */
+    public B semanticId(Reference semanticId) {
+        getBuildingInstance().setSemanticId(semanticId);
         return getSelf();
     }
 
@@ -156,6 +178,28 @@ public abstract class OperationBuilder<T extends Operation, B extends OperationB
     }
 
     /**
+     * This function allows setting a value for referableCategories
+     * 
+     * @param referableCategories desired value to be set
+     * @return Builder object with new value for referableCategories
+     */
+    public B referableCategories(List<String> referableCategories) {
+        getBuildingInstance().setReferableCategories(referableCategories);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List referableCategories
+     * 
+     * @param referableCategory desired value to be added
+     * @return Builder object with new value for referableCategories
+     */
+    public B referableCategory(String referableCategory) {
+        getBuildingInstance().getReferableCategories().add(referableCategory);
+        return getSelf();
+    }
+
+    /**
      * This function allows setting a value for qualifiers
      * 
      * @param qualifiers desired value to be set
@@ -174,50 +218,6 @@ public abstract class OperationBuilder<T extends Operation, B extends OperationB
      */
     public B qualifier(Constraint qualifier) {
         getBuildingInstance().getQualifiers().add(qualifier);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for dataSpecifications
-     * 
-     * @param dataSpecifications desired value to be set
-     * @return Builder object with new value for dataSpecifications
-     */
-    public B dataSpecifications(List<Reference> dataSpecifications) {
-        getBuildingInstance().setDataSpecifications(dataSpecifications);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List dataSpecifications
-     * 
-     * @param dataSpecification desired value to be added
-     * @return Builder object with new value for dataSpecifications
-     */
-    public B dataSpecification(Reference dataSpecification) {
-        getBuildingInstance().getDataSpecifications().add(dataSpecification);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for kind
-     * 
-     * @param kind desired value to be set
-     * @return Builder object with new value for kind
-     */
-    public B kind(ModelingKind kind) {
-        getBuildingInstance().setKind(kind);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for semanticId
-     * 
-     * @param semanticId desired value to be set
-     * @return Builder object with new value for semanticId
-     */
-    public B semanticId(Reference semanticId) {
-        getBuildingInstance().setSemanticId(semanticId);
         return getSelf();
     }
 }

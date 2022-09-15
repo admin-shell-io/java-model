@@ -65,14 +65,14 @@ public class DefaultBasicEvent implements BasicEvent {
     @Override
     public int hashCode() {
         return Objects.hash(this.observed,
-            this.referableCategories,
+            this.dataSpecifications,
+            this.kind,
+            this.semanticId,
             this.descriptions,
             this.displayName,
             this.idShort,
-            this.qualifiers,
-            this.dataSpecifications,
-            this.kind,
-            this.semanticId);
+            this.referableCategories,
+            this.qualifiers);
     }
 
     @Override
@@ -86,14 +86,14 @@ public class DefaultBasicEvent implements BasicEvent {
         } else {
             DefaultBasicEvent other = (DefaultBasicEvent) obj;
             return Objects.equals(this.observed, other.observed) &&
-                Objects.equals(this.referableCategories, other.referableCategories) &&
+                Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
+                Objects.equals(this.kind, other.kind) &&
+                Objects.equals(this.semanticId, other.semanticId) &&
                 Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayName, other.displayName) &&
                 Objects.equals(this.idShort, other.idShort) &&
-                Objects.equals(this.qualifiers, other.qualifiers) &&
-                Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-                Objects.equals(this.kind, other.kind) &&
-                Objects.equals(this.semanticId, other.semanticId);
+                Objects.equals(this.referableCategories, other.referableCategories) &&
+                Objects.equals(this.qualifiers, other.qualifiers);
         }
     }
 
@@ -108,13 +108,33 @@ public class DefaultBasicEvent implements BasicEvent {
     }
 
     @Override
-    public List<String> getReferableCategories() {
-        return referableCategories;
+    public List<Reference> getDataSpecifications() {
+        return dataSpecifications;
     }
 
     @Override
-    public void setReferableCategories(List<String> referableCategories) {
-        this.referableCategories = referableCategories;
+    public void setDataSpecifications(List<Reference> dataSpecifications) {
+        this.dataSpecifications = dataSpecifications;
+    }
+
+    @Override
+    public ModelingKind getKind() {
+        return kind;
+    }
+
+    @Override
+    public void setKind(ModelingKind kind) {
+        this.kind = kind;
+    }
+
+    @Override
+    public Reference getSemanticId() {
+        return semanticId;
+    }
+
+    @Override
+    public void setSemanticId(Reference semanticId) {
+        this.semanticId = semanticId;
     }
 
     @Override
@@ -148,6 +168,16 @@ public class DefaultBasicEvent implements BasicEvent {
     }
 
     @Override
+    public List<String> getReferableCategories() {
+        return referableCategories;
+    }
+
+    @Override
+    public void setReferableCategories(List<String> referableCategories) {
+        this.referableCategories = referableCategories;
+    }
+
+    @Override
     public List<Constraint> getQualifiers() {
         return qualifiers;
     }
@@ -155,36 +185,6 @@ public class DefaultBasicEvent implements BasicEvent {
     @Override
     public void setQualifiers(List<Constraint> qualifiers) {
         this.qualifiers = qualifiers;
-    }
-
-    @Override
-    public List<Reference> getDataSpecifications() {
-        return dataSpecifications;
-    }
-
-    @Override
-    public void setDataSpecifications(List<Reference> dataSpecifications) {
-        this.dataSpecifications = dataSpecifications;
-    }
-
-    @Override
-    public ModelingKind getKind() {
-        return kind;
-    }
-
-    @Override
-    public void setKind(ModelingKind kind) {
-        this.kind = kind;
-    }
-
-    @Override
-    public Reference getSemanticId() {
-        return semanticId;
-    }
-
-    @Override
-    public void setSemanticId(Reference semanticId) {
-        this.semanticId = semanticId;
     }
 
     /**

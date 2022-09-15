@@ -24,6 +24,17 @@ import io.adminshell.aas.v3.model.impl.*;
 public abstract class IdentifierBuilder<T extends Identifier, B extends IdentifierBuilder<T, B>> extends ExtendableBuilder<T, B> {
 
     /**
+     * This function allows setting a value for idType
+     * 
+     * @param idType desired value to be set
+     * @return Builder object with new value for idType
+     */
+    public B idType(IdentifierType idType) {
+        getBuildingInstance().setIdType(idType);
+        return getSelf();
+    }
+
+    /**
      * This function allows setting a value for identifiers
      * 
      * @param identifiers desired value to be set
@@ -42,17 +53,6 @@ public abstract class IdentifierBuilder<T extends Identifier, B extends Identifi
      */
     public B identifier(String identifier) {
         getBuildingInstance().getIdentifiers().add(identifier);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for idType
-     * 
-     * @param idType desired value to be set
-     * @return Builder object with new value for idType
-     */
-    public B idType(IdentifierType idType) {
-        getBuildingInstance().setIdType(idType);
         return getSelf();
     }
 }

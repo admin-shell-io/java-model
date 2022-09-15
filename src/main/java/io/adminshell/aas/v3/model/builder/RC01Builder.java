@@ -24,24 +24,46 @@ import io.adminshell.aas.v3.model.impl.*;
 public abstract class RC01Builder<T extends RC01, B extends RC01Builder<T, B>> extends ExtendableBuilder<T, B> {
 
     /**
-     * This function allows setting a value for conversionFactors
+     * This function allows setting a value for unitNames
      * 
-     * @param conversionFactors desired value to be set
-     * @return Builder object with new value for conversionFactors
+     * @param unitNames desired value to be set
+     * @return Builder object with new value for unitNames
      */
-    public B conversionFactors(List<String> conversionFactors) {
-        getBuildingInstance().setConversionFactors(conversionFactors);
+    public B unitNames(List<String> unitNames) {
+        getBuildingInstance().setUnitNames(unitNames);
         return getSelf();
     }
 
     /**
-     * This function allows adding a value to the List conversionFactors
+     * This function allows adding a value to the List unitNames
      * 
-     * @param conversionFactor desired value to be added
-     * @return Builder object with new value for conversionFactors
+     * @param unitName desired value to be added
+     * @return Builder object with new value for unitNames
      */
-    public B conversionFactor(String conversionFactor) {
-        getBuildingInstance().getConversionFactors().add(conversionFactor);
+    public B unitName(String unitName) {
+        getBuildingInstance().getUnitNames().add(unitName);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for unitSymbols
+     * 
+     * @param unitSymbols desired value to be set
+     * @return Builder object with new value for unitSymbols
+     */
+    public B unitSymbols(List<String> unitSymbols) {
+        getBuildingInstance().setUnitSymbols(unitSymbols);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List unitSymbols
+     * 
+     * @param unitSymbol desired value to be added
+     * @return Builder object with new value for unitSymbols
+     */
+    public B unitSymbol(String unitSymbol) {
+        getBuildingInstance().getUnitSymbols().add(unitSymbol);
         return getSelf();
     }
 
@@ -68,90 +90,24 @@ public abstract class RC01Builder<T extends RC01, B extends RC01Builder<T, B>> e
     }
 
     /**
-     * This function allows setting a value for dinNotations
+     * This function allows setting a value for siNotations
      * 
-     * @param dinNotations desired value to be set
-     * @return Builder object with new value for dinNotations
+     * @param siNotations desired value to be set
+     * @return Builder object with new value for siNotations
      */
-    public B dinNotations(List<String> dinNotations) {
-        getBuildingInstance().setDinNotations(dinNotations);
+    public B siNotations(List<String> siNotations) {
+        getBuildingInstance().setSiNotations(siNotations);
         return getSelf();
     }
 
     /**
-     * This function allows adding a value to the List dinNotations
+     * This function allows adding a value to the List siNotations
      * 
-     * @param dinNotation desired value to be added
-     * @return Builder object with new value for dinNotations
+     * @param siNotation desired value to be added
+     * @return Builder object with new value for siNotations
      */
-    public B dinNotation(String dinNotation) {
-        getBuildingInstance().getDinNotations().add(dinNotation);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for eceCodes
-     * 
-     * @param eceCodes desired value to be set
-     * @return Builder object with new value for eceCodes
-     */
-    public B eceCodes(List<String> eceCodes) {
-        getBuildingInstance().setEceCodes(eceCodes);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List eceCodes
-     * 
-     * @param eceCode desired value to be added
-     * @return Builder object with new value for eceCodes
-     */
-    public B eceCode(String eceCode) {
-        getBuildingInstance().getEceCodes().add(eceCode);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for eceNames
-     * 
-     * @param eceNames desired value to be set
-     * @return Builder object with new value for eceNames
-     */
-    public B eceNames(List<String> eceNames) {
-        getBuildingInstance().setEceNames(eceNames);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List eceNames
-     * 
-     * @param eceName desired value to be added
-     * @return Builder object with new value for eceNames
-     */
-    public B eceName(String eceName) {
-        getBuildingInstance().getEceNames().add(eceName);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for nistNames
-     * 
-     * @param nistNames desired value to be set
-     * @return Builder object with new value for nistNames
-     */
-    public B nistNames(List<String> nistNames) {
-        getBuildingInstance().setNistNames(nistNames);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List nistNames
-     * 
-     * @param nistName desired value to be added
-     * @return Builder object with new value for nistNames
-     */
-    public B nistName(String nistName) {
-        getBuildingInstance().getNistNames().add(nistName);
+    public B siNotation(String siNotation) {
+        getBuildingInstance().getSiNotations().add(siNotation);
         return getSelf();
     }
 
@@ -178,24 +134,112 @@ public abstract class RC01Builder<T extends RC01, B extends RC01Builder<T, B>> e
     }
 
     /**
-     * This function allows setting a value for siNotations
+     * This function allows setting a value for dinNotations
      * 
-     * @param siNotations desired value to be set
-     * @return Builder object with new value for siNotations
+     * @param dinNotations desired value to be set
+     * @return Builder object with new value for dinNotations
      */
-    public B siNotations(List<String> siNotations) {
-        getBuildingInstance().setSiNotations(siNotations);
+    public B dinNotations(List<String> dinNotations) {
+        getBuildingInstance().setDinNotations(dinNotations);
         return getSelf();
     }
 
     /**
-     * This function allows adding a value to the List siNotations
+     * This function allows adding a value to the List dinNotations
      * 
-     * @param siNotation desired value to be added
-     * @return Builder object with new value for siNotations
+     * @param dinNotation desired value to be added
+     * @return Builder object with new value for dinNotations
      */
-    public B siNotation(String siNotation) {
-        getBuildingInstance().getSiNotations().add(siNotation);
+    public B dinNotation(String dinNotation) {
+        getBuildingInstance().getDinNotations().add(dinNotation);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for eceNames
+     * 
+     * @param eceNames desired value to be set
+     * @return Builder object with new value for eceNames
+     */
+    public B eceNames(List<String> eceNames) {
+        getBuildingInstance().setEceNames(eceNames);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List eceNames
+     * 
+     * @param eceName desired value to be added
+     * @return Builder object with new value for eceNames
+     */
+    public B eceName(String eceName) {
+        getBuildingInstance().getEceNames().add(eceName);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for eceCodes
+     * 
+     * @param eceCodes desired value to be set
+     * @return Builder object with new value for eceCodes
+     */
+    public B eceCodes(List<String> eceCodes) {
+        getBuildingInstance().setEceCodes(eceCodes);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List eceCodes
+     * 
+     * @param eceCode desired value to be added
+     * @return Builder object with new value for eceCodes
+     */
+    public B eceCode(String eceCode) {
+        getBuildingInstance().getEceCodes().add(eceCode);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for nistNames
+     * 
+     * @param nistNames desired value to be set
+     * @return Builder object with new value for nistNames
+     */
+    public B nistNames(List<String> nistNames) {
+        getBuildingInstance().setNistNames(nistNames);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List nistNames
+     * 
+     * @param nistName desired value to be added
+     * @return Builder object with new value for nistNames
+     */
+    public B nistName(String nistName) {
+        getBuildingInstance().getNistNames().add(nistName);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for conversionFactors
+     * 
+     * @param conversionFactors desired value to be set
+     * @return Builder object with new value for conversionFactors
+     */
+    public B conversionFactors(List<String> conversionFactors) {
+        getBuildingInstance().setConversionFactors(conversionFactors);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List conversionFactors
+     * 
+     * @param conversionFactor desired value to be added
+     * @return Builder object with new value for conversionFactors
+     */
+    public B conversionFactor(String conversionFactor) {
+        getBuildingInstance().getConversionFactors().add(conversionFactor);
         return getSelf();
     }
 
@@ -240,50 +284,6 @@ public abstract class RC01Builder<T extends RC01, B extends RC01Builder<T, B>> e
      */
     public B supplier(String supplier) {
         getBuildingInstance().getSuppliers().add(supplier);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for unitNames
-     * 
-     * @param unitNames desired value to be set
-     * @return Builder object with new value for unitNames
-     */
-    public B unitNames(List<String> unitNames) {
-        getBuildingInstance().setUnitNames(unitNames);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List unitNames
-     * 
-     * @param unitName desired value to be added
-     * @return Builder object with new value for unitNames
-     */
-    public B unitName(String unitName) {
-        getBuildingInstance().getUnitNames().add(unitName);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for unitSymbols
-     * 
-     * @param unitSymbols desired value to be set
-     * @return Builder object with new value for unitSymbols
-     */
-    public B unitSymbols(List<String> unitSymbols) {
-        getBuildingInstance().setUnitSymbols(unitSymbols);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List unitSymbols
-     * 
-     * @param unitSymbol desired value to be added
-     * @return Builder object with new value for unitSymbols
-     */
-    public B unitSymbol(String unitSymbol) {
-        getBuildingInstance().getUnitSymbols().add(unitSymbol);
         return getSelf();
     }
 

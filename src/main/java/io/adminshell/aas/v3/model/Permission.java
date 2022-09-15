@@ -31,27 +31,6 @@ import io.adminshell.aas.v3.model.impl.*;
 public interface Permission {
 
     /**
-     * Description of the kind of permission. Possible kind of permission also include the denial of the
-     * permission.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission
-     *
-     * @return Returns the PermissionKind for the property kindOfPermission.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
-    PermissionKind getKindOfPermission();
-
-    /**
-     * Description of the kind of permission. Possible kind of permission also include the denial of the
-     * permission.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission
-     *
-     * @param kindOfPermission desired value for the property kindOfPermission.
-     */
-    void setKindOfPermission(PermissionKind kindOfPermission);
-
-    /**
      * Reference to a property that defines the semantics of the permission.
      *
      * Constraint AASs-010: The property referenced in Permission/permission shall have the category
@@ -81,5 +60,26 @@ public interface Permission {
      * @param permission desired value for the property permission.
      */
     void setPermission(Reference permission);
+
+    /**
+     * Description of the kind of permission. Possible kind of permission also include the denial of the
+     * permission.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission
+     *
+     * @return Returns the PermissionKind for the property kindOfPermission.
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission")
+    PermissionKind getKindOfPermission();
+
+    /**
+     * Description of the kind of permission. Possible kind of permission also include the denial of the
+     * permission.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Permission/kindOfPermission
+     *
+     * @param kindOfPermission desired value for the property kindOfPermission.
+     */
+    void setKindOfPermission(PermissionKind kindOfPermission);
 
 }

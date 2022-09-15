@@ -46,24 +46,35 @@ public abstract class ViewBuilder<T extends View, B extends ViewBuilder<T, B>> e
     }
 
     /**
-     * This function allows setting a value for referableCategories
+     * This function allows setting a value for dataSpecifications
      * 
-     * @param referableCategories desired value to be set
-     * @return Builder object with new value for referableCategories
+     * @param dataSpecifications desired value to be set
+     * @return Builder object with new value for dataSpecifications
      */
-    public B referableCategories(List<String> referableCategories) {
-        getBuildingInstance().setReferableCategories(referableCategories);
+    public B dataSpecifications(List<Reference> dataSpecifications) {
+        getBuildingInstance().setDataSpecifications(dataSpecifications);
         return getSelf();
     }
 
     /**
-     * This function allows adding a value to the List referableCategories
+     * This function allows adding a value to the List dataSpecifications
      * 
-     * @param referableCategory desired value to be added
-     * @return Builder object with new value for referableCategories
+     * @param dataSpecification desired value to be added
+     * @return Builder object with new value for dataSpecifications
      */
-    public B referableCategory(String referableCategory) {
-        getBuildingInstance().getReferableCategories().add(referableCategory);
+    public B dataSpecification(Reference dataSpecification) {
+        getBuildingInstance().getDataSpecifications().add(dataSpecification);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for semanticId
+     * 
+     * @param semanticId desired value to be set
+     * @return Builder object with new value for semanticId
+     */
+    public B semanticId(Reference semanticId) {
+        getBuildingInstance().setSemanticId(semanticId);
         return getSelf();
     }
 
@@ -112,35 +123,24 @@ public abstract class ViewBuilder<T extends View, B extends ViewBuilder<T, B>> e
     }
 
     /**
-     * This function allows setting a value for dataSpecifications
+     * This function allows setting a value for referableCategories
      * 
-     * @param dataSpecifications desired value to be set
-     * @return Builder object with new value for dataSpecifications
+     * @param referableCategories desired value to be set
+     * @return Builder object with new value for referableCategories
      */
-    public B dataSpecifications(List<Reference> dataSpecifications) {
-        getBuildingInstance().setDataSpecifications(dataSpecifications);
+    public B referableCategories(List<String> referableCategories) {
+        getBuildingInstance().setReferableCategories(referableCategories);
         return getSelf();
     }
 
     /**
-     * This function allows adding a value to the List dataSpecifications
+     * This function allows adding a value to the List referableCategories
      * 
-     * @param dataSpecification desired value to be added
-     * @return Builder object with new value for dataSpecifications
+     * @param referableCategory desired value to be added
+     * @return Builder object with new value for referableCategories
      */
-    public B dataSpecification(Reference dataSpecification) {
-        getBuildingInstance().getDataSpecifications().add(dataSpecification);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for semanticId
-     * 
-     * @param semanticId desired value to be set
-     * @return Builder object with new value for semanticId
-     */
-    public B semanticId(Reference semanticId) {
-        getBuildingInstance().setSemanticId(semanticId);
+    public B referableCategory(String referableCategory) {
+        getBuildingInstance().getReferableCategories().add(referableCategory);
         return getSelf();
     }
 }

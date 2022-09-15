@@ -34,13 +34,13 @@ import io.adminshell.aas.v3.model.impl.*;
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultHasDataSpecification.class),
-    @KnownSubtypes.Type(value = Submodel.class),
     @KnownSubtypes.Type(value = AdministrativeInformation.class),
     @KnownSubtypes.Type(value = Asset.class),
     @KnownSubtypes.Type(value = AssetAdministrationShell.class),
     @KnownSubtypes.Type(value = View.class),
+    @KnownSubtypes.Type(value = ConceptDescription.class),
     @KnownSubtypes.Type(value = SubmodelElement.class),
-    @KnownSubtypes.Type(value = ConceptDescription.class)
+    @KnownSubtypes.Type(value = Submodel.class)
 })
 public interface HasDataSpecification {
 

@@ -32,25 +32,6 @@ import io.adminshell.aas.v3.model.impl.*;
 public interface Identifier {
 
     /**
-     * A globally unique identifier which might not be a URI. Its type is defined in idType.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Identifier/identifier
-     *
-     * @return Returns the List of Strings for the property identifiers.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
-    List<String> getIdentifiers();
-
-    /**
-     * A globally unique identifier which might not be a URI. Its type is defined in idType.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Identifier/identifier
-     *
-     * @param identifiers desired value for the property identifiers.
-     */
-    void setIdentifiers(List<String> identifiers);
-
-    /**
      * Type of the Identifier, e.g. IRI, IRDI etc. The supported Identifier types are defined in the
      * enumeration 'IdentifierType'.
      *
@@ -70,5 +51,24 @@ public interface Identifier {
      * @param idType desired value for the property idType.
      */
     void setIdType(IdentifierType idType);
+
+    /**
+     * A globally unique identifier which might not be a URI. Its type is defined in idType.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Identifier/identifier
+     *
+     * @return Returns the List of Strings for the property identifiers.
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Identifier/identifier")
+    List<String> getIdentifiers();
+
+    /**
+     * A globally unique identifier which might not be a URI. Its type is defined in idType.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Identifier/identifier
+     *
+     * @param identifiers desired value for the property identifiers.
+     */
+    void setIdentifiers(List<String> identifiers);
 
 }

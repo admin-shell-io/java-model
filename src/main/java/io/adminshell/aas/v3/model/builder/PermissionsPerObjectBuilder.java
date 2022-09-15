@@ -36,6 +36,17 @@ public abstract class PermissionsPerObjectBuilder<T extends PermissionsPerObject
     }
 
     /**
+     * This function allows setting a value for targetObjectAttributes
+     * 
+     * @param targetObjectAttributes desired value to be set
+     * @return Builder object with new value for targetObjectAttributes
+     */
+    public B targetObjectAttributes(ObjectAttributes targetObjectAttributes) {
+        getBuildingInstance().setTargetObjectAttributes(targetObjectAttributes);
+        return getSelf();
+    }
+
+    /**
      * This function allows setting a value for permissions
      * 
      * @param permissions desired value to be set
@@ -54,17 +65,6 @@ public abstract class PermissionsPerObjectBuilder<T extends PermissionsPerObject
      */
     public B permission(Permission permission) {
         getBuildingInstance().getPermissions().add(permission);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for targetObjectAttributes
-     * 
-     * @param targetObjectAttributes desired value to be set
-     * @return Builder object with new value for targetObjectAttributes
-     */
-    public B targetObjectAttributes(ObjectAttributes targetObjectAttributes) {
-        getBuildingInstance().setTargetObjectAttributes(targetObjectAttributes);
         return getSelf();
     }
 }

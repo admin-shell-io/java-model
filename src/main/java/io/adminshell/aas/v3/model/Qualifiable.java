@@ -30,8 +30,8 @@ import io.adminshell.aas.v3.model.impl.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultQualifiable.class),
     @KnownSubtypes.Type(value = AccessPermissionRule.class),
-    @KnownSubtypes.Type(value = Submodel.class),
-    @KnownSubtypes.Type(value = SubmodelElement.class)
+    @KnownSubtypes.Type(value = SubmodelElement.class),
+    @KnownSubtypes.Type(value = Submodel.class)
 })
 public interface Qualifiable {
 

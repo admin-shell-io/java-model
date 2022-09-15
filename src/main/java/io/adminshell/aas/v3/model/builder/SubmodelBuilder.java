@@ -46,28 +46,6 @@ public abstract class SubmodelBuilder<T extends Submodel, B extends SubmodelBuil
     }
 
     /**
-     * This function allows setting a value for qualifiers
-     * 
-     * @param qualifiers desired value to be set
-     * @return Builder object with new value for qualifiers
-     */
-    public B qualifiers(List<Constraint> qualifiers) {
-        getBuildingInstance().setQualifiers(qualifiers);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List qualifiers
-     * 
-     * @param qualifier desired value to be added
-     * @return Builder object with new value for qualifiers
-     */
-    public B qualifier(Constraint qualifier) {
-        getBuildingInstance().getQualifiers().add(qualifier);
-        return getSelf();
-    }
-
-    /**
      * This function allows setting a value for dataSpecifications
      * 
      * @param dataSpecifications desired value to be set
@@ -90,6 +68,28 @@ public abstract class SubmodelBuilder<T extends Submodel, B extends SubmodelBuil
     }
 
     /**
+     * This function allows setting a value for kind
+     * 
+     * @param kind desired value to be set
+     * @return Builder object with new value for kind
+     */
+    public B kind(ModelingKind kind) {
+        getBuildingInstance().setKind(kind);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for semanticId
+     * 
+     * @param semanticId desired value to be set
+     * @return Builder object with new value for semanticId
+     */
+    public B semanticId(Reference semanticId) {
+        getBuildingInstance().setSemanticId(semanticId);
+        return getSelf();
+    }
+
+    /**
      * This function allows setting a value for administration
      * 
      * @param administration desired value to be set
@@ -108,28 +108,6 @@ public abstract class SubmodelBuilder<T extends Submodel, B extends SubmodelBuil
      */
     public B identification(Identifier identification) {
         getBuildingInstance().setIdentification(identification);
-        return getSelf();
-    }
-
-    /**
-     * This function allows setting a value for referableCategories
-     * 
-     * @param referableCategories desired value to be set
-     * @return Builder object with new value for referableCategories
-     */
-    public B referableCategories(List<String> referableCategories) {
-        getBuildingInstance().setReferableCategories(referableCategories);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List referableCategories
-     * 
-     * @param referableCategory desired value to be added
-     * @return Builder object with new value for referableCategories
-     */
-    public B referableCategory(String referableCategory) {
-        getBuildingInstance().getReferableCategories().add(referableCategory);
         return getSelf();
     }
 
@@ -178,24 +156,46 @@ public abstract class SubmodelBuilder<T extends Submodel, B extends SubmodelBuil
     }
 
     /**
-     * This function allows setting a value for kind
+     * This function allows setting a value for referableCategories
      * 
-     * @param kind desired value to be set
-     * @return Builder object with new value for kind
+     * @param referableCategories desired value to be set
+     * @return Builder object with new value for referableCategories
      */
-    public B kind(ModelingKind kind) {
-        getBuildingInstance().setKind(kind);
+    public B referableCategories(List<String> referableCategories) {
+        getBuildingInstance().setReferableCategories(referableCategories);
         return getSelf();
     }
 
     /**
-     * This function allows setting a value for semanticId
+     * This function allows adding a value to the List referableCategories
      * 
-     * @param semanticId desired value to be set
-     * @return Builder object with new value for semanticId
+     * @param referableCategory desired value to be added
+     * @return Builder object with new value for referableCategories
      */
-    public B semanticId(Reference semanticId) {
-        getBuildingInstance().setSemanticId(semanticId);
+    public B referableCategory(String referableCategory) {
+        getBuildingInstance().getReferableCategories().add(referableCategory);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for qualifiers
+     * 
+     * @param qualifiers desired value to be set
+     * @return Builder object with new value for qualifiers
+     */
+    public B qualifiers(List<Constraint> qualifiers) {
+        getBuildingInstance().setQualifiers(qualifiers);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List qualifiers
+     * 
+     * @param qualifier desired value to be added
+     * @return Builder object with new value for qualifiers
+     */
+    public B qualifier(Constraint qualifier) {
+        getBuildingInstance().getQualifiers().add(qualifier);
         return getSelf();
     }
 }

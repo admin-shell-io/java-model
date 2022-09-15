@@ -34,21 +34,40 @@ public interface RC01 extends DataSpecificationContent {
     /**
      *
      * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName
      *
-     * @return Returns the List of Strings for the property conversionFactors.
+     * @return Returns the List of Strings for the property unitNames.
      */
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor")
-    List<String> getConversionFactors();
+    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName")
+    List<String> getUnitNames();
 
     /**
      *
      * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName
      *
-     * @param conversionFactors desired value for the property conversionFactors.
+     * @param unitNames desired value for the property unitNames.
      */
-    void setConversionFactors(List<String> conversionFactors);
+    void setUnitNames(List<String> unitNames);
+
+    /**
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol
+     *
+     * @return Returns the List of Strings for the property unitSymbols.
+     */
+    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol")
+    List<String> getUnitSymbols();
+
+    /**
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol
+     *
+     * @param unitSymbols desired value for the property unitSymbols.
+     */
+    void setUnitSymbols(List<String> unitSymbols);
 
     /**
      *
@@ -72,78 +91,21 @@ public interface RC01 extends DataSpecificationContent {
     /**
      *
      * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation
      *
-     * @return Returns the List of Strings for the property dinNotations.
+     * @return Returns the List of Strings for the property siNotations.
      */
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation")
-    List<String> getDinNotations();
+    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation")
+    List<String> getSiNotations();
 
     /**
      *
      * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation
      *
-     * @param dinNotations desired value for the property dinNotations.
+     * @param siNotations desired value for the property siNotations.
      */
-    void setDinNotations(List<String> dinNotations);
-
-    /**
-     *
-     * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode
-     *
-     * @return Returns the List of Strings for the property eceCodes.
-     */
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode")
-    List<String> getEceCodes();
-
-    /**
-     *
-     * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode
-     *
-     * @param eceCodes desired value for the property eceCodes.
-     */
-    void setEceCodes(List<String> eceCodes);
-
-    /**
-     *
-     * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName
-     *
-     * @return Returns the List of Strings for the property eceNames.
-     */
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName")
-    List<String> getEceNames();
-
-    /**
-     *
-     * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName
-     *
-     * @param eceNames desired value for the property eceNames.
-     */
-    void setEceNames(List<String> eceNames);
-
-    /**
-     *
-     * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName
-     *
-     * @return Returns the List of Strings for the property nistNames.
-     */
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName")
-    List<String> getNistNames();
-
-    /**
-     *
-     * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName
-     *
-     * @param nistNames desired value for the property nistNames.
-     */
-    void setNistNames(List<String> nistNames);
+    void setSiNotations(List<String> siNotations);
 
     /**
      *
@@ -167,21 +129,97 @@ public interface RC01 extends DataSpecificationContent {
     /**
      *
      * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation
      *
-     * @return Returns the List of Strings for the property siNotations.
+     * @return Returns the List of Strings for the property dinNotations.
      */
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation")
-    List<String> getSiNotations();
+    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation")
+    List<String> getDinNotations();
 
     /**
      *
      * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/siNotation
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/dinNotation
      *
-     * @param siNotations desired value for the property siNotations.
+     * @param dinNotations desired value for the property dinNotations.
      */
-    void setSiNotations(List<String> siNotations);
+    void setDinNotations(List<String> dinNotations);
+
+    /**
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName
+     *
+     * @return Returns the List of Strings for the property eceNames.
+     */
+    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName")
+    List<String> getEceNames();
+
+    /**
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceName
+     *
+     * @param eceNames desired value for the property eceNames.
+     */
+    void setEceNames(List<String> eceNames);
+
+    /**
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode
+     *
+     * @return Returns the List of Strings for the property eceCodes.
+     */
+    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode")
+    List<String> getEceCodes();
+
+    /**
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/eceCode
+     *
+     * @param eceCodes desired value for the property eceCodes.
+     */
+    void setEceCodes(List<String> eceCodes);
+
+    /**
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName
+     *
+     * @return Returns the List of Strings for the property nistNames.
+     */
+    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName")
+    List<String> getNistNames();
+
+    /**
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/nistName
+     *
+     * @param nistNames desired value for the property nistNames.
+     */
+    void setNistNames(List<String> nistNames);
+
+    /**
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor
+     *
+     * @return Returns the List of Strings for the property conversionFactors.
+     */
+    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor")
+    List<String> getConversionFactors();
+
+    /**
+     *
+     * More information under
+     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/conversionFactor
+     *
+     * @param conversionFactors desired value for the property conversionFactors.
+     */
+    void setConversionFactors(List<String> conversionFactors);
 
     /**
      *
@@ -220,43 +258,5 @@ public interface RC01 extends DataSpecificationContent {
      * @param suppliers desired value for the property suppliers.
      */
     void setSuppliers(List<String> suppliers);
-
-    /**
-     *
-     * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName
-     *
-     * @return Returns the List of Strings for the property unitNames.
-     */
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName")
-    List<String> getUnitNames();
-
-    /**
-     *
-     * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitName
-     *
-     * @param unitNames desired value for the property unitNames.
-     */
-    void setUnitNames(List<String> unitNames);
-
-    /**
-     *
-     * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol
-     *
-     * @return Returns the List of Strings for the property unitSymbols.
-     */
-    @IRI("https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol")
-    List<String> getUnitSymbols();
-
-    /**
-     *
-     * More information under
-     * https://admin-shell.io/DataSpecificationTemplates/DataSpecificationPhysicalUnit/3/0/RC01/unitSymbol
-     *
-     * @param unitSymbols desired value for the property unitSymbols.
-     */
-    void setUnitSymbols(List<String> unitSymbols);
 
 }

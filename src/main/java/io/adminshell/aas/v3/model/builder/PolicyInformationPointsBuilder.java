@@ -25,17 +25,6 @@ public abstract class PolicyInformationPointsBuilder<T extends PolicyInformation
     extends ExtendableBuilder<T, B> {
 
     /**
-     * This function allows setting a value for externalInformationPoints
-     * 
-     * @param externalInformationPoints desired value to be set
-     * @return Builder object with new value for externalInformationPoints
-     */
-    public B externalInformationPoints(boolean externalInformationPoints) {
-        getBuildingInstance().setExternalInformationPoints(externalInformationPoints);
-        return getSelf();
-    }
-
-    /**
      * This function allows setting a value for internalInformationPoints
      * 
      * @param internalInformationPoints desired value to be set
@@ -54,6 +43,17 @@ public abstract class PolicyInformationPointsBuilder<T extends PolicyInformation
      */
     public B internalInformationPoint(Submodel internalInformationPoint) {
         getBuildingInstance().getInternalInformationPoints().add(internalInformationPoint);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for externalInformationPoints
+     * 
+     * @param externalInformationPoints desired value to be set
+     * @return Builder object with new value for externalInformationPoints
+     */
+    public B externalInformationPoints(boolean externalInformationPoints) {
+        getBuildingInstance().setExternalInformationPoints(externalInformationPoints);
         return getSelf();
     }
 }

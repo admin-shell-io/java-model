@@ -80,20 +80,20 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.dataTypes,
-            this.definitions,
+        return Objects.hash(this.definitions,
             this.levelTypes,
             this.preferredName,
             this.shortName,
-            this.sourceOfDefinition,
             this.symbol,
             this.unit,
             this.unitId,
             this.valueFormat,
             this.value,
-            this.valueList,
             this.valueId,
-            this.valueId);
+            this.valueId,
+            this.sourceOfDefinition,
+            this.valueList,
+            this.dataTypes);
     }
 
     @Override
@@ -106,30 +106,20 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
             return false;
         } else {
             DefaultDataSpecificationIEC61360 other = (DefaultDataSpecificationIEC61360) obj;
-            return Objects.equals(this.dataTypes, other.dataTypes) &&
-                Objects.equals(this.definitions, other.definitions) &&
+            return Objects.equals(this.definitions, other.definitions) &&
                 Objects.equals(this.levelTypes, other.levelTypes) &&
                 Objects.equals(this.preferredName, other.preferredName) &&
                 Objects.equals(this.shortName, other.shortName) &&
-                Objects.equals(this.sourceOfDefinition, other.sourceOfDefinition) &&
                 Objects.equals(this.symbol, other.symbol) &&
                 Objects.equals(this.unit, other.unit) &&
                 Objects.equals(this.unitId, other.unitId) &&
                 Objects.equals(this.valueFormat, other.valueFormat) &&
                 Objects.equals(this.value, other.value) &&
+                Objects.equals(this.valueId, other.valueId) &&
+                Objects.equals(this.sourceOfDefinition, other.sourceOfDefinition) &&
                 Objects.equals(this.valueList, other.valueList) &&
-                Objects.equals(this.valueId, other.valueId);
+                Objects.equals(this.dataTypes, other.dataTypes);
         }
-    }
-
-    @Override
-    public List<DataTypeIEC61360> getDataTypes() {
-        return dataTypes;
-    }
-
-    @Override
-    public void setDataTypes(List<DataTypeIEC61360> dataTypes) {
-        this.dataTypes = dataTypes;
     }
 
     @Override
@@ -170,16 +160,6 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
     @Override
     public void setShortName(LangString shortName) {
         this.shortName = shortName;
-    }
-
-    @Override
-    public String getSourceOfDefinition() {
-        return sourceOfDefinition;
-    }
-
-    @Override
-    public void setSourceOfDefinition(String sourceOfDefinition) {
-        this.sourceOfDefinition = sourceOfDefinition;
     }
 
     @Override
@@ -233,6 +213,26 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
     }
 
     @Override
+    public Reference getValueId() {
+        return valueId;
+    }
+
+    @Override
+    public void setValueId(Reference valueId) {
+        this.valueId = valueId;
+    }
+
+    @Override
+    public String getSourceOfDefinition() {
+        return sourceOfDefinition;
+    }
+
+    @Override
+    public void setSourceOfDefinition(String sourceOfDefinition) {
+        this.sourceOfDefinition = sourceOfDefinition;
+    }
+
+    @Override
     public String getValueList() {
         return valueList;
     }
@@ -243,13 +243,13 @@ public class DefaultDataSpecificationIEC61360 implements DataSpecificationIEC613
     }
 
     @Override
-    public Reference getValueId() {
-        return valueId;
+    public List<DataTypeIEC61360> getDataTypes() {
+        return dataTypes;
     }
 
     @Override
-    public void setValueId(Reference valueId) {
-        this.valueId = valueId;
+    public void setDataTypes(List<DataTypeIEC61360> dataTypes) {
+        this.dataTypes = dataTypes;
     }
 
     /**

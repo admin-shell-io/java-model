@@ -61,12 +61,12 @@ public class DefaultView implements View {
     @Override
     public int hashCode() {
         return Objects.hash(this.containedElements,
-            this.referableCategories,
+            this.dataSpecifications,
+            this.semanticId,
             this.descriptions,
             this.displayName,
             this.idShort,
-            this.dataSpecifications,
-            this.semanticId);
+            this.referableCategories);
     }
 
     @Override
@@ -80,12 +80,12 @@ public class DefaultView implements View {
         } else {
             DefaultView other = (DefaultView) obj;
             return Objects.equals(this.containedElements, other.containedElements) &&
-                Objects.equals(this.referableCategories, other.referableCategories) &&
+                Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
+                Objects.equals(this.semanticId, other.semanticId) &&
                 Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayName, other.displayName) &&
                 Objects.equals(this.idShort, other.idShort) &&
-                Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
-                Objects.equals(this.semanticId, other.semanticId);
+                Objects.equals(this.referableCategories, other.referableCategories);
         }
     }
 
@@ -100,13 +100,23 @@ public class DefaultView implements View {
     }
 
     @Override
-    public List<String> getReferableCategories() {
-        return referableCategories;
+    public List<Reference> getDataSpecifications() {
+        return dataSpecifications;
     }
 
     @Override
-    public void setReferableCategories(List<String> referableCategories) {
-        this.referableCategories = referableCategories;
+    public void setDataSpecifications(List<Reference> dataSpecifications) {
+        this.dataSpecifications = dataSpecifications;
+    }
+
+    @Override
+    public Reference getSemanticId() {
+        return semanticId;
+    }
+
+    @Override
+    public void setSemanticId(Reference semanticId) {
+        this.semanticId = semanticId;
     }
 
     @Override
@@ -140,23 +150,13 @@ public class DefaultView implements View {
     }
 
     @Override
-    public List<Reference> getDataSpecifications() {
-        return dataSpecifications;
+    public List<String> getReferableCategories() {
+        return referableCategories;
     }
 
     @Override
-    public void setDataSpecifications(List<Reference> dataSpecifications) {
-        this.dataSpecifications = dataSpecifications;
-    }
-
-    @Override
-    public Reference getSemanticId() {
-        return semanticId;
-    }
-
-    @Override
-    public void setSemanticId(Reference semanticId) {
-        this.semanticId = semanticId;
+    public void setReferableCategories(List<String> referableCategories) {
+        this.referableCategories = referableCategories;
     }
 
     /**

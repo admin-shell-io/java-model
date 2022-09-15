@@ -31,17 +31,17 @@ import io.adminshell.aas.v3.model.impl.*;
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultSubmodelElement.class),
-    @KnownSubtypes.Type(value = RelationshipElement.class),
-    @KnownSubtypes.Type(value = DataElement.class),
     @KnownSubtypes.Type(value = File.class),
-    @KnownSubtypes.Type(value = Event.class),
     @KnownSubtypes.Type(value = Capability.class),
+    @KnownSubtypes.Type(value = DataElement.class),
     @KnownSubtypes.Type(value = Entity.class),
+    @KnownSubtypes.Type(value = Event.class),
     @KnownSubtypes.Type(value = EventElement.class),
     @KnownSubtypes.Type(value = EventMessage.class),
     @KnownSubtypes.Type(value = Operation.class),
+    @KnownSubtypes.Type(value = RelationshipElement.class),
     @KnownSubtypes.Type(value = SubmodelElementCollection.class)
 })
-public interface SubmodelElement extends Referable, Qualifiable, HasDataSpecification, HasKind, HasSemantics {
+public interface SubmodelElement extends HasDataSpecification, HasKind, HasSemantics, Referable, Qualifiable {
 
 }

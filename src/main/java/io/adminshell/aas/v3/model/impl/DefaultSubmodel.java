@@ -77,16 +77,16 @@ public class DefaultSubmodel implements Submodel {
     @Override
     public int hashCode() {
         return Objects.hash(this.submodelElements,
-            this.qualifiers,
             this.dataSpecifications,
+            this.kind,
+            this.semanticId,
             this.administration,
             this.identification,
-            this.referableCategories,
             this.descriptions,
             this.displayName,
             this.idShort,
-            this.kind,
-            this.semanticId);
+            this.referableCategories,
+            this.qualifiers);
     }
 
     @Override
@@ -100,16 +100,16 @@ public class DefaultSubmodel implements Submodel {
         } else {
             DefaultSubmodel other = (DefaultSubmodel) obj;
             return Objects.equals(this.submodelElements, other.submodelElements) &&
-                Objects.equals(this.qualifiers, other.qualifiers) &&
                 Objects.equals(this.dataSpecifications, other.dataSpecifications) &&
+                Objects.equals(this.kind, other.kind) &&
+                Objects.equals(this.semanticId, other.semanticId) &&
                 Objects.equals(this.administration, other.administration) &&
                 Objects.equals(this.identification, other.identification) &&
-                Objects.equals(this.referableCategories, other.referableCategories) &&
                 Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayName, other.displayName) &&
                 Objects.equals(this.idShort, other.idShort) &&
-                Objects.equals(this.kind, other.kind) &&
-                Objects.equals(this.semanticId, other.semanticId);
+                Objects.equals(this.referableCategories, other.referableCategories) &&
+                Objects.equals(this.qualifiers, other.qualifiers);
         }
     }
 
@@ -124,16 +124,6 @@ public class DefaultSubmodel implements Submodel {
     }
 
     @Override
-    public List<Constraint> getQualifiers() {
-        return qualifiers;
-    }
-
-    @Override
-    public void setQualifiers(List<Constraint> qualifiers) {
-        this.qualifiers = qualifiers;
-    }
-
-    @Override
     public List<Reference> getDataSpecifications() {
         return dataSpecifications;
     }
@@ -141,6 +131,26 @@ public class DefaultSubmodel implements Submodel {
     @Override
     public void setDataSpecifications(List<Reference> dataSpecifications) {
         this.dataSpecifications = dataSpecifications;
+    }
+
+    @Override
+    public ModelingKind getKind() {
+        return kind;
+    }
+
+    @Override
+    public void setKind(ModelingKind kind) {
+        this.kind = kind;
+    }
+
+    @Override
+    public Reference getSemanticId() {
+        return semanticId;
+    }
+
+    @Override
+    public void setSemanticId(Reference semanticId) {
+        this.semanticId = semanticId;
     }
 
     @Override
@@ -161,16 +171,6 @@ public class DefaultSubmodel implements Submodel {
     @Override
     public void setIdentification(Identifier identification) {
         this.identification = identification;
-    }
-
-    @Override
-    public List<String> getReferableCategories() {
-        return referableCategories;
-    }
-
-    @Override
-    public void setReferableCategories(List<String> referableCategories) {
-        this.referableCategories = referableCategories;
     }
 
     @Override
@@ -204,23 +204,23 @@ public class DefaultSubmodel implements Submodel {
     }
 
     @Override
-    public ModelingKind getKind() {
-        return kind;
+    public List<String> getReferableCategories() {
+        return referableCategories;
     }
 
     @Override
-    public void setKind(ModelingKind kind) {
-        this.kind = kind;
+    public void setReferableCategories(List<String> referableCategories) {
+        this.referableCategories = referableCategories;
     }
 
     @Override
-    public Reference getSemanticId() {
-        return semanticId;
+    public List<Constraint> getQualifiers() {
+        return qualifiers;
     }
 
     @Override
-    public void setSemanticId(Reference semanticId) {
-        this.semanticId = semanticId;
+    public void setQualifiers(List<Constraint> qualifiers) {
+        this.qualifiers = qualifiers;
     }
 
     /**

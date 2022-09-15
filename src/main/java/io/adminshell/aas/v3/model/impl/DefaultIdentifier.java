@@ -43,8 +43,8 @@ public class DefaultIdentifier implements Identifier {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.identifiers,
-            this.idType);
+        return Objects.hash(this.idType,
+            this.identifiers);
     }
 
     @Override
@@ -57,19 +57,9 @@ public class DefaultIdentifier implements Identifier {
             return false;
         } else {
             DefaultIdentifier other = (DefaultIdentifier) obj;
-            return Objects.equals(this.identifiers, other.identifiers) &&
-                Objects.equals(this.idType, other.idType);
+            return Objects.equals(this.idType, other.idType) &&
+                Objects.equals(this.identifiers, other.identifiers);
         }
-    }
-
-    @Override
-    public List<String> getIdentifiers() {
-        return identifiers;
-    }
-
-    @Override
-    public void setIdentifiers(List<String> identifiers) {
-        this.identifiers = identifiers;
     }
 
     @Override
@@ -80,6 +70,16 @@ public class DefaultIdentifier implements Identifier {
     @Override
     public void setIdType(IdentifierType idType) {
         this.idType = idType;
+    }
+
+    @Override
+    public List<String> getIdentifiers() {
+        return identifiers;
+    }
+
+    @Override
+    public void setIdentifiers(List<String> identifiers) {
+        this.identifiers = identifiers;
     }
 
     /**

@@ -73,18 +73,18 @@ public class DefaultRC01 implements RC01 {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.conversionFactors,
+        return Objects.hash(this.unitNames,
+            this.unitSymbols,
             this.definitions,
-            this.dinNotations,
-            this.eceCodes,
-            this.eceNames,
-            this.nistNames,
-            this.siNames,
             this.siNotations,
+            this.siNames,
+            this.dinNotations,
+            this.eceNames,
+            this.eceCodes,
+            this.nistNames,
+            this.conversionFactors,
             this.registrationAuthorityIds,
-            this.suppliers,
-            this.unitNames,
-            this.unitSymbols);
+            this.suppliers);
     }
 
     @Override
@@ -97,119 +97,19 @@ public class DefaultRC01 implements RC01 {
             return false;
         } else {
             DefaultRC01 other = (DefaultRC01) obj;
-            return Objects.equals(this.conversionFactors, other.conversionFactors) &&
+            return Objects.equals(this.unitNames, other.unitNames) &&
+                Objects.equals(this.unitSymbols, other.unitSymbols) &&
                 Objects.equals(this.definitions, other.definitions) &&
-                Objects.equals(this.dinNotations, other.dinNotations) &&
-                Objects.equals(this.eceCodes, other.eceCodes) &&
-                Objects.equals(this.eceNames, other.eceNames) &&
-                Objects.equals(this.nistNames, other.nistNames) &&
-                Objects.equals(this.siNames, other.siNames) &&
                 Objects.equals(this.siNotations, other.siNotations) &&
+                Objects.equals(this.siNames, other.siNames) &&
+                Objects.equals(this.dinNotations, other.dinNotations) &&
+                Objects.equals(this.eceNames, other.eceNames) &&
+                Objects.equals(this.eceCodes, other.eceCodes) &&
+                Objects.equals(this.nistNames, other.nistNames) &&
+                Objects.equals(this.conversionFactors, other.conversionFactors) &&
                 Objects.equals(this.registrationAuthorityIds, other.registrationAuthorityIds) &&
-                Objects.equals(this.suppliers, other.suppliers) &&
-                Objects.equals(this.unitNames, other.unitNames) &&
-                Objects.equals(this.unitSymbols, other.unitSymbols);
+                Objects.equals(this.suppliers, other.suppliers);
         }
-    }
-
-    @Override
-    public List<String> getConversionFactors() {
-        return conversionFactors;
-    }
-
-    @Override
-    public void setConversionFactors(List<String> conversionFactors) {
-        this.conversionFactors = conversionFactors;
-    }
-
-    @Override
-    public List<LangString> getDefinitions() {
-        return definitions;
-    }
-
-    @Override
-    public void setDefinitions(List<LangString> definitions) {
-        this.definitions = definitions;
-    }
-
-    @Override
-    public List<String> getDinNotations() {
-        return dinNotations;
-    }
-
-    @Override
-    public void setDinNotations(List<String> dinNotations) {
-        this.dinNotations = dinNotations;
-    }
-
-    @Override
-    public List<String> getEceCodes() {
-        return eceCodes;
-    }
-
-    @Override
-    public void setEceCodes(List<String> eceCodes) {
-        this.eceCodes = eceCodes;
-    }
-
-    @Override
-    public List<String> getEceNames() {
-        return eceNames;
-    }
-
-    @Override
-    public void setEceNames(List<String> eceNames) {
-        this.eceNames = eceNames;
-    }
-
-    @Override
-    public List<String> getNistNames() {
-        return nistNames;
-    }
-
-    @Override
-    public void setNistNames(List<String> nistNames) {
-        this.nistNames = nistNames;
-    }
-
-    @Override
-    public List<String> getSiNames() {
-        return siNames;
-    }
-
-    @Override
-    public void setSiNames(List<String> siNames) {
-        this.siNames = siNames;
-    }
-
-    @Override
-    public List<String> getSiNotations() {
-        return siNotations;
-    }
-
-    @Override
-    public void setSiNotations(List<String> siNotations) {
-        this.siNotations = siNotations;
-    }
-
-    @Override
-    public List<String> getRegistrationAuthorityIds() {
-        return registrationAuthorityIds;
-    }
-
-    @Override
-    public void setRegistrationAuthorityIds(List<String> registrationAuthorityIds) {
-        this.registrationAuthorityIds = registrationAuthorityIds;
-    }
-
-    @Override
-    public List<String> getSuppliers() {
-        return suppliers;
-    }
-
-    @Override
-    public void setSuppliers(List<String> suppliers) {
-        this.suppliers = suppliers;
     }
 
     @Override
@@ -230,6 +130,106 @@ public class DefaultRC01 implements RC01 {
     @Override
     public void setUnitSymbols(List<String> unitSymbols) {
         this.unitSymbols = unitSymbols;
+    }
+
+    @Override
+    public List<LangString> getDefinitions() {
+        return definitions;
+    }
+
+    @Override
+    public void setDefinitions(List<LangString> definitions) {
+        this.definitions = definitions;
+    }
+
+    @Override
+    public List<String> getSiNotations() {
+        return siNotations;
+    }
+
+    @Override
+    public void setSiNotations(List<String> siNotations) {
+        this.siNotations = siNotations;
+    }
+
+    @Override
+    public List<String> getSiNames() {
+        return siNames;
+    }
+
+    @Override
+    public void setSiNames(List<String> siNames) {
+        this.siNames = siNames;
+    }
+
+    @Override
+    public List<String> getDinNotations() {
+        return dinNotations;
+    }
+
+    @Override
+    public void setDinNotations(List<String> dinNotations) {
+        this.dinNotations = dinNotations;
+    }
+
+    @Override
+    public List<String> getEceNames() {
+        return eceNames;
+    }
+
+    @Override
+    public void setEceNames(List<String> eceNames) {
+        this.eceNames = eceNames;
+    }
+
+    @Override
+    public List<String> getEceCodes() {
+        return eceCodes;
+    }
+
+    @Override
+    public void setEceCodes(List<String> eceCodes) {
+        this.eceCodes = eceCodes;
+    }
+
+    @Override
+    public List<String> getNistNames() {
+        return nistNames;
+    }
+
+    @Override
+    public void setNistNames(List<String> nistNames) {
+        this.nistNames = nistNames;
+    }
+
+    @Override
+    public List<String> getConversionFactors() {
+        return conversionFactors;
+    }
+
+    @Override
+    public void setConversionFactors(List<String> conversionFactors) {
+        this.conversionFactors = conversionFactors;
+    }
+
+    @Override
+    public List<String> getRegistrationAuthorityIds() {
+        return registrationAuthorityIds;
+    }
+
+    @Override
+    public void setRegistrationAuthorityIds(List<String> registrationAuthorityIds) {
+        this.registrationAuthorityIds = registrationAuthorityIds;
+    }
+
+    @Override
+    public List<String> getSuppliers() {
+        return suppliers;
+    }
+
+    @Override
+    public void setSuppliers(List<String> suppliers) {
+        this.suppliers = suppliers;
     }
 
     /**

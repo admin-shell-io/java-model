@@ -37,25 +37,6 @@ import io.adminshell.aas.v3.model.impl.*;
 public interface AssetInformation {
 
     /**
-     * Denotes whether the Asset of of kind 'Type' or 'Instance'.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind
-     *
-     * @return Returns the List of AssetKinds for the property assetKinds.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
-    List<AssetKind> getAssetKinds();
-
-    /**
-     * Denotes whether the Asset of of kind 'Type' or 'Instance'.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind
-     *
-     * @param assetKinds desired value for the property assetKinds.
-     */
-    void setAssetKinds(List<AssetKind> assetKinds);
-
-    /**
      * Reference to either an Asset object or a global reference to the asset the AAS is representing.
      *
      * This attribute is required as soon as the AAS is exchanged via partners in the life cycle of the
@@ -150,5 +131,24 @@ public interface AssetInformation {
      * @param thumbnail desired value for the property thumbnail.
      */
     void setThumbnail(File thumbnail);
+
+    /**
+     * Denotes whether the Asset of of kind 'Type' or 'Instance'.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind
+     *
+     * @return Returns the List of AssetKinds for the property assetKinds.
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind")
+    List<AssetKind> getAssetKinds();
+
+    /**
+     * Denotes whether the Asset of of kind 'Type' or 'Instance'.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AssetInformation/assetKind
+     *
+     * @param assetKinds desired value for the property assetKinds.
+     */
+    void setAssetKinds(List<AssetKind> assetKinds);
 
 }

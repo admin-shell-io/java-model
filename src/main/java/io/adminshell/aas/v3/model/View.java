@@ -31,7 +31,7 @@ import io.adminshell.aas.v3.model.impl.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultView.class)
 })
-public interface View extends Referable, HasDataSpecification, HasSemantics {
+public interface View extends HasDataSpecification, HasSemantics, Referable {
 
     /**
      * Referable elements that are contained in the view.

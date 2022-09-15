@@ -30,32 +30,11 @@ import io.adminshell.aas.v3.model.impl.*;
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultReferable.class),
     @KnownSubtypes.Type(value = AccessPermissionRule.class),
-    @KnownSubtypes.Type(value = Identifiable.class),
     @KnownSubtypes.Type(value = View.class),
-    @KnownSubtypes.Type(value = SubmodelElement.class)
+    @KnownSubtypes.Type(value = SubmodelElement.class),
+    @KnownSubtypes.Type(value = Identifiable.class)
 })
 public interface Referable {
-
-    /**
-     * The category is a value that gives further meta information w.r.t. to the class of the element.
-     * It affects the expected existence of attributes and the applicability of constraints.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory
-     *
-     * @return Returns the List of Strings for the property referableCategories.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
-    List<String> getReferableCategories();
-
-    /**
-     * The category is a value that gives further meta information w.r.t. to the class of the element.
-     * It affects the expected existence of attributes and the applicability of constraints.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory
-     *
-     * @param referableCategories desired value for the property referableCategories.
-     */
-    void setReferableCategories(List<String> referableCategories);
 
     /**
      * Description or comments on the element. The description can be provided in several languages.
@@ -141,5 +120,26 @@ public interface Referable {
      * @param idShort desired value for the property idShort.
      */
     void setIdShort(String idShort);
+
+    /**
+     * The category is a value that gives further meta information w.r.t. to the class of the element.
+     * It affects the expected existence of attributes and the applicability of constraints.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory
+     *
+     * @return Returns the List of Strings for the property referableCategories.
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory")
+    List<String> getReferableCategories();
+
+    /**
+     * The category is a value that gives further meta information w.r.t. to the class of the element.
+     * It affects the expected existence of attributes and the applicability of constraints.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/Referable/referableCategory
+     *
+     * @param referableCategories desired value for the property referableCategories.
+     */
+    void setReferableCategories(List<String> referableCategories);
 
 }

@@ -31,10 +31,10 @@ import io.adminshell.aas.v3.model.impl.*;
  */
 @KnownSubtypes({
     @KnownSubtypes.Type(value = DefaultHasSemantics.class),
-    @KnownSubtypes.Type(value = Submodel.class),
     @KnownSubtypes.Type(value = IdentifierKeyValuePair.class),
     @KnownSubtypes.Type(value = View.class),
     @KnownSubtypes.Type(value = SubmodelElement.class),
+    @KnownSubtypes.Type(value = Submodel.class),
     @KnownSubtypes.Type(value = Qualifier.class),
     @KnownSubtypes.Type(value = Extension.class)
 })

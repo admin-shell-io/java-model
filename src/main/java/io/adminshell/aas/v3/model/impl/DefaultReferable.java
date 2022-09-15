@@ -50,10 +50,10 @@ public class DefaultReferable implements Referable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.referableCategories,
-            this.descriptions,
+        return Objects.hash(this.descriptions,
             this.displayName,
-            this.idShort);
+            this.idShort,
+            this.referableCategories);
     }
 
     @Override
@@ -66,21 +66,11 @@ public class DefaultReferable implements Referable {
             return false;
         } else {
             DefaultReferable other = (DefaultReferable) obj;
-            return Objects.equals(this.referableCategories, other.referableCategories) &&
-                Objects.equals(this.descriptions, other.descriptions) &&
+            return Objects.equals(this.descriptions, other.descriptions) &&
                 Objects.equals(this.displayName, other.displayName) &&
-                Objects.equals(this.idShort, other.idShort);
+                Objects.equals(this.idShort, other.idShort) &&
+                Objects.equals(this.referableCategories, other.referableCategories);
         }
-    }
-
-    @Override
-    public List<String> getReferableCategories() {
-        return referableCategories;
-    }
-
-    @Override
-    public void setReferableCategories(List<String> referableCategories) {
-        this.referableCategories = referableCategories;
     }
 
     @Override
@@ -111,6 +101,16 @@ public class DefaultReferable implements Referable {
     @Override
     public void setIdShort(String idShort) {
         this.idShort = idShort;
+    }
+
+    @Override
+    public List<String> getReferableCategories() {
+        return referableCategories;
+    }
+
+    @Override
+    public void setReferableCategories(List<String> referableCategories) {
+        this.referableCategories = referableCategories;
     }
 
     /**

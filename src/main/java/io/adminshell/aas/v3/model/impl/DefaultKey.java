@@ -44,9 +44,9 @@ public class DefaultKey implements Key {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.idType,
-            this.type,
-            this.value);
+        return Objects.hash(this.value,
+            this.idType,
+            this.type);
     }
 
     @Override
@@ -59,10 +59,20 @@ public class DefaultKey implements Key {
             return false;
         } else {
             DefaultKey other = (DefaultKey) obj;
-            return Objects.equals(this.idType, other.idType) &&
-                Objects.equals(this.type, other.type) &&
-                Objects.equals(this.value, other.value);
+            return Objects.equals(this.value, other.value) &&
+                Objects.equals(this.idType, other.idType) &&
+                Objects.equals(this.type, other.type);
         }
+    }
+
+    @Override
+    public String getValue() {
+        return value;
+    }
+
+    @Override
+    public void setValue(String value) {
+        this.value = value;
     }
 
     @Override
@@ -83,16 +93,6 @@ public class DefaultKey implements Key {
     @Override
     public void setType(KeyElements type) {
         this.type = type;
-    }
-
-    @Override
-    public String getValue() {
-        return value;
-    }
-
-    @Override
-    public void setValue(String value) {
-        this.value = value;
     }
 
     /**

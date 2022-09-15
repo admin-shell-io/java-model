@@ -68,28 +68,6 @@ public abstract class AssetBuilder<T extends Asset, B extends AssetBuilder<T, B>
     }
 
     /**
-     * This function allows setting a value for referableCategories
-     * 
-     * @param referableCategories desired value to be set
-     * @return Builder object with new value for referableCategories
-     */
-    public B referableCategories(List<String> referableCategories) {
-        getBuildingInstance().setReferableCategories(referableCategories);
-        return getSelf();
-    }
-
-    /**
-     * This function allows adding a value to the List referableCategories
-     * 
-     * @param referableCategory desired value to be added
-     * @return Builder object with new value for referableCategories
-     */
-    public B referableCategory(String referableCategory) {
-        getBuildingInstance().getReferableCategories().add(referableCategory);
-        return getSelf();
-    }
-
-    /**
      * This function allows setting a value for descriptions
      * 
      * @param descriptions desired value to be set
@@ -130,6 +108,28 @@ public abstract class AssetBuilder<T extends Asset, B extends AssetBuilder<T, B>
      */
     public B idShort(String idShort) {
         getBuildingInstance().setIdShort(idShort);
+        return getSelf();
+    }
+
+    /**
+     * This function allows setting a value for referableCategories
+     * 
+     * @param referableCategories desired value to be set
+     * @return Builder object with new value for referableCategories
+     */
+    public B referableCategories(List<String> referableCategories) {
+        getBuildingInstance().setReferableCategories(referableCategories);
+        return getSelf();
+    }
+
+    /**
+     * This function allows adding a value to the List referableCategories
+     * 
+     * @param referableCategory desired value to be added
+     * @return Builder object with new value for referableCategories
+     */
+    public B referableCategory(String referableCategory) {
+        getBuildingInstance().getReferableCategories().add(referableCategory);
         return getSelf();
     }
 }

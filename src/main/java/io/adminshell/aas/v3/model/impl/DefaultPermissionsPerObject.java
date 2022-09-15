@@ -49,8 +49,8 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
     @Override
     public int hashCode() {
         return Objects.hash(this.object,
-            this.permissions,
-            this.targetObjectAttributes);
+            this.targetObjectAttributes,
+            this.permissions);
     }
 
     @Override
@@ -64,8 +64,8 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
         } else {
             DefaultPermissionsPerObject other = (DefaultPermissionsPerObject) obj;
             return Objects.equals(this.object, other.object) &&
-                Objects.equals(this.permissions, other.permissions) &&
-                Objects.equals(this.targetObjectAttributes, other.targetObjectAttributes);
+                Objects.equals(this.targetObjectAttributes, other.targetObjectAttributes) &&
+                Objects.equals(this.permissions, other.permissions);
         }
     }
 
@@ -80,16 +80,6 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
     }
 
     @Override
-    public List<Permission> getPermissions() {
-        return permissions;
-    }
-
-    @Override
-    public void setPermissions(List<Permission> permissions) {
-        this.permissions = permissions;
-    }
-
-    @Override
     public ObjectAttributes getTargetObjectAttributes() {
         return targetObjectAttributes;
     }
@@ -97,6 +87,16 @@ public class DefaultPermissionsPerObject implements PermissionsPerObject {
     @Override
     public void setTargetObjectAttributes(ObjectAttributes targetObjectAttributes) {
         this.targetObjectAttributes = targetObjectAttributes;
+    }
+
+    @Override
+    public List<Permission> getPermissions() {
+        return permissions;
+    }
+
+    @Override
+    public void setPermissions(List<Permission> permissions) {
+        this.permissions = permissions;
     }
 
     /**

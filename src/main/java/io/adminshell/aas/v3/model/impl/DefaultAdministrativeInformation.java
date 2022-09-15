@@ -51,8 +51,8 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.version,
-            this.revision,
+        return Objects.hash(this.revision,
+            this.version,
             this.dataSpecifications);
     }
 
@@ -66,20 +66,10 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
             return false;
         } else {
             DefaultAdministrativeInformation other = (DefaultAdministrativeInformation) obj;
-            return Objects.equals(this.version, other.version) &&
-                Objects.equals(this.revision, other.revision) &&
+            return Objects.equals(this.revision, other.revision) &&
+                Objects.equals(this.version, other.version) &&
                 Objects.equals(this.dataSpecifications, other.dataSpecifications);
         }
-    }
-
-    @Override
-    public String getVersion() {
-        return version;
-    }
-
-    @Override
-    public void setVersion(String version) {
-        this.version = version;
     }
 
     @Override
@@ -90,6 +80,16 @@ public class DefaultAdministrativeInformation implements AdministrativeInformati
     @Override
     public void setRevision(String revision) {
         this.revision = revision;
+    }
+
+    @Override
+    public String getVersion() {
+        return version;
+    }
+
+    @Override
+    public void setVersion(String version) {
+        this.version = version;
     }
 
     @Override

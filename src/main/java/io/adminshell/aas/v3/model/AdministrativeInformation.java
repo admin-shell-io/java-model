@@ -36,25 +36,6 @@ import io.adminshell.aas.v3.model.impl.*;
 public interface AdministrativeInformation extends HasDataSpecification {
 
     /**
-     * Version of the element.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version
-     *
-     * @return Returns the String for the property version.
-     */
-    @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
-    String getVersion();
-
-    /**
-     * Version of the element.
-     *
-     * More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version
-     *
-     * @param version desired value for the property version.
-     */
-    void setVersion(String version);
-
-    /**
      * Revision of the element.
      *
      * Constraint AASd-005: A revision requires a version. This means, if there is no version there is
@@ -78,5 +59,24 @@ public interface AdministrativeInformation extends HasDataSpecification {
      * @param revision desired value for the property revision.
      */
     void setRevision(String revision);
+
+    /**
+     * Version of the element.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version
+     *
+     * @return Returns the String for the property version.
+     */
+    @IRI("https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version")
+    String getVersion();
+
+    /**
+     * Version of the element.
+     *
+     * More information under https://admin-shell.io/aas/3/0/RC01/AdministrativeInformation/version
+     *
+     * @param version desired value for the property version.
+     */
+    void setVersion(String version);
 
 }

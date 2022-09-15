@@ -57,11 +57,11 @@ public class DefaultAssetInformation implements AssetInformation {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.assetKinds,
-            this.globalAssetId,
+        return Objects.hash(this.globalAssetId,
             this.externalAssetIds,
             this.billOfMaterials,
-            this.thumbnail);
+            this.thumbnail,
+            this.assetKinds);
     }
 
     @Override
@@ -74,22 +74,12 @@ public class DefaultAssetInformation implements AssetInformation {
             return false;
         } else {
             DefaultAssetInformation other = (DefaultAssetInformation) obj;
-            return Objects.equals(this.assetKinds, other.assetKinds) &&
-                Objects.equals(this.globalAssetId, other.globalAssetId) &&
+            return Objects.equals(this.globalAssetId, other.globalAssetId) &&
                 Objects.equals(this.externalAssetIds, other.externalAssetIds) &&
                 Objects.equals(this.billOfMaterials, other.billOfMaterials) &&
-                Objects.equals(this.thumbnail, other.thumbnail);
+                Objects.equals(this.thumbnail, other.thumbnail) &&
+                Objects.equals(this.assetKinds, other.assetKinds);
         }
-    }
-
-    @Override
-    public List<AssetKind> getAssetKinds() {
-        return assetKinds;
-    }
-
-    @Override
-    public void setAssetKinds(List<AssetKind> assetKinds) {
-        this.assetKinds = assetKinds;
     }
 
     @Override
@@ -130,6 +120,16 @@ public class DefaultAssetInformation implements AssetInformation {
     @Override
     public void setThumbnail(File thumbnail) {
         this.thumbnail = thumbnail;
+    }
+
+    @Override
+    public List<AssetKind> getAssetKinds() {
+        return assetKinds;
+    }
+
+    @Override
+    public void setAssetKinds(List<AssetKind> assetKinds) {
+        this.assetKinds = assetKinds;
     }
 
     /**
